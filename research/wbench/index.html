@@ -1,0 +1,463 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WBench 打榜调研</title><style>
+body{margin:0;background:#fafaf7;color:#1f2328;font:17px/1.75 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+main{max-width:920px;margin:0 auto;padding:48px 24px 96px}
+.kicker{color:#8a6d3b;font-size:14px;letter-spacing:.05em}
+h1{font-size:32px;line-height:1.35;margin:8px 0 12px}
+.sub{color:#57606a}
+h2{font-size:24px;margin:64px 0 16px;padding-top:16px;border-top:1px solid #e6e3da}
+h3{font-size:19px;margin:40px 0 12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:18px;margin:36px 0}
+.card{background:#fff;border:1px solid #e6e3da;border-radius:14px;padding:20px 22px}
+.card p{margin:6px 0 0}
+.card.no{border-left:6px solid #d1495b}.card.yes{border-left:6px solid #2a9d8f}
+.tag{font-size:13px;font-weight:600;color:#8a6d3b}
+.big{font-size:19px}
+table{border-collapse:collapse;width:100%;margin:16px 0 24px;font-size:15px;background:#fff}
+th,td{border:1px solid #e6e3da;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f3f1ea}
+tr:nth-child(even) td{background:#fcfbf8}
+code{background:#f3f1ea;padding:1px 5px;border-radius:4px;font-size:.9em}
+blockquote{color:#57606a;border-left:4px solid #e6e3da;margin:0;padding:4px 16px}
+a{color:#0b6bcb;word-break:break-all}
+li{margin:6px 0}
+.back{font-size:14px}
+</style></head><body><main>
+<p class="back"><a href="../../">← 产品雷达首页</a></p>
+
+<header>
+<div class="kicker">世界模型打榜调研 · 2026-10-09 · 阿汤</div>
+<h1>WBench 怎么打榜？白模世界能不能一起上？</h1>
+<p class="sub">WBench 是美团 LongCat 和复旦做的「交互式视频世界模型」评测，Zing-0.5 的 81.0 分就是在这儿拿的。榜单数据取自 <a target="_blank" href="https://meituan-longcat.github.io/WBench/#leaderboard">官网</a>（2026/10/04 更新）。</p>
+</header>
+
+<section class="cards">
+<div class="card"><div class="tag">是什么</div><p>给模型<b>一张起始图 + 一串操作</b>（往前走、左转、让角色做动作……），看它生成的视频<b>好不好看、听不听话、前后一不一致、物理合不合理</b>。289 题，全自动打分。</p></div>
+<div class="card"><div class="tag">怎么上榜</div><p>自己生成视频 → 跑开源评测（或让官方帮跑）→ 视频放网盘、<b>发邮件给作者</b>。不用交权重、不用开 API，<b>免费</b>，人工审核。</p></div>
+<div class="card no"><div class="tag">白模 + 模型一起打？</div><p><b>不行。</b>题目是固定的，参赛的只能是模型。白模世界能当<b>训练数据</b>、<b>内部模拟考</b>，或拿去找作者<b>提议新赛道</b>。</p></div>
+<div class="card yes"><div class="tag">最可能有优势</div><p><b>Navigation（按键走得准）</b>和<b>空间一致性（转一圈回来场景还在）</b>。风险：画质和贴合文字描述，白模画面偏素可能拖分。</p></div>
+</section>
+
+<h2>Zing-0.5 在哪</h2>
+<p class="big">Navi 榜（158 个导航题）第 <b>6</b> 名：总分 <b>81.0</b>，一致性 <b>88.5</b>。第 1 名 Alaya-EVOKE-Turbo 82.0，前 10 名分差只有 2.1 分。</p>
+
+<h2>1. WBench 是什么</h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全名</td>
+<td>WBench: A Comprehensive Multi-turn Benchmark for Interactive Video World Model Evaluation</td>
+</tr>
+<tr>
+<td>谁做的</td>
+<td>复旦大学（丁恒辉组）+ 美团 LongCat 团队。一作 Kaining Ying、Hengrui Hu</td>
+</tr>
+<tr>
+<td>什么时候</td>
+<td>2026-05-28 论文、数据、评测代码、榜单同时发布；GitHub 仓库建于 2026-05-22</td>
+</tr>
+<tr>
+<td>论文</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2605.25874">https://arxiv.org/abs/2605.25874</a></td>
+</tr>
+<tr>
+<td>官网 + 榜单</td>
+<td><a target="_blank" href="https://meituan-longcat.github.io/WBench/#leaderboard">https://meituan-longcat.github.io/WBench/#leaderboard</a></td>
+</tr>
+<tr>
+<td>代码</td>
+<td><a target="_blank" href="https://github.com/meituan-longcat/WBench">https://github.com/meituan-longcat/WBench</a> （MIT 协议）</td>
+</tr>
+<tr>
+<td>数据</td>
+<td><a target="_blank" href="https://huggingface.co/datasets/meituan-longcat/WBench">https://huggingface.co/datasets/meituan-longcat/WBench</a> （公开、不需申请）</td>
+</tr>
+<tr>
+<td>提交说明</td>
+<td><a target="_blank" href="https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md">https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md</a></td>
+</tr>
+<tr>
+<td>中文解读</td>
+<td><a target="_blank" href="https://mp.weixin.qq.com/s/br3RlOBGtReolLZc5YW2HA">https://mp.weixin.qq.com/s/br3RlOBGtReolLZc5YW2HA</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句话</strong>：给世界模型一张起始画面和一段多轮操作（往前走、左转、让角色做动作、让环境发生变化、切第一/第三人称），看它生成的视频好不好看、听不听话、前后一不一致、物理合不合理。</p>
+<p><strong>规模</strong>：289 个用例，1,058 轮交互。交互类型：导航 601 轮、角色动作 213 轮、事件编辑 183 轮、视角切换 61 轮。第一人称 178 例、第三人称 111 例；写实 150 例、风格化 139 例。场景有自然、城市、室内、工作场所、奇幻、体育 6 类。起始图大部分由 Nano Banana 2 和 GPT-Image-1.5 生成，另加网上收集和人工拍摄的图，都人工审过。</p>
+<h3>同名的别搞混</h3>
+<ul>
+<li><strong>W-Bench</strong>（带横杠）：ICLR 2025 论文 VINE 里的<strong>图片水印抗编辑</strong>评测，和世界模型无关。<a target="_blank" href="https://huggingface.co/datasets/Shilin-LU/W-Bench">https://huggingface.co/datasets/Shilin-LU/W-Bench</a></li>
+<li><strong>WorldBench</strong>：另一个<strong>物理概念</strong>评测（一次只测一个物理规律）。<a target="_blank" href="https://world-bench.github.io/">https://world-bench.github.io/</a></li>
+<li><strong>Zing-0.5 用的是美团/复旦这个 WBench</strong>：WBench 官方 README 的更新记录写着「[2026/08/26] Zing-0.5 (Open Source): Navi 81.0」，并链接到 Zing 论文 arXiv 2609.17909。</li>
+</ul>
+<hr />
+<h2>2. 有哪些子榜、各测什么</h2>
+<h3>两个分榜（按参赛模型的输入方式分）</h3>
+<table>
+<thead>
+<tr>
+<th>模型类型</th>
+<th>输入</th>
+<th>要做的用例</th>
+<th>能上哪个榜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文字控制（Text）</td>
+<td>文字提示 + 首帧图</td>
+<td>全部 289 例</td>
+<td>Full 榜 + Navi 榜</td>
+</tr>
+<tr>
+<td>相机控制（Camera）</td>
+<td>首帧图 + 6 自由度相机位姿</td>
+<td>158 个导航例</td>
+<td>只有 Navi 榜</td>
+</tr>
+<tr>
+<td>按键控制（Action）</td>
+<td>首帧图 + 离散按键（WASD/方向键）</td>
+<td>158 个导航例</td>
+<td>只有 Navi 榜</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Navi 榜（158 例）</strong>：只包含至少有一个 W/A/S/D/方向键操作的用例。三种模型都能比，所以世界模型基本都在这个榜。Zing 就在这里。</li>
+<li><strong>Full 榜（289 例）</strong>：多了角色动作、事件编辑、视角切换，目前只有文字控制模型能做。</li>
+</ul>
+<p>导航怎么统一：官方把按键翻译成「每轮往哪走、转多少」，相机模型拿到的是换算好的相机轨迹，按键模型拿到的是按键序列（同时给 Matrix-Game 风格的键盘/鼠标张量），文字模型拿到的是文字指令。</p>
+<h3>五个维度、22 个小指标（全部 0–100，越高越好）</h3>
+<p>每个维度是它下面小指标的平均，<strong>总分 = 五个维度等权平均</strong>。Navi 榜用其中 19 个（交互只算导航那一项）。</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>测什么（白话）</th>
+<th>小指标</th>
+<th>怎么打分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Quality 画质</strong></td>
+<td>好不好看、闪不闪、动得顺不顺</td>
+<td>美学、成像质量、闪烁、动态程度、流畅度、HPSv3 人类偏好分（共 6 个）</td>
+<td>全自动，用 VBench 打分器、RAFT 光流、HPSv3 等现成模型</td>
+</tr>
+<tr>
+<td><strong>Setting 设定贴合</strong></td>
+<td>画出来的场景和角色是不是题目描述的那样</td>
+<td>场景贴合、主体贴合</td>
+<td>多模态大模型判分（豆包 Doubao-Seed-2.0-lite）</td>
+</tr>
+<tr>
+<td><strong>Interaction 交互</strong></td>
+<td>让你往前走/左转，你是否真这么走了；让角色做动作、让环境变化、切视角，做没做到</td>
+<td>导航轨迹、事件编辑、角色动作、视角切换</td>
+<td>导航：用 MegaSAM 从视频里反推相机轨迹，和标准轨迹对比，NavScore =（准确度 + 一致性）/ 2；其余三项是大模型判分</td>
+</tr>
+<tr>
+<td><strong>Consistency 一致性</strong></td>
+<td>走一圈回来场景还是原来的吗、主体会不会变样、有没有突然跳镜头、深度/几何是否自洽</td>
+<td>背景、空间（绕圈回到起点再比）、门控空间（画面几乎不动的会被扣分，防止靠静止作弊）、视角、片段连续、几何、光度、主体（共 8 个）</td>
+<td>全自动：DreamSim、SAM2、TransNetV2、Depth-Anything-V3 重投影、DINOv2+CLIP</td>
+</tr>
+<tr>
+<td><strong>Physical 物理</strong></td>
+<td>看起来是否物理合理、因果对不对（比如球被撞会不会动）</td>
+<td>视觉合理性、因果正确性</td>
+<td>都靠大模型：一个专门调过的打分模型 + 大模型判断因果</td>
+</tr>
+</tbody>
+</table>
+<p><strong>有没有人工评</strong>：打榜时<strong>没有人评，全是自动打分</strong>。论文另做了一次人工校验：400 名众包标注员做盲测两两对比，10 个方面上自动分和人工排名的 Spearman 相关都 ≥ 0.94，其中事件编辑、角色动作、视角切换、空间一致性 4 项 = 1.00。</p>
+<h3>当前排名（官网，2026/10/04 更新）</h3>
+<p><strong>Navi 榜前 10（158 例，共 42 个模型）</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>模型</th>
+<th>机构</th>
+<th>总分</th>
+<th>画质</th>
+<th>设定</th>
+<th>交互</th>
+<th>一致性</th>
+<th>物理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Alaya-EVOKE-Turbo（3-step）</td>
+<td>Alaya Lab，开源</td>
+<td>82.0</td>
+<td>81.9</td>
+<td>82.1</td>
+<td>83.9</td>
+<td>88.1</td>
+<td>74.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>XGEN-Jing（bidirection）</td>
+<td>XGEN Labs，开源</td>
+<td>81.9</td>
+<td>82.4</td>
+<td>90.3</td>
+<td>75.6</td>
+<td>88.1</td>
+<td>73.3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Enuma（bidirection）</td>
+<td>字节跳动，未发布</td>
+<td>81.7</td>
+<td>83.6</td>
+<td>79.9</td>
+<td>83.2</td>
+<td>88.6</td>
+<td>73.3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>JoyAI-Echo-1.5 (WM)（bidirection）</td>
+<td>京东未来学院，开源</td>
+<td>81.6</td>
+<td>81.5</td>
+<td>79.4</td>
+<td>86.6</td>
+<td>89.8</td>
+<td>70.6</td>
+</tr>
+<tr>
+<td>5</td>
+<td>JoyAI-Echo-1.5 (WM)（flash 4-step）</td>
+<td>京东未来学院，开源</td>
+<td>81.0</td>
+<td>81.1</td>
+<td>77.5</td>
+<td>87.9</td>
+<td>88.3</td>
+<td>70.1</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Zing-0.5</strong>（action 4-step 5B realtime）</td>
+<td>SeedLeap.ai，开源</td>
+<td>81.0</td>
+<td>80.6</td>
+<td>77.8</td>
+<td>84.2</td>
+<td>88.5</td>
+<td>73.8</td>
+</tr>
+<tr>
+<td>7</td>
+<td>XGEN-Jing（4-step AR）</td>
+<td>XGEN Labs，开源</td>
+<td>81.0</td>
+<td>81.3</td>
+<td>91.6</td>
+<td>78.7</td>
+<td>83.7</td>
+<td>69.8</td>
+</tr>
+<tr>
+<td>8</td>
+<td>HiDream-O1-World</td>
+<td>HiDream.ai</td>
+<td>80.9</td>
+<td>81.0</td>
+<td>82.2</td>
+<td>80.0</td>
+<td>88.0</td>
+<td>73.3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Alaya-EVOKE（3-step）</td>
+<td>Alaya Lab，开源</td>
+<td>80.8</td>
+<td>82.8</td>
+<td>83.8</td>
+<td>78.6</td>
+<td>86.9</td>
+<td>72.1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>HelixWorld（4-step AR）</td>
+<td>Noiz Ai，开源</td>
+<td>79.9</td>
+<td>79.2</td>
+<td>76.5</td>
+<td>86.4</td>
+<td>86.4</td>
+<td>70.9</td>
+</tr>
+</tbody>
+</table>
+<p>参照：Kling 3.0 第 13（79.0）、快乐生蚝 Happy Oyster 第 19（76.8）、Genie 3 第 32（73.9）、MatrixGame3 第 38（71.3）。</p>
+<p><strong>各维度单项第一（Navi 榜）</strong>：交互 87.9（JoyAI-Echo-1.5 flash）；一致性 89.9（LingBot-World base-camera）；物理 76.2（Helios Distilled）；设定 91.6（XGEN-Jing 4-step AR 和 Cosmos3-Super 并列）；画质 83.6（Enuma bidirection）。导航单项 NavScore 最高 87.9（JoyAI-Echo-1.5 flash）。</p>
+<p><strong>Full 榜前 5（289 例，16 个文字控制模型）</strong>：Murea-Pro（Murea Lab，未发布）81.1；XGEN-Jing bidirection 81.0；XGEN-Jing 4-step AR 79.9；Kling 3.0 79.4；Wan 2.7 78.4。</p>
+<p><strong>两个对打榜有用的发现（来自官网 Key Findings）</strong>：
+- 导航能力和画质、物理几乎不相关：画面好看不等于走得准。
+- 多轮交互误差会累积：导航准确度从第 1 轮到第 4 轮掉了 21 分；专门的世界模型掉得比文字视频模型少。</p>
+<hr />
+<h2>3. 怎么上榜（官方提交流程）</h2>
+<p>来源：<a target="_blank" href="https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md">https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md</a></p>
+<p><strong>提交靠邮件，没有自动提交网站，每份都有人工审核。</strong> 官网写着「We help evaluate for free」（免费帮评）。</p>
+<ol>
+<li><strong>下数据</strong>：从 HuggingFace 下 289 个用例（每个包含首帧图、场景/角色/视角文字、多轮操作）和评测用的权重。</li>
+<li><strong>用自家模型生成视频</strong>：每个用例生成一段把所有轮拼起来的视频，命名 <code>case_&lt;id&gt;_combined.mp4</code>。相机/按键模型只做 158 个导航例，文字模型做全部 289 例。仓库里有现成的接入模板：相机模型实现 <code>generate_with_poses</code>，按键模型实现 <code>generate_with_actions</code>。</li>
+<li><strong>二选一打分</strong>：</li>
+<li><strong>A. 自己评（官方推荐，默认）</strong>：自己跑开源评测 <code>python main.py --model 名字</code>，生成 <code>report.json</code>。需要自己的 GPU，以及<strong>火山引擎方舟的豆包 API key</strong>（大模型判分那几项要调用，按量付费）。官方会随机抽一小部分重跑核对，差太多就全量重评。不用排队，快。</li>
+<li><strong>B. 让官方评</strong>：只交视频，官方跑 22 个指标。免费，但要批量排队。</li>
+<li><strong>打包</strong>：<code>meta.json</code>（模型名、类型 text/camera/action、展示名、最多 4 个标签、机构、联系人）+ 视频文件夹 +（建议）<code>turns.json</code>（每段视频每一轮从第几帧开始，不交的话按轮数平均切，前后轮长度不一样的自回归模型会吃亏）。A 方案再加 <code>report.json</code>。</li>
+<li><strong>发邮件</strong>：收件人 kaining.ying.cv@gmail.com 和 rensiyu07@meituan.com；标题 <code>[WBench Submission] &lt;展示名&gt;</code>；正文写模型名、类型、标签、机构、一句话介绍、选 A 还是 B；视频放 Google Drive / 百度网盘 / HuggingFace 数据集 / OneDrive（<strong>首选 HuggingFace 数据集</strong>，他们能直接评），链接保持到上榜为止。</li>
+<li><strong>官方先跑校验脚本</strong>：查用例数对不对、视频能不能解码、帧数和分辨率是否正常、<code>turns.json</code> 是否和视频对得上。不过就退回。</li>
+</ol>
+<p><strong>其他规则</strong>
+- <strong>不用交权重、不用开 API</strong>：官方明确写了「我们不托管也不运行你的模型，只收视频和/或分数」。榜上已有「Unreleased（未发布）」的模型，比如字节 Enuma、Murea-Pro。
+- <strong>分辨率、帧率、时长、是否实时：没有硬性规定</strong>。论文里各模型都按自己原生分辨率评，不放大。只要求视频「帧数和分辨率正常」、<code>turns.json</code> 里的 fps 和视频一致。
+- <strong>标签</strong>：最多 4 个、每个 1–16 字符；写 <code>realtime</code> 这种说法要在邮件里给出硬件、分辨率和实测速度。不许写机构名、开源/API、名次、分数、宣传语。
+- <strong>多久上榜</strong>：官方没写。B 方案是「批量处理」。
+- <strong>费用</strong>：上榜免费；A 方案的成本是自家 GPU + 豆包 API 调用费。
+- <strong>联系</strong>：Kaining Ying kaining.ying.cv@gmail.com；Siyu Ren rensiyu07@meituan.com；丁恒辉 hhding@fudan.edu.cn；GitHub Issue；官方微信群（二维码在 README）。
+- 仓库里还带了 Claude Code 技能（<code>wbench-generate</code> / <code>wbench-evaluate</code> / <code>wbench-submit</code>），可以用自然语言让 Claude Code 帮你跑生成、评测、打包上传。你们团队本来就用 Claude Code，接入成本低。</p>
+<hr />
+<h2>4. 白模世界 + 自家模型能不能一起打榜？</h2>
+<p><strong>结论：不能作为一个整体去打榜。参赛的只能是模型，白模世界不能当参赛作品。</strong></p>
+<p>原因：
+- WBench 的题目是固定的：官方给首帧图 + 场景描述 + 一串操作，你的模型生成视频，按统一指标打分。你不能换成自己的场景或环境。
+- 白模世界本身（游戏引擎渲染）也没法参赛：它没办法从一张任意的写实/风格化照片出发「接着往下演」，而这正是每道题的起点。
+- 提交说明里只收「模型生成的视频」，没有「自定义环境」或「自带数据」的通道。</p>
+<p><strong>白模世界能怎么帮上忙</strong></p>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>能不能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>当训练/微调数据</td>
+<td>✅ 可以</td>
+<td>这是最主要的价值。白模世界能导出<strong>精确的相机轨迹和按键记录</strong>，正好对应 Navigation（按键走得准）。还能大批量做「走一圈回到原点」的轨迹，对应空间一致性和门控空间一致性。论文里也写了，LingBot-World 的训练数据就混了游戏引擎录像和合成渲染，Kairos 也用了仿真第一人称素材。</td>
+</tr>
+<tr>
+<td>当内部模拟考</td>
+<td>✅ 可以</td>
+<td>用白模世界自己出一套和 WBench 同维度的题（同样的按键协议、同样 2–6 轮、绕圈轨迹），而且你们有真值相机轨迹，能比 WBench 用 MegaSAM 反推更准。用来在提交前自查。</td>
+</tr>
+<tr>
+<td>给作者提议新赛道/新测试集</td>
+<td>⚠️ 可以试，但没有公开流程</td>
+<td>比如「带引擎真值的导航/记忆/物理」赛道。WBench 现在的物理分全靠大模型判，白模世界能给<strong>可验证的物理真值</strong>，这是他们缺的。官方没写怎么投新赛道，只能邮件/微信群直接聊。</td>
+</tr>
+<tr>
+<td>白模世界当参赛作品</td>
+<td>❌ 不行</td>
+<td>见上。</td>
+</tr>
+<tr>
+<td>拿 WBench 的题去训练</td>
+<td>❌ 别做</td>
+<td>见下面「刷题风险」。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>刷题（训练集污染）风险</strong>
+- WBench 的 289 道题<strong>全部公开</strong>（首帧图、文字、操作序列都能下载），没有隐藏测试集。
+- 我在 README、提交说明和论文里<strong>没找到明文禁止用测试数据训练的条款</strong>；官方的防作弊手段是抽样重跑核对分数、人工审核，以及「门控空间一致性」这类防止静止画面刷分的指标。
+- 建议：内部定死规则「不许用 WBench 的图、文字、轨迹训练或调参」，并在提交邮件里说明训练数据来源。万一被认为刷题，对公司声誉的伤害远大于名次。</p>
+<hr />
+<h2>5. 打榜路线（建议）</h2>
+<p>前提：我不知道你们自家模型的接口是按键、相机轨迹还是文字。下面按「按键或相机控制的世界模型」（和 Zing、HY-World 同类）来写。</p>
+<ol>
+<li><strong>先摸底（约 1 周）</strong>：拉下 WBench 代码和 158 个导航用例，用现有模型按 <code>generate_with_actions</code> 或 <code>generate_with_poses</code> 模板接入，自己跑 A 方案，拿到第一版五维分数。需要：GPU、豆包 API key。</li>
+<li><strong>对照找短板</strong>：和 Zing-0.5（81.0）、Alaya-EVOKE-Turbo（82.0）、HY-World 1.5（78.1）逐项对比 19 个小指标，看差在画质、设定贴合还是导航。</li>
+<li><strong>用白模世界补数据</strong>：针对导航和一致性，批量出带真值相机轨迹/按键的视频，重点做 WBench 的几种轨迹（往前走、左右转、上下看、走一圈回原点）、2–6 轮的多轮长序列（误差累积是普遍弱点），第一和第三人称都要。</li>
+<li><strong>同时搭内部模拟考</strong>：用白模世界做一套「WBench 同维度、但题目不重复」的私有评测集，每次训练后先在这上面看分，避免直接对着公开题调参。</li>
+<li><strong>提交</strong>：生成 158 个视频 + <code>turns.json</code>（自回归模型第一轮通常更长，必须交，不然按平均切会吃亏）+ <code>meta.json</code>，先自己跑完 A 方案，放 HuggingFace 数据集，按格式发邮件。</li>
+</ol>
+<p><strong>最可能有优势的子项</strong>
+- <strong>Interaction 里的 Navigation</strong>：白模世界的强项就是精确知道相机怎么动、按了什么键，这正是 NavScore 考的。现在单项最高 87.9，Zing 84.2，有空间。
+- <strong>Consistency 里的空间一致性 / 门控空间一致性 / 几何一致性</strong>：引擎渲染天然 3D 一致，绕圈回来场景不变，适合教模型「记住世界」。</p>
+<p><strong>风险</strong>
+- <strong>画质和设定贴合可能拖后腿</strong>：WBench 一半是写实图、一半是风格化图，画质和设定贴合用的是美学打分器、人类偏好分和大模型判分。如果白模数据画面偏素（灰模、无贴图），训多了模型画面可能变「白模味」，这两项会掉分。要和真实/高质量视频数据混着训。
+- <strong>物理分是大模型判的</strong>，不是引擎真值，白模世界的物理优势在 WBench 上不一定能体现。
+- <strong>刷题风险</strong>：题目全公开，见第 4 节。
+- <strong>名次变化很快</strong>：从 8 月 26 日 Zing 上榜时第 3，到现在第 6，前 10 名分差只有 2.1 分（79.9–82.0）。
+- <strong>Navi 榜只看导航</strong>：按键/相机模型上不了 Full 榜，角色动作、事件编辑这些能力在 WBench 上没法展示。</p>
+<hr />
+<h2>6. 相关的其他世界模型评测</h2>
+<table>
+<thead>
+<tr>
+<th>评测</th>
+<th>一句话</th>
+<th>和 WBench 比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WorldMark</strong>（Alaya Lab，arXiv 2604.21686）<a target="_blank" href="https://github.com/AlayaLab/WorldMark">https://github.com/AlayaLab/WorldMark</a></td>
+<td>专门评按键/相机控制的交互世界模型：统一的 W S A D L R 按键，500 个用例，9 个<strong>确定性</strong>指标（动作动态、世界记忆、画质），不用大模型判分，重跑分数完全一致；原生分辨率和帧率都行。</td>
+<td>和你们最对口，可能更容易、也更能体现白模优势（考「记忆」）。没查到它有公开排行榜，主要是评测工具。</td>
+</tr>
+<tr>
+<td><strong>WorldScore</strong>（ICCV 2025）<a target="_blank" href="https://haoyi-duan.github.io/WorldScore/">https://haoyi-duan.github.io/WorldScore/</a></td>
+<td>给明确的相机轨迹，让 3D/4D/视频模型一段段生成场景，3,000 个用例，测可控性、画质、动态。有 HuggingFace 排行榜，同样支持自己评后发邮件。</td>
+<td>偏「按相机路线生成静态场景」，白模的真值相机轨迹有帮助；更偏 3D 场景生成，不太考多轮交互。</td>
+</tr>
+<tr>
+<td><strong>Physics-IQ / Physics-IQ Verified</strong>（Google DeepMind）<a target="_blank" href="https://github.com/google-deepmind/physics-iq-benchmark">https://github.com/google-deepmind/physics-iq-benchmark</a></td>
+<td>真实拍摄的 4K 30fps 物理实验视频（碰撞、流体、重力、光影、磁力等），看模型能不能接着正确地演。有排行榜。</td>
+<td>更难，而且是真实视频，白模数据帮助有限。</td>
+</tr>
+<tr>
+<td><strong>WorldBench</strong> <a target="_blank" href="https://world-bench.github.io/">https://world-bench.github.io/</a></td>
+<td>一次只测一个物理概念，并从视频里直接估算物理常数（比如重力加速度 g），不靠大模型主观判分。</td>
+<td>如果白模世界能做物理仿真，这类「可测量物理」最能体现引擎数据的价值。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>没能核实的地方</h2>
+<ul>
+<li><strong>审核要多久</strong>：官方没写，只说 B 方案「批量处理」。</li>
+<li><strong>禁止用测试数据训练</strong>：没找到明文条款（第 4 节）。</li>
+<li><strong>Full 榜第一的名字</strong>：README 更新记录写的是「MuseFlow-Pro（Musee）81.1」，官网榜单上同一位置显示「Murea-Pro（Murea Lab）81.1」，可能是改名，没核实。</li>
+<li>HuggingFace 数据集页面上的榜单还是论文发布时的 20 个模型旧版，以官网为准。</li>
+<li>README 的 TODO 里勾了「托管提交与评测服务」，但提交说明写的是「目前没有自动提交入口，靠邮件」，以提交说明为准。</li>
+<li>你们模型的控制接口（按键/相机/文字）我不知道，路线按按键或相机控制的世界模型写的。</li>
+<li>「白模」我按游戏行业的灰模/无贴图理解；如果 World500 的世界有完整贴图和光照，第 5 节关于画质的风险会小很多。</li>
+</ul>
+<h2>来源</h2>
+<ul>
+<li>WBench 官网/榜单：<a target="_blank" href="https://meituan-longcat.github.io/WBench/">https://meituan-longcat.github.io/WBench/</a></li>
+<li>论文：<a target="_blank" href="https://arxiv.org/abs/2605.25874">https://arxiv.org/abs/2605.25874</a></li>
+<li>代码 README：<a target="_blank" href="https://github.com/meituan-longcat/WBench">https://github.com/meituan-longcat/WBench</a></li>
+<li>提交说明：<a target="_blank" href="https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md">https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md</a></li>
+<li>数据集：<a target="_blank" href="https://huggingface.co/datasets/meituan-longcat/WBench">https://huggingface.co/datasets/meituan-longcat/WBench</a></li>
+<li>Zing-0.5 论文：<a target="_blank" href="https://arxiv.org/pdf/2609.17909">https://arxiv.org/pdf/2609.17909</a></li>
+<li>W-Bench（水印）：<a target="_blank" href="https://huggingface.co/datasets/Shilin-LU/W-Bench">https://huggingface.co/datasets/Shilin-LU/W-Bench</a></li>
+<li>WorldMark：<a target="_blank" href="https://github.com/AlayaLab/WorldMark">https://github.com/AlayaLab/WorldMark</a></li>
+<li>WorldScore：<a target="_blank" href="https://github.com/haoyi-duan/WorldScore">https://github.com/haoyi-duan/WorldScore</a></li>
+<li>Physics-IQ：<a target="_blank" href="https://github.com/google-deepmind/physics-iq-benchmark">https://github.com/google-deepmind/physics-iq-benchmark</a></li>
+<li>WorldBench：<a target="_blank" href="https://world-bench.github.io/">https://world-bench.github.io/</a></li>
+</ul>
+</main></body></html>
