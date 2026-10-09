@@ -9,6 +9,599 @@
 3. **白模世界 + 自家模型一起打榜：不行**。WBench 考的是「给你一张图 + 一串操作，你的模型生成视频」，题目是固定的，参赛的只能是模型。白模世界不能当参赛作品，也不能换成自己的场景。
 4. **白模世界能帮上忙的地方**：当训练数据（尤其是带精确相机轨迹的导航和绕一圈回到原点的数据），当内部模拟考，或者拿去找作者提议加一个新赛道。
 5. **最可能有优势的子项**：Interaction 里的 **Navigation（按键走得准不准）** 和 **Consistency（转一圈回来场景还在不在）**。最大的短板风险是画质和贴合文字描述（白模画面偏素，WBench 的题目一半是写实图）。
+6. **一共有哪些榜、题目长什么样**：见下面「全部榜单一览」和「题目示例」（17 道官方原题，带起始图）。
+
+---
+
+## 全部榜单一览
+
+> 数据来源：官网榜单（2026/10/04 更新）、HuggingFace 官方数据集的 289 个题目 JSON（逐个统计）、论文附录。前三名直接从官网表格里取，分数相同时按官网表格顺序列出。
+
+### 一、官网上能看到的排行榜（真正有排名的只有这些）
+
+官网榜单有 3 个筛选开关：**分榜**（Navi 158 题 / Full 289 题）× **模型类型**（全部 / 文字 / 相机 / 按键）× **显示方式**（5 个维度 / 全部小指标），每一列都能点击排序。所以「子榜」本质上是：2 个分榜 × 4 种类型 × 每一列。HuggingFace 上官方只注册了两个评测任务：`wbench_navi` 和 `wbench_full`。
+
+| 榜 | 测什么 | 题数 | 谁能参加 | 指标 | 当前前三（官网） |
+| --- | --- | --- | --- | --- | --- |
+| **Navi 总榜** | 只考导航：按 W/A/S/D/方向键走，看走得准不准，加上画质、贴合、一致性、物理 | 158 题（只要有一个导航按键就算） | 文字/相机/按键都能参加（现 42 个模型） | 5 个维度等权平均，19 个小指标 | Alaya-EVOKE-Turbo（3-step） 82.0；XGEN-Jing（bidirection） 81.9；Enuma（bidirection） 81.7 |
+| Navi · 只看文字控制 | 同上，只比同一类模型 | 158 | 文字控制模型（12 个） | 同上 | Kling 3.0 79.0；Wan 2.7 78.1；HY-Video 1.5 77.9 |
+| Navi · 只看相机控制 | 同上，只比同一类模型 | 158 | 相机控制模型（20 个） | 同上 | Alaya-EVOKE-Turbo（3-step） 82.0；XGEN-Jing（bidirection） 81.9；Enuma（bidirection） 81.7 |
+| Navi · 只看按键控制 | 同上，只比同一类模型 | 158 | 按键控制模型（10 个） | 同上 | JoyAI-Echo-1.5 (WM)（bidirection） 81.6；JoyAI-Echo-1.5 (WM)（flash 4-step） 81.0；Zing-0.5（4-step 5B realtime） 81.0 |
+| **Full 总榜** | 全部 4 种交互：导航 + 角色动作 + 事件编辑 + 视角切换 | 289 题（1,058 轮） | 官方说明写只有文字控制模型；但现在榜上有 3 个相机模型（XGEN-Jing ×2、Astronex-World）（共 16 个） | 5 个维度等权平均，22 个小指标 | Murea-Pro 81.1；XGEN-Jing（bidirection） 81.0；XGEN-Jing（4-step AR） 79.9 |
+| Full · 只看文字控制 | 同上 | 289 | 文字控制模型（13 个） | 同上 | Murea-Pro 81.1；Kling 3.0 79.4；Wan 2.7 78.4 |
+| Full · 只看相机控制 | 同上 | 289 | 相机控制模型（3 个） | 同上 | XGEN-Jing（bidirection） 81.0；XGEN-Jing（4-step AR） 79.9；Astronex-World（5B） 70.0 |
+| Full · 只看按键控制 | — | 289 | 按键模型（0 个） | — | 官网这一栏没有模型 |
+
+### 二、按维度排（点官网的列名排序）
+
+| 维度 | 测什么 | Navi 前三 | Full 前三 |
+| --- | --- | --- | --- |
+| **画质** Quality | 好不好看、闪不闪、动得顺不顺 | Enuma（bidirection） 83.6；Alaya-EVOKE（3-step） 82.8；Enuma（AR 4-step flash） 82.8 | Seedance 1.5 81.9；Wan 2.7 81.0；XGEN-Jing（bidirection） 80.9 |
+| **设定贴合** Setting | 画面是不是题目描述的场景和角色 | XGEN-Jing（4-step AR） 91.6；Cosmos3-Super 91.6；Wan 2.7 91.4 | Wan 2.7 91.4；Kling 3.0 91.0；Cosmos3-Super 89.4 |
+| **交互** Interaction | 让它走/做动作/变环境/切视角，做到没有 | JoyAI-Echo-1.5 (WM)（flash 4-step） 87.9；HY-World 1.5（ar-distill） 86.8；JoyAI-Echo-1.5 (WM)（bidirection） 86.6 | Murea-Pro 82.6；XGEN-Jing（4-step AR） 79.5；XGEN-Jing（bidirection） 76.7 |
+| **一致性** Consistency | 前后是不是同一个世界，转一圈回来还在不在 | LingBot-World（base-camera） 89.9；JoyAI-Echo-1.5 (WM)（bidirection） 89.8；AlayaWorld 89.5 | HY-Video 1.5 87.5；LongCat-Video 86.6；Cosmos 2.5 86.3 |
+| **物理** Physical | 看起来物理合不合理、因果对不对 | Helios（Distilled） 76.2；Alaya-EVOKE-Turbo（3-step） 74.0；Zing-0.5（4-step 5B realtime） 73.8 | Helios（Distilled） 76.1；Murea-Pro 74.4；XGEN-Jing（bidirection） 73.3 |
+
+### 三、按小指标排（官网「All Metrics」视图，Navi 19 列 / Full 22 列）
+
+| 小指标 | 测什么 | Navi 前三 | Full 前三 |
+| --- | --- | --- | --- |
+| 美学（Aesth） | 美学打分器打分（每秒取 2 帧） | LingBot-World（base-camera） 66.9；LongCat-Video 66.5；Enuma（bidirection） 66.2 | LongCat-Video 64.7；HY-Video 1.5 61.9；XGEN-Jing（bidirection） 61.8 |
+| 成像质量（Imag） | 技术画质（模糊、噪点） | XGEN-Jing（4-step AR） 70.7；MatrixGame3 70.0；XGEN-Jing（bidirection） 69.8 | XGEN-Jing（4-step AR） 70.5；Seedance 1.5 69.8；LongCat-Video 69.8 |
+| 闪烁（Flick） | 帧间亮度稳不稳 | Astronex-World（5B） 96.3；ABot-World 96.0；InSpatio-World 96.0 | Astronex-World（5B） 96.6；Kairos 3.0 96.3；Cosmos 2.5 96.0 |
+| 动态程度（Dyn） | 光流算画面动得多不多 | Wan 2.7 100.0；Seedance 1.5 99.4；XGEN-Jing（bidirection） 98.7 | Wan 2.7 99.3；Seedance 1.5 98.3；LTX 2.3 94.4 |
+| 流畅度（Smooth） | 动作是否连贯 | InSpatio-World 98.8；HY-Video 1.5 98.7；Astronex-World（5B） 98.4 | HY-Video 1.5 98.8；Astronex-World（5B） 98.5；Cosmos 2.5 98.3 |
+| HPSv3 人类偏好（HPSv3） | 人类偏好打分模型 | LingBot-World（base-camera） 81.4；Enuma（bidirection） 80.4；LongCat-Video 77.6 | LongCat-Video 76.3；Seedance 1.5 72.9；Cosmos3-Super 71.2 |
+| 场景贴合（Scene） | 大模型判：场景元素是否保持、画外描述的东西转过去后是否出现 | Kling 3.0 89.0；Wan 2.7 88.3；Cosmos3-Super 87.4 | Kling 3.0 89.0；Wan 2.7 88.3；Cosmos3-Super 87.4 |
+| 主体贴合（Subj） | 大模型判：主体外观和动作是否符合描述 | XGEN-Jing（4-step AR） 96.6；Cosmos3-Super 95.8；Enuma（bidirection） 95.0 | Wan 2.7 94.6；Seedance 1.5 94.2；Cosmos 2.5 94.2 |
+| 导航轨迹 NavScore（Navi） | 从视频反推相机轨迹，和按键对应的标准轨迹比 | JoyAI-Echo-1.5 (WM)（flash 4-step） 87.9；HY-World 1.5（ar-distill） 86.8；JoyAI-Echo-1.5 (WM)（bidirection） 86.6 | XGEN-Jing（4-step AR） 78.7；XGEN-Jing（bidirection） 75.6；YUME 1.5 72.0 |
+| 事件编辑（EE） | 大模型对每轮问 5 个是/否问题：环境变化发生没、做完没、细节对不对、有没有乱冒东西 | （Navi 不算这项） | Murea-Pro 90.9；XGEN-Jing（4-step AR） 85.6；Wan 2.7 84.0 |
+| 角色动作（SA） | 大模型对每轮问 5 个是/否问题：角色动了没、做完没、细节对不对、动作是否不自然 | （Navi 不算这项） | Murea-Pro 87.0；XGEN-Jing（bidirection） 86.3；Kling 3.0 85.6 |
+| 视角切换（PS） | 大模型问 3 个问题，全对才得分：看得出切换吗、切到目标视角了吗、新视角构图对吗 | （Navi 不算这项） | Murea-Pro 80.7；XGEN-Jing（4-step AR） 69.4；XGEN-Jing（bidirection） 61.3 |
+| 背景一致（BgCon） | 背景区域前后像不像 | LingBot-World（base-camera） 96.9；LongCat-Video 95.1；InSpatio-World 95.0 | LongCat-Video 94.7；Kling 3.0 92.7；HY-Video 1.5 92.4 |
+| 空间一致（Spat） | 走一圈回到起点时，和第一帧像不像 | InSpatio-World 93.8；LingBot-World（base-camera） 92.7；JoyAI-Echo-1.5 (WM)（bidirection） 90.7 | XGEN-Jing（bidirection） 87.4；LongCat-Video 83.3；HY-Video 1.5 79.2 |
+| 门控空间一致（GSp） | 同上，但画面几乎不动的扣分（防止静止刷分） | XGEN-Jing（bidirection） 87.2；Lyra 2.0（4-step AR） 86.3；HY-World 1.5（ar-distill） 84.9 | XGEN-Jing（bidirection） 87.2；XGEN-Jing（4-step AR） 77.8；Astronex-World（5B） 76.0 |
+| 视角一致（Persp） | 主体在画面里的位置稳不稳 | LingBot-World（base-camera） 90.9；HY-Video 1.5 86.6；AlayaWorld 86.6 | HY-Video 1.5 86.6；Cosmos 2.5 84.3；LongCat-Video 81.5 |
+| 片段连续（Seg） | 有没有突然跳镜头 | Alaya-EVOKE-Turbo（3-step） 100.0；Alaya-EVOKE（3-step） 100.0；HelixWorld（4-step AR） 100.0 | HY-Video 1.5 99.3；YUME 1.5 99.3；LongCat-Video 98.6 |
+| 几何一致（Geo） | 深度重投影误差 | InSpatio-World 97.3；Cosmos3-Super 95.5；LingBot-World（base-camera） 95.4 | Cosmos3-Super 95.3；Cosmos3-Nano 95.1；LongCat-Video 94.7 |
+| 光度一致（Photo） | 像素重投影误差 | Astra 87.5；InSpatio-World 87.4；Infinite-World 85.1 | Cosmos3-Nano 85.1；Cosmos3-Super 84.3；YUME 1.5 84.1 |
+| 主体一致（SubjC） | 主体前后像不像 | InSpatio-World 94.4；LingBot-World（base-camera） 93.5；AlayaWorld 93.4 | LongCat-Video 92.4；Cosmos 2.5 91.8；HY-Video 1.5 91.5 |
+| 视觉合理性（VPlaus） | 专门微调的 Qwen3-VL 打分：整体看着真不真 | LingBot-World（base-camera） 64.8；InSpatio-World 63.1；Enuma（bidirection） 62.5 | Cosmos3-Super 61.2；XGEN-Jing（bidirection） 61.1；LongCat-Video 60.8 |
+| 因果正确性（CFid） | 大模型按 0–3 分判物理因果（50 道题还会按指定的物理类别细评） | Helios（Distilled） 94.4；Zing-0.5（4-step 5B realtime） 86.7；Alaya-EVOKE-Turbo（3-step） 86.1 | Helios（Distilled） 94.4；Murea-Pro 88.7；XGEN-Jing（bidirection） 85.6 |
+
+### 四、题库里的全部题型和分类（官网没有单独排名的，标「无单独榜」）
+
+下面数字是我把 HuggingFace 上 289 个题目 JSON 逐个统计出来的。
+
+| 分类 | 测什么 | 题数 / 轮数 | 谁能做 | 用到的指标 | 有没有排名 / 前三 |
+| --- | --- | --- | --- | --- | --- |
+| **导航** navigation | 按 W/A/S/D、方向键（及组合键）移动或转视角 | 158 题 / 601 轮 | 文字/相机/按键 | 导航轨迹 NavScore；绕圈类题还算空间一致 | Navi 榜「导航轨迹」列：JoyAI-Echo-1.5 (WM)（flash 4-step） 87.9；HY-World 1.5（ar-distill） 86.8；JoyAI-Echo-1.5 (WM)（bidirection） 86.6 |
+| **角色动作** subject action | 让角色做一个动作（开龙头、跳、挥剑…） | 76 题 / 213 轮 | 只有文字控制 | 角色动作 SA | Full 榜 SA 列：Murea-Pro 87.0；XGEN-Jing（bidirection） 86.3；Kling 3.0 85.6 |
+| **事件编辑** event edit | 让环境发生变化（下雨、野马出现、爆炸…） | 65 题 / 183 轮 | 只有文字控制 | 事件编辑 EE | Full 榜 EE 列：Murea-Pro 90.9；XGEN-Jing（4-step AR） 85.6；Wan 2.7 84.0 |
+| **视角切换** perspective switch | 第一人称 ↔ 第三人称、进出瞄准镜、换跟拍对象 | 31 题 / 61 轮 | 只有文字控制 | 视角切换 PS | Full 榜 PS 列：Murea-Pro 80.7；XGEN-Jing（4-step AR） 69.4；XGEN-Jing（bidirection） 61.3 |
+| 导航 · 往返（roundtrip） | 走过去再原路退回，测回到看过的地方还一不一样 | 50 题 | 文字/相机/按键 | 同导航 | 无单独榜（只在论文里分析） |
+| 导航 · 递进（progressive） | 连续换几个方向、不回头，测往新区域延伸是否连贯 | 34 题 | 文字/相机/按键 | 同导航 | 无单独榜（只在论文里分析） |
+| 导航 · 重复（repeat） | 同一个键连按，测持续移动稳不稳 | 23 题 | 文字/相机/按键 | 同导航 | 无单独榜（只在论文里分析） |
+| 导航 · L 形（l_shape） | 一次急转弯，测转向时几何是否保持 | 20 题 | 文字/相机/按键 | 同导航 | 无单独榜（只在论文里分析） |
+| 导航 · 闭环（loop） | 走一圈从另一条路回到起点，测全局空间一致 | 20 题 | 文字/相机/按键 | 同导航 | 无单独榜（只在论文里分析） |
+| 导航 · 之字（zigzag） | 左右来回切换，测快速换向时场景稳不稳 | 11 题 | 文字/相机/按键 | 同导航 | 无单独榜（只在论文里分析） |
+| 导航按键分布 | 单键 W/S/A/D/left/right/up/down + 组合键 W+A、W+D、S+D、W+left、W+right、W+up、W+down | W 150、right 92、left 73、A 72、S 72、D 61、up 21、down 17、W+down 12、W+up 10、W+left 6、W+right 6、W+A 4、S+D 3、W+D 2（轮数） | — | — | 无单独榜 |
+| 视角切换 · fp_to_tp | 第一人称 → 第三人称 | 16 轮 | 只有文字控制 | PS | 无单独榜 |
+| 视角切换 · tp_to_fp | 第三人称 → 第一人称 | 16 轮 | 只有文字控制 | PS | 无单独榜 |
+| 视角切换 · fp_to_scope | 第一人称 → 瞄准镜 | 6 轮 | 只有文字控制 | PS | 无单独榜 |
+| 视角切换 · scope_to_fp | 瞄准镜 → 第一人称 | 6 轮 | 只有文字控制 | PS | 无单独榜 |
+| 视角切换 · tp_to_tp | 第三人称换跟拍对象（如前锋 → 门将） | 9 轮 | 只有文字控制 | PS | 无单独榜 |
+| 视角切换 · fp_to_fp | 第一人称换成另一个人的眼睛（如前排 → 后排划桨手） | 8 轮 | 只有文字控制 | PS | 无单独榜 |
+| 角色动作 · 子类 | 论文写 5 类：手部操作、使用工具、身体移动、格斗、手势/社交；官网统计写 4 类：Locomotion、Manipulation、Tool Use、NPC 各 19 | 官网合计 76 题（和数据里有 SA 指标的 76 题对得上） | 只有文字控制 | SA | 无单独榜。⚠️ 题目 JSON 里没有子类标签，论文和官网分法不一致 |
+| 事件编辑 · 子类 | 论文写 6 类：环境变化、外观/状态变化、NPC 出现、机械变化（吊桥放下等）、物理效果（爆炸、坍塌）、自然现象；官网统计写 5 类：Environment 21、Appearance 20、Obj.Mech 19、Obj.Phys 16、Obj.Natural 12 | 官网合计 88，数据里有 EE 指标的是 65 题 | 只有文字控制 | EE | 无单独榜。⚠️ 同上，没有子类标签，数字也对不上 |
+| 题目里的交互组合 | 一道题里混了哪几种交互 | 纯导航 149；纯角色动作 43；事件 + 角色动作 30；纯视角切换 30；纯事件编辑 28；导航 + 事件 6；导航 + 角色动作 2；四种全有 1 | 含导航的进 Navi，其余只在 Full | — | 无单独榜 |
+| 视角：第一 / 第三人称 | 第一人称按键=镜头动；第三人称按键=角色动、方向键=镜头绕角色转 | 第一人称 178、第三人称 111 | — | — | HuggingFace 有 first_person / third_person 两个数据切分，但官网无单独榜 |
+| 画风：写实 / 风格化 | 起始图是照片风还是插画、动画、水墨等风格 | 写实 150、风格化 139 | — | — | 无单独榜 |
+| 场景 6 类 | 自然、城市、室内、工作场所、奇幻、体育/游戏 | Nature 89；Urban 61；Indoor 47；Workspace 40；Fantasy 29；Sports/Game 23 | — | — | 无单独榜 |
+| 主体类型 | 人、动物、机器人、载具、其他/无（第一人称多为无） | human 126；unknown 94；other 20；animal 18；robot 17；vehicle 14 | — | — | 无单独榜 |
+| 轮数（单轮 vs 多轮） | 一道题有几轮操作 | 1 轮 1 题；2 轮 67 题；3 轮 39 题；4 轮 148 题；5 轮 16 题；6 轮 8 题；8 轮 4 题；9 轮 6 题 | — | — | 无单独榜；只有 1 道单轮题（182） |
+| 只在部分题上算的指标 | 空间一致 / 门控空间一致：只在绕回起点的导航题上算；因果正确性的细评：50 道题指定了物理类别（流体、碰撞、表面痕迹、形变、风、反射、人体动作）；主体/视角一致：有主体遮罩的题 | 空间一致 60 题；因果细评 50 题；主体/视角一致 188 题；场景贴合 158 题；主体贴合 111 题 | — | — | 这些对应官网 Spat / GSp / CFid / SubjC / Persp 列，前三见上面第三张表 |
+
+
+---
+
+## 题目示例（官方原题）
+
+> 全部来自 HuggingFace 官方数据集 `meituan-longcat/WBench` 的 `cases/case_<id>.json` 和 `images/case_<id>.jpg`，一字没改；中文是我翻译的。「文字模型实际收到」那一列是官方代码 `src/models/text/prompt_builder.py` 里按键到文字的映射（第 1 轮前面还会拼上场景、角色、视角三段描述）。相机/按键模型收到的是同一个按键，由官方代码换算成相机轨迹或键盘信号。
+
+### 例 1：导航 · 递进（progressive）
+
+case 1 · 第三人称 · 风格化 · 场景 Urban/city_street · 导航类型 递进 · 4 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_1.json)
+
+![case 1 起始图](img/case_1.jpg)
+
+- **场景**：A modern city street in clear daylight. A broad asphalt road with cracked pavement, lined on both sides with storefronts including Cafe Luna, a bookstore, and City Deli with colorful awnings. Parked cars — including a blue sedan — sit along the curbs. Traffic lights, power lines, and mid-rise brick and concrete buildings frame the view. A signalized intersection lies farther ahead with light urban traffic. Occasionally a distant vehicle passes through the intersection. A yellow school bus drives past on the road from behind, overtaking the viewpoint.
+  - 中文：现代城市街道，晴朗白天。宽阔的柏油路面有裂缝，两侧是店面，包括 Cafe Luna、一家书店和挂着彩色雨篷的 City Deli。路边停着车，其中有一辆蓝色轿车。红绿灯、电线、中层砖混楼房框住画面。前方远处是一个有信号灯的路口，车流不多。偶尔有远处的车辆穿过路口。一辆黄色校车从后方驶来，超过视点。
+- **角色**：A medium-sized Shiba Inu with tan-and-cream fur, a curled tail, and an orange harness. Trots forward with a light bouncing gait, paws lifting quickly off the ground.
+  - 中文：一只中等体型的柴犬，棕褐色夹奶油色毛，尾巴卷起，系着橙色胸背带。轻快地小跑向前，爪子迅速离地。
+- **视角**：Third-person view from behind and slightly above the Shiba Inu, following the dog as the central subject.
+  - 中文：第三人称，从柴犬后上方跟拍，柴犬是画面主体。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `W` | 主体向前走，镜头跟随 | The subject moves forward. The camera follows, maintaining distance and framing. |
+| 2 | 导航 | 按键 `right` | 镜头绕主体顺时针转，主体不动 | The camera orbits clockwise around the subject. The subject stays still. |
+| 3 | 导航 | 按键 `right` | 镜头绕主体顺时针转，主体不动 | The camera orbits clockwise around the subject. The subject stays still. |
+| 4 | 导航 | 按键 `left` | 镜头绕主体逆时针转，主体不动 | The camera orbits counterclockwise around the subject. The subject stays still. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 主体贴合：大模型判主体外观、动作是否符合描述
+  - 「画外」检查：转过去后应该看到——偶尔有远处的车辆穿过路口。一辆黄色校车从后方驶来，超过视点。
+
+### 例 2：导航 · 往返（roundtrip）
+
+case 87 · 第一人称 · 风格化 · 场景 Indoor/retro_arcade · 导航类型 往返 · 4 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_87.json)
+
+![case 87 起始图](img/case_87.jpg)
+
+- **场景**：A retro 1980s arcade with rows of colorful game cabinets including Pac-Man and Space Invaders machines with glowing screens. Neon strip lights in pink and blue glow on the dark ceiling. Black-and-white checkered floor tiles. A prize counter with illuminated shelves sits in the back. Vivid neon-lit atmosphere. To the left, a row of pinball machines with flashing bumper lights stands along the wall, next to a claw crane machine filled with plush toys. To the right, an air hockey table glows under overhead blue neon, and a change machine with a coin slot is mounted on the wall near the restroom entrance.
+  - 中文：1980 年代复古游戏厅，一排排彩色街机，包括屏幕发光的吃豆人和太空侵略者。天花板昏暗，粉色和蓝色霓虹灯带发光。黑白棋盘格地砖。后方是带灯光货架的奖品柜台。霓虹氛围浓烈。左边靠墙一排弹珠台闪着灯，旁边是装满毛绒玩具的抓娃娃机。右边一张桌上冰球台在蓝色霓虹下发光，靠近洗手间入口的墙上装着带投币口的换币机。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person view at standing eye level looking across the arcade floor toward the game cabinets and prize counter. No held objects.
+  - 中文：第一人称，站立视线高度，看向游戏厅里的街机和奖品柜台。手里不拿东西。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `A` | 镜头左移 | The camera moves to the left. |
+| 2 | 导航 | 按键 `A` | 镜头左移 | The camera moves to the left. |
+| 3 | 导航 | 按键 `D` | 镜头右移 | The camera moves to the right. |
+| 4 | 导航 | 按键 `D` | 镜头右移 | The camera moves to the right. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 空间一致：最后回到起点那一帧和第一帧像不像
+  - 门控空间一致：同上，但画面几乎没动的要扣分
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 「画外」检查：转过去后应该看到——视野左侧外：靠墙一排闪着灯的弹珠台，旁边是装满毛绒玩具的抓娃娃机。视野右侧外：蓝色霓虹下发光的桌上冰球台，靠近洗手间入口的墙上有带投币口的换币机。
+
+### 例 3：导航 · 重复（repeat）
+
+case 3 · 第三人称 · 写实 · 场景 Sports/Game/olympic_stadium · 导航类型 重复 · 4 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_3.json)
+
+![case 3 起始图](img/case_3.jpg)
+
+- **场景**：A modern Olympic stadium under a clear blue sky. A red synthetic running track with white lane markings stretches ahead. A standard track hurdle with a white bar and red-white striped top stands about 3 meters ahead. Rows of empty grey stadium seating rise on both sides. An electronic scoreboard is mounted above the far stands. A green grass infield is visible to the side. Bright midday sunlight illuminates the entire arena. Further down the lane, two more identical hurdles are spaced at regulation intervals along the straight track. Beyond the final hurdle, the finish line is marked with a white stripe across all lanes. On the far side of the infield, a high-jump mat and standards are set up near the curve. A water station table with plastic cups sits along the outer edge of the track near the far turn.
+  - 中文：晴朗蓝天下的现代奥运体育场。红色塑胶跑道和白色分道线向前延伸。前方约 3 米有一个标准跨栏，白色横杆、红白条纹顶。两侧是一排排空着的灰色看台。远端看台上方挂着电子记分牌。侧面可见绿色草地内场。正午阳光照亮整个场馆。跑道更远处还有两个相同的跨栏按规定间距摆放。最后一个跨栏之后是横跨所有跑道的白色终点线。内场另一侧弯道附近摆着跳高垫和跳高架。远端弯道外侧有一张放塑料杯的补水桌。
+- **角色**：A lean male athlete in a dark navy t-shirt, black running shorts, black compression calf sleeves, and orange-soled running shoes. Sprints and leaps over hurdles with a lead-leg hurdling technique.
+  - 中文：一名精瘦的男运动员，深海军蓝 T 恤、黑色跑步短裤、黑色小腿压缩套、橙色鞋底跑鞋。冲刺并用攻栏腿技术跨栏。
+- **视角**：Third-person view from directly behind the athlete at roughly waist height, following him as the central subject on the track.
+  - 中文：第三人称，从运动员正后方大约腰部高度跟拍，他是跑道上的画面主体。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `W` | 主体向前走，镜头跟随 | The subject moves forward. The camera follows, maintaining distance and framing. |
+| 2 | 导航 | 按键 `W` | 主体向前走，镜头跟随 | The subject moves forward. The camera follows, maintaining distance and framing. |
+| 3 | 导航 | 按键 `W` | 主体向前走，镜头跟随 | The subject moves forward. The camera follows, maintaining distance and framing. |
+| 4 | 导航 | 按键 `W` | 主体向前走，镜头跟随 | The subject moves forward. The camera follows, maintaining distance and framing. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 主体贴合：大模型判主体外观、动作是否符合描述
+  - 因果正确性：大模型按 0–3 分判物理，这道题还会按指定物理类别细评
+  - 物理细评类别：碰撞/穿模、人体动作
+  - 「画外」检查：转过去后应该看到——跑道更远处还有两个相同的跨栏；最后一个跨栏之后是白色终点线；内场另一侧弯道附近有跳高垫和跳高架；远端弯道外侧有放塑料杯的补水桌。
+
+### 例 4：导航 · L 形（l_shape）
+
+case 44 · 第三人称 · 风格化 · 场景 Urban/european_alley · 导航类型 L 形 · 4 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_44.json)
+
+![case 44 起始图](img/case_44.jpg)
+
+- **场景**：A quiet narrow European cobblestone alley in warm afternoon light. Weathered grey cobblestone pavement stretches between old stone and plaster buildings on both sides. Wooden shutters, wrought-iron balconies, and flower pots with colorful blooms adorn the windows and doorways. The alley narrows ahead. Warm golden Mediterranean afternoon sunlight illuminates the scene from the right side. To the left, a narrow side passage between the buildings opens onto a small courtyard with a ceramic-tiled fountain. A rusted bicycle with a wicker basket leans against the wall beside a green wooden door. Further ahead, laundry on a line stretches between opposing balconies overhead.
+  - 中文：一条安静狭窄的欧洲鹅卵石小巷，午后暖光。风化的灰色鹅卵石路夹在两侧老旧的石砌和抹灰建筑之间。窗户和门口装饰着木百叶窗、铁艺阳台和开着彩色花的花盆。小巷前方变窄。温暖的金色地中海午后阳光从右侧照来。左边，两栋楼之间有一条窄侧道通向一个带彩瓷喷泉的小庭院。一辆生锈的、带藤编车筐的自行车靠在一扇绿色木门旁的墙上。再往前，头顶两侧阳台之间拉着晾衣绳。
+- **角色**：An orange tabby cat with white paws and a bushy upright tail. It walks forward with a confident stride on the cobblestones, seen from behind.
+  - 中文：一只橘色虎斑猫，白爪子，尾巴蓬松竖起。从背后看，它迈着自信的步子走在鹅卵石上。
+- **视角**：Third-person view from behind and slightly above the cat, following the orange tabby as the central subject walking along the cobblestone alley.
+  - 中文：第三人称，从猫的后上方跟拍，橘猫沿小巷行走，是画面主体。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `W` | 主体向前走，镜头跟随 | The subject moves forward. The camera follows, maintaining distance and framing. |
+| 2 | 导航 | 按键 `W` | 主体向前走，镜头跟随 | The subject moves forward. The camera follows, maintaining distance and framing. |
+| 3 | 导航 | 按键 `A` | 主体向左移，镜头跟着左移 | The subject moves to the left. The camera tracks left, keeping the subject centered. |
+| 4 | 导航 | 按键 `A` | 主体向左移，镜头跟着左移 | The subject moves to the left. The camera tracks left, keeping the subject centered. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 主体贴合：大模型判主体外观、动作是否符合描述
+  - 「画外」检查：转过去后应该看到——左边一条窄侧道通向带彩瓷喷泉的小庭院；一辆生锈的藤筐自行车靠在绿色木门旁；再往前头顶阳台间拉着晾衣绳。
+
+### 例 5：导航 · 闭环（loop）
+
+case 179 · 第一人称 · 写实 · 场景 Urban/night_market · 导航类型 闭环 · 4 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_179.json)
+
+![case 179 起始图](img/case_179.jpg)
+
+- **场景**：A bustling Southeast Asian night market at dusk. A narrow lane flanked by food stalls on both sides, draped with colorful tarpaulins and strings of warm yellow light bulbs. Clouds of white steam and smoke rise from sizzling woks, charcoal grills, and boiling pots. Vendors lean over counters serving customers. Locals and tourists squeeze through the crowded aisle. The ground is wet from recent rain, reflecting the warm glow of the lights. On the left, a stall with skewered satay over glowing coals. On the right, a fruit stall with neatly arranged tropical fruits on crushed ice. Ahead, the lane continues deeper into the market where more stalls sell noodle soup and grilled seafood, with hanging Chinese lanterns overhead. To the left, side alleys branch off toward textile vendors and trinket shops. To the right, a narrow gap between stalls reveals parked motorbikes and stacked plastic crates. Behind the viewer, the market entrance opens onto a main road with passing tuk-tuks and neon signage.
+  - 中文：黄昏时热闹的东南亚夜市。一条窄巷两侧是小吃摊，挂着彩色篷布和一串串暖黄灯泡。滋滋作响的炒锅、炭烤架和沸腾的汤锅冒出白色蒸汽和烟。摊主俯身在柜台前招呼客人。本地人和游客挤在过道里。地面刚下过雨还湿着，映着暖色灯光。左边一个摊位在炭火上烤沙爹串。右边一个水果摊，热带水果整齐摆在碎冰上。前方小巷继续深入市场，更多摊位卖汤面和烤海鲜，头顶挂着中式灯笼。左边有小岔巷通向布料摊和小饰品店。右边摊位之间的窄缝里能看到停着的摩托车和堆起来的塑料箱。观察者身后，市场入口通向一条大路，有突突车经过和霓虹招牌。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person perspective, standing head-height camera in the middle of the crowded market aisle, looking forward through the bustling crowd. No character body visible.
+  - 中文：第一人称，站在拥挤的市场过道中间，镜头在头部高度，透过熙攘人群向前看。看不到角色身体。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `W` | 镜头前推 | The camera pushes forward. |
+| 2 | 导航 | 按键 `A` | 镜头左移 | The camera moves to the left. |
+| 3 | 导航 | 按键 `D` | 镜头右移 | The camera moves to the right. |
+| 4 | 导航 | 按键 `S` | 镜头后拉 | The camera pulls back. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 空间一致：最后回到起点那一帧和第一帧像不像
+  - 门控空间一致：同上，但画面几乎没动的要扣分
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 「画外」检查：转过去后应该看到——炒锅也冒出白色蒸汽和烟；前方小巷深处卖汤面和烤海鲜，头顶挂中式灯笼；左边岔巷通向布料摊和饰品店；右边摊位缝隙里是摩托车和塑料箱；身后市场入口外是大路、突突车和霓虹招牌。
+
+### 例 6：导航 · 之字（zigzag）
+
+case 31 · 第三人称 · 写实 · 场景 Nature/snowy_field · 导航类型 之字 · 4 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_31.json)
+
+![case 31 起始图](img/case_31.jpg)
+
+- **场景**：A wide open snowy field in winter. The snow surface is deep white with bicycle tire tracks visible on the surface. A weathered wooden fence post with barbed wire stands to the right near the edge of the field. Snow-covered coniferous trees line the distant horizon. The sky is heavily overcast with grey clouds. Cold, muted winter light with no direct sun. To the left beyond the field edge, a frozen creek bed cuts a shallow depression through the snow, with bare willow branches arching over it. A small red wooden barn with a snow-laden roof is partially visible among the distant tree line to the far right.
+  - 中文：冬天一大片开阔的雪地。雪面洁白深厚，上面有自行车胎印。右边靠近田边有一根挂着铁丝网的风化木桩。远处地平线上是积雪的针叶林。天空阴沉，灰云密布。寒冷、暗淡的冬日光线，没有直射阳光。田地左边外侧，一条结冰的小溪河床在雪地里形成浅凹，光秃的柳枝拱垂在上面。远处右侧树林里隐约可见一座屋顶积雪的红色小木谷仓。
+- **角色**：A person in a dark black puffy winter jacket, black pants, dark grey beanie hat, and dark gloves, riding a grey fat-tire bicycle through deep snow. Seen from behind, pedaling forward.
+  - 中文：一个人穿深黑色羽绒服、黑裤子、深灰毛线帽和深色手套，骑着一辆灰色胖胎自行车穿过深雪。从背后看，正在向前蹬车。
+- **视角**：Third-person view from directly behind and slightly above the cyclist, following the rider as the central subject across the snowy field.
+  - 中文：第三人称，从骑车人正后方稍高处跟拍，骑车人是穿过雪地的画面主体。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `W+A` | 主体斜向左前走，镜头沿同一斜线跟随 | The subject moves diagonally forward-left. The camera follows along the same diagonal. |
+| 2 | 导航 | 按键 `W+D` | 主体斜向右前走，镜头沿同一斜线跟随 | The subject moves diagonally forward-right. The camera follows along the same diagonal. |
+| 3 | 导航 | 按键 `W+A` | 主体斜向左前走，镜头沿同一斜线跟随 | The subject moves diagonally forward-left. The camera follows along the same diagonal. |
+| 4 | 导航 | 按键 `W+D` | 主体斜向右前走，镜头沿同一斜线跟随 | The subject moves diagonally forward-right. The camera follows along the same diagonal. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 主体贴合：大模型判主体外观、动作是否符合描述
+  - 因果正确性：大模型按 0–3 分判物理，这道题还会按指定物理类别细评
+  - 物理细评类别：表面痕迹、人体动作
+  - 「画外」检查：转过去后应该看到——雪面上有自行车胎印；田地左边外侧有结冰的小溪河床和拱垂的柳枝；远处右侧树林中有一座屋顶积雪的红色小谷仓。
+
+### 例 7：导航 + 物理细评（碰撞、反射）
+
+case 45 · 第三人称 · 写实 · 场景 Sports/Game/basketball_court · 导航类型 往返 · 4 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_45.json)
+
+![case 45 起始图](img/case_45.jpg)
+
+- **场景**：An outdoor basketball court on a sunny afternoon. Textured grey concrete surface with painted white court lines. A basketball hoop with a metal backboard stands in the background. A chain-link fence surrounds the court with green trees beyond. Blue sky with white clouds overhead. Strong sunlight illuminates the scene. To the left along the fence, a metal bench with a few water bottles and a crumpled towel sits courtside. Beyond the current view at the far opposite end of the court, a second basketball hoop stands. Outside the fence to the right, beyond the current view, a parked bicycle and a small grassy area with a park trash can sit.
+  - 中文：晴朗午后的室外篮球场。有纹理的灰色水泥地面，画着白色场线。背景里立着一个金属篮板的篮筐。球场四周是铁丝网围栏，外面是绿树。蓝天白云。阳光强烈。左边沿着围栏有一张金属长椅，上面放着几瓶水和一条皱毛巾。当前视野之外、球场另一端还有第二个篮筐。围栏右边外侧、当前视野之外，停着一辆自行车，旁边一小块草地上有个公园垃圾桶。
+- **角色**：A standard orange Spalding basketball with black seam lines, resting on the concrete court surface. It bounces forward in repeated arcs, each bounce slightly lower than the previous one.
+  - 中文：一个标准的橙色斯伯丁篮球，黑色缝线，静止放在水泥地上。它向前一跳一跳地弹跳，每次比上一次略低。
+- **视角**：Third-person ultra-low-angle view almost at ground level, positioned behind the basketball as the central subject, with a pair of red-and-white high-top basketball shoes visible at the right edge of the frame.
+  - 中文：第三人称超低角度，几乎贴地，位于篮球后方，篮球是画面主体；画面右边缘能看到一双红白配色的高帮篮球鞋。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `A` | 主体向左移，镜头跟着左移 | The subject moves to the left. The camera tracks left, keeping the subject centered. |
+| 2 | 导航 | 按键 `A` | 主体向左移，镜头跟着左移 | The subject moves to the left. The camera tracks left, keeping the subject centered. |
+| 3 | 导航 | 按键 `D` | 主体向右移，镜头跟着右移 | The subject moves to the right. The camera tracks right, keeping the subject centered. |
+| 4 | 导航 | 按键 `D` | 主体向右移，镜头跟着右移 | The subject moves to the right. The camera tracks right, keeping the subject centered. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 空间一致：最后回到起点那一帧和第一帧像不像
+  - 门控空间一致：同上，但画面几乎没动的要扣分
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 主体贴合：大模型判主体外观、动作是否符合描述
+  - 因果正确性：大模型按 0–3 分判物理，这道题还会按指定物理类别细评
+  - 物理细评类别：碰撞/穿模、反射/光照
+  - 「画外」检查：转过去后应该看到——左边围栏旁的金属长椅上有几瓶水和一条皱毛巾；球场另一端有第二个篮筐；围栏右侧外有一辆自行车和一小块带垃圾桶的草地。
+
+### 例 8：角色动作 · 两轮
+
+case 230 · 第一人称 · 写实 · 场景 Indoor/kitchen · 导航类型 无导航 · 2 轮 · 只在 Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_230.json)
+
+![case 230 起始图](img/case_230.jpg)
+
+- **场景**：A clean, well-lit modern kitchen. A stainless steel single-basin sink with a tall pull-down faucet turned off. A yellow dish soap bottle and a white hand soap dispenser on the left of the countertop. A small green potted plant on the right. White stone countertop. A mesh strainer basket in the left basin. Below the faucet, a visible drain in the right basin where water will collect. The faucet handle is a single-lever type that rotates to control water flow. A dish drying rack sits further along the countertop to the right.
+  - 中文：干净明亮的现代厨房。不锈钢单槽水池，配一个高的抽拉式水龙头，处于关闭状态。台面左边是一瓶黄色洗洁精和一个白色洗手液瓶。右边一小盆绿植。白色石材台面。左边水槽里有个网状沥水篮。龙头下方右边水槽有个看得见的下水口，水会在那里汇集。龙头是单把手式，转动控制水流。台面更右边放着一个碗碟沥水架。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person perspective, looking downward at the kitchen sink from a standing position, viewer's right hand reaching toward the sink basin.
+  - 中文：第一人称，站着往下看厨房水池，观察者的右手伸向水池。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 角色动作 | Turn on the faucet. | 打开水龙头。 | Turn on the faucet. |
+| 2 | 角色动作 | Turn off the faucet. | 关上水龙头。 | Turn off the faucet. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 角色动作：每轮问 5 个是/否问题（角色是不是没动→应答否；做了吗；做完了吗；细节对吗；动作是否不自然→应答否）
+
+### 例 9：角色动作 · 唯一的单轮题
+
+case 182 · 第一人称 · 写实 · 场景 Workspace/desktop · 导航类型 无导航 · 1 轮 · 只在 Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_182.json)
+
+![case 182 起始图](img/case_182.jpg)
+
+- **场景**：A desktop scene in a home setting. A flat wooden table surface with various loose LEGO Technic pieces scattered around in different sizes and colors: black, red, and grey bricks. An instruction manual booklet, a coffee mug, and a LEGO box are partially visible. A window behind provides soft natural daylight. A wooden chair is in the background. The atmosphere is calm and focused. The table surface below the model provides a hard, flat impact zone where bricks would scatter and bounce upon slamming. Loose LEGO pieces around the edges could be knocked off the table by the force of impact.
+  - 中文：家里的桌面场景。平整的木桌面上散落着各种尺寸和颜色的乐高机械组零件：黑色、红色、灰色积木。说明书、咖啡杯和乐高盒子部分可见。后方的窗户透进柔和自然光。背景里有一把木椅。氛围安静专注。模型下方的桌面是坚硬平整的撞击区，砸下去积木会四散弹跳。桌边散落的乐高零件可能被冲击力震落桌面。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person perspective, seated at desk height. Both of the viewer’s bare hands are visible, holding and lifting a large red LEGO Technic Porsche car model. The camera looks slightly downward at the model and desk surface.
+  - 中文：第一人称，坐在桌前的高度。观察者的两只手都可见，正举起一辆大的红色乐高机械组保时捷车模。镜头略微向下看着车模和桌面。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 角色动作 | Slam the Lego car onto the table. | 把乐高车模狠狠砸到桌上。 | Slam the Lego car onto the table. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 角色动作：每轮问 5 个是/否问题（角色是不是没动→应答否；做了吗；做完了吗；细节对吗；动作是否不自然→应答否）
+
+### 例 10：事件编辑 · 纯事件
+
+case 238 · 第一人称 · 风格化 · 场景 Nature/wheat_field · 导航类型 无导航 · 2 轮 · 只在 Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_238.json)
+
+![case 238 起始图](img/case_238.jpg)
+
+- **场景**：A vast golden wheat field at sunset. The sun setting behind distant mountains with warm golden light. A small dark wooden barn in the middle distance. Clear sky fading to orange at the horizon. Swaying wheat and grass stalks. The open field extends broadly on all sides, with enough space for a wild horse to gallop through the wheat. Above, the sky transitions from sunset orange to deepening blue, with the full dome visible for a nighttime starry sky transition after the sun dips below the mountains.
+  - 中文：日落时一望无际的金色麦田。太阳落向远处山后，洒下温暖金光。中景有一座深色小木谷仓。晴空在地平线处渐变成橙色。麦子和草随风摇曳。开阔的田野向四周延展，足够一匹野马在麦田里奔跑。上方天空从日落橙渐变成深蓝，整个天穹都在画面里，以便太阳落到山后转为夜晚星空。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person perspective, standing eye-level view looking across the wheat field toward the setting sun and mountains.
+  - 中文：第一人称，站立视线高度，越过麦田望向落日和群山。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 事件编辑 | A wild horse appears in the wheat field. | 一匹野马出现在麦田里。 | A wild horse appears in the wheat field. |
+| 2 | 事件编辑 | The sun sets below the horizon and the scene transitions to nighttime with a starry sky. | 太阳落到地平线以下，场景转为满天星斗的夜晚。 | The sun sets below the horizon and the scene transitions to nighttime with a starry sky. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 事件编辑：每轮问 5 个是/否问题（场景是不是没变→应答否；事件发生了吗；做完了吗；细节对吗；有没有冒出无关东西→应答否）
+
+### 例 11：导航 + 事件编辑（爆炸）
+
+case 172 · 第一人称 · 写实 · 场景 Workspace/warehouse · 导航类型 重复 · 2 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_172.json)
+
+![case 172 起始图](img/case_172.jpg)
+
+- **场景**：A dim industrial warehouse aisle with concrete floors dusted with debris and scattered packing foam. Tall metal shelving units line both sides stacked with cardboard boxes, forming a long corridor. Overhead sodium lights cast warm hard shadows. A red propane gas canister lies on the ground near a toppled wooden pallet. Open cardboard boxes and crumpled brown paper are scattered around. A thin haze of dust hangs low near the ground. Behind the viewer, the aisle continues toward a loading dock with a metal roll-up shutter. The area beyond the gas canister contains additional pallets, loose packaging materials, and a fire extinguisher mounted on a wall bracket that could be dislodged by a blast.
+  - 中文：昏暗的工业仓库通道，水泥地面上有碎屑和散落的泡沫包装。两侧是高大的金属货架，堆满纸箱，形成一条长走廊。头顶的钠灯投下暖色硬阴影。一个红色丙烷气罐躺在地上，旁边是一块翻倒的木托盘。打开的纸箱和揉皱的牛皮纸散落四周。地面附近低悬着一层薄薄的灰尘。观察者身后，通道通向一个装有金属卷帘门的装卸平台。气罐后方区域还有更多托盘、散乱的包装材料，以及墙上支架里的灭火器，爆炸可能把它震落。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person perspective, head-height camera aligned to the center of the warehouse aisle, looking straight down the corridor. No character body visible.
+  - 中文：第一人称，镜头在头部高度，对准仓库通道中线，笔直看向走廊深处。看不到角色身体。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `S` | 镜头后拉 | The camera pulls back. |
+| 2 | 事件编辑 | The gas cylinder exploded. | 气罐爆炸了。 | The gas cylinder exploded. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 事件编辑：每轮问 5 个是/否问题（场景是不是没变→应答否；事件发生了吗；做完了吗；细节对吗；有没有冒出无关东西→应答否）
+  - 「画外」检查：转过去后应该看到——观察者身后通道通向装金属卷帘门的装卸平台；气罐后方有更多托盘、散乱包装材料和墙上支架里的灭火器，爆炸可能把它震落。
+
+### 例 12：事件编辑 + 角色动作（5 轮）
+
+case 271 · 第三人称 · 风格化 · 场景 Nature/bamboo_forest · 导航类型 无导航 · 5 轮 · 只在 Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_271.json)
+
+![case 271 起始图](img/case_271.jpg)
+
+- **场景**：A tall bamboo forest in ink wash painting style. Dense bamboo stalks rise on both sides of a stone slab path leading into the distance. Soft diffused light filters through the bamboo canopy above. Misty, tranquil atmosphere with monochrome ink tones. Above the canopy, open sky where dark storm clouds can roll in. The old man carries a folded oil-paper umbrella on his back or at his side. Fallen bamboo leaves litter the edges of the stone path.
+  - 中文：水墨画风格的高大竹林。茂密的竹竿立在一条通向远方的石板路两侧。柔和的散射光透过竹叶顶棚洒下。雾气朦胧、宁静，单色水墨调子。竹梢上方是开阔天空，乌云可以从那里涌来。老人背着或手边带着一把收起的油纸伞。石板路边缘散落着竹叶。
+- **角色**：An elderly man in a grey linen robe, holding a bamboo walking stick. Short grey hair, slightly stooped posture. Seen from behind.
+  - 中文：一位穿灰色亚麻长袍的老人，拄着竹杖。灰色短发，略微驼背。从背后看。
+- **视角**：Third-person behind view, camera positioned behind and slightly above the old man, centered in the lower portion of the frame. The stone path recedes into the bamboo forest ahead.
+  - 中文：第三人称背后视角，镜头在老人后上方，老人位于画面下部中央。石板路向竹林深处延伸。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 事件编辑 | Dark clouds roll in overhead. | 乌云在头顶涌来。 | Dark clouds roll in overhead. |
+| 2 | 事件编辑 | Strong wind hits, bending the bamboo stalks. | 狂风袭来，把竹竿吹弯。 | Strong wind hits, bending the bamboo stalks. |
+| 3 | 事件编辑 | Rain pours down through the bamboo canopy. | 大雨穿过竹叶倾盆而下。 | Rain pours down through the bamboo canopy. |
+| 4 | 角色动作 | The old man opens an oil-paper umbrella. | 老人撑开一把油纸伞。 | The old man opens an oil-paper umbrella. |
+| 5 | 事件编辑 | The wind dies down, bamboo stalks spring back upright. | 风停了，竹竿弹回直立。 | The wind dies down, bamboo stalks spring back upright. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 主体贴合：大模型判主体外观、动作是否符合描述
+  - 事件编辑：每轮问 5 个是/否问题（场景是不是没变→应答否；事件发生了吗；做完了吗；细节对吗；有没有冒出无关东西→应答否）
+  - 角色动作：每轮问 5 个是/否问题（角色是不是没动→应答否；做了吗；做完了吗；细节对吗；动作是否不自然→应答否）
+
+### 例 13：视角切换 · 第一 ↔ 第三人称
+
+case 222 · 第一人称 · 风格化 · 场景 Nature/japanese_garden · 导航类型 无导航 · 2 轮 · 只在 Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_222.json)
+
+![case 222 起始图](img/case_222.jpg)
+
+- **场景**：A serene Japanese garden. A lit stone lantern beside a koi pond with visible fish. A red wooden bridge arching over the pond. Maple trees with vivid red autumn leaves framing the scene. Soft warm afternoon light. Rocks and lush greenery surrounding the water. Behind the viewer, a gravel path leads to a traditional wooden tea house with sliding shoji screens. A bamboo fence and a stone water basin (tsukubai) sit along the garden's edge.
+  - 中文：宁静的日式庭院。锦鲤池旁有一盏点亮的石灯笼，池里能看到鱼。一座红色木桥拱跨池上。秋天鲜红的枫树叶框住画面。午后柔和暖光。水边环绕着石头和茂盛植物。观察者身后，一条碎石小径通向一座带推拉纸门的传统木结构茶室。庭院边缘有竹篱和石制洗手钵（蹲踞）。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person perspective, eye-level standing view looking across the koi pond toward the red bridge.
+  - 中文：第一人称，站立平视，越过锦鲤池看向红桥。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 视角切换 | `fp_to_tp`；题目自带说明：The view switches from first-person to third-person, pulling back to reveal a woman in a deep purple kimono with golden chrysanthemum patterns, hair in a traditional bun with a jade hairpin from behind. | 视角从第一人称切到第三人称，镜头后拉，从背后露出一位身穿深紫色金菊纹和服、盘传统发髻、插玉簪的女子。 | The viewpoint transitions from first-person to third-person, revealing the subject from behind. |
+| 2 | 视角切换 | `tp_to_fp`；题目自带说明：The view switches back to first-person, returning to the character's own eyes. | 视角切回第一人称，回到角色自己的眼睛。 | The viewpoint transitions from third-person to first-person, the camera enters the subject's eyes. |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角切换：问 3 个问题，全答「是」才得分（看得出切换吗；切到目标视角了吗；新视角构图对吗）
+
+### 例 14：视角切换 · 进出瞄准镜
+
+case 206 · 第一人称 · 风格化 · 场景 Urban/ww2_trench · 导航类型 无导航 · 2 轮 · 只在 Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_206.json)
+
+![case 206 起始图](img/case_206.jpg)
+
+- **场景**：Muddy World War II trench with sandbags lining the top. No-man's land ahead is filled with barbed wire, craters, and drifting smoke. Distant tree stumps mark what was once a forest. Overcast grey sky, grim and desolate battlefield atmosphere. Through the telescopic scope at magnification, individual strands of barbed wire, enemy trench parapets, scattered helmets and equipment in the craters, and faint movement of soldiers in the opposing trench line become visible in the haze.
+  - 中文：泥泞的二战战壕，顶部垒着沙袋。前方无人区布满铁丝网、弹坑和飘散的硝烟。远处的树桩说明这里曾是森林。灰暗阴天，战场气氛阴郁荒凉。通过放大的瞄准镜，可以在雾霾中看到一根根铁丝网、敌方战壕胸墙、弹坑里散落的头盔和装备，以及对面战壕线里士兵的隐约动静。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person view from within the trench, looking over the sandbags toward no-man's land. Hands hold a Kar98k bolt-action sniper rifle with a telescopic scope mounted on top.
+  - 中文：第一人称，在战壕里越过沙袋望向无人区。双手握着一支装有瞄准镜的 Kar98k 栓动狙击步枪。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 视角切换 | `fp_to_scope`；题目自带说明：The character aims through the telescopic scope. The view transitions into a circular scope view with crosshair reticle, showing a magnified view of the battlefield ahead. | 角色通过瞄准镜瞄准。画面变成带十字准线的圆形瞄准镜视野，显示放大后的前方战场。 | fp_to_scope |
+| 2 | 视角切换 | `scope_to_fp`；题目自带说明：The character lowers the weapon. The view returns to normal first-person perspective. | 角色放下武器。画面回到正常第一人称视角。 | scope_to_fp |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 视角切换：问 3 个问题，全答「是」才得分（看得出切换吗；切到目标视角了吗；新视角构图对吗）
+
+### 例 15：视角切换 · 第三人称换跟拍对象
+
+case 215 · 第三人称 · 写实 · 场景 Sports/Game/soccer_stadium · 导航类型 无导航 · 2 轮 · 只在 Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_215.json)
+
+![case 215 起始图](img/case_215.jpg)
+
+- **场景**：Professional soccer stadium at night under bright floodlights. Lush green pitch with white markings. Packed stands full of roaring spectators. The goal with white netting is visible ahead. Atmospheric haze from the floodlights. From the goalkeeper's viewpoint inside the goal, the entire pitch stretches ahead with the forward in blue jersey #10 dribbling toward the box, defenders in white jerseys scrambling back, the center circle and far goal visible in the distance, and an electronic scoreboard showing 1-1 above the far stand.
+  - 中文：夜晚的职业足球场，灯火通明。翠绿草皮上画着白线。看台座无虚席，观众在欢呼。前方能看到挂白网的球门。灯光下有雾气。从门将在球门里的视角看，整个球场向前铺开：身穿蓝色 10 号球衣的前锋正带球冲向禁区，白衣后卫回追，中圈和远端球门在远处，远端看台上方的电子记分牌显示 1-1。
+- **角色**：A soccer forward in blue jersey #10, dribbling the ball with quick touches. Sprinting with quick dribbling touches.
+  - 中文：一名身穿蓝色 10 号球衣的前锋，用快速触球带球。快速带球冲刺。
+- **视角**：Third-person view from behind and slightly above, camera following the forward as he dribbles toward the goal. Defenders in white jerseys close in from both sides, goalkeeper in yellow stands alert in the goal.
+  - 中文：第三人称，从后上方跟拍前锋带球冲向球门。白衣后卫从两侧逼近，黄衣门将在球门里严阵以待。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 视角切换 | `tp_to_tp: switch to follow a goalkeeper in yellow jersey, crouching in ready position in the goal`；题目自带说明：The third-person camera switches from following a soccer forward in blue jersey #10, dribbling the ball to following a goalkeeper in yellow jersey, crouching in ready position in the goal. | 第三人称镜头从跟拍带球的蓝色 10 号前锋，切换为跟拍在球门里半蹲准备的黄衣门将。 | tp_to_tp: switch to follow a goalkeeper in yellow jersey, crouching in ready position in the goal |
+| 2 | 视角切换 | `tp_to_tp: switch back to follow a soccer forward in blue jersey #10, dribbling the ball`；题目自带说明：The third-person camera switches back to following a soccer forward in blue jersey #10, dribbling the ball. | 第三人称镜头切回跟拍带球的蓝色 10 号前锋。 | tp_to_tp: switch back to follow a soccer forward in blue jersey #10, dribbling the ball |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 主体贴合：大模型判主体外观、动作是否符合描述
+  - 视角切换：问 3 个问题，全答「是」才得分（看得出切换吗；切到目标视角了吗；新视角构图对吗）
+
+### 例 16：视角切换 · 第一人称换人
+
+case 214 · 第一人称 · 写实 · 场景 Nature/forest_river · 导航类型 无导航 · 2 轮 · 只在 Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_214.json)
+
+![case 214 起始图](img/case_214.jpg)
+
+- **场景**：Calm forest river with dense evergreen forests lining both banks. A wooden bridge spans the river in the distance. Crystal-clear water reveals smooth rocks and pebbles on the riverbed. Peaceful, sunlit atmosphere with green reflections on the water surface. From the back paddler's rearward viewpoint, the river stretches back upstream past a gentle bend, with overhanging willow branches dipping into the water, a rocky shallow section they just passed, and a pair of ducks resting near the left bank.
+  - 中文：平静的林间小河，两岸是茂密的常绿林。远处一座木桥横跨河面。清澈的河水下能看到光滑的石头和卵石。阳光明媚，宁静，水面倒映着绿色。从后排划桨手朝后的视角看，河流向上游延伸，经过一个缓弯，柳枝垂入水中，有一段他们刚经过的浅滩乱石，左岸附近有一对鸭子在休息。
+- **角色**：First-person viewer.
+  - 中文：第一人称观察者。
+- **视角**：First-person view from the front seat of a two-person canoe, looking ahead down the river. The canoe bow is visible at the bottom of the frame.
+  - 中文：第一人称，坐在双人独木舟前排，看向前方河道。画面底部能看到船头。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 视角切换 | `fp_to_fp: cut to Back Paddler, now seeing the Front Paddler's back and the river behind (the scenery they just passed)`；题目自带说明：The first-person view switches from Front Paddler, seeing the river ahead and the distant bridge to Back Paddler, now seeing the Front Paddler's back and the river behind (the scenery they just passed). | 第一人称视角从前排划桨手（看到前方河道和远处的桥）切换到后排划桨手（现在看到前排划桨手的背影和身后刚经过的河道风景）。 | fp_to_fp: cut to Back Paddler, now seeing the Front Paddler's back and the river behind (the scenery they just passed) |
+| 2 | 视角切换 | `fp_to_fp: cut back to Front Paddler, seeing the river ahead and the distant bridge`；题目自带说明：The first-person view switches back from Back Paddler, now seeing the Front Paddler's back and the river behind (the scenery they just passed) to Front Paddler, seeing the river ahead and the distant bridge. | 第一人称视角从后排划桨手切回前排划桨手，重新看到前方河道和远处的桥。 | fp_to_fp: cut back to Front Paddler, seeing the river ahead and the distant bridge |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 视角切换：问 3 个问题，全答「是」才得分（看得出切换吗；切到目标视角了吗；新视角构图对吗）
+
+### 例 17：四种交互全有（唯一一道）
+
+case 195 · 第三人称 · 写实 · 场景 Nature/mountain_summit_ridge · 导航类型 重复 · 4 轮 · Navi + Full · [原始 JSON](https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_195.json)
+
+![case 195 起始图](img/case_195.jpg)
+
+- **场景**：A high-altitude snow-covered mountain summit ridge under a clear blue sky with bright sunlight. The narrow ridge path is blanketed in pristine white snow with wind-sculpted textures. To the left, a vast sea of thick white clouds fills the valley below, with distant snow-capped peaks emerging above the cloud layer on the horizon. To the right, the ridge drops steeply with exposed dark rocky outcrops and cornices visible along the edge. The ridge path continues ahead, curving slightly to the right and narrowing toward a higher peak in the distance. Behind the initial viewpoint, the ridge descends toward a lower saddle col with packed bootprints in the snow.
+  - 中文：高海拔积雪山脊顶，晴朗蓝天，阳光明亮。狭窄的山脊路覆盖着洁白积雪，有风吹出的纹理。左边山谷里是一片厚厚的白色云海，远处雪山从云层上探出地平线。右边山脊陡降，边缘露出深色岩石和雪檐。山脊路继续向前，略向右弯并变窄，通向远处更高的山峰。初始视点身后，山脊下降到一个较低的鞍部，雪上有踩实的脚印。
+- **角色**：A mountaineer wearing a bright red hooded down jacket, black climbing pants, black mountaineering boots, and a black backpack with gear loops. The hood is pulled up over a helmet. Moves by walking carefully on the snow ridge.
+  - 中文：一名登山者，穿亮红色连帽羽绒服、黑色登山裤、黑色登山靴，背黑色带装备挂环的背包。兜帽套在头盔外。在雪脊上小心行走。
+- **视角**：Third-person behind view at ridge level, framing the mountaineer as the central subject against the dramatic alpine backdrop of clouds and peaks.
+  - 中文：第三人称背后视角，与山脊同高，登山者是画面主体，背景是云海和群峰的壮观高山景色。
+
+| 轮 | 类型 | 原题 | 中文 | 文字模型实际收到 |
+|---|---|---|---|---|
+| 1 | 导航 | 按键 `W` | 主体向前走，镜头跟随 | The subject moves forward. The camera follows, maintaining distance and framing. |
+| 2 | 角色动作 | Jump. | 跳起来。 | Jump. |
+| 3 | 事件编辑 | A helicopter flew in from the sky. | 一架直升机从天上飞来。 | A helicopter flew in from the sky. |
+| 4 | 视角切换 | `tp_to_tp: switch to follow the helicopter flying over the ridge` | tp_to_tp：切换为跟拍飞越山脊的直升机 | tp_to_tp: switch to follow the helicopter flying over the ridge |
+
+**评分看什么**
+
+- 所有题都算的 11 项：6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性。
+- 这道题额外算：
+  - 视角一致：主体在画面里位置稳不稳
+  - 主体一致：主体前后像不像
+  - 导航轨迹：从视频反推相机轨迹，和按键对应的标准轨迹比
+  - 场景贴合：大模型看第 1 轮，场景元素保没保持（1–5 分）；转过去后，「画外」描述的东西有没有出现（0/1）
+  - 主体贴合：大模型判主体外观、动作是否符合描述
+  - 事件编辑：每轮问 5 个是/否问题（场景是不是没变→应答否；事件发生了吗；做完了吗；细节对吗；有没有冒出无关东西→应答否）
+  - 角色动作：每轮问 5 个是/否问题（角色是不是没动→应答否；做了吗；做完了吗；细节对吗；动作是否不自然→应答否）
+  - 视角切换：问 3 个问题，全答「是」才得分（看得出切换吗；切到目标视角了吗；新视角构图对吗）
+  - 「画外」检查：转过去后应该看到——沿山脊路往前，可以看到其他登山者排成一列走向更高的山峰。
+
 
 ---
 
@@ -191,6 +784,11 @@
 - README 的 TODO 里勾了「托管提交与评测服务」，但提交说明写的是「目前没有自动提交入口，靠邮件」，以提交说明为准。
 - 你们模型的控制接口（按键/相机/文字）我不知道，路线按按键或相机控制的世界模型写的。
 - 「白模」我按游戏行业的灰模/无贴图理解；如果 World500 的世界有完整贴图和光照，第 5 节关于画质的风险会小很多。
+
+- **角色动作 / 事件编辑的子类**：题目 JSON 里没有子类标签。论文写 5 类 + 6 类，官网统计图写 4 类 + 5 类，数字也对不上（官网事件编辑子类合计 88，数据里算事件编辑分的题只有 65 道）。所以子类没法按官方标签各挑一题，示例只按大类和导航轨迹类型挑。
+- **Full 榜谁能参加**：提交说明写相机/按键模型只能上 Navi，但官网 Full 榜现在有 3 个相机模型（XGEN-Jing 两个版本、Astronex-World），可能是这些模型同时支持文字输入，官方没解释。
+- **视角切换题的文字**：题目 JSON 里，fp_to_tp / tp_to_fp 这类题带了更具体的说明（比如「露出穿紫色和服的女子」），但官方参考代码给文字模型的是一句通用话，没用这段说明。各家实际用哪种，不知道。
+- 官网和论文没有按第一/第三人称、写实/风格化、场景类别、轨迹类型分开的排名；HuggingFace 上有 first_person / third_person / non_navi 数据切分，但官方只注册了 navi 和 full 两个评测任务。
 
 ## 来源
 
