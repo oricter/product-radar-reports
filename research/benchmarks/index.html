@@ -91,10 +91,12 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <h3>核心结论</h3>
 <ul>
 <li><strong>白模世界本身不能参加任何一个榜。</strong>所有榜考的都是「模型」，题目固定，交的是模型生成的视频（或机器人策略）。没有一个榜收「自定义环境」。</li>
-<li><strong>白模世界的用处有三个：</strong></li>
+<li><strong>白模世界的用处有三个：</strong><ol>
 <li><strong>训练数据</strong>：精确的相机轨迹、按键记录、物理真值（g、摩擦、碰撞时间）、机械臂末端轨迹。这些真实视频给不了。</li>
 <li><strong>内部模拟考</strong>：照着榜的题型和指标，用白模出一套不重复的私有考题，有精确真值，提交前自查。</li>
 <li><strong>反过来自己做榜</strong>：LIBERO、SimplerEnv、RoboDojo、WorldArena 本身就是「引擎场景 + 自动判分」，和白模世界是同一类东西。实时交互（按键到画面延迟）现在没有任何公开榜覆盖。</li>
+</ol>
+</li>
 </ul>
 <h3>给我们的推荐（按优先级）</h3>
 <blockquote>
@@ -542,9 +544,11 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <ul>
 <li>提示词原文：<code>A bowl of soup is tilted in the space station, with the liquid slowly spreading in all directions.</code></li>
 <li>中文：在空间站里倾斜一碗汤，汤液缓慢地向四面八方散开。</li>
-<li>裁判问题（多模态大模型回答 yes/no）：</li>
+<li>裁判问题（多模态大模型回答 yes/no）：<ul>
 <li><code>Is the background of the video a space station? (yes or no)</code>（背景是空间站吗？）</li>
 <li><code>Does the liquid form floating blobs and spread in all directions? (yes or no)</code>（液体是否形成漂浮的液团并向四周散开？——失重下不该往下流）</li>
+</ul>
+</li>
 <li>两题都答「是」才算这题过。</li>
 </ul>
 <p><strong>怎么提交</strong>：README 给了三种方式：上传自评的 result.json 到排行榜 Space；或把视频交给 VBench 团队评（Silver）；或让团队直接采样（Gold，需提供模型/API）。联系邮箱写在 README 里（ZIQI002@e.ntu.edu.sg）。</p>
@@ -869,10 +873,12 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <p><strong>测什么</strong>：把「生成世界」拆成<strong>按明确相机轨迹的连续下一场景生成</strong>——给一张起始图、一条相机路径（比如先左摇、再左移、再拉远）和每一段的场景描述，模型要一段段生成，镜头走到哪、场景就得变到哪，而且前后得是同一个世界。3D 生成、4D 生成、图生视频、文生视频都能参加。</p>
 <ul>
 <li>题量：静态 2000 + 动态 1000 = <strong>3000 题</strong>。</li>
-<li>指标全自动：</li>
+<li>指标全自动：<ul>
 <li><strong>可控性</strong>：相机控制（用 DROID-SLAM 从生成视频里反算相机轨迹，和指定轨迹比）、物体控制（GroundingDINO+SAM 看要求的物体出没出现）、内容贴合；</li>
 <li><strong>质量</strong>：3D 一致性、光度一致性、风格一致性、主观质量；</li>
 <li><strong>动态</strong>（只算 Dynamic 榜）：运动准确度、运动幅度、运动平滑。</li>
+</ul>
+</li>
 <li>两个总分：<strong>WorldScore-Static</strong>（可控+质量）和 <strong>WorldScore-Dynamic</strong>（再加动态）。</li>
 </ul>
 <p><strong>谁打了（排行榜 35 条，按 Static 排）</strong></p>
@@ -1023,16 +1029,20 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <p><img src="img/worldscore_1280.jpg" class="eximg" alt="WorldScore 1280 起始图"></p>
 <ul>
 <li>相机路径：<code>["pan_left", "move_left", "pull_out"]</code>（向左摇 → 向左平移 → 拉远）</li>
-<li>4 段场景（content_list）：</li>
+<li>4 段场景（content_list）：<ol>
 <li><code>Art Gallery Corridor, wall of framed pictures</code>（美术馆走廊，一面挂满画框的墙）</li>
 <li><code>Outdoor Sculpture Garden, interactive sculpture, stone pathway</code>（户外雕塑园，互动雕塑，石板小路）</li>
 <li><code>Sunlit Garden Reflection Pool, reflection pool, sculptural fountain</code>（阳光花园倒影池，倒影池，雕塑喷泉）</li>
 <li><code>Tranquil Meadow Overlook, meadow of wildflowers, gentle stream</code>（静谧草地观景台，野花草地，潺潺小溪）</li>
-<li>每段提示词（prompt_list）：</li>
+</ol>
+</li>
+<li>每段提示词（prompt_list）：<ol>
 <li><code>In the Art Gallery Corridor, walk through the sleek, modern hallway adorned with a wall of framed pictures extending into the distance.</code>（在美术馆走廊里，穿过时尚现代的走廊，一面挂满画框的墙一直延伸到远处。）</li>
 <li><code>In an Outdoor Sculpture Garden, a vibrant interactive sculpture invites exploration as visitors meander along the winding stone pathway.</code>（户外雕塑园里，一座鲜艳的互动雕塑吸引人探索，游客沿着蜿蜒的石板路漫步。）</li>
 <li><code>Sunlit Garden Reflection Pool: A tranquil reflection pool mirrors the sculptural fountain, casting shimmering patterns as sunlight dances across the water's surface.</code>（阳光花园倒影池：平静的池水倒映着雕塑喷泉，阳光在水面跳动，投下闪烁的光纹。）</li>
 <li><code>In the "Tranquil Meadow Overlook," a vibrant meadow of wildflowers stretches wide as a gentle stream winds gracefully through the lush landscape.</code>（在「静谧草地观景台」，一片绚烂的野花草地铺展开来，一条小溪在葱郁的景色中蜿蜒流过。）</li>
+</ol>
+</li>
 <li>算什么分：每段之间的相机运动是否真的是「左摇 / 左移 / 拉远」（DROID-SLAM 反算）；每段要求的物体（画框墙、雕塑、喷泉、小溪）有没有出现；四段拼起来 3D 结构、光照、Minecraft 风格是否一致；画面主观质量。</li>
 </ul>
 <p><strong>怎么提交</strong>：自己跑开源评测，把 worldscore.json 发邮件给作者（haoyiduan@princeton.edu）；也可以把视频发过去让作者评。</p>
@@ -1416,7 +1426,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>条件图：上图（玩具厨房，640×480）。</li>
 <li>提示词原文（全文）：<code>The video showcases a toy kitchen setup, likely designed for children's play, set on a wooden surface. The scene features a white sink with a central drain, positioned centrally in the frame. To the left of the sink, there is a blue toy stove with two burners; one burner has a silver pot with a lid, while the other burner holds a smaller silver pot. On the right side of the sink, there is an orange toy dish rack containing various colorful plastic kitchen items, including a yellow corn cob. The sequence captures a black robot gripper lifting the smaller silver pot without a lid from the blue toy stove. The pot is lifted upwards, revealing the stove's burner underneath, and then the robot gripper moves and drops the pot into the sink. The background includes additional toy kitchen items, such as a red blender and a bottle of cooking oil, adding to the playful and imaginative setting. The video has a playful and dynamic feel, emphasizing the interaction between the robot gripper and the toy kitchen setup.</code></li>
 <li>中文：视频展示一个放在木桌上的儿童玩具厨房。画面中央是带排水口的白色水槽；水槽左边是有两个灶眼的蓝色玩具灶台，一个灶眼上是带盖的银锅，另一个上是一只更小的银锅；水槽右边是橙色玩具碗架，里面有各种彩色塑料厨具，包括一根黄色玉米。画面记录一只黑色机械夹爪把没盖的小银锅从蓝色灶台上提起来，露出下面的灶眼，然后移动并把锅丢进水槽。背景还有红色搅拌机和一瓶食用油。整体轻松有动感，重点是夹爪和玩具厨房的互动。</li>
-<li>VLM 裁判要回答的 8 道是非题（标准答案）：</li>
+<li>VLM 裁判要回答的 8 道是非题（标准答案）：<ol>
 <li>蓝色玩具灶台在白色水槽左边吗？——是（空间·关系）</li>
 <li>橙色碗架在水槽右边吗？——是（空间·关系）</li>
 <li>黑色夹爪和较小的银锅有接触吗？——是（空间·交互）</li>
@@ -1425,6 +1435,8 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>小银锅看起来是金属的吗？——是（物理·属性）</li>
 <li>黄色玉米一直在橙色碗架里吗？——是（物理·状态）</li>
 <li>小银锅被移到右边后从画面里消失了吗？——<strong>否</strong>（物理·物体恒存）</li>
+</ol>
+</li>
 <li>另外再算 8 个质量指标（一致性、平滑、美学、成像等）。</li>
 </ul>
 <p><strong>怎么提交</strong>：README 只说排行榜在 HF；需要自己跑 evaluate.py（质量）+ evaluate_vqa.py（VLM 裁判）后联系作者。</p>
@@ -1442,11 +1454,13 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <ul>
 <li><strong>没有一个专门的「实时视频生成排行榜」</strong>：现在没有哪个榜按 FPS / 延迟排名次、并把硬件统一起来。查了 WBench、WorldMark、WorldRoam-Bench、Artificial Analysis、VBench、MLPerf、Physics-IQ Verified，以及 2025–2026 年的流式/实时论文，都不是。</li>
 <li><strong>最接近的是 StreamAV-Bench</strong>（智源 + 北大，2026-08）：第一个专门测「流式」生成的评测，有 Hugging Face 排行榜，给 13 个系统量了 <strong>FPS</strong> 和<strong>首段延迟（TTFC）</strong>，还测了「中途改指令，画面多久能跟上」。但它考的是<strong>带声音的视频</strong>，而且只排质量和交互，速度只是列出来，不参与排名。官网和 README 都没写怎么提交。</li>
-<li><strong>另外 4 个榜会附带速度数据，但都不按速度排名</strong>：</li>
+<li><strong>另外 4 个榜会附带速度数据，但都不按速度排名</strong>：<ul>
 <li><strong>WBench</strong>：论文附录有「生成耗时 ÷ 视频时长」，本地模型统一在 1 张 A100 80G 上测；提交时如果要打 <code>realtime</code> 标签，必须在邮件里写清硬件、分辨率和实测速度。</li>
 <li><strong>WorldRoam-Bench</strong>：论文表 2 有生成速度（帧/秒）和按分辨率折算的 MPPS，统一在 1 张 H20 上测。</li>
 <li><strong>Artificial Analysis</strong>：有「端到端生成耗时」和「每分钟视频价格」，但只测 API 模型，生成一条要 7–270 秒，跟实时差得远。</li>
 <li><strong>Physics-IQ Verified</strong>：有成本前沿图（每条视频成本按 24 fps、1280 宽折算），成本是提交方在 <code>submission.yaml</code> 里自己填的。</li>
+</ul>
+</li>
 <li><strong>WorldMark 的「Response Latency」不是计算速度</strong>：它测的是视频里「按下新键后，画面过多久才开始转向」，分数 0–100。真正的实时延迟它不测。</li>
 <li><strong>所以真要比速度，现在只能看各家自报的数，加上上面几个榜附带的第三方实测</strong>。差距很大：同一个 Matrix-Game 3.0，自报「720p 最高 40 FPS」（用 8 卡跑 DiT + 1 卡跑 VAE）；WorldRoam 在 1 张 H20 上只测到 5.34 帧/秒（原生 17 fps）。</li>
 </ul>
@@ -2299,9 +2313,11 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>首帧：上图（RoboTwin 仿真双臂工作台，320×240 缩略）。</li>
 <li>主指令原文：<code>In a fixed robotic workspace, generate a rigid, physically consistent embodied robotic arm. The arm maintains high stability with no deformation and enters the frame to Pick the yellow hamburg box with white accents, then the Handheld fries pack bright red color, and place them on the bright orange tray with glossy finish.</code></li>
 <li>中文：在固定的机器人工作台上，生成刚性、物理一致的机械臂。机械臂保持稳定、不变形，进入画面后先拿起带白色装饰的黄色汉堡盒，再拿起亮红色手持薯条袋，把它们放到亮橙色的光面托盘上。</li>
-<li>同一首帧还配了两条<strong>反事实指令</strong>（考指令跟随，看模型是不是只会复现训练轨迹）：</li>
+<li>同一首帧还配了两条<strong>反事实指令</strong>（考指令跟随，看模型是不是只会复现训练轨迹）：<ul>
 <li>instructions_1：<code>…Pick up the yellow hamburg box using the right arm and move it to the left side of the table; afterwards, grab the bright blue fries pack instead and slide it towards the far end of the workspace, away from the tray.</code>（用右臂拿起黄色汉堡盒移到桌子左边；然后改拿亮蓝色薯条袋，把它推到工作台远端、远离托盘。）</li>
 <li>instructions_2：<code>…Using the left arm, pick the bright red fries pack first and carry it in a zigzag path across the surface, then place both items—first the yellow hamburg box, and then the bright blue fries pack—inside the dark green basket.</code>（用左臂先拿红色薯条袋，沿之字形路线移动，再把两样东西——先汉堡盒、后蓝色薯条袋——放进深绿色篮子。）</li>
+</ul>
+</li>
 <li>动作版输入：240 步 × 14 维关节向量（左臂 6 关节 + 夹爪、右臂 6 关节 + 夹爪）。</li>
 <li>算什么分：15 个指标——画质、动态、一致性、机械臂和物体的交互是否合理、末端轨迹是否准确、深度/透视是否对、是否按指令（包括反事实指令）做。赛道 2 再看：用这些生成视频训出来的策略在仿真里成功率多少。</li>
 </ul>
