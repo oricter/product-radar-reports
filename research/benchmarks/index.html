@@ -100,7 +100,8 @@ td a{word-break:normal;overflow-wrap:anywhere}
 </ul>
 <h3>给我们的推荐（按优先级）</h3>
 <blockquote>
-<p><strong>已确认：我们的模型支持按键控制（WASD 类）和文字指令控制，没有相机轨迹控制。</strong>下面按「按键 + 文字」重新排序。</p>
+<p><strong>已确认：我们的模型支持三种控制——WASD 键移动、IJKL 键转视角（上下左右看）、文字指令。</strong></p>
+<p><strong>这和「逐帧 6 自由度相机位姿」有什么区别</strong>：按键转视角是「按住 J 就以固定速度往左转，松开就停」，只能发几种离散命令，速度由模型自己定。6 自由度相机位姿是给模型每一帧的精确位置（前后、左右、上下三个方向）和朝向（左右转、上下看、侧滚三个角度），可以走任意曲线、任意变速，还包括侧滚和垂直升降。所以按键模型要考「给相机轨迹」的题，得先把轨迹换算成按键序列，并标定每个键每帧转多少度、走多远。</p>
 </blockquote>
 <div class="tw"><table>
 <thead>
@@ -114,22 +115,22 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <tr>
 <td>1</td>
 <td><strong><a href="#wbench">WBench</a> Navi + Full 两个榜</strong></td>
-<td>唯一能让我们两种能力都上榜的地方。按键对 Navi 榜（158 道导航题，Zing-0.5、快乐生蚝、Genie 3 同表）；文字对 Full 榜（289 道，多出角色动作、事件编辑、视角切换，这三类只有文字模型能做）。Full 榜现在一个按键模型都没有，前列全是文字模型（Murea-Pro 81.1）。免费、不用开源、发邮件即可，能挂 <code>realtime</code> 标签。</td>
+<td>唯一能让我们两种能力都上榜的地方。按键对 Navi 榜（158 道导航题，题里的方向键 ←→↑↓ 就是转视角，正好对应 IJKL）；文字对 Full 榜（289 道，多出角色动作、事件编辑、视角切换，这三类只有文字模型能做）。Full 榜现在一个按键模型都没有，前列全是文字模型（Murea-Pro 81.1）。免费、不用开源、发邮件即可，能挂 <code>realtime</code> 标签。</td>
 </tr>
 <tr>
 <td>2</td>
-<td><strong><a href="#worldroam">WorldRoam-Bench</a></strong></td>
-<td>10–60 秒 WASD 连续漫游，官网列的参赛模型输入就是「图 + 文字 + 按键」（Genie 3、快乐生蚝都是），和我们的接口一模一样。官网有提交表单。题目还没公开。</td>
+<td><strong><a href="#worldscore">WorldScore</a></strong>（从 ★★ 升回 ★★★）</td>
+<td>查了官方代码：相机路线只由 8 种动作拼成——前推、后拉、左移、右移、左摇 30°、右摇 30°、左右环绕 30°，没有上下看，也没有侧滚。前 6 种正好是 W、S、A、D、J、L，环绕要「横移 + 反向转头」组合键。题目和打分代码都公开，现在就能自己跑。视频模型相机控制只有 22–29 分，按键模型标定好转速后有机会拉开差距。要先做一个「相机路线 → 按键」转换器，见 <a href="#worldscore">WorldScore 卡片</a>。</td>
 </tr>
 <tr>
 <td>3</td>
-<td><strong><a href="#worldscore">WorldScore</a></strong></td>
-<td>能参加，但要转换。官方给视频模型的接入接口只有「文字提示 + 起始图」，相机路线是以文字指令给的（官网示例「Camera pans right」），所以我们能直接走文字通道。代价：视频模型在相机控制上只有 22–29 分，我们没有相机轨迹控制，这一项大概率吃亏。也可以自己把相机路线换成按键（比如左摇→左转键、左移→A、拉远→S），这是我的设想，官方没有这个通道。从 ★★★ 降到 ★★。</td>
+<td><strong><a href="#worldroam">WorldRoam-Bench</a></strong></td>
+<td>考的就是 WASD + IJKL 视角键连续漫游 10–60 秒，官网列的参赛模型输入是「图 + 文字 + 按键」（Genie 3、快乐生蚝都是），和我们的接口一模一样。官网有提交表单。题目还没公开，只能先交视频、不能先自评。</td>
 </tr>
 <tr>
 <td>4</td>
 <td><strong><a href="#worldmark">WorldMark</a></strong></td>
-<td>统一按键 W S A D L R，每个模型用适配器把按键翻译成自己的输入（文字、键盘都行），9 个确定性指标，题型和我们最像。缺点：没有官方提交流程，适合拿来自评、写进技术报告，或联系作者上 warena.ai 对战。</td>
+<td>统一 6 个键 W S A D L R，L/R 是左转/右转，正好对应 J/L，没有上下看；每个模型用适配器把按键翻译成自己的输入。题型和我们最像，但没有官方提交流程，适合自评、写进技术报告，或联系作者上 warena.ai 对战。</td>
 </tr>
 <tr>
 <td>5</td>
@@ -144,14 +145,14 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <tr>
 <td>7</td>
 <td><strong>🤖 <a href="#worldarena">WorldArena</a></strong></td>
-<td>文字通道能参加（首帧 + 文字指令），「当数据引擎」赛道和我们定位贴。但它是机器人双臂操作，要在 RoboTwin 数据上专门微调，按键能力用不上。从 ★★★ 降到 ★★。</td>
+<td>文字通道能参加（首帧 + 文字指令），「当数据引擎」赛道和我们定位贴。但它是机器人双臂操作，要在 RoboTwin 数据上专门微调，按键能力用不上。★★。</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong>降级或不合适的</strong>：WorldScore（★★★→★★，没有相机控制）；WorldArena（★★★→★★，按键用不上、要专门做机器人数据）；StreamAV-Bench 仍是 ★（中途改文字指令对口，但要求生成声音、没写怎么提交）；GameWorld Score 仍是 ★（要键盘加鼠标，而且没有公开榜）。</p>
+<p><strong>评级变化</strong>：WorldScore 从 ★★ 升回 ★★★（按键能覆盖它的相机动作，见卡片里的风险）；WorldArena 仍是 ★★；iWorld-Bench 仍是 ★★（有上下看和左右转，但缺侧滚、垂直升降，相机跟随任务要逐帧位姿）；CameraBench 仍是 ★，但可以拿来当我们转视角准不准的自动裁判；StreamAV-Bench 仍是 ★（要生成声音）；GameWorld Score 仍是 ★（鼠标视角可以用 IJKL 近似，但没有公开榜）。</p>
 <p><strong>跳到：</strong> <a href="#table">总表</a> · <a href="#route">建议路线</a> · <a href="#gaps">缺口</a></p>
 <h2 id="table">总表：30 个榜一行看懂</h2>
-<p>合适度按「按键 + 文字控制」模型评（已确认）：★★★ 优先打 · ★★ 值得看 · ★ 参考 · ✗ 不建议。点榜名跳到详细卡片。「还在维护」以 2026-10-10 查到的最近更新为准。</p>
+<p>合适度按「WASD 移动 + IJKL 转视角 + 文字」模型评（已确认）：★★★ 优先打 · ★★ 值得看 · ★ 参考 · ✗ 不建议。点榜名跳到详细卡片。「还在维护」以 2026-10-10 查到的最近更新为准。</p>
 <div class="tw wide"><table>
 <thead>
 <tr>
@@ -234,7 +235,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <td>Zing-0.5、Kling 3.0、快乐生蚝、Genie 3 · Navi 第一 Alaya-EVOKE-Turbo 82.0；Full 第一 Murea-Pro 81.1</td>
 <td>在（2026-10-04）</td>
 <td>生成视频 → 自评或官方免费评 → 网盘 + 邮件，人工审核</td>
-<td>★★★ 按键打 Navi、文字打 Full，两种能力都能上榜</td>
+<td>★★★ 按键打 Navi（方向键＝IJKL 转视角）、文字打 Full</td>
 </tr>
 <tr>
 <td><a href="#worldscore">WorldScore</a></td>
@@ -244,7 +245,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <td>Voyager、Gen-3、Wan2.1、Hailuo · 第一 UniWorld-View 85.53</td>
 <td>在（2026-07-23）</td>
 <td>自评后把 worldscore.json 发邮件，或交视频让作者评</td>
-<td>★★（原 ★★★）没有相机控制，走文字通道，相机分大概率吃亏</td>
+<td>★★★（升回）相机路线只有前推/后拉/横移/左右摇/环绕，可换算成 WASD + J/L；要标定转速</td>
 </tr>
 <tr>
 <td><a href="#worldmark">WorldMark</a></td>
@@ -254,7 +255,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <td>Matrix-Game 3.0、Lyra 2.0、HY-World 1.5 · 没有总分</td>
 <td>基本在（2026-08-05）</td>
 <td>没写，要联系作者</td>
-<td>★★★ 按键题型最像，但只能自评</td>
+<td>★★★ 6 键含左右转，正好 WASD + J/L；但只能自评</td>
 </tr>
 <tr>
 <td><a href="#iworld">iWorld-Bench</a></td>
@@ -264,7 +265,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <td>Matrix-Game 2.0、Cosmos · 第一 HY-World 1.5 0.7873</td>
 <td>代码在更新，榜只有论文 14 个模型</td>
 <td>没写</td>
-<td>★★ 有文字指令，但没提交入口</td>
+<td>★★ IJKL 覆盖左右转和上下看，缺侧滚、垂直升降；没提交入口</td>
 </tr>
 <tr>
 <td><a href="#worldroam">WorldRoam-Bench</a></td>
@@ -274,7 +275,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <td>Lyra 2.0、快乐生蚝 · 第一人称第一 Genie 3 70.32</td>
 <td>在（2026-09-18）</td>
 <td>官网表单上传视频（≤5GB）</td>
-<td>★★★ 输入「图 + 文字 + 按键」和我们一样</td>
+<td>★★★ 考的就是 WASD + IJKL，输入和我们一样</td>
 </tr>
 <tr>
 <td><a href="#worldexam">WorldExam</a></td>
@@ -304,7 +305,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <td>Oasis、MineWorld · Matrix-Game 键盘/鼠标 0.95</td>
 <td>只有论文自评</td>
 <td>无</td>
-<td>★ 要键盘 + 鼠标</td>
+<td>★ 鼠标视角可用 IJKL 近似，但没有公开榜</td>
 </tr>
 <tr>
 <td><a href="#camerabench">CameraBench</a></td>
@@ -314,7 +315,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <td>COLMAP、GPT-4o · MegaSaM 最好</td>
 <td>联系作者加入</td>
 <td>联系作者</td>
-<td>★ 可当裁判</td>
+<td>★ 可当我们转视角准不准的自动裁判</td>
 </tr>
 <tr>
 <td><a href="#physicsiq">Physics-IQ Verified</a></td>
@@ -772,7 +773,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <p><strong>和我们的关系</strong>：同 AA，偏商用模型曝光。</p>
 </div>
 <h2 id="control">🎮 可控交互类（9 个）</h2>
-<p>按键、相机、指令能不能控住，前后是不是同一个世界。<strong>和我们最对口</strong>，推荐前四都在这一类：WBench（Navi 用按键、Full 用文字）、WorldRoam-Bench、WorldScore（走文字通道）、WorldMark。</p>
+<p>按键、相机、指令能不能控住，前后是不是同一个世界。<strong>和我们最对口</strong>，推荐前四都在这一类：WBench（Navi 用按键、Full 用文字）、WorldScore（相机路线换算成按键）、WorldRoam-Bench、WorldMark。</p>
 <div class="bcard">
 <h3 id="wbench">WBench —— 多轮交互式世界模型评测（美团 + 复旦）</h3>
 <p><strong>谁做的</strong>：复旦大学（丁恒辉组）+ 美团 LongCat 团队，2026-05-28 论文、数据、代码、榜单同时发布。
@@ -873,7 +874,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>视频放 HuggingFace 数据集或网盘，发邮件给 kaining.ying.cv@gmail.com 和 rensiyu07@meituan.com，标题 <code>[WBench Submission] &lt;展示名&gt;</code>，人工审核。</li>
 <li><strong>不用交权重、不用开 API、免费</strong>。要挂 <code>realtime</code> 标签，邮件里须写硬件、分辨率和实测速度。</li>
 </ol>
-<p><strong>和我们的关系</strong>：★★★（按键 + 文字模型）。我们两种能力都能用上：按键模型上 Navi 榜（158 道），文字模型上 Full 榜（289 道，角色动作、事件编辑、视角切换只有文字模型能做）。Full 榜现在没有按键模型，按「只看按键」筛是空的，前列全是文字模型（Murea-Pro 81.1、Kling 3.0 79.4）。⚠️ 没查到同一个模型能不能用「按键」和「文字」两种类型各交一次（<code>meta.json</code> 里只能填一个类型），要发邮件问作者。白模的精确相机轨迹和按键记录正对「导航」，大批量「走一圈回原点」正对空间一致。风险：一半题是写实图，白模画面偏素可能拉低画质和设定贴合；物理分是大模型判的，不是引擎真值；289 道题全公开，没找到明文禁止拿测试题训练，建议内部定死「不许用 WBench 的图、文字、轨迹训练或调参」。</p>
+<p><strong>和我们的关系</strong>：★★★（WASD + IJKL + 文字模型）。我们两种能力都能用上：按键模型上 Navi 榜（158 道；题里的方向键 ←→↑↓ 是转视角，第一人称下是镜头左右转、上下看，正好对应 IJKL，W+left 这类组合键要求移动和转头同时按），文字模型上 Full 榜（289 道，角色动作、事件编辑、视角切换只有文字模型能做）。Full 榜现在没有按键模型，按「只看按键」筛是空的，前列全是文字模型（Murea-Pro 81.1、Kling 3.0 79.4）。⚠️ 没查到同一个模型能不能用「按键」和「文字」两种类型各交一次（<code>meta.json</code> 里只能填一个类型），要发邮件问作者。白模的精确相机轨迹和按键记录正对「导航」，大批量「走一圈回原点」正对空间一致。风险：一半题是写实图，白模画面偏素可能拉低画质和设定贴合；物理分是大模型判的，不是引擎真值；289 道题全公开，没找到明文禁止拿测试题训练，建议内部定死「不许用 WBench 的图、文字、轨迹训练或调参」。</p>
 </div>
 <div class="bcard">
 <h3 id="worldscore">WorldScore —— 按相机轨迹「一段段造世界」</h3>
@@ -1056,7 +1057,25 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>算什么分：每段之间的相机运动是否真的是「左摇 / 左移 / 拉远」（DROID-SLAM 反算）；每段要求的物体（画框墙、雕塑、喷泉、小溪）有没有出现；四段拼起来 3D 结构、光照、Minecraft 风格是否一致；画面主观质量。</li>
 </ul>
 <p><strong>怎么提交</strong>：自己跑开源评测，把 worldscore.json 发邮件给作者（haoyiduan@princeton.edu）；也可以把视频发过去让作者评。</p>
-<p><strong>和我们的关系</strong>：<strong>★★（按键 + 文字模型，原 ★★★，总排序第 3）</strong>。我们没有相机轨迹控制：官方给视频模型的接入接口是 <code>generate_video(prompt, image_path)</code>，只有文字和起始图，相机路线以文字指令给出（官网示例「Camera pans right」），所以能走文字通道参加，但视频模型相机控制只有 22–29 分，这一项大概率吃亏。把相机路线换成按键是我的设想，官方没有这个通道（<a target="_blank" href="https://github.com/haoyi-duan/WorldScore">README</a>）。原来的分析：①白模能批量产出「相机轨迹 + 多场景」的训练数据，带精确位姿真值；②榜上有不少中国公司的世界模型（WorldScape、EvoPhys、Inspatio），竞争激烈但门槛透明；③有 Minecraft、风格化题，白模偏素的画风不太吃亏。</p>
+<p><strong>和我们的关系</strong>：<strong>★★★（WASD + IJKL + 文字模型，从 ★★ 升回，总排序第 2）</strong>。</p>
+<p><strong>按键能不能模拟它的相机路线（查了官方代码）</strong></p>
+<ul>
+<li><strong>相机路线只由 8 种动作拼成</strong>（<a target="_blank" href="https://github.com/haoyi-duan/WorldScore/blob/main/worldscore/benchmark/helpers/camera_generator.py">camera_generator.py</a>）：前推、后拉各走 1 个单位；左移、右移各走 0.5 个单位；左摇、右摇各转 30°；左环绕、右环绕绕前方一点转 30°。<strong>没有上下看，也没有侧滚、升降。</strong>我们抽样的 103 道静态题里：后拉 31、左移 21、右移 20、左摇 20、右摇 20、前推 11、左环绕 10、右环绕 10。</li>
+<li><strong>对应按键</strong>：前推＝W、后拉＝S、左移＝A、右移＝D、左摇＝J、右摇＝L；环绕要「横移 + 反向转头」同时按，方向要对着官方代码核对。IJKL 里的 I/K（上下看）用不上。</li>
+<li><strong>模型实际收到什么</strong>：给视频模型的官方接口只有文字和起始图，每段提示词是「Camera pan left. &lt;场景描述&gt;. Everything in the scene remains completely motionless.」（<a target="_blank" href="https://github.com/haoyi-duan/WorldScore/blob/main/worldscore/benchmark/utils/utils.py">utils.py</a>）。所以转换器写在我们自己的接入代码里：从提示词里解析出相机动作，换成按键序列。</li>
+<li><strong>真值怎么来</strong>：每段只定起点和终点两个相机位姿，中间每一帧按匀速插值（旋转球面插值、位置线性插值）。也就是说标准答案是「整段匀速转 30°」或「整段匀速平移」。</li>
+<li><strong>怎么打分</strong>（<a target="_blank" href="https://github.com/haoyi-duan/WorldScore/blob/main/worldscore/benchmark/metrics/third_party/camera_error_metrics.py">camera_error_metrics.py</a>）：用 DROID-SLAM 从生成视频里反推每一帧的相机位姿，和真值逐帧比。旋转误差＝每帧角度差的平均（度），<strong>不做任何对齐</strong>；平移误差先用<strong>一个整体缩放系数</strong>把预测轨迹和真值对齐，再算每帧距离的平均。归一化上限：旋转 15°、平移 0.5 个单位（<a target="_blank" href="https://github.com/haoyi-duan/WorldScore/blob/main/worldscore/benchmark/utils/utils.py">utils.py</a>）。</li>
+</ul>
+<p><strong>转换器要做的事</strong></p>
+<ol>
+<li>解析提示词里的「Camera push in / pull out / move left / move right / pan left / pan right / orbit left / orbit right」，每种对应一个按键方案。</li>
+<li><strong>标定转速</strong>：测出我们模型按住 J/L 每帧转多少度，让一整段正好转 30°。旋转误差不做缩放对齐，转多转少都直接扣分。</li>
+<li><strong>保持比例和匀速</strong>：平移只有一个整体缩放系数，绝对走多远无所谓，但前推/后拉（1）和横移（0.5）的距离比例要对，而且整段匀速，不要有起步加速、停顿。</li>
+<li><strong>环绕要组合键</strong>：模型得支持移动键和视角键同时按，并标定横移速度和转速的配比。</li>
+<li>交之前用官方 DROID-SLAM 打分代码（或 CameraBench 微调模型）在自己的输出上自查。</li>
+</ol>
+<p><strong>风险</strong>：按键本身是匀速命令，和真值的匀速插值形态一致，标定好扣分不多；扣分主要来自转速标定不准、起停有加减速、或者环绕组合键做不出来。举例（按官方公式推算，不是实测）：转速偏 20%，一段结束时多转或少转 6°，误差从 0 线性增长，整段平均约 3°，相当于旋转满分区间 15° 的五分之一。另外，我们模型的场景生成画质、3D 一致性也同样计分，不只看相机。</p>
+<p>原来的分析：①白模能批量产出「相机轨迹 + 多场景」的训练数据，带精确位姿真值；②榜上有不少中国公司的世界模型（WorldScape、EvoPhys、Inspatio），竞争激烈但门槛透明；③有 Minecraft、风格化题，白模偏素的画风不太吃亏。</p>
 </div>
 <div class="bcard">
 <h3 id="worldmark">WorldMark（+ World Model Arena 对战平台）—— 按键驱动的交互世界模型</h3>
@@ -1085,7 +1104,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>算什么分：按 W 时画面是否在前进、按 R 时是否在右转（方向准确率/纯度）；按键后多久开始动（延迟）；<code>A→D→A</code> 来回走后，回到同一位置时场景是否还一样（回访一致性）；画质。</li>
 </ul>
 <p><strong>怎么提交</strong>：用官方图和动作生成视频 → 跑开源评测（输出 final_master.csv）。<strong>怎么上 warena.ai 对战平台没写</strong>，需要联系作者。</p>
-<p><strong>和我们的关系</strong>：<strong>★★★（按键 + 文字模型，总排序第 4）</strong>。统一动作 W S A D L R，每个模型用适配器翻译成自己的输入（文字描述 / 键盘都行），我们两种通道都能接；但只能自评，没有官方提交流程。原来的分析：<strong>题型和我们最像</strong>（按键+第一/三人称+风格化）。白模可以直接造「W/S/A/D/转向 + 回访」的训练数据，带精确位姿真值。缺点：没有总分、没有官方提交流程，曝光主要靠论文和 warena。</p>
+<p><strong>和我们的关系</strong>：<strong>★★★（WASD + IJKL + 文字模型，总排序第 4）</strong>。统一动作 W S A D L R，其中 L/R 是左转/右转，正好对应我们的 J/L 键（WorldMark 没有上下看）；每个模型用适配器翻译成自己的输入（文字描述 / 键盘都行），我们两种通道都能接；但只能自评，没有官方提交流程。原来的分析：<strong>题型和我们最像</strong>（按键+第一/三人称+风格化）。白模可以直接造「W/S/A/D/转向 + 回访」的训练数据，带精确位姿真值。缺点：没有总分、没有官方提交流程，曝光主要靠论文和 warena。</p>
 </div>
 <div class="bcard">
 <h3 id="iworld">iWorld-Bench —— 6 自由度相机动作 + 记忆</h3>
@@ -1107,7 +1126,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>相机参数：81 行（81 帧），每行＝帧号 + 归一化内参 fx fy cx cy（0.532 0.946 0.5 0.5）+ 3×4 世界到相机矩阵；每帧偏航约 0.75°，前进 0.025。</li>
 <li>算什么分：从生成视频反算的轨迹和这 81 帧真值轨迹比（准确度、容差）；画面亮度/色温/清晰度是否随时间漂移；运动是否平滑。</li>
 </ul>
-<p><strong>和我们的关系</strong>：<strong>★★（按键 + 文字模型）</strong>。题目带文字指令（如「The camera pushes forward (W)」）和 W/S/A/D 平移编号，文字通道能接，但旋转动作是相机俯仰/偏航，且没有提交入口。原来的分析：<strong>它的仿真部分就是「引擎白模 + 精确相机」</strong>——和我们的数据形态几乎一样。可以借它的动作编码格式（C=[D,T,R,V]）组织内部数据和私有考试。可惜没提交入口，只能论文里自评后联系作者。</p>
+<p><strong>和我们的关系</strong>：<strong>★★（WASD + IJKL + 文字模型）</strong>。它的动作是 6 自由度：平移编号含上下升降，旋转编号含俯仰、偏航、侧滚。我们的 IJKL 能覆盖偏航（左右转）和俯仰（上下看），W/S/A/D 覆盖水平移动，但侧滚和垂直升降做不了；「相机跟随」任务给的是逐帧相机参数文件，按键模型只能近似。题目也带文字指令（如「The camera pushes forward (W)」），但没有提交入口。原来的分析：<strong>它的仿真部分就是「引擎白模 + 精确相机」</strong>——和我们的数据形态几乎一样。可以借它的动作编码格式（C=[D,T,R,V]）组织内部数据和私有考试。可惜没提交入口，只能论文里自评后联系作者。</p>
 </div>
 <div class="bcard">
 <h3 id="worldroam">WorldRoam-Bench —— 10–60 秒连续 WASD 漫游</h3>
@@ -1127,7 +1146,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 值得注意：Genie 3 动作分 76.31，低于 Lyra 的 90.82，但物理分 66.67 全场最高；论文发现「轨迹对齐 &gt; 0.85 的模型，逐帧动作准确率可能 &lt; 65%」，物理合理和死跟动作之间有取舍。</p>
 <p><strong>真题示例</strong>：数据集未放出，官网只有 GIF 展示——<strong>拿不到真题</strong>。</p>
 <p><strong>怎么提交</strong>：官网表单填模型名、规模、机构、邮箱，上传推理视频（≤5GB），邮件审核。</p>
-<p><strong>和我们的关系</strong>：<strong>★★★（按键 + 文字模型，总排序第 2）</strong>。官网列的参赛模型输入就是「图 + 文字 + 按键」（Genie 3、快乐生蚝都是），和我们的接口一致。原来的分析：<strong>推荐</strong>。题型（WASD 连续漫游 + 记忆 + 交互物理）和白模数据最对口；Genie 3、快乐生蚝都在榜上，上榜即可和它们同表对比。风险：题目没公开，只能先用白模搭类似的内部考试。</p>
+<p><strong>和我们的关系</strong>：<strong>★★★（WASD + IJKL + 文字模型，总排序第 3）</strong>。考的就是 WASD + IJKL 视角键连续漫游，官网列的参赛模型输入就是「图 + 文字 + 按键」（Genie 3、快乐生蚝都是），和我们的接口一致。原来的分析：<strong>推荐</strong>。题型（WASD 连续漫游 + 记忆 + 交互物理）和白模数据最对口；Genie 3、快乐生蚝都在榜上，上榜即可和它们同表对比。风险：题目没公开，只能先用白模搭类似的内部考试。</p>
 </div>
 <div class="bcard">
 <h3 id="worldexam">WorldExam —— 三种控制方式 + 「世界会不会自己反应」</h3>
@@ -1139,7 +1158,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>动态交互：1 <strong>Veo 3.1</strong> 72.77；2 Vidu Q3 72.35；3 Hailuo 2.3 72.03；4 HappyHorse 1.0 70.57；5 Wan 2.6 I2V 66.60；6 Seedance 1.5 66.50；7 LingBot-World 60.76；8 Kling 2.5 60.45；9 WorldPlay 57.57。——<strong>静态靠专门的世界模型，动态交互反而是大视频模型赢</strong>。</li>
 </ul>
 <p><strong>真题示例</strong>：测试用例未公开——<strong>拿不到真题</strong>。</p>
-<p><strong>和我们的关系</strong>：<strong>★★（按键 + 文字模型，题目公开后升 ★★★，总排序第 6）</strong>。三种控制通道里「离散动作」和「语言」正好是我们的两种能力；动态交互赛道只收动作和语言模型，目标完成任务只收语言模型。但测试用例没公开、没写怎么提交。原来的分析：中。等题目公开再看；动态交互赛道（让世界自己反应）是白模引擎的强项（物理引擎天然会「反应」）。</p>
+<p><strong>和我们的关系</strong>：<strong>★★（WASD + IJKL + 文字模型，题目公开后升 ★★★，总排序第 6）</strong>。三种控制通道里「离散动作」和「语言」正好是我们的两种能力；动态交互赛道只收动作和语言模型，目标完成任务只收语言模型。但测试用例没公开、没写怎么提交。原来的分析：中。等题目公开再看；动态交互赛道（让世界自己反应）是白模引擎的强项（物理引擎天然会「反应」）。</p>
 </div>
 <div class="bcard">
 <h3 id="wmb">WorldModelBench —— 7 领域 + 物理违规检测（已停更）</h3>
@@ -1163,7 +1182,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <p><strong>测什么</strong>：Minecraft 世界模型的 8 项指标：画质、美学、时间一致、运动平滑、<strong>键盘准确率</strong>（前后/左右/攻击/跳跃分组算精度）、<strong>鼠标准确率</strong>（从俯仰/偏航变化判 9 个方向）、物体一致、场景一致。</p>
 <p><strong>谁打了（论文自评，不是公开榜）</strong>：Matrix-Game 键盘 0.95 / 鼠标 0.95；MineWorld 0.86 / 0.64；Oasis（Decart）0.77 / 0.56。</p>
 <p><strong>真题示例</strong>：仓库里的 GameWorld_full_info.json 只列了 7 个维度名，没有具体动作序列——<strong>拿不到真题</strong>。</p>
-<p><strong>和我们的关系</strong>：<strong>★（按键 + 文字模型）</strong>。要键盘加鼠标两种输入，而且没有公开榜。原来的分析：低。没有公开榜；但「键盘/鼠标准确率」的算法可以借来评我们自己的模型。</p>
+<p><strong>和我们的关系</strong>：<strong>★（WASD + IJKL + 文字模型）</strong>。要键盘加鼠标两种输入；鼠标准确率是按俯仰/偏航变化判 9 个方向，可以用 IJKL 近似，但没有公开榜。原来的分析：低。没有公开榜；但「键盘/鼠标准确率」的算法可以借来评我们自己的模型。</p>
 </div>
 <div class="bcard">
 <h3 id="camerabench">CameraBench —— 相机运动「理解」（不是生成）</h3>
@@ -1176,7 +1195,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>描述原文：<code>The camera smoothly arcs clockwise around the subject, maintaining a steady focus as it tracks their movement.</code>（镜头平滑地绕主体顺时针环绕，跟着主体移动并保持稳定对焦。）</li>
 <li>算什么分：被测模型看视频，对每个标签回答是/否（或回答问答题），和人工标签比 AP / 准确率。</li>
 </ul>
-<p><strong>和我们的关系</strong>：不是生成榜，但<strong>可以当我们「相机控制」的自动裁判</strong>：用它微调过的模型检查生成视频的相机运动是否等于指令。</p>
+<p><strong>和我们的关系</strong>：<strong>★（WASD + IJKL + 文字模型）</strong>。不是生成榜，但正好能当我们的内部裁判：用它微调过的模型检查「按了 J 是不是真的在左摇、按了 I 是不是真的在上看」。原来的分析：不是生成榜，但<strong>可以当我们「相机控制」的自动裁判</strong>：用它微调过的模型检查生成视频的相机运动是否等于指令。</p>
 </div>
 <h2 id="physics">⚛️ 物理类（7 个）</h2>
 <p>生成的东西符不符合物理规律。真正有在线榜、还在收新模型的是 Physics-IQ Verified 和 PAI-Bench；WorldBench 没有榜，但它「反算 g、摩擦、黏度」的方法最能体现白模真值的价值。</p>
@@ -1243,7 +1262,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li><strong>怎么算分</strong>：生成的 5 秒和真实的 5 秒各算运动掩码（时间线图右下角红色是真实动过的区域），比位置、时间、多少，再算像素误差，每项除以「第 2 遍录像」能达到的水平。</li>
 </ul>
 <p><strong>怎么提交</strong>：下数据 → 跑官方代码（建议 4 轮）→ 在 GitHub 提 Issue/PR，拿 run_id 和临时上传凭证 → 交 <code>submission.yaml</code> + 提示词文件 + 视频 → 提 PR 上 README 榜，须附技术报告或可复现代码。不用交权重、不用开 API，没看到收费。主办方自己重算分数，视频保密。测试数据不能用来做 BoN 挑选或给提示词改写器看。</p>
-<p><strong>和我们的关系</strong>：★★（按键 + 文字模型）。考试只给画面和文字、不给按键，我们的文字通道正好用上。模型要能「给 1 帧或 3 秒、续写 5 秒、镜头不动、不给动作」。白模可补固体力学（碰撞、倒塌、堆叠）训练数据并给精确物理真值。风险：测试全是真实录像、直接比像素，白模和真实画面落差大；流体、热、光一般游戏引擎模拟不好。和 WBench 的分工：WBench 证明「能交互」，Physics-IQ 证明「懂物理」。</p>
+<p><strong>和我们的关系</strong>：★★（WASD + IJKL + 文字模型）。考试只给画面和文字、不给按键，我们的文字通道正好用上。模型要能「给 1 帧或 3 秒、续写 5 秒、镜头不动、不给动作」。白模可补固体力学（碰撞、倒塌、堆叠）训练数据并给精确物理真值。风险：测试全是真实录像、直接比像素，白模和真实画面落差大；流体、热、光一般游戏引擎模拟不好。和 WBench 的分工：WBench 证明「能交互」，Physics-IQ 证明「懂物理」。</p>
 </div>
 <div class="bcard">
 <h3 id="phygen">PhyGenBench —— 27 条物理定律，VLM 分层判（已停更）</h3>
@@ -1676,7 +1695,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <p>其他几个带速度的榜：WBench 和 WorldRoam 的真题本页「可控交互类」和 <a href="../wbench/">WBench 页</a> 已经收了，题目本身不考速度，速度只在论文附录里列出来。Artificial Analysis 的题是随机抽的文生视频提示词，不公开逐题内容。</p>
 </blockquote>
 <p><strong>怎么提交</strong>：官网和 README 都没写，要发邮件问作者。</p>
-<p><strong>和我们的关系</strong>：★（按键 + 文字模型）。中途插入新的文字指令、看画面多久跟上，这和我们的文字控制对口；但它考的是带声音的视频，而且没写怎么提交。考音视频、180 秒流式、中途改指令。我们的模型如果没有声音，只能走「视频模型 + 另配声音」的拼接路线（Self-Forcing、LongLive 就是这么上榜的）。</p>
+<p><strong>和我们的关系</strong>：★（WASD + IJKL + 文字模型）。中途插入新的文字指令、看画面多久跟上，这和我们的文字控制对口；但它考的是带声音的视频，而且没写怎么提交。考音视频、180 秒流式、中途改指令。我们的模型如果没有声音，只能走「视频模型 + 另配声音」的拼接路线（Self-Forcing、LongLive 就是这么上榜的）。</p>
 </div>
 <h3>会附带速度数据的榜（都不按速度排名）</h3>
 <div class="tw"><table>
@@ -2332,7 +2351,7 @@ td a{word-break:normal;overflow-wrap:anywhere}
 <li>算什么分：15 个指标——画质、动态、一致性、机械臂和物体的交互是否合理、末端轨迹是否准确、深度/透视是否对、是否按指令（包括反事实指令）做。赛道 2 再看：用这些生成视频训出来的策略在仿真里成功率多少。</li>
 </ul>
 <p><strong>怎么提交</strong>：按 GitHub 的 <a target="_blank" href="https://github.com/tsinghua-fib-lab/WorldArena/blob/main/assets/README_submission.md">提交说明</a> 本地评测；1.0 挑战赛已结束，新成绩关注 <a target="_blank" href="http://iros2026challenge.world-arena.ai/">IROS 2026 的 2.0 挑战赛</a>。</p>
-<p><strong>和我们的关系</strong>：<strong>★★（按键 + 文字模型，原 ★★★，总排序第 7）</strong>。文字通道能参加（首帧 + 文字指令），但这是机器人双臂操作任务，要在 RoboTwin 数据上专门微调，按键能力用不上。原来的分析：<strong>推荐</strong>。①「世界模型当数据引擎」赛道和我们的数据生产定位完全一致；②RoboTwin 本身就是引擎白模场景，我们的白模管线可以直接产同类数据；③榜上 127 个模型，大量国内公司参加，曝光度高。注意：参赛的仍是模型，白模不能直接上。</p>
+<p><strong>和我们的关系</strong>：<strong>★★（WASD + IJKL + 文字模型，原 ★★★，总排序第 7）</strong>。文字通道能参加（首帧 + 文字指令），但这是机器人双臂操作任务，要在 RoboTwin 数据上专门微调，按键能力用不上。原来的分析：<strong>推荐</strong>。①「世界模型当数据引擎」赛道和我们的数据生产定位完全一致；②RoboTwin 本身就是引擎白模场景，我们的白模管线可以直接产同类数据；③榜上 127 个模型，大量国内公司参加，曝光度高。注意：参赛的仍是模型，白模不能直接上。</p>
 </div>
 <div class="bcard">
 <h3 id="worldeval">WorldEval —— 用世界模型给机器人策略打分（方法论文，无榜） <span class="etag">🤖具身</span></h3>
@@ -2486,10 +2505,10 @@ td a{word-break:normal;overflow-wrap:anywhere}
 </div>
 <h2 id="route">建议路线</h2>
 <ol>
-<li><strong>确认推理模式（1 天）</strong>：已确认模型支持按键和文字控制、没有相机轨迹控制。还要确认：能不能「给 1 帧或 3 秒、续写、镜头不动、不给按键」（Physics-IQ 需要）；文字模式能不能做角色动作、事件编辑、视角切换（WBench Full 需要）。同时发邮件问 WBench 作者：同一个模型能不能按「按键」和「文字」两种类型各交一次。</li>
-<li><strong>内部摸底（约 1 周）</strong>：题目公开、能自评的先跑——WBench Navi 158 题用按键跑、Full 289 题用文字跑（A 方案自评，要 GPU + 豆包 API）；WorldMark 500 个用例用按键跑；WorldScore 走文字通道、Physics-IQ Verified 各跑 1 轮。拿到分数后和 Zing-0.5（WBench Navi 81.0）、Murea-Pro（WBench Full 81.1）、Odyssey-3 Pro 单次生成（63.37）逐项对比，找出短板。</li>
+<li><strong>确认推理模式（1 天）</strong>：已确认模型支持 WASD 移动、IJKL 转视角和文字控制，没有逐帧 6 自由度相机位姿输入。还要确认：能不能同时按移动键和视角键（WBench 的 W+left、WorldScore 的环绕都要）；还要确认：能不能「给 1 帧或 3 秒、续写、镜头不动、不给按键」（Physics-IQ 需要）；文字模式能不能做角色动作、事件编辑、视角切换（WBench Full 需要）。同时发邮件问 WBench 作者：同一个模型能不能按「按键」和「文字」两种类型各交一次。</li>
+<li><strong>内部摸底（约 1 周）</strong>：题目公开、能自评的先跑——WBench Navi 158 题用按键跑、Full 289 题用文字跑（A 方案自评，要 GPU + 豆包 API）；WorldMark 500 个用例用按键跑；WorldScore 先写「相机路线 → 按键」转换器再跑；Physics-IQ Verified 跑 1 轮。拿到分数后和 Zing-0.5（WBench Navi 81.0）、Murea-Pro（WBench Full 81.1）、Odyssey-3 Pro 单次生成（63.37）逐项对比，找出短板。</li>
 <li><strong>用白模补数据 + 搭内部模拟考</strong>：按短板造数据——相机轨迹和多场景（WorldScore）、WASD + 回访/绕圈（WBench、WorldRoam、WorldMark）、固定机位刚体物理和 g/μ 真值（Physics-IQ、WorldBench）。同时用白模出一套题型相同、题目不重复的私有考题。内部定死红线：<strong>不拿任何榜的公开测试题训练或调参</strong>。</li>
-<li><strong>正式提交（按优先级）</strong>：WBench Navi + Full（如果是实时模型就挂 <code>realtime</code> 标签，附硬件和实测 FPS）→ WorldRoam-Bench（官网表单）→ WorldScore（邮件）。WorldExam 题目一公开就跑。具身方向关注 WorldArena 2.0（IROS 2026）。Physics-IQ 要跑满 4 轮单次生成、报平均值 ± 标准差，才能宣称 SOTA。</li>
+<li><strong>正式提交（按优先级）</strong>：WBench Navi + Full（如果是实时模型就挂 <code>realtime</code> 标签，附硬件和实测 FPS）→ WorldScore（邮件）→ WorldRoam-Bench（官网表单）。WorldExam 题目一公开就跑。具身方向关注 WorldArena 2.0（IROS 2026）。Physics-IQ 要跑满 4 轮单次生成、报平均值 ± 标准差，才能宣称 SOTA。</li>
 <li><strong>长期：自己做一个榜</strong>。白模有精确的按键时间戳和相机真值，可以先做内部「按键到画面延迟」测试，做扎实后公开成第一个统一硬件的实时交互世界模型榜（首帧延迟、按键到画面延迟、持续帧率、画质一起排）。目前没人做。</li>
 </ol>
 <h2 id="gaps">缺口与没核实的地方</h2>
@@ -2515,9 +2534,9 @@ td a{word-break:normal;overflow-wrap:anywhere}
 </ul>
 <p><strong>关于我们自己</strong></p>
 <ul>
-<li>已确认模型支持按键（WASD 类）和文字控制，没有相机轨迹控制，推荐按这个排。还不知道：能不能只给开头不给按键续写（Physics-IQ 要）、文字模式能做哪些交互（WBench Full 要）。</li>
+<li>已确认模型支持 WASD 移动 + IJKL 转视角 + 文字，没有逐帧 6 自由度相机位姿输入，推荐按这个排。还不知道每个键每帧转多少度、走多远，能不能同时按移动键和视角键。还不知道：能不能只给开头不给按键续写（Physics-IQ 要）、文字模式能做哪些交互（WBench Full 要）。</li>
 <li>没查到 WBench 允不允许同一个模型以「按键」和「文字」两种类型各提交一次。</li>
-<li>WorldScore 的「相机路线换成按键」是我的设想，官方只给视频模型留了「文字 + 起始图」接口。</li>
+<li>WorldScore 的「相机路线换成按键」是我的方案，官方只给视频模型留了「文字 + 起始图」接口；转换器在我们自己的接入代码里把文字里的相机指令解析成按键。没在 WorldScore 上实测过离散按键的扣分程度，卡片里的误差估算是按官方公式推的。</li>
 <li>「白模」按游戏行业的灰模/无贴图理解；如果 World500 的世界有完整贴图和光照，画质方面的风险会小很多。</li>
 </ul>
 <p><strong>查过但没收的</strong>：MotionCtrl / CameraCtrl 类（没有独立榜，作为参赛者出现在 iWorld-Bench）；Genie / GameGen 类交互游戏评测（没有独立榜）；NVIDIA Cosmos / Isaac 相关（没有单独公开榜，Cosmos 系列出现在 PAI-Bench、WorldArena、WorldBench 等）。</p>
