@@ -1,0 +1,2497 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>世界模型与视频生成榜单总览</title><style>html{scroll-behavior:smooth}
+body{margin:0;background:#fafaf7;color:#1f2328;font:17px/1.8 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+.topnav{position:sticky;top:0;z-index:20;background:rgba(255,253,246,.96);backdrop-filter:blur(6px);border-bottom:1px solid #e6e3da;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;padding:8px 10px}
+.topnav a{color:#1f2328;text-decoration:none;font-size:15px;padding:4px 12px;border-radius:999px;word-break:keep-all}
+.topnav a:hover{background:#f3f1ea}
+main{max-width:980px;margin:0 auto;padding:32px 24px 120px}
+[id]{scroll-margin-top:64px}
+.kicker{color:#8a6d3b;font-size:14px;letter-spacing:.05em}
+h1{font-size:34px;line-height:1.35;margin:8px 0 12px}
+.sub{color:#57606a}
+h2{font-size:27px;margin:88px 0 18px;padding-top:20px;border-top:2px solid #e6e3da}
+h3{font-size:21px;margin:0 0 14px;line-height:1.45}
+main>h3{margin:48px 0 14px}
+.bcard{background:#fff;border:1px solid #e6e3da;border-radius:18px;padding:22px 26px 10px;margin:40px 0}
+.bcard h3{padding-bottom:10px;border-bottom:1px dashed #e6e3da}
+.bcard h4{font-size:17px;margin:24px 0 8px}
+.emb{background:#f4faf7;border:2px solid #2a9d8f;border-radius:20px;padding:4px 22px 22px;margin:72px -12px}
+.emb h2{border-top:none;color:#1d6f65;margin-top:28px}
+.emb .bcard{border-color:#bfe3dc}
+.etag{display:inline-block;background:#2a9d8f;color:#fff;border-radius:6px;padding:0 7px;font-size:.82em;font-weight:600;white-space:nowrap}
+table{border-collapse:collapse;width:100%;margin:16px 0 24px;font-size:14.5px;background:#fff;line-height:1.6}
+th,td{border:1px solid #e6e3da;padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#f3f1ea;white-space:nowrap}
+tr:nth-child(even) td{background:#fcfbf8}
+#table + p + .tw table{font-size:13.5px}
+code{background:#f3f1ea;padding:1px 5px;border-radius:4px;font-size:.88em;word-break:break-word}
+blockquote{color:#57606a;border-left:4px solid #e6e3da;margin:0 0 12px;padding:4px 16px}
+a{color:#0b6bcb;word-break:break-all}
+li{margin:6px 0}
+.back{font-size:14px}
+.tw{overflow-x:auto}
+.eximg{width:100%;max-width:820px;border-radius:12px;display:block;margin:10px 0 18px;background:#000}
+img.eximg,p>img{background:none;max-width:100%;border-radius:12px;display:block;margin:10px 0 18px}
+@media (max-width:600px){main{padding:20px 14px 80px}.bcard{padding:16px 14px 6px}.emb{margin:48px -14px;padding:4px 10px 16px}.topnav a{font-size:13px;padding:3px 8px}}
+td a{word-break:normal;overflow-wrap:anywhere}
+.wide{width:min(1360px,96vw);position:relative;left:50%;transform:translateX(-50%)}
+.wide table{font-size:13.5px}
+.wide td:nth-child(1){min-width:120px;font-weight:600}
+.wide td:nth-child(2){white-space:nowrap}
+.wide td:nth-child(3),.wide td:nth-child(5){min-width:190px}
+.wide td:nth-child(4){min-width:130px}
+</style></head><body>
+<nav class="topnav"><a href="#overview">一屏看懂</a><a href="#table">总表</a><a href="#quality">🎨质量</a><a href="#control">🎮可控交互</a><a href="#physics">⚛️物理</a><a href="#realtime">⚡实时</a><a href="#embodied">🤖具身</a><a href="#route">路线</a><a href="#gaps">缺口</a></nav>
+<main>
+<p class="back"><a href="../../">← 产品雷达首页</a></p>
+<header><div class="kicker">世界模型打榜调研 · 总览 · 2026-10-10 · 阿汤</div>
+<h1>世界模型与视频生成榜单总览</h1>
+<p class="sub">30 个榜：🎨质量 6 · 🎮可控交互 9 · ⚛️物理 7 · ⚡实时 1 · <span class="etag">🤖具身</span> 7。合并自 <a href="../wbench/">WBench</a> · <a href="../physics-iq/">Physics-IQ</a> · <a href="../video-benchmarks/">视频生成与控制榜单</a> 三份调研。</p></header>
+<blockquote>
+<p>阿汤 · 2026-10-10 · 把之前三份调研合成一页：<a href="../wbench/">WBench 调研</a> · <a href="../physics-iq/">Physics-IQ 调研</a> · <a href="../video-benchmarks/">视频生成与控制榜单调研</a>。所有数字、参赛者、题目都摘自各榜官网、论文、GitHub、Hugging Face 原始文件（抓取时间 2026-10-09 至 10-10 美东），每个榜的卡片里都有原始链接。没查到的写「没查到」，没有补数。</p>
+</blockquote>
+<h2 id="overview">一屏看懂</h2>
+<h3>一共 30 个榜，分 5 类</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>个数</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎨 <a href="#quality">质量</a></td>
+<td>6</td>
+<td>画面好不好看、贴不贴提示词。行业「名片」，不考交互。</td>
+</tr>
+<tr>
+<td>🎮 <a href="#control">可控交互</a></td>
+<td>9</td>
+<td>按键、相机、指令能不能控住，前后是不是同一个世界。<strong>和我们最对口。</strong></td>
+</tr>
+<tr>
+<td>⚛️ <a href="#physics">物理</a></td>
+<td>7</td>
+<td>生成的东西符不符合物理规律，比如重力、碰撞、液体。</td>
+</tr>
+<tr>
+<td>⚡ <a href="#realtime">实时</a></td>
+<td>1</td>
+<td><strong>没有专门的实时排行榜。</strong>最接近的是 StreamAV-Bench，只列速度、不按速度排名。</td>
+</tr>
+<tr>
+<td>🤖 <a href="#embodied">具身</a></td>
+<td>7</td>
+<td>机器人相关：生成机器人操作视频，或者直接考机器人策略。</td>
+</tr>
+</tbody>
+</table></div>
+<p>另有 MLPerf 文生视频（硬件榜，模型固定，比的是芯片）放在实时一节作参考，不计入 30 个。</p>
+<h3>核心结论</h3>
+<ul>
+<li><strong>白模世界本身不能参加任何一个榜。</strong>所有榜考的都是「模型」，题目固定，交的是模型生成的视频（或机器人策略）。没有一个榜收「自定义环境」。</li>
+<li><strong>白模世界的用处有三个：</strong></li>
+<li><strong>训练数据</strong>：精确的相机轨迹、按键记录、物理真值（g、摩擦、碰撞时间）、机械臂末端轨迹。这些真实视频给不了。</li>
+<li><strong>内部模拟考</strong>：照着榜的题型和指标，用白模出一套不重复的私有考题，有精确真值，提交前自查。</li>
+<li><strong>反过来自己做榜</strong>：LIBERO、SimplerEnv、RoboDojo、WorldArena 本身就是「引擎场景 + 自动判分」，和白模世界是同一类东西。实时交互（按键到画面延迟）现在没有任何公开榜覆盖。</li>
+</ul>
+<h3>给我们的推荐（按优先级）</h3>
+<blockquote>
+<p>前提：我还不知道我们的模型是按键、相机还是文字控制。下面按「按键或相机控制的交互式世界模型」排。</p>
+</blockquote>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>顺序</th>
+<th>榜</th>
+<th>为什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong><a href="#wbench">WBench</a> Navi 榜</strong></td>
+<td>按键、相机、文字模型都能参加；Zing-0.5、快乐生蚝、Genie 3、Kling 3.0 同表；免费、不用开源、发邮件即可；能挂 <code>realtime</code> 标签，现在只有 Zing-0.5 挂了。白模的相机/按键真值直接对口「导航」和「转一圈回原点」。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong><a href="#worldscore">WorldScore</a></strong></td>
+<td>斯坦福李飞飞组，考按相机轨迹连续造场景。视频模型相机控制只有 22–29 分，3D/4D 世界模型 85+，差距大。还在更新，自评后发邮件就能上榜。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong><a href="#worldroam">WorldRoam-Bench</a></strong></td>
+<td>高德 + 南大，10–60 秒 WASD 连续漫游，考跟动作、记忆、交互物理。Genie 3、快乐生蚝、Lyra 2.0 同表。官网有提交表单。题目还没公开。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>🤖 <a href="#worldarena">WorldArena</a></strong></td>
+<td>清华，具身世界模型最大的公开榜（1.0 版 127 个模型）。有「世界模型当数据引擎」赛道，和我们做数据生产的定位最贴。IROS 2026 的 2.0 挑战赛正在进行。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong><a href="#physicsiq">Physics-IQ Verified</a></strong></td>
+<td>DeepMind 原作者参与，「懂物理」的招牌榜，Odyssey-3 就拿它做发布标题。模型要能「给开头、续写 5 秒、镜头不动」。适合当第二目标，先内部摸底。</td>
+</tr>
+</tbody>
+</table></div>
+<p>备选：<a href="#worldmark">WorldMark</a>（盛大，按键交互题型和我们最像，但没写怎么提交）。</p>
+<p><strong>跳到：</strong> <a href="#table">总表</a> · <a href="#route">建议路线</a> · <a href="#gaps">缺口</a></p>
+<h2 id="table">总表：30 个榜一行看懂</h2>
+<p>合适度：★★★ 优先打 · ★★ 值得看 · ★ 参考 · ✗ 不建议。点榜名跳到详细卡片。「还在维护」以 2026-10-10 查到的最近更新为准。</p>
+<div class="tw wide"><table>
+<thead>
+<tr>
+<th>榜</th>
+<th>类别</th>
+<th>测什么</th>
+<th>输入 → 输出</th>
+<th>知名参赛者 · 当前第一</th>
+<th>还在维护</th>
+<th>怎么提交</th>
+<th>合适度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#vbench">VBench / VBench++ / 2.0</a></td>
+<td>🎨质量</td>
+<td>1.0：16 维画质和语义；2.0：常识、物理、可控性等 18 维</td>
+<td>文字（++ 加图）→ 视频</td>
+<td>Veo 3、Sora、Kling、Wan2.1 · 1.0 第一 HiDream-O1-Video 89.74；2.0 第一 Veo 3 66.72</td>
+<td>在（最新条目 2026-08-07）</td>
+<td>传自评结果到排行榜 Space，或交视频/模型让团队评</td>
+<td>★★ 名片榜，不考交互</td>
+</tr>
+<tr>
+<td><a href="#t2vcomp">T2V-CompBench</a></td>
+<td>🎨质量</td>
+<td>组合能力 7 类：属性、动态属性、空间、运动、动作、交互、数量</td>
+<td>文字 → 视频</td>
+<td>PixVerse-V3、Kling-1.0、Gen-3 · 论文表里 PixVerse-V3 多数项最高</td>
+<td>排行榜报错打不开</td>
+<td>原表单不可用</td>
+<td>★</td>
+</tr>
+<tr>
+<td><a href="#evalcrafter">EvalCrafter</a></td>
+<td>🎨质量</td>
+<td>700 条提示词、17 个客观指标</td>
+<td>文字 → 视频</td>
+<td>Gen-2、Pika · Gen2（23/12）254</td>
+<td>停更（2024）</td>
+<td>无</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><a href="#fetv">FETV</a></td>
+<td>🎨质量</td>
+<td>619 条细分类提示词 + 人评</td>
+<td>文字 → 视频</td>
+<td>4 个早期开源模型</td>
+<td>无榜</td>
+<td>无</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><a href="#aa">Artificial Analysis Video Arena</a></td>
+<td>🎨质量</td>
+<td>招募评审盲选两段视频 → Elo</td>
+<td>文字/图 → 视频</td>
+<td>Seedance 2.5、Veo 3.1、Kling 3.0 · 第一 Wan 3.0 1156</td>
+<td>在（每小时）</td>
+<td>只收有公开 API 的模型，官网申请</td>
+<td>★</td>
+</tr>
+<tr>
+<td><a href="#lmarena">LMArena Text-to-Video</a></td>
+<td>🎨质量</td>
+<td>公众自写提示词盲投</td>
+<td>文字 → 视频</td>
+<td>sora-2-pro、veo-3.1 · 第一 gemini-omni-1.1-flash 1516</td>
+<td>在（2026-09-21）</td>
+<td>没查到</td>
+<td>★</td>
+</tr>
+<tr>
+<td><a href="#wbench">WBench</a></td>
+<td>🎮可控交互</td>
+<td>多轮交互：导航、角色动作、事件编辑、视角切换</td>
+<td>首帧 + 多轮操作（按键/相机/文字）→ 视频</td>
+<td>Zing-0.5、Kling 3.0、快乐生蚝、Genie 3 · Navi 第一 Alaya-EVOKE-Turbo 82.0；Full 第一 Murea-Pro 81.1</td>
+<td>在（2026-10-04）</td>
+<td>生成视频 → 自评或官方免费评 → 网盘 + 邮件，人工审核</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td><a href="#worldscore">WorldScore</a></td>
+<td>🎮可控交互</td>
+<td>按指定相机轨迹连续生成多个场景：相机控制、3D 一致、动态</td>
+<td>起始图 + 相机路径 + 分段文字 → 视频/3D</td>
+<td>Voyager、Gen-3、Wan2.1、Hailuo · 第一 UniWorld-View 85.53</td>
+<td>在（2026-07-23）</td>
+<td>自评后把 worldscore.json 发邮件，或交视频让作者评</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td><a href="#worldmark">WorldMark</a></td>
+<td>🎮可控交互</td>
+<td>统一按键 W S A D L R，9 个确定性指标（动作、记忆、画质）</td>
+<td>首帧 + 按键序列 → 20–60 秒视频</td>
+<td>Matrix-Game 3.0、Lyra 2.0、HY-World 1.5 · 没有总分</td>
+<td>基本在（2026-08-05）</td>
+<td>没写，要联系作者</td>
+<td>★★★ 题型最像</td>
+</tr>
+<tr>
+<td><a href="#iworld">iWorld-Bench</a></td>
+<td>🎮可控交互</td>
+<td>6 自由度相机动作 + 绕圈回原点的记忆</td>
+<td>首帧 + 相机动作 → 视频</td>
+<td>Matrix-Game 2.0、Cosmos · 第一 HY-World 1.5 0.7873</td>
+<td>代码在更新，榜只有论文 14 个模型</td>
+<td>没写</td>
+<td>★★</td>
+</tr>
+<tr>
+<td><a href="#worldroam">WorldRoam-Bench</a></td>
+<td>🎮可控交互</td>
+<td>10–60 秒连续 WASD 漫游：跟动作、画质、交互物理、记忆</td>
+<td>首帧 + WASD/IJKL → 长视频</td>
+<td>Lyra 2.0、快乐生蚝 · 第一人称第一 Genie 3 70.32</td>
+<td>在（2026-09-18）</td>
+<td>官网表单上传视频（≤5GB）</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td><a href="#worldexam">WorldExam</a></td>
+<td>🎮可控交互</td>
+<td>三种控制 + 「世界会不会自己反应」</td>
+<td>首帧 + 相机/离散动作/语言 → 视频</td>
+<td>Kling 2.5、Seedance 1.5 · 静态第一 NeoVerse 85.39；动态第一 Veo 3.1 72.77</td>
+<td>题库未公开（2026-08）</td>
+<td>没写</td>
+<td>★★</td>
+</tr>
+<tr>
+<td><a href="#wmb">WorldModelBench</a></td>
+<td>🎮可控交互/物理</td>
+<td>7 领域 350 题：指令跟随 + 物理 + 常识</td>
+<td>文字 + 首帧 → 视频</td>
+<td>Minimax、Runway · 第一 KLING 9.10</td>
+<td>停（2024-11）</td>
+<td>发邮件</td>
+<td>✗（裁判模型可当质检）</td>
+</tr>
+<tr>
+<td><a href="#gameworld">GameWorld Score</a></td>
+<td>🎮可控交互</td>
+<td>Minecraft 键盘/鼠标操作准确率</td>
+<td>键鼠 → 视频</td>
+<td>Oasis、MineWorld · Matrix-Game 键盘/鼠标 0.95</td>
+<td>只有论文自评</td>
+<td>无</td>
+<td>★</td>
+</tr>
+<tr>
+<td><a href="#camerabench">CameraBench</a></td>
+<td>🎮可控交互（理解）</td>
+<td>看视频判断相机怎么动（不是生成）</td>
+<td>视频 → 相机运动标签</td>
+<td>COLMAP、GPT-4o · MegaSaM 最好</td>
+<td>联系作者加入</td>
+<td>联系作者</td>
+<td>★ 可当裁判</td>
+</tr>
+<tr>
+<td><a href="#physicsiq">Physics-IQ Verified</a></td>
+<td>⚛️物理</td>
+<td>66 个真实桌面实验，看开头续写 5 秒</td>
+<td>3 秒视频（V2V）或 1 帧（I2V）+ 文字 → 5 秒视频</td>
+<td>FLUX 3、Cosmos3、Veo 3.1、Sora 2 · V2V 第一 Odyssey-3 Pro 66.10；I2V 第一 FLUX 3 54.70</td>
+<td>在（2026-10-08 合并新成绩）</td>
+<td>GitHub 联系拿上传凭证 → 交视频 + 技术报告，主办方重算</td>
+<td>★★</td>
+</tr>
+<tr>
+<td><a href="#phygen">PhyGenBench</a></td>
+<td>⚛️物理</td>
+<td>27 条物理定律 160 题，VLM 分层判</td>
+<td>文字 → 视频</td>
+<td>Kling、Pika · 第一 Gen-3 0.51</td>
+<td>停（2024）</td>
+<td>无</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><a href="#videophy">VideoPhy-2</a></td>
+<td>⚛️物理</td>
+<td>体育/物体交互动作的物理常识，人评为主</td>
+<td>文字 → 视频</td>
+<td>Sora、Ray2 · 第一 Wan2.1-14B 32.6%</td>
+<td>没查到更新时间</td>
+<td>发邮件交 CSV</td>
+<td>★</td>
+</tr>
+<tr>
+<td><a href="#t2vphys">T2VPhysBench</a></td>
+<td>⚛️物理</td>
+<td>12 条物理定律，纯人工打分</td>
+<td>文字 → 视频</td>
+<td>Kling、Sora · 第一 Wan 2.1 0.42</td>
+<td>只有论文</td>
+<td>无</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><a href="#worldbench">WorldBench / PerfectPhysics</a></td>
+<td>⚛️物理</td>
+<td>从生成视频里反算 g、摩擦系数、黏度</td>
+<td>首帧/前段视频 → 续写</td>
+<td>Kling 3.0、Runway 4.5、Wan 2.2 · g 最接近真值的是 Cosmos-2 2B 8.93</td>
+<td>无公开榜（2026-01 论文）</td>
+<td>无，自评</td>
+<td>★★</td>
+</tr>
+<tr>
+<td><a href="#paibench">PAI-Bench</a></td>
+<td>⚛️物理</td>
+<td>1044 道图生视频题（含机器人、自动驾驶）+ 是非题裁判</td>
+<td>文字 + 图 → 视频</td>
+<td>Veo-3、Wan2.2 · 第一 Cosmos3-Super 83.9</td>
+<td>在（2026-08-18）</td>
+<td>自跑评测后联系作者</td>
+<td>★★</td>
+</tr>
+<tr>
+<td><a href="#physbench">PhysBench</a></td>
+<td>⚛️物理（理解）</td>
+<td>1 万道物理理解题，考 VLM</td>
+<td>图/视频 → 答案</td>
+<td>GPT-4o 49.49 · 模型最高 InternVL2.5-38B 51.94</td>
+<td>没查到</td>
+<td>EvalAI</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><a href="#streamav">StreamAV-Bench</a></td>
+<td>⚡实时</td>
+<td>流式音视频生成：FPS、首段延迟、中途改指令多久跟上</td>
+<td>文字 + 中途指令 → 180 秒音视频流</td>
+<td>快乐生蚝、Odyssey-2、Self-Forcing · 速度不排名；FPS 最高 Self-Forcing 15.63</td>
+<td>榜最后更新 2026-08-28</td>
+<td>没写</td>
+<td>★ 要带声音</td>
+</tr>
+<tr>
+<td><a href="#ewmbench">EWMBench</a></td>
+<td><span class="etag">🤖具身</span></td>
+<td>机器人操作视频，和真录像比场景/轨迹/语义</td>
+<td>首帧 + 指令 → 视频</td>
+<td>Kling-1.6、Cosmos · 第一 EnerVerse_FT 4.7010</td>
+<td>无在线榜，代码 2025-06 后没动</td>
+<td>无，自评</td>
+<td>★★</td>
+</tr>
+<tr>
+<td><a href="#worldarena">WorldArena</a></td>
+<td><span class="etag">🤖具身</span></td>
+<td>RoboTwin 双臂任务：视频质量 + 当数据引擎/策略评估器/规划器</td>
+<td>首帧 + 文字或动作序列 → 视频</td>
+<td>Veo3.1、Wan2.6、Cosmos · 1.0 第一 UNIS 73.64（复算）</td>
+<td>在（IROS 2026 挑战赛进行中）</td>
+<td>按提交说明本地评测；新成绩走 2.0 挑战赛</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td><a href="#worldeval">WorldEval</a></td>
+<td><span class="etag">🤖具身</span></td>
+<td>用世界模型代替真机给机器人策略打分（方法论文）</td>
+<td>—</td>
+<td>被评对象 π0、OpenVLA 等</td>
+<td>无榜</td>
+<td>不能参赛</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><a href="#robodojo">RoboDojo</a></td>
+<td><span class="etag">🤖具身</span></td>
+<td>机器人策略：42 仿真 + 18 真机任务</td>
+<td>观测 + 指令 → 机器人动作</td>
+<td>GPT-6-Astra、π0.5 · 仿真第一 VPP2 39.26 / 32.26%</td>
+<td>非常活跃（2026-10-09）</td>
+<td>XPolicyLab 适配器 PR + 评测申请</td>
+<td>★</td>
+</tr>
+<tr>
+<td><a href="#roboarena">RoboArena</a></td>
+<td><span class="etag">🤖具身</span></td>
+<td>多所高校真机双盲 A/B 对战</td>
+<td>策略在 DROID 平台上执行</td>
+<td>DreamZero、π0.5 · 第一 Spirit v1.6 1788</td>
+<td>在（2026-10-10）</td>
+<td>官网 Google 表单</td>
+<td>★</td>
+</tr>
+<tr>
+<td><a href="#libero">LIBERO</a></td>
+<td><span class="etag">🤖具身</span></td>
+<td>130 个仿真操作任务的成功率</td>
+<td>观测 + 指令 → 机器人动作</td>
+<td>π0 94.2 · OpenVLA-OFT 97.1（论文自报）</td>
+<td>无官方榜</td>
+<td>无</td>
+<td>✗ 快刷满</td>
+</tr>
+<tr>
+<td><a href="#simplerenv">SimplerEnv</a></td>
+<td><span class="etag">🤖具身</span></td>
+<td>仿真复刻真机，看仿真分能否代替真机分</td>
+<td>观测 + 指令 → 机器人动作</td>
+<td>RT-1、Octo（原论文）</td>
+<td>代码在维护（2026-09-30），无官方榜</td>
+<td>无</td>
+<td>✗</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="quality">🎨 质量类（6 个）</h2>
+<p>画面好不好看、贴不贴提示词。都不考交互；还在更新的只有 VBench、Artificial Analysis、LMArena。等模型画质够了再打，用来证明「画质不掉队」。</p>
+<div class="bcard">
+<h3 id="vbench">VBench / VBench++ / VBench-2.0 —— 行业最常引用的文生视频评测</h3>
+<p><strong>谁做的</strong>：上海人工智能实验室 + 南洋理工 S-Lab（刘子纬组）。VBench 发表于 CVPR 2024（<a target="_blank" href="https://arxiv.org/abs/2311.17982">arXiv 2311.17982</a>）；VBench++ 扩展到图生视频（<a target="_blank" href="https://arxiv.org/abs/2411.13503">arXiv 2411.13503</a>，TPAMI）；VBench-2.0 于 2025 年 3 月发布（<a target="_blank" href="https://arxiv.org/abs/2503.21755">arXiv 2503.21755</a>）。
+链接：<a target="_blank" href="https://vchitect.github.io/VBench-project/">官网</a> · <a target="_blank" href="https://github.com/Vchitect/VBench">GitHub</a> · <a target="_blank" href="https://huggingface.co/spaces/Vchitect/VBench_Leaderboard">排行榜（HF Space）</a></p>
+<p><strong>还在维护吗</strong>：在。GitHub 最近一次提交 2026-08-21，排行榜最新一条是 2026-08-07 的 HiDream-O1-Video。</p>
+<p><strong>测什么</strong></p>
+<ul>
+<li><strong>VBench 1.0</strong>：文生视频，16 个维度（主体一致性、背景一致性、运动平滑、动态程度、美学、成像质量、物体类别、多物体、人物动作、颜色、空间关系、场景、风格、整体一致性等），<strong>946 条提示词</strong>。全部自动评分：每个维度用专门的检测/分割/CLIP 类模型算分。</li>
+<li><strong>VBench++</strong>：增加图生视频（I2V）赛道，考「生成的视频和输入图像是否一致」。</li>
+<li><strong>VBench-2.0</strong>：从「好不好看」转向「真不真实」，5 大类 18 个维度：创造力、常识、可控性、人物真实度、物理，<strong>1013 条提示词</strong>。很多维度用多模态大模型回答是非题来判。</li>
+<li><strong>认证等级</strong>：Gold＝VBench 团队自己采样并评测；Silver＝提交方采样、VBench 团队评测。</li>
+</ul>
+<p><strong>谁打了这个榜（原表摘录）</strong></p>
+<p>VBench 1.0 文生视频榜（73 条）：</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>名次</th>
+<th>模型</th>
+<th>总分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>HiDream-O1-Video（2026-08-07）</td>
+<td>89.74</td>
+</tr>
+<tr>
+<td>2</td>
+<td>IPOW</td>
+<td>88.26</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Vidu Q1</td>
+<td>87.41</td>
+</tr>
+<tr>
+<td>4</td>
+<td>IPOC</td>
+<td>86.57</td>
+</tr>
+<tr>
+<td>5</td>
+<td>JT3.5</td>
+<td>86.47</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Wan2.1</td>
+<td>86.22</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MiracleVision V5（美图）</td>
+<td>85.23</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Veo 3</strong>（Gold，VBench 团队采样）</td>
+<td>85.06</td>
+</tr>
+<tr>
+<td>10</td>
+<td>LanDiff</td>
+<td>84.87</td>
+</tr>
+</tbody>
+</table></div>
+<p>其他知名模型：Open-Sora-2.0 84.34、<strong>Sora 84.28</strong>、<strong>Luma 83.61</strong>、<strong>Hunyuan Video 83.43</strong>、<strong>MiniMax-Video-01 83.41</strong>、<strong>Kling 1.6 83.40</strong>、<strong>Runway Gen-3 82.32</strong>、Pika-1.0 80.69、LTX-Video 80.00。</p>
+<p>VBench-2.0 榜（12 条）：<strong>Veo 3 66.72</strong>、JT-CV 64.60、ABot-World v0.1（高德）64.47、Vidu Q1 62.70、ToMoviee 2.0 61.78、Wan2.1 60.20、<strong>Seedance 1.0 Pro 59.81</strong>、Kling 1.6 59.00、Sora-480p 58.38、StepVideo 55.78、HunyuanVideo 55.30、CogVideoX-1.5 53.35。</p>
+<p>VBench++ 图生视频榜（35 条）前列：DreamX-World-1.0 90.49、ToMoviee-2.0 89.76、Steamer-I2V 89.38、Magi-1 89.28、Pi 89.08、JT-CV 88.95、Wan2.2-TI2V-5B 88.80、Wan2.2-I2V-A14B 88.68；Runway Gen-4-I2V 88.27、HunyuanVideo-I2V 86.82。</p>
+<p><strong>完整真题示例 ①（VBench 1.0，维度「空间关系」）</strong></p>
+<ul>
+<li>提示词原文：<code>a bicycle on the left of a car, front view</code></li>
+<li>中文：一辆自行车在一辆汽车的左边，正面视角。</li>
+<li>题目附带的标注：object_a＝bicycle，object_b＝car，relation＝on the left of。</li>
+<li>怎么打分：用检测模型在每帧里框出自行车和汽车，按两者框的相对位置判断「自行车是否在左边」，逐帧算分再平均。</li>
+</ul>
+<p><strong>完整真题示例 ②（VBench-2.0，维度「力学 Mechanics」，该维度共 57 题）</strong></p>
+<ul>
+<li>提示词原文：<code>A bowl of soup is tilted in the space station, with the liquid slowly spreading in all directions.</code></li>
+<li>中文：在空间站里倾斜一碗汤，汤液缓慢地向四面八方散开。</li>
+<li>裁判问题（多模态大模型回答 yes/no）：</li>
+<li><code>Is the background of the video a space station? (yes or no)</code>（背景是空间站吗？）</li>
+<li><code>Does the liquid form floating blobs and spread in all directions? (yes or no)</code>（液体是否形成漂浮的液团并向四周散开？——失重下不该往下流）</li>
+<li>两题都答「是」才算这题过。</li>
+</ul>
+<p><strong>怎么提交</strong>：README 给了三种方式：上传自评的 result.json 到排行榜 Space；或把视频交给 VBench 团队评（Silver）；或让团队直接采样（Gold，需提供模型/API）。联系邮箱写在 README 里（ZIQI002@e.ntu.edu.sg）。</p>
+<p><strong>和我们的关系</strong>：行业「名片」榜，但完全不考相机、按键交互；白模画面偏素，在美学/成像质量上不占优。适合等模型画质够了再打，用来对外证明「画质不掉队」。</p>
+</div>
+<div class="bcard">
+<h3 id="t2vcomp">T2V-CompBench —— 组合能力（属性、空间、数量……）</h3>
+<p><strong>谁做的</strong>：港大（刘希慧组）+ 港中文 + 华为诺亚，CVPR 2025（<a target="_blank" href="https://arxiv.org/abs/2407.14505">arXiv 2407.14505</a>）。<a target="_blank" href="https://t2v-compbench-2025.github.io/">官网</a> · <a target="_blank" href="https://github.com/KaiyueSun98/T2V-CompBench">GitHub</a>（V2 分支最近提交 2025-10-25）· <a target="_blank" href="https://huggingface.co/spaces/Kaiyue/T2V-CompBench_Leaderboard">排行榜 Space</a></p>
+<p><strong>还在维护吗</strong>：<strong>排行榜挂了</strong>——2026-10-10 打开是 RUNTIME_ERROR（HF token 失效），看不到在线排名。下面用论文表。</p>
+<p><strong>测什么</strong>：1400 条提示词，7 类各 200 条：属性一致、<strong>动态属性（随时间变化）</strong>、空间关系、运动、动作、交互、数量。提示词从 167 万条真实用户提示词里提炼。评分全自动：多模态大模型（Grid-LLaVA、D-LLaVA）、检测（GroundingDINO）、跟踪（DOT）。</p>
+<p><strong>谁打了（论文表 2，23 个模型，0–1 分，列出前几列）</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>属性一致</th>
+<th>动态属性</th>
+<th>空间</th>
+<th>运动</th>
+<th>动作</th>
+<th>交互</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PixVerse-V3</td>
+<td>.7060</td>
+<td>.0624</td>
+<td>.5979</td>
+<td>.2867</td>
+<td>.8722</td>
+<td>.8309</td>
+<td>.6066</td>
+</tr>
+<tr>
+<td><strong>Kling-1.0</strong></td>
+<td>.6931</td>
+<td>.0098</td>
+<td>.5690</td>
+<td>.2562</td>
+<td>.5787</td>
+<td>.7128</td>
+<td>.4413</td>
+</tr>
+<tr>
+<td>Dreamina 1.2（字节）</td>
+<td>.6913</td>
+<td>.0051</td>
+<td>.5773</td>
+<td>.2361</td>
+<td>.5924</td>
+<td>.6824</td>
+<td>.4380</td>
+</tr>
+<tr>
+<td>T2V-Turbo-V2</td>
+<td>.6723</td>
+<td>.0127</td>
+<td>.5025</td>
+<td>.2556</td>
+<td>.6087</td>
+<td>.6439</td>
+<td>.3261</td>
+</tr>
+<tr>
+<td>CogVideoX-5B</td>
+<td>.6164</td>
+<td>.0219</td>
+<td>.5172</td>
+<td>.2658</td>
+<td>.5333</td>
+<td>.6069</td>
+<td>.3706</td>
+</tr>
+<tr>
+<td><strong>Runway Gen-3</strong></td>
+<td>.5980</td>
+<td>.0687</td>
+<td>.5194</td>
+<td>.2754</td>
+<td>.5233</td>
+<td>.5906</td>
+<td>.2306</td>
+</tr>
+<tr>
+<td>Mochi</td>
+<td>.5973</td>
+<td>.0246</td>
+<td>.5480</td>
+<td>.2334</td>
+<td>.4759</td>
+<td>.5381</td>
+<td>.2718</td>
+</tr>
+<tr>
+<td>Pika-1.0</td>
+<td>.5536</td>
+<td>.0128</td>
+<td>.4650</td>
+<td>.2234</td>
+<td>.4250</td>
+<td>.5198</td>
+<td>.3870</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>完整真题示例（动态属性类）</strong></p>
+<ul>
+<li>提示词：<code>A timelapse of a leaf transitioning from green to bright red as autumn progresses.</code></li>
+<li>中文：延时摄影：随着秋天推进，一片叶子从绿色变成鲜红色。</li>
+<li>标注：state0＝<code>A green leaf</code>（一片绿叶），state1＝<code>A bright red leaf</code>（一片鲜红的叶子），类型＝属性变化。</li>
+<li>打分：D-LLaVA 逐帧判断画面更像 state0 还是 state1，要求随时间从 0 平滑过渡到 1。</li>
+</ul>
+<p><strong>怎么提交</strong>：本来是把评测 CSV 打包传到排行榜 Space 表单，<strong>现在表单不可用</strong>。</p>
+<p><strong>和我们的关系</strong>：低。不考交互，榜也挂了。</p>
+</div>
+<div class="bcard">
+<h3 id="evalcrafter">EvalCrafter —— 已停更</h3>
+<p><strong>谁做的</strong>：腾讯 AI Lab 等，CVPR 2024（<a target="_blank" href="https://arxiv.org/abs/2310.11440">arXiv 2310.11440</a>）。<a target="_blank" href="https://github.com/evalcrafter/EvalCrafter">GitHub</a>（最近提交 2024-10-03）；排行榜 Space（AILab-CVC/EvalCrafter）是 BUILD_ERROR，最后修改 2024-04-11。</p>
+<p><strong>测什么</strong>：700 条提示词，约 17 个客观指标归成 4 方面（画质、文本贴合、运动质量、时间一致性），再按 8.6k 条人工反馈加权。</p>
+<p><strong>谁打了</strong>（仓库里的 result.csv，2023–24 年）：Gen2（23/12）254、PikaLab V1.0 250、Gen2（23/09）244、VideoCrafter2 243、LaVie-Interp 241、MoonValley 241……没有任何 2025 年以后的模型。</p>
+<p><strong>真题示例</strong>：prompt700.txt 第 300 行原文 <code>With the style of da Vinci, A woman gently pets a cat purring in her lap.</code>（达·芬奇风格：一位女士轻抚躺在她腿上呼噜的猫。）——按 17 个指标（如 CLIP 文本贴合、风格、运动幅度等）自动打分。</p>
+<p><strong>和我们的关系</strong>：不建议，已停更。</p>
+</div>
+<div class="bcard">
+<h3 id="fetv">FETV —— 只有论文人评，没有榜</h3>
+<p><strong>谁做的</strong>：北大（孙栩组）+ 华为诺亚，NeurIPS 2023 数据集赛道（<a target="_blank" href="https://arxiv.org/abs/2311.01813">arXiv 2311.01813</a>）。<a target="_blank" href="https://github.com/llyx97/FETV">GitHub</a>（最近提交 2024-03-04）· <a target="_blank" href="https://huggingface.co/datasets/lyx97/FETV">数据</a></p>
+<p><strong>测什么</strong>：619 条提示词，按「主要内容 / 属性控制 / 提示词复杂度」细分类；人工评 4 个早期模型（CogVideo、Text2Video-zero、ModelScopeT2V、ZeroScope）的静态质量、时间质量、整体贴合、细粒度贴合。<strong>没有排行榜</strong>。</p>
+<p><strong>完整真题示例</strong>：<code>{"video_id":"1006807024","prompt":"A mountain stream","major content":{"spatial":["scenery &amp; natural objects"],"temporal":["fluid motions"]},"prompt complexity":["simple"],"source":"WebVid"}</code>——提示词「一条山涧溪流」，空间类别＝风景与自然物，时间类别＝流体运动，复杂度＝简单。人工按 4 项打分。</p>
+<p><strong>和我们的关系</strong>：不建议。</p>
+</div>
+<div class="bcard">
+<h3 id="aa">Artificial Analysis Video Arena —— 商用模型盲评竞技场</h3>
+<p><strong>谁做的</strong>：Artificial Analysis（独立评测公司）。<a target="_blank" href="https://artificialanalysis.ai/video/leaderboard/text-to-video">文生视频榜</a> · <a target="_blank" href="https://artificialanalysis.ai/methodology/video">方法说明</a></p>
+<p><strong>还在维护吗</strong>：在，每小时更新。</p>
+<p><strong>测什么</strong>：招募的评审（Prolific 平台）看同一提示词下两个匿名视频，选更好的；用 Bradley-Terry 算 Elo，<strong>以 Kling 3.0 1080p Pro＝1000 为锚点</strong>。6 个榜：文生视频 v2.0（带声音）、文生视频-无声 v2.0、图生视频（带声/无声）v1.0、视频编辑（带声/无声）v1.1。文生视频 v2.0 用 1000 条提示词（无声版 500 条），按「用途 × 能力」分类，能力包括物理、复杂构图、人体结构、光照、多镜头、相机控制、文字渲染、时空一致性、音画同步、口型同步，外加 8 种风格。默认 1080p、24fps、10 秒、16:9、seed 42。约 1/5 的对局是质检题。<strong>提示词不公开</strong>。</p>
+<p><strong>谁打了（文生视频 v2.0，2026-10-10）</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>名次</th>
+<th>模型</th>
+<th>Elo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Wan 3.0</strong>（阿里）</td>
+<td>1156</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Utopai X</td>
+<td>1149</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Dreamina Seedance 2.5</strong>（字节）</td>
+<td>1143</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>MiniMax H3 768p</strong>（开放权重第一）</td>
+<td>1137</td>
+</tr>
+<tr>
+<td>5</td>
+<td>MiniMax H3 Max</td>
+<td>1130</td>
+</tr>
+<tr>
+<td>6</td>
+<td>FLUX 3</td>
+<td>1128</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Seedance 2.0</td>
+<td>1116</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Gemini Omni Flash 1.1</strong>（Google）</td>
+<td>1113</td>
+</tr>
+<tr>
+<td>9</td>
+<td>SkyReels V4</td>
+<td>1074</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Agnes-Video-2.5</td>
+<td>1057</td>
+</tr>
+</tbody>
+</table></div>
+<p>其后：Grok Imagine Video 1.5 1045、HappyHorse-1.1 1042、Wan2.7 1030、<strong>Kling 3.0 Omni 1015</strong>、Kling 3.0 Pro 1000（锚点）、PixVerse V6 985、<strong>Veo 3.1 962</strong>、MAGI-2 Preview 960、LTX-2.5 946、Vidu Q3 Pro 941。共 29 个。<strong>这个榜上没有 Sora、Runway、Luma</strong>。</p>
+<p><strong>真题示例</strong>：提示词不公开，<strong>拿不到真题</strong>。</p>
+<p><strong>怎么提交</strong>：只收有公开、无服务器 API 的模型，按「行业重要性」由 AA 决定是否收录，通过官网联系页申请。</p>
+<p><strong>和我们的关系</strong>：只有我们出公开 API 的商用视频模型才有意义，不考交互。</p>
+</div>
+<div class="bcard">
+<h3 id="lmarena">LMArena Text-to-Video —— 公众投票竞技场</h3>
+<p><strong>链接</strong>：<a target="_blank" href="https://lmarena.ai/leaderboard/text-to-video">lmarena.ai/leaderboard/text-to-video</a>。2026-09-21 更新，71.9 万票，48 个模型。</p>
+<p><strong>测什么</strong>：普通用户自己写提示词，看两个匿名视频投票，算类 Elo 分。</p>
+<p><strong>谁打了</strong>：1 gemini-omni-1.1-flash 1516；2 gemini-omni-flash 1513；3 flux-3-video 1493（初步）；4 grok-imagine-video-1.5-agent 1492（初步）；5 dreamina-seedance-2.0-720p 1479；6 wan3.0 1476；7 seedance-2.5-720p 1474；8 minimax-h3 1460；9 muse-video（Meta）1456；10 happyhorse-1.0 1427；11 <strong>sora-2-pro 1368</strong>；12 <strong>veo-3.1-audio 1364</strong>；17 sora-2 1343；27 <strong>runway-gen-4.5 1225</strong>；29 <strong>kling-2.6-pro 1216</strong>；31 <strong>ray-3（Luma）1206</strong>；32 <strong>hailuo-2.3 1206</strong>；38 hunyuan-video-1.5 1169；42 wan-v2.2-a14b 1132。</p>
+<p><strong>真题示例</strong>：题目是用户临时写的，<strong>没有固定题库</strong>。</p>
+<p><strong>和我们的关系</strong>：同 AA，偏商用模型曝光。</p>
+</div>
+<h2 id="control">🎮 可控交互类（9 个）</h2>
+<p>按键、相机、指令能不能控住，前后是不是同一个世界。<strong>和我们最对口</strong>，前三推荐里有两个在这一类：WBench、WorldScore、WorldRoam-Bench。</p>
+<div class="bcard">
+<h3 id="wbench">WBench —— 多轮交互式世界模型评测（美团 + 复旦）</h3>
+<p><strong>谁做的</strong>：复旦大学（丁恒辉组）+ 美团 LongCat 团队，2026-05-28 论文、数据、代码、榜单同时发布。
+链接：<a target="_blank" href="https://meituan-longcat.github.io/WBench/#leaderboard">官网与榜单</a> · <a target="_blank" href="https://arxiv.org/abs/2605.25874">论文 arXiv 2605.25874</a> · <a target="_blank" href="https://github.com/meituan-longcat/WBench">GitHub</a>（MIT）· <a target="_blank" href="https://huggingface.co/datasets/meituan-longcat/WBench">数据</a>（公开）· <a target="_blank" href="https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md">提交说明</a></p>
+<p><strong>还在维护吗</strong>：在。官网标注「Leaderboard Updated 2026/10/04」。</p>
+<p><strong>完整版</strong>：全部榜单、22 个小指标的前三、17 道原题见 <a href="../wbench/">WBench 单独页面</a>。</p>
+<p><strong>测什么</strong>：给世界模型一张起始画面和一串多轮操作（往前走、左转、让角色做动作、让环境变化、切第一/第三人称），看生成的视频好不好看、听不听话、前后一不一致、物理合不合理。289 道题、1,058 轮：导航 601 轮、角色动作 213、事件编辑 183、视角切换 61。第一人称 178 道、第三人称 111 道；写实 150、风格化 139。</p>
+<p><strong>五个维度</strong>（每维 0–100，总分 = 五维等权平均，全部自动打分，不用人评）：画质、设定贴合、交互、一致性、物理。导航分（NavScore）是用 MegaSAM 从视频反推相机轨迹，和按键对应的标准轨迹比。</p>
+<p><strong>有哪些榜</strong>（真正有排名的只有两个，官网可再按模型类型、维度、小指标筛）：</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>榜</th>
+<th>题量</th>
+<th>谁能参加</th>
+<th>当前前三（官网 2026/10/04）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Navi 导航榜</strong></td>
+<td>158 题</td>
+<td>文字、相机、按键都能参加，共 42 个模型</td>
+<td>Alaya-EVOKE-Turbo 82.0；XGEN-Jing 81.9；Enuma（字节，未发布）81.7</td>
+</tr>
+<tr>
+<td>Navi · 只看按键模型</td>
+<td>158</td>
+<td>10 个</td>
+<td>JoyAI-Echo-1.5 81.6；JoyAI-Echo-1.5 flash 81.0；<strong>Zing-0.5 81.0</strong></td>
+</tr>
+<tr>
+<td>Navi · 只看文字模型</td>
+<td>158</td>
+<td>12 个</td>
+<td>Kling 3.0 79.0；Wan 2.7 78.1；HY-Video 1.5 77.9</td>
+</tr>
+<tr>
+<td><strong>Full 全量榜</strong></td>
+<td>289 题</td>
+<td>官方说只有文字模型；但现在榜上有 3 个相机模型，共 16 个</td>
+<td>Murea-Pro 81.1；XGEN-Jing 81.0；XGEN-Jing 4-step AR 79.9</td>
+</tr>
+</tbody>
+</table></div>
+<p>Navi 榜参照位置：Zing-0.5 第 6（81.0）、Kling 3.0 第 13（79.0）、快乐生蚝 第 19（76.8）、Genie 3 第 32（73.9）。前 10 名分差只有 2.1 分。</p>
+<p><strong>两个对打榜有用的发现</strong>（官网 Key Findings）：导航能力和画质、物理几乎不相关；多轮误差会累积，导航准确度从第 1 轮到第 4 轮掉 21 分。</p>
+<p><strong>一道完整原题（case 179 · 导航 · 闭环 · 第一人称 · 写实）</strong> <a target="_blank" href="https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_179.json">原始 JSON</a></p>
+<p><img alt="WBench case 179 起始图" src="img/case_179.jpg" /></p>
+<ul>
+<li><strong>场景</strong>（中文翻译）：黄昏时热闹的东南亚夜市。一条窄巷两侧是小吃摊，挂着彩色篷布和一串串暖黄灯泡。炒锅、炭烤架和汤锅冒出白色蒸汽和烟。地面刚下过雨，映着暖色灯光。左边摊位在炭火上烤沙爹串，右边水果摊的热带水果摆在碎冰上。前方小巷继续深入，更多摊位卖汤面和烤海鲜，头顶挂着中式灯笼。左边有小岔巷通向布料摊和饰品店；右边摊位缝隙里能看到摩托车和塑料箱。观察者身后，市场入口通向大路，有突突车和霓虹招牌。</li>
+<li><strong>视角</strong>：第一人称，站在拥挤过道中间，镜头在头部高度向前看，看不到角色身体。</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>轮</th>
+<th>原题</th>
+<th>中文</th>
+<th>文字模型实际收到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>按键 <code>W</code></td>
+<td>镜头前推</td>
+<td>The camera pushes forward.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>按键 <code>A</code></td>
+<td>镜头左移</td>
+<td>The camera moves to the left.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>按键 <code>D</code></td>
+<td>镜头右移</td>
+<td>The camera moves to the right.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>按键 <code>S</code></td>
+<td>镜头后拉</td>
+<td>The camera pulls back.</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>算什么分</strong>：所有题都算的 11 项（6 个画质指标、背景一致、片段连续、几何一致、光度一致、视觉合理性），这道题另外算：导航轨迹（反推相机轨迹和标准轨迹比）；空间一致（最后回到起点那一帧和第一帧像不像）；门控空间一致（同上，但画面几乎不动的扣分，防止靠静止刷分）；场景贴合（大模型判场景元素有没有保持，转过去后「画外」描述的东西有没有出现，比如身后的大路、突突车和霓虹招牌）。</li>
+</ul>
+<p><strong>怎么提交</strong>（<a target="_blank" href="https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md">SUBMISSION.md</a>）：</p>
+<ol>
+<li>从 HuggingFace 下题目，用自家模型每题生成一段视频（相机/按键模型做 158 道导航题）。</li>
+<li>二选一：<strong>A. 自己评</strong>（要 GPU 和火山引擎豆包 API key，官方抽样复核）；<strong>B. 交视频让官方免费评</strong>（排队）。</li>
+<li>打包 <code>meta.json</code> + 视频 + 建议附 <code>turns.json</code>（不交就按轮数平均切，自回归模型会吃亏）。</li>
+<li>视频放 HuggingFace 数据集或网盘，发邮件给 kaining.ying.cv@gmail.com 和 rensiyu07@meituan.com，标题 <code>[WBench Submission] &lt;展示名&gt;</code>，人工审核。</li>
+<li><strong>不用交权重、不用开 API、免费</strong>。要挂 <code>realtime</code> 标签，邮件里须写硬件、分辨率和实测速度。</li>
+</ol>
+<p><strong>和我们的关系</strong>：★★★。白模的精确相机轨迹和按键记录正对「导航」，大批量「走一圈回原点」正对空间一致。风险：一半题是写实图，白模画面偏素可能拉低画质和设定贴合；物理分是大模型判的，不是引擎真值；289 道题全公开，没找到明文禁止拿测试题训练，建议内部定死「不许用 WBench 的图、文字、轨迹训练或调参」。</p>
+</div>
+<div class="bcard">
+<h3 id="worldscore">WorldScore —— 按相机轨迹「一段段造世界」</h3>
+<p><strong>谁做的</strong>：斯坦福（段浩一、Koven Yu、Sirui Chen、<strong>李飞飞</strong>、吴佳俊），ICCV 2025（<a target="_blank" href="https://arxiv.org/abs/2504.00983">arXiv 2504.00983</a>）。
+链接：<a target="_blank" href="https://haoyi-duan.github.io/WorldScore/">官网</a> · <a target="_blank" href="https://github.com/haoyi-duan/WorldScore">GitHub</a> · <a target="_blank" href="https://huggingface.co/datasets/Howieeeee/WorldScore">数据</a>（MIT 协议）· <a target="_blank" href="https://huggingface.co/spaces/Howieeeee/WorldScore_Leaderboard">排行榜</a></p>
+<p><strong>还在维护吗</strong>：在。GitHub 最近提交 2026-07-23，排行榜最新条目同日（UniWorld-View）。</p>
+<p><strong>测什么</strong>：把「生成世界」拆成<strong>按明确相机轨迹的连续下一场景生成</strong>——给一张起始图、一条相机路径（比如先左摇、再左移、再拉远）和每一段的场景描述，模型要一段段生成，镜头走到哪、场景就得变到哪，而且前后得是同一个世界。3D 生成、4D 生成、图生视频、文生视频都能参加。</p>
+<ul>
+<li>题量：静态 2000 + 动态 1000 = <strong>3000 题</strong>。</li>
+<li>指标全自动：</li>
+<li><strong>可控性</strong>：相机控制（用 DROID-SLAM 从生成视频里反算相机轨迹，和指定轨迹比）、物体控制（GroundingDINO+SAM 看要求的物体出没出现）、内容贴合；</li>
+<li><strong>质量</strong>：3D 一致性、光度一致性、风格一致性、主观质量；</li>
+<li><strong>动态</strong>（只算 Dynamic 榜）：运动准确度、运动幅度、运动平滑。</li>
+<li>两个总分：<strong>WorldScore-Static</strong>（可控+质量）和 <strong>WorldScore-Dynamic</strong>（再加动态）。</li>
+</ul>
+<p><strong>谁打了（排行榜 35 条，按 Static 排）</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>名次</th>
+<th>模型</th>
+<th>类型</th>
+<th>Static</th>
+<th>Dynamic</th>
+<th>相机控制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>UniWorld-View（北大袁粒组，2026-07-23）</td>
+<td>4D</td>
+<td>85.53</td>
+<td>76.09</td>
+<td>97.72</td>
+</tr>
+<tr>
+<td>2</td>
+<td>WorldScape-0.2 (MoE)</td>
+<td>视频</td>
+<td>85.13</td>
+<td>76.23</td>
+<td>94.32</td>
+</tr>
+<tr>
+<td>3</td>
+<td>World Dreamer</td>
+<td>4D</td>
+<td>84.52</td>
+<td>74.35</td>
+<td>91.62</td>
+</tr>
+<tr>
+<td>4</td>
+<td>EvoPhys-World</td>
+<td>视频</td>
+<td>83.45</td>
+<td>73.78</td>
+<td>94.56</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Inspatio-World</td>
+<td>4D</td>
+<td>83.15</td>
+<td>74.10</td>
+<td>93.51</td>
+</tr>
+<tr>
+<td>6</td>
+<td>WorldScape-0.2</td>
+<td>视频</td>
+<td>81.37</td>
+<td>73.62</td>
+<td>75.47</td>
+</tr>
+<tr>
+<td>7</td>
+<td>EonWorld</td>
+<td>—</td>
+<td>81.08</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>WorldScape-0.1</td>
+<td>—</td>
+<td>80.76</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>9</td>
+<td>FantasyWorld-1.0</td>
+<td>—</td>
+<td>80.45</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>…</td>
+<td><strong>Voyager（腾讯混元）</strong></td>
+<td>3D</td>
+<td>77.62</td>
+<td>54.53</td>
+<td>85.95</td>
+</tr>
+<tr>
+<td>…</td>
+<td>WonderWorld</td>
+<td>3D</td>
+<td>72.69</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>…</td>
+<td>CogVideoX-I2V</td>
+<td>视频</td>
+<td>62.15</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>…</td>
+<td><strong>Runway Gen-3</strong></td>
+<td>视频</td>
+<td>60.71</td>
+<td>57.58</td>
+<td><strong>29.47</strong></td>
+</tr>
+<tr>
+<td>…</td>
+<td><strong>Wan2.1</strong></td>
+<td>视频</td>
+<td>57.56</td>
+<td>52.85</td>
+<td><strong>23.53</strong></td>
+</tr>
+<tr>
+<td>…</td>
+<td><strong>Hailuo（MiniMax）</strong></td>
+<td>视频</td>
+<td>57.55</td>
+<td>56.36</td>
+<td><strong>22.39</strong></td>
+</tr>
+<tr>
+<td>…</td>
+<td>LTX-Video</td>
+<td>视频</td>
+<td>55.44</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>最关键的一个发现</strong>：普通视频模型（Gen-3 / Hailuo / Wan）相机控制只有 22–29 分，3D/4D 世界模型在 85–97 分。也就是说「听相机指挥」这件事，视频模型普遍不行——这正是白模世界最能给的训练信号（精确相机位姿）。</p>
+<p><strong>完整真题示例（静态集第 1280 题，风格化 · 室内 · 走廊类 · Minecraft 风格）</strong></p>
+<p><img src="img/worldscore_1280.jpg" class="eximg" alt="WorldScore 1280 起始图"></p>
+<ul>
+<li>相机路径：<code>["pan_left", "move_left", "pull_out"]</code>（向左摇 → 向左平移 → 拉远）</li>
+<li>4 段场景（content_list）：</li>
+<li><code>Art Gallery Corridor, wall of framed pictures</code>（美术馆走廊，一面挂满画框的墙）</li>
+<li><code>Outdoor Sculpture Garden, interactive sculpture, stone pathway</code>（户外雕塑园，互动雕塑，石板小路）</li>
+<li><code>Sunlit Garden Reflection Pool, reflection pool, sculptural fountain</code>（阳光花园倒影池，倒影池，雕塑喷泉）</li>
+<li><code>Tranquil Meadow Overlook, meadow of wildflowers, gentle stream</code>（静谧草地观景台，野花草地，潺潺小溪）</li>
+<li>每段提示词（prompt_list）：</li>
+<li><code>In the Art Gallery Corridor, walk through the sleek, modern hallway adorned with a wall of framed pictures extending into the distance.</code>（在美术馆走廊里，穿过时尚现代的走廊，一面挂满画框的墙一直延伸到远处。）</li>
+<li><code>In an Outdoor Sculpture Garden, a vibrant interactive sculpture invites exploration as visitors meander along the winding stone pathway.</code>（户外雕塑园里，一座鲜艳的互动雕塑吸引人探索，游客沿着蜿蜒的石板路漫步。）</li>
+<li><code>Sunlit Garden Reflection Pool: A tranquil reflection pool mirrors the sculptural fountain, casting shimmering patterns as sunlight dances across the water's surface.</code>（阳光花园倒影池：平静的池水倒映着雕塑喷泉，阳光在水面跳动，投下闪烁的光纹。）</li>
+<li><code>In the "Tranquil Meadow Overlook," a vibrant meadow of wildflowers stretches wide as a gentle stream winds gracefully through the lush landscape.</code>（在「静谧草地观景台」，一片绚烂的野花草地铺展开来，一条小溪在葱郁的景色中蜿蜒流过。）</li>
+<li>算什么分：每段之间的相机运动是否真的是「左摇 / 左移 / 拉远」（DROID-SLAM 反算）；每段要求的物体（画框墙、雕塑、喷泉、小溪）有没有出现；四段拼起来 3D 结构、光照、Minecraft 风格是否一致；画面主观质量。</li>
+</ul>
+<p><strong>怎么提交</strong>：自己跑开源评测，把 worldscore.json 发邮件给作者（haoyiduan@princeton.edu）；也可以把视频发过去让作者评。</p>
+<p><strong>和我们的关系</strong>：<strong>推荐（总排序第 2）</strong>。①白模能批量产出「相机轨迹 + 多场景」的训练数据，带精确位姿真值；②榜上有不少中国公司的世界模型（WorldScape、EvoPhys、Inspatio），竞争激烈但门槛透明；③有 Minecraft、风格化题，白模偏素的画风不太吃亏。</p>
+</div>
+<div class="bcard">
+<h3 id="worldmark">WorldMark（+ World Model Arena 对战平台）—— 按键驱动的交互世界模型</h3>
+<p><strong>谁做的</strong>：Alaya Lab（盛大）+ 东京大学 + 上海创智学院，2026 年 4 月（<a target="_blank" href="https://arxiv.org/abs/2604.21686">arXiv 2604.21686</a>）。<a target="_blank" href="https://alayalab.github.io/WorldMark/">官网</a> · <a target="_blank" href="https://github.com/AlayaLab/WorldMark">GitHub</a>（最近提交 2026-08-05，数据、评测代码、各模型输出都放出了）· 对战平台 <a target="_blank" href="https://warena.ai">warena.ai</a>（12 个模型、830 场排名对战、1150 票；排行榜是前端渲染，我没抓到具体分数）。</p>
+<p><strong>还在维护吗</strong>：基本在。</p>
+<p><strong>测什么</strong>：只收「按动作控制的交互式图生视频世界模型」（不带动作的文生/图生视频不在范围）。统一动作词表 <strong>W S A D L R</strong>（前进、后退、左平移、右平移、左转、右转），每个模型用适配器把它翻译成自己的输入（文字描述 / 位姿 / 键盘 / 轨迹）。</p>
+<ul>
+<li>图像：25 张真实 + 25 张风格化第一人称图（取自 WorldScore 图库），每张再合成一个第三人称版（贴上一个角色）→ 100 张；类别：自然 / 城市 / 室内；风格：油画、浮世绘、Minecraft。</li>
+<li>动作：15 条轨迹，Easy 20 秒单段、Medium 40 秒两段、Hard 60 秒三段，每个键按住约 20 秒（16fps）。每张图由 VLM 挑 5 条合理轨迹 → <strong>500 个用例</strong>。</li>
+<li>9 个确定性指标（不用模型裁判）：<strong>动作动态</strong>（方向准确率、方向纯度、响应延迟、运动稳定，平移/旋转分开算）、<strong>世界记忆</strong>（局部、全局、回访一致性）、<strong>画质</strong>（感知质量、美学 Q-Align）。<strong>没有总分</strong>。</li>
+</ul>
+<p><strong>谁打了（10 个模型，第一人称-真实图）</strong>：AlayaWorld、DreamX-World、HY-GameCraft 1.0（腾讯）、<strong>HY-World 1.5（腾讯）</strong>、LingBot-World、<strong>Lyra 2.0（NVIDIA）</strong>、<strong>Matrix-Game 2.0 / 3.0（昆仑万维 Skywork）</strong>、SANA-WM、Yume 1.5。</p>
+<ul>
+<li>平移方向准确率：Matrix-Game 3.0 <strong>98.37</strong>、Lyra 2.0 98.16、DreamX 96.91、Matrix-Game 2.0 95.12；</li>
+<li>旋转方向准确率：AlayaWorld <strong>92.31</strong>、LingBot 87.32、Lyra 85.44、HY-World 85.05；HY-GameCraft 只有 2.74；</li>
+<li>回访一致性：AlayaWorld 93.43、Lyra 93.26、HY-World 87.52；</li>
+<li>Yume 1.5 感知画质最高（87.24）但平移方向准确率只有 51.85——<strong>好看 ≠ 听话</strong>。</li>
+</ul>
+<p><strong>完整真题示例（图像 016 · Minecraft 风格）</strong></p>
+<p><img src="img/worldmark_016_pair.jpg" class="eximg" alt="WorldMark 016 第一人称与第三人称"></p>
+<ul>
+<li>左：第一人称起始图；右：第三人称版本（合成了一个类似 Steve 的角色）。</li>
+<li>第一人称提示词原文：<code>First-person view. Rendered in a charming, blocky voxel style reminiscent of Minecraft, this serene winter landscape is bathed in the soft, warm light of a gentle sunrise. A majestic, pixelated brown eagle with outstretched wings glides gracefully through the pastel blue and purple sky. Below, the geometric terrain transitions from a patch of vibrant green grass in the foreground to expansive, snow-blanketed grounds. Several tiered pine trees stand near a small icy blue stream. In the distance, heavily frosted forests and towering snow-capped mountains complete the picturesque scene, which is beautifully enhanced by long, dynamic shadows and atmospheric lighting.</code></li>
+<li>中文：第一人称视角。画面是可爱的方块体素风格，像 Minecraft；宁静的冬日景色沐浴在柔和温暖的日出光线里。一只张开翅膀的像素棕色老鹰在淡蓝紫色的天空中滑翔。下方地形从前景一小片鲜绿草地过渡到大片雪地，几棵塔形松树立在一条冰蓝色小溪旁。远处是覆满白霜的森林和高耸的雪山，长长的影子和大气光效让画面更美。</li>
+<li>分配给这张图的 5 条动作轨迹：编号 1、2、5、6、14，即 <code>W</code>、<code>S</code>、<code>R</code>、<code>W→S</code>、<code>A→D→A</code>（最后一条是 Hard，60 秒三段）。</li>
+<li>算什么分：按 W 时画面是否在前进、按 R 时是否在右转（方向准确率/纯度）；按键后多久开始动（延迟）；<code>A→D→A</code> 来回走后，回到同一位置时场景是否还一样（回访一致性）；画质。</li>
+</ul>
+<p><strong>怎么提交</strong>：用官方图和动作生成视频 → 跑开源评测（输出 final_master.csv）。<strong>怎么上 warena.ai 对战平台没写</strong>，需要联系作者。</p>
+<p><strong>和我们的关系</strong>：<strong>题型和我们最像</strong>（按键+第一/三人称+风格化）。白模可以直接造「W/S/A/D/转向 + 回访」的训练数据，带精确位姿真值。缺点：没有总分、没有官方提交流程，曝光主要靠论文和 warena。</p>
+</div>
+<div class="bcard">
+<h3 id="iworld">iWorld-Bench —— 6 自由度相机动作 + 记忆</h3>
+<p><strong>谁做的</strong>：清华（李勇、高宸，FIB 实验室 / EmbodiedCity）+ 东北大学 + 华南理工，ICML 2026（<a target="_blank" href="https://arxiv.org/abs/2605.03941">arXiv 2605.03941</a>）。<a target="_blank" href="https://iworld-bench.com">官网</a> · <a target="_blank" href="https://github.com/EmbodiedCity/iWorld-Bench">GitHub</a>（最近提交 2026-07-15）· <a target="_blank" href="https://huggingface.co/datasets/EmbodiedCity/iWorld-Bench-Dataset">数据</a> · <a target="_blank" href="https://huggingface.co/spaces/EmbodiedCity/iWorld-Bench">排行榜 Space</a>（静态表，最后修改 2026-05-05）</p>
+<p><strong>还在维护吗</strong>：代码在更新，排行榜只有论文里的 14 个模型，<strong>没写怎么提交</strong>。</p>
+<p><strong>测什么</strong>：33 万段视频（23 万+ 来自 KITTI、nuScenes、Waymo、RealEstate10K、DL3DV、TartanAir-V2、SpatialVid 等 12 个真实数据集；<strong>10 万段 1080p 来自 4 个仿真器的 18 个环境</strong>），精选 2.1k 样本 → 约 4.9k 测试任务。</p>
+<ul>
+<li>动作框架 C=[D,T,R,V]：难度 1–6、平移编号 0–26（W/S/A/D + 上下组合）、旋转编号 0–26（俯仰/偏航/滚转组合）、有效性。</li>
+<li>任务：动作控制 D1–D4（各 1000）、记忆（环形路径回原点，200）、相机跟随（给相机参数文件，700）。</li>
+<li>9 个自动指标：生成质量（MUSIQ 画质、亮度一致、色温漂移、清晰度保持）、轨迹跟随（运动平滑、用 ViPE 反算轨迹的准确度、对真值视频的容差）、记忆（对称帧像素一致、镜像轨迹对齐）。</li>
+</ul>
+<p><strong>谁打了（平均分）</strong>：1 <strong>HY-World 1.5</strong> 0.7873；2 videox-fun-Wan 0.7474；3 HunyuanVideo-1.5 0.7188；4 AC3D 0.7149；5 CogVideoX-I2V 0.6963；6 RealCam-I2V 0.6865；7 <strong>NVIDIA Cosmos（Predict2.5）</strong> 0.6275；8 YUME 1.5 0.6209；9 ASTRA 0.5980；10 CamI2V 0.5765；11 CameraCtrl 0.5762；12 WAN 2.2 0.5731；13 <strong>Matrix-Game 2.0</strong> 0.5663；14 <strong>MotionCtrl</strong> 0.5486。（MotionCtrl、CameraCtrl 这类经典相机控制方法在这里都垫底。）</p>
+<p><strong>完整真题示例（diff_2822，仿真集，EmbodiedCity 环境 0，UE 渲染）</strong></p>
+<p><img src="img/iworld_diff_2822.jpg" class="eximg" alt="iWorld-Bench diff_2822 首帧"></p>
+<ul>
+<li>控制文件：<code>camera_2_1_3.txt</code>——难度 2、平移编号 1（W 前进）、旋转编号 3（→ 向右摇）。</li>
+<li>文字指令原文：<code>The camera pushes forward (W). The camera pans to the right (→).</code>（镜头向前推进（W），镜头向右摇（→）。）</li>
+<li>编码：wsad＝[1,0,0,0]，dy_dx＝[0.0, 1.0]。</li>
+<li>相机参数：81 行（81 帧），每行＝帧号 + 归一化内参 fx fy cx cy（0.532 0.946 0.5 0.5）+ 3×4 世界到相机矩阵；每帧偏航约 0.75°，前进 0.025。</li>
+<li>算什么分：从生成视频反算的轨迹和这 81 帧真值轨迹比（准确度、容差）；画面亮度/色温/清晰度是否随时间漂移；运动是否平滑。</li>
+</ul>
+<p><strong>和我们的关系</strong>：<strong>它的仿真部分就是「引擎白模 + 精确相机」</strong>——和我们的数据形态几乎一样。可以借它的动作编码格式（C=[D,T,R,V]）组织内部数据和私有考试。可惜没提交入口，只能论文里自评后联系作者。</p>
+</div>
+<div class="bcard">
+<h3 id="worldroam">WorldRoam-Bench —— 10–60 秒连续 WASD 漫游</h3>
+<p><strong>谁做的</strong>：高德（阿里）CV Lab + 南京大学 + 清华 + 北大，通讯作者南大 Qi Fan（<a target="_blank" href="https://arxiv.org/abs/2606.31672">arXiv 2606.31672</a>，v5 于 2026-09-18）。<a target="_blank" href="https://worldroam.amap.com">官网</a>；GitHub 和数据集写着「coming soon」。</p>
+<p><strong>还在维护吗</strong>：在，论文 9 月刚更新，官网有提交表单。</p>
+<p><strong>测什么</strong>：1000+ 用例，自然/城市/室内，第一人称和第三人称，WASD（+IJKL 视角键）连续交互 10–60 秒，分短/中/长三档。4 个维度：</p>
+<ul>
+<li><strong>动作跟随</strong>：从生成视频解码位姿，算逐帧离散动作准确率、部分准确率、轨迹分、nATE；</li>
+<li><strong>画质</strong>：美学、成像 + 每 3 秒窗口的时间漂移；</li>
+<li><strong>交互物理</strong>：力学（碰撞/穿模/形变/重力）、光学（反射/阴影）、3D 一致，由 VLM 判，带有效性门槛；</li>
+<li><strong>记忆</strong>：3D 点云重建算保留率、反幻觉；主体记忆用跟踪 + Qwen3-VL-Plus。</li>
+<li>第三人称榜额外有「控制率」门槛。</li>
+</ul>
+<p><strong>谁打了</strong>
+第一人称总榜：1 <strong>Genie 3（Google DeepMind，闭源）70.32</strong>；2 <strong>Lyra 2.0（NVIDIA）69.61</strong>；3 <strong>快乐生蚝 Happy Oyster（阿里，闭源）68.53</strong>；4 HY-World 1.5 63.97；5 LingBot-World 2.0 63.90；6 Matrix-Game 3.0 60.34；7 SANA-WM-AR 59.37；8 LingBot-World 58.77；9 SANA-WM 54.61；10 Matrix-Game 2.0 51.92；11 Yume 1.5 47.06；12 minWM 41.88。
+第三人称总榜：快乐生蚝 70.66（控制率 96.43）、Genie 3 61.86、LingBot-World 2.0 38.31、HY-World 1.5 28.07、LingBot-World 23.73。
+值得注意：Genie 3 动作分 76.31，低于 Lyra 的 90.82，但物理分 66.67 全场最高；论文发现「轨迹对齐 &gt; 0.85 的模型，逐帧动作准确率可能 &lt; 65%」，物理合理和死跟动作之间有取舍。</p>
+<p><strong>真题示例</strong>：数据集未放出，官网只有 GIF 展示——<strong>拿不到真题</strong>。</p>
+<p><strong>怎么提交</strong>：官网表单填模型名、规模、机构、邮箱，上传推理视频（≤5GB），邮件审核。</p>
+<p><strong>和我们的关系</strong>：<strong>推荐</strong>。题型（WASD 连续漫游 + 记忆 + 交互物理）和白模数据最对口；Genie 3、快乐生蚝都在榜上，上榜即可和它们同表对比。风险：题目没公开，只能先用白模搭类似的内部考试。</p>
+</div>
+<div class="bcard">
+<h3 id="worldexam">WorldExam —— 三种控制方式 + 「世界会不会自己反应」</h3>
+<p><strong>谁做的</strong>：中科院自动化所（张兆翔、范略、谭铁牛）+ SLAI + 港中文（李鸿升）+ 高德 + 清华（朱军），2026 年 8 月（<a target="_blank" href="https://arxiv.org/abs/2608.02603">arXiv 2608.02603</a>）。<a target="_blank" href="https://worldexam.github.io">官网</a> · <a target="_blank" href="https://github.com/YuxueYang1204/worldexam">GitHub</a>（最近提交 2026-08-04，只有 README，测试用例「Coming Soon」）</p>
+<p><strong>测什么</strong>：1474 个用例；三种控制接口——相机 SE(3) 轨迹 / 离散动作 / 语言；4 层能力：画质、控制遵循、空间一致、<strong>世界反应性</strong>；8 个任务：相机控制、主体控制、场景回访、地形/物体/社交交互、物理反应、目标完成。两个赛道：<strong>静态场景</strong>（相机控制、回访、3D 一致）和<strong>动态交互</strong>（只有动作和语言模型能参加）。「内在反应性」指输入里没说、但世界应该自己发生的反应。</p>
+<p><strong>谁打了（20 个模型）</strong></p>
+<ul>
+<li>静态场景：1 NeoVerse 85.39；2 WorldPlay 81.61；3 InSpatio-World 1.3B 81.40；4 TrajectoryCrafter 78.00；5 Infinite-World 74.33；6 LingBot-World 70.39；7 Matrix-Game 3.0 69.28；8 <strong>Hailuo 2.3</strong> 68.64；……14 <strong>Kling 2.5</strong> 63.98；15 <strong>Veo 3.1</strong> 60.99；16 Vidu Q3 60.24；17 <strong>Seedance 1.5</strong> 59.91；19 Hunyuan-GameCraft 57.59。</li>
+<li>动态交互：1 <strong>Veo 3.1</strong> 72.77；2 Vidu Q3 72.35；3 Hailuo 2.3 72.03；4 HappyHorse 1.0 70.57；5 Wan 2.6 I2V 66.60；6 Seedance 1.5 66.50；7 LingBot-World 60.76；8 Kling 2.5 60.45；9 WorldPlay 57.57。——<strong>静态靠专门的世界模型，动态交互反而是大视频模型赢</strong>。</li>
+</ul>
+<p><strong>真题示例</strong>：测试用例未公开——<strong>拿不到真题</strong>。</p>
+<p><strong>和我们的关系</strong>：中。等题目公开再看；动态交互赛道（让世界自己反应）是白模引擎的强项（物理引擎天然会「反应」）。</p>
+</div>
+<div class="bcard">
+<h3 id="wmb">WorldModelBench —— 7 领域 + 物理违规检测（已停更）</h3>
+<p><strong>谁做的</strong>：UC Berkeley（Ion Stoica、Joseph Gonzalez）+ UCSD（王小龙）+ MIT（韩松）+ NVIDIA，2025 年 2 月（<a target="_blank" href="https://arxiv.org/abs/2502.20694">arXiv 2502.20694</a>）。<a target="_blank" href="https://worldmodelbench-team.github.io">官网</a> · <a target="_blank" href="https://github.com/WorldModelBench-Team/WorldModelBench">GitHub</a>（最近提交 2025-07-29）· <a target="_blank" href="https://huggingface.co/datasets/Efficient-Large-Model/worldmodelbench">数据</a> · 裁判模型 <a target="_blank" href="https://huggingface.co/Efficient-Large-Model/vila-ewm-qwen2-1.5b">vila-ewm-qwen2-1.5b</a>（用 6.7 万条众包标注微调的 2B 模型，预测物理违规比 GPT-4o 准 8.6%）。</p>
+<p><strong>还在维护吗</strong>：排行榜 13 个模型全是 2024-11-15 的，<strong>之后没更新</strong>。</p>
+<p><strong>测什么</strong>：7 领域 × 50 题＝350 题（自动驾驶、人、工业、自然、机器人、游戏、动画），56 个子领域；输入＝文字 + 首帧。满分 10：指令跟随 0–3、物理 5 条是非（牛顿定律、形变/质量、流体、穿模、重力）、常识 2 条是非（逐帧美学、时间连贯）。</p>
+<p><strong>谁打了</strong>：<strong>KLING 9.10</strong>（指令 2.32、物理 4.81、常识 1.95）；<strong>Minimax 8.92</strong>；Mochi 1 官方 8.66；<strong>Runway 8.64</strong>；<strong>Luma 8.24</strong>；OpenSoraPlan-T2V 8.04；Mochi 1 开源 7.91；CogVideoX-T2V 7.65；CogVideoX-I2V 7.08；Pandora 6.90；T2V-Turbo 6.56；OpenSora-T2V 6.17；OpenSora-I2V 5.82。</p>
+<p><strong>完整真题示例（游戏领域，Action 子类）</strong></p>
+<p><img src="img/wmb_game_7259.jpg" class="eximg" alt="WorldModelBench 游戏题首帧"></p>
+<ul>
+<li>首帧描述原文：<code>A player is positioned in an industrial warehouse, aiming down the sights of their weapon. The environment is cluttered with crates, barrels, and a visible train in the background labeled 'AMERICA.'</code>（玩家站在一个工业仓库里，正举枪瞄准。周围堆满木箱和油桶，背景里能看到一列写着「AMERICA」的火车。）</li>
+<li>指令原文：<code>The player moves through the warehouse, aiming down sights and taking cover while advancing towards the capture point.</code>（玩家在仓库中移动，一边举枪瞄准、一边找掩体，向占领点推进。）</li>
+<li>算什么分：裁判模型给指令跟随打 0–3 分（0＝没动/无关，3＝完全做到「移动+瞄准+找掩体+推进」）；再回答 5 道物理是非题（有没有违反牛顿定律、物体形变是否合理、有没有穿模、重力对不对……）和 2 道常识题。</li>
+</ul>
+<p><strong>怎么提交</strong>：把结果发到 worldmodelbench.team@gmail.com。</p>
+<p><strong>和我们的关系</strong>：低（停更）。但它的<strong>游戏/机器人题 + 2B 物理违规裁判</strong>可以直接拿来做内部质检工具。</p>
+</div>
+<div class="bcard">
+<h3 id="gameworld">GameWorld Score（Matrix-Game 自带）—— Minecraft 键鼠控制</h3>
+<p><strong>谁做的</strong>：昆仑万维 Skywork，随 Matrix-Game 1 发布（<a target="_blank" href="https://arxiv.org/abs/2506.18701">arXiv 2506.18701</a>）。评测代码在 <a target="_blank" href="https://github.com/SkyworkAI/Matrix-Game/tree/main/Matrix-Game-1/GameWorldScore">GitHub Matrix-Game-1/GameWorldScore</a>（该目录最近提交 2025-08-11）。</p>
+<p><strong>测什么</strong>：Minecraft 世界模型的 8 项指标：画质、美学、时间一致、运动平滑、<strong>键盘准确率</strong>（前后/左右/攻击/跳跃分组算精度）、<strong>鼠标准确率</strong>（从俯仰/偏航变化判 9 个方向）、物体一致、场景一致。</p>
+<p><strong>谁打了（论文自评，不是公开榜）</strong>：Matrix-Game 键盘 0.95 / 鼠标 0.95；MineWorld 0.86 / 0.64；Oasis（Decart）0.77 / 0.56。</p>
+<p><strong>真题示例</strong>：仓库里的 GameWorld_full_info.json 只列了 7 个维度名，没有具体动作序列——<strong>拿不到真题</strong>。</p>
+<p><strong>和我们的关系</strong>：低。没有公开榜；但「键盘/鼠标准确率」的算法可以借来评我们自己的模型。</p>
+</div>
+<div class="bcard">
+<h3 id="camerabench">CameraBench —— 相机运动「理解」（不是生成）</h3>
+<p><strong>谁做的</strong>：CMU（Deva Ramanan）+ UMass + USC + Emerson + Adobe + 哈佛 + MIT-IBM，NeurIPS 2025 Spotlight（<a target="_blank" href="https://arxiv.org/abs/2504.15376">arXiv 2504.15376</a>）。<a target="_blank" href="https://linzhiqiu.github.io/papers/camerabench/">官网</a> · <a target="_blank" href="https://github.com/sy77777en/CameraBench">GitHub</a> · <a target="_blank" href="https://huggingface.co/datasets/syCen/CameraBench">数据</a></p>
+<p><strong>测什么</strong>：约 3000 段网络视频，15 万+ 二元标签 + 描述，和电影摄影师一起定的相机运动分类体系（推拉摇移、环绕、跟拍……）。评的是 SfM/SLAM（MegaSaM 最好、COLMAP）和 VLM；用约 1400 段视频微调 Qwen2.5-VL 后整体 AP 追平 MegaSaM。排行榜按「原语二分类 + 问答」排，官网写「联系作者加入你的方法」。</p>
+<p><strong>完整真题示例（片段 0TqQje61Hoo.3.1）</strong></p>
+<video class="eximg" controls="controls" poster="img/camerabench_0TqQje61Hoo.jpg" preload="metadata"><source src="img/camerabench_0TqQje61Hoo.mp4" type="video/mp4"></video>
+<ul>
+<li>标签：<code>minimal-shaking</code>（几乎不抖）、<code>complex-motion</code>（复合运动）、<code>regular-speed</code>（正常速度）、<code>arc-CW</code>（顺时针环绕）、<code>arc-tracking</code>（环绕跟拍）。</li>
+<li>描述原文：<code>The camera smoothly arcs clockwise around the subject, maintaining a steady focus as it tracks their movement.</code>（镜头平滑地绕主体顺时针环绕，跟着主体移动并保持稳定对焦。）</li>
+<li>算什么分：被测模型看视频，对每个标签回答是/否（或回答问答题），和人工标签比 AP / 准确率。</li>
+</ul>
+<p><strong>和我们的关系</strong>：不是生成榜，但<strong>可以当我们「相机控制」的自动裁判</strong>：用它微调过的模型检查生成视频的相机运动是否等于指令。</p>
+</div>
+<h2 id="physics">⚛️ 物理类（7 个）</h2>
+<p>生成的东西符不符合物理规律。真正有在线榜、还在收新模型的是 Physics-IQ Verified 和 PAI-Bench；WorldBench 没有榜，但它「反算 g、摩擦、黏度」的方法最能体现白模真值的价值。</p>
+<div class="bcard">
+<h3 id="physicsiq">Physics-IQ Verified —— 视频模型懂不懂真实物理（DeepMind 原作者参与）</h3>
+<p><strong>谁做的</strong>：原版由 Google DeepMind 等做（arXiv 2501.09038，WACV 2026）。现在官方推荐的 <strong>Verified</strong> 版由 Anates Labs（慕尼黑）牵头，DeepMind 原作者 Priyank Jaini、Robert Geirhos 当顾问，2026-06-17 发布（<a target="_blank" href="https://arxiv.org/abs/2606.18943">arXiv 2606.18943</a>）。README 写明 Verified 是独立第三方评测，不由 DeepMind 背书。
+链接：<a target="_blank" href="https://physics-iq-verified.anates.ai/">Verified 官网与榜单</a> · <a target="_blank" href="https://github.com/google-deepmind/physics-IQ-benchmark">GitHub</a> · <a target="_blank" href="https://huggingface.co/datasets/Anates-Labs-Research/Physics-IQ-Verified">Verified 数据</a>（点申请，自动通过）</p>
+<p><strong>还在维护吗</strong>：在。Odyssey 的成绩 PR 于 2026-10-08 合并。</p>
+<p><strong>完整版</strong>：全部榜单、子指标、9 道原题（都带视频）见 <a href="../physics-iq/">Physics-IQ 单独页面</a>。</p>
+<p><strong>测什么</strong>：66 个真实桌面物理实验（骨牌、积木倒塌、土豆掉进水里、磁铁吸扳手……），3 个机位共 198 段考题，4K、镜头不动。给模型开头，让它续写 5 秒，再和真实录像比「哪里动、什么时候动、动了多少、像素像不像」。100 分 = 和同一实验再拍一遍一样准。5 类：固体力学 38 个实验（约 58%）、流体 15、光学 8、热 3、磁 2。</p>
+<p><strong>有哪些榜</strong>：</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>赛道</th>
+<th>给模型什么</th>
+<th>现在条数</th>
+<th>当前第一</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>V2V 视频续写</strong></td>
+<td>前 3 秒视频 + 文字（可选）</td>
+<td>9 条</td>
+<td>Odyssey-3 Pro <strong>66.10</strong>（best-of-8）；只看单次生成：Odyssey-3 Pro 63.37 ± 0.63</td>
+</tr>
+<tr>
+<td><strong>I2V 图片续写</strong>（官网默认）</td>
+<td>1 帧 + 文字</td>
+<td>27 条</td>
+<td>FLUX 3 [large] 54.70 ± 0.41（best-of-8）；只看单次生成：FLUX 3 51.11 ± 0.44</td>
+</tr>
+<tr>
+<td>4 个子指标榜</td>
+<td>Spatial IoU、Spatiotemporal IoU、Weighted spatial IoU、MSE</td>
+<td>—</td>
+<td>见单独页面</td>
+</tr>
+<tr>
+<td>Original 旧榜</td>
+<td>2025 年原版打分，分数不能和 Verified 比</td>
+<td>—</td>
+<td>V2V Magi-1 + GeoPhys 64.5%</td>
+</tr>
+</tbody>
+</table></div>
+<p>I2V 单次生成里大厂模型的位置：Seedance 2.5 42.43、MiniMax H3 39.79、Veo 3.1 Fast 29.96、Sora 2 26.5。</p>
+<p><strong>Odyssey 说的 66.1「最高」到底算不算</strong>（来源：<a target="_blank" href="https://github.com/google-deepmind/physics-IQ-benchmark/pull/90">PR #90</a>）：<strong>在 V2V 赛道确实第一，但有三个前提。</strong></p>
+<ul>
+<li>每道题生成 8 个候选再挑 1 个（best-of-8），挑选不看真值。</li>
+<li>提示词用外部大模型改写过。同一个 Odyssey-3，官方基础提示词 51.76，改写后 61.56，差将近 10 分。</li>
+<li>只跑了 1 轮，没有标准差。官方规则是宣称 SOTA 须报 4 轮标准差，这一条没满足。第三名 FLUX 3 best-of-8 是 64.35 ± 0.22，只差 1.75 分。</li>
+<li>更正：之前说的「FLUX 3 第一 64.36、Odyssey 第二 61.78」是 I2V 赛道的一个子指标，不是 V2V 总分。</li>
+</ul>
+<p><strong>一道完整原题（0056 · 固体力学 · 鸭子挡在多米诺骨牌中间）</strong></p>
+<video class="eximg" controls="controls" loop="loop" muted="muted" playsinline="playsinline" poster="img/0056_switch.jpg" preload="metadata" src="img/0056_clip.mp4"></video>
+<p><img alt="0056 时间线" src="img/0056_strip.jpg" /></p>
+<ul>
+<li><strong>真实视频里发生了什么</strong>：绑在黑色转台上的木棍顺时针转过来，推倒第一块骨牌。右边那段骨牌依次倒下，倒到黄色橡皮鸭就停住，鸭子左边的骨牌一直没动。</li>
+<li><strong>模型收到什么</strong>：V2V 收到前 3 秒视频；I2V 只收到第 3 秒那一帧（切换帧）。都可以再收到下面这段文字。</li>
+<li><strong>Verified 提示词</strong>：A yellow rubber duck has been positioned in the middle of a line of black and white dominoes on a wooden table. The wooden stick attached to the black platform rotates clockwise and knocks the first domino block.（黄色橡皮鸭摆在一排黑白骨牌中间，绑在黑色转台上的木棍顺时针转动，碰倒第一块骨牌。）</li>
+<li><strong>考什么</strong>：模型容易让整排都倒，或者把鸭子推走。真实结果是链条在鸭子处断开，「哪里动、哪里不动」最关键。</li>
+<li><strong>怎么算分</strong>：生成的 5 秒和真实的 5 秒各算运动掩码（时间线图右下角红色是真实动过的区域），比位置、时间、多少，再算像素误差，每项除以「第 2 遍录像」能达到的水平。</li>
+</ul>
+<p><strong>怎么提交</strong>：下数据 → 跑官方代码（建议 4 轮）→ 在 GitHub 提 Issue/PR，拿 run_id 和临时上传凭证 → 交 <code>submission.yaml</code> + 提示词文件 + 视频 → 提 PR 上 README 榜，须附技术报告或可复现代码。不用交权重、不用开 API，没看到收费。主办方自己重算分数，视频保密。测试数据不能用来做 BoN 挑选或给提示词改写器看。</p>
+<p><strong>和我们的关系</strong>：★★。模型要能「给 1 帧或 3 秒、续写 5 秒、镜头不动、不给动作」。白模可补固体力学（碰撞、倒塌、堆叠）训练数据并给精确物理真值。风险：测试全是真实录像、直接比像素，白模和真实画面落差大；流体、热、光一般游戏引擎模拟不好。和 WBench 的分工：WBench 证明「能交互」，Physics-IQ 证明「懂物理」。</p>
+</div>
+<div class="bcard">
+<h3 id="phygen">PhyGenBench —— 27 条物理定律，VLM 分层判（已停更）</h3>
+<p><strong>谁做的</strong>：上海 AI Lab OpenGVLab（邵文琪）+ 上交 + 港大（罗平）+ 港中文，ICML 2025（<a target="_blank" href="https://arxiv.org/abs/2410.05363">arXiv 2410.05363</a>）。<a target="_blank" href="https://phygenbench123.github.io">官网</a> · <a target="_blank" href="https://github.com/OpenGVLab/PhyGenBench">GitHub</a>（最近提交 2024-10-25）</p>
+<p><strong>测什么</strong>：160 条文生视频提示词，27 条物理定律；按数据文件分 光 50、力 40、热 30、物理属性 25、化学属性 15。评测方法 PhyGenEval 三步：①关键物理现象检测（检索关键帧，单图问答）；②物理顺序验证（多图）；③整体自然度（整段视频按 4 档描述打分）。最终 0–1 分，和人评对齐。</p>
+<p><strong>谁打了（官网 8 个模型，2024）</strong>：<strong>Gen-3 0.51</strong>（人评 0.48）；<strong>Kling 0.49</strong>（0.44）；CogVideoX-5B 0.45；Vchitect2.0 0.45；Open-Sora V1.2 0.44；CogVideoX-2B 0.39；Pika 0.39；Lavie 0.36。没有提交流程。</p>
+<p><strong>完整真题示例（第 60 题，光学 · 反射）</strong></p>
+<ul>
+<li>提示词原文：<code>A wooden block is moving closer to an upright mirror, with the reflection in the mirror moving closer synchronously.</code></li>
+<li>中文：一块木块向一面竖立的镜子靠近，镜中的倒影同步靠近。</li>
+<li>对应定律：<code>Due to reflection, the image in the mirror should be the same size as the original wooden block</code>（由于反射，镜中像应与木块本身一样大。）</li>
+<li>第①步（检索「木块靠近镜子」的关键帧）问：<code>Is the size of the block in the mirror the same as the original block?</code>（镜中木块和原木块一样大吗？）标准答案：Yes。</li>
+<li>第①步（最后一帧）问：<code>Is the wooden block's reflection moving in sync with the original block?</code>（倒影是否与木块同步移动？）标准答案：Yes。</li>
+<li>第②步（中间帧排序）给两句描述：D1 <code>The wooden block is closer to the mirror, and its reflection in the mirror is similarly closer.</code>（木块更靠近镜子，倒影也同样更近）→ D2 「……更近了」，判断视频是否按这个顺序发生。</li>
+<li>第③步：整段视频在 4 档描述（D1 离谱 … D4 完美）里选最接近的一档。</li>
+</ul>
+<p><strong>和我们的关系</strong>：低（停更）。提示词可以拿来做内部物理抽检。</p>
+</div>
+<div class="bcard">
+<h3 id="videophy">VideoPhy / VideoPhy-2 —— 动作类视频的物理常识（人评为主）</h3>
+<p><strong>谁做的</strong>：UCLA（Hritik Bansal、张凯崴、Aditya Grover）+ Google Research（Yonatan Bitton）。VideoPhy 发表于 ICLR 2025（<a target="_blank" href="https://arxiv.org/abs/2406.03520">arXiv 2406.03520</a>）；VideoPhy-2（<a target="_blank" href="https://arxiv.org/abs/2503.06800">arXiv 2503.06800</a>）。<a target="_blank" href="https://videophy2.github.io">官网</a> · <a target="_blank" href="https://github.com/Hritikbansal/videophy">GitHub</a> · <a target="_blank" href="https://huggingface.co/datasets/videophysics/videophy2_test">测试集</a>（3397 条带人工标注的生成视频）· 自动评测模型 <a target="_blank" href="https://huggingface.co/videophysics/videophy_2_auto">VideoPhy2-autoeval</a></p>
+<p><strong>测什么</strong>：200 个动作（体育/体力活动、物体交互），LLM 写提示词（另有扩写版），有一个困难子集。人评三项：语义贴合 SA（1–5）、物理常识 PC（1–5）、物理规则（遵守 / 违反 / 无法判断）。<strong>联合分＝SA≥4 且 PC≥4 的比例</strong>。困难子集上最好也只有约 22%；质量守恒、动量守恒最难。</p>
+<p><strong>谁打了（人评联合分 %：全部 / 困难 / 体育活动 / 物体交互）</strong></p>
+<ul>
+<li>开源：<strong>Wan2.1-14B 32.6 / 21.9 / 31.5 / 36.2</strong>；CogVideoX-5B 25.0 / 0.0；<strong>Cosmos-Diffusion-7B</strong> 24.1 / 10.9；<strong>Hunyuan-13B</strong> 17.2 / 6.2；VideoCrafter-2 10.5 / 2.9。</li>
+<li>闭源：<strong>Sora 23.3 / 5.3</strong>；<strong>Ray2（Luma）20.3 / 8.3</strong>。</li>
+</ul>
+<p><strong>完整真题示例（测试集第 0 行）</strong></p>
+<video class="eximg" controls="controls" poster="img/videophy2_yoyo_poster.jpg" preload="metadata"><source src="img/videophy2_yoyo_hunyuan.mp4" type="video/mp4"></video>
+<ul>
+<li>提示词原文：<code>A yo-yo is tossed against a brick wall; it bounces back without sustaining visible damage.</code></li>
+<li>中文：把一个悠悠球扔向砖墙，它弹回来，没有明显损坏。</li>
+<li>扩写版提示词（模型实际输入，节选）：<code>In a visually striking close-up, a sleek, metallic yo-yo, adorned with intricate patterns, is skillfully tossed against a textured brick wall… As it makes contact with the wall, the yo-yo bounces back with a satisfying thud… The camera remains static…</code>（特写镜头：一个带精致花纹的金属悠悠球被扔向有纹理的砖墙……碰到墙后「咚」地弹回……镜头固定不动……）</li>
+<li>上面视频是 HunyuanVideo 的生成结果。人工打分：SA＝4，PC＝2，联合分＝0（不通过）。</li>
+<li>人工判定违反的规则：<code>The yo-yo must experience a change in velocity when it collides with the wall, resulting in a bounce back.</code>（悠悠球撞墙时速度必须改变并弹回。）→ 归类为<strong>动量守恒</strong>。类别：体育与体力活动。</li>
+</ul>
+<p><strong>怎么提交</strong>：把含视频链接和提示词的 CSV 发邮件给作者，可做人评或自动评。</p>
+<p><strong>和我们的关系</strong>：低到中。题目偏真人动作，和白模场景差得远。</p>
+</div>
+<div class="bcard">
+<h3 id="t2vphys">T2VPhysBench —— 12 条物理定律，纯人工（只有论文）</h3>
+<p><strong>谁做的</strong>：桂林电子科大 / 亚利桑那大学 / 威斯康星大学等（Xuyang Guo、Zhenmei Shi、Zhao Song 等），2025-05-01（<a target="_blank" href="https://arxiv.org/abs/2505.00337">arXiv 2505.00337</a>），只有一个版本；<strong>没找到官网、代码和排行榜</strong>。</p>
+<p><strong>测什么</strong>：12 条物理定律分三组（牛顿定律、守恒定律、现象定律）；3 名标注员按 4 档打分（映射到 0 / 0.25 / 0.5 / 1.0）。还做了提示消融（只给初始描述 / 加定律名 / 加详细解释）和反事实提示。</p>
+<p><strong>谁打了（论文）</strong>：<strong>Wan 2.1 0.42</strong>（牛顿 .56、守恒 .29、现象 .42）；清影（智谱）0.40；<strong>Kling 0.35</strong>；Mochi-1 0.34；Pika 2.2 0.32；LTX Video 0.31；<strong>Sora 0.28</strong>；Dreamina 0.23；<strong>Hailuo 0.22</strong>；SD Video 0.19。全部低于 0.6。</p>
+<p><strong>片段题（论文里的提示消融例子，能量守恒）</strong>：初始 <code>A spring is compressed and springs open when released.</code>（弹簧被压缩，松开后弹开）；L1 加 <code>Please follow the Conservation of Energy.</code>（请遵守能量守恒）；L2 再加 <code>…where the potential energy stored in the compressed spring must be converted into kinetic energy upon release, ensuring the total energy remains constant.</code>（压缩弹簧的势能在释放时必须转为动能，总能量不变）。<strong>完整题库未公开</strong>。</p>
+<p><strong>和我们的关系</strong>：不建议，无法提交。</p>
+</div>
+<div class="bcard">
+<h3 id="worldbench">WorldBench / PerfectPhysics —— 从视频里反算 g、摩擦系数、黏度</h3>
+<p><strong>谁做的</strong>：UCLA（Achuta Kadambi 组）+ Sony AI + 耶鲁 + 美国陆军研究实验室（<a target="_blank" href="https://arxiv.org/abs/2601.21282">arXiv 2601.21282</a>）。<a target="_blank" href="https://world-bench.github.io">官网</a> · 数据 <a target="_blank" href="https://huggingface.co/datasets/worldbenchmark/WorldBench">WorldBench</a> / <a target="_blank" href="https://huggingface.co/datasets/worldbenchmark/PerfectPhysics">PerfectPhysics</a>；代码官网写「soon」，数据集 README 给了一个 Google Drive 评测代码链接。</p>
+<p><strong>还在维护吗</strong>：2026 年 1 月发布，没有公开排行榜，只有论文表。</p>
+<p><strong>测什么</strong>：每道题只考<strong>一个</strong>物理概念，避免「一题考五条定律、分不清错在哪」。两层：</p>
+<ul>
+<li><strong>直觉物理</strong>（425 段仿真 + 44 段真实）：运动、物体恒存（被挡住后还在）、支撑关系、尺度/透视。用 Kubric（PyBullet+Blender）生成，给前几帧让模型续写，用 SAM2 分割和真值比前景 mIoU + 背景 RMSE。</li>
+<li><strong>PerfectPhysics</strong>（234 段真实 + 45 段仿真）：<strong>重力加速度 g（51 段真实）、摩擦系数 μ（103 段）、流体黏度 η（80 段）</strong>。从生成视频里用棋盘格标定 + SAM2 跟踪物体，拟合轨迹反算物理常数，和已知值比。</li>
+</ul>
+<p><strong>谁打了（论文）</strong></p>
+<ul>
+<li>直觉物理（仿真，前景 mIoU 总分）：Cosmos-1（33 帧）<strong>0.451</strong>、Cosmos-1 AR 0.423、Cosmos-2.5 2B 0.349、Cosmos-2 2B 0.320、Cosmos-2 14B 0.268、Cosmos-1（121 帧）0.257。</li>
+<li>真实自由落体反算 g（真值 9.81 m/s²；实拍视频反算 9.78±0.38）：Cosmos-2 2B 8.93±4.79；Cosmos-2 14B 8.43±3.48；Cosmos-2.5 4.78±4.47；<strong>Kling 3.0 4.46±1.32</strong>；Cosmos-1 AR 4.22±3.71；<strong>Runway 4.5 1.48±2.71</strong>；<strong>Wan 2.2 0.38±0.78</strong>；CogVideoX −0.04±0.14。——<strong>轨迹看起来像真的，但 g 普遍不对</strong>；图生视频模型只看一帧，g 甚至接近 0 或为负。</li>
+</ul>
+<p><strong>完整真题示例（PerfectPhysics · 重力 · 自由落体 · basketball_v0）</strong></p>
+<video class="eximg" controls="controls" poster="img/worldbench_basketball_first.jpg" preload="metadata"><source src="img/worldbench_basketball.mp4" type="video/mp4"></video>
+<ul>
+<li>输入：首帧（图生视频模型）或前段视频（视频续写模型），篮球已离手处于自由飞行；背景有尺子和棋盘格用于标定。</li>
+<li>任务：续写篮球下落。</li>
+<li>算什么分：棋盘格标定相机 → SAM2 跟踪篮球质心 → 对位置-时间做二次拟合求加速度 → 和 9.81 m/s² 比。实拍视频本身反算为 9.78±0.38。</li>
+<li>同一套里还有摩擦（钢块滑下木/橡胶/砂纸/塑料斜面，μ＝(g·sinθ − a)/(g·cosθ)）和黏度（钢球在甘油/玉米糖浆/蜂蜜里的终端速度，用斯托克斯公式反算 η，蜂蜜真值 14.1 Pa·s）。</li>
+</ul>
+<p><strong>和我们的关系</strong>：<strong>中高</strong>。白模引擎可以<strong>零成本给出任意 g、μ、η 的精确真值视频</strong>，正是这个榜说「视频模型缺的东西」。没有在线榜，但可以按它的方法自评后写进技术报告，对外说「我们的 g 误差是多少」，很有说服力。</p>
+</div>
+<div class="bcard">
+<h3 id="paibench">PAI-Bench（Physical AI Bench）—— 物理 AI：自动驾驶、机器人、工业</h3>
+<p><strong>谁做的</strong>：佐治亚理工 SHI Labs（Humphrey Shi）+ CMU（Deva Ramanan），作者 Fengzhe Zhou、Jiannan Huang、Jialuo Li 等，致谢 <strong>NVIDIA Cosmos 团队</strong>支持（<a target="_blank" href="https://arxiv.org/abs/2512.01989">arXiv 2512.01989</a>，2025-12）。<a target="_blank" href="https://github.com/SHI-Labs/physical-ai-bench">GitHub</a>（最近提交 2026-06-23）· <a target="_blank" href="https://huggingface.co/spaces/shi-labs/physical-ai-bench-leaderboard">排行榜</a>（运行中，最后修改 2026-08-18）· <a target="_blank" href="https://huggingface.co/datasets/shi-labs/physical-ai-bench-generation">生成赛道数据</a>（CC BY-NC 4.0，非商用）</p>
+<p><strong>还在维护吗</strong>：在。</p>
+<p><strong>测什么</strong>：三个赛道——</p>
+<ul>
+<li><strong>PAI-Bench-G（生成）</strong>：1044 道图生视频题（文字 + 条件图 + 若干是非题）。领域：人 299、常识 148、<strong>机器人 130</strong>、自动驾驶 118、工业 107、物理 107、其他 91。总分＝平均（<strong>领域分</strong>：VLM 看视频回答是非题的正确率；<strong>质量分</strong>：8 个 VBench 式指标——主体/背景一致、运动平滑、美学、成像、整体一致、I2V 主体/背景）。</li>
+<li><strong>PAI-Bench-C（可控生成）</strong>：给模糊/边缘/深度/分割图做条件生成（Cosmos-Transfer 类），指标 Blur SSIM、Edge F1、Depth si-RMSE、Mask mIoU、质量分、多样性。</li>
+<li><strong>PAI-Bench-U（理解）</strong>：考 VLM。</li>
+</ul>
+<p><strong>谁打了（生成榜 20 条：总分 / 领域 / 质量）</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>名次</th>
+<th>模型</th>
+<th>总分</th>
+<th>领域</th>
+<th>质量</th>
+<th>机器人领域</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Cosmos3-Super（NVIDIA）</strong></td>
+<td>83.9</td>
+<td>89.5</td>
+<td>78.2</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Cosmos3-Nano</td>
+<td>83.7</td>
+<td>89.4</td>
+<td>78.1</td>
+<td>90.2</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Source（真实视频，参照线）</td>
+<td>82.6</td>
+<td>87.1</td>
+<td>78.0</td>
+<td>86.2</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Veo-3（Google）</strong></td>
+<td>82.1</td>
+<td>86.7</td>
+<td>77.6</td>
+<td>86.9</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cosmos3-Edge</td>
+<td>81.1</td>
+<td>84.2</td>
+<td>78.1</td>
+<td>82.4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Cosmos-Predict2.5-14B</td>
+<td>81.0</td>
+<td>83.8</td>
+<td>78.1</td>
+<td>79.9</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cosmos-Predict2.5-2B</td>
+<td>81.0</td>
+<td>84.0</td>
+<td>77.9</td>
+<td>80.8</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Wan2.2-I2V-A14B</strong></td>
+<td>80.6</td>
+<td>84.1</td>
+<td>77.2</td>
+<td>81.7</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Wan2.2-TI2V-5B</td>
+<td>80.4</td>
+<td>83.4</td>
+<td>77.4</td>
+<td>79.3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Cosmos-Predict2-14B</td>
+<td>80.0</td>
+<td>84.3</td>
+<td>75.8</td>
+<td>80.3</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Wan2.1-I2V-14B</td>
+<td>79.8</td>
+<td>82.7</td>
+<td>76.8</td>
+<td>80.1</td>
+</tr>
+</tbody>
+</table></div>
+<p>其后：MAGI-1-24B 78.5、CogVideoX1.5-5B 78.3、LTX-Video-13B 77.9、<strong>HunyuanVideo-I2V 77.4</strong>、DynamiCrafter 69.7。注意：前两名比「真实视频」分还高，说明是非题裁判也有偏差；榜单是 NVIDIA 生态的主场。
+可控生成榜（19 条）：Cosmos3-Super / Nano、Cosmos-Transfer2.5-2B、Wan2.2-Fun-A14B / 5B-Control。例：边缘条件下 Edge F1，Cosmos3-Super 0.502、Cosmos-Transfer2.5 0.392、Wan2.2-Fun-A14B 0.374。</p>
+<p><strong>完整真题示例（robot_003，机器人领域）</strong></p>
+<p><img src="img/pai_robot_003.jpg" class="eximg" alt="PAI-Bench robot_003 条件图"></p>
+<ul>
+<li>条件图：上图（玩具厨房，640×480）。</li>
+<li>提示词原文（全文）：<code>The video showcases a toy kitchen setup, likely designed for children's play, set on a wooden surface. The scene features a white sink with a central drain, positioned centrally in the frame. To the left of the sink, there is a blue toy stove with two burners; one burner has a silver pot with a lid, while the other burner holds a smaller silver pot. On the right side of the sink, there is an orange toy dish rack containing various colorful plastic kitchen items, including a yellow corn cob. The sequence captures a black robot gripper lifting the smaller silver pot without a lid from the blue toy stove. The pot is lifted upwards, revealing the stove's burner underneath, and then the robot gripper moves and drops the pot into the sink. The background includes additional toy kitchen items, such as a red blender and a bottle of cooking oil, adding to the playful and imaginative setting. The video has a playful and dynamic feel, emphasizing the interaction between the robot gripper and the toy kitchen setup.</code></li>
+<li>中文：视频展示一个放在木桌上的儿童玩具厨房。画面中央是带排水口的白色水槽；水槽左边是有两个灶眼的蓝色玩具灶台，一个灶眼上是带盖的银锅，另一个上是一只更小的银锅；水槽右边是橙色玩具碗架，里面有各种彩色塑料厨具，包括一根黄色玉米。画面记录一只黑色机械夹爪把没盖的小银锅从蓝色灶台上提起来，露出下面的灶眼，然后移动并把锅丢进水槽。背景还有红色搅拌机和一瓶食用油。整体轻松有动感，重点是夹爪和玩具厨房的互动。</li>
+<li>VLM 裁判要回答的 8 道是非题（标准答案）：</li>
+<li>蓝色玩具灶台在白色水槽左边吗？——是（空间·关系）</li>
+<li>橙色碗架在水槽右边吗？——是（空间·关系）</li>
+<li>黑色夹爪和较小的银锅有接触吗？——是（空间·交互）</li>
+<li>夹爪把小银锅从灶台拿走放进水槽了吗？——是（时间·动作）</li>
+<li>最后一帧两只锅都在灶台上吗？——<strong>否</strong>（时间·顺序）</li>
+<li>小银锅看起来是金属的吗？——是（物理·属性）</li>
+<li>黄色玉米一直在橙色碗架里吗？——是（物理·状态）</li>
+<li>小银锅被移到右边后从画面里消失了吗？——<strong>否</strong>（物理·物体恒存）</li>
+<li>另外再算 8 个质量指标（一致性、平滑、美学、成像等）。</li>
+</ul>
+<p><strong>怎么提交</strong>：README 只说排行榜在 HF；需要自己跑 evaluate.py（质量）+ evaluate_vqa.py（VLM 裁判）后联系作者。</p>
+<p><strong>和我们的关系</strong>：中。机器人/工业/自动驾驶题是图生视频，不考按键交互；数据非商用。可以当「物理 AI 方向」的第二名片，前提是模型能做图生视频。</p>
+</div>
+<div class="bcard">
+<h3 id="physbench">PhysBench —— 考 VLM 的物理理解（不考生成）</h3>
+<p><strong>谁做的</strong>：南加大（Yue Wang）+ UC Berkeley + 丰田研究院，ICLR 2025（<a target="_blank" href="https://arxiv.org/abs/2501.16411">arXiv 2501.16411</a>）。<a target="_blank" href="https://physbench.github.io">官网</a> · <a target="_blank" href="https://github.com/USC-GVL/PhysBench">GitHub</a> · 提交走 EvalAI。</p>
+<p><strong>测什么</strong>：10,002 道图/视频/图文交错题，4 大类 19 子类：物体属性、物体关系、场景理解、物理驱动的动态。</p>
+<p><strong>谁打了（README 节选）</strong>：人类 95.87；InternVL2.5-38B 51.94；InternVL2.5-78B 51.16；<strong>GPT-4o 49.49</strong>；<strong>Gemini-1.5-pro 49.11</strong>；InternVL2.5-26B 48.56；NVILA-15B 46.91。</p>
+<p><strong>真题示例</strong>：HF 数据集改过名，<strong>这次没取到真题</strong>。</p>
+<p><strong>和我们的关系</strong>：不对口（考理解模型）。</p>
+</div>
+<h2 id="realtime">⚡ 实时视频生成（1 个专门榜）</h2>
+<ul>
+<li><strong>没有一个专门的「实时视频生成排行榜」</strong>：现在没有哪个榜按 FPS / 延迟排名次、并把硬件统一起来。查了 WBench、WorldMark、WorldRoam-Bench、Artificial Analysis、VBench、MLPerf、Physics-IQ Verified，以及 2025–2026 年的流式/实时论文，都不是。</li>
+<li><strong>最接近的是 StreamAV-Bench</strong>（智源 + 北大，2026-08）：第一个专门测「流式」生成的评测，有 Hugging Face 排行榜，给 13 个系统量了 <strong>FPS</strong> 和<strong>首段延迟（TTFC）</strong>，还测了「中途改指令，画面多久能跟上」。但它考的是<strong>带声音的视频</strong>，而且只排质量和交互，速度只是列出来，不参与排名。官网和 README 都没写怎么提交。</li>
+<li><strong>另外 4 个榜会附带速度数据，但都不按速度排名</strong>：</li>
+<li><strong>WBench</strong>：论文附录有「生成耗时 ÷ 视频时长」，本地模型统一在 1 张 A100 80G 上测；提交时如果要打 <code>realtime</code> 标签，必须在邮件里写清硬件、分辨率和实测速度。</li>
+<li><strong>WorldRoam-Bench</strong>：论文表 2 有生成速度（帧/秒）和按分辨率折算的 MPPS，统一在 1 张 H20 上测。</li>
+<li><strong>Artificial Analysis</strong>：有「端到端生成耗时」和「每分钟视频价格」，但只测 API 模型，生成一条要 7–270 秒，跟实时差得远。</li>
+<li><strong>Physics-IQ Verified</strong>：有成本前沿图（每条视频成本按 24 fps、1280 宽折算），成本是提交方在 <code>submission.yaml</code> 里自己填的。</li>
+<li><strong>WorldMark 的「Response Latency」不是计算速度</strong>：它测的是视频里「按下新键后，画面过多久才开始转向」，分数 0–100。真正的实时延迟它不测。</li>
+<li><strong>所以真要比速度，现在只能看各家自报的数，加上上面几个榜附带的第三方实测</strong>。差距很大：同一个 Matrix-Game 3.0，自报「720p 最高 40 FPS」（用 8 卡跑 DiT + 1 卡跑 VAE）；WorldRoam 在 1 张 H20 上只测到 5.34 帧/秒（原生 17 fps）。</li>
+</ul>
+<div class="bcard">
+<h3 id="streamav">StreamAV-Bench —— 唯一专门测「边生成边播放」的评测</h3>
+<p><strong>谁做的</strong>：智源 BAAI + 北大（施柏鑫组），另有快手可灵、清华、中科大作者，2026-08（<a target="_blank" href="https://arxiv.org/abs/2608.26336">论文 arXiv 2608.26336</a>）。<a target="_blank" href="https://huggingface.co/spaces/StreamAVBench/Leaderboard">排行榜</a> · <a target="_blank" href="https://github.com/liukqchoco/StreamAVBench-Code">代码</a> · <a target="_blank" href="https://huggingface.co/datasets/StreamAVBench/StreamAVBench">数据</a></p>
+<p><strong>还在维护吗</strong>：排行榜最后更新于 2026-08-28，看不出会不会继续收新模型。</p>
+<p><strong>测什么</strong>：流式生成带声音的视频。量 FPS（每秒生成帧数）、TTFC（收到请求到吐出第一段的秒数），以及中途改指令后画面/声音多久跟上（PVRL/PARL）、改成功的比例（PVUAR）。开源模型统一用 H800 测；商用系统走官网，没测 FPS 和 TTFC。<strong>排名只看质量和交互，速度只列出来、不算分。</strong></p>
+<p><strong>谁打了</strong>（统一 H800、各模型默认配置；FPS 越高越好，TTFC 越低越好；PVUAR＝中途改指令后画面成功改过来的比例）。来源：<a target="_blank" href="https://huggingface.co/spaces/StreamAVBench/Leaderboard">排行榜 data.json</a>、<a target="_blank" href="https://arxiv.org/abs/2608.26336">论文</a></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>系统</th>
+<th>类型</th>
+<th>FPS</th>
+<th>首段延迟 TTFC（秒）</th>
+<th>画质 VQ（1–5）</th>
+<th>改指令成功率 PVUAR</th>
+<th>改指令后画面响应（秒，视频时间）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Self-Forcing</td>
+<td>开源，视频+另配音</td>
+<td><strong>15.63</strong></td>
+<td><strong>1.28</strong></td>
+<td>2.75</td>
+<td>0.185</td>
+<td>14.2</td>
+</tr>
+<tr>
+<td>Causal-Forcing</td>
+<td>开源</td>
+<td>15.42</td>
+<td>1.28</td>
+<td>2.40</td>
+<td>0.219</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>OmniForcing</td>
+<td>开源，原生音视频</td>
+<td>12.80</td>
+<td>4.00</td>
+<td>2.37</td>
+<td>0.053</td>
+<td>13.3</td>
+</tr>
+<tr>
+<td>SWIFT</td>
+<td>开源</td>
+<td>12.36</td>
+<td>1.50</td>
+<td>2.74</td>
+<td>0.246</td>
+<td><strong>10.3</strong></td>
+</tr>
+<tr>
+<td>Deep Forcing</td>
+<td>开源</td>
+<td>11.07</td>
+<td>1.40</td>
+<td>2.63</td>
+<td>0.220</td>
+<td>13.4</td>
+</tr>
+<tr>
+<td>MemFlow</td>
+<td>开源</td>
+<td>10.84</td>
+<td>1.34</td>
+<td>2.84</td>
+<td>0.217</td>
+<td>13.7</td>
+</tr>
+<tr>
+<td>Rolling-Forcing</td>
+<td>开源</td>
+<td>10.60</td>
+<td>2.96</td>
+<td>2.76</td>
+<td>0.217</td>
+<td>13.2</td>
+</tr>
+<tr>
+<td>Helios</td>
+<td>开源</td>
+<td>10.23</td>
+<td>8.06</td>
+<td>2.18</td>
+<td>0.197</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>LongLive</td>
+<td>开源</td>
+<td>10.13</td>
+<td>1.38</td>
+<td>2.77</td>
+<td>0.241</td>
+<td>11.8</td>
+</tr>
+<tr>
+<td>IAMFlow</td>
+<td>开源</td>
+<td>6.05</td>
+<td>1.77</td>
+<td>2.84</td>
+<td>0.222</td>
+<td>11.7</td>
+</tr>
+<tr>
+<td>HappyOyster（阿里快乐生蚝）</td>
+<td>网页</td>
+<td>没测</td>
+<td>没测</td>
+<td>2.79</td>
+<td><strong>0.518</strong></td>
+<td>14.5</td>
+</tr>
+<tr>
+<td>PixVerse R1</td>
+<td>网页</td>
+<td>没测</td>
+<td>没测</td>
+<td>2.43</td>
+<td>0.350</td>
+<td>13.0</td>
+</tr>
+<tr>
+<td>Odyssey-2</td>
+<td>网页</td>
+<td>没测</td>
+<td>没测</td>
+<td><strong>2.82</strong></td>
+<td>0.274</td>
+<td>18.8</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>一道完整原题（交互赛道 I-0001）</strong></p>
+<p>来源：<a target="_blank" href="https://huggingface.co/datasets/StreamAVBench/StreamAVBench">StreamAVBench 数据集 interactive.json</a>，原文照录。连续生成 <strong>180 秒</strong>，第 30/60/90/120/150 秒各插入一条新指令，看模型能不能边播边改，并且记得之前发生过的事。</p>
+<ul>
+<li><strong>元数据</strong>：主题「做饭」｜日常生活｜音频是音乐｜主体是人｜动漫/卡通风格｜多个实体、同时进行的多个动作、多个声源</li>
+<li><strong>初始提示词</strong>：In a cozy apartment kitchen rendered in an anime/cartoon style, two roommates prepare dinner together: one chops vegetables beside a specialized countertop blender while the other stands by the stove, stirring a simmering pot. The blender is designed to run at low mixing speed with its lid seated, and its clearly visible motorized twist-lock ring is disengaged, ready to secure the lid for higher-speed operation in response to spoken commands. A radio plays soft jazz, and the stove-side roommate briefly hums during pauses between its phrases.</li>
+<li><strong>画面检查项</strong>：①是不是温馨的公寓厨房，有台面和灶台？②是不是动漫/卡通风格？③是否有两个室友，以及一台盖子已盖好、电动旋锁环明显处于未锁状态的特制搅拌机？④是否一人在搅拌机旁切菜、另一人在灶台边搅一锅小火慢炖的汤？</li>
+<li><strong>声音检查项</strong>：①爵士乐是不是从收音机里出来、哼唱是不是灶台边那位发出的？②能不能听到轻爵士和短暂的哼唱？③哼唱是不是出现在爵士乐句之间的停顿里？</li>
+<li><strong>中途更新</strong>：</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>指令（原文）</th>
+<th>类型</th>
+<th>改画面还是声音</th>
+<th>依赖哪条</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30 s</td>
+<td>A streak of flour appears across the vegetable-chopping roommate's apron.</td>
+<td>物体状态变化</td>
+<td>只改画面</td>
+<td>无</td>
+</tr>
+<tr>
+<td>60 s</td>
+<td>Noticing the flour-streaked apron, the stove-side roommate says, "Nice flour badge."</td>
+<td>人物动作</td>
+<td>只改声音</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>90 s</td>
+<td>With the lid seated and its twist-lock ring still disengaged, the vegetable-chopping roommate switches on the specialized blender at low mixing speed, and its jar whirls with a steady motor buzz.</td>
+<td>人物动作</td>
+<td>画面+声音</td>
+<td>无</td>
+</tr>
+<tr>
+<td>120 s</td>
+<td>Over the blender's low motor buzz, the stove-side roommate says, "Blender, engage the lid lock."</td>
+<td>人物动作</td>
+<td>只改声音</td>
+<td>P3</td>
+</tr>
+<tr>
+<td>150 s</td>
+<td>Following the spoken command, the blender's motorized twist-lock ring visibly rotates from its disengaged position into the locked position.</td>
+<td>物体状态变化</td>
+<td>只改画面</td>
+<td>P4</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>怎么打分</strong>：每条更新单独评——画面、声音有没有改成功（PVUAR/PAUAR），改成功的话从指令下达到画面/声音出现隔了多少秒（PVRL/PARL），以及之前的状态还在不在（例如 150 秒时围裙上的面粉还在不在，VSR/HDF）。另外在整段视频上统计 FPS 和 TTFC。</li>
+</ul>
+<blockquote>
+<p>其他几个带速度的榜：WBench 和 WorldRoam 的真题本页「可控交互类」和 <a href="../wbench/">WBench 页</a> 已经收了，题目本身不考速度，速度只在论文附录里列出来。Artificial Analysis 的题是随机抽的文生视频提示词，不公开逐题内容。</p>
+</blockquote>
+<p><strong>怎么提交</strong>：官网和 README 都没写，要发邮件问作者。</p>
+<p><strong>和我们的关系</strong>：★。考音视频、180 秒流式、中途改指令。我们的模型如果没有声音，只能走「视频模型 + 另配声音」的拼接路线（Self-Forcing、LongLive 就是这么上榜的）。</p>
+</div>
+<h3>会附带速度数据的榜（都不按速度排名）</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>榜单</th>
+<th>谁做的</th>
+<th>速度怎么测</th>
+<th>硬件统一吗</th>
+<th>速度算不算分</th>
+<th>怎么提交</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>StreamAV-Bench</strong></td>
+<td>智源 BAAI + 北大（施柏鑫组），另有快手可灵、清华、中科大作者</td>
+<td>FPS（默认配置下每秒生成帧数）、TTFC（收到请求到吐出第一段的秒数）、PVRL/PARL（改指令后画面/声音多久实现，按视频时间算）</td>
+<td>开源模型统一用 H800；商用系统走官网，没测 FPS 和 TTFC</td>
+<td>不算，只列出来</td>
+<td>没写。排行榜是 HF 上的静态页（<a target="_blank" href="https://huggingface.co/spaces/StreamAVBench/Leaderboard">Leaderboard</a>），代码在 <a target="_blank" href="https://github.com/liukqchoco/StreamAVBench-Code">GitHub</a></td>
+</tr>
+<tr>
+<td><strong>WBench</strong></td>
+<td>美团 LongCat + 复旦</td>
+<td>附录表 7「Inference : Video」＝生成耗时 ÷ 视频时长，小于 1 才算比实时快</td>
+<td>本地模型统一 1×A100 80G；API/网页模型不测</td>
+<td>不算</td>
+<td>发邮件。要打 <code>realtime</code> 标签，需在邮件里写硬件、分辨率和实测速度（<a target="_blank" href="https://github.com/meituan-longcat/WBench">SUBMISSION 文档</a>）</td>
+</tr>
+<tr>
+<td><strong>WorldRoam-Bench</strong></td>
+<td>高德 AMAP CV Lab（阿里）</td>
+<td>表 2「Inf. Speed (Hz)」＝每段帧数 ÷ 每段耗时，跑 20 次取平均；MPPS＝每秒百万像素</td>
+<td>统一 1×H20</td>
+<td>不算</td>
+<td>官网提交表单（见本页「可控交互类」）</td>
+</tr>
+<tr>
+<td><strong>Artificial Analysis Video Arena</strong></td>
+<td>Artificial Analysis</td>
+<td>「Generation Time」：从发请求到下载完视频的端到端中位数，含排队；每 2 小时测一次，取近 3 天</td>
+<td>不统一，测的是各家 API 服务商</td>
+<td>不算，单独列在 <a target="_blank" href="https://artificialanalysis.ai/video/providers">Providers 页</a></td>
+<td>只收有公开 API 的模型，由他们自己接入</td>
+</tr>
+<tr>
+<td><strong>Physics-IQ Verified</strong></td>
+<td>Anates Labs + Google DeepMind</td>
+<td>不测速度。成本前沿图用的是每条视频成本，按 24 fps、1280 宽折算</td>
+<td>—</td>
+<td>不算，单独画图</td>
+<td>交 <code>submission.yaml</code>，里面自己填生成成本</td>
+</tr>
+<tr>
+<td><strong>MLPerf Inference v6.0 文生视频</strong></td>
+<td>MLCommons（任务组负责人来自 NVIDIA、KRAI）</td>
+<td>模型固定为 Wan2.2-T2V-A14B，720p、5 秒、81 帧；比单条生成延迟（SingleStream）和离线吞吐</td>
+<td>比的就是硬件，模型固定</td>
+<td>是硬件榜，不是模型榜</td>
+<td>硬件厂商按 MLPerf 流程提交（<a target="_blank" href="https://mlcommons.org/2026/03/texttovideo-inference/">说明</a>）。官方说，等生成时间降到秒级，会再加实时 Server 场景</td>
+</tr>
+<tr>
+<td>WorldMark（参考）</td>
+<td>Alaya Lab（盛大）</td>
+<td>「Response Latency」是视频内容里的响应时间（0–100 分），不是计算速度</td>
+<td>—</td>
+<td>算在动作分里</td>
+<td>没写</td>
+</tr>
+</tbody>
+</table></div>
+<p>另外还有两类<strong>不是榜</strong>的东西，容易被误当成榜：</p>
+<ul>
+<li>GitHub 上的 <a target="_blank" href="https://github.com/yepicaiaaron/awesome-realtime-video-generation">awesome-realtime-video-generation</a> 里有张「Real-Time Model Leaderboard」，其实是作者把各家自报的首帧时间和 FPS 抄到一张表里，没有统一测过。</li>
+<li><a target="_blank" href="https://www.sota2.com/research/sota/video-generation-on-vbench-comprehensive-perceptual-and-scoring-metrics">SOTA2</a> 的 VBench 页面会把论文里的 FPS 和延迟一起列出来，也是转抄论文的数。</li>
+</ul>
+<h3>速度数字：第三方实测</h3>
+<p><strong>WorldRoam-Bench</strong>（统一 1×H20、跑 20 次取平均）。「实时倍率」是我算的：生成速度 ÷ 原生帧率，到 1.0 才算实时。来源：<a target="_blank" href="https://arxiv.org/abs/2606.31672">arXiv 2606.31672 表 2</a></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>机构</th>
+<th>分辨率</th>
+<th>原生 fps</th>
+<th>生成速度（帧/秒）</th>
+<th>MPPS</th>
+<th>实时倍率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yume 1.5</td>
+<td>上海 AI Lab</td>
+<td>1280×704</td>
+<td>16</td>
+<td><strong>6.49</strong></td>
+<td><strong>5.85</strong></td>
+<td>0.41×</td>
+</tr>
+<tr>
+<td>Matrix-Game 2.0</td>
+<td>昆仑天工 Skywork</td>
+<td>640×352</td>
+<td>12</td>
+<td>6.26</td>
+<td>1.41</td>
+<td><strong>0.52×</strong></td>
+</tr>
+<tr>
+<td>Matrix-Game 3.0</td>
+<td>昆仑天工 Skywork</td>
+<td>1280×704</td>
+<td>17</td>
+<td>5.34</td>
+<td>4.82</td>
+<td>0.31×</td>
+</tr>
+<tr>
+<td>minWM</td>
+<td>生数 ShengShu</td>
+<td>832×480</td>
+<td>16</td>
+<td>3.97</td>
+<td>1.58</td>
+<td>0.25×</td>
+</tr>
+<tr>
+<td>Lyra 2.0</td>
+<td>NVIDIA</td>
+<td>832×480</td>
+<td>16</td>
+<td>2.31</td>
+<td>0.92</td>
+<td>0.14×</td>
+</tr>
+<tr>
+<td>LingBot-World / 2.0</td>
+<td>蚂蚁</td>
+<td>832×480</td>
+<td>16</td>
+<td>1.79 / 1.75</td>
+<td>0.72 / 0.70</td>
+<td>0.11×</td>
+</tr>
+<tr>
+<td>HY-World 1.5</td>
+<td>腾讯</td>
+<td>832×480</td>
+<td>24</td>
+<td>1.30</td>
+<td>0.52</td>
+<td>0.05×</td>
+</tr>
+<tr>
+<td>SANA-WM / -AR</td>
+<td>NVIDIA</td>
+<td>1280×704</td>
+<td>16</td>
+<td>0.81 / 0.93</td>
+<td>0.73 / 0.84</td>
+<td>0.05–0.06×</td>
+</tr>
+<tr>
+<td>Genie 3、快乐生蚝</td>
+<td>DeepMind、阿里</td>
+<td>1280×704、1296×720</td>
+<td>20、24</td>
+<td>只有网页，没测</td>
+<td>—</td>
+<td>网页上是实时流</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>WBench 附录表 7</strong>（本地模型统一 1×A100 80G；数值＝生成耗时 ÷ 视频时长，<strong>小于 1 才比实时快</strong>）。来源：<a target="_blank" href="https://meituan-longcat.github.io/WBench/">WBench 论文</a></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>分辨率</th>
+<th>耗时÷时长</th>
+<th>模型</th>
+<th>分辨率</th>
+<th>耗时÷时长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Matrix-Game 3.0</strong></td>
+<td>1280×704</td>
+<td><strong>0.5</strong>（唯一小于 1 的）</td>
+<td>Astra</td>
+<td>832×480</td>
+<td>30.0</td>
+</tr>
+<tr>
+<td>YUME 1.5</td>
+<td>1280×704</td>
+<td>1.7</td>
+<td>Infinite-World</td>
+<td>896×448</td>
+<td>49.2</td>
+</tr>
+<tr>
+<td>HY-GameCraft</td>
+<td>832×480</td>
+<td>2.5</td>
+<td>LingBot-World</td>
+<td>1280×704</td>
+<td>268.8</td>
+</tr>
+<tr>
+<td>Matrix-Game 2.0</td>
+<td>640×352</td>
+<td>5.6</td>
+<td>LongCat</td>
+<td>832×480</td>
+<td>621.8</td>
+</tr>
+<tr>
+<td>HY-World 1.5</td>
+<td>832×480</td>
+<td>18.8</td>
+<td>Fantasy-World</td>
+<td>592×336</td>
+<td>2320</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>注意：WBench 和 WorldRoam 对 Matrix-Game 2.0 / 3.0 的测法和设置不同，结果对不上（WBench 测出 3.0 比实时快，WorldRoam 测出 0.31×）。所以不同榜的速度数字<strong>不能直接互比</strong>。WBench 现在的榜上，只有 <strong>Zing-0.5</strong> 一个模型带 <code>realtime</code> 标签（Navi 榜第 6，81.0 分）。</p>
+</blockquote>
+<p><strong>Artificial Analysis 端到端生成耗时</strong>（API 服务商，含排队和下载；Providers 页 2026-10-10 抓取，共 30 个服务端点）：最快的是 MiniMax H3（MachGen 托管）7.0 秒/条（$2.4/分钟），其次 MiniMax H3（fal.ai）8.0 秒、LTX-2.3 Fast（Tenstorrent，1080p 6 秒）9.3 秒；Vidu Q3 Pro 要 113–136 秒；Wan 2.2 A14B 在 DeepInfra 上要 272 秒。<strong>最快的也要 7 秒才出一条 6–10 秒的视频，不是实时</strong>。来源：<a target="_blank" href="https://artificialanalysis.ai/video/providers">Providers</a> · <a target="_blank" href="https://artificialanalysis.ai/methodology/video">测法说明</a></p>
+<h3>速度数字：各家自报 vs 第三方</h3>
+<p>「来源性质」一列：<strong>自报</strong>＝模型方自己说的；<strong>第三方</strong>＝别人测的。硬件不统一，表里的数字不能直接比高低。</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>机构</th>
+<th>分辨率</th>
+<th>FPS</th>
+<th>延迟</th>
+<th>硬件</th>
+<th>来源性质</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Genie 3</td>
+<td>Google DeepMind</td>
+<td>720p</td>
+<td>24</td>
+<td>没公布</td>
+<td>没公布</td>
+<td>自报</td>
+<td><a target="_blank" href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/">博客</a></td>
+</tr>
+<tr>
+<td>Odyssey-3 / Pro</td>
+<td>Odyssey</td>
+<td>832×480 / 1280×720</td>
+<td>没公布交互帧率</td>
+<td>没公布</td>
+<td>没公布；成本按每张 MI355X 每小时 $1 估</td>
+<td>自报</td>
+<td><a target="_blank" href="https://odyssey.systems/meet-odyssey-3">发布页</a></td>
+</tr>
+<tr>
+<td>Oasis 3 Preview</td>
+<td>Decart</td>
+<td>3 路，每路 768×512</td>
+<td>22</td>
+<td>&lt;200 ms 端到端</td>
+<td>没公布（自家 DOS 平台）</td>
+<td>自报</td>
+<td><a target="_blank" href="https://decart.ai/oasis">官网</a> · <a target="_blank" href="https://docs.platform.decart.ai/models/realtime/oasis-3">API 文档</a></td>
+</tr>
+<tr>
+<td>Matrix-Game 2.0</td>
+<td>昆仑天工 Skywork</td>
+<td>640×352</td>
+<td>25</td>
+<td>没公布</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2508.13009">arXiv 2508.13009</a></td>
+</tr>
+<tr>
+<td>Matrix-Game 3.0</td>
+<td>昆仑天工 Skywork</td>
+<td>720p</td>
+<td>最高 40</td>
+<td>没公布</td>
+<td><strong>8 卡跑 DiT + 1 卡跑 VAE</strong>，INT8 量化</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2604.08995">arXiv 2604.08995</a></td>
+</tr>
+<tr>
+<td>HY-World 1.5（WorldPlay）</td>
+<td>腾讯混元</td>
+<td>480p（WBench 用 832×480）</td>
+<td>24</td>
+<td>没给数</td>
+<td>没写</td>
+<td>自报</td>
+<td><a target="_blank" href="https://github.com/Tencent-Hunyuan/HY-WorldPlay">GitHub</a></td>
+</tr>
+<tr>
+<td><strong>Zing-0.5</strong></td>
+<td>SeedLeap.ai</td>
+<td>832×480</td>
+<td>24（不限速稳态 24.63）</td>
+<td>没给数</td>
+<td><strong>每路 1 张 RTX 5090</strong>；约 $0.009/路·分钟</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2609.17909">arXiv 2609.17909</a></td>
+</tr>
+<tr>
+<td>ABot-World-0</td>
+<td>阿里高德</td>
+<td>720P</td>
+<td>最高 16</td>
+<td>1.2 s（从动作到首帧，含解码）</td>
+<td>1×RTX 5090，显存约 19 GiB</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2607.19191">arXiv 2607.19191</a></td>
+</tr>
+<tr>
+<td>Self-Forcing</td>
+<td>Adobe + UT Austin</td>
+<td>832×480</td>
+<td>17.0（分段）/ 8.9（逐帧）</td>
+<td>首帧 0.69 s / 0.45 s</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2506.08009">arXiv 2506.08009</a></td>
+</tr>
+<tr>
+<td>Self-Forcing</td>
+<td>同上</td>
+<td>同上</td>
+<td>15.63</td>
+<td>首段 1.28 s</td>
+<td>H800</td>
+<td><strong>第三方</strong>（StreamAV）</td>
+<td>见上</td>
+</tr>
+<tr>
+<td>CausVid</td>
+<td>MIT + Adobe</td>
+<td>832×480</td>
+<td>17.0</td>
+<td>首帧 0.69 s</td>
+<td>1×H100</td>
+<td><strong>第三方</strong>（Self-Forcing 论文实测）</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2506.08009">arXiv 2506.08009 表 1</a></td>
+</tr>
+<tr>
+<td>LongLive</td>
+<td>NVIDIA + MIT 等</td>
+<td>832×480</td>
+<td>20.7</td>
+<td>没给数</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2509.22622">arXiv 2509.22622</a></td>
+</tr>
+<tr>
+<td>LongLive</td>
+<td>同上</td>
+<td>同上</td>
+<td>10.13</td>
+<td>首段 1.38 s</td>
+<td>H800</td>
+<td><strong>第三方</strong>（StreamAV）</td>
+<td>见上</td>
+</tr>
+<tr>
+<td>StreamDiT</td>
+<td>Meta + UC Berkeley</td>
+<td>512p</td>
+<td>16</td>
+<td>没给数</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2507.03745">arXiv 2507.03745</a></td>
+</tr>
+<tr>
+<td>Helios（14B）</td>
+<td>北大等</td>
+<td>384×640</td>
+<td>19.5</td>
+<td>没给数</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2603.04379">arXiv 2603.04379</a></td>
+</tr>
+<tr>
+<td>Helios</td>
+<td>同上</td>
+<td>—</td>
+<td>10.23</td>
+<td>首段 8.06 s</td>
+<td>H800</td>
+<td><strong>第三方</strong>（StreamAV）</td>
+<td>见上</td>
+</tr>
+<tr>
+<td>Krea Realtime 14B</td>
+<td>Krea</td>
+<td>没写</td>
+<td>11</td>
+<td>首帧约 1 s</td>
+<td>1×B200</td>
+<td>自报</td>
+<td><a target="_blank" href="https://www.krea.ai/blog/krea-realtime-14b">博客</a></td>
+</tr>
+<tr>
+<td>MaineCoon（22B，音视频）</td>
+<td>Catnip AI</td>
+<td>480P</td>
+<td>最高 47.5</td>
+<td>说是「亚秒级交互」</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2606.17800">arXiv 2606.17800</a></td>
+</tr>
+<tr>
+<td>Ultra Flash</td>
+<td>京东探索研究院 + 中科大等</td>
+<td>960×1664 / 1440×2496</td>
+<td>30 / 18</td>
+<td>每段 40 / 56 ms</td>
+<td>1×H200/B200</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2606.09150">arXiv 2606.09150</a></td>
+</tr>
+<tr>
+<td>PixVerse R1</td>
+<td>爱诗科技 PixVerse</td>
+<td>1080P</td>
+<td>没给数</td>
+<td>只说「超低延迟」</td>
+<td>没公布</td>
+<td>自报</td>
+<td><a target="_blank" href="https://pixverse.ai/en/blog/pixverse-launches-r1-real-time-world-model">博客</a></td>
+</tr>
+<tr>
+<td>MAGI-1（对照：非实时）</td>
+<td>Sand AI</td>
+<td>832×480</td>
+<td>0.19</td>
+<td>282 s</td>
+<td>1×H100</td>
+<td><strong>第三方</strong>（Self-Forcing 论文实测）</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2506.08009">arXiv 2506.08009 表 1</a></td>
+</tr>
+<tr>
+<td>Wan2.1-1.3B（对照：非实时）</td>
+<td>阿里</td>
+<td>832×480</td>
+<td>0.78</td>
+<td>103 s</td>
+<td>1×H100</td>
+<td><strong>第三方</strong>（同上）</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table></div>
+<p>可以看出几件事：</p>
+<ul>
+<li>同一个模型，第三方实测普遍比自报低。LongLive 自报 20.7 FPS（H100），StreamAV 在 H800 上测到 10.1；Helios 自报 19.5，实测 10.2，首段延迟 8 秒。</li>
+<li>自报的「实时」大多停在 480p 左右。到 720p 还标实时的有 Genie 3（硬件没公布）、Matrix-Game 3.0（用 9 张卡）和 ABot-World-0（1 张 5090，16 FPS，延迟 1.2 秒）。</li>
+<li>很少有人报「从按键到画面」的延迟。明确报了的只有 ABot-World-0（1.2 s）和 Decart Oasis 3（&lt;200 ms）。</li>
+</ul>
+<h3>对我们合不合适</h3>
+<ul>
+<li><strong>想证明「我们是实时的」，现在最划算的是 WBench</strong>：交视频时打 <code>realtime</code> 标签，在邮件里写清硬件、分辨率和实测 FPS。现在榜上只有 Zing-0.5 一个带这个标签，名字旁边会直接显示，曝光直接。</li>
+<li><strong>WorldRoam-Bench 会在论文表里列出各家在 H20 上的实测速度</strong>。如果我们的模型在 H20 上能到原生帧率的 0.5× 以上，就已经比表里所有开源模型都快，这是一个能讲的点。前提是被他们收录（官网有表单）。</li>
+<li><strong>StreamAV-Bench 考音视频、180 秒流式、中途改指令</strong>。如果我们的模型没有声音，只能走「视频模型 + 另配声音」的拼接路线（Self-Forcing、LongLive 都是这么上榜的），而且没写提交方式，要发邮件问作者。</li>
+<li><strong>Artificial Analysis 和 MLPerf 不适合</strong>：前者只测 API 模型、按「几秒出一条」算；后者是硬件厂商的榜。</li>
+<li><strong>白模能做的</strong>：白模世界里有准确的按键时间戳和相机真值，可以自己搭一个<strong>「按键到画面延迟」内部测试</strong>：按下按键后第几帧画面开始动，用光流或位姿就能量。这正好是现在所有公开榜都没覆盖的。如果做得扎实，可以公开成一个「实时交互世界模型」榜，把统一硬件（例如 1×H100 / 1×4090）、分辨率档位、首帧延迟、按键到画面延迟、持续帧率和画质一起排。目前还没人做。</li>
+</ul>
+<div class="emb">
+<h2 id="embodied">🤖 具身智能类（7 个，单独标记）</h2>
+<blockquote>
+<p>先分清两种：<strong>A. 具身世界模型榜</strong>——参赛的是「生成机器人视频的模型」，和我们最相关（EWMBench、WorldArena、WorldEval）；<strong>B. 机器人策略榜</strong>——参赛的是「控制机器人的策略/VLA」，世界模型只有做成「世界动作模型（WAM）」才能参加（RoboDojo、RoboArena、LIBERO、SimplerEnv）。B 类里的仿真榜本身就是「引擎里的白模场景」，和我们的白模世界是同一类东西。</p>
+</blockquote>
+<div class="bcard">
+<h3 id="ewmbench">EWMBench —— 机器人操作视频生成，和真录像逐项比 <span class="etag">🤖具身</span></h3>
+<p><strong>谁做的</strong>：智元机器人 AgiBot，2025 年 5 月（<a target="_blank" href="https://arxiv.org/abs/2505.09694">arXiv 2505.09694</a>）。<a target="_blank" href="https://github.com/AgibotTech/EWMBench">GitHub</a>（最近提交 2025-06-13）· <a target="_blank" href="https://huggingface.co/datasets/agibot-world/EWMBench">数据</a> · <a target="_blank" href="https://huggingface.co/agibot-world/EWMBench-model">评测权重</a></p>
+<p><strong>还在维护吗</strong>：代码一年多没动；<strong>没有在线排行榜</strong>，只有论文表。</p>
+<p><strong>测什么</strong>：从 AgiBot World 真实数据里选 10 个有先后依赖的任务（取吐司、倒水、摆餐具、补货冰柜、制冰、工厂装洗衣液、刷瓶子、微波炉热饭、装花洒、收进抽屉）。输入＝<strong>首帧 + 语言指令</strong>（图文生视频），机器人头部视角固定。和真值录像比三方面：</p>
+<ul>
+<li><strong>场景</strong>：微调 DINOv2 算画面块一致性（SceneC）；</li>
+<li><strong>运动</strong>：用微调 YOLO-World 检测夹爪画出末端轨迹，算 Hausdorff 距离（HSD）、nDTW、动态一致性；</li>
+<li><strong>语义</strong>：Qwen2.5-VL-7B 给生成视频和真值视频分别写步骤描述，算 BLEU、CLIP 相似度，再查逻辑错误；外加多样性。</li>
+<li>论文评测：10 任务 × 10 条真值 × 每条生成 3 次取最好，共 2100 段视频。公开的 gt_dataset 里是 7 个任务 × 3 条，共 21 条。</li>
+</ul>
+<p><strong>谁打了（论文表 2，总分）</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>类型</th>
+<th>总分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EnerVerse_FT</td>
+<td>领域微调</td>
+<td>4.7010</td>
+</tr>
+<tr>
+<td>LTX_FT</td>
+<td>领域微调</td>
+<td>4.5493</td>
+</tr>
+<tr>
+<td><strong>Kling-1.6</strong></td>
+<td>商用</td>
+<td>3.8698</td>
+</tr>
+<tr>
+<td><strong>Hailuo I2V-01-live</strong></td>
+<td>商用</td>
+<td>3.4125</td>
+</tr>
+<tr>
+<td><strong>COSMOS-7B（NVIDIA）</strong></td>
+<td>开源</td>
+<td>3.2872</td>
+</tr>
+<tr>
+<td>OpenSora 2.0</td>
+<td>开源</td>
+<td>3.1392</td>
+</tr>
+<tr>
+<td>LTX</td>
+<td>开源</td>
+<td>2.9676</td>
+</tr>
+</tbody>
+</table></div>
+<p>论文发现：通用模型常把机械臂画成<strong>人手</strong>；Cosmos 视角漂移。
+第三方汇总（Benchmaxxer，来源是 Qwen-RobotWorld 2026-06-15 的<strong>自报</strong>结果，未经官方核实）：Qwen-RobotWorld 4.60、LVP 4.05、<strong>Sora 2 3.89</strong>、Kling 3.85、GigaWorld 3.56、WoW 3.52、<strong>Veo 3 3.49</strong>、Vidar 3.30、Cosmos 3.29、Wan2.6 3.22。</p>
+<p><strong>完整真题示例（任务 497 · 推开冰柜门 · episode 766602）</strong></p>
+<p><img src="img/ewm_497_766602_init.jpg" class="eximg" alt="EWMBench 首帧"></p>
+<video class="eximg" controls="controls" poster="img/ewm_497_766602_init.jpg" preload="metadata"><source src="img/ewm_497_766602_gt.mp4" type="video/mp4"></video>
+<ul>
+<li>输入首帧：上图（512×384，机器人头部相机）。下面视频是<strong>真值录像</strong>（297 帧），模型生成的视频要和它比。</li>
+<li>指令原文：<code>Push open the freezer door with the right arm.Keep the first person view of the robot unchanged. Keep the first frame of this video the unchanged.</code></li>
+<li>中文：用右臂推开冰柜门。保持机器人的第一人称视角不变，保持视频第一帧不变。</li>
+<li>算什么分：生成视频和真值比——场景是否没变（SceneC）；右臂夹爪的轨迹和真值轨迹的距离（HSD、nDTW）、动作幅度是否一致；VLM 描述的步骤（伸右臂 → 接触门 → 推开）和真值是否一致、有没有逻辑错误（比如门自己开了、用了左臂）。</li>
+</ul>
+<p><strong>怎么提交</strong>：没有提交入口，用工具包自评后写进论文。</p>
+<p><strong>和我们的关系</strong>：中。如果我们的模型要做机器人方向的图生视频，这是现成的、带真值的自评工具；白模可以合成「机械臂 + 精确末端轨迹」的数据，直接对上它的轨迹指标。</p>
+</div>
+<div class="bcard">
+<h3 id="worldarena">WorldArena —— 具身世界模型最大的公开榜 <span class="etag">🤖具身</span></h3>
+<p><strong>谁做的</strong>：清华 FIB 实验室（李勇）牵头，作者还包括港大刘希慧、中科院张兆翔、清华朱军、北大田永鸿、新国立 Tat-Seng Chua、Dhruv Shah 等，2026 年 2 月（<a target="_blank" href="https://arxiv.org/abs/2602.08971">arXiv 2602.08971</a>）。<a target="_blank" href="https://world-arena.ai">官网</a> · <a target="_blank" href="https://github.com/tsinghua-fib-lab/WorldArena">GitHub</a>（最近提交 2026-07-22）· <a target="_blank" href="https://huggingface.co/spaces/WorldArena/WorldArena">1.0 排行榜</a> · <a target="_blank" href="https://huggingface.co/spaces/WorldArena/WorldArena2.0">2.0 排行榜</a> · <a target="_blank" href="https://huggingface.co/datasets/WorldArena/WorldArena_Robotwin2.0">数据</a></p>
+<p><strong>还在维护吗</strong>：在。CVPR 2026 挑战赛 6 月 30 日结束，真值和评测全部公开；<strong>IROS 2026 的 WorldArena 2.0 挑战赛</strong>正在进行（2.0 排行榜最后修改 2026-09-18）。</p>
+<p><strong>测什么</strong>：基于 RoboTwin 2.0 的 Clean-50 配置——50 个双臂操作仿真任务，每任务 50 条（40 训练 / 10 测试）。输入二选一：<strong>首帧 + 文字指令</strong>（固定 121 帧、24fps、≥640×480），或<strong>首帧 + 动作序列</strong>（14 维关节向量，按真值长度生成）。</p>
+<ul>
+<li><strong>赛道 1 视频质量</strong>：15–16 个指标、6 个维度——画质（成像、美学、JEPA 相似度）、运动（动态程度、光流分、平滑）、内容一致（主体、背景、光度）、<strong>物理遵循</strong>（交互质量、轨迹准确）、<strong>3D 准确</strong>（深度、透视）、<strong>可控性</strong>（指令跟随、语义对齐）→ <strong>EWMScore＝全部指标平均×100</strong>。</li>
+<li><strong>赛道 2 功能性</strong>：<strong>当数据引擎</strong>（用生成的视频训练策略，看任务成功率）、<strong>当策略评估器</strong>（世界模型里跑 5 个 π0 变体，排名和真实仿真是否一致）、当动作规划器。</li>
+<li>另有人评：整体质量、物理、指令跟随、两两胜率。</li>
+<li>2.0 版：赛道 1 改成按难度/分布外调整的 EWMScore-P；赛道 2 改为「世界模型当强化学习环境」；赛道 3 是视触觉和真机动作规划。</li>
+</ul>
+<p><strong>谁打了</strong></p>
+<p>1.0 赛道 1 共 <strong>127 个模型</strong>。下表是我按官方 Space 代码的公式（15 个基础指标平均×100）从原始结果文件复算的，可能和网页显示有小数级出入：</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>名次</th>
+<th>模型</th>
+<th>EWMScore（复算）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>UNIS</td>
+<td>73.64</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SisyphusWorld</td>
+<td>73.06</td>
+</tr>
+<tr>
+<td>3</td>
+<td>BWM-Fast</td>
+<td>72.71</td>
+</tr>
+<tr>
+<td>4</td>
+<td>SACWM</td>
+<td>72.67</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DexWorldEngine</td>
+<td>72.66</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PAIWorld</td>
+<td>72.34</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Inspatio-Curious</td>
+<td>72.12</td>
+</tr>
+<tr>
+<td>8</td>
+<td>FlowWAM-FiveAges</td>
+<td>72.00</td>
+</tr>
+<tr>
+<td>9</td>
+<td>EvoPhysWorld</td>
+<td>71.73</td>
+</tr>
+<tr>
+<td>10</td>
+<td>NoxWM</td>
+<td>71.70</td>
+</tr>
+</tbody>
+</table></div>
+<p>知名模型位置：GenieEnvisioner-Sim2.0-2B（智元）69.59，第 33；GigaWorld-1 66.47；WoW 65.53；Ctrl-World 63.72；<strong>Wan2.6 63.12</strong>；CogVideoX 62.71；<strong>Wan2.2 62.35</strong>；<strong>Veo3.1 61.05，第 86</strong>；<strong>Cosmos-Predict 2.5（动作版）57.83</strong>；Cosmos-Predict 2.5（文字版）55.93；Vidar 54.86；Genie Envisioner 44.06。——<strong>通用大视频模型在这里排中后段</strong>，专门在 RoboTwin 上训练过的世界模型占前列。
+策略评估器子榜前三：WorldScape v0.2 99.53、Ctrl-World 98.6、WoW 95.88。
+2.0 赛道 3（真机/视触觉）：ViTacX 76.64、OmniFlow 67.37、Nexus-T 66.84、Aster motion 58.63……Wan 2.2 只有 0.72。</p>
+<p><strong>完整真题示例（验证集 fixed_scene_task · episode8）</strong></p>
+<p><img src="img/worldarena_ep8.jpg" class="eximg" alt="WorldArena episode8 首帧" style="max-width:480px"></p>
+<ul>
+<li>首帧：上图（RoboTwin 仿真双臂工作台，320×240 缩略）。</li>
+<li>主指令原文：<code>In a fixed robotic workspace, generate a rigid, physically consistent embodied robotic arm. The arm maintains high stability with no deformation and enters the frame to Pick the yellow hamburg box with white accents, then the Handheld fries pack bright red color, and place them on the bright orange tray with glossy finish.</code></li>
+<li>中文：在固定的机器人工作台上，生成刚性、物理一致的机械臂。机械臂保持稳定、不变形，进入画面后先拿起带白色装饰的黄色汉堡盒，再拿起亮红色手持薯条袋，把它们放到亮橙色的光面托盘上。</li>
+<li>同一首帧还配了两条<strong>反事实指令</strong>（考指令跟随，看模型是不是只会复现训练轨迹）：</li>
+<li>instructions_1：<code>…Pick up the yellow hamburg box using the right arm and move it to the left side of the table; afterwards, grab the bright blue fries pack instead and slide it towards the far end of the workspace, away from the tray.</code>（用右臂拿起黄色汉堡盒移到桌子左边；然后改拿亮蓝色薯条袋，把它推到工作台远端、远离托盘。）</li>
+<li>instructions_2：<code>…Using the left arm, pick the bright red fries pack first and carry it in a zigzag path across the surface, then place both items—first the yellow hamburg box, and then the bright blue fries pack—inside the dark green basket.</code>（用左臂先拿红色薯条袋，沿之字形路线移动，再把两样东西——先汉堡盒、后蓝色薯条袋——放进深绿色篮子。）</li>
+<li>动作版输入：240 步 × 14 维关节向量（左臂 6 关节 + 夹爪、右臂 6 关节 + 夹爪）。</li>
+<li>算什么分：15 个指标——画质、动态、一致性、机械臂和物体的交互是否合理、末端轨迹是否准确、深度/透视是否对、是否按指令（包括反事实指令）做。赛道 2 再看：用这些生成视频训出来的策略在仿真里成功率多少。</li>
+</ul>
+<p><strong>怎么提交</strong>：按 GitHub 的 <a target="_blank" href="https://github.com/tsinghua-fib-lab/WorldArena/blob/main/assets/README_submission.md">提交说明</a> 本地评测；1.0 挑战赛已结束，新成绩关注 <a target="_blank" href="http://iros2026challenge.world-arena.ai/">IROS 2026 的 2.0 挑战赛</a>。</p>
+<p><strong>和我们的关系</strong>：<strong>推荐</strong>。①「世界模型当数据引擎」赛道和我们的数据生产定位完全一致；②RoboTwin 本身就是引擎白模场景，我们的白模管线可以直接产同类数据；③榜上 127 个模型，大量国内公司参加，曝光度高。注意：参赛的仍是模型，白模不能直接上。</p>
+</div>
+<div class="bcard">
+<h3 id="worldeval">WorldEval —— 用世界模型给机器人策略打分（方法论文，无榜） <span class="etag">🤖具身</span></h3>
+<p><strong>谁做的</strong>：美的集团 + 华东师大（Yaxuan Li、Yichen Zhu 等），2025 年 5 月（<a target="_blank" href="https://arxiv.org/abs/2505.19017">arXiv 2505.19017</a>）。<a target="_blank" href="https://worldeval.github.io">官网</a> · <a target="_blank" href="https://github.com/liyaxuanliyaxuan/Worldeval">GitHub</a>（最近提交 2025-06-11）</p>
+<p><strong>测什么</strong>：提出 Policy2Vec，把视频生成模型（Wan2.1 + LoRA）变成「跟着策略潜在动作生成机器人视频」的模拟器，在里面跑真实机器人策略，看生成视频里的成功率和真机成功率是否一致（MMRV 越低越好、Pearson r 越高越好）。5 个真机任务：收拾桌子、收玩具、放杯子、交接方块、敲方块。还能当「安全检测器」，提前发现危险动作。</p>
+<p><strong>被评的策略</strong>：Diffusion Policy、OpenVLA、DexVLA、<strong>π0</strong>（各用 100 条轨迹微调）。结论：WorldEval 的排名和真机强相关，优于 RoboTwin 仿真（real-to-sim）方案。</p>
+<p><strong>片段题</strong>：官网展示的指令如 <code>Pick up the hammer, then strike the red block.</code>（拿起锤子，然后敲红色方块）、<code>Pass the red block to the right arm to place it on the blue mat.</code>（把红色方块交给右臂，放到蓝色垫子上）。<strong>没有公开测试集和榜</strong>。</p>
+<p><strong>和我们的关系</strong>：思路对口（世界模型当策略评估器，WorldArena 也有这个赛道），但不能参赛。</p>
+</div>
+<div class="bcard">
+<h3 id="robodojo">RoboDojo —— 仿真 + 真机统一的机器人策略榜 <span class="etag">🤖具身</span></h3>
+<p><strong>谁做的</strong>：陈天行等（RoboTwin 作者团队）牵头，40+ 位作者，通讯作者含罗平、Masayoshi Tomizuka、丁文伯、Mingyu Ding，2026-07-05（<a target="_blank" href="https://arxiv.org/abs/2607.04434">arXiv 2607.04434</a>）。<a target="_blank" href="https://robodojo-benchmark.com/doc/">官网与文档</a> · <a target="_blank" href="https://robodojo-benchmark.com/LeaderBoard">排行榜</a> · <a target="_blank" href="https://github.com/robodojo-benchmark/RoboDojo">GitHub</a> + XPolicyLab</p>
+<p><strong>还在维护吗</strong>：非常活跃，排行榜 2026-10-09 还在加新模型。</p>
+<p><strong>测什么</strong>：<strong>42 个仿真任务</strong>（Isaac Sim，异构并行）+ <strong>18 个真机任务</strong>（Piper X、Piper、ARX X5 三种机械臂，远程云端真机评测 RoboDojo-RealEval）。仿真分 5 维：泛化（标准/随机）、记忆、精度、长程、开放指令。每个任务按细则打分（部分完成给部分分），报「得分 / 成功率」两个数。参赛者分 VLA、WAM（世界动作模型）、Agent+VLA、VLM+WAM 等类型。</p>
+<p><strong>谁打了</strong>
+仿真榜（33 条，得分 / 成功率%）：</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>名次</th>
+<th>模型</th>
+<th>团队</th>
+<th>得分 / 成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>VPP2</strong>（WAM）</td>
+<td>星动纪元 RobotEra</td>
+<td>39.26 / 32.26</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PhysicalRSI</td>
+<td>港大 MMLab &amp; KAI</td>
+<td>36.27 / 31.38</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Awomo-0.5（WAM）</td>
+<td>Awomo</td>
+<td>35.34 / 29.64</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Simate-beta</td>
+<td>Simate</td>
+<td>33.95 / 27.96</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Rex-M1 Preview</td>
+<td>FT Lab &amp; VisIncept</td>
+<td>33.79 / 27.44</td>
+</tr>
+<tr>
+<td>6</td>
+<td>VPP2-Preview</td>
+<td>星动纪元</td>
+<td>31.40 / 25.62</td>
+</tr>
+<tr>
+<td>7</td>
+<td>InternW0-Δ（WAM）</td>
+<td>上海 AI Lab</td>
+<td>30.77 / 23.91</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Liber-0 Preview</td>
+<td>LiberAI</td>
+<td>30.74 / 25.52</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Liber-0 Lite</td>
+<td>LiberAI</td>
+<td>29.24 / 24.23</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>GPT-6-Astra</strong>（Agent）</td>
+<td>RoboDojo 团队代测</td>
+<td>28.97 / 22.48</td>
+</tr>
+</tbody>
+</table></div>
+<p>其后：DM0.5（Dexmal）24.90、ME-Brain-1.0（理想汽车）21.67、GalaxeaVLA G0.5（星海图）20.23、<strong>Xiaomi-Robotics-1</strong> 20.07、<strong>Meituan-Robotics-0</strong> 14.95、HWM-CogWAM（地平线）14.34、<strong>Hy-Embodied-0.5-VLA（腾讯 Robotics X）</strong> 13.07、Spatial Forcing 12.38、<strong>DeepSeek-Flash</strong> 2.99、<strong>GPT-5.5</strong> 1.13。
+真机榜（11 条）：OpenWAM-α 37.6 / 24.4；<strong>π0.5</strong> 22.9 / 12.8；InternVLA-A1 12.0；GalaxeaVLA G0 9.0；Xiaomi-Robotics-0 7.9；X-VLA 7.6；<strong>GR00T-N1.7（NVIDIA）</strong> 5.9；π0 5.8；StarVLA 4.1；Spirit v1.5 1.6；DM0 0。</p>
+<p><strong>完整真题示例（仿真 · 记忆类 · Swap Blocks 交换方块）</strong></p>
+<video class="eximg" controls="controls" poster="img/robodojo_swap_blocks.jpg" preload="metadata"><source src="img/robodojo_swap_blocks.mp4" type="video/mp4"></video>
+<ul>
+<li>指令原文：<code>Swap the two blocks using the empty mat, pressing the button after each move.</code></li>
+<li>中文：借助空垫子交换两个方块的位置，每移动一次都要按一下按钮。</li>
+<li>场景说明：三块垫子、两个方块（各占一块垫子）、一个按钮。机器人要把空垫子当中转站完成交换，每次移动后按按钮。</li>
+<li>打分：<strong>100 分</strong>＝借空垫子完成交换、三次移动后各按一次按钮、两个方块最终落在对方原来的垫子上、机器人回到原位；否则 <strong>0 分</strong>。（考的是「记住自己做到第几步」。）</li>
+</ul>
+<p><strong>怎么提交</strong>：把策略按 XPolicyLab 适配器接入并提 PR → 填官方评测申请（PR 链接、commit、checkpoint、任务、动作空间）→ 官方跑评测 + 审代码 → 上榜。邮箱 RoboDojoCommittee@gmail.com。</p>
+<p><strong>和我们的关系</strong>：低到中。考的是机器人策略，不是视频模型；但<strong>世界动作模型（VPP2、InternW0、Awomo）排前列</strong>，说明「世界模型 → 策略」路线正热。白模的价值是给这类模型产训练数据。</p>
+</div>
+<div class="bcard">
+<h3 id="roboarena">RoboArena —— 多所高校真机双盲 A/B 对战 <span class="etag">🤖具身</span></h3>
+<p><strong>谁做的</strong>：Pranav Atreya、Karl Pertsch、Percy Liang、Chelsea Finn、Sergey Levine 等，论文写明评测网络覆盖 7 所高校，2025-06（<a target="_blank" href="https://arxiv.org/abs/2506.18123">arXiv 2506.18123</a>）。<a target="_blank" href="https://robo-arena.github.io/">官网 / 排行榜</a> · <a target="_blank" href="https://github.com/robo-arena/roboarena">GitHub</a> · <a target="_blank" href="https://huggingface.co/datasets/RoboArena/DataDump_07-17-2026">评测数据导出</a></p>
+<p><strong>还在维护吗</strong>：在。排行榜 API 显示最后更新 2026-10-10（美东 10-10 凌晨 1:28）。</p>
+<p><strong>测什么</strong>：不固定任务和场景——分布在多所高校的评测员在 DROID 机器人平台上<strong>自己选任务</strong>，对两个匿名策略做<strong>双盲 A/B 对比</strong>，给出偏好和每个策略的部分完成度（0–1），再汇总成 Elo 式分数。</p>
+<p><strong>谁打了（当前榜 24 个策略，分数 ± 标准差，评测场次）</strong>：1 <strong>Spirit v1.6</strong>（j2-vla）1788 ±106（25 场）；2 <strong>DreamZero</strong> 1735 ±42.6（190 场）；3 Apricot 1661 ±61（63 场）；4 ReDROID-0.0 1634 ±176（6 场）；5 <strong>π0.5-DROID</strong> 1608 ±30.7（745 场）；6 <strong>π0-FAST-DROID</strong> 1582（941 场）；7 MolmoAct2-DROID（AI2）1579（5 场）；9 G0.5-Droid-AR（星海图）1559；11 paligemma_vq_droid 1546；19 π0-DROID 1461（1120 场）。场次少的分数波动大。</p>
+<p><strong>完整真题示例（一次真实 A/B 评测，2026-08-28）</strong></p>
+<video class="eximg" controls="controls" poster="img/roboarena_pen_AB.jpg" preload="metadata"><source src="img/roboarena_pen_AB.mp4" type="video/mp4"></video>
+<ul>
+<li>评测员给的指令：<code>rotate the pen by 90 degrees</code>（把笔旋转 90 度）。</li>
+<li>左：策略 A＝Apricot（部分完成度 1.0）；右：策略 B＝pi05_TTA（0.75）。（视频为两者左侧相机画面并排。）</li>
+<li>评测员原话：<code>Policy A first moved the gripper toward the pen, grasped it, picked it up, then rotate it by about 90 degrees, dropped it. Policy B first moved the gripper toward the pen, attempted to grasp it several times, then policy B picked up the pen, moved it, dropped it. Next, policy B rotated the pen by about 45 degrees in the end. … policy A completed the task successfully, whereas policy B failed. Therefore, i choose policy A.</code></li>
+<li>中文：A 先把夹爪移向笔，抓住、拿起，旋转约 90 度后放下；B 试了几次才抓起笔，移动、放下，最后只转了约 45 度。A 完成任务，B 失败，所以选 A。</li>
+<li>计分：这一局记「A 胜」，进入全体对局的排名计算。</li>
+</ul>
+<p><strong>怎么提交</strong>：官网有提交表单（Google Form）；策略要能跑在 DROID 平台上（官网链接了 openpi 的 DROID 训练示例）。</p>
+<p><strong>和我们的关系</strong>：低。考真机策略；但它公开的数千条 A/B 评测（含视频和文字反馈）是很好的「机器人视频 + 人类偏好」数据。</p>
+</div>
+<div class="bcard">
+<h3 id="libero">LIBERO —— 最常用的机器人仿真成功率基准（已接近刷满） <span class="etag">🤖具身</span></h3>
+<p><strong>谁做的</strong>：UT Austin（Bo Liu、朱玉可、Peter Stone 等），2023 年 6 月（<a target="_blank" href="https://arxiv.org/abs/2306.03310">arXiv 2306.03310</a>）。<a target="_blank" href="https://libero-project.github.io">官网</a> · <a target="_blank" href="https://github.com/Lifelong-Robot-Learning/LIBERO">GitHub</a>（最近提交 2025-03-15）</p>
+<p><strong>还在维护吗</strong>：代码基本不动；<strong>没有官方排行榜</strong>，成绩都是各论文自报。</p>
+<p><strong>测什么</strong>：130 个仿真操作任务（基于 robosuite，Franka Panda 机械臂），4 个套件：LIBERO-Spatial、Object、Goal（各 10 任务，分别考空间布局、物体、目标的迁移）和 LIBERO-100（含 LIBERO-90 + LIBERO-10/Long）。每任务 50 条示范；评测 = 每套件 10 任务 × 50 回合的成功率。</p>
+<p><strong>谁打了（OpenVLA-OFT 论文表，成功率%：Spatial / Object / Goal / Long / 平均）</strong>：<strong>OpenVLA-OFT 97.6 / 98.4 / 97.9 / 94.5 / 97.1</strong>；<strong>π0（微调）96.8 / 98.8 / 95.8 / 85.2 / 94.2</strong>；π0+FAST 96.4 / 96.8 / 88.6 / 60.2 / 85.5；DiT Policy 82.4（平均）；OpenVLA 76.5；Octo 75.1；Diffusion Policy 72.4。——主流方法都 &gt; 94%，区分度已很低。</p>
+<p><strong>完整真题示例（LIBERO-10 · KITCHEN_SCENE3）</strong></p>
+<ul>
+<li>语言指令：<code>turn on the stove and put the moka pot on it</code>（打开灶台，把摩卡壶放上去）。</li>
+<li>任务定义（BDDL 文件节选）：桌上有平板灶台 <code>flat_stove_1</code>、煎锅 <code>chefmate_8_frypan_1</code>、摩卡壶 <code>moka_pot_1</code>，各自在指定初始区域随机摆放（如摩卡壶在 x∈[0.025, 0.075]、y∈[−0.025, 0.025]）。</li>
+<li>成功条件：<code>(And (Turnon flat_stove_1) (On moka_pot_1 flat_stove_1_cook_region))</code>——灶台打开 <strong>且</strong> 摩卡壶在灶台加热区上。</li>
+<li>计分：50 回合里满足成功条件的比例。</li>
+</ul>
+<p><strong>和我们的关系</strong>：低。但它的 <strong>BDDL 任务描述语言</strong>（物体、区域、初始状态、目标谓词）是很好的参考格式——我们的白模世界如果要做成具身任务，可以照这个格式定义题目。</p>
+</div>
+<div class="bcard">
+<h3 id="simplerenv">SimplerEnv —— 用仿真复刻真机，看仿真分能不能代替真机分 <span class="etag">🤖具身</span></h3>
+<p><strong>谁做的</strong>：UC San Diego（苏昊）+ 斯坦福 + UC Berkeley + Google DeepMind（Xuanlin Li、Kyle Hsu、Jiayuan Gu、Karl Pertsch、Sergey Levine、吴佳俊、Chelsea Finn、Ted Xiao 等），2024 年 5 月（<a target="_blank" href="https://arxiv.org/abs/2405.05941">arXiv 2405.05941</a>）。<a target="_blank" href="https://simpler-env.github.io/">官网</a> · <a target="_blank" href="https://github.com/simpler-env/SimplerEnv">GitHub</a>（最近提交 2026-09-30）</p>
+<p><strong>还在维护吗</strong>：代码在维护；<strong>没有官方排行榜</strong>。</p>
+<p><strong>测什么</strong>：在 SAPIEN/ManiSkill 里复刻 Google Robot（RT 系列）和 WidowX（Bridge 数据）真机场景；两种评法：<strong>视觉匹配</strong>（把真实照片贴进仿真背景、调整纹理）和<strong>变体聚合</strong>（换背景、光照、干扰物、桌面纹理后取平均）。核心指标是仿真分和真机分的相关性（Pearson、MMRV）。任务如拿可乐罐、拿物体、移近、开关抽屉、把苹果放进抽屉（Google Robot）；勺子放毛巾、胡萝卜放盘子、叠方块、茄子放篮子（WidowX）。</p>
+<p><strong>谁打了</strong>：原论文评了 RT-1、RT-1-X、RT-2-X、Octo；之后很多 VLA 论文自报 SimplerEnv 分数，<strong>没有统一榜，我这次没逐个核对数字</strong>。</p>
+<p><strong>完整真题示例（WidowX · widowx_carrot_on_plate）</strong></p>
+<p><img src="img/simpler_carrot.jpg" class="eximg" alt="SimplerEnv 胡萝卜放盘子" style="max-width:480px"></p>
+<ul>
+<li>环境名：<code>PutCarrotOnPlateInScene-v0</code>，最多 60 步，控制频率 5Hz。</li>
+<li>语言指令（源码原文）：<code>put carrot on plate</code>（把胡萝卜放到盘子上）。</li>
+<li>初始摆放：胡萝卜和盘子在 4 个格点位置中两两组合（12 种）× 2 种朝向＝24 个回合。</li>
+<li>成功条件：胡萝卜完全在盘子上（水平位置在盘内、高度偏差 ≤ 2cm）；另记录「是否连续抓稳 5 步」等中间指标。</li>
+</ul>
+<p><strong>和我们的关系</strong>：低。但它「仿真分要和真机分相关」的验证方法，正好可以拿来证明<strong>我们的白模世界评测结果能代表真实世界</strong>。</p>
+</div>
+</div>
+<h2 id="route">建议路线</h2>
+<ol>
+<li><strong>先确认模型接口（1 天）</strong>：我们的模型是按键、相机还是文字控制？能不能「给 1 帧或 3 秒、续写、镜头不动、不给动作」？这决定能打 WBench 哪个榜、能不能打 Physics-IQ 和 WorldScore。</li>
+<li><strong>内部摸底（约 1 周）</strong>：题目公开、能自评的先跑——WBench Navi 158 题（A 方案自评，要 GPU + 豆包 API）、WorldScore 开源评测、Physics-IQ Verified 各跑 1 轮。拿到分数后和 Zing-0.5（WBench 81.0）、UniWorld-View（WorldScore 85.53）、Odyssey-3 Pro 单次生成（63.37）逐项对比，找出短板。</li>
+<li><strong>用白模补数据 + 搭内部模拟考</strong>：按短板造数据——相机轨迹和多场景（WorldScore）、WASD + 回访/绕圈（WBench、WorldRoam、WorldMark）、固定机位刚体物理和 g/μ 真值（Physics-IQ、WorldBench）。同时用白模出一套题型相同、题目不重复的私有考题。内部定死红线：<strong>不拿任何榜的公开测试题训练或调参</strong>。</li>
+<li><strong>正式提交（按优先级）</strong>：WBench（如果是实时模型就挂 <code>realtime</code> 标签，附硬件和实测 FPS）→ WorldScore（邮件）→ WorldRoam-Bench（官网表单）。具身方向关注 WorldArena 2.0（IROS 2026）。Physics-IQ 要跑满 4 轮单次生成、报平均值 ± 标准差，才能宣称 SOTA。</li>
+<li><strong>长期：自己做一个榜</strong>。白模有精确的按键时间戳和相机真值，可以先做内部「按键到画面延迟」测试，做扎实后公开成第一个统一硬件的实时交互世界模型榜（首帧延迟、按键到画面延迟、持续帧率、画质一起排）。目前没人做。</li>
+</ol>
+<h2 id="gaps">缺口与没核实的地方</h2>
+<p><strong>拿不到真题或只有片段</strong></p>
+<ul>
+<li>拿不到真题的 6 个：Artificial Analysis（提示词不公开）、LMArena（用户临时出题）、WorldRoam-Bench（数据「coming soon」）、WorldExam（用例「Coming Soon」）、GameWorld Score（仓库里只有维度名）、PhysBench（数据集改名，没取到）。</li>
+<li>只有片段题的 2 个：T2VPhysBench（论文里的提示消融例子）、WorldEval（官网展示的指令）。</li>
+</ul>
+<p><strong>数字和规则对不上的</strong></p>
+<ul>
+<li>WBench：提交说明写相机/按键模型只能上 Navi 榜，但 Full 榜现在有 3 个相机模型，官方没解释。角色动作和事件编辑的子类，论文和官网分法不一致、数字也对不上。Full 榜第一在 README 叫 MuseFlow-Pro（Musee），官网叫 Murea-Pro（Murea Lab），可能是改名。审核要多久没写。没找到明文禁止用测试数据训练的条款。</li>
+<li>Physics-IQ：主办方是否已重算 Odyssey-3 Pro 的分，查不到公开结果（PR 里 Pro 的上传编号写着「待发放」）。官网和 README 有几处数字对不上（微软 Physical Registry + PRS 的 V2V，官网 52.61、README 51.86）。示例视频用的是原版公开数据（同一批录像），Verified 数据要申请，没申请。</li>
+<li>WorldArena 分数是我按官方 Space 代码的公式从原始结果文件复算的，可能和网页有小数级差别。</li>
+<li>EWMBench 的新成绩来自第三方汇总（Qwen-RobotWorld 自报），官方没更新榜。</li>
+<li>LIBERO、SimplerEnv 没有官方榜；LIBERO 数字取自 OpenVLA-OFT 论文表，SimplerEnv 各家自报分没逐个核对。</li>
+</ul>
+<p><strong>实时方向</strong></p>
+<ul>
+<li>没有统一硬件、按速度排名的公开榜。各家硬件不同（A100 / H20 / H800 / H100 / 5090 / B200），速度数字不能直接比。</li>
+<li>商用实时系统（Genie 3、快乐生蚝、PixVerse R1、Odyssey）都没有第三方测过 FPS 和延迟；Decart Oasis 3 的 &lt;200 ms 也是自报。</li>
+<li>WBench 附录的速度表只有论文版 20 个模型，后来新加的没有速度数据。StreamAV-Bench 没写提交流程。</li>
+<li>warena.ai（WorldMark 对战平台）的排行榜是前端渲染，没抓到分数。</li>
+</ul>
+<p><strong>关于我们自己</strong></p>
+<ul>
+<li>我不知道我们模型的控制接口（按键/相机/文字、单帧/多帧），推荐和路线按「按键或相机控制的交互式世界模型」写。</li>
+<li>「白模」按游戏行业的灰模/无贴图理解；如果 World500 的世界有完整贴图和光照，画质方面的风险会小很多。</li>
+</ul>
+<p><strong>查过但没收的</strong>：MotionCtrl / CameraCtrl 类（没有独立榜，作为参赛者出现在 iWorld-Bench）；Genie / GameGen 类交互游戏评测（没有独立榜）；NVIDIA Cosmos / Isaac 相关（没有单独公开榜，Cosmos 系列出现在 PAI-Bench、WorldArena、WorldBench 等）。</p>
+<p><strong>已停更或挂掉的</strong>：T2V-CompBench（排行榜报错）、EvalCrafter（2024 后无更新）、WorldModelBench（2024-11 后无新条目）、PhyGenBench（2024 后无更新）、FETV（无榜）。</p>
+</main></body></html>
