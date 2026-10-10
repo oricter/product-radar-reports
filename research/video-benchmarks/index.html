@@ -36,12 +36,13 @@ img.eximg{background:none}
 <p class="sub">共 27 个：质量 6 · 可控交互 8 · 物理 6 · <b>具身 7（单独一节，标 🤖具身）</b>。每个都写了谁做的、测什么、谁上了榜、一道原题、怎么提交、我们能不能打。另见：<a href="../wbench/">WBench</a> · <a href="../physics-iq/">Physics-IQ</a></p>
 </header>
 <section class="cards">
+<div class="card no"><div class="tag">⚡ 实时视频生成有榜吗</div><p><b>没有专门的榜。</b>最接近的是 StreamAV-Bench（智源 + 北大，量了 FPS 和首段延迟）。WBench、WorldRoam、Artificial Analysis 只附带速度数据。详见 <a href="#realtime">〇、实时视频生成榜单</a>。</p></div>
 <div class="card yes"><div class="tag">首推 ①</div><p><b>WorldScore</b>（斯坦福）：按相机轨迹连续造场景。视频模型相机控制只有 22–29 分，世界模型 85+。发邮件即可上榜。</p></div>
 <div class="card yes"><div class="tag">首推 ② 🤖具身</div><p><b>WorldArena</b>（清华）：127 个模型的具身世界模型榜，有「当数据引擎」赛道，IROS 2026 挑战赛进行中。</p></div>
 <div class="card yes"><div class="tag">首推 ③</div><p><b>WorldRoam-Bench</b>（高德）：10–60 秒 WASD 连续漫游，Genie 3、快乐生蚝、Lyra 2.0 同表。官网有提交表单。</p></div>
 <div class="card no"><div class="tag">白模能直接打吗</div><p><b>不能。</b>所有榜考的都是模型。白模用来造训练数据（相机、按键、物理真值）、搭内部模拟考，或反过来自己做一个榜。</p></div>
 </section>
-<p class="jump">跳到：<a href="#table">总表</a> · <a href="#quality">质量</a> · <a href="#control">可控交互</a> · <a href="#physics">物理</a> · <a href="#embodied">🤖具身</a> · <a href="#advice">建议</a> · <a href="#gaps">缺口</a></p>
+<p class="jump">跳到：<a href="#realtime">⚡实时榜</a> · <a href="#table">总表</a> · <a href="#quality">质量</a> · <a href="#control">可控交互</a> · <a href="#physics">物理</a> · <a href="#embodied">🤖具身</a> · <a href="#advice">建议</a> · <a href="#gaps">缺口</a></p>
 
 <blockquote>
 <p>阿汤 · 2026-10-10 · 数据全部来自各榜官网、论文、GitHub、Hugging Face 原始文件（抓取时间 2026-10-10 美东凌晨）。分数、参赛者、题目都是原样摘的，没读到的就写「没读到」。WBench 和 Physics-IQ 已有单独页面：<a target="_blank" href="../wbench/">WBench</a> · <a target="_blank" href="../physics-iq/">Physics-IQ</a>。</p>
@@ -56,7 +57,711 @@ img.eximg{background:none}
 <li><strong>WorldScore</strong>（斯坦福李飞飞组）——按相机轨迹一段段生成场景，考相机控制和 3D 一致性；还在更新，发邮件就能上榜；视频模型在「相机控制」上只有 22–29 分，3D/4D 世界模型 85+，差距大、好出成绩。</li>
 <li><strong>🤖WorldArena</strong>（清华 FIB 实验室）——具身世界模型最大的公开榜（1.0 版 127 个模型），有「当数据引擎」赛道，正好对口「数据生产」；IROS 2026 的 2.0 挑战赛正在进行。</li>
 <li><strong>WorldRoam-Bench</strong>（高德 + 南大）——WASD 按键连续交互 10–60 秒，Genie 3、阿里「快乐生蚝」、NVIDIA Lyra 2.0 都在榜上，曝光度高；官网有提交表单。备选：WorldMark（盛大 Alaya）同样考按键交互。</li>
+<li><strong>实时视频生成：没有专门的排行榜</strong>。最接近的是 StreamAV-Bench（智源 + 北大，量了 FPS 和首段延迟，但测的是音视频）；WBench、WorldRoam、Artificial Analysis、Physics-IQ Verified 只附带速度或成本数据，不按速度排名。详见「〇、实时视频生成榜单」。</li>
 <li><strong>完整真题示例：20 道</strong>（VBench 1.0 和 2.0 各 1 道；另有 2 个榜只有片段题、6 个榜拿不到真题，都标明了）。</li>
+</ul>
+<hr />
+<h2 id="realtime">〇、实时视频生成榜单</h2>
+<blockquote>
+<p>2026-10-10 补充。阿汤问「实时视频生成的榜单有吗」。下面所有数字都摘自原始论文、官网或排行榜文件，链接放在每行后面。<strong>「第三方实测」</strong>指评测方用自己的机器跑出来的数字，<strong>「自报」</strong>指模型方自己公布的数字。</p>
+</blockquote>
+<h3 class="">先说答案</h3>
+<ul>
+<li><strong>没有一个专门的「实时视频生成排行榜」</strong>：现在没有哪个榜按 FPS / 延迟排名次、并把硬件统一起来。查了 WBench、WorldMark、WorldRoam-Bench、Artificial Analysis、VBench、MLPerf、Physics-IQ Verified，以及 2025–2026 年的流式/实时论文，都不是。</li>
+<li><strong>最接近的是 StreamAV-Bench</strong>（智源 + 北大，2026-08）：第一个专门测「流式」生成的评测，有 Hugging Face 排行榜，给 13 个系统量了 <strong>FPS</strong> 和<strong>首段延迟（TTFC）</strong>，还测了「中途改指令，画面多久能跟上」。但它考的是<strong>带声音的视频</strong>，而且只排质量和交互，速度只是列出来，不参与排名。官网和 README 都没写怎么提交。</li>
+<li><strong>另外 4 个榜会附带速度数据，但都不按速度排名</strong>：</li>
+<li><strong>WBench</strong>：论文附录有「生成耗时 ÷ 视频时长」，本地模型统一在 1 张 A100 80G 上测；提交时如果要打 <code>realtime</code> 标签，必须在邮件里写清硬件、分辨率和实测速度。</li>
+<li><strong>WorldRoam-Bench</strong>：论文表 2 有生成速度（帧/秒）和按分辨率折算的 MPPS，统一在 1 张 H20 上测。</li>
+<li><strong>Artificial Analysis</strong>：有「端到端生成耗时」和「每分钟视频价格」，但只测 API 模型，生成一条要 7–270 秒，跟实时差得远。</li>
+<li><strong>Physics-IQ Verified</strong>：有成本前沿图（每条视频成本按 24 fps、1280 宽折算），成本是提交方在 <code>submission.yaml</code> 里自己填的。</li>
+<li><strong>WorldMark 的「Response Latency」不是计算速度</strong>：它测的是视频里「按下新键后，画面过多久才开始转向」，分数 0–100。真正的实时延迟它不测。</li>
+<li><strong>所以真要比速度，现在只能看各家自报的数，加上上面几个榜附带的第三方实测</strong>。差距很大：同一个 Matrix-Game 3.0，自报「720p 最高 40 FPS」（用 8 卡跑 DiT + 1 卡跑 VAE）；WorldRoam 在 1 张 H20 上只测到 5.34 帧/秒（原生 17 fps）。</li>
+</ul>
+<h3 class="">各个「带速度」的榜/评测</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>榜单</th>
+<th>谁做的</th>
+<th>速度怎么测</th>
+<th>硬件统一吗</th>
+<th>速度算不算分</th>
+<th>怎么提交</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>StreamAV-Bench</strong></td>
+<td>智源 BAAI + 北大（施柏鑫组），另有快手可灵、清华、中科大作者</td>
+<td>FPS（默认配置下每秒生成帧数）、TTFC（收到请求到吐出第一段的秒数）、PVRL/PARL（改指令后画面/声音多久实现，按视频时间算）</td>
+<td>开源模型统一用 H800；商用系统走官网，没测 FPS 和 TTFC</td>
+<td>不算，只列出来</td>
+<td>没写。排行榜是 HF 上的静态页（<a target="_blank" href="https://huggingface.co/spaces/StreamAVBench/Leaderboard">Leaderboard</a>），代码在 <a target="_blank" href="https://github.com/liukqchoco/StreamAVBench-Code">GitHub</a></td>
+</tr>
+<tr>
+<td><strong>WBench</strong></td>
+<td>美团 LongCat + 复旦</td>
+<td>附录表 7「Inference : Video」＝生成耗时 ÷ 视频时长，小于 1 才算比实时快</td>
+<td>本地模型统一 1×A100 80G；API/网页模型不测</td>
+<td>不算</td>
+<td>发邮件。要打 <code>realtime</code> 标签，需在邮件里写硬件、分辨率和实测速度（<a target="_blank" href="https://github.com/meituan-longcat/WBench">SUBMISSION 文档</a>）</td>
+</tr>
+<tr>
+<td><strong>WorldRoam-Bench</strong></td>
+<td>高德 AMAP CV Lab（阿里）</td>
+<td>表 2「Inf. Speed (Hz)」＝每段帧数 ÷ 每段耗时，跑 20 次取平均；MPPS＝每秒百万像素</td>
+<td>统一 1×H20</td>
+<td>不算</td>
+<td>官网提交表单（见本页「可控交互类」）</td>
+</tr>
+<tr>
+<td><strong>Artificial Analysis Video Arena</strong></td>
+<td>Artificial Analysis</td>
+<td>「Generation Time」：从发请求到下载完视频的端到端中位数，含排队；每 2 小时测一次，取近 3 天</td>
+<td>不统一，测的是各家 API 服务商</td>
+<td>不算，单独列在 <a target="_blank" href="https://artificialanalysis.ai/video/providers">Providers 页</a></td>
+<td>只收有公开 API 的模型，由他们自己接入</td>
+</tr>
+<tr>
+<td><strong>Physics-IQ Verified</strong></td>
+<td>Anates Labs + Google DeepMind</td>
+<td>不测速度。成本前沿图用的是每条视频成本，按 24 fps、1280 宽折算</td>
+<td>—</td>
+<td>不算，单独画图</td>
+<td>交 <code>submission.yaml</code>，里面自己填生成成本</td>
+</tr>
+<tr>
+<td><strong>MLPerf Inference v6.0 文生视频</strong></td>
+<td>MLCommons（任务组负责人来自 NVIDIA、KRAI）</td>
+<td>模型固定为 Wan2.2-T2V-A14B，720p、5 秒、81 帧；比单条生成延迟（SingleStream）和离线吞吐</td>
+<td>比的就是硬件，模型固定</td>
+<td>是硬件榜，不是模型榜</td>
+<td>硬件厂商按 MLPerf 流程提交（<a target="_blank" href="https://mlcommons.org/2026/03/texttovideo-inference/">说明</a>）。官方说，等生成时间降到秒级，会再加实时 Server 场景</td>
+</tr>
+<tr>
+<td>WorldMark（参考）</td>
+<td>Alaya Lab（盛大）</td>
+<td>「Response Latency」是视频内容里的响应时间（0–100 分），不是计算速度</td>
+<td>—</td>
+<td>算在动作分里</td>
+<td>没写</td>
+</tr>
+</tbody>
+</table></div>
+<p>另外还有两类<strong>不是榜</strong>的东西，容易被误当成榜：
+- GitHub 上的 <a target="_blank" href="https://github.com/yepicaiaaron/awesome-realtime-video-generation">awesome-realtime-video-generation</a> 里有张「Real-Time Model Leaderboard」，其实是作者把各家自报的首帧时间和 FPS 抄到一张表里，没有统一测过。
+- <a target="_blank" href="https://www.sota2.com/research/sota/video-generation-on-vbench-comprehensive-perceptual-and-scoring-metrics">SOTA2</a> 的 VBench 页面会把论文里的 FPS 和延迟一起列出来，也是转抄论文的数。</p>
+<h3 class="">第三方实测数字（评测方自己跑的）</h3>
+<p><strong>StreamAV-Bench</strong>（统一 H800、各模型默认配置；FPS 越高越好，TTFC 越低越好；PVUAR＝中途改指令后画面成功改过来的比例）。来源：<a target="_blank" href="https://huggingface.co/spaces/StreamAVBench/Leaderboard">排行榜 data.json</a>、<a target="_blank" href="https://arxiv.org/abs/2608.26336">论文</a></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>系统</th>
+<th>类型</th>
+<th>FPS</th>
+<th>首段延迟 TTFC（秒）</th>
+<th>画质 VQ（1–5）</th>
+<th>改指令成功率 PVUAR</th>
+<th>改指令后画面响应（秒，视频时间）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Self-Forcing</td>
+<td>开源，视频+另配音</td>
+<td><strong>15.63</strong></td>
+<td><strong>1.28</strong></td>
+<td>2.75</td>
+<td>0.185</td>
+<td>14.2</td>
+</tr>
+<tr>
+<td>Causal-Forcing</td>
+<td>开源</td>
+<td>15.42</td>
+<td>1.28</td>
+<td>2.40</td>
+<td>0.219</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>OmniForcing</td>
+<td>开源，原生音视频</td>
+<td>12.80</td>
+<td>4.00</td>
+<td>2.37</td>
+<td>0.053</td>
+<td>13.3</td>
+</tr>
+<tr>
+<td>SWIFT</td>
+<td>开源</td>
+<td>12.36</td>
+<td>1.50</td>
+<td>2.74</td>
+<td>0.246</td>
+<td><strong>10.3</strong></td>
+</tr>
+<tr>
+<td>Deep Forcing</td>
+<td>开源</td>
+<td>11.07</td>
+<td>1.40</td>
+<td>2.63</td>
+<td>0.220</td>
+<td>13.4</td>
+</tr>
+<tr>
+<td>MemFlow</td>
+<td>开源</td>
+<td>10.84</td>
+<td>1.34</td>
+<td>2.84</td>
+<td>0.217</td>
+<td>13.7</td>
+</tr>
+<tr>
+<td>Rolling-Forcing</td>
+<td>开源</td>
+<td>10.60</td>
+<td>2.96</td>
+<td>2.76</td>
+<td>0.217</td>
+<td>13.2</td>
+</tr>
+<tr>
+<td>Helios</td>
+<td>开源</td>
+<td>10.23</td>
+<td>8.06</td>
+<td>2.18</td>
+<td>0.197</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>LongLive</td>
+<td>开源</td>
+<td>10.13</td>
+<td>1.38</td>
+<td>2.77</td>
+<td>0.241</td>
+<td>11.8</td>
+</tr>
+<tr>
+<td>IAMFlow</td>
+<td>开源</td>
+<td>6.05</td>
+<td>1.77</td>
+<td>2.84</td>
+<td>0.222</td>
+<td>11.7</td>
+</tr>
+<tr>
+<td>HappyOyster（阿里快乐生蚝）</td>
+<td>网页</td>
+<td>没测</td>
+<td>没测</td>
+<td>2.79</td>
+<td><strong>0.518</strong></td>
+<td>14.5</td>
+</tr>
+<tr>
+<td>PixVerse R1</td>
+<td>网页</td>
+<td>没测</td>
+<td>没测</td>
+<td>2.43</td>
+<td>0.350</td>
+<td>13.0</td>
+</tr>
+<tr>
+<td>Odyssey-2</td>
+<td>网页</td>
+<td>没测</td>
+<td>没测</td>
+<td><strong>2.82</strong></td>
+<td>0.274</td>
+<td>18.8</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>WorldRoam-Bench</strong>（统一 1×H20、跑 20 次取平均）。「实时倍率」是我算的：生成速度 ÷ 原生帧率，到 1.0 才算实时。来源：<a target="_blank" href="https://arxiv.org/abs/2606.31672">arXiv 2606.31672 表 2</a></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>机构</th>
+<th>分辨率</th>
+<th>原生 fps</th>
+<th>生成速度（帧/秒）</th>
+<th>MPPS</th>
+<th>实时倍率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yume 1.5</td>
+<td>上海 AI Lab</td>
+<td>1280×704</td>
+<td>16</td>
+<td><strong>6.49</strong></td>
+<td><strong>5.85</strong></td>
+<td>0.41×</td>
+</tr>
+<tr>
+<td>Matrix-Game 2.0</td>
+<td>昆仑天工 Skywork</td>
+<td>640×352</td>
+<td>12</td>
+<td>6.26</td>
+<td>1.41</td>
+<td><strong>0.52×</strong></td>
+</tr>
+<tr>
+<td>Matrix-Game 3.0</td>
+<td>昆仑天工 Skywork</td>
+<td>1280×704</td>
+<td>17</td>
+<td>5.34</td>
+<td>4.82</td>
+<td>0.31×</td>
+</tr>
+<tr>
+<td>minWM</td>
+<td>生数 ShengShu</td>
+<td>832×480</td>
+<td>16</td>
+<td>3.97</td>
+<td>1.58</td>
+<td>0.25×</td>
+</tr>
+<tr>
+<td>Lyra 2.0</td>
+<td>NVIDIA</td>
+<td>832×480</td>
+<td>16</td>
+<td>2.31</td>
+<td>0.92</td>
+<td>0.14×</td>
+</tr>
+<tr>
+<td>LingBot-World / 2.0</td>
+<td>蚂蚁</td>
+<td>832×480</td>
+<td>16</td>
+<td>1.79 / 1.75</td>
+<td>0.72 / 0.70</td>
+<td>0.11×</td>
+</tr>
+<tr>
+<td>HY-World 1.5</td>
+<td>腾讯</td>
+<td>832×480</td>
+<td>24</td>
+<td>1.30</td>
+<td>0.52</td>
+<td>0.05×</td>
+</tr>
+<tr>
+<td>SANA-WM / -AR</td>
+<td>NVIDIA</td>
+<td>1280×704</td>
+<td>16</td>
+<td>0.81 / 0.93</td>
+<td>0.73 / 0.84</td>
+<td>0.05–0.06×</td>
+</tr>
+<tr>
+<td>Genie 3、快乐生蚝</td>
+<td>DeepMind、阿里</td>
+<td>1280×704、1296×720</td>
+<td>20、24</td>
+<td>只有网页，没测</td>
+<td>—</td>
+<td>网页上是实时流</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>WBench 附录表 7</strong>（本地模型统一 1×A100 80G；数值＝生成耗时 ÷ 视频时长，<strong>小于 1 才比实时快</strong>）。来源：<a target="_blank" href="https://meituan-longcat.github.io/WBench/">WBench 论文</a></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>分辨率</th>
+<th>耗时÷时长</th>
+<th>模型</th>
+<th>分辨率</th>
+<th>耗时÷时长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Matrix-Game 3.0</strong></td>
+<td>1280×704</td>
+<td><strong>0.5</strong>（唯一小于 1 的）</td>
+<td>Astra</td>
+<td>832×480</td>
+<td>30.0</td>
+</tr>
+<tr>
+<td>YUME 1.5</td>
+<td>1280×704</td>
+<td>1.7</td>
+<td>Infinite-World</td>
+<td>896×448</td>
+<td>49.2</td>
+</tr>
+<tr>
+<td>HY-GameCraft</td>
+<td>832×480</td>
+<td>2.5</td>
+<td>LingBot-World</td>
+<td>1280×704</td>
+<td>268.8</td>
+</tr>
+<tr>
+<td>Matrix-Game 2.0</td>
+<td>640×352</td>
+<td>5.6</td>
+<td>LongCat</td>
+<td>832×480</td>
+<td>621.8</td>
+</tr>
+<tr>
+<td>HY-World 1.5</td>
+<td>832×480</td>
+<td>18.8</td>
+<td>Fantasy-World</td>
+<td>592×336</td>
+<td>2320</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>注意：WBench 和 WorldRoam 对 Matrix-Game 2.0 / 3.0 的测法和设置不同，结果对不上（WBench 测出 3.0 比实时快，WorldRoam 测出 0.31×）。所以不同榜的速度数字<strong>不能直接互比</strong>。WBench 现在的榜上，只有 <strong>Zing-0.5</strong> 一个模型带 <code>realtime</code> 标签（Navi 榜第 6，81.0 分）。</p>
+</blockquote>
+<p><strong>Artificial Analysis 端到端生成耗时</strong>（API 服务商，含排队和下载；Providers 页 2026-10-10 抓取，共 30 个服务端点）：最快的是 MiniMax H3（MachGen 托管）7.0 秒/条（$2.4/分钟），其次 MiniMax H3（fal.ai）8.0 秒、LTX-2.3 Fast（Tenstorrent，1080p 6 秒）9.3 秒；Vidu Q3 Pro 要 113–136 秒；Wan 2.2 A14B 在 DeepInfra 上要 272 秒。<strong>最快的也要 7 秒才出一条 6–10 秒的视频，不是实时</strong>。来源：<a target="_blank" href="https://artificialanalysis.ai/video/providers">Providers</a> · <a target="_blank" href="https://artificialanalysis.ai/methodology/video">测法说明</a></p>
+<h3 class="">自报数字对比表（没有统一榜，只能这样比）</h3>
+<p>「来源性质」一列：<strong>自报</strong>＝模型方自己说的；<strong>第三方</strong>＝别人测的。硬件不统一，表里的数字不能直接比高低。</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>机构</th>
+<th>分辨率</th>
+<th>FPS</th>
+<th>延迟</th>
+<th>硬件</th>
+<th>来源性质</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Genie 3</td>
+<td>Google DeepMind</td>
+<td>720p</td>
+<td>24</td>
+<td>没公布</td>
+<td>没公布</td>
+<td>自报</td>
+<td><a target="_blank" href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/">博客</a></td>
+</tr>
+<tr>
+<td>Odyssey-3 / Pro</td>
+<td>Odyssey</td>
+<td>832×480 / 1280×720</td>
+<td>没公布交互帧率</td>
+<td>没公布</td>
+<td>没公布；成本按每张 MI355X 每小时 $1 估</td>
+<td>自报</td>
+<td><a target="_blank" href="https://odyssey.systems/meet-odyssey-3">发布页</a></td>
+</tr>
+<tr>
+<td>Oasis 3 Preview</td>
+<td>Decart</td>
+<td>3 路，每路 768×512</td>
+<td>22</td>
+<td>&lt;200 ms 端到端</td>
+<td>没公布（自家 DOS 平台）</td>
+<td>自报</td>
+<td><a target="_blank" href="https://decart.ai/oasis">官网</a> · <a target="_blank" href="https://docs.platform.decart.ai/models/realtime/oasis-3">API 文档</a></td>
+</tr>
+<tr>
+<td>Matrix-Game 2.0</td>
+<td>昆仑天工 Skywork</td>
+<td>640×352</td>
+<td>25</td>
+<td>没公布</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2508.13009">arXiv 2508.13009</a></td>
+</tr>
+<tr>
+<td>Matrix-Game 3.0</td>
+<td>昆仑天工 Skywork</td>
+<td>720p</td>
+<td>最高 40</td>
+<td>没公布</td>
+<td><strong>8 卡跑 DiT + 1 卡跑 VAE</strong>，INT8 量化</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2604.08995">arXiv 2604.08995</a></td>
+</tr>
+<tr>
+<td>HY-World 1.5（WorldPlay）</td>
+<td>腾讯混元</td>
+<td>480p（WBench 用 832×480）</td>
+<td>24</td>
+<td>没给数</td>
+<td>没写</td>
+<td>自报</td>
+<td><a target="_blank" href="https://github.com/Tencent-Hunyuan/HY-WorldPlay">GitHub</a></td>
+</tr>
+<tr>
+<td><strong>Zing-0.5</strong></td>
+<td>SeedLeap.ai</td>
+<td>832×480</td>
+<td>24（不限速稳态 24.63）</td>
+<td>没给数</td>
+<td><strong>每路 1 张 RTX 5090</strong>；约 $0.009/路·分钟</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2609.17909">arXiv 2609.17909</a></td>
+</tr>
+<tr>
+<td>ABot-World-0</td>
+<td>阿里高德</td>
+<td>720P</td>
+<td>最高 16</td>
+<td>1.2 s（从动作到首帧，含解码）</td>
+<td>1×RTX 5090，显存约 19 GiB</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2607.19191">arXiv 2607.19191</a></td>
+</tr>
+<tr>
+<td>Self-Forcing</td>
+<td>Adobe + UT Austin</td>
+<td>832×480</td>
+<td>17.0（分段）/ 8.9（逐帧）</td>
+<td>首帧 0.69 s / 0.45 s</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2506.08009">arXiv 2506.08009</a></td>
+</tr>
+<tr>
+<td>Self-Forcing</td>
+<td>同上</td>
+<td>同上</td>
+<td>15.63</td>
+<td>首段 1.28 s</td>
+<td>H800</td>
+<td><strong>第三方</strong>（StreamAV）</td>
+<td>见上</td>
+</tr>
+<tr>
+<td>CausVid</td>
+<td>MIT + Adobe</td>
+<td>832×480</td>
+<td>17.0</td>
+<td>首帧 0.69 s</td>
+<td>1×H100</td>
+<td><strong>第三方</strong>（Self-Forcing 论文实测）</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2506.08009">arXiv 2506.08009 表 1</a></td>
+</tr>
+<tr>
+<td>LongLive</td>
+<td>NVIDIA + MIT 等</td>
+<td>832×480</td>
+<td>20.7</td>
+<td>没给数</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2509.22622">arXiv 2509.22622</a></td>
+</tr>
+<tr>
+<td>LongLive</td>
+<td>同上</td>
+<td>同上</td>
+<td>10.13</td>
+<td>首段 1.38 s</td>
+<td>H800</td>
+<td><strong>第三方</strong>（StreamAV）</td>
+<td>见上</td>
+</tr>
+<tr>
+<td>StreamDiT</td>
+<td>Meta + UC Berkeley</td>
+<td>512p</td>
+<td>16</td>
+<td>没给数</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2507.03745">arXiv 2507.03745</a></td>
+</tr>
+<tr>
+<td>Helios（14B）</td>
+<td>北大等</td>
+<td>384×640</td>
+<td>19.5</td>
+<td>没给数</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2603.04379">arXiv 2603.04379</a></td>
+</tr>
+<tr>
+<td>Helios</td>
+<td>同上</td>
+<td>—</td>
+<td>10.23</td>
+<td>首段 8.06 s</td>
+<td>H800</td>
+<td><strong>第三方</strong>（StreamAV）</td>
+<td>见上</td>
+</tr>
+<tr>
+<td>Krea Realtime 14B</td>
+<td>Krea</td>
+<td>没写</td>
+<td>11</td>
+<td>首帧约 1 s</td>
+<td>1×B200</td>
+<td>自报</td>
+<td><a target="_blank" href="https://www.krea.ai/blog/krea-realtime-14b">博客</a></td>
+</tr>
+<tr>
+<td>MaineCoon（22B，音视频）</td>
+<td>Catnip AI</td>
+<td>480P</td>
+<td>最高 47.5</td>
+<td>说是「亚秒级交互」</td>
+<td>1×H100</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2606.17800">arXiv 2606.17800</a></td>
+</tr>
+<tr>
+<td>Ultra Flash</td>
+<td>京东探索研究院 + 中科大等</td>
+<td>960×1664 / 1440×2496</td>
+<td>30 / 18</td>
+<td>每段 40 / 56 ms</td>
+<td>1×H200/B200</td>
+<td>自报</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2606.09150">arXiv 2606.09150</a></td>
+</tr>
+<tr>
+<td>PixVerse R1</td>
+<td>爱诗科技 PixVerse</td>
+<td>1080P</td>
+<td>没给数</td>
+<td>只说「超低延迟」</td>
+<td>没公布</td>
+<td>自报</td>
+<td><a target="_blank" href="https://pixverse.ai/en/blog/pixverse-launches-r1-real-time-world-model">博客</a></td>
+</tr>
+<tr>
+<td>MAGI-1（对照：非实时）</td>
+<td>Sand AI</td>
+<td>832×480</td>
+<td>0.19</td>
+<td>282 s</td>
+<td>1×H100</td>
+<td><strong>第三方</strong>（Self-Forcing 论文实测）</td>
+<td><a target="_blank" href="https://arxiv.org/abs/2506.08009">arXiv 2506.08009 表 1</a></td>
+</tr>
+<tr>
+<td>Wan2.1-1.3B（对照：非实时）</td>
+<td>阿里</td>
+<td>832×480</td>
+<td>0.78</td>
+<td>103 s</td>
+<td>1×H100</td>
+<td><strong>第三方</strong>（同上）</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table></div>
+<p>可以看出几件事：
+- 同一个模型，第三方实测普遍比自报低。LongLive 自报 20.7 FPS（H100），StreamAV 在 H800 上测到 10.1；Helios 自报 19.5，实测 10.2，首段延迟 8 秒。
+- 自报的「实时」大多停在 480p 左右。到 720p 还标实时的有 Genie 3（硬件没公布）、Matrix-Game 3.0（用 9 张卡）和 ABot-World-0（1 张 5090，16 FPS，延迟 1.2 秒）。
+- 很少有人报「从按键到画面」的延迟。明确报了的只有 ABot-World-0（1.2 s）和 Decart Oasis 3（&lt;200 ms）。</p>
+<h3 class="">一道完整真题（StreamAV-Bench 交互赛道 I-0001）</h3>
+<p>来源：<a target="_blank" href="https://huggingface.co/datasets/StreamAVBench/StreamAVBench">StreamAVBench 数据集 interactive.json</a>，原文照录。连续生成 <strong>180 秒</strong>，第 30/60/90/120/150 秒各插入一条新指令，看模型能不能边播边改，并且记得之前发生过的事。</p>
+<ul>
+<li><strong>元数据</strong>：主题「做饭」｜日常生活｜音频是音乐｜主体是人｜动漫/卡通风格｜多个实体、同时进行的多个动作、多个声源</li>
+<li><strong>初始提示词</strong>：In a cozy apartment kitchen rendered in an anime/cartoon style, two roommates prepare dinner together: one chops vegetables beside a specialized countertop blender while the other stands by the stove, stirring a simmering pot. The blender is designed to run at low mixing speed with its lid seated, and its clearly visible motorized twist-lock ring is disengaged, ready to secure the lid for higher-speed operation in response to spoken commands. A radio plays soft jazz, and the stove-side roommate briefly hums during pauses between its phrases.</li>
+<li><strong>画面检查项</strong>：①是不是温馨的公寓厨房，有台面和灶台？②是不是动漫/卡通风格？③是否有两个室友，以及一台盖子已盖好、电动旋锁环明显处于未锁状态的特制搅拌机？④是否一人在搅拌机旁切菜、另一人在灶台边搅一锅小火慢炖的汤？</li>
+<li><strong>声音检查项</strong>：①爵士乐是不是从收音机里出来、哼唱是不是灶台边那位发出的？②能不能听到轻爵士和短暂的哼唱？③哼唱是不是出现在爵士乐句之间的停顿里？</li>
+<li><strong>中途更新</strong>：</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>指令（原文）</th>
+<th>类型</th>
+<th>改画面还是声音</th>
+<th>依赖哪条</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30 s</td>
+<td>A streak of flour appears across the vegetable-chopping roommate's apron.</td>
+<td>物体状态变化</td>
+<td>只改画面</td>
+<td>无</td>
+</tr>
+<tr>
+<td>60 s</td>
+<td>Noticing the flour-streaked apron, the stove-side roommate says, "Nice flour badge."</td>
+<td>人物动作</td>
+<td>只改声音</td>
+<td>P1</td>
+</tr>
+<tr>
+<td>90 s</td>
+<td>With the lid seated and its twist-lock ring still disengaged, the vegetable-chopping roommate switches on the specialized blender at low mixing speed, and its jar whirls with a steady motor buzz.</td>
+<td>人物动作</td>
+<td>画面+声音</td>
+<td>无</td>
+</tr>
+<tr>
+<td>120 s</td>
+<td>Over the blender's low motor buzz, the stove-side roommate says, "Blender, engage the lid lock."</td>
+<td>人物动作</td>
+<td>只改声音</td>
+<td>P3</td>
+</tr>
+<tr>
+<td>150 s</td>
+<td>Following the spoken command, the blender's motorized twist-lock ring visibly rotates from its disengaged position into the locked position.</td>
+<td>物体状态变化</td>
+<td>只改画面</td>
+<td>P4</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>怎么打分</strong>：每条更新单独评——画面、声音有没有改成功（PVUAR/PAUAR），改成功的话从指令下达到画面/声音出现隔了多少秒（PVRL/PARL），以及之前的状态还在不在（例如 150 秒时围裙上的面粉还在不在，VSR/HDF）。另外在整段视频上统计 FPS 和 TTFC。</li>
+</ul>
+<blockquote>
+<p>其他几个带速度的榜：WBench 和 WorldRoam 的真题本页「可控交互类」和 <a target="_blank" href="../wbench/">WBench 页</a> 已经收了，题目本身不考速度，速度只在论文附录里列出来。Artificial Analysis 的题是随机抽的文生视频提示词，不公开逐题内容。</p>
+</blockquote>
+<h3 class="">对我们（白模 + 世界模型）合不合适</h3>
+<ul>
+<li><strong>想证明「我们是实时的」，现在最划算的是 WBench</strong>：交视频时打 <code>realtime</code> 标签，在邮件里写清硬件、分辨率和实测 FPS。现在榜上只有 Zing-0.5 一个带这个标签，名字旁边会直接显示，曝光直接。</li>
+<li><strong>WorldRoam-Bench 会在论文表里列出各家在 H20 上的实测速度</strong>。如果我们的模型在 H20 上能到原生帧率的 0.5× 以上，就已经比表里所有开源模型都快，这是一个能讲的点。前提是被他们收录（官网有表单）。</li>
+<li><strong>StreamAV-Bench 考音视频、180 秒流式、中途改指令</strong>。如果我们的模型没有声音，只能走「视频模型 + 另配声音」的拼接路线（Self-Forcing、LongLive 都是这么上榜的），而且没写提交方式，要发邮件问作者。</li>
+<li><strong>Artificial Analysis 和 MLPerf 不适合</strong>：前者只测 API 模型、按「几秒出一条」算；后者是硬件厂商的榜。</li>
+<li><strong>白模能做的</strong>：白模世界里有准确的按键时间戳和相机真值，可以自己搭一个<strong>「按键到画面延迟」内部测试</strong>：按下按键后第几帧画面开始动，用光流或位姿就能量。这正好是现在所有公开榜都没覆盖的。如果做得扎实，可以公开成一个「实时交互世界模型」榜，把统一硬件（例如 1×H100 / 1×4090）、分辨率档位、首帧延迟、按键到画面延迟、持续帧率和画质一起排。目前还没人做。</li>
+</ul>
+<h3 class="">缺口</h3>
+<ul>
+<li><strong>没有统一硬件、按速度排名的公开榜</strong>。所有速度数字要么是自报，要么是某个质量榜论文附录里的附带测量，各家硬件不同（A100 / H20 / H800 / H100 / 5090 / B200）。</li>
+<li><strong>商用实时系统基本都没有第三方测过 FPS 和延迟</strong>。Genie 3、快乐生蚝、PixVerse R1、Odyssey 都只能通过网页使用，StreamAV 和 WorldRoam 都没测它们的速度；Decart Oasis 3 的 &lt;200 ms 也是自报。</li>
+<li><strong>WBench 附录表 7 只有 20 个模型的老数据</strong>（论文版本），榜上后来新加的模型没有速度数据。</li>
+<li><strong>StreamAV-Bench 没写提交流程</strong>。排行榜最后更新于 2026-08-28，暂时也看不出会不会继续收新模型。</li>
+<li><strong>warena.ai（WorldMark 的在线对战）</strong>是实时可玩的，但排行榜是前端渲染，没抓到，不确定有没有速度列。</li>
+<li>自报表里 Odyssey-3、HY-World 1.5、PixVerse R1、Krea 的分辨率或延迟没公布，都写了「没公布 / 没写」，没有替它们补数。</li>
 </ul>
 <hr />
 <h2 id="table">总表（一行看懂每个榜）</h2>
