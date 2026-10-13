@@ -42,13 +42,65 @@ table.turns td.en{font-size:13px}
 
 <div class="cards">
 <div class="card yes"><div class="tag">一句话</div><p class="big">自己生成 158 个视频 → 放网盘 → 发邮件。不交权重、不开 API。</p></div>
+<div class="card"><div class="tag">Full 榜</div><p><a href="#full">跳到：Full 榜要会什么、怎么评分 ↓</a></p></div>
 <div class="card"><div class="tag">题库已下好</div><p>私有仓库 <a href="https://github.com/oricter/wbench-data">oricter/wbench-data</a>（289 题 + 289 张首帧图）</p>
 <p><code>git clone https://github.com/oricter/wbench-data.git /Users/oricter/Desktop/code/Agent/wbench-data</code></p></div>
 </div>
 
+<h2 id="full">0. 打 Full 榜：模型要会什么 + 怎么评分</h2>
+<p class="sub">数据来自 289 题的原始 JSON，共 1,058 轮，去重后 456 条不同指令。完整清单见私有仓库 <a href="https://github.com/oricter/wbench-data/blob/main/prompts/unique_prompts.csv">prompts/unique_prompts.csv</a>（逐轮版 <a href="https://github.com/oricter/wbench-data/blob/main/prompts/all_turns.csv">all_turns.csv</a>）。细分类型是按关键词自动分的，大类以官方标注为准。</p>
+<div class="cards">
+<div class="card yes"><div class="tag">一句话</div><p class="big">四种能力都要有：按键走路 601 轮、角色做动作 213 轮、凭空发生事件 183 轮、切换视角 61 轮。</p></div>
+<div class="card no"><div class="tag">最容易丢分</div><p>视角切换（论文里各家平均只有 30.7 分），还有 43 轮是<b>两个键同时按</b>（W+K 之类）。</p></div>
+</div>
+<h3>✅ 能力清单（按出现次数排）</h3>
+<div class="tw"><table><tr><th>#</th><th>要支持的能力</th><th>轮数</th><th>一/三人称</th><th>原题示例</th></tr>
+<tr><td>1</td><td>W 前进</td><td>150</td><td>71 / 79</td><td>几乎每道导航题都有</td></tr>
+<tr><td>2</td><td>J/L 左右转视角</td><td>165</td><td>100 / 65</td><td>第三人称时是镜头绕着角色转</td></tr>
+<tr><td>3</td><td>A/S/D 平移、后退</td><td>205</td><td>92 / 113</td><td>case_1：W → L → L → J</td></tr>
+<tr><td>4</td><td>角色拿、放、开、点火等物体操作</td><td>110</td><td>67 / 43</td><td>case_139「Pick up the cup.」「Take a sip of coffee.」</td></tr>
+<tr><td>5</td><td>其他角色或动物做事（事件）</td><td>56</td><td>43 / 13</td><td>case_148「The boy pours the liquid into a glass bottle.」；也有「A calico cat jumps onto the stone lantern.」</td></tr>
+<tr><td>6</td><td>天气、自然现象（雨、雪、雾、风、极光、潮汐）</td><td>43</td><td>30 / 13</td><td>case_138「It rains.」；case_185「Snow begins falling outside the window.」</td></tr>
+<tr><td>7</td><td><b>同时按两个键</b>（W+I/K/J/L、W+A、S+D、W+D）</td><td>43</td><td>20 / 23</td><td>13 题：case_30、31、35、42、58–65、156</td></tr>
+<tr><td>8</td><td>I/K 抬头低头</td><td>38</td><td>36 / 2</td><td>几乎都是第一人称</td></tr>
+<tr><td>9</td><td>机械臂抓取放置</td><td>37</td><td>全是第一人称</td><td>case_7「The gripper picks up the blue block and deposits it into the blue zone.」</td></tr>
+<tr><td>10</td><td>角色走、跑、跳、爬、飞、蹲、转身、站起</td><td>35</td><td>16 / 19</td><td>case_138「Stand up.」「Walk towards the slide.」；case_142「Climb.」</td></tr>
+<tr><td>11</td><td>第一人称和第三人称来回切</td><td>32</td><td>16 / 16</td><td>case_207「The view switches from first-person to third-person, pulling back to reveal an explorer…」</td></tr>
+<tr><td>12</td><td>爆炸、倒塌、碎裂、火山等破坏和灾害</td><td>24</td><td>15 / 9</td><td>case_172「The gas cylinder exploded.」；「The building collapses from the bottom.」</td></tr>
+<tr><td>13</td><td>凭空出现新东西或新角色</td><td>24</td><td>22 / 2</td><td>「A dragon flies over the canal.」；case_188「A diver appears in the background…」</td></tr>
+<tr><td>14</td><td>机关和物体状态变化（门开、电视亮、喷头转）</td><td>19</td><td>14 / 5</td><td>「The doors open.」；「The sprinkler heads on the ceiling begin to rotate.」</td></tr>
+<tr><td>15</td><td>战斗、攻击、投掷</td><td>19</td><td>9 / 10</td><td>case_231「Attack the Mirror.」；case_249「…throws the console away…」</td></tr>
+<tr><td>16</td><td>换成另一个角色或目标（同一人称下）</td><td>17</td><td>8 / 9</td><td>case_211「cut to forward #23…」；case_215「switch to follow a goalkeeper…」</td></tr>
+<tr><td>17</td><td>光照和时间变化（停电、日落、发光）</td><td>17</td><td>10 / 7</td><td>case_192「The overhead lights flicker and go out.」</td></tr>
+<tr><td>18</td><td>进入或退出瞄准镜、望远镜</td><td>12</td><td>全是第一人称</td><td>case_204「The view transitions into a circular sniper scope with mil-dot reticle…」</td></tr>
+<tr><td>19</td><td>手势、表情、说话</td><td>7</td><td>4 / 3</td><td>case_247「talks excitedly with exaggerated hand gestures…」</td></tr>
+<tr><td>20</td><td>驾驶或操控载具</td><td>5</td><td>2 / 3</td><td>case_227「The driver accelerates the vehicle…」</td></tr>
+</table></div>
+<p class="note">「一/三人称」指题目开头的人称。<b>数据里的怪处：</b>case_145 把「Climb. / Descend. / Turn right.」标成了事件，而 case_142 里同样的话标的是角色动作；有拼写错误「Decend.」；case_182 只有 1 轮；case_197 的视角切换和 case_195 的 tp_to_tp 都没有附带描述，只有动作代码；fp_to_fp、tp_to_tp 的目标描述直接写在动作字段里。</p>
+
+<h3>⏱ 视频有多长</h3>
+<p>代码默认每轮 <b>4 秒</b>，所以 1–9 轮对应 4–36 秒，平均 3.7 轮，约 15 秒。不过官方没有硬性限制：提交时要另附一份每轮起止帧的记录，网页类模型（Genie 3 等）每轮录的就是 5 秒。</p>
+<div class="tw"><table><tr><th>轮数</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>8</th><th>9</th></tr>
+<tr><td>时长（4 秒一轮）</td><td>4s</td><td>8s</td><td>12s</td><td>16s</td><td>20s</td><td>24s</td><td>32s</td><td>36s</td></tr>
+<tr><td>Full 289 题</td><td>1</td><td>67</td><td>39</td><td><b>148</b></td><td>16</td><td>8</td><td>4</td><td>6</td></tr>
+<tr><td>Navi 158 题</td><td>–</td><td>7</td><td>14</td><td><b>129</b></td><td>3</td><td>5</td><td>–</td><td>–</td></tr></table></div>
+
+<h3>🎯 怎么评分</h3>
+<div class="cards">
+<div class="card"><div class="tag">总分公式</div><p>每项小指标先算出每题的分，再对所有适用的题取平均并换成 0–100 分 → 每个维度取它下面小指标的平均 → <b>5 个维度等权平均就是总分</b>。没有其他加权。</p></div>
+<div class="card"><div class="tag">Navi 和 Full 的区别</div><p>Navi 只算 158 道导航题，「交互」维度只看导航分。Full 算全部 289 题，「交互」是导航、事件、角色动作、视角切换四项的平均。</p></div>
+</div>
+<div class="tw"><table><tr><th>维度（各占 1/5）</th><th>小指标</th><th>谁来打分</th></tr>
+<tr><td>画面质量</td><td>美感、成像清晰、闪烁、动态程度、运动平滑、HPSv3 人类偏好分（按百分位归一化）</td><td>VBench 的打分模型、HPSv3 奖励模型</td></tr>
+<tr><td>设定遵循</td><td>场景遵循：开头画面里的东西有没有保持住，画面外描述的东西后来有没有出现。主体遵循：角色外观和动作风格对不对</td><td>豆包 VLM（doubao-seed-2.0-lite）</td></tr>
+<tr><td><b>交互遵循</b></td><td>① <b>导航</b>：用 MegaSaM 从视频反推相机轨迹，跟按键算出的标准轨迹比。准确度 = 1 − 平均误差（nATE），一致性 = 重复同一个键时轨迹像不像，导航分 = 两者平均。只看方向对不对，不看走多快多远。<br>② <b>事件</b>和③ <b>角色动作</b>：每轮检查 5 项（画面有变化、事件发生了、做完了、细节对、没有怪异），满足几项得几分，满分 5 分，再换成百分制。<br>④ <b>视角切换</b>：每轮检查 3 项（看得到切换过程、切到了对的视角类型、新视角构图合规），三项全过才算成功，得分是成功轮的比例</td><td>导航用 MegaSaM，其余用豆包 VLM</td></tr>
+<tr><td>一致性</td><td>背景一致、往返回到原位时像不像原画面（加一个防止原地不动刷分的门控版本）、视角稳定、没有突然跳切、几何一致、光度一致、主体一致</td><td>CLIP、DreamSim、TransNetV2、SAM2、Depth Anything 3、DINOv2</td></tr>
+<tr><td>物理</td><td>因果合理性：先整体看物理和因果有没有问题，再按题看流体、碰撞、风、反射、人体动作等相关项，每项 0–3 分。视觉合理性：有没有变形、穿模</td><td>豆包 VLM；视觉合理性用官方微调的 Qwen3-VL-30B</td></tr></table></div>
+<p class="note">依据：论文第 4 节和附录 C，官方代码 main.py 里的 generate_report 和 tools/add_three_models_homepage.py（注释写明「Overall = mean(5 dims)」）。哪些指标算哪道题，由每题 JSON 里的 metric_list 决定。</p>
+
 <h2>1. 题目长什么样</h2>
 <ul><li>每题 = <b>1 张首帧图</b> + 场景/角色/视角的英文描述 + <b>2–9 轮操作</b></li>
-<li>每轮 <b>固定 4 秒</b>，按住一个键（或组合键）或执行一句文字</li>
+<li>每轮默认 <b>4 秒</b>（见上面的时长说明），按住一个键（或组合键）或执行一句文字</li>
 <li>首帧图多数 1376×768；官方示例视频 24fps；分辨率没硬性要求</li>
 <li>所有轮拼成<b>一个视频</b>：<code>case_&lt;id&gt;_combined.mp4</code></li></ul>
 <div class="tw"><table><tr><th>榜</th><th>题数</th><th>轮数</th><th>谁能交</th></tr>
