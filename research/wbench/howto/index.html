@@ -1,0 +1,123 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WBench 怎么打</title><style>
+body{margin:0;background:#fafaf7;color:#1f2328;font:17px/1.75 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+main{max-width:920px;margin:0 auto;padding:48px 24px 96px}
+.kicker{color:#8a6d3b;font-size:14px;letter-spacing:.05em}
+h1{font-size:32px;line-height:1.35;margin:8px 0 12px}
+.sub{color:#57606a}
+h2{font-size:24px;margin:64px 0 16px;padding-top:16px;border-top:1px solid #e6e3da}
+h3{font-size:19px;margin:40px 0 12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:18px;margin:36px 0}
+.card{background:#fff;border:1px solid #e6e3da;border-radius:14px;padding:20px 22px}
+.card p{margin:6px 0 0}
+.card.no{border-left:6px solid #d1495b}.card.yes{border-left:6px solid #2a9d8f}
+.tag{font-size:13px;font-weight:600;color:#8a6d3b}
+.big{font-size:19px}
+table{border-collapse:collapse;width:100%;margin:16px 0 24px;font-size:15px;background:#fff}
+th,td{border:1px solid #e6e3da;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f3f1ea}
+tr:nth-child(even) td{background:#fcfbf8}
+code{background:#f3f1ea;padding:1px 5px;border-radius:4px;font-size:.9em}
+blockquote{color:#57606a;border-left:4px solid #e6e3da;margin:0;padding:4px 16px}
+a{color:#0b6bcb;word-break:break-all}
+li{margin:6px 0}
+.back{font-size:14px}
+.jump{font-size:17px;background:#fff7e0;border-radius:10px;padding:10px 16px}
+.tw{overflow-x:auto}
+.note{color:#57606a;font-size:15px}
+.ex{background:#fff;border:1px solid #e6e3da;border-radius:16px;padding:24px 26px;margin:48px 0}
+.exhead{font-size:21px;font-weight:700}
+.exn{display:inline-block;background:#1f2328;color:#fff;border-radius:8px;padding:0 10px;margin-right:6px;font-size:16px}
+.exmeta{color:#8a6d3b;font-size:14px;margin:6px 0 16px}
+.eximg{width:100%;border-radius:12px;display:block;margin:8px 0 18px}
+.pr{margin:12px 0}
+.lab{font-size:13px;font-weight:700;color:#8a6d3b}
+.zh{font-size:16px}
+.en{color:#6e7781;font-size:14px;line-height:1.6}
+table.turns td.en{font-size:13px}
+.checks{background:#f4f8f6;border-radius:10px;padding:12px 18px;margin-top:14px}
+.checks ul{margin:6px 0;padding-left:20px}
+</style></head><body><main><p class="back"><a href="../">← WBench 调研</a> · <a href="../../benchmarks/#wbench">榜单总览</a></p>
+<header><div class="kicker">WBench · 实操指南 · 2026-10-12</div><h1>WBench 怎么打：题目、按键、提交，一页看完</h1>
+<p class="sub">题库公开、免费、MIT 协议，不用申请。我们按键模型打 <b>Navi 榜（158 题）</b>；Full 榜（289 题）官方只收文字模型。</p></header>
+
+<div class="cards">
+<div class="card yes"><div class="tag">一句话</div><p class="big">自己生成 158 个视频 → 放网盘 → 发邮件。不交权重、不开 API。</p></div>
+<div class="card"><div class="tag">题库已下好</div><p>私有仓库 <a href="https://github.com/oricter/wbench-data">oricter/wbench-data</a>（289 题 + 289 张首帧图）</p>
+<p><code>git clone https://github.com/oricter/wbench-data.git /Users/oricter/Desktop/code/Agent/wbench-data</code></p></div>
+</div>
+
+<h2>1. 题目长什么样</h2>
+<ul><li>每题 = <b>1 张首帧图</b> + 场景/角色/视角的英文描述 + <b>2–9 轮操作</b></li>
+<li>每轮 <b>固定 4 秒</b>，按住一个键（或组合键）或执行一句文字</li>
+<li>首帧图多数 1376×768；官方示例视频 24fps；分辨率没硬性要求</li>
+<li>所有轮拼成<b>一个视频</b>：<code>case_&lt;id&gt;_combined.mp4</code></li></ul>
+<div class="tw"><table><tr><th>榜</th><th>题数</th><th>轮数</th><th>谁能交</th></tr>
+<tr><td><b>Navi</b></td><td>158</td><td>601 个导航轮（+少量文字轮）</td><td>文字 / 相机 / 按键 ✅我们</td></tr>
+<tr><td>Full</td><td>289</td><td>1,058（导航 601 · 角色动作 213 · 事件 183 · 视角切换 61）</td><td>官方写只收文字模型</td></tr></table></div>
+<p class="note">第一人称 178 题 · 第三人称 111 题。第三人称里 WASD = 角色走，方向键 = 镜头绕角色转。</p>
+
+<h2>2. 按键对照（我们全都能做）</h2>
+<div class="tw"><table><tr><th>官方</th><th>意思</th><th>我们</th><th>出现轮数</th></tr>
+<tr><td>W / S / A / D</td><td>前 / 后 / 左移 / 右移</td><td>W / S / A / D</td><td>150 / 72 / 72 / 61</td></tr>
+<tr><td>left / right</td><td>左转 / 右转</td><td>J / L</td><td>73 / 92</td></tr>
+<tr><td>up / down</td><td>抬头 / 低头</td><td>I / K</td><td>21 / 17</td></tr>
+<tr><td>W+A, W+D, S+D</td><td>斜着走</td><td>同时按两个移动键</td><td>4 / 2 / 3</td></tr>
+<tr><td>W+up/down/left/right</td><td>边走边转</td><td><b>同时按 W 和 I/K/J/L</b> ⚠️</td><td>12 / 10 / 6 / 6</td></tr>
+<tr><td>角色动作/事件/视角切换</td><td>一句英文</td><td>文字指令</td><td>Navi 里只有 9 题</td></tr></table></div>
+<div class="card no"><div class="tag">⚠️ 要确认</div><p>34 轮要「移动键 + 视角键同时按」，我们模型支不支持？不支持的话这几轮会丢分。</p>
+<p>转多快不用对齐官方：轨迹分会归一化尺度，主要看方向对不对。</p></div>
+
+<h2>3. 真题示例</h2><div class="ex"><div class="exhead"><span class="exn">1</span>case_30 · 第三人称 · 组合键往返（Navi）</div>
+<div class="exmeta">third_person · 导航类型 roundtrip · 官方原题 <a href="https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_30.json">JSON</a></div>
+<img class="eximg" src="img/case_30.jpg" alt="case_30 首帧">
+<p class="en">A straight two-lane desert highway stretching to the horizon in the American Southwest. Sandy brown terrain with sparse desert scrub and saguaro cacti on both sides. Dramatic red-orange sandstone mesas and buttes rise in the background. A rusty brown mile mark…</p>
+<div class="tw"><table><tr><th>轮</th><th>官方写法</th><th>我们怎么按</th><th>时长</th></tr><tr><td>第1轮</td><td><code>W+A</code></td><td><b>W + A</b></td><td>4 秒</td></tr><tr><td>第2轮</td><td><code>W+A</code></td><td><b>W + A</b></td><td>4 秒</td></tr><tr><td>第3轮</td><td><code>S+D</code></td><td><b>S + D</b></td><td>4 秒</td></tr><tr><td>第4轮</td><td><code>S+D</code></td><td><b>S + D</b></td><td>4 秒</td></tr></table></div></div><div class="ex"><div class="exhead"><span class="exn">2</span>case_5 · 第一人称 · 原地左右转（Navi）</div>
+<div class="exmeta">first_person · 导航类型 roundtrip · 官方原题 <a href="https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_5.json">JSON</a></div>
+<img class="eximg" src="img/case_5.jpg" alt="case_5 首帧">
+<p class="en">A grand neoclassical museum gallery interior. Polished marble floor with subtle veining stretches down a long hall. Tall grey marble columns with Corinthian capitals line both sides. Large oil paintings in ornate gold frames hang on the walls. White marble scu…</p>
+<div class="tw"><table><tr><th>轮</th><th>官方写法</th><th>我们怎么按</th><th>时长</th></tr><tr><td>第1轮</td><td><code>left</code></td><td><b>J</b></td><td>4 秒</td></tr><tr><td>第2轮</td><td><code>left</code></td><td><b>J</b></td><td>4 秒</td></tr><tr><td>第3轮</td><td><code>right</code></td><td><b>L</b></td><td>4 秒</td></tr><tr><td>第4轮</td><td><code>right</code></td><td><b>L</b></td><td>4 秒</td></tr></table></div></div><div class="ex"><div class="exhead"><span class="exn">3</span>case_11 · 第三人称 · 闭环绕一圈（Navi）</div>
+<div class="exmeta">third_person · 导航类型 loop · 官方原题 <a href="https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_11.json">JSON</a></div>
+<img class="eximg" src="img/case_11.jpg" alt="case_11 首帧">
+<p class="en">An East African savanna at sunset. A dusty red-earth trail runs through golden-brown grassland. To the left, a shallow watering hole with muddy brown water reflects the orange sky; a small group of dark animals drink at its edge. Scattered flat-topped acacia t…</p>
+<div class="tw"><table><tr><th>轮</th><th>官方写法</th><th>我们怎么按</th><th>时长</th></tr><tr><td>第1轮</td><td><code>W</code></td><td><b>W</b></td><td>4 秒</td></tr><tr><td>第2轮</td><td><code>A</code></td><td><b>A</b></td><td>4 秒</td></tr><tr><td>第3轮</td><td><code>A</code></td><td><b>A</b></td><td>4 秒</td></tr><tr><td>第4轮</td><td><code>D</code></td><td><b>D</b></td><td>4 秒</td></tr><tr><td>第5轮</td><td><code>D</code></td><td><b>D</b></td><td>4 秒</td></tr><tr><td>第6轮</td><td><code>S</code></td><td><b>S</b></td><td>4 秒</td></tr></table></div></div><div class="ex"><div class="exhead"><span class="exn">4</span>case_145 · Navi 里混文字的题</div>
+<div class="exmeta">first_person · 导航类型 repeat · 官方原题 <a href="https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_145.json">JSON</a></div>
+<img class="eximg" src="img/case_145.jpg" alt="case_145 首帧">
+<p class="en">An underwater scene in cinematic style. Calm blue water with colorful yellow-striped fish swimming at various depths, green seagrass swaying on the sandy seabed, and a sunken shipwreck in the distance. Air bubbles rising upward. Natural underwater light filter…</p>
+<div class="tw"><table><tr><th>轮</th><th>官方写法</th><th>我们怎么按</th><th>时长</th></tr><tr><td>第1轮</td><td><code>W</code></td><td><b>W</b></td><td>4 秒</td></tr><tr><td>第2轮</td><td><code>Climb.</code></td><td><b>💬 文字：Climb.</b></td><td>4 秒</td></tr><tr><td>第3轮</td><td><code>Descend.</code></td><td><b>💬 文字：Descend.</b></td><td>4 秒</td></tr><tr><td>第4轮</td><td><code>Turn right.</code></td><td><b>💬 文字：Turn right.</b></td><td>4 秒</td></tr></table></div></div><div class="ex"><div class="exhead"><span class="exn">5</span>case_164 · 角色动作（只在 Full，文字）</div>
+<div class="exmeta">third_person · 导航类型 none · 官方原题 <a href="https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_164.json">JSON</a></div>
+<img class="eximg" src="img/case_164.jpg" alt="case_164 首帧">
+<p class="en">A vast desert canyon with towering red-orange sandstone cliffs on both sides, plunging into a deep misty gorge. The rocky terrain is barren with scattered boulders and dust. Warm golden sunset light bathes the cliff faces, and wisps of mist or cloud drift betw…</p>
+<div class="tw"><table><tr><th>轮</th><th>官方写法</th><th>我们怎么按</th><th>时长</th></tr><tr><td>第1轮</td><td><code>Fly.</code></td><td><b>💬 文字：Fly.</b></td><td>4 秒</td></tr><tr><td>第2轮</td><td><code>Fly forward.</code></td><td><b>💬 文字：Fly forward.</b></td><td>4 秒</td></tr><tr><td>第3轮</td><td><code>Fly to the left.</code></td><td><b>💬 文字：Fly to the left.</b></td><td>4 秒</td></tr><tr><td>第4轮</td><td><code>Decend.</code></td><td><b>💬 文字：Decend.</b></td><td>4 秒</td></tr></table></div></div><div class="ex"><div class="exhead"><span class="exn">6</span>case_196 · 视角切换（只在 Full，文字）</div>
+<div class="exmeta">first_person · 导航类型 none · 官方原题 <a href="https://huggingface.co/datasets/meituan-longcat/WBench/blob/main/cases/case_196.json">JSON</a></div>
+<img class="eximg" src="img/case_196.jpg" alt="case_196 首帧">
+<p class="en">Dim medieval castle corridor with stone walls and floor. Torch sconces on both walls cast flickering orange light. Stone arches span the ceiling. A heavy wooden door with iron reinforcements stands at the far end. A tattered red banner hangs on the left wall. …</p>
+<div class="tw"><table><tr><th>轮</th><th>官方写法</th><th>我们怎么按</th><th>时长</th></tr><tr><td>第1轮</td><td><code>fp_to_tp</code></td><td><b>💬 文字：The view switches from first-person to third-person, pulling back to reveal a knight in full silver plate armor with a red cape and a longsword sheathed at the hip from behind.</b></td><td>4 秒</td></tr><tr><td>第2轮</td><td><code>tp_to_fp</code></td><td><b>💬 文字：The view switches back to first-person, returning to the character&#x27;s own eyes.</b></td><td>4 秒</td></tr></table></div></div>
+
+<h2>4. 一步步怎么打</h2>
+<ol>
+<li><b>拿题</b>：克隆上面的私有仓库，或官方：<code>hf download meituan-longcat/WBench --repo-type dataset --local-dir data/ --exclude "splits/*"</code></li>
+<li><b>拿评测代码</b>：<code>git clone --recursive https://github.com/meituan-longcat/WBench.git</code>，把题目放进 <code>WBench/data/</code></li>
+<li><b>写适配器</b>：继承官方 <code>ActionConditionedModel</code>，实现 <code>generate_with_actions(image, actions, video_length)</code>，返回 BGR 帧列表。仓库里 <code>adapter/wasd_ijkl_adapter.py</code> 已写好按键转换。</li>
+<li><b>跑 158 题</b>：<code>python generate.py --model our_model --cases &lt;navi_ids.txt 里的 id&gt;</code> → <code>work_dirs/our_model/videos/case_&lt;id&gt;_combined.mp4</code></li>
+<li><b>写 turns.json</b>：每题每轮的起始帧 + 结尾帧（例 <code>[0,96,192,288,384]</code>）。不写就按平均切，第一轮更长的话会丢分。</li>
+<li><b>自测（可选）</b>：要 NVIDIA GPU（Linux/CUDA，Mac 跑不了）+ 火山引擎豆包 API key：<code>bash tools/install.sh wbench-main cu124</code> → <code>python main.py --model our_model</code>，再在 <code>wbench-vp</code> 环境跑 <code>tools/run_visual_plausibility.py</code></li>
+<li><b>打包</b>：<code>our_model/</code> 里放 <code>meta.json</code>（type 填 <code>action</code>）+ <code>report.json</code>（自测才有）+ <code>turns.json</code> + <code>videos/</code></li>
+<li><b>上传</b>：videos 放 HuggingFace 数据集（官方首选）/ Google Drive / 百度网盘 / OneDrive</li>
+<li><b>发邮件</b>给 kaining.ying.cv@gmail.com 和 rensiyu07@meituan.com，标题 <code>[WBench Submission] 模型名</code>，正文写模型名、类型、tags、机构、一句话介绍、自测(A)还是官方测(B)；附 meta.json</li>
+</ol>
+
+<h2>5. 两种提交方式</h2>
+<div class="cards">
+<div class="card yes"><div class="tag">A. 自己测（官方默认）</div><p>交分数 + 视频。快，官方抽查几题复核就上榜。需要 GPU + 豆包 API。</p></div>
+<div class="card"><div class="tag">B. 官方帮测</div><p>只交视频。不用算力，但要排队批量处理。</p></div></div>
+
+<h2>6. 规则要点</h2>
+<ul><li>必须正好覆盖 158 个 Navi 题，多一个少一个都会被退回（官方先跑 <code>validate_submission.py</code>）</li>
+<li>tags 最多 4 个，每个 1–16 字符；不能写机构名、开源/API、排名。写 <code>realtime</code> 要在邮件里给硬件、分辨率、速度</li>
+<li>人工审核，官方没写要多久</li></ul>
+
+<h2>7. 还不知道的</h2>
+<ul><li>按键模型能不能<b>另外</b>用文字模式交 Full 榜（导航轮用按键、其余用文字）——官方写 Full 只收文字模型，但榜上有相机模型，建议邮件问</li>
+<li>审核周期、视频分辨率/fps 下限：官方没写</li>
+<li>Navi 里 9 道混文字的题，按键模型官方默认给「不动」；我们用文字指令是否允许，没写</li></ul>
+<p class="note">来源：<a href="https://huggingface.co/datasets/meituan-longcat/WBench">HuggingFace 数据集</a> · <a href="https://github.com/meituan-longcat/WBench">GitHub 代码</a> · <a href="https://github.com/meituan-longcat/WBench/blob/main/docs/SUBMISSION.md">SUBMISSION.md</a> · <a href="https://arxiv.org/abs/2605.25874">论文</a></p></main></body></html>
