@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI 产品情报 · 2026-10-26 · 高德 λ0 / Block Dessa / Microsoft Agensh / Atria Dawn</title>
+<style>
+  :root {
+    --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
+    --bg:#faf9f6; --card:#fff; --accent:#0b57d0; --hot:#b3261e; --ok:#0f6b3c;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font:17px/1.7 "PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+  }
+  .wrap { max-width:740px; margin:0 auto; padding:40px 22px 90px; }
+  h1 { font-size:1.7rem; line-height:1.3; margin:0 0 10px; letter-spacing:-.02em; }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 28px; }
+  .meta p { margin:0 0 6px; }
+  .alert {
+    background:#fff8e8; border:1px solid #f0d9a0; border-radius:14px;
+    padding:18px 20px; margin:0 0 36px;
+  }
+  .alert strong { display:block; margin-bottom:10px; font-size:1.02rem; }
+  .alert li strong, .alert p strong { display:inline; margin:0; }
+  .alert ol { margin:0; padding-left:1.25em; }
+  .alert li { margin:10px 0; }
+  .toc { display:grid; gap:10px; margin:0 0 44px; }
+  .toc a {
+    display:block; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:14px 16px; text-decoration:none; color:var(--ink);
+  }
+  .toc a:hover { border-color:#c8c4ba; }
+  .tag {
+    display:inline-block; font-size:.72rem; font-weight:600;
+    padding:2px 8px; border-radius:999px; margin-right:8px; vertical-align:middle;
+  }
+  .t-hot { background:#fce8e6; color:var(--hot); }
+  .t-mid { background:#e8f0fe; color:var(--accent); }
+  .t-low { background:#e6f4ea; color:var(--ok); }
+  article {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:28px 24px 32px; margin:0 0 36px;
+  }
+  article h2 {
+    font-size:1.22rem; line-height:1.4; margin:0 0 18px; letter-spacing:-.01em;
+  }
+  h3 { font-size:1rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h4 { font-size:.95rem; color:var(--ink); margin:20px 0 10px; font-weight:700; }
+  table { font-size:.88rem; width:100%; border-collapse:collapse; margin:10px 0 16px; }
+  th, td {
+    text-align:left; padding:9px 10px; border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  th { color:var(--muted); font-weight:600; font-size:.8rem; }
+  p { margin:0 0 14px; }
+  ul, ol { margin:0 0 14px; padding-left:1.25em; }
+  li { margin:8px 0; }
+  blockquote {
+    margin:12px 0 16px; padding:12px 16px; background:#f4f3ef;
+    border-left:3px solid var(--accent); color:#333; font-size:.95rem;
+  }
+  .src { font-size:.88rem; color:var(--muted); margin-bottom:8px; }
+  .src a, a { color:var(--accent); }
+  .howto {
+    background:#f0f4ff; border:1px solid #d0dcf5; border-radius:12px;
+    padding:14px 16px; margin:14px 0 18px;
+  }
+  .howto strong { display:block; margin-bottom:8px; }
+  figure { margin:16px 0 8px; }
+  figure img {
+    width:100%; height:auto; border-radius:10px; border:1px solid var(--line);
+    display:block;
+  }
+  figcaption { font-size:.8rem; color:var(--muted); margin-top:6px; }
+  .heat { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
+  .pill {
+    background:#f4f3ef; border-radius:8px; padding:6px 10px; font-size:.82rem;
+  }
+  .videos { margin:18px 0 8px; display:grid; gap:16px; }
+  .videos > h4 { margin:0 0 2px; color:var(--accent); font-size:1rem; }
+  .vid {
+    background:#f7f7f5; border:1px solid var(--line);
+    border-radius:12px; padding:12px 12px 10px;
+  }
+  .vid .vlabel { font-size:.88rem; margin:0 0 10px; color:var(--ink); line-height:1.55; }
+  .vid .vlabel .who { display:block; font-weight:700; margin-bottom:4px; }
+  .vid .vlabel .why { color:var(--muted); font-size:.84rem; }
+  .vid video { width:100%; display:block; border-radius:8px; background:#111; }
+  .cover { background:#eef6ee; border:1px solid #cfe5cf; border-radius:12px; padding:12px 16px; margin:0 0 22px; font-size:.9rem; }
+  .media { margin:22px 0 10px; }
+  .media > h4 { color:var(--accent); font-size:1rem; margin:0 0 8px; }
+  .mgroup { font-size:.8rem; font-weight:700; color:var(--muted); margin:14px 0 6px; letter-spacing:.04em; }
+  .mcard { background:#fbfaf7; border:1px solid var(--line); border-radius:12px; padding:12px 14px 4px; margin:0 0 12px; }
+  .mhead { margin:0 0 4px; font-size:.95rem; }
+  .mtag { display:inline-block; font-size:.72rem; background:#eef1f6; color:#3b4a63; border-radius:999px; padding:1px 8px; margin-left:4px; }
+  .mtitle { margin:0 0 6px; font-size:.9rem; }
+  .mcard blockquote { margin:6px 0 8px; }
+  .mangle { font-size:.88rem; margin:0 0 10px; }
+  .verdict { background:#eef3fe; border:1px solid #d0dcf5; border-radius:12px; padding:14px 16px; margin:0 0 18px; font-size:1rem; }
+  .verdict strong { color:var(--accent); }
+  .ours { background:#e6f4ea; border:1px solid #c4e3cf; border-radius:12px; padding:14px 16px; margin:16px 0; }
+  .ours strong.h { display:block; margin-bottom:6px; color:var(--ok); }
+  .warn { background:#fff8e8; border:1px solid #f0d9a0; border-radius:10px; padding:10px 14px; font-size:.9rem; margin:12px 0 16px; }
+  footer { color:var(--muted); font-size:.82rem; margin-top:40px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AI 产品情报 · 2026-10-26（周一）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 14 家（外文 7 / 中文 5 / 官方 6）</strong>：外文是 The Verge、TechCrunch、CoinDesk、MarkTechPost、arXiv、TPS Report；中文是量子位、IT之家、腾讯新闻/猎云网、网易财经、读懂AI时代、青云TOP；官方是 Block Dessa 页、高德 λ0 项目页、Microsoft Agensh 项目页 / GitHub、Atria 官网与 Hugging Face。量子位 λ0 文末标明「由高德提供」，按软文标注。</div>
+<div class="meta">
+  <p><strong>时间范围</strong>：北京时间 2026-10-24（周五）日报发布之后 → 2026-10-26（周一）约 09:15（含周末）</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 核实候选时间戳与官方源 → 读官网/演示/模型卡 → 交叉中外媒体与 X 反应 → 按世界模型/具身邻域优先级成稿。</p>
+  <p><strong>去重说明</strong>：Hy-Nomas、Nemotron Bolt E4B、Kimi K3.1 Pro、EdenLive、Decisions API 等已报道项不重复。Chimera（约 10-21，官方博客独立稿弱）与 Cursor Computer Use（文档向、周末未形成实质产品报道潮）本轮不单列。</p>
+</div>
+
+<div class="alert">
+  <strong>今日要点（先看这四条）</strong>
+  <ol>
+    <li><strong>高德 / 阿里 ATH 发布全身基座 λ0</strong>：500 小时人类第一视角全身数据 → 宇树 G1 真机零样本；真机成功率 62.5%、采集效率自称 3.4×——对世界模型/具身数据管线最相关，但完整权重未放、量子位稿是厂商供稿。</li>
+    <li><strong>Block（Jack Dorsey）发布 Dessa</strong>：只用人声训练的全双工语音端到端模型，可本地跑 M4 Max；演示很「真人」，但暂不公开、安全圈担心诈骗。</li>
+    <li><strong>微软研究院开源 Agensh</strong>：无中心编排、可扩到 1024 编程智能体；Pandoc 通过率 33.89%→55.06%。GitHub ~302★。</li>
+    <li><strong>上海 AI 实验室正式开源 Atria Dawn</strong>：744B MoE agentic、512K 上下文、MIT；与 Preview（256K）区分。官方跑分表齐全，第三方独立实测仍少。</li>
+  </ol>
+</div>
+
+<div class="toc">
+  <a href="#lambda0"><span class="tag t-hot">具身 / 世界模型邻域</span>高德发布全身基座模型 λ0</a>
+  <a href="#dessa"><span class="tag t-hot">语音 Agent</span>Block 发布 Dessa 全双工语音端到端模型</a>
+  <a href="#agensh"><span class="tag t-mid">多智能体</span>微软研究院开源 Agensh（至 1024 agents）</a>
+  <a href="#atria"><span class="tag t-mid">大模型 Agent</span>上海 AI 实验室正式开源 Atria Dawn</a>
+</div>
+
+<!-- ========== 1 λ0 ========== -->
+<article id="lambda0">
+  <h2><span class="tag t-hot">具身 / 世界模型邻域</span>高德发布全身基座模型 λ0：人类戴设备采集 → 人形机器人全身移动操作</h2>
+  <div class="verdict"><strong>结论：</strong>周末窗口里对阿汤公司<strong>最相关</strong>的一条。高德 + 阿里 ATH 把「开放世界人类第一视角全身数据」做成 HumanVerse-500（500h），再经视角/动作对齐训出 λ0，声称在宇树 G1 上零样本完成全身协调与长程移动操作；真机 4 任务 62.5% 成功，显著高于 π₀.₅ / StarVLA 等对照。<strong>完整模型权重与全量数据未开源</strong>，目前只开硬件配置代码 + 数据样例——当作「数据管线与对齐思路」对标，不要当成可下载的白模世界对手。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间约 <strong>2026-10-23</strong>，阿里巴巴集团旗下高德与阿里 ATH 发布全身基座模型 <strong>λ0</strong>（论文 arXiv:2610.18950）。项目页 <a href="https://lambdahumanoid.github.io/">lambdahumanoid.github.io</a>、代码仓 <a href="https://github.com/LambdaHumanoid/openlambda">LambdaHumanoid/openlambda</a>（约 30★）、样例数据 <a href="https://huggingface.co/datasets/lambda-humanoid/HumanVerse-500-sample">HumanVerse-500-sample</a> 同日可访问。量子位、腾讯新闻（猎云网）、网易财经等同日有中文通稿；周五日报未收录，故本轮补报。</p>
+
+  <h3>2. 产品介绍</h3>
+  <figure>
+    <img alt="λ0 项目页截图" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/lambda0-page.jpg"/>
+    <figcaption>官方项目页截图（2026-10-26 抓取）：Alibaba Token Hub + Amap，报告 / GitHub / HF 样例入口。</figcaption>
+  </figure>
+  <figure>
+    <img alt="λ0 演示海报" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/lambda0-poster-sm.jpg"/>
+    <figcaption>项目页 og/海报图：人类穿戴采集设备在开放场景走动。</figcaption>
+  </figure>
+  <ul>
+    <li><strong>输入输出</strong>：部署时吃机器人相机图 + 语言指令 + 本体感知，输出全身运动 token 与手部指令；身体侧由 SONIC 执行。采集阶段用人（GoPro 第一视角 + PICO 身体追踪 + 手部重建），部署不再需要人体追踪。</li>
+    <li><strong>数据</strong>：HumanVerse-500 = 约 500 小时开放世界无本体全身数据；另有约 600 条任务对齐人类示范留给 Stage III。</li>
+    <li><strong>三阶段训练</strong>：I 第一视角手部预训练 → II 机器人对齐的全身人类 mid-training → III 机器人后训练。</li>
+    <li><strong>官方数字（论文/项目页，非第三方复现）</strong>：真机成功率 62.5%（25/40）、任务进度 80.4%；SIMPLE 仿真 90.0%；对照表里 π₀.₅ 40%、StarVLA 27.5%、GR00T N1.6 7.5%。采集效率自称约 3.4×（人采 ~29s vs 机器人采 ~100s）。</li>
+  </ul>
+  <div class="videos">
+    <h4>页内演示（官方项目页视频，已本地托管）</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">谁发的：λ-humanoid / 高德项目页 · Laboratory / Toy storage</span>
+      <span class="why">看完搞懂：实验室场景里机器人把玩具收进容器——全身移动 + 双手操作的完整短任务，不是只定格机械臂。</span></p>
+      <video controls playsinline preload="metadata" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/lambda0-toy-short.mp4"></video>
+    </div>
+    <div class="vid">
+      <p class="vlabel"><span class="who">谁发的：λ-humanoid 项目页 · Close drawer aligned</span>
+      <span class="why">看完搞懂：人类示范对齐后的抽屉关闭执行；项目页还提供未对齐对照，用来理解「动作对齐」到底改了什么。</span></p>
+      <video controls playsinline preload="metadata" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/lambda0-drawer-short.mp4"></video>
+    </div>
+  </div>
+  <div class="howto">
+    <strong>怎么看（3 分钟）</strong>
+    打开 <a href="https://lambdahumanoid.github.io/">项目页</a> 滚到 Laboratory / Break room / Visitor center 看真机短片；再看 Zero-Shot Transfer on Unitree G1 与真机对照表。若关心数据管线，读 arXiv 里 Observation / Action alignment 两节，并对一下 GitHub 硬件配置说明。
+  </div>
+  <div class="ours">
+    <strong class="h">对我们意味着什么</strong>
+    λ0 不是视频世界模型，但是「开放世界人类 egocentric 数据 → 可控全身策略」的完整故事：采集效率、人机对齐、文字指令部署，都和阿汤公司做输出/数据生产直接可对标。注意：它比拼的是人形真机任务，不是 WBench 式交互视频；完整权重未放，短期不能当可下载对手跑榜。
+  </div>
+
+  <h3>3. 导致什么影响（竞品对比）</h3>
+  <table>
+    <tr><th>对比谁</th><th>差在哪（有证据）</th></tr>
+    <tr><td><a href="https://dreamlabs.ai/research/dream-1/">Dream-1</a>（前周已报）</td><td>Dream-1 卖双臂 API / 零样本控机器人；λ0 强调<strong>全身 loco-manipulation + 人类无本体大规模数据</strong>，面向 G1 真机任务表。</td></tr>
+    <tr><td>GR00T N1.6 / π₀.₅ / StarVLA / Ψ₀</td><td>项目页同表：λ0 真机 62.5% vs π₀.₅ 40% / StarVLA 27.5% / GR00T 7.5%（官方评测设定，第三方未复现）。</td></tr>
+    <tr><td><a href="https://supermimic.github.io">SuperMimic</a>（已报）</td><td>SuperMimic 走可微世界模型训全身跟踪；λ0 走大规模人类 egocentric + 三阶段对齐。都上 G1，路线不同。</td></tr>
+    <tr><td>腾讯 Hy-Nomas（已报）</td><td>Hy-Nomas 是交互式<strong>视频</strong>世界模型；λ0 是具身控制基座。邻域相关，产品形态完全不同。</td></tr>
+  </table>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">中文通稿集中在 10-23</span>
+    <span class="pill">GitHub openlambda ~30★</span>
+    <span class="pill">HF 仅样例数据</span>
+    <span class="pill">未找到独立第三方真机复现</span>
+  </div>
+  <p>公开讨论仍以通稿转载为主；机器人社区短评多落在「采集不用机器人到场」和「权重没放」两点。未找到可引用的独立实验室复现分数。</p>
+
+  <div class="media">
+    <h4>媒体怎么说</h4>
+    <p class="mgroup">中文</p>
+    <div class="mcard">
+      <p class="mhead">量子位 <span class="mtag">⚠️ 厂商供稿</span></p>
+      <p class="mtitle"><a href="https://www.qbitai.com/2026/10/504905.html">高德发布首个基于开放世界行为的全身基座模型λ0…</a></p>
+      <p class="mangle">文末写明「本文由高德提供，量子位获授权转载」——事实可用，判断勿当独立评测。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">腾讯新闻 · 猎云网</p>
+      <p class="mtitle"><a href="https://news.qq.com/rain/a/20261023A094FR00">高德发布…λ0，全身动作采集效率约为主流方法的3.4倍</a></p>
+      <blockquote>仅依靠人类行动数据，即可让机器人学习移动、姿态与双手操作的全身协调。</blockquote>
+    </div>
+    <p class="mgroup">海外 / 一手</p>
+    <div class="mcard">
+      <p class="mhead">项目页 + arXiv</p>
+      <p class="mtitle"><a href="https://lambdahumanoid.github.io/">λ₀ 项目页</a> · <a href="https://arxiv.org/abs/2610.18950">arXiv:2610.18950</a></p>
+      <p class="mangle">真机表、消融、HumanVerse 说明以这里为准。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">TPS Report</p>
+      <p class="mtitle"><a href="https://tpsreport.news/news/amap-lambda0-whole-body-humanoid-foundation-model">Amap λ0 Whole-Body Robot Model: 3.4x Faster Data Collection</a></p>
+      <p class="mangle">英文快讯向，数字与中文通稿一致。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 2 Dessa ========== -->
+<article id="dessa">
+  <h2><span class="tag t-hot">语音 Agent</span>Block（Jack Dorsey）发布 Dessa：只用语音训练的全双工端到端对话模型</h2>
+  <div class="verdict"><strong>结论：</strong>周末最「出圈」的消费向 AI 新闻。Block 小实验室推出 Dessa——声称从零、只用人类对话声音训练、全双工、可在 MacBook Pro M4 Max 本地跑；官网页上的真人对话录音确实比常见 ASR→LLM→TTS 链路更像「人在说话」。但<strong>不对公众开放</strong>，只招安全研究员；CoinDesk / The Verge 都记下了诈骗与冒充担忧。没有参数量、没有公开基准、没有独立第三方盲听评测。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间约 <strong>2026-10-24</strong>（美东 10-23 晚），Jack Dorsey 转发实验室页 <a href="https://block.xyz/dessa">block.xyz/dessa</a>。The Verge 10-23、TechCrunch / CoinDesk 10-24、IT之家 10-25 跟进。实验室负责人 Ragavan Thurairatnam；团队来自被 Square 收购的多伦多初创 Dessa。</p>
+
+  <h3>2. 产品介绍</h3>
+  <figure>
+    <img alt="Dessa 官网截图" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/dessa-page2.jpg"/>
+    <figcaption>官网文案核心：trained only on speech；批评现有语音 AI 先转文字丢情绪。</figcaption>
+  </figure>
+  <figure>
+    <img alt="Dessa 营销图" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/dessa-hero-sm.jpg"/>
+    <figcaption>官网营销视觉（官方素材）。</figcaption>
+  </figure>
+  <ul>
+    <li><strong>形态</strong>：真正的 speech-to-speech；全双工（边听边说、可插话、会 backchannel）。</li>
+    <li><strong>训练叙事</strong>：官方称「No text, no pretrained models」，在单台 NVIDIA GB200 NVL72 上训成；知识也来自对话声音而非外挂 LLM（与 GPT-Live 等「语音壳 + 文本脑」路线对照）。</li>
+    <li><strong>运行</strong>：宣称本地可跑在 MacBook Pro M4 Max 或更好。</li>
+    <li><strong>访问</strong>：研究预览，安全研究员申请；公众不能玩。</li>
+  </ul>
+  <div class="videos">
+    <h4>页内演示</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">谁发的：Block / Dessa 官方 announcement 视频（截取前约 18 秒）</span>
+      <span class="why">看完搞懂：官方怎么包装「像真人对话」——节奏、停顿、笑声；完整多段双人轨录音仍以官网为准。</span></p>
+      <video controls playsinline preload="metadata" poster="https://oricter.github.io/product-radar-reports/2026-10-26/media/dessa-hero-sm.jpg" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/dessa-announce-short.mp4"></video>
+    </div>
+  </div>
+  <div class="howto">
+    <strong>怎么听（比看文字重要）</strong>
+    打开 <a href="https://block.xyz/dessa">官网</a>，直接点 Talking about the release / Remembering a movie / An anniversary surprise 等双轨录音；再对照 The Verge 文内嵌的猜测游戏视频。注意：这些都是公司演示，不是第三方录音。
+  </div>
+  <div class="warn">Block 未公布模型尺寸、训练数据构成、客观指标；「世界第一只用语音训出的真实对话 AI」是官方自我表述。</div>
+
+  <h3>3. 导致什么影响（竞品对比）</h3>
+  <table>
+    <tr><th>对比谁</th><th>差在哪</th></tr>
+    <tr><td>OpenAI GPT-Live</td><td>同为全双工；GPT-Live 仍是「语音接口 + 文本模型」叙事。Dessa 强调<strong>声音里学语言与知识</strong>，故意不做文本中间层。</td></tr>
+    <tr><td>ElevenLabs v4 / Fish Audio</td><td>TechCrunch 点出：后者多用标签控情绪；Dessa 称情绪是原生的（是否底层仍有标签，官方未讲清）。</td></tr>
+    <tr><td>端侧语音助手（手机厂商 / 小模型）</td><td>Dessa 卖点是「M4 Max 本地 + 极真人感」，但暂无产品化渠道；Block 主营支付/商户，Square 已有语音点单场景，长期可能内嵌。</td></tr>
+  </table>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">周末 X 持续热</span>
+    <span class="pill">赞叹「太像人」</span>
+    <span class="pill">诈骗 / 冒充担忧明显</span>
+    <span class="pill">CZ 提到儿童教育场景</span>
+  </div>
+  <p>CoinDesk 汇总：有人说从未听过这么像人的合成语音；Justine Bateman 质疑「为什么要故意听起来像人」；记者 Shiv Aroor 写「诈骗电话要大流行」。公开可玩性为零，口碑基本建立在官方 demo 上。</p>
+
+  <div class="media">
+    <h4>媒体怎么说</h4>
+    <p class="mgroup">海外</p>
+    <div class="mcard">
+      <p class="mhead">The Verge · Jay Peters · 10-23</p>
+      <p class="mtitle"><a href="https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech">Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend</a></p>
+      <blockquote>You have got to listen to these conversations…</blockquote>
+    </div>
+    <div class="mcard">
+      <p class="mhead">TechCrunch · 10-24</p>
+      <p class="mtitle"><a href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/">Block’s new voice model sounds eerily human</a></p>
+      <p class="mangle">强调本地可跑、与 GPT-Live 全双工对照、暂无公众访问。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">CoinDesk · 10-24</p>
+      <p class="mtitle"><a href="https://www.coindesk.com/tech/2026/10/24/block-s-new-voice-ai-sounds-eerily-human-sparking-awe-and-scam-fears">…impressing users and alarming fraud watchers</a></p>
+      <p class="mangle">把「赞叹」和「诈骗恐惧」并列表述；记录 CZ 教育向评论。</p>
+    </div>
+    <p class="mgroup">中文</p>
+    <div class="mcard">
+      <p class="mhead">IT之家 · 10-25</p>
+      <p class="mtitle"><a href="https://www.ithome.com/1/017/557.htm">Block 推出全双工 AI 语音模型 Dessa：真人感拉满，支持苹果 MacBook 本地运行</a></p>
+      <p class="mangle">事实摘要完整；截至成稿，量子位/机器之心未见同题专稿。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">CoinDesk 中文</p>
+      <p class="mtitle"><a href="https://www.coindesk.com/zh/tech/2026/10/24/block-s-new-voice-ai-sounds-eerily-human-sparking-awe-and-scam-fears">Jack Dorsey 新推出的语音人工智能令用户印象深刻，同时也引起了反欺诈观察者的警觉</a></p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 3 Agensh ========== -->
+<article id="agensh">
+  <h2><span class="tag t-mid">多智能体</span>微软研究院开源 Agensh：无中心编排，扩到 1,024 个编程智能体</h2>
+  <div class="verdict"><strong>结论：</strong>这是一篇「多智能体能不能靠自组织扩到上千」的研究级开源，不是面向普通用户的新产品。Agensh 去掉 lead agent，让 worker 通过 Gitea + Mattermost + 共享看板自己认领、验证、合并；在 ProgramBench 最难 5 题上，1→128 agents 平均通过率 19.31%→28.78%，Pandoc 1→1024 为 33.89%→55.06%。适合做 Agent 基建/编排的人读论文 + 跑 Docker；中文一线媒体几乎还没跟。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>约北京时间 <strong>2026-10-23/24</strong>，Microsoft Research 放出项目页 <a href="https://agens-harness.github.io/project/">agens-harness.github.io/project</a>、论文 <a href="https://arxiv.org/abs/2609.26781">arXiv:2609.26781</a>、代码 <a href="https://github.com/microsoft/Agensh">microsoft/Agensh</a>（MIT，抓取时约 <strong>302★ / 37 forks</strong>）。MarkTechPost 10-24 长文解读；青云TOP 10-25 有中文编译向介绍。</p>
+
+  <h3>2. 产品介绍</h3>
+  <figure>
+    <img alt="Agensh 项目页" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/agensh-page.jpg"/>
+    <figcaption>项目页首页：1→1024 agents、Pandoc 33.89%→55.06%、相对 +62%。</figcaption>
+  </figure>
+  <figure>
+    <img alt="MarkTechPost 配图" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/agensh-mtp-sm.jpg"/>
+    <figcaption>MarkTechPost 报道配图（外媒二次传播素材）。</figcaption>
+  </figure>
+  <ul>
+    <li><strong>循环</strong>（写在 prompt 里，不是硬编码角色）：Gather → Claim → Act → Verify → Merge。</li>
+    <li><strong>基础设施</strong>：Gitea 共享仓库、Mattermost 频道/私信、共享上下文看板（OBSERVED / FACT / FAIL / CLAIM / PATCH_SUMMARY）。</li>
+    <li><strong>底座</strong>：实验用 GitHub Copilot CLI；宣称可薄适配到 Claude Code 等。</li>
+    <li><strong>怎么跑</strong>：单机 Docker Compose 默认 8 workers；1024 规模实验用 16 节点 × 64。需要 Linux、Compose v2、ProgramBench、模型 API token。</li>
+  </ul>
+  <div class="howto">
+    <strong>怎么看</strong>
+    先看项目页 Figure 1 的 scaling 动画与五任务表；再打开 GitHub README / reproduction guide。若只想判断「值不值得跟」，看涌现行为描述：8 人协商接口 → 32 人互审 → 128 人标准化集成 → 1024 人出现 integrator 角色。
+  </div>
+
+  <h3>3. 导致什么影响（竞品对比）</h3>
+  <table>
+    <tr><th>对比谁</th><th>差在哪</th></tr>
+    <tr><td>Claude Code agent teams / Codex sub-agents / Copilot fleet / Kimi Agent Swarm</td><td>MarkTechPost 对照表：前者多有<strong>中心编排或 lead session</strong>；Agensh 明确去掉 orchestrator，靠共享 Git + 消息自组织，并公开测到 1024。</td></tr>
+    <tr><td>普通「多 Agent 框架」</td><td>Agensh 的价值在<strong>规模实验数据</strong>（同模型、同预算、离线 6h），不是又一个 SDK。平均分提升有限（+9.5pt），但单任务与速度收益更明显。</td></tr>
+  </table>
+  <div class="ours">
+    <strong class="h">对我们意味着什么</strong>
+    若内部在跑多 Codex/Claude 并行改仓，Agensh 提供的是「去中心化认领 + 共享看板」参考实现；注意 token 成本论文未披露，1024 规模是研究配置不是默认产品形态。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">GitHub ~302★</span>
+    <span class="pill">英文技术圈跟进多于中文大众媒体</span>
+    <span class="pill">未找到大规模第三方复现</span>
+  </div>
+  <p>公开反馈以论文党/Agent 基建圈为主；未见知乎/小红书热帖。五任务均值到 128 agents 也只有 28.78%——论文自己也展示了「能扩，但离解决问题还远」。</p>
+
+  <div class="media">
+    <h4>媒体怎么说</h4>
+    <p class="mgroup">海外</p>
+    <div class="mcard">
+      <p class="mhead">MarkTechPost · 10-24</p>
+      <p class="mtitle"><a href="https://www.marktechpost.com/2026/10/24/microsoft-agensh-multi-agent-harness-1024-agents/">Microsoft Open-Sources Agensh: A Multi-Agent Harness for 1,024 Agents</a></p>
+      <p class="mangle">含与 Claude Code / Kimi Swarm / Copilot fleet 对照表；并补充 README 里 GPT-6.1-sol + 32 agents 在 Pandoc 79.59% 的更新数字（不在 v1 论文正文）。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">Microsoft Research / 项目页</p>
+      <p class="mtitle"><a href="https://agens-harness.github.io/project/">Agensh: Scaling Organizational Intelligence to 1,024 Agents</a></p>
+    </div>
+    <p class="mgroup">中文</p>
+    <div class="mcard">
+      <p class="mhead">青云TOP · 10-25</p>
+      <p class="mtitle"><a href="https://qingyuntop.ai/article/microsoft-agensh-multi-agent-harness">微软开源 Agensh：支持千级智能体协作</a></p>
+      <p class="mangle">编译向；文内夹带自身 API 产品导流，引用时注意。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">补充</p>
+      <p class="mangle">截至成稿，量子位 / 机器之心 / InfoQ 中文未见 Agensh 专稿；中文覆盖偏薄，故第二条中文以技术博客 + 官方中文转述需求并存——若下周有一线稿再「后续」。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 4 Atria ========== -->
+<article id="atria">
+  <h2><span class="tag t-mid">大模型 Agent</span>上海 AI 实验室正式开源 Atria Dawn：744B MoE agentic，512K 上下文</h2>
+  <div class="verdict"><strong>结论：</strong>把此前的 <strong>Atria Dawn Preview（256K）</strong>升级为正式版：MIT 权重、512K 上下文、FP8 可选，挂在 <a href="https://huggingface.co/internlm/Atria-Dawn">internlm/Atria-Dawn</a> 与 ModelScope。官网 <a href="https://atria-asi.ai/">atria-asi.ai</a> 同步「Official Release」演示（蛋白结构训练、CAD、三国地图动画、纯 PowerPoint 短片等）。官方大表显示若干生产力/安全项靠前，但 Terminal-Bench / SWE-bench Pro / Harbor 等仍明显落后 Claude Opus 5 等；HF 下载量仍很低（抓取时约 96），独立第三方评测未跟上。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>Hugging Face 模型卡创建/更新约北京时间 <strong>2026-10-23</strong>；官网正式版素材路径带 <code>20261024</code>。与 Preview 仓库并存：正式版 512K，Preview 256K。论文 <a href="https://arxiv.org/abs/2609.15818">arXiv:2609.15818</a>。</p>
+
+  <h3>2. 产品介绍</h3>
+  <figure>
+    <img alt="Hugging Face Atria-Dawn 模型卡" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/hf-atria.jpg"/>
+    <figcaption>HF 模型卡截图：753B params 标注、MIT、四维能力（Discovery / Creation / Delivery / Cybersecurity）。</figcaption>
+  </figure>
+  <figure>
+    <img alt="Atria OG" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/atria-og-sm.jpg"/>
+    <figcaption>官网 / OG 视觉。</figcaption>
+  </figure>
+  <ul>
+    <li><strong>底座</strong>：744B 参数 MoE GLM-5.2；总参数卡上写 753B。</li>
+    <li><strong>定位</strong>：科研与工程 agent——工具调用、多步、失败恢复；强调可执行可验证结果。仅文本输入（非多模态）。</li>
+    <li><strong>部署</strong>：SGLang ≥0.5.13.post1、vLLM ≥0.23.0；国内外 API；给出 Codex / Claude Code / Kimi Code 接入注意事项（必须声明 text-only）。</li>
+    <li><strong>官方演示看到了什么</strong>：蛋白结构预测微调实验曲线与 3D 结构对比；火箭/摩托车/灵巧手 CAD；《三国演义》官渡之战动画地图；约 440 粒子纯 PPT Morph 短片；多表对账数据分析。以上均为官方录屏/交互 demo，不是第三方复现。</li>
+  </ul>
+  <div class="howto">
+    <strong>怎么看</strong>
+    打开 <a href="https://atria-asi.ai/">atria-asi.ai</a> 滚官方演示；需要权重则去 HF/ModelScope 拉 Atria-Dawn（别下成 Preview）。看跑分时盯脚注：多数项用 Claude Code / OpenHands 等 harness，条件不统一，不能直接当「绝对排名」。
+  </div>
+
+  <h3>3. 导致什么影响（竞品对比）</h3>
+  <table>
+    <tr><th>对比谁</th><th>差在哪（据官方表）</th></tr>
+    <tr><td>Atria Dawn Preview</td><td>正式版上下文 256K→512K；多项分数小幅上探（如 AutomationBench 53.8→54.7）。</td></tr>
+    <tr><td>Kimi K3 / DeepSeek V4 Pro / Qwen 3.8 Max / GLM 5.3</td><td>官方同表：Dawn 在 CyberGym、Harvey LAB、BFCL 等靠前；GDPval、Terminal-Bench、SWE-Pro 等落后 Qwen/Kimi/Claude。</td></tr>
+    <tr><td>Claude Opus 5 / GPT-5.6 sol</td><td>工程向仓库/终端任务 Opus 仍明显更高（如 NL2Repo 79.9 vs Dawn 50.0；Harbor 41.0 vs 17.3）。</td></tr>
+  </table>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">HF ~96 downloads / 6 likes（抓取时）</span>
+    <span class="pill">社区 demo 征集已上线</span>
+    <span class="pill">一线中文科技媒体专稿仍少</span>
+  </div>
+  <p>「读懂AI时代」等聚合站有中文解读；量子位/机器之心专稿未检索到。官网开始挂社区创作（历史阅读、一句话做 App、港岛飞行等），热度仍早期。</p>
+
+  <div class="media">
+    <h4>媒体怎么说</h4>
+    <p class="mgroup">中文</p>
+    <div class="mcard">
+      <p class="mhead">读懂AI时代 · 10-23</p>
+      <p class="mtitle"><a href="https://www.readaitime.com/news/2026-10-23/ybgma4ai">上海AI实验室发布753B智能体模型Atria Dawn，基于GLM-5.2</a></p>
+      <p class="mangle">把官方表翻译成「哪些项领先、哪些项落后」——比纯通稿有用。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">补充</p>
+      <p class="mangle">量子位 / 机器之心 / IT之家专稿暂缺；第二条中文覆盖不足，标为待补。</p>
+    </div>
+    <p class="mgroup">海外 / 一手</p>
+    <div class="mcard">
+      <p class="mhead">官网 + HF + arXiv</p>
+      <p class="mtitle"><a href="https://atria-asi.ai/">atria-asi.ai</a> · <a href="https://huggingface.co/internlm/Atria-Dawn">internlm/Atria-Dawn</a> · <a href="https://arxiv.org/abs/2609.15818">2609.15818</a></p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">AnyRouter / Synthship 等英文快讯</p>
+      <p class="mtitle"><a href="https://anyrouter.dev/blog/releases/2026-10-24-atria-dawn">Atria Dawn · AnyRouter</a> · <a href="https://www.synthship.com/news/atria-dawn-open-weights-mit">Synthship: full weights under MIT, 512K</a></p>
+      <p class="mangle">聚合/快讯向，核实仍以 HF 与官网为准。</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  产品雷达 · 2026-10-26 · 覆盖周五日报之后至周一早间 · 下一期继续按 seen.md 去重
+</footer>
+</div>
+<script>
+(function(){
+  if(!/^https?:$/.test(location.protocol)) return;
+  document.querySelectorAll('.vcard').forEach(function(a){
+    a.addEventListener('click',function(ev){
+      var wrap=a.parentNode, vid=(wrap.id||'').replace('vw-','');
+      if(!vid) return;
+      ev.preventDefault();
+      var btn=document.querySelector('button[data-vid="'+vid+'"]');
+      if(btn) playInline(btn); 
+    });
+    var h=a.querySelector('.hint'); if(h) h.textContent='▶ 点击在页内播放';
+  });
+  document.querySelectorAll('.vid-actions .note').forEach(function(n){n.textContent='（页内播不了就点「在 YouTube 打开」）';});
+})();
+</script>
+</body>
+</html>
