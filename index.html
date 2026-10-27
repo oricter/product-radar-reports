@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AI 产品情报 · 2026-10-26 · 高德 λ0 / Block Dessa / Microsoft Agensh / Atria Dawn</title>
+<title>AI 产品情报 · 2026-10-27 · OpenAI GPT-6.1 Terra / Nanbeige4.3-33B / Mirendil Fern 0.1</title>
 <style>
   :root {
     --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
@@ -108,366 +108,281 @@
 </head>
 <body>
 <div class="wrap">
-<h1>AI 产品情报 · 2026-10-26（周一）</h1>
-<div class="cover"><strong>本版覆盖媒体 / 一手源约 14 家（外文 7 / 中文 5 / 官方 6）</strong>：外文是 The Verge、TechCrunch、CoinDesk、MarkTechPost、arXiv、TPS Report；中文是量子位、IT之家、腾讯新闻/猎云网、网易财经、读懂AI时代、青云TOP；官方是 Block Dessa 页、高德 λ0 项目页、Microsoft Agensh 项目页 / GitHub、Atria 官网与 Hugging Face。量子位 λ0 文末标明「由高德提供」，按软文标注。</div>
+<h1>AI 产品情报 · 2026-10-27（周二）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 12 家（外文 5 / 中文 4 / 官方 5）</strong>：外文是 The Verge、The Next Web、AWS What’s New、Digg、Mirendil 新闻页；中文是 IT之家、投资界（转载新智元泄露稿）、智源社区 AREX、新浪财经转载；官方是 OpenAI 博客 / System Card / 模型页、Nanbeige Hugging Face、Mirendil。投资界/新智元 10-26 上午稿是「微软泄露曝光」旧线索，不是正式发布通稿——已单独标注。</div>
 <div class="meta">
-  <p><strong>时间范围</strong>：北京时间 2026-10-24（周五）日报发布之后 → 2026-10-26（周一）约 09:15（含周末）</p>
-  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 核实候选时间戳与官方源 → 读官网/演示/模型卡 → 交叉中外媒体与 X 反应 → 按世界模型/具身邻域优先级成稿。</p>
-  <p><strong>去重说明</strong>：Hy-Nomas、Nemotron Bolt E4B、Kimi K3.1 Pro、EdenLive、Decisions API 等已报道项不重复。Chimera（约 10-21，官方博客独立稿弱）与 Cursor Computer Use（文档向、周末未形成实质产品报道潮）本轮不单列。</p>
+  <p><strong>时间范围</strong>：美东约 2026-10-25 晚 → 2026-10-26 晚（对应北京 10-26～10-27 早上）；成稿北京时间 2026-10-27 约 09:10。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 核实三条候选官方时间戳 → 读官网/模型卡/System Card → 交叉中外媒体与 X 反应 → 按大厂产品 / 开源 agent / 长上下文新实验室优先级成稿。</p>
+  <p><strong>去重说明</strong>：λ0、Dessa、Agensh、Atria Dawn、Hy-Nomas、Kimi K3.1 Pro、Nemotron Bolt、Cosmos Sim-*、Claude Duet、JST-2、Dream-1、M3.1 Flash、EdenLive、Murea、DeepSeek V4.1-Flash、Muse Spark Open、Matrix-Game、Kling 4.0 等不重复。腾讯 HY-World 1.5 / WorldPlay 为 2025-12 旧闻转载，不当新发布。</p>
 </div>
 
 <div class="alert">
-  <strong>今日要点（先看这四条）</strong>
+  <strong>今日要点（先看这三条）</strong>
   <ol>
-    <li><strong>高德 / 阿里 ATH 发布全身基座 λ0</strong>：500 小时人类第一视角全身数据 → 宇树 G1 真机零样本；真机成功率 62.5%、采集效率自称 3.4×——对世界模型/具身数据管线最相关，但完整权重未放、量子位稿是厂商供稿。</li>
-    <li><strong>Block（Jack Dorsey）发布 Dessa</strong>：只用人声训练的全双工语音端到端模型，可本地跑 M4 Max；演示很「真人」，但暂不公开、安全圈担心诈骗。</li>
-    <li><strong>微软研究院开源 Agensh</strong>：无中心编排、可扩到 1024 编程智能体；Pandoc 通过率 33.89%→55.06%。GitHub ~302★。</li>
-    <li><strong>上海 AI 实验室正式开源 Atria Dawn</strong>：744B MoE agentic、512K 上下文、MIT；与 Preview（256K）区分。官方跑分表齐全，第三方独立实测仍少。</li>
+    <li><strong>OpenAI 正式发布 GPT-6.1 Terra</strong>：取代 5.6 Terra，主打看屏幕 + 点应用的 computer use；API 输入 $1 / 输出 $5 每百万 token，比 5.6 Terra 与 6.1 Sol 便宜 50%；官方称同任务约快 3 倍、任务成本约 Claude Opus 5.5 的 1/9——数字全是 OpenAI 自测。官推约 255 万浏览。</li>
+    <li><strong>BOSS直聘南北阁开源 Nanbeige4.3-33B</strong>：33B dense、Apache 2.0、512K；自称约 30B 开源 agentic SOTA，将当教师蒸馏 3B。跑分是厂方自测，第三方独立复现仍少。</li>
+    <li><strong>新实验室 Mirendil 发布 Fern 0.1</strong>：宣称最高 1000 万 token 上下文、从零预训练；early access、无公开权重。RULER 在 10M 档只平均 20 条样本——别当独立大榜。</li>
   </ol>
 </div>
 
 <div class="toc">
-  <a href="#lambda0"><span class="tag t-hot">具身 / 世界模型邻域</span>高德发布全身基座模型 λ0</a>
-  <a href="#dessa"><span class="tag t-hot">语音 Agent</span>Block 发布 Dessa 全双工语音端到端模型</a>
-  <a href="#agensh"><span class="tag t-mid">多智能体</span>微软研究院开源 Agensh（至 1024 agents）</a>
-  <a href="#atria"><span class="tag t-mid">大模型 Agent</span>上海 AI 实验室正式开源 Atria Dawn</a>
+  <a href="#terra"><span class="tag t-hot">大模型 / Computer Use</span>OpenAI 发布 GPT-6.1 Terra</a>
+  <a href="#nanbeige"><span class="tag t-mid">开源 Agent</span>BOSS直聘 Nanbeige 开源 Nanbeige4.3-33B</a>
+  <a href="#fern"><span class="tag t-mid">长上下文新实验室</span>Mirendil 发布 Fern 0.1（最高 10M 上下文）</a>
 </div>
 
-<!-- ========== 1 λ0 ========== -->
-<article id="lambda0">
-  <h2><span class="tag t-hot">具身 / 世界模型邻域</span>高德发布全身基座模型 λ0：人类戴设备采集 → 人形机器人全身移动操作</h2>
-  <div class="verdict"><strong>结论：</strong>周末窗口里对阿汤公司<strong>最相关</strong>的一条。高德 + 阿里 ATH 把「开放世界人类第一视角全身数据」做成 HumanVerse-500（500h），再经视角/动作对齐训出 λ0，声称在宇树 G1 上零样本完成全身协调与长程移动操作；真机 4 任务 62.5% 成功，显著高于 π₀.₅ / StarVLA 等对照。<strong>完整模型权重与全量数据未开源</strong>，目前只开硬件配置代码 + 数据样例——当作「数据管线与对齐思路」对标，不要当成可下载的白模世界对手。</div>
+<!-- ========== 1 Terra ========== -->
+<article id="terra">
+  <h2><span class="tag t-hot">大模型 / Computer Use</span>OpenAI 发布 GPT-6.1 Terra：更便宜的「看屏幕、点应用」主力</h2>
+  <div class="verdict"><strong>结论：</strong>过去 24 小时最硬的一条产品新闻。OpenAI 正式上线 <strong>GPT-6.1 Terra</strong>，定位中端、取代 GPT-5.6 Terra，主打视觉推理 + computer use（看屏幕、跨应用点按、填表、读发票）。API 标价输入 <strong>$1</strong> / 输出 <strong>$5</strong> 每百万 token（缓存输入 $0.05），官方称比 5.6 Terra 与 6.1 Sol 便宜一半；ChatGPT Plus/Pro/Enterprise/Edu 的 Work 与 Codex 可用，Amazon Bedrock 同步 GA。复杂编程官方仍推 Sol / Astra。所有「比 Opus 便宜 9 倍」等对比均来自 OpenAI 自家评测，第三方盲测尚未跟上。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>北京时间约 <strong>2026-10-23</strong>，阿里巴巴集团旗下高德与阿里 ATH 发布全身基座模型 <strong>λ0</strong>（论文 arXiv:2610.18950）。项目页 <a href="https://lambdahumanoid.github.io/">lambdahumanoid.github.io</a>、代码仓 <a href="https://github.com/LambdaHumanoid/openlambda">LambdaHumanoid/openlambda</a>（约 30★）、样例数据 <a href="https://huggingface.co/datasets/lambda-humanoid/HumanVerse-500-sample">HumanVerse-500-sample</a> 同日可访问。量子位、腾讯新闻（猎云网）、网易财经等同日有中文通稿；周五日报未收录，故本轮补报。</p>
+  <p>北京时间约 <strong>2026-10-27 凌晨</strong>（美东 10-26），OpenAI 在官网发布 <a href="https://openai.com/index/introducing-gpt-6-1-terra">Introducing GPT-6.1 Terra</a>；API 模型名 <code>gpt-6.1-terra</code>；System Card 见 <a href="https://deploymentsafety.openai.com/gpt-6-1-terra">Deployment Safety Hub</a>。同一天 AWS 宣布 <a href="https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/">Bedrock 正式可用</a>。此前 10-25 微软 / GitHub 配置泄漏已在 X 刷屏；投资界转载的新智元稿是<strong>泄露曝光</strong>，不是正式发布通稿——见下文媒体区标注。</p>
 
   <h3>2. 产品介绍</h3>
   <figure>
-    <img alt="λ0 项目页截图" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/lambda0-page.jpg"/>
-    <figcaption>官方项目页截图（2026-10-26 抓取）：Alibaba Token Hub + Amap，报告 / GitHub / HF 样例入口。</figcaption>
+    <img alt="OpenAI GPT-6.1 Terra 官网标题区截图" src="https://oricter.github.io/product-radar-reports/2026-10-27/media/terra-hero.png"/>
+    <figcaption>OpenAI 发布页标题区截图（2026-10-27 抓取）：GPT-6.1 Terra 主视觉。</figcaption>
   </figure>
   <figure>
-    <img alt="λ0 演示海报" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/lambda0-poster-sm.jpg"/>
-    <figcaption>项目页 og/海报图：人类穿戴采集设备在开放场景走动。</figcaption>
+    <img alt="GPT-6.1 Terra 官方跑分图拼接" src="https://oricter.github.io/product-radar-reports/2026-10-27/media/terra-benchmarks.png"/>
+    <figcaption>官网跑分图竖拼（Agents’ Last Exam / MMMU-Pro / OSWorld 2.1）——数字均为 OpenAI 自测。</figcaption>
+  </figure>
+  <figure>
+    <img alt="OpenAI GPT-6.1 Terra 官方艺术图" src="https://oricter.github.io/product-radar-reports/2026-10-27/media/terra-openai-og.png"/>
+    <figcaption>OpenAI 官网 OG / 艺术卡。</figcaption>
+  </figure>
+  <figure>
+    <img alt="The Next Web 对 Terra 的报道配图" src="https://oricter.github.io/product-radar-reports/2026-10-27/media/tnw-terra.jpg"/>
+    <figcaption>The Next Web 报道配图（标注 Credit: OpenAI）。</figcaption>
   </figure>
   <ul>
-    <li><strong>输入输出</strong>：部署时吃机器人相机图 + 语言指令 + 本体感知，输出全身运动 token 与手部指令；身体侧由 SONIC 执行。采集阶段用人（GoPro 第一视角 + PICO 身体追踪 + 手部重建），部署不再需要人体追踪。</li>
-    <li><strong>数据</strong>：HumanVerse-500 = 约 500 小时开放世界无本体全身数据；另有约 600 条任务对齐人类示范留给 Stage III。</li>
-    <li><strong>三阶段训练</strong>：I 第一视角手部预训练 → II 机器人对齐的全身人类 mid-training → III 机器人后训练。</li>
-    <li><strong>官方数字（论文/项目页，非第三方复现）</strong>：真机成功率 62.5%（25/40）、任务进度 80.4%；SIMPLE 仿真 90.0%；对照表里 π₀.₅ 40%、StarVLA 27.5%、GR00T N1.6 7.5%。采集效率自称约 3.4×（人采 ~29s vs 机器人采 ~100s）。</li>
+    <li><strong>能干啥</strong>：读屏幕 → 跨应用点击/打字；官方举例：读发票录入会计软件、填表、读建筑图纸转 3D、逐镜头做影片修复时间码日志、草稿提案、剪辑。</li>
+    <li><strong>上下文</strong>：AWS / 开发者文档口径约 <strong>100 万</strong>输入 token；支持文本 + 图像。</li>
+    <li><strong>官方自测亮点</strong>（非第三方）：Agents’ Last Exam 中等推理比 5.6 Terra <strong>+15 个百分点</strong>、成本约 1/3，并称与 GPT-6 Astra 接近、价约 Astra 的 1/10；任务完成速度称比 Astra / Sol <strong>快 3 倍以上</strong>；最高推理下「每任务成本约 Claude Opus 5.5 的 1/9」。MMMU-Pro 各档超过 5.6 Terra；OSWorld 2.1 中等推理超过 5.6 最佳分。Terminal-Bench 4.0 最高推理 <strong>50.3%</strong>（5.6 Terra 公布 21.5%）。内部幻觉诱导集：低推理错误率 53.6%→16.7%，最高推理降至 4.3%。</li>
+    <li><strong>安全</strong>：Preparedness Framework 下网络安全达 <strong>Critical</strong> 门槛；对齐改进沿用 GPT-6 系列，称更愿说明局限、抗提示注入更强。</li>
+    <li><strong>谁能用、多少钱</strong>：Plus / Pro / Enterprise / Edu → ChatGPT Work + Codex；开发者 API <code>gpt-6.1-terra</code>：$1 / $5（入/出）每百万 token。Bedrock 也可调。</li>
   </ul>
   <div class="videos">
-    <h4>页内演示（官方项目页视频，已本地托管）</h4>
+    <h4>页内演示</h4>
     <div class="vid">
-      <p class="vlabel"><span class="who">谁发的：λ-humanoid / 高德项目页 · Laboratory / Toy storage</span>
-      <span class="why">看完搞懂：实验室场景里机器人把玩具收进容器——全身移动 + 双手操作的完整短任务，不是只定格机械臂。</span></p>
-      <video controls playsinline preload="metadata" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/lambda0-toy-short.mp4"></video>
-    </div>
-    <div class="vid">
-      <p class="vlabel"><span class="who">谁发的：λ-humanoid 项目页 · Close drawer aligned</span>
-      <span class="why">看完搞懂：人类示范对齐后的抽屉关闭执行；项目页还提供未对齐对照，用来理解「动作对齐」到底改了什么。</span></p>
-      <video controls playsinline preload="metadata" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/lambda0-drawer-short.mp4"></video>
+      <p class="vlabel"><span class="who">谁发的：OpenAI 官方 X 主帖附带演示视频（约 31 秒，720p 本地托管）</span>
+      <span class="why">看完搞懂：官方怎么包装「看屏幕 → 跨应用操作」的 computer use——节奏偏产品预告，不是第三方桌面录屏实测。</span></p>
+      <video controls playsinline preload="metadata" poster="https://oricter.github.io/product-radar-reports/2026-10-27/media/terra-demo-poster.jpg" src="https://oricter.github.io/product-radar-reports/2026-10-27/media/terra-demo.mp4"></video>
     </div>
   </div>
   <div class="howto">
-    <strong>怎么看（3 分钟）</strong>
-    打开 <a href="https://lambdahumanoid.github.io/">项目页</a> 滚到 Laboratory / Break room / Visitor center 看真机短片；再看 Zero-Shot Transfer on Unitree G1 与真机对照表。若关心数据管线，读 arXiv 里 Observation / Action alignment 两节，并对一下 GitHub 硬件配置说明。
+    <strong>怎么看（5 分钟）</strong>
+    打开 <a href="https://openai.com/index/introducing-gpt-6-1-terra">官方发布页</a> 滚完 Agents’ Last Exam / MMMU-Pro / OSWorld / Terminal-Bench 四块图；再打开 <a href="https://developers.openai.com/api/docs/models/gpt-6.1-terra">模型页</a> 核对价目与能力开关；安全细节看 <a href="https://deploymentsafety.openai.com/gpt-6-1-terra">System Card</a>。想对照中文事实摘要可读 IT之家 10-27 稿。
   </div>
   <div class="ours">
     <strong class="h">对我们意味着什么</strong>
-    λ0 不是视频世界模型，但是「开放世界人类 egocentric 数据 → 可控全身策略」的完整故事：采集效率、人机对齐、文字指令部署，都和阿汤公司做输出/数据生产直接可对标。注意：它比拼的是人形真机任务，不是 WBench 式交互视频；完整权重未放，短期不能当可下载对手跑榜。
+    Terra 不是世界模型，但是「视觉 + 桌面操作 Agent」成本曲线下移的信号：同档 computer use 变便宜，会抬高「能看屏幕干活」的产品预期。公司若评测 agent 管线，可把 Terra 当便宜基线，难编码题仍对照 Sol / Astra / Opus 5.5。
   </div>
 
   <h3>3. 导致什么影响（竞品对比）</h3>
   <table>
     <tr><th>对比谁</th><th>差在哪（有证据）</th></tr>
-    <tr><td><a href="https://dreamlabs.ai/research/dream-1/">Dream-1</a>（前周已报）</td><td>Dream-1 卖双臂 API / 零样本控机器人；λ0 强调<strong>全身 loco-manipulation + 人类无本体大规模数据</strong>，面向 G1 真机任务表。</td></tr>
-    <tr><td>GR00T N1.6 / π₀.₅ / StarVLA / Ψ₀</td><td>项目页同表：λ0 真机 62.5% vs π₀.₅ 40% / StarVLA 27.5% / GR00T 7.5%（官方评测设定，第三方未复现）。</td></tr>
-    <tr><td><a href="https://supermimic.github.io">SuperMimic</a>（已报）</td><td>SuperMimic 走可微世界模型训全身跟踪；λ0 走大规模人类 egocentric + 三阶段对齐。都上 G1，路线不同。</td></tr>
-    <tr><td>腾讯 Hy-Nomas（已报）</td><td>Hy-Nomas 是交互式<strong>视频</strong>世界模型；λ0 是具身控制基座。邻域相关，产品形态完全不同。</td></tr>
+    <tr><td>自家 GPT-5.6 Terra</td><td>直接取代。视觉、computer use、事实错误率、Terminal-Bench 4.0 官方数字全面抬升，价降 50%。</td></tr>
+    <tr><td>自家 GPT-6.1 Sol / GPT-6 Astra</td><td>Terra 更便宜更快；官方明确：最难编程仍选 Sol / Astra。命名上 Terra 仍处中端价位带，但能力宣传刻意贴近旗舰。</td></tr>
+    <tr><td>Anthropic Claude Opus 5.5（computer use）</td><td>OpenAI 自测称 Terra 最高推理下约 <strong>9× 更低每任务成本</strong>、token 效率更高——未经验证。社区讨论常把 Terra 发布和 Anthropic 近期份额/IPO 热度放在同一天抢头条。</td></tr>
+    <tr><td>Google Gemini computer use</td><td>同属「看 UI 操作」赛道；本轮 OpenAI 用价 + 官方榜图主动卡位，独立横评尚未出。</td></tr>
   </table>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">中文通稿集中在 10-23</span>
-    <span class="pill">GitHub openlambda ~30★</span>
-    <span class="pill">HF 仅样例数据</span>
-    <span class="pill">未找到独立第三方真机复现</span>
+    <span class="pill">@OpenAI 主帖 ≈255 万浏览 / 2.07 万赞 / 1770 转发</span>
+    <span class="pill">ChatGPT 官推跟帖 ≈52 万浏览</span>
+    <span class="pill">日语开发者 Codex+Terra 跑 ts-bench 称明显更快</span>
+    <span class="pill">中文焦点：便宜一半 / computer use / 难编程仍推 Sol</span>
   </div>
-  <p>公开讨论仍以通稿转载为主；机器人社区短评多落在「采集不用机器人到场」和「权重没放」两点。未找到可引用的独立实验室复现分数。</p>
+  <p>正式发布前一天（10-25）X 上大量「微软仓库泄露」帖；正式发布后讨论转向定价与定位。中文侧常见判断：日常自动化与 computer use 值得换；硬核 agentic coding 先别指望它干翻 Sol / Astra。独立第三方 computer-use 桌面盲测在成稿时仍稀缺。</p>
 
   <div class="media">
     <h4>媒体怎么说</h4>
-    <p class="mgroup">中文</p>
+    <p class="mgroup">官方 / 一手</p>
     <div class="mcard">
-      <p class="mhead">量子位 <span class="mtag">⚠️ 厂商供稿</span></p>
-      <p class="mtitle"><a href="https://www.qbitai.com/2026/10/504905.html">高德发布首个基于开放世界行为的全身基座模型λ0…</a></p>
-      <p class="mangle">文末写明「本文由高德提供，量子位获授权转载」——事实可用，判断勿当独立评测。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">腾讯新闻 · 猎云网</p>
-      <p class="mtitle"><a href="https://news.qq.com/rain/a/20261023A094FR00">高德发布…λ0，全身动作采集效率约为主流方法的3.4倍</a></p>
-      <blockquote>仅依靠人类行动数据，即可让机器人学习移动、姿态与双手操作的全身协调。</blockquote>
-    </div>
-    <p class="mgroup">海外 / 一手</p>
-    <div class="mcard">
-      <p class="mhead">项目页 + arXiv</p>
-      <p class="mtitle"><a href="https://lambdahumanoid.github.io/">λ₀ 项目页</a> · <a href="https://arxiv.org/abs/2610.18950">arXiv:2610.18950</a></p>
-      <p class="mangle">真机表、消融、HumanVerse 说明以这里为准。</p>
+      <p class="mhead">OpenAI · 2026-10-26</p>
+      <p class="mtitle"><a href="https://openai.com/index/introducing-gpt-6-1-terra">Introducing GPT-6.1 Terra</a> · <a href="https://deploymentsafety.openai.com/gpt-6-1-terra">System Card</a> · <a href="https://developers.openai.com/api/docs/models/gpt-6.1-terra">Model docs</a></p>
+      <p class="mangle">事实与跑分以这里为准。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">TPS Report</p>
-      <p class="mtitle"><a href="https://tpsreport.news/news/amap-lambda0-whole-body-humanoid-foundation-model">Amap λ0 Whole-Body Robot Model: 3.4x Faster Data Collection</a></p>
-      <p class="mangle">英文快讯向，数字与中文通稿一致。</p>
+      <p class="mhead">AWS What’s New · 10-26</p>
+      <p class="mtitle"><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/">GPT-6.1 Terra generally available on Amazon Bedrock</a></p>
+      <p class="mangle">确认云侧同步 GA、约 1M 上下文、价至少比 Sol / 5.6 Terra 低 50%。</p>
     </div>
-  </div>
-</article>
-
-<!-- ========== 2 Dessa ========== -->
-<article id="dessa">
-  <h2><span class="tag t-hot">语音 Agent</span>Block（Jack Dorsey）发布 Dessa：只用语音训练的全双工端到端对话模型</h2>
-  <div class="verdict"><strong>结论：</strong>周末最「出圈」的消费向 AI 新闻。Block 小实验室推出 Dessa——声称从零、只用人类对话声音训练、全双工、可在 MacBook Pro M4 Max 本地跑；官网页上的真人对话录音确实比常见 ASR→LLM→TTS 链路更像「人在说话」。但<strong>不对公众开放</strong>，只招安全研究员；CoinDesk / The Verge 都记下了诈骗与冒充担忧。没有参数量、没有公开基准、没有独立第三方盲听评测。</div>
-
-  <h3>1. 发生了什么</h3>
-  <p>北京时间约 <strong>2026-10-24</strong>（美东 10-23 晚），Jack Dorsey 转发实验室页 <a href="https://block.xyz/dessa">block.xyz/dessa</a>。The Verge 10-23、TechCrunch / CoinDesk 10-24、IT之家 10-25 跟进。实验室负责人 Ragavan Thurairatnam；团队来自被 Square 收购的多伦多初创 Dessa。</p>
-
-  <h3>2. 产品介绍</h3>
-  <figure>
-    <img alt="Dessa 官网截图" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/dessa-page2.jpg"/>
-    <figcaption>官网文案核心：trained only on speech；批评现有语音 AI 先转文字丢情绪。</figcaption>
-  </figure>
-  <figure>
-    <img alt="Dessa 营销图" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/dessa-hero-sm.jpg"/>
-    <figcaption>官网营销视觉（官方素材）。</figcaption>
-  </figure>
-  <ul>
-    <li><strong>形态</strong>：真正的 speech-to-speech；全双工（边听边说、可插话、会 backchannel）。</li>
-    <li><strong>训练叙事</strong>：官方称「No text, no pretrained models」，在单台 NVIDIA GB200 NVL72 上训成；知识也来自对话声音而非外挂 LLM（与 GPT-Live 等「语音壳 + 文本脑」路线对照）。</li>
-    <li><strong>运行</strong>：宣称本地可跑在 MacBook Pro M4 Max 或更好。</li>
-    <li><strong>访问</strong>：研究预览，安全研究员申请；公众不能玩。</li>
-  </ul>
-  <div class="videos">
-    <h4>页内演示</h4>
-    <div class="vid">
-      <p class="vlabel"><span class="who">谁发的：Block / Dessa 官方 announcement 视频（截取前约 18 秒）</span>
-      <span class="why">看完搞懂：官方怎么包装「像真人对话」——节奏、停顿、笑声；完整多段双人轨录音仍以官网为准。</span></p>
-      <video controls playsinline preload="metadata" poster="https://oricter.github.io/product-radar-reports/2026-10-26/media/dessa-hero-sm.jpg" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/dessa-announce-short.mp4"></video>
-    </div>
-  </div>
-  <div class="howto">
-    <strong>怎么听（比看文字重要）</strong>
-    打开 <a href="https://block.xyz/dessa">官网</a>，直接点 Talking about the release / Remembering a movie / An anniversary surprise 等双轨录音；再对照 The Verge 文内嵌的猜测游戏视频。注意：这些都是公司演示，不是第三方录音。
-  </div>
-  <div class="warn">Block 未公布模型尺寸、训练数据构成、客观指标；「世界第一只用语音训出的真实对话 AI」是官方自我表述。</div>
-
-  <h3>3. 导致什么影响（竞品对比）</h3>
-  <table>
-    <tr><th>对比谁</th><th>差在哪</th></tr>
-    <tr><td>OpenAI GPT-Live</td><td>同为全双工；GPT-Live 仍是「语音接口 + 文本模型」叙事。Dessa 强调<strong>声音里学语言与知识</strong>，故意不做文本中间层。</td></tr>
-    <tr><td>ElevenLabs v4 / Fish Audio</td><td>TechCrunch 点出：后者多用标签控情绪；Dessa 称情绪是原生的（是否底层仍有标签，官方未讲清）。</td></tr>
-    <tr><td>端侧语音助手（手机厂商 / 小模型）</td><td>Dessa 卖点是「M4 Max 本地 + 极真人感」，但暂无产品化渠道；Block 主营支付/商户，Square 已有语音点单场景，长期可能内嵌。</td></tr>
-  </table>
-
-  <h3>4. 用户如何评价</h3>
-  <div class="heat">
-    <span class="pill">周末 X 持续热</span>
-    <span class="pill">赞叹「太像人」</span>
-    <span class="pill">诈骗 / 冒充担忧明显</span>
-    <span class="pill">CZ 提到儿童教育场景</span>
-  </div>
-  <p>CoinDesk 汇总：有人说从未听过这么像人的合成语音；Justine Bateman 质疑「为什么要故意听起来像人」；记者 Shiv Aroor 写「诈骗电话要大流行」。公开可玩性为零，口碑基本建立在官方 demo 上。</p>
-
-  <div class="media">
-    <h4>媒体怎么说</h4>
     <p class="mgroup">海外</p>
     <div class="mcard">
-      <p class="mhead">The Verge · Jay Peters · 10-23</p>
-      <p class="mtitle"><a href="https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech">Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend</a></p>
-      <blockquote>You have got to listen to these conversations…</blockquote>
+      <p class="mhead">The Verge · Jay Peters · Oct 26, 6:22 PM UTC</p>
+      <p class="mtitle"><a href="https://www.theverge.com/ai-artificial-intelligence/1018854/gpt-6-1-terra-is-very-good-at-computer-use-openai-says">GPT-6.1 Terra is very good at computer use, OpenAI says</a></p>
+      <p class="mangle">短讯向，复述官方定位与可用性；未做独立实测。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">TechCrunch · 10-24</p>
-      <p class="mtitle"><a href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/">Block’s new voice model sounds eerily human</a></p>
-      <p class="mangle">强调本地可跑、与 GPT-Live 全双工对照、暂无公众访问。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">CoinDesk · 10-24</p>
-      <p class="mtitle"><a href="https://www.coindesk.com/tech/2026/10/24/block-s-new-voice-ai-sounds-eerily-human-sparking-awe-and-scam-fears">…impressing users and alarming fraud watchers</a></p>
-      <p class="mangle">把「赞叹」和「诈骗恐惧」并列表述；记录 CZ 教育向评论。</p>
+      <p class="mhead">The Next Web · Ana-Maria Stanciuc · Oct 26</p>
+      <p class="mtitle"><a href="https://thenextweb.com/news/openai-gpt-6-1-terra-computer-use">OpenAI launches GPT-6.1 Terra, a cheaper model for everyday computer work</a></p>
+      <blockquote>It can read a screen and click through apps to fill in forms, log invoices and edit video.</blockquote>
+      <p class="mangle">明确写出「vs Opus 的 1/9 成本来自 OpenAI 自测、未经独立核实」——比多数转载更谨慎。</p>
     </div>
     <p class="mgroup">中文</p>
     <div class="mcard">
-      <p class="mhead">IT之家 · 10-25</p>
-      <p class="mtitle"><a href="https://www.ithome.com/1/017/557.htm">Block 推出全双工 AI 语音模型 Dessa：真人感拉满，支持苹果 MacBook 本地运行</a></p>
-      <p class="mangle">事实摘要完整；截至成稿，量子位/机器之心未见同题专稿。</p>
+      <p class="mhead">IT之家 · 清源 · 10-27 07:26</p>
+      <p class="mtitle"><a href="https://www.ithome.com/1/018/200.htm">OpenAI 低成本新模型 GPT-6.1 Terra 深夜炸场…</a></p>
+      <p class="mangle">正式发布后的中文事实摘要最完整：价目、四块基准、Critical 安全门槛都写到了。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">CoinDesk 中文</p>
-      <p class="mtitle"><a href="https://www.coindesk.com/zh/tech/2026/10/24/block-s-new-voice-ai-sounds-eerily-human-sparking-awe-and-scam-fears">Jack Dorsey 新推出的语音人工智能令用户印象深刻，同时也引起了反欺诈观察者的警觉</a></p>
+      <p class="mhead">投资界转载新智元 · 10-26 11:25 <span class="mtag">⚠️ 泄露稿，非正式发布</span></p>
+      <p class="mtitle"><a href="https://news.pedaily.cn/202610/570822.shtml">OpenAI新模型曝光，GPT-6.1 Terra把旗舰反超了？</a></p>
+      <p class="mangle">写的是微软/GitHub 配置泄漏与社区猜测，发稿时尚无官网正式页。可当「发布前舆论」参考，勿当产品说明书。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 3 Agensh ========== -->
-<article id="agensh">
-  <h2><span class="tag t-mid">多智能体</span>微软研究院开源 Agensh：无中心编排，扩到 1,024 个编程智能体</h2>
-  <div class="verdict"><strong>结论：</strong>这是一篇「多智能体能不能靠自组织扩到上千」的研究级开源，不是面向普通用户的新产品。Agensh 去掉 lead agent，让 worker 通过 Gitea + Mattermost + 共享看板自己认领、验证、合并；在 ProgramBench 最难 5 题上，1→128 agents 平均通过率 19.31%→28.78%，Pandoc 1→1024 为 33.89%→55.06%。适合做 Agent 基建/编排的人读论文 + 跑 Docker；中文一线媒体几乎还没跟。</div>
+<!-- ========== 2 Nanbeige ========== -->
+<article id="nanbeige">
+  <h2><span class="tag t-mid">开源 Agent</span>BOSS直聘南北阁开源 Nanbeige4.3-33B：先造 33B 教师，再蒸馏 3B</h2>
+  <div class="verdict"><strong>结论：</strong>国内开源里值得记一笔的 agentic 中杯。BOSS直聘（Kanzhun）旗下 <strong>Nanbeige（南北阁）</strong> 放出 <strong>Nanbeige4.3-33B</strong>（及 Base）：33B dense、BF16、Apache 2.0、最长 <strong>512K</strong>。官方策略写得很直——先训高容量教师，再蒸馏即将到来的 <strong>Nanbeige4.3-3B</strong>。模型卡自称约 30B 开源档 agentic SOTA（对 Qwen3.8-27B / Muse-Glimmer-30B / Gemma4-31B），但<strong>全部是厂方同 harness 自测</strong>；HF 抓取时约 601 likes / 两千余下载，第三方独立复现榜尚未成气候。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>约北京时间 <strong>2026-10-23/24</strong>，Microsoft Research 放出项目页 <a href="https://agens-harness.github.io/project/">agens-harness.github.io/project</a>、论文 <a href="https://arxiv.org/abs/2609.26781">arXiv:2609.26781</a>、代码 <a href="https://github.com/microsoft/Agensh">microsoft/Agensh</a>（MIT，抓取时约 <strong>302★ / 37 forks</strong>）。MarkTechPost 10-24 长文解读；青云TOP 10-25 有中文编译向介绍。</p>
+  <p>HF 仓库创建时间戳约 <strong>2026-10-24</strong>（UTC）；官方 X <a href="https://x.com/nanbeige/status/2114328933181333798">@nanbeige</a> 在北京时间约 <strong>10-25</strong> 宣布开源。智源社区 AREX <a href="https://hub.baai.ac.cn/view/59048">长文整理</a> 发于 10-26。权重：<a href="https://huggingface.co/Nanbeige/Nanbeige4.3-33B">Nanbeige4.3-33B</a> + Base。</p>
 
   <h3>2. 产品介绍</h3>
   <figure>
-    <img alt="Agensh 项目页" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/agensh-page.jpg"/>
-    <figcaption>项目页首页：1→1024 agents、Pandoc 33.89%→55.06%、相对 +62%。</figcaption>
+    <img alt="Nanbeige4.3-33B Hugging Face 社交缩略图" src="https://oricter.github.io/product-radar-reports/2026-10-27/media/nanbeige-og.jpg"/>
+    <figcaption>Hugging Face 模型社交缩略图（仓库 Nanbeige/Nanbeige4.3-33B）。</figcaption>
   </figure>
   <figure>
-    <img alt="MarkTechPost 配图" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/agensh-mtp-sm.jpg"/>
-    <figcaption>MarkTechPost 报道配图（外媒二次传播素材）。</figcaption>
+    <img alt="智源社区对 Nanbeige4.3-33B 的报道配图" src="https://oricter.github.io/product-radar-reports/2026-10-27/media/baai-nanbeige.jpg"/>
+    <figcaption>智源社区 AREX 报道配图。</figcaption>
   </figure>
   <ul>
-    <li><strong>循环</strong>（写在 prompt 里，不是硬编码角色）：Gather → Claim → Act → Verify → Merge。</li>
-    <li><strong>基础设施</strong>：Gitea 共享仓库、Mattermost 频道/私信、共享上下文看板（OBSERVED / FACT / FAIL / CLAIM / PATCH_SUMMARY）。</li>
-    <li><strong>底座</strong>：实验用 GitHub Copilot CLI；宣称可薄适配到 Claude Code 等。</li>
-    <li><strong>怎么跑</strong>：单机 Docker Compose 默认 8 workers；1024 规模实验用 16 节点 × 64。需要 Linux、Compose v2、ProgramBench、模型 API token。</li>
+    <li><strong>规格</strong>：33.1B 参数、BF16、Apache 2.0、上下文至 524,288（512K）；聊天模板可开关 thinking / preserve_thinking，工具调用推荐 XML 格式。</li>
+    <li><strong>定位</strong>：4.3 系列旗舰教师；马上要服务蒸馏管线（首个目标 3B）。</li>
+    <li><strong>厂方自报（务必标注）</strong>：Terminal-Bench 2.1 <strong>80.9</strong>（Qwen3.8-27B 73.0）；Terminal-Bench 4.0 <strong>23.8</strong>（Qwen 6.3 / Gemma4 0.0）；DeepSWE <strong>65.5</strong>（Qwen 42.5）。SWE-Bench Pro 与 GDPval 上反而略输 Qwen3.8-27B。JobBench 总分 44.8 vs Qwen 34.5，但医疗管理 / 行政 / 客服等岗仍落后。</li>
+    <li><strong>怎么跑</strong>：Transformers / SGLang / vLLM；官方示例按 4 卡张量并行，reasoning-parser 与 tool-call-parser 走 qwen3 系。</li>
   </ul>
+  <div class="warn">官方暂无完整公开 demo 视频。上表分数均来自模型卡「同一套超参 + harness」自测；Terminal-Bench 4.0 / DeepSWE 用 mini-swe-agent v2.4.6，SWE-Atlas-QnA 用 GPT-6 Sol 当裁判——读分时要连评测设定一起看。</div>
   <div class="howto">
     <strong>怎么看</strong>
-    先看项目页 Figure 1 的 scaling 动画与五任务表；再打开 GitHub README / reproduction guide。若只想判断「值不值得跟」，看涌现行为描述：8 人协商接口 → 32 人互审 → 128 人标准化集成 → 1024 人出现 integrator 角色。
+    打开 <a href="https://huggingface.co/Nanbeige/Nanbeige4.3-33B">HF 模型卡</a> 直接读 Benchmark 表与脚注 1–12；中文可读智源 <a href="https://hub.baai.ac.cn/view/59048">AREX 整理</a>。若只关心「能不能当小 Agent 教师」，盯 Terminal-Bench 4.0 / DeepSWE / Automation Bench，并等独立 harness 复现。
   </div>
-
-  <h3>3. 导致什么影响（竞品对比）</h3>
-  <table>
-    <tr><th>对比谁</th><th>差在哪</th></tr>
-    <tr><td>Claude Code agent teams / Codex sub-agents / Copilot fleet / Kimi Agent Swarm</td><td>MarkTechPost 对照表：前者多有<strong>中心编排或 lead session</strong>；Agensh 明确去掉 orchestrator，靠共享 Git + 消息自组织，并公开测到 1024。</td></tr>
-    <tr><td>普通「多 Agent 框架」</td><td>Agensh 的价值在<strong>规模实验数据</strong>（同模型、同预算、离线 6h），不是又一个 SDK。平均分提升有限（+9.5pt），但单任务与速度收益更明显。</td></tr>
-  </table>
   <div class="ours">
     <strong class="h">对我们意味着什么</strong>
-    若内部在跑多 Codex/Claude 并行改仓，Agensh 提供的是「去中心化认领 + 共享看板」参考实现；注意 token 成本论文未披露，1024 规模是研究配置不是默认产品形态。
-  </div>
-
-  <h3>4. 用户如何评价</h3>
-  <div class="heat">
-    <span class="pill">GitHub ~302★</span>
-    <span class="pill">英文技术圈跟进多于中文大众媒体</span>
-    <span class="pill">未找到大规模第三方复现</span>
-  </div>
-  <p>公开反馈以论文党/Agent 基建圈为主；未见知乎/小红书热帖。五任务均值到 128 agents 也只有 28.78%——论文自己也展示了「能扩，但离解决问题还远」。</p>
-
-  <div class="media">
-    <h4>媒体怎么说</h4>
-    <p class="mgroup">海外</p>
-    <div class="mcard">
-      <p class="mhead">MarkTechPost · 10-24</p>
-      <p class="mtitle"><a href="https://www.marktechpost.com/2026/10/24/microsoft-agensh-multi-agent-harness-1024-agents/">Microsoft Open-Sources Agensh: A Multi-Agent Harness for 1,024 Agents</a></p>
-      <p class="mangle">含与 Claude Code / Kimi Swarm / Copilot fleet 对照表；并补充 README 里 GPT-6.1-sol + 32 agents 在 Pandoc 79.59% 的更新数字（不在 v1 论文正文）。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">Microsoft Research / 项目页</p>
-      <p class="mtitle"><a href="https://agens-harness.github.io/project/">Agensh: Scaling Organizational Intelligence to 1,024 Agents</a></p>
-    </div>
-    <p class="mgroup">中文</p>
-    <div class="mcard">
-      <p class="mhead">青云TOP · 10-25</p>
-      <p class="mtitle"><a href="https://qingyuntop.ai/article/microsoft-agensh-multi-agent-harness">微软开源 Agensh：支持千级智能体协作</a></p>
-      <p class="mangle">编译向；文内夹带自身 API 产品导流，引用时注意。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">补充</p>
-      <p class="mangle">截至成稿，量子位 / 机器之心 / InfoQ 中文未见 Agensh 专稿；中文覆盖偏薄，故第二条中文以技术博客 + 官方中文转述需求并存——若下周有一线稿再「后续」。</p>
-    </div>
-  </div>
-</article>
-
-<!-- ========== 4 Atria ========== -->
-<article id="atria">
-  <h2><span class="tag t-mid">大模型 Agent</span>上海 AI 实验室正式开源 Atria Dawn：744B MoE agentic，512K 上下文</h2>
-  <div class="verdict"><strong>结论：</strong>把此前的 <strong>Atria Dawn Preview（256K）</strong>升级为正式版：MIT 权重、512K 上下文、FP8 可选，挂在 <a href="https://huggingface.co/internlm/Atria-Dawn">internlm/Atria-Dawn</a> 与 ModelScope。官网 <a href="https://atria-asi.ai/">atria-asi.ai</a> 同步「Official Release」演示（蛋白结构训练、CAD、三国地图动画、纯 PowerPoint 短片等）。官方大表显示若干生产力/安全项靠前，但 Terminal-Bench / SWE-bench Pro / Harbor 等仍明显落后 Claude Opus 5 等；HF 下载量仍很低（抓取时约 96），独立第三方评测未跟上。</div>
-
-  <h3>1. 发生了什么</h3>
-  <p>Hugging Face 模型卡创建/更新约北京时间 <strong>2026-10-23</strong>；官网正式版素材路径带 <code>20261024</code>。与 Preview 仓库并存：正式版 512K，Preview 256K。论文 <a href="https://arxiv.org/abs/2609.15818">arXiv:2609.15818</a>。</p>
-
-  <h3>2. 产品介绍</h3>
-  <figure>
-    <img alt="Hugging Face Atria-Dawn 模型卡" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/hf-atria.jpg"/>
-    <figcaption>HF 模型卡截图：753B params 标注、MIT、四维能力（Discovery / Creation / Delivery / Cybersecurity）。</figcaption>
-  </figure>
-  <figure>
-    <img alt="Atria OG" src="https://oricter.github.io/product-radar-reports/2026-10-26/media/atria-og-sm.jpg"/>
-    <figcaption>官网 / OG 视觉。</figcaption>
-  </figure>
-  <ul>
-    <li><strong>底座</strong>：744B 参数 MoE GLM-5.2；总参数卡上写 753B。</li>
-    <li><strong>定位</strong>：科研与工程 agent——工具调用、多步、失败恢复；强调可执行可验证结果。仅文本输入（非多模态）。</li>
-    <li><strong>部署</strong>：SGLang ≥0.5.13.post1、vLLM ≥0.23.0；国内外 API；给出 Codex / Claude Code / Kimi Code 接入注意事项（必须声明 text-only）。</li>
-    <li><strong>官方演示看到了什么</strong>：蛋白结构预测微调实验曲线与 3D 结构对比；火箭/摩托车/灵巧手 CAD；《三国演义》官渡之战动画地图；约 440 粒子纯 PPT Morph 短片；多表对账数据分析。以上均为官方录屏/交互 demo，不是第三方复现。</li>
-  </ul>
-  <div class="howto">
-    <strong>怎么看</strong>
-    打开 <a href="https://atria-asi.ai/">atria-asi.ai</a> 滚官方演示；需要权重则去 HF/ModelScope 拉 Atria-Dawn（别下成 Preview）。看跑分时盯脚注：多数项用 Claude Code / OpenHands 等 harness，条件不统一，不能直接当「绝对排名」。
+    与世界模型无直接竞品关系；价值在「开源 30B 档 agentic 教师 → 蒸馏 3B」路线是否跑通。若内部要便宜的中文/工具调用底座做数据生产辅助，可列入候选，但先别把厂方 Terminal-Bench 4.0 的 23.8 当成可复现排行榜分。
   </div>
 
   <h3>3. 导致什么影响（竞品对比）</h3>
   <table>
-    <tr><th>对比谁</th><th>差在哪（据官方表）</th></tr>
-    <tr><td>Atria Dawn Preview</td><td>正式版上下文 256K→512K；多项分数小幅上探（如 AutomationBench 53.8→54.7）。</td></tr>
-    <tr><td>Kimi K3 / DeepSeek V4 Pro / Qwen 3.8 Max / GLM 5.3</td><td>官方同表：Dawn 在 CyberGym、Harvey LAB、BFCL 等靠前；GDPval、Terminal-Bench、SWE-Pro 等落后 Qwen/Kimi/Claude。</td></tr>
-    <tr><td>Claude Opus 5 / GPT-5.6 sol</td><td>工程向仓库/终端任务 Opus 仍明显更高（如 NL2Repo 79.9 vs Dawn 50.0；Harbor 41.0 vs 17.3）。</td></tr>
+    <tr><th>对比谁</th><th>差在哪（有证据）</th></tr>
+    <tr><td>Qwen3.8-27B</td><td>模型卡主对照。Nanbeige 在多数 agentic coding / cowork 自测领先；SWE-Bench Pro、GDPval 略落后。独立横评未出。</td></tr>
+    <tr><td>Muse-Glimmer-30B / Gemma4-31B</td><td>同表自测中 Nanbeige 多数项明显更高；Gemma4 在 GPQA Diamond 上更高（91.3 vs 89.5）。</td></tr>
+    <tr><td>自家历史 Nanbeige4.x-3B</td><td>以往公开线集中在 3B；这次先放 33B 教师，是发布次序的战略变化。</td></tr>
+    <tr><td>Atria Dawn 等超大 MoE（已报）</td><td>体量与许可完全不同：Dawn 是 744B MoE 研究向；Nanbeige 是可单机集群部署的 33B dense 商用友好权重。</td></tr>
   </table>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">HF ~96 downloads / 6 likes（抓取时）</span>
-    <span class="pill">社区 demo 征集已上线</span>
-    <span class="pill">一线中文科技媒体专稿仍少</span>
+    <span class="pill">@nanbeige 官宣帖 ≈52 万浏览 / 3.0k 赞 / 367 转发</span>
+    <span class="pill">HF ≈601 likes</span>
+    <span class="pill">讨论区已有人要 FP8 与技术报告</span>
+    <span class="pill">独立复现榜稀缺</span>
   </div>
-  <p>「读懂AI时代」等聚合站有中文解读；量子位/机器之心专稿未检索到。官网开始挂社区创作（历史阅读、一句话做 App、港岛飞行等），热度仍早期。</p>
+  <p>热度集中在开源圈转发官宣；中文深度评测仍以智源整理为主。社区态度偏「先收下教师权重，等 3B 蒸馏和第三方 harness」。</p>
 
   <div class="media">
     <h4>媒体怎么说</h4>
-    <p class="mgroup">中文</p>
+    <p class="mgroup">官方 / 社区</p>
     <div class="mcard">
-      <p class="mhead">读懂AI时代 · 10-23</p>
-      <p class="mtitle"><a href="https://www.readaitime.com/news/2026-10-23/ybgma4ai">上海AI实验室发布753B智能体模型Atria Dawn，基于GLM-5.2</a></p>
-      <p class="mangle">把官方表翻译成「哪些项领先、哪些项落后」——比纯通稿有用。</p>
+      <p class="mhead">Hugging Face · Nanbeige</p>
+      <p class="mtitle"><a href="https://huggingface.co/Nanbeige/Nanbeige4.3-33B">Nanbeige4.3-33B</a> · <a href="https://huggingface.co/Nanbeige">组织页</a></p>
+      <p class="mangle">基准表、部署命令、许可以模型卡为准。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">补充</p>
-      <p class="mangle">量子位 / 机器之心 / IT之家专稿暂缺；第二条中文覆盖不足，标为待补。</p>
+      <p class="mhead">智源社区 AREX · 10-26</p>
+      <p class="mtitle"><a href="https://hub.baai.ac.cn/view/59048">BOSS 直聘旗下 Nanbeige 开源 Nanbeige4.3-33B…</a></p>
+      <p class="mangle">把「自评 vs 可核实仓库存在」写清楚，并拆了 JobBench 职业优劣——本轮中文最可用的二手源。</p>
     </div>
-    <p class="mgroup">海外 / 一手</p>
+    <p class="mgroup">海外</p>
     <div class="mcard">
-      <p class="mhead">官网 + HF + arXiv</p>
-      <p class="mtitle"><a href="https://atria-asi.ai/">atria-asi.ai</a> · <a href="https://huggingface.co/internlm/Atria-Dawn">internlm/Atria-Dawn</a> · <a href="https://arxiv.org/abs/2609.15818">2609.15818</a></p>
+      <p class="mhead">X 官方账号 @nanbeige</p>
+      <p class="mtitle"><a href="https://x.com/nanbeige/status/2114328933181333798">Excited to announce Nanbeige4.3-33B!</a></p>
+      <p class="mangle">英文发布主帖；截至成稿未见 The Verge / TechCrunch 级专稿。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 3 Fern ========== -->
+<article id="fern">
+  <h2><span class="tag t-mid">长上下文新实验室</span>Mirendil 发布 Fern 0.1：最高 1000 万 token 上下文，early access</h2>
+  <div class="verdict"><strong>结论：</strong>新美国实验室 <strong>Mirendil</strong>（团队背景含前 Anthropic / Google 等人）放出首个模型 <strong>Fern 0.1</strong>：从零预训练的 coding / AI R&amp;D 向模型，宣称架构与 serving 支持最高 <strong>10M tokens</strong>（约 23MB 代码、约半百万行）。现在只有 early access 申请，<strong>无公开权重、无标价</strong>。官网 RULER 长文说明写着：多数长度平均 100 例，<strong>10M 档只平均 20 例</strong>——这是小样本探路，不是可对标的独立大榜。Agentic 早期分（如 Terminal-Bench 4.0 官网图约 6.1%）也显示 0.1 仍是短轮后训练预览。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>官网新闻页标注 <strong>October 26, 2026, 8:00 am PT</strong>（约北京 10-26 23:00）：<a href="https://mirendil.com/news/introducing-fern/">Introducing Fern</a>。联合创始人 Behnam Neyshabur 等在 X 同步官宣。路线图还摆了更大的 Mirendil-Base-Large（0.5–2T）与 Base-XL（2–10T）预训练进度条。</p>
+
+  <h3>2. 产品介绍</h3>
+  <figure>
+    <img alt="Mirendil Fern 发布页 OG 图" src="https://oricter.github.io/product-radar-reports/2026-10-27/media/fern-og.jpg"/>
+    <figcaption>Mirendil 新闻页 OG 图（Introducing Fern）。</figcaption>
+  </figure>
+  <ul>
+    <li><strong>Fern 本体</strong>：基于 Mirendil-Base，尺寸口径约 <strong>0.1–0.5T</strong>；0.1 = 短轮后训练预览，官方称会频繁发新版本。</li>
+    <li><strong>卖点场景</strong>：审预训练 shard、从超长训练日志排错、通读完整 agent / 训练 trace、在更大 repo 上做 agentic coding——服务「造 AI 的人」而非通用聊天。</li>
+    <li><strong>长上下文证据（官方）</strong>：bits-per-byte 曲线画到约 10.2M tokens；RULER 多任务热力图到 10M，但 <strong>10M 单元格 n=20</strong>。</li>
+    <li><strong>早期 agentic 分（官网图，厂方整理）</strong>：Terminal-Bench 4.0 Fern ≈6.1，对照同图 Opus 5.5 ≈66.4、GPT-6 Astra ≈57.9——说明 0.1 还不是 coding 榜选手，叙事重心在「上下文宽度 + base 质量」。</li>
+    <li><strong>访问</strong>：early access 表单；成稿时无权重、无公开 API 价。</li>
+  </ul>
+  <div class="warn">官方暂无完整可下载的产品 demo 视频（发布以图文 + 交互图表为主）。务必把「10M 上下文」和「10M 评测只有 20 条」两句话一起读，避免被营销数字带跑。</div>
+  <div class="howto">
+    <strong>怎么看</strong>
+    打开 <a href="https://mirendil.com/news/introducing-fern/">新闻页</a>，先看 Context is intelligence 与 RULER 注脚，再看 Early post-training 的 agentic 表。若关心 base 质量，看 bits/byte 对比 DeepSeek-V4-Pro-Base / Nemotron 等——那是官方自测曲线。
+  </div>
+  <div class="ours">
+    <strong class="h">对我们意味着什么</strong>
+    与交互世界模型无直接对打，但「超长上下文吃完整 agent trace / 训练日志」会改变 AI R&amp;D 工作流预期。若公司日志与轨迹很长，可把 Fern 列入 early access 观察名单；当前 0.1 不适合当 coding 主力对标。
+  </div>
+
+  <h3>3. 导致什么影响（竞品对比）</h3>
+  <table>
+    <tr><th>对比谁</th><th>差在哪</th></tr>
+    <tr><td>Kimi / GLM 等长上下文开源或 API</td><td>Fern 强调<strong>从零预训练的 code/AI-R&amp;D base</strong> + 宣称 10M；多数现网产品窗口远低于此。开源可跑性 Fern 目前落后（无权重）。</td></tr>
+    <tr><td>GPT-6 / Claude / Gemini 长上下文档</td><td>通用助手生态成熟、工具链全；Fern 0.1 是垂直 early access，用宽度换通用完整度。</td></tr>
+    <tr><td>同页对照的 Beam / Inkling 等</td><td>官网 bits/byte 与 agentic 表把它们画在一起；属厂方拼盘，不是第三方统一榜。</td></tr>
+  </table>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">创始人官宣帖 ≈12 万浏览 / 1.6k 赞</span>
+    <span class="pill">Mirendil 官号同步帖热度中等</span>
+    <span class="pill">讨论焦点：10M 是否「真能用」/ 无权重</span>
+    <span class="pill">有人追问后训练是否也用长上下文数据</span>
+  </div>
+  <p>X 上技术号多抓住两句：预训练花费叙事（有帖称单人约 3.5 个月、百万美元量级）、以及「10M 很炫但 early access」。中文转述偏快讯，深度实测为零——符合「第一天只有官网图」的阶段。</p>
+
+  <div class="media">
+    <h4>媒体怎么说</h4>
+    <p class="mgroup">官方</p>
+    <div class="mcard">
+      <p class="mhead">Mirendil · Oct 26, 2026</p>
+      <p class="mtitle"><a href="https://mirendil.com/news/introducing-fern/">Introducing Fern</a></p>
+      <p class="mangle">唯一完整一手源；RULER n=20 @10M 写在页面 note 里。</p>
+    </div>
+    <p class="mgroup">海外快讯 / 社区</p>
+    <div class="mcard">
+      <p class="mhead">Digg · 10-26</p>
+      <p class="mtitle">Mirendil introduced Fern 0.1… access is still coming soon</p>
+      <p class="mangle">短讯，强调尚未开放。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">AnyRouter / Synthship 等英文快讯</p>
-      <p class="mtitle"><a href="https://anyrouter.dev/blog/releases/2026-10-24-atria-dawn">Atria Dawn · AnyRouter</a> · <a href="https://www.synthship.com/news/atria-dawn-open-weights-mit">Synthship: full weights under MIT, 512K</a></p>
-      <p class="mangle">聚合/快讯向，核实仍以 HF 与官网为准。</p>
+      <p class="mhead">X · @bneyshabur / @mirendil</p>
+      <p class="mtitle"><a href="https://x.com/bneyshabur/status/2114743262565339148">Introducing Fern… up to 10M tokens of context</a></p>
+      <p class="mangle">传播主入口；评论区已有人质疑评测设定与可用性。</p>
     </div>
   </div>
 </article>
 
 <footer>
-  产品雷达 · 2026-10-26 · 覆盖周五日报之后至周一早间 · 下一期继续按 seen.md 去重
+  产品雷达 · 2026-10-27 · 只覆盖约过去 24 小时 · 去重见 seen.md<br/>
+  上期：<a href="https://oricter.github.io/product-radar-reports/2026-10-26/">2026-10-26</a> · <a href="https://oricter.github.io/product-radar-reports/archive.html">往期目录</a>
 </footer>
 </div>
-<script>
-(function(){
-  if(!/^https?:$/.test(location.protocol)) return;
-  document.querySelectorAll('.vcard').forEach(function(a){
-    a.addEventListener('click',function(ev){
-      var wrap=a.parentNode, vid=(wrap.id||'').replace('vw-','');
-      if(!vid) return;
-      ev.preventDefault();
-      var btn=document.querySelector('button[data-vid="'+vid+'"]');
-      if(btn) playInline(btn); 
-    });
-    var h=a.querySelector('.hint'); if(h) h.textContent='▶ 点击在页内播放';
-  });
-  document.querySelectorAll('.vid-actions .note').forEach(function(n){n.textContent='（页内播不了就点「在 YouTube 打开」）';});
-})();
-</script>
 </body>
 </html>
