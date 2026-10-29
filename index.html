@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AI 产品情报 · 2026-10-28 · Google Genie 4 / Liquid LFM3 / Apple iWork AI 助手</title>
+<title>AI 产品情报 · 2026-10-29 · Gemini 4 Carbon / Copilot Fusion / 蚂蚁 Ling-3.1-flash</title>
 <style>
   :root {
     --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
@@ -108,285 +108,257 @@
 </head>
 <body>
 <div class="wrap">
-<h1>AI 产品情报 · 2026-10-28（周三）</h1>
-<div class="cover"><strong>本版覆盖媒体 / 一手源约 14 家（外文 6 / 中文 4 / 官方 5）</strong>：外文是 TechCrunch、The Verge、VentureBeat、MarkTechPost、MacStories、ITmedia；中文是 IT之家、华尔街见闻、每日经济新闻、新浪财经转环球市场；官方是 Google DeepMind 博客 / Google Blog、Liquid AI 博客 / Hugging Face、Apple Newsroom。量子位 / 机器之心 / 新智元成稿时未见 Genie 4 专稿——已用 IT之家 + 华尔街见闻顶上。</div>
+<h1>AI 产品情报 · 2026-10-29（周四）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 12 家（外文 5 / 中文 3 / 官方 4）</strong>：外文是 The Verge、VentureBeat、Artificial Analysis（经媒体转述）、Reuters/CNA 通稿链；中文是 IT之家、量子位、智源社区 / 艾瑞网转载；官方是 Google Blog、GitHub Changelog、Hugging Face inclusionAI、皮查伊 X 主帖。机器之心 / 新智元成稿时未见 Carbon / Fusion 专稿——已用 IT之家 + VentureBeat 顶上。Genie 4 昨日已报，今日无实质新开放范围，不重复。</div>
 <div class="meta">
-  <p><strong>时间范围</strong>：美东约 2026-10-26 晚 → 2026-10-27 晚（对应北京 10-27～10-28 早上）；成稿北京时间 2026-10-28 约 09:15。</p>
-  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 Genie 4 / LFM3 / Apple Creator Studio 三条官方时间戳 → 读 DeepMind / Liquid / Apple 一手 → 交叉 TechCrunch、The Verge、VentureBeat、IT之家、华尔街见闻与 X 热度 → 按世界模型 / 边缘开源多模态 / 消费级创作套件优先级成稿。</p>
-  <p><strong>去重说明</strong>：昨日 GPT-6.1 Terra、Nanbeige4.3-33B、Fern 0.1 不重复；更早 Helix World、Matrix-Game 4.0、EdenLive、JST-2、Cosmos Sim、Claude Duet、Micro-World 2、Hy-Nomas、Kimi K3.1 Pro、λ0、Dessa、Agensh、Atria Dawn、Nemotron Bolt 等不重复。NVIDIA×Meta Muse 扩合作属基建投资通稿，不当产品新条；OpenAI×Oracle 企业套件同日有新闻，优先级低于世界模型主线，本版不单开。</p>
+  <p><strong>时间范围</strong>：美东约 2026-10-28 晚 → 2026-10-29 早上（对应北京 10-28 白天到 10-29 早上）；成稿北京时间 2026-10-29 约 09:20。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 Gemini 4 Carbon / Copilot Fusion / Ling-3.1-flash-1019 → 读 Google Blog、GitHub Changelog、HF 模型卡一手 → 交叉 The Verge、VentureBeat、IT之家、量子位与 X 热度 → 按前沿闭源旗舰 / 开发者编排层 / 开源 Agent 权重优先级成稿。</p>
+  <p><strong>去重说明</strong>：昨日 Genie 4、LFM3、Apple Creator Studio 不重复；更早 GPT-6.1 Terra、Kimi K3.1 Pro、Hy-Nomas、Nemotron Bolt、可灵 4.0、Matrix-Game 4.0、EdenLive、JST-2、Claude Duet、Micro-World 2、Helix World 等不重复。同日 GitHub Replica 开源原型工具证据足但热度低于 Fusion，本版并入 Fusion 条末脚注，不单开。Nemotron 3.5 Transcribe、OpenAI Dot 发 iMessage 等备选证据够但优先级低于本三条。</p>
 </div>
 
 <div class="alert">
   <strong>今日要点（先看这三条）</strong>
   <ol>
-    <li><strong>Google DeepMind 发布 Genie 4</strong>：研究预览世界模型；键盘导航 + 自然语言实时改场景；首次原生音视频同生成；连贯场景官方称最长约 2 分钟（Genie 3 的约两倍）。Gemini 当「导演」、Genie 渲世界。目前只给可信测试者，随后几周进 Google AI Ultra 的 Project Genie 与 Gemini API / AI Studio 早期伙伴。DeepMind 官推约 <strong>164 万</strong>浏览；「Genie 4」近 24h X 帖量约 <strong>7700</strong>。</li>
-    <li><strong>Liquid AI 开源 LFM3</strong>：约 2B 档六模型家族（文本 / 视觉 / 音频 / omni / 两个决策），共用 1.7B 骨干；自称单卡可微调、端侧可跑。厂方称 WebArena-Verified 等 agent 自测能打更大模型——数字全是 Liquid 自测。</li>
-    <li><strong>Apple 给 Keynote / Pages / Numbers 上 AI 助手 + MCP</strong>：Creator Studio 十一月更新；助手基于 Apple + OpenAI，理解当前文档；macOS 27 起第三方 Agent 可经 MCP 读写三件套。Beta、仅美式英语、要 Apple Intelligence 设备。</li>
+    <li><strong>Google 发布 Gemini 4 Carbon</strong>：Argon 两周后的下一档前沿模型；AA Index v5.0 自报 <strong>59</strong> 登顶（Opus 5.5=58、Astra=57）。主打网络安全 + 长程 coding/agent；先给 Fairwind 网络安全防御伙伴，开发者暂进不去。价与 Argon 同入门 <strong>$2/$10</strong>（期满后 $4/$20）。皮查伊主帖约 <strong>332 万</strong>浏览。</li>
+    <li><strong>GitHub 正式推出 Copilot Fusion</strong>（Universe 2026）：不是新模型，是<strong>多模型路由 + 编排</strong>；Fusion Max 在 AA Coding Agent Index 得 <strong>60</strong>（距 Claude Code×Opus 5.5 Max 的 62 差 2 分），独立评测平均任务成本约一半、token 约一半。付费计划限时模型费用 <strong>7 折</strong>。全计划 GA。</li>
+    <li><strong>蚂蚁百灵开源 Ling-3.1-flash-1019</strong>（MIT）：560B 总参 / 25B 激活 / 1M 上下文；AA Index v4.3.2 自报 41→<strong>44</strong>；同步放 base 基座。主打 Personal Agent 长程任务；量子位称与灵光 2.0「能管事」产品线联动。</li>
   </ol>
 </div>
 
 <div class="toc">
-  <a href="#genie4"><span class="tag t-hot">世界模型</span>Google DeepMind 发布 Genie 4</a>
-  <a href="#lfm3"><span class="tag t-mid">边缘开源多模态</span>Liquid AI 开源 LFM3 六模型家族</a>
-  <a href="#apple"><span class="tag t-mid">消费创作套件</span>Apple 为 Keynote / Pages / Numbers 上 AI 助手与 MCP</a>
+  <a href="#carbon"><span class="tag t-hot">前沿闭源旗舰</span>Google 发布 Gemini 4 Carbon</a>
+  <a href="#fusion"><span class="tag t-hot">开发者编排</span>GitHub 推出 Copilot Fusion</a>
+  <a href="#ling"><span class="tag t-mid">开源 Agent</span>蚂蚁百灵开源 Ling-3.1-flash-1019</a>
 </div>
 
-<!-- ========== 1 Genie 4 ========== -->
-<article id="genie4">
-  <h2><span class="tag t-hot">世界模型</span>Google DeepMind 发布 Genie 4：可听、可改、可实时「导演」的交互世界</h2>
-  <div class="verdict"><strong>结论：</strong>过去 24 小时对世界模型赛道最硬的一条。DeepMind 以<strong>研究预览</strong>放出 <strong>Genie 4</strong>：用户用键盘导航 / 转镜头，再用自然语言中途改天气、加角色、推事件；模型首次<strong>原生同步生成</strong>环境音、音乐与可对话角色。Gemini 家族（含 Omni 锚定外观、3.8 Flash 在环规划、实验里的 Gemini 4 Argon）负责推理与连贯，Genie 负责像素级世界。官方称连贯场景最长约 <strong>2 分钟</strong>（前代约 1 分钟）。产品形态仍未定；团队公开承认长时漂移、音频准度、世界内文字可读性未解。公开可用性：可信测试者 → 未来几周 Google AI Ultra / Project Genie + Gemini API / AI Studio 早期伙伴。</div>
+<!-- ========== 1 Carbon ========== -->
+<article id="carbon">
+  <h2><span class="tag t-hot">前沿闭源旗舰</span>Google 发布 Gemini 4 Carbon：网络安全 + 长程工程，先只给防守方</h2>
+  <div class="verdict"><strong>结论：</strong>过去 24 小时最硬的一条闭源旗舰更新。Google 在美东 <strong>2026-10-28</strong> 宣布 <strong>Gemini 4 Carbon</strong>——Argon 公开两周后的「下一档」；在更新后更难的 <strong>Artificial Analysis Intelligence Index v5.0</strong> 上以 <strong>59</strong> 排第一（Claude Opus 5.5=58、GPT-6 Astra=57、Argon=50）。叙事重心从「通用更强」收窄到<strong>网络安全防御全生命周期</strong>（找洞 / 验证可否利用 / 出补丁）与<strong>可持续多日的长程 agent 工程</strong>。开放策略刻意保守：本周起只给 Fairwind 计划里的部分网络安全防御伙伴，配合美国政府自愿预发布测试；开发者 / 企业 / 消费者「尽快」再开。入门价与 Argon 同为 <strong>$2 / $10</strong> 每百万 token（缓存输入再打 95% 折）；优惠期结束后升至 $4 / $20——Carbon 的优惠截止日<strong>官方未写死</strong>（Argon 是 11-30）。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>美东 <strong>2026-10-27</strong>（北京约 10-27 深夜至 10-28 凌晨），DeepMind 发博客 <a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/">Genie 4: A new generation of world simulation</a>；Google Blog 同步短讯 <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/">Introducing Genie 4</a>。TechCrunch 9:30 AM PDT 专稿；皮查伊与 DeepMind 官号同日推演。</p>
+  <p>Google Blog 长文 <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Introducing Gemini 4 Carbon</a>（作者 Koray Kavukcuoglu，DeepMind SVP / Google 首席 AI 架构师，标注 Oct 28, 2026）。皮查伊同日发帖；The Verge（Emma Roth，8:03 PM UTC）、VentureBeat（Carl Franzen，11:25 am PT）、IT之家（10-29 04:51 北京）同步跟进。Reuters 通稿被 CNA / Investing.com 等转载。</p>
 
   <h3>2. 产品介绍</h3>
   <figure>
-    <img alt="DeepMind Genie 4 发布页主视觉" src="https://oricter.github.io/product-radar-reports/2026-10-28/media/genie4-hero.jpg"/>
-    <figcaption>DeepMind 发布页社交主视觉（2026-10-28 抓取）。</figcaption>
+    <img alt="Google Blog Gemini 4 Carbon 社交主视觉" src="media/carbon-google-og.png"/>
+    <figcaption>Google Blog 发布页社交主视觉（2026-10-29 抓取）。</figcaption>
   </figure>
   <figure>
-    <img alt="TechCrunch Genie 4 报道配图" src="https://oricter.github.io/product-radar-reports/2026-10-28/media/genie4-tc.png"/>
-    <figcaption>TechCrunch 报道头图（标注 Image Credits: Google DeepMind）。</figcaption>
+    <img alt="VentureBeat 对 Gemini 4 Carbon 的配图" src="media/carbon-vb.png"/>
+    <figcaption>VentureBeat 报道配图（标注 Credit: VentureBeat made with OpenAI ChatGPT-Images-2.5）。</figcaption>
+  </figure>
+  <figure>
+    <img alt="皮查伊 X 主帖配图" src="media/carbon-sundar.jpg"/>
+    <figcaption>@sundarpichai 主帖配图（约 332 万浏览）。</figcaption>
   </figure>
   <ul>
-    <li><strong>控制方式</strong>：官方写明演示用<strong>标准键盘</strong>做导航与相机，再用<strong>文本提示</strong>实时改场景——和「WASD + 文字指令」路线同族，不是逐帧 6-DoF 相机轨迹接口。</li>
-    <li><strong>四大卖点（官方口径）</strong>：① 实时自然语言塑形世界；② 物理与人物动作更逼真；③ 原生音频（环境 / 音乐 / 互动对话）；④ 与 Gemini 闭环做多步事件与机器人仿真实验（例：Apptronik Apollo 下棋任务拆步）。</li>
-    <li><strong>时长</strong>：媒体与简报口径「连贯场景最长约 2 分钟」，约为 Genie 3 两倍；不等于两分钟内物体永不漂移。</li>
-    <li><strong>安全</strong>：生成音视频带 SynthID；先可信测试者再放宽。</li>
-    <li><strong>局限（官方自述）</strong>：长会话细节 / 物体持久性会漂；复杂物理、实时音频准度、世界内文字、空间精度、长期一致性仍是研究中。</li>
+    <li><strong>定位</strong>：官方自称「our strongest model」，相对两周前的 Gemini 4 Argon；参数量 / 架构细节<strong>未披露</strong>，也无技术报告。</li>
+    <li><strong>综合榜</strong>：AA Index v5.0 = <strong>59</strong>（独立评测方确认；v5 约 60% 题目为私有或答案不公开，不宜与旧版 index 混比）。</li>
+    <li><strong>网络安全三连（官方称无护栏评测）</strong>：SEC-bench Pro <strong>88.2%</strong>（找洞）· ExploitGym <strong>54.8%</strong>（验证可否利用）· CWE-bench <strong>71.0%</strong>（出补丁）。内部称生成安全代码成功率相对 Argon 超 2×；Chrome 团队称高质量补丁相对「另一实验室前沿模型」超 10×——对手未点名。</li>
+    <li><strong>长程工程</strong>：内部称可「跑数日」穿越死胡同，做大型代码库根因定位与底层补丁。WebDev Arena +89 Elo → #4（1768）。</li>
+    <li><strong>对齐与诚实</strong>（厂方内部数）：Terminal-Bench 4.0 作弊成功 0.0% / 尝试 0.4%；高严重失准警报约降 80%；无依据声明约减半；过度执行 −26%、服务不足 −29%；Gray Swan 间接提示注入攻击成功率 0.0%（Argon 曾为 0.7%）。</li>
+    <li><strong>独立评测的另一面（VentureBeat 转 Artificial Analysis）</strong>：Coding Agent Index 上 Carbon（经 Antigravity CLI）=59，Claude Code×Opus 5.5 仍领跑 62；AA-Omniscience 总分第一但幻觉率从 Argon 的 4% 升到 <strong>11%</strong>；FrontierSWE 2 上 Carbon 61.2% <strong>落后</strong> Astra 65.5% / Opus 62.3%；OSWorld 离线子集上 Opus 87.2% 高于 Carbon 81.5%。——登顶不等于全能。</li>
+    <li><strong>怎么用</strong>：现在用不了（除非你是 Fairwind 网络安全伙伴）。产品入口官方点名后续会进「product surfaces」；前 Windsurf CEO / Google Antigravity 负责人 Varun Mohan 在 X 称内部 Antigravity 已在用，先 Fairwind 再扩大——无公开日期。</li>
   </ul>
-  <div class="videos">
-    <h4>页内演示</h4>
-    <div class="vid">
-      <p class="vlabel"><span class="who">谁发的：@GoogleDeepMind 主帖官方演示视频（720p，本地托管）</span>
-      <span class="why">看完搞懂：官方怎么包装「走进可交互世界」——画面、人物反应与声景同出；这是产品预告拼接，不是你本地键盘实测。</span></p>
-      <video controls playsinline preload="metadata" poster="https://oricter.github.io/product-radar-reports/2026-10-28/media/genie4-poster.jpg" src="https://oricter.github.io/product-radar-reports/2026-10-28/media/genie4-demo.mp4"></video>
-    </div>
-    <div class="vid">
-      <p class="vlabel"><span class="who">谁发的：@GoogleDeepMind 线程后续能力短片（720p）</span>
-      <span class="why">看完搞懂：他们强调的四块升级——拟真、物理、实时改场景、原生音频——各自长什么样。</span></p>
-      <video controls playsinline preload="metadata" poster="https://oricter.github.io/product-radar-reports/2026-10-28/media/genie4-poster2.jpg" src="https://oricter.github.io/product-radar-reports/2026-10-28/media/genie4-demo2.mp4"></video>
-    </div>
-  </div>
+  <div class="warn">成稿未找到可下载的独立官方产品演示长视频；Google Blog 以基准图文为主。网络安全外部榜「without guardrails」——上线后护栏打开时分数不一定复现。未见面向普通开发者的独立第三方桌面长测。</div>
   <div class="howto">
-    <strong>怎么看（8 分钟）</strong>
-    打开 <a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/">DeepMind 长文</a>，先看四段「real-time interactions」录屏与提示词展开；再读 Limitations / Future Work（混合世界模型）。媒体事实核对可读 <a href="https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/">TechCrunch</a> 与 <a href="https://www.ithome.com/1/018/711.htm">IT之家</a>。想看「对游戏股意味着什么」的谨慎解读，看 <a href="https://wallstreetcn.com/articles/3784604">华尔街见闻</a>。
+    <strong>怎么看（10 分钟）</strong>
+    先读 <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Google Blog</a> 的网络安全三段 + 价格脚注；再读 <a href="https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited">VentureBeat</a> 里「独立测试把 coding 进步与知识工作短板拆开」那几节——比官博更敢写落后项。中文事实摘要看 <a href="https://www.ithome.com/1/019/240.htm">IT之家</a>。The Verge 短讯：<a href="https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier">这里</a>。
   </div>
   <div class="ours">
     <strong class="h">对我们意味着什么</strong>
-    这是直接竞品坐标系里的「闭源旗舰世界模型」更新：控制接口是键盘 + 文本（贴近我们可打的 WBench Full 设定），并把<strong>原生音频 + Gemini 在环导演</strong>抬成标配叙事。短板公开写在官博上——长时一致性、文字可读、物理准度——恰是开源/自研可差异化的点。产品化仍是「研究预览 → Ultra 订阅」，短期内不会变成人人可调的 API 游戏引擎；但评测与 demo 话术会被整条赛道跟风。
+    与交互世界模型无直接对打，但信号清晰：① 闭源旗舰开始用「网络安全 + 长程工程」差异化，而不只刷综合分；② 发布节奏变成「两周一档」但仍先锁 Fairwind——能力领先不等于你能调用；③ AA v5 换题后 Google 夺回第一，评测口径战争会继续。数据生产侧若有安全审计 / 补丁生成工具链需求，可把 Carbon 列入「等开放再评」名单，现阶段继续用已公开的 Argon / 其它模型。
   </div>
 
   <h3>3. 导致什么影响（竞品对比）</h3>
   <table>
     <tr><th>对比谁</th><th>差在哪（有证据）</th></tr>
-    <tr><td>自家 Genie 3 / Project Genie</td><td>官方与 TechCrunch：更拟真、加原生音频、自由形式中途编辑、连贯时长约翻倍。产品入口仍走 Project Genie 路线。</td></tr>
-    <tr><td>Runway GWM Worlds 2</td><td>TechCrunch 点名：数月前已上可玩世界 + 音频。Genie 4 押宝 Gemini 导演闭环与 Ultra 分发；Runway 更偏创作工具链。独立横评未出。</td></tr>
-    <tr><td>Matrix-Game 4.0 / EdenLive / Helix World（已报）</td><td>开源或可本机跑、强调实时帧率与消费卡；Genie 4 闭源旗舰、画质/音频叙事更强，但你现在还进不去。Hy-Nomas 等开源交互视频世界模型继续占「可复现」一侧。</td></tr>
-    <tr><td>AMD Micro-World 2 / Cosmos Sim-*（已报）</td><td>偏研究卡 / 机器人仿真可商用权重；Genie 4 更偏消费级「可玩世界 + 创意预演」叙事，机器人只是实验支线。</td></tr>
-    <tr><td>行业整合背景</td><td>TechCrunch：World Labs 被 AMD 收购、亚马逊洽谈 Decart、Rivian 收购 Third Dimension——世界模型赛道从 demo 内战进入并购整合期。</td></tr>
+    <tr><td>自家 Gemini 4 Argon</td><td>官方 17 项对照全涨；AA Index 50→59。Argon 已有公开 API / 产品入口与明确涨价日（12-1）；Carbon 更强但<strong>还进不去</strong>，优惠截止日未写。</td></tr>
+    <tr><td>Claude Opus 5.5 / GPT-6 Astra</td><td>The Verge / AA：综合 Index Carbon 59 略胜 Opus 58、Astra 57。但 Coding Agent、FrontierSWE、OSWorld 等分项 Opus / Astra 仍有领先（VentureBeat 表）。</td></tr>
+    <tr><td>Kimi K3.1 Pro 等开源前十</td><td>中文讨论指出 AA v5 后国产开源多数掉出前十；Carbon 是闭源登顶，不是开源替代关系。</td></tr>
+    <tr><td>「专职网络安全模型」叙事</td><td>Argon 已强调找洞与补丁；Carbon 是把同一叙事数字再抬一截，并明确「先给防守方」的发布伦理——和一味公开 API 的竞品形成对照。</td></tr>
   </table>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">@GoogleDeepMind 主帖 ≈164 万浏览 / 1.49 万赞 / 1606 转发</span>
-    <span class="pill">@sundarpichai ≈100 万浏览 / 1.28 万赞</span>
-    <span class="pill">「Genie 4」近 24h X 帖量 ≈7700</span>
-    <span class="pill">中文：IT之家 / 华尔街见闻 / 每经早参；量子位等成稿未见专稿</span>
+    <span class="pill">@sundarpichai 主帖 ≈332 万浏览 / 2.47 万赞 / 1919 转发</span>
+    <span class="pill">「Gemini 4 Carbon / Gemini Carbon」10-28 当天 X 帖量 ≈1.19 万</span>
+    <span class="pill">中文：IT之家专稿；量子位 / 机器之心成稿未见专稿</span>
+    <span class="pill">X 新闻故事聚合：Elon 称 Impressive（二手摘要）</span>
   </div>
-  <p>X 新闻故事聚合标题把 Justine Moore、Ethan Mollick 等早期测试者夸「单提示几分钟做出可交互世界」——属二手摘要，未见完整第三方桌面长测。批评与谨慎点集中在：研究预览进不去、2 分钟仍短、漂移与文字问题官方已认。华尔街见闻明确写「尚不能等同成熟游戏开发工具、勿据此断言游戏业被取代」。</p>
+  <p>舆论主调是「又登顶了，但你用不了」。赞美点：网络安全三连、两周迭代节奏、价格不涨。质疑点：Fairwind 锁门、独立榜上幻觉率上升、部分 SWE / computer-use 分项未赢、Chrome「10×」对手匿名。真正开发者口碑要等公开 API。</p>
 
   <div class="media">
     <h4>媒体怎么说</h4>
     <p class="mgroup">官方 / 一手</p>
     <div class="mcard">
-      <p class="mhead">Google DeepMind · 2026-10-27</p>
-      <p class="mtitle"><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/">Genie 4: A new generation of world simulation</a></p>
-      <p class="mangle">能力、局限、SynthID、机器人实验以这篇为准。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">Google Blog · Oct 27</p>
-      <p class="mtitle"><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/">We’re announcing Genie 4…</a></p>
-      <p class="mangle">对外短讯版；链回 DeepMind 长文。</p>
+      <p class="mhead">Google Blog · Koray Kavukcuoglu · Oct 28, 2026</p>
+      <p class="mtitle"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Gemini 4 Carbon: our next frontier model</a></p>
+      <p class="mangle">能力、Fairwind、价格脚注以这篇为准。</p>
     </div>
     <p class="mgroup">海外</p>
     <div class="mcard">
-      <p class="mhead">TechCrunch · Rebecca Bellan · 9:30 AM PDT Oct 27</p>
-      <p class="mtitle"><a href="https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/">Google’s Genie 4 world model adds audio…</a></p>
-      <blockquote>Details and objects can drift the longer a simulation runs… audio… and any in-world text will be legible.</blockquote>
-      <p class="mangle">简报会细节最全：对标 Runway、并购背景、电影预演用例、团队自认短板都写到了。</p>
+      <p class="mhead">The Verge · Emma Roth · Oct 28, 8:03 PM UTC</p>
+      <p class="mtitle"><a href="https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier">Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity</a></p>
+      <p class="mangle">短讯清楚写出对 Opus / Astra 的 Index 领先与 Fairwind 限制。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">VentureBeat · Carl Franzen · 11:25 am PT Oct 28</p>
+      <p class="mtitle"><a href="https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited">Google unveils Gemini 4 Carbon… access is limited</a></p>
+      <blockquote>Independent testing also reveals tradeoffs… records a higher hallucination rate than Argon on a factual-knowledge test.</blockquote>
+      <p class="mangle">本版竞品对比与「登顶不等于全能」主要依据这篇；表格式拆分最完整。</p>
     </div>
     <p class="mgroup">中文</p>
     <div class="mcard">
-      <p class="mhead">IT之家 · 远洋 · 10-28 07:04</p>
-      <p class="mtitle"><a href="https://www.ithome.com/1/018/711.htm">谷歌推出最强世界模型 Genie 4…首次实现音视频同步生成</a></p>
-      <p class="mangle">中文事实摘要完整；「最强」是标题修辞，正文仍写研究预览。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">华尔街见闻 · 李丹 · 10-28</p>
-      <p class="mtitle"><a href="https://wallstreetcn.com/articles/3784604">谷歌推出最强世界模型Genie 4…游戏股再迎AI冲击</a></p>
-      <p class="mangle">把「游戏冲击」叙事降温：能力边界、产品化差距写得比多数转载清楚。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">每日经济新闻 · 全球科技早参 · 10-28 08:09</p>
-      <p class="mtitle"><a href="https://www.nbd.com.cn/articles/2026-10-28/4622854.html">谷歌推出Genie 4…可实时生成交互式虚拟环境</a></p>
-      <p class="mangle">短讯位，适合扫一眼。</p>
+      <p class="mhead">IT之家 · 小泵 · 10-29 04:51</p>
+      <p class="mtitle"><a href="https://www.ithome.com/1/019/240.htm">谷歌最强 AI 模型：Gemini 4 Carbon 登顶…「专职」做网络安全</a></p>
+      <p class="mangle">中文事实摘要完整；「最强」「专职」是标题修辞，正文仍写 Fairwind 渐进开放。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 2 LFM3 ========== -->
-<article id="lfm3">
-  <h2><span class="tag t-mid">边缘开源多模态</span>Liquid AI 开源 LFM3：约 2B 档「文本+视觉+音频+决策」全家桶</h2>
-  <div class="verdict"><strong>结论：</strong>边缘 / 端侧赛道值得记的一条产品发布。Liquid AI 在 <strong>2026-10-27</strong> 放出 <strong>LFM3</strong>：六个约 2B 参数开源权重模型，共用 <strong>LFM3-1.7B-Base</strong>（预训练约 22T token），覆盖文本 Agent、视觉（含视频）、音频（18 语）、Omni、以及两个「决策」模型 d1 / d1-Omni。叙事是「专用小模型 + 单卡微调 + 端侧部署」，不是再堆一个通用聊天旗舰。VentureBeat / MarkTechPost / HF 博客均有稿；跑分与「打赢 Qwen3.5-9B 的 WebArena」等<strong>全是厂方自测</strong>，第三方独立 harness 成稿时仍少。</div>
+<!-- ========== 2 Fusion ========== -->
+<article id="fusion">
+  <h2><span class="tag t-hot">开发者编排</span>GitHub 推出 Copilot Fusion：不选模型，让系统帮你路由</h2>
+  <div class="verdict"><strong>结论：</strong>GitHub Universe <strong>2026-10-28</strong> 最硬的产品条。 <strong>Copilot Fusion</strong> 正式 GA——它<strong>不是</strong>新基础模型，而是运行时把 Project HydraFusion 多模型编排 + 自动选模合到一起：你只选 Standard / High / Max 三档「努力程度」，系统按任务决定用哪个模型、走 Single / Cascade / Critique 哪条工作流。Artificial Analysis Coding Agent Index：Fusion Max = <strong>60</strong>（Claude Code×Opus 5.5 Max = 62），平均任务成本约 <strong>$5.59 vs $11.42</strong>（约一半），token 约一半，GitHub 另称耗时约少 40%。付费 Copilot 用户限时模型费用 <strong>30% 折扣</strong>。VS Code / Copilot App / CLI / JetBrains 全计划可用。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>Liquid 官方博客 <a href="https://www.liquid.ai/blog/lfm3">Introducing LFM3</a>（标注 OCT 27, 2026）；Hugging Face 同步 <a href="https://huggingface.co/blog/LiquidAI/lfm3">Build specialized multimodal models with LFM3</a> 与 <a href="https://huggingface.co/collections/LiquidAI/lfm3">LFM3 Collection</a>。许可走 LFM Open License：年收入约 ≤$1000 万可免费商用，之上需商业许可——落地前要核对。</p>
+  <p>GitHub Changelog <a href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/">Route and orchestrate models with GitHub Copilot Fusion</a>（Oct 28, 2026）。Universe 主叙事见 <a href="https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/">Evolving every layer of the stack</a>。VentureBeat 同日深度稿（含对 CPO Mario Rodriguez 采访）；The Next Web / Runtime Wire 等跟进。Nadella 在会上推「完成的工作，不是更多代码」。</p>
 
   <h3>2. 产品介绍</h3>
   <figure>
-    <img alt="Liquid AI LFM3 官方 OG 图" src="https://oricter.github.io/product-radar-reports/2026-10-28/media/liquid-lfm3-og.jpg"/>
-    <figcaption>Liquid AI 博客 OG 图。</figcaption>
+    <img alt="GitHub Copilot Fusion Changelog 主视觉" src="media/fusion-gh.png"/>
+    <figcaption>GitHub Changelog 发布页主视觉（2026-10-29 抓取）。</figcaption>
   </figure>
   <figure>
-    <img alt="MarkTechPost 对 LFM3 的报道配图" src="https://oricter.github.io/product-radar-reports/2026-10-28/media/liquid-mt.jpg"/>
-    <figcaption>MarkTechPost 报道配图。</figcaption>
+    <img alt="VentureBeat 对 Copilot Fusion 的配图" src="media/fusion-vb.png"/>
+    <figcaption>VentureBeat 报道配图。</figcaption>
   </figure>
   <ul>
-    <li><strong>六件套</strong>：LFM3-1.7B（文本，256K 上下文）· LFM3-VL-2B（图/视频）· LFM3-Audio-2B · LFM3-Omni-2B · d1-2B · d1-Omni-2B。</li>
-    <li><strong>架构卖点</strong>：三混合层（短卷积 + 滑动窗注意力 + 全局注意力）；厂方称相对 LFM2.5-2.6B 参数少约 35% 仍更强。</li>
-    <li><strong>Agent 自测高光（务必标注厂方）</strong>：WebArena-Verified <strong>38.42</strong> vs Qwen3.5-9B 28.94；AutomationBench 公有评测 <strong>41.29</strong> vs 15.10。MacPaw 引述：65 个 macOS 日常 agent 任务上 1.7B 成功率 64% vs Qwen3.5-2B 的 48%。</li>
-    <li><strong>怎么跑</strong>：HF 权重 + Playground + Liquid API；宣称 llama.cpp / MLX / vLLM / SGLang 等 day-0；AMD / Qualcomm / Ambarella / NVIDIA 等列为启动伙伴。</li>
+    <li><strong>怎么用</strong>：模型选择器里选 Copilot Fusion → 再选努力档：Standard（日常）/ High（难任务）/ Max（最难推理）。</li>
+    <li><strong>三种编排</strong>：Single（直接一个模型）· Cascade（便宜模型先写，质量门不过再升级）· Critique（A 起草 → B 审 → A 改）。</li>
+    <li><strong>模型池</strong>：AA 观察到含 Opus 5.5、Sonnet 5.5、GPT-6 Astra、GPT-6 Sol 等；企业可按策略禁用某模型仅对 Fusion 生效。</li>
+    <li><strong>计费</strong>：按实际调用的底层模型标准价计；付费计划限时 Fusion 模型费 7 折。另有 Enterprise「按用量预算」新购法（无每人每月固定额度）。</li>
+    <li><strong>厂方 vs 独立</strong>：AA 测得约 51% 成本优势；Nadella / 厂方 DeepSWE 自测称最高可省约 77%——两套口径，勿混为一谈（VentureBeat 已拆开写）。</li>
   </ul>
-  <div class="warn">官方长文以图文与基准表为主；成稿未找到可下载的独立产品宣传长视频。所有「打赢更大模型」数字来自 Liquid 博客表格与合作方引言，读分时连评测设定一起看。</div>
+  <div class="warn">成稿未找到可稳定下载的官方演示 mp4；Changelog 页有短视频嵌入但抓取工具拿不到可播文件。请直接打开 <a href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/">Changelog</a> 看页内演示：选 Fusion → 看它如何分析任务并切换模型。Benchmark 成本 ≠ 你们团队算上人工审查后的真实工程成本。</div>
   <div class="howto">
     <strong>怎么看</strong>
-    打开 <a href="https://www.liquid.ai/blog/lfm3">官方博客</a> 滚完六模型表与 WebArena / AutomationBench 行；权重去 <a href="https://huggingface.co/collections/LiquidAI/lfm3">HF Collection</a>。英文产品解读看 <a href="https://venturebeat.com/technology/liquid-ais-new-lfm3-models-put-browser-agents-voice-commands-and-image-recognition-onto-enterprise-controlled-devices">VentureBeat</a>。
+    打开 Changelog 滚完三档努力 + 三种编排；再读 <a href="https://venturebeat.com/orchestration/github-copilot-fusion-mixes-models-to-achieve-near-opus-5-5-coding-performance-at-half-the-per-task-cost">VentureBeat</a> 里 AA 分项（Terminal-Bench 领先、FrontierCode 落后）和企业治理段落。想顺带看同日开源的设计系统原型工具，打开 <a href="https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool/">Replica</a>（MIT，绑你们自己的组件库，见文末脚注）。
   </div>
   <div class="ours">
     <strong class="h">对我们意味着什么</strong>
-    与交互世界模型无直接对打，但「端侧多模态 Agent + 单卡专业化」会影响数据生产工具链选型：标注、质检、本地工具调用更可能跑小模型。若内部要便宜的浏览器/桌面自动化基线，可把 LFM3-1.7B 列入候选，先复现 WebArena / 自有任务再信厂方表。
+    信号是「模型战争」之上又叠了一层「编排战争」：谁帮用户省选型焦虑、把任务成本压下去，谁就能占开发者入口。数据生产 / 内部工具链若已在用 Copilot，可直接开 Fusion High 做对照实验（同任务比 token 与返工率）。与世界模型无直接竞品，但 Agent 写代码、改仓库、出 PR 的基础设施会间接影响我们标注与评测流水线的工具选型。
   </div>
 
   <h3>3. 导致什么影响（竞品对比）</h3>
   <table>
-    <tr><th>对比谁</th><th>差在哪</th></tr>
-    <tr><td>Qwen3.5 小杯 / Gemma 4 E 系列</td><td>Liquid 自测在部分 agent / IF 项领先同档甚至更大杯；知识与 agentic coding 仍承认大模型更强。</td></tr>
-    <tr><td>Nemotron 3.5 Bolt 等端侧对话小模型（已报）</td><td>Bolt 偏游戏角色 / ACE；LFM3 更强调工具调用、浏览器 Agent、视觉与决策结构化输出全家桶。</td></tr>
-    <tr><td>云端旗舰 GPT-6 / Claude / Gemini</td><td>LFM3 换的是「私有部署 + 可微调 + token 近乎免费」；通用智能与生态仍弱一档。</td></tr>
+    <tr><th>对比谁</th><th>差在哪（有证据）</th></tr>
+    <tr><td>Claude Code × Opus 5.5 Max</td><td>AA Coding Agent Index：62 vs Fusion Max 60；Fusion 平均任务成本约一半、token 约一半。分项上 Fusion Terminal-Bench 4.0=71 领先，FrontierCode 51 落后 Opus 的 56。</td></tr>
+    <tr><td>Devin Fusion（编排竞品）</td><td>AA：Devin Fusion（Opus 5.5 Max + GPT-6 Luna High）=62，均成 $8.00；GitHub Fusion Max=$5.59 / 60 分。同属「编排层」赛道。</td></tr>
+    <tr><td>手动在 Copilot 里换模型</td><td>AT&amp;T 工程师引言（Changelog）：以前选强模型做完忘切回去；Fusion 消掉这笔摩擦。属客户证言，非盲测。</td></tr>
+    <tr><td>Cursor / 其它 IDE Agent</td><td>Fusion 的差异是「官方多模型池 + 企业策略控件 + 与 GitHub 仓库/Projects 同生态」；独立 IDE 仍可能在单模型体验或速度上更激进——成稿未见同 harness 横评。</td></tr>
   </table>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">VentureBeat / MarkTechPost / HF 博客同日覆盖</span>
-    <span class="pill">中文成稿时几乎无专稿</span>
-    <span class="pill">讨论焦点：许可门槛、端侧能否复现厂方 agent 分</span>
+    <span class="pill">「Copilot Fusion」10-28 当天 X 帖量 ≈573</span>
+    <span class="pill">VentureBeat / TNW / Changelog 同日覆盖</span>
+    <span class="pill">讨论焦点：半价接近 Opus、企业模型治理、限时 7 折</span>
   </div>
-  <p>热度明显低于 Genie 4。开发者向渠道以 HF 与英文科技媒体为主；未见大规模第三方桌面盲测。态度偏「先收下权重，用自己的 agent harness 打一遍再说」。</p>
+  <p>热度低于 Carbon，但在开发者向渠道很实。态度偏「终于不用手切模型了」；谨慎点是：编排省的是推理账单，审查与返工成本仍在；Max 档并不保证每类任务都赢。未见大规模第三方桌面长测。</p>
+  <p class="src">脚注：同日 GitHub Design 开源 <a href="https://github.com/github/replica">Replica</a>（MIT）——用自然语言 + 你们自己的设计系统出可交互原型，可选自建 Replica Hub 收评论。热度与产品硬度低于 Fusion，故不单开。</p>
 
   <div class="media">
     <h4>媒体怎么说</h4>
     <p class="mgroup">官方</p>
     <div class="mcard">
-      <p class="mhead">Liquid AI · Oct 27, 2026</p>
-      <p class="mtitle"><a href="https://www.liquid.ai/blog/lfm3">Introducing LFM3</a> · <a href="https://huggingface.co/collections/LiquidAI/lfm3">HF Collection</a></p>
-      <p class="mangle">规格与基准表以官网为准；注意 LFM License 商用门槛。</p>
+      <p class="mhead">GitHub Changelog · Oct 28, 2026</p>
+      <p class="mtitle"><a href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/">Route and orchestrate models with GitHub Copilot Fusion</a></p>
+      <p class="mangle">GA 范围、三档努力、三种编排、计费与 30% 折扣以这篇为准。</p>
     </div>
     <p class="mgroup">海外</p>
     <div class="mcard">
-      <p class="mhead">VentureBeat · Carl Franzen · Oct 27</p>
-      <p class="mtitle"><a href="https://venturebeat.com/technology/liquid-ais-new-lfm3-models-put-browser-agents-voice-commands-and-image-recognition-onto-enterprise-controlled-devices">Liquid AI’s new LFM3 models…</a></p>
-      <p class="mangle">企业向解读清楚；标明数字为公司自报，并给了六模型用例表。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">MarkTechPost · Oct 27</p>
-      <p class="mtitle"><a href="https://www.marktechpost.com/2026/10/27/liquid-ai-lfm3-open-weight-2b-multimodal-models/">Liquid AI Releases LFM3…</a></p>
-      <p class="mangle">技术摘要向，适合扫规格。</p>
+      <p class="mhead">VentureBeat · Carl Franzen · 11:01 am PT Oct 28</p>
+      <p class="mtitle"><a href="https://venturebeat.com/orchestration/github-copilot-fusion-mixes-models-to-achieve-near-opus-5-5-coding-performance-at-half-the-per-task-cost">GitHub Copilot Fusion mixes models… half the per-task cost</a></p>
+      <p class="mangle">独立 AA 数字、与 Devin Fusion 对照、77% vs 51% 口径拆分最清楚。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 3 Apple ========== -->
-<article id="apple">
-  <h2><span class="tag t-mid">消费创作套件</span>Apple 为 Keynote / Pages / Numbers 上 AI 助手，并开放 MCP</h2>
-  <div class="verdict"><strong>结论：</strong>消费端「文档里的 Agent」又进一步。Apple Newsroom <strong>2026-10-27</strong> 宣布 Creator Studio 大更新：<strong>Keynote / Pages / Numbers</strong> 内置基于 <strong>Apple 模型 + OpenAI</strong> 的智能助手（Beta），能理解当前文档上下文——做幻灯片、改文稿、算表与推荐图表；同时在 <strong>macOS 27+</strong> 为三件套接入 <strong>MCP</strong>，让外部 AI Agent 直接读写与自动操作。十一月 App Store 推送给现有订阅用户；助手限 Apple Intelligence 设备、目前仅美式英语。同包还有 Logic Pro 助手、Pixelmator Generate Fill、Final Cut 内置 MotionVFX 等——本条只深挖「iWork + MCP」产品意义。</div>
+<!-- ========== 3 Ling ========== -->
+<article id="ling">
+  <h2><span class="tag t-mid">开源 Agent</span>蚂蚁百灵开源 Ling-3.1-flash-1019：560B MoE，主打长程 Personal Agent</h2>
+  <div class="verdict"><strong>结论：</strong>国内开源 Agent 权重值得记的一条。蚂蚁百灵在北京时间约 <strong>2026-10-28</strong> 放出 <strong>Ling-3.1-flash-1019</strong>（HF / ModelScope，<strong>MIT</strong>）：混合线性 MoE，总参约 <strong>560B</strong>、每 token 激活约 <strong>25B</strong>、标称 <strong>1M</strong> 上下文；AA Index v4.3.2 自报 41→<strong>44</strong>；AA-Briefcase Elo 约 1400→<strong>1524</strong>；AutomationBench-AA 62%→<strong>68%</strong>。同步开源可继续训的 <strong>Ling-3.1-flash-base</strong>（BF16）。产品叙事绑「灵光 2.0 能管事的个人助理」——模型服务真实多步生活 / 工作流，而不是再刷一道题。数字多为厂方 / 量子位转述，成稿<strong>未见</strong>独立第三方 harness 复现。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>官方通稿：<a href="https://www.apple.com/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/">Apple Creator Studio adds powerful new AI features…</a>。The Verge、MacStories、ITmedia 同日跟进。更新标注十一月对现有 Creator Studio 订阅者免费。</p>
+  <p>HF 模型卡 <a href="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">inclusionAI/Ling-3.1-flash-1019</a>；量子位专稿 <a href="https://www.qbitai.com/2026/10/505928.html">Personal Agent走向真实任务…</a>（10-28 12:04）；智源社区 / 艾瑞网 / Ailyre 等转载或摘要。SGLang 提供 day-0 镜像 <code>lmsysorg/sglang:dev-ling-3.1-flash</code>。</p>
 
   <h3>2. 产品介绍</h3>
   <figure>
-    <img alt="Apple Creator Studio 新闻稿主视觉" src="https://oricter.github.io/product-radar-reports/2026-10-28/media/apple-hero.jpg"/>
-    <figcaption>Apple Newsroom 主视觉（Creator Studio 更新）。</figcaption>
-  </figure>
-  <figure>
-    <img alt="The Verge 报道配图：Keynote 内 AI 助手" src="https://oricter.github.io/product-radar-reports/2026-10-28/media/apple-iwork-og.jpg"/>
-    <figcaption>The Verge 配图：iPad Pro 上 Keynote 智能助手界面。</figcaption>
+    <img alt="Hugging Face Ling-3.1-flash-1019 模型卡社交图" src="media/ling-hf.png"/>
+    <figcaption>Hugging Face 模型卡社交缩略图（2026-10-29 抓取）。</figcaption>
   </figure>
   <ul>
-    <li><strong>Keynote</strong>：设计、动画、 refining 幻灯片。</li>
-    <li><strong>Pages</strong>：起草、重组、润色文稿。</li>
-    <li><strong>Numbers</strong>：计算、可视化、组织数据；一键预览图表类型；用世界知识建自定义表。</li>
-    <li><strong>MCP</strong>：外部 Agent / 工具可在三件套内读内容、改内容、执行自动化（需 macOS 27+）。</li>
-    <li><strong>附带开放格式</strong>：Keynote 新增 <code>.keyx</code>（JSON bundle），方便外部工具与 AI Agent 读取。</li>
-    <li><strong>门槛</strong>：助手需 iOS 27 / iPadOS 27 / macOS 27 + Apple Intelligence 机型；目前 U.S. English only。</li>
+    <li><strong>规格</strong>：Hybrid-linear MoE；63 KDA + 9 Gated MLA；512 routed experts / 激活 8；词表 157184；HF 显示约 572B params 量级（与「560B」口径同族，以模型卡表为准）。</li>
+    <li><strong>后训练涨分（模型卡 / 量子位）</strong>：AA Index 41→44；AA-Briefcase ~1400→1524 Elo；AutomationBench-AA 62%→68%；CritPt 18%→26%；SciCode 54%→57%；GDPval-AA ~1618→1644 Elo。</li>
+    <li><strong>Base 基座</strong>：量子位称在 8 领域 47 项 benchmark 中 32 项超 DeepSeek-V4-Pro-Base 与 MiMo-V2.5-Pro-Base——属厂方对比，读时连设定一起看。</li>
+    <li><strong>怎么跑</strong>：推荐 SGLang 镜像；H200 示例 TP8+EP8，GB300 用 TP4+EP4；亦有 vLLM 分支说明。注意 cookbook 提醒模型路径用 <code>inclusionAI/Ling-3.1-flash-1019</code>。</li>
+    <li><strong>产品联动</strong>：量子位写明与灵光 2.0（跨会话记忆、长程调度、独立云主机）同一天叙事；另有 Ling-3.1-flash-VL 视觉版「已先用于灵光、后续再放」。</li>
   </ul>
-  <div class="warn">官方以新闻稿图文为主；成稿未见可下载的独立助手操作录屏。Beta 阶段能力边界以实机为准，勿把营销句当成稳定生产功能。</div>
+  <div class="warn">未见可下载的官方产品演示长视频；以 HF 模型卡 + 量子位图文为准。HF 显示「Downloads last month: 548」——热度尚早。所有涨分数字来自官方模型卡 / 量子位转述，标注「未见独立第三方实测」。</div>
   <div class="howto">
     <strong>怎么看</strong>
-    读 <a href="https://www.apple.com/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/">Newsroom</a> 里「Powering Productivity with In-App Intelligence」两段 + 脚注 2/3；再扫 <a href="https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update">The Verge</a>。关心 Agent 互操作重点看 MCP 与 <code>.keyx</code>。
+    打开 <a href="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">HF 模型卡</a> 读 Introduction 表与 SGLang 段落；中文产品叙事读 <a href="https://www.qbitai.com/2026/10/505928.html">量子位</a>（注意软文气质：大量「据了解」「百灵表示」，当作厂方通稿消化）。部署细节可对照 SGLang cookbook。
   </div>
   <div class="ours">
     <strong class="h">对我们意味着什么</strong>
-    与世界模型无直接竞品关系；信号是「办公套件成为 Agent 可写接口」。若公司内容生产有人用 Keynote/Pages 做对外材料，MCP + .keyx 可能让内部 Agent 少一层导出导入。短期仅美式英语 Beta，国内工作流别指望立刻替换。
+    开源侧又多一个「长上下文 + Agent 工具调用」候选，MIT 对二次开发友好。与世界模型无直接对打；若内部要便宜的长程任务基座做工具编排实验，可把 1019 / base 列入候选，先用自有 harness 打 Automation / 多步工具调用再信厂方表。560B 总参对本地推理门槛仍高（多卡 MoE），更现实的是云端 API / 蒸馏小杯。
   </div>
 
   <h3>3. 导致什么影响（竞品对比）</h3>
   <table>
     <tr><th>对比谁</th><th>差在哪</th></tr>
-    <tr><td>Microsoft Copilot in Office / Google Duet in Docs</td><td>同属「文档内助手」。Apple 差异：深度绑 Apple Intelligence 设备 + 首次把 MCP 写进 iWork 一等公民，并开放 .keyx。</td></tr>
-    <tr><td>ChatGPT / Claude 侧边栏改稿</td><td>那些仍是「复制出去改再贴回」；Apple 强调不离开当前文稿上下文，且允许第三方 Agent 经 MCP 直接操作。</td></tr>
-    <tr><td>Claude Artifacts / Gemini 画布类</td><td>那些偏生成画布；Apple 这条是改造存量生产力三件套，分发靠 Creator Studio 订阅与系统版本。</td></tr>
+    <tr><td>上一版 Ling-3.1-flash</td><td>同架构后训练加分；Index 41→44，Agent / 知识工作多项上涨——官方自比。</td></tr>
+    <tr><td>DeepSeek V4.1-Flash / MiniMax M3.1 Flash（已报）</td><td>同属开源高性价比 Agent 向；DeepSeek 近周 OpenRouter 用量热；Ling 押「Personal Agent + 灵光产品闭环 + MIT base」。缺同 harness 横评。</td></tr>
+    <tr><td>Kimi K3.1 Pro 等 3T 级开源承诺</td><td>Ling 是 560B/25B 激活的「智效比」路线，不是参数军备；定位 Personal Agent 真实任务，而非综合榜死磕第一。</td></tr>
+    <tr><td>闭源 Carbon / Opus 5.5</td><td>Index 44 vs 闭源 50+ 仍有明显差距；换的是可商用权重、可续训、可私有部署。</td></tr>
   </table>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">The Verge / MacStories / ITmedia 通稿级覆盖</span>
-    <span class="pill">讨论焦点：OpenAI 合作占比、仅英语 Beta、要 macOS 27</span>
-    <span class="pill">独立长测尚未开始（十一月才推送）</span>
+    <span class="pill">相关关键词近几日 X 帖量合计约数百级（低于 Carbon / Fusion）</span>
+    <span class="pill">量子位专稿 + 智源社区 / 艾瑞转载</span>
+    <span class="pill">HF 月下载仍低（成稿时约 548）</span>
   </div>
-  <p>舆论偏「意料之中的系统级补强」：赞美点在 MCP 开放；质疑点在系统版本门槛与英语限定。真正口碑要等十一月实机。</p>
+  <p>中文渠道以通稿转述为主；开发者态度偏「先收下 MIT 权重，等有人用 SGLang 跑通长程 agent 再评」。未见大规模第三方盲测或知名博主长测翻车 / 封神帖。</p>
 
   <div class="media">
     <h4>媒体怎么说</h4>
-    <p class="mgroup">官方</p>
+    <p class="mgroup">官方 / 一手</p>
     <div class="mcard">
-      <p class="mhead">Apple Newsroom · Oct 27, 2026</p>
-      <p class="mtitle"><a href="https://www.apple.com/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools/">Apple Creator Studio adds powerful new AI features…</a></p>
-      <p class="mangle">助手能力、MCP、系统要求以脚注为准。</p>
+      <p class="mhead">Hugging Face · inclusionAI</p>
+      <p class="mtitle"><a href="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">Ling-3.1-flash-1019</a></p>
+      <p class="mangle">规格、基准涨幅、SGLang / vLLM 命令以模型卡为准。</p>
     </div>
-    <p class="mgroup">海外 / 日文</p>
+    <p class="mgroup">中文</p>
     <div class="mcard">
-      <p class="mhead">The Verge · Emma Roth · Oct 27, 1:50 PM UTC</p>
-      <p class="mtitle"><a href="https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update">Apple is adding an AI chatbot to Pages, Keynote, and Numbers</a></p>
-      <p class="mangle">短讯清楚写出 Apple+OpenAI 与 MCP。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">MacStories · Oct 27</p>
-      <p class="mtitle"><a href="https://www.macstories.net/news/apple-creator-studio-to-add-motionvfx-ai-assistants-and-mcp-support-in-november/">Apple Creator Studio to Add MotionVFX, AI Assistants, and MCP…</a></p>
-      <p class="mangle">把十一月时间表与创作套件其它更新放在一起。</p>
+      <p class="mhead">量子位 · 2026-10-28 12:04</p>
+      <p class="mtitle"><a href="https://www.qbitai.com/2026/10/505928.html">Personal Agent走向真实任务，蚂蚁百灵开源 Ling-3.1-flash-1019</a></p>
+      <p class="mangle">产品叙事最全；通稿气质重，数字需回对 HF。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">ITmedia PC USER · 10-27</p>
-      <p class="mtitle"><a href="https://www.itmedia.co.jp/pcuser/articles/2610/27/news100.html">Apple Creator Studio、Keynote・Logic Proなど…MCP対応</a></p>
-      <p class="mangle">日文科技媒体事实摘要，强调 OpenAI 联动与 Agent 可操作。</p>
+      <p class="mhead">智源社区 · 转载摘要</p>
+      <p class="mtitle"><a href="https://hub.baai.ac.cn/view/59107">蚂蚁百灵放出 Ling-3.1-flash-1019 开放权重…</a></p>
+      <p class="mangle">规格速览；注意是否二次转载。</p>
     </div>
   </div>
 </article>
 
 <footer>
-  产品雷达 · 2026-10-28 · 只覆盖约过去 24 小时 · 去重见 seen.md<br/>
-  上期：<a href="https://oricter.github.io/product-radar-reports/2026-10-27/">2026-10-27</a> · <a href="https://oricter.github.io/product-radar-reports/archive.html">往期目录</a>
+  产品雷达 · 2026-10-29 · 只覆盖约过去 24 小时 · 去重见 seen.md<br/>
+  上期：<a href="https://oricter.github.io/product-radar-reports/2026-10-28/">2026-10-28</a> · <a href="https://oricter.github.io/product-radar-reports/archive.html">往期目录</a>
 </footer>
 </div>
 </body>
