@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AI 产品情报 · 2026-10-29 · Gemini 4 Carbon / Copilot Fusion / 蚂蚁 Ling-3.1-flash</title>
+<title>AI 产品情报 · 2026-10-31 · Mundo / 智元 GO-3 / Mistral Large 4 开源权重</title>
 <style>
   :root {
     --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
@@ -48,12 +48,6 @@
   }
   h3 { font-size:1rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
   h4 { font-size:.95rem; color:var(--ink); margin:20px 0 10px; font-weight:700; }
-  table { font-size:.88rem; width:100%; border-collapse:collapse; margin:10px 0 16px; }
-  th, td {
-    text-align:left; padding:9px 10px; border-bottom:1px solid var(--line);
-    vertical-align:top;
-  }
-  th { color:var(--muted); font-weight:600; font-size:.8rem; }
   p { margin:0 0 14px; }
   ul, ol { margin:0 0 14px; padding-left:1.25em; }
   li { margin:8px 0; }
@@ -108,257 +102,282 @@
 </head>
 <body>
 <div class="wrap">
-<h1>AI 产品情报 · 2026-10-29（周四）</h1>
-<div class="cover"><strong>本版覆盖媒体 / 一手源约 12 家（外文 5 / 中文 3 / 官方 4）</strong>：外文是 The Verge、VentureBeat、Artificial Analysis（经媒体转述）、Reuters/CNA 通稿链；中文是 IT之家、量子位、智源社区 / 艾瑞网转载；官方是 Google Blog、GitHub Changelog、Hugging Face inclusionAI、皮查伊 X 主帖。机器之心 / 新智元成稿时未见 Carbon / Fusion 专稿——已用 IT之家 + VentureBeat 顶上。Genie 4 昨日已报，今日无实质新开放范围，不重复。</div>
+<h1>AI 产品情报 · 2026-10-31（周六）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 14 家（外文 5 / 中文 5 / 官方 4）</strong>：外文是 Hugging Face Blog、Mistral 官方、Artificial Analysis（经官方转述）、Tech 社区 X；中文是量子位、品玩、GPLP/大晓通稿链、智东西未专稿则跳过；官方是 Mundo 项目页、智元创新日通稿、Mistral OSS 公告、HF 模型卡。10-30 例行失败，本期补齐 10-29 晚报至今日早间。</div>
 <div class="meta">
-  <p><strong>时间范围</strong>：美东约 2026-10-28 晚 → 2026-10-29 早上（对应北京 10-28 白天到 10-29 早上）；成稿北京时间 2026-10-29 约 09:20。</p>
-  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 Gemini 4 Carbon / Copilot Fusion / Ling-3.1-flash-1019 → 读 Google Blog、GitHub Changelog、HF 模型卡一手 → 交叉 The Verge、VentureBeat、IT之家、量子位与 X 热度 → 按前沿闭源旗舰 / 开发者编排层 / 开源 Agent 权重优先级成稿。</p>
-  <p><strong>去重说明</strong>：昨日 Genie 4、LFM3、Apple Creator Studio 不重复；更早 GPT-6.1 Terra、Kimi K3.1 Pro、Hy-Nomas、Nemotron Bolt、可灵 4.0、Matrix-Game 4.0、EdenLive、JST-2、Claude Duet、Micro-World 2、Helix World 等不重复。同日 GitHub Replica 开源原型工具证据足但热度低于 Fusion，本版并入 Fusion 条末脚注，不单开。Nemotron 3.5 Transcribe、OpenAI Dot 发 iMessage 等备选证据够但优先级低于本三条。</p>
+  <p><strong>时间范围</strong>：美东约 2026-10-29 晚 → 2026-10-30 晚（对应北京 10-30 白天到 10-31 早上）；成稿北京时间 2026-10-31 约 09:10。因 10-30 日报未发出，覆盖上期（10-29）之后的空白。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 Mundo 国内传播高峰 / 智元创新日双模型 / Mistral Large 4 开源权重 → 读项目页、官方博客、品玩与量子位一手 → 交叉 X 热度与竞品定位 → 按世界模型邻接 / 具身大厂 / 开源旗舰优先级成稿。</p>
+  <p><strong>去重说明</strong>：10-29 已报 Gemini 4 Carbon、Copilot Fusion、Ling-3.1-flash 不重复；更早 Genie 4、LFM3、Apple Creator Studio、GPT-6.1 Terra、Kimi K3.1 Pro、可灵 4.0、Matrix-Game 4.0 等不重复。启元 PrimeSim 同期有软文但证据薄、非热门，本版不单开。</p>
 </div>
 
 <div class="alert">
   <strong>今日要点（先看这三条）</strong>
   <ol>
-    <li><strong>Google 发布 Gemini 4 Carbon</strong>：Argon 两周后的下一档前沿模型；AA Index v5.0 自报 <strong>59</strong> 登顶（Opus 5.5=58、Astra=57）。主打网络安全 + 长程 coding/agent；先给 Fairwind 网络安全防御伙伴，开发者暂进不去。价与 Argon 同入门 <strong>$2/$10</strong>（期满后 $4/$20）。皮查伊主帖约 <strong>332 万</strong>浏览。</li>
-    <li><strong>GitHub 正式推出 Copilot Fusion</strong>（Universe 2026）：不是新模型，是<strong>多模型路由 + 编排</strong>；Fusion Max 在 AA Coding Agent Index 得 <strong>60</strong>（距 Claude Code×Opus 5.5 Max 的 62 差 2 分），独立评测平均任务成本约一半、token 约一半。付费计划限时模型费用 <strong>7 折</strong>。全计划 GA。</li>
-    <li><strong>蚂蚁百灵开源 Ling-3.1-flash-1019</strong>（MIT）：560B 总参 / 25B 激活 / 1M 上下文；AA Index v4.3.2 自报 41→<strong>44</strong>；同步放 base 基座。主打 Personal Agent 长程任务；量子位称与灵光 2.0「能管事」产品线联动。</li>
+    <li><strong>Mundo（大晓×南洋理工）</strong>：用几张照片建「可探索 + 可物理交互」的定制世界模型；10-30 中文媒体集中扩散，对世界模型产品线是强对标样本。</li>
+    <li><strong>智元 GO-3 Preview + WITA-OMNI</strong>：作业智能与交互智能双模型登顶多榜，并抛出 Worken 有效工时单位与灵渠 OS 年底开源承诺。</li>
+    <li><strong>Mistral Large 4（Le Chonk）开源权重</strong>：1T MoE / ~49–52B 激活，官方称开源侧 coding + 防御安全领先；HF / vLLM / SGLang 当日可跑。</li>
   </ol>
 </div>
 
 <div class="toc">
-  <a href="#carbon"><span class="tag t-hot">前沿闭源旗舰</span>Google 发布 Gemini 4 Carbon</a>
-  <a href="#fusion"><span class="tag t-hot">开发者编排</span>GitHub 推出 Copilot Fusion</a>
-  <a href="#ling"><span class="tag t-mid">开源 Agent</span>蚂蚁百灵开源 Ling-3.1-flash-1019</a>
+  <a href="#mundo"><span class="tag t-hot">世界模型</span>大晓×南洋理工发布 Mundo：照片变可交互物理世界</a>
+  <a href="#agibot"><span class="tag t-hot">具身大厂</span>智元创新日：GO-3 / WITA-OMNI 双模型 + Worken + 灵渠 OS</a>
+  <a href="#mistral"><span class="tag t-mid">开源旗舰</span>Mistral Large 4（Le Chonk）权重正式开放</a>
 </div>
 
-<!-- ========== 1 Carbon ========== -->
-<article id="carbon">
-  <h2><span class="tag t-hot">前沿闭源旗舰</span>Google 发布 Gemini 4 Carbon：网络安全 + 长程工程，先只给防守方</h2>
-  <div class="verdict"><strong>结论：</strong>过去 24 小时最硬的一条闭源旗舰更新。Google 在美东 <strong>2026-10-28</strong> 宣布 <strong>Gemini 4 Carbon</strong>——Argon 公开两周后的「下一档」；在更新后更难的 <strong>Artificial Analysis Intelligence Index v5.0</strong> 上以 <strong>59</strong> 排第一（Claude Opus 5.5=58、GPT-6 Astra=57、Argon=50）。叙事重心从「通用更强」收窄到<strong>网络安全防御全生命周期</strong>（找洞 / 验证可否利用 / 出补丁）与<strong>可持续多日的长程 agent 工程</strong>。开放策略刻意保守：本周起只给 Fairwind 计划里的部分网络安全防御伙伴，配合美国政府自愿预发布测试；开发者 / 企业 / 消费者「尽快」再开。入门价与 Argon 同为 <strong>$2 / $10</strong> 每百万 token（缓存输入再打 95% 折）；优惠期结束后升至 $4 / $20——Carbon 的优惠截止日<strong>官方未写死</strong>（Argon 是 11-30）。</div>
+<!-- ========== 1 MUNDO ========== -->
+<article id="mundo">
+  <h2><span class="tag t-hot">世界模型</span>大晓机器人 × 南洋理工发布 Mundo：几张照片建成可探索、可编程物理交互的定制世界</h2>
+  <div class="verdict"><strong>结论：</strong>这是「按地点定制」的世界模型，而不是泛化视频生成。它把 3D 代理 + MuJoCo 物理 + 视频扩散渲染串成一条链，直接服务机器人 Real-to-Sim——对阿汤公司的世界模型产品线，比又一个文生视频 Demo 更有对标价值。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>Google Blog 长文 <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Introducing Gemini 4 Carbon</a>（作者 Koray Kavukcuoglu，DeepMind SVP / Google 首席 AI 架构师，标注 Oct 28, 2026）。皮查伊同日发帖；The Verge（Emma Roth，8:03 PM UTC）、VentureBeat（Carl Franzen，11:25 am PT）、IT之家（10-29 04:51 北京）同步跟进。Reuters 通稿被 CNA / Investing.com 等转载。</p>
+  <p>大晓机器人联合南洋理工大学 S-Lab 公开 <strong>Mundo（Customized World Model）</strong>：输入少量真实场所照片或视频，输出可自由探索、可用代码编辑物理属性、可做机器人导航/操作仿真的三维世界。英文项目页与 HF 技术博文约在 10 月下旬落地；作者 X 帖 10-28 起扩散；<strong>中文产业媒体在 10-30 形成集中报道波</strong>（GPLP 等）。本条按「国内传播 + 产品化叙事高峰」收录，并注明英文首发时间早于中文稿。</p>
+  <p class="src">一手：<a href="https://mundo-world-model.github.io/">项目页</a> · <a href="https://huggingface.co/blog/Luo-Yihang/mundo-world-model">HF 博文（2026-10-23）</a> · 作者 X <a href="https://x.com/onelineluo/status/2115437035091808649">@onelineluo</a>（约 238 赞 / 8.1k 曝光）· 中文：<a href="https://www.gplp.cn/archives/163545">GPLP 10-30</a></p>
 
   <h3>2. 产品介绍</h3>
-  <figure>
-    <img alt="Google Blog Gemini 4 Carbon 社交主视觉" src="https://oricter.github.io/product-radar-reports/2026-10-29/media/carbon-google-og.png"/>
-    <figcaption>Google Blog 发布页社交主视觉（2026-10-29 抓取）。</figcaption>
-  </figure>
-  <figure>
-    <img alt="VentureBeat 对 Gemini 4 Carbon 的配图" src="https://oricter.github.io/product-radar-reports/2026-10-29/media/carbon-vb.png"/>
-    <figcaption>VentureBeat 报道配图（标注 Credit: VentureBeat made with OpenAI ChatGPT-Images-2.5）。</figcaption>
-  </figure>
-  <figure>
-    <img alt="皮查伊 X 主帖配图" src="https://oricter.github.io/product-radar-reports/2026-10-29/media/carbon-sundar.jpg"/>
-    <figcaption>@sundarpichai 主帖配图（约 332 万浏览）。</figcaption>
-  </figure>
+  <p><strong>三件套流水线：</strong></p>
   <ul>
-    <li><strong>定位</strong>：官方自称「our strongest model」，相对两周前的 Gemini 4 Argon；参数量 / 架构细节<strong>未披露</strong>，也无技术报告。</li>
-    <li><strong>综合榜</strong>：AA Index v5.0 = <strong>59</strong>（独立评测方确认；v5 约 60% 题目为私有或答案不公开，不宜与旧版 index 混比）。</li>
-    <li><strong>网络安全三连（官方称无护栏评测）</strong>：SEC-bench Pro <strong>88.2%</strong>（找洞）· ExploitGym <strong>54.8%</strong>（验证可否利用）· CWE-bench <strong>71.0%</strong>（出补丁）。内部称生成安全代码成功率相对 Argon 超 2×；Chrome 团队称高质量补丁相对「另一实验室前沿模型」超 10×——对手未点名。</li>
-    <li><strong>长程工程</strong>：内部称可「跑数日」穿越死胡同，做大型代码库根因定位与底层补丁。WebDev Arena +89 Elo → #4（1768）。</li>
-    <li><strong>对齐与诚实</strong>（厂方内部数）：Terminal-Bench 4.0 作弊成功 0.0% / 尝试 0.4%；高严重失准警报约降 80%；无依据声明约减半；过度执行 −26%、服务不足 −29%；Gray Swan 间接提示注入攻击成功率 0.0%（Argon 曾为 0.7%）。</li>
-    <li><strong>独立评测的另一面（VentureBeat 转 Artificial Analysis）</strong>：Coding Agent Index 上 Carbon（经 Antigravity CLI）=59，Claude Code×Opus 5.5 仍领跑 62；AA-Omniscience 总分第一但幻觉率从 Argon 的 4% 升到 <strong>11%</strong>；FrontierSWE 2 上 Carbon 61.2% <strong>落后</strong> Astra 65.5% / Opus 62.3%；OSWorld 离线子集上 Opus 87.2% 高于 Carbon 81.5%。——登顶不等于全能。</li>
-    <li><strong>怎么用</strong>：现在用不了（除非你是 Fairwind 网络安全伙伴）。产品入口官方点名后续会进「product surfaces」；前 Windsurf CEO / Google Antigravity 负责人 Varun Mohan 在 X 称内部 Antigravity 已在用，先 Fairwind 再扩大——无公开日期。</li>
+    <li><strong>建代理世界</strong>：3D 检测器给初始包围盒 → VLM Agent 做 analysis-by-synthesis 迭代对齐输入视图。</li>
+    <li><strong>代码世界跑物理</strong>：场景程序写物体质量/摩擦/动作；默认 MuJoCo 算重力、接触、碰撞。</li>
+    <li><strong>代理帧 + 视频模型渲染</strong>：扁平类别色代理视频 + 上下文影像注入视频扩散（基于 MiniMax-H3 Ref2VA 微调），按相机路径出片。</li>
   </ul>
-  <div class="warn">成稿未找到可下载的独立官方产品演示长视频；Google Blog 以基准图文为主。网络安全外部榜「without guardrails」——上线后护栏打开时分数不一定复现。未见面向普通开发者的独立第三方桌面长测。</div>
-  <div class="howto">
-    <strong>怎么看（10 分钟）</strong>
-    先读 <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Google Blog</a> 的网络安全三段 + 价格脚注；再读 <a href="https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited">VentureBeat</a> 里「独立测试把 coding 进步与知识工作短板拆开」那几节——比官博更敢写落后项。中文事实摘要看 <a href="https://www.ithome.com/1/019/240.htm">IT之家</a>。The Verge 短讯：<a href="https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier">这里</a>。
-  </div>
-  <div class="ours">
-    <strong class="h">对我们意味着什么</strong>
-    与交互世界模型无直接对打，但信号清晰：① 闭源旗舰开始用「网络安全 + 长程工程」差异化，而不只刷综合分；② 发布节奏变成「两周一档」但仍先锁 Fairwind——能力领先不等于你能调用；③ AA v5 换题后 Google 夺回第一，评测口径战争会继续。数据生产侧若有安全审计 / 补丁生成工具链需求，可把 Carbon 列入「等开放再评」名单，现阶段继续用已公开的 Argon / 其它模型。
+  <p><strong>官方演示里能直接看到：</strong>酒店房间多视角探索；拉开抽屉扔苹果砸显示器（含子弹时间）；Unitree G1 / 机器狗在重建楼层导航；洗衣房开门交互。博文坦承限制：重建约 10–20 分钟；八卡 A800 上渲染约 1.5 FPS；小物体易漂浮；尚无长时记忆。</p>
+
+  <figure>
+    <img src="media/mundo-film-frame.jpg" alt="Mundo 官方演示片截帧：定制场景探索"/>
+    <figcaption>官方演示片截帧——看完应搞懂：同一组照片可沿任意相机路径补视角。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/mundo-hotel-frame.jpg" alt="Mundo 酒店楼层导航演示截帧"/>
+    <figcaption>酒店楼层导航演示截帧——看完应搞懂：3D 代理直接给机器人路径规划用。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/mundo-g1-frame.jpg" alt="Mundo Unitree G1 场景截帧"/>
+    <figcaption>G1 机器人场景截帧——看完应搞懂：同一重建环境可换不同机器人本体做仿真。</figcaption>
+  </figure>
+
+  <div class="videos">
+    <h4>页内视频（官方）</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">谁发的：Mundo 项目组官方演示剪辑</span>
+      <span class="why">看完应搞懂：从几张图 → 自由探索 → 物理交互 → 机器人任务，整条链路长什么样。</span></p>
+      <video controls playsinline poster="media/mundo-film-frame.jpg" preload="metadata">
+        <source src="media/mundo-film-clip.mp4" type="video/mp4"/>
+      </video>
+    </div>
+    <div class="vid">
+      <p class="vlabel"><span class="who">谁发的：官方酒店导航片段</span>
+      <span class="why">看完应搞懂：重建楼层如何支撑从大厅到客房的导航仿真。</span></p>
+      <video controls playsinline poster="media/mundo-hotel-frame.jpg" preload="metadata">
+        <source src="media/mundo-hotel-nav.mp4" type="video/mp4"/>
+      </video>
+    </div>
+    <div class="vid">
+      <p class="vlabel"><span class="who">谁发的：官方 G1 机器人片段</span>
+      <span class="why">看完应搞懂：人形机器人如何在定制场景里走完一条任务轨迹。</span></p>
+      <video controls playsinline poster="media/mundo-g1-frame.jpg" preload="metadata">
+        <source src="media/mundo-hero-g1.mp4" type="video/mp4"/>
+      </video>
+    </div>
   </div>
 
-  <h3>3. 导致什么影响（竞品对比）</h3>
-  <table>
-    <tr><th>对比谁</th><th>差在哪（有证据）</th></tr>
-    <tr><td>自家 Gemini 4 Argon</td><td>官方 17 项对照全涨；AA Index 50→59。Argon 已有公开 API / 产品入口与明确涨价日（12-1）；Carbon 更强但<strong>还进不去</strong>，优惠截止日未写。</td></tr>
-    <tr><td>Claude Opus 5.5 / GPT-6 Astra</td><td>The Verge / AA：综合 Index Carbon 59 略胜 Opus 58、Astra 57。但 Coding Agent、FrontierSWE、OSWorld 等分项 Opus / Astra 仍有领先（VentureBeat 表）。</td></tr>
-    <tr><td>Kimi K3.1 Pro 等开源前十</td><td>中文讨论指出 AA v5 后国产开源多数掉出前十；Carbon 是闭源登顶，不是开源替代关系。</td></tr>
-    <tr><td>「专职网络安全模型」叙事</td><td>Argon 已强调找洞与补丁；Carbon 是把同一叙事数字再抬一截，并明确「先给防守方」的发布伦理——和一味公开 API 的竞品形成对照。</td></tr>
-  </table>
+  <div class="howto">
+    <strong>怎么自己看（5 分钟）</strong>
+    打开 <a href="https://mundo-world-model.github.io/">项目页</a> → 先点 Spatial exploration 看「1–12 张图换视角」→ 再点 Physical interaction 拖垃圾桶/抽屉 → 最后看 Robotics application 酒店导航三段。HF 博文有完整公式与限制清单。
+  </div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>对标 Atlas / 快乐生蚝 / Odyssey / Zing：</strong>Mundo 论文叙事明确写「支持与 Atlas 类似的场景重建与时空模拟」，但差异是<strong>把质量、摩擦写进场景程序，用物理引擎算响应</strong>，再交给视频模型渲染——不是纯隐式视频世界模型「猜下一帧」。</li>
+    <li><strong>对标 Genie / 可交互游戏世界：</strong>Genie 系偏通用交互策略；Mundo 偏「这个具体酒店/办公室」的 Real-to-Sim 数据工厂。大晓文稿把它嵌进自家 Kairos 体系，补环境建模与训练数据生成。</li>
+    <li><strong>产业含义：</strong>谁能把「现场几张图 → 可训策略的仿真场」做成产品流水线，谁就卡住具身落地的数据瓶颈。速度（重建分钟级、渲染 1.5 FPS）仍是落地门槛。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们（世界模型 / WASD+文字控制）</strong>
+    Mundo 的输入是多视角图 + 代码场景程序，不是逐帧 6-DoF 相机轨迹。若要对齐评测，更接近「文字/脚本驱动动作 + 相机路径探索」，与公司键盘控制思路可对话；但物理属性与 MuJoCo 闭环是额外能力层，榜单选型时别把它和纯视频生成榜混为一谈。
+  </div>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">@sundarpichai 主帖 ≈332 万浏览 / 2.47 万赞 / 1919 转发</span>
-    <span class="pill">「Gemini 4 Carbon / Gemini Carbon」10-28 当天 X 帖量 ≈1.19 万</span>
-    <span class="pill">中文：IT之家专稿；量子位 / 机器之心成稿未见专稿</span>
-    <span class="pill">X 新闻故事聚合：Elon 称 Impressive（二手摘要）</span>
+    <span class="pill">作者首帖 ~238 赞 / ~8.1k 曝光</span>
+    <span class="pill">研究圈转发为主</span>
+    <span class="pill">中文 10-30 产业通稿波</span>
   </div>
-  <p>舆论主调是「又登顶了，但你用不了」。赞美点：网络安全三连、两周迭代节奏、价格不涨。质疑点：Fairwind 锁门、独立榜上幻觉率上升、部分 SWE / computer-use 分项未赢、Chrome「10×」对手匿名。真正开发者口碑要等公开 API。</p>
+  <ul>
+    <li><strong>正面：</strong>「照片 → 可交互世界」叙事清晰；物理可编程被机器人从业者点名；项目页交互 Demo 完成度高。</li>
+    <li><strong>保留：</strong>作者自己列了速度、小物体、长时记忆三大短板；目前公开的是研究页 + 演示，未见可下载权重或面向客户的 SaaS 入口。</li>
+    <li><strong>注意：</strong>部分中文稿带大晓品牌软文色彩（Kairos 体系植入），已在媒体卡标注；技术事实以项目页 / HF 博文为准。</li>
+  </ul>
 
   <div class="media">
-    <h4>媒体怎么说</h4>
-    <p class="mgroup">官方 / 一手</p>
+    <h4>媒体摘录</h4>
+    <div class="mgroup">官方 / 一手</div>
     <div class="mcard">
-      <p class="mhead">Google Blog · Koray Kavukcuoglu · Oct 28, 2026</p>
-      <p class="mtitle"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Gemini 4 Carbon: our next frontier model</a></p>
-      <p class="mangle">能力、Fairwind、价格脚注以这篇为准。</p>
+      <p class="mhead">Hugging Face Blog <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://huggingface.co/blog/Luo-Yihang/mundo-world-model">Mundo: From seeing a place to simulating what happens there</a></p>
+      <blockquote>Take a few photos of a room, and Mundo turns them into a world you can explore and simulate.</blockquote>
+      <p class="mangle">完整流水线、训练数据规模（约 4 万对）、限制（10–20 分钟重建 / ~1.5 FPS）都在这里，比通稿可信。</p>
     </div>
-    <p class="mgroup">海外</p>
+    <div class="mgroup">中文媒体</div>
     <div class="mcard">
-      <p class="mhead">The Verge · Emma Roth · Oct 28, 8:03 PM UTC</p>
-      <p class="mtitle"><a href="https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier">Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity</a></p>
-      <p class="mangle">短讯清楚写出对 Opus / Astra 的 Index 领先与 Fairwind 限制。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">VentureBeat · Carl Franzen · 11:25 am PT Oct 28</p>
-      <p class="mtitle"><a href="https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited">Google unveils Gemini 4 Carbon… access is limited</a></p>
-      <blockquote>Independent testing also reveals tradeoffs… records a higher hallucination rate than Argon on a factual-knowledge test.</blockquote>
-      <p class="mangle">本版竞品对比与「登顶不等于全能」主要依据这篇；表格式拆分最完整。</p>
-    </div>
-    <p class="mgroup">中文</p>
-    <div class="mcard">
-      <p class="mhead">IT之家 · 小泵 · 10-29 04:51</p>
-      <p class="mtitle"><a href="https://www.ithome.com/1/019/240.htm">谷歌最强 AI 模型：Gemini 4 Carbon 登顶…「专职」做网络安全</a></p>
-      <p class="mangle">中文事实摘要完整；「最强」「专职」是标题修辞，正文仍写 Fairwind 渐进开放。</p>
+      <p class="mhead">GPLP <span class="mtag">产业 · 偏软</span></p>
+      <p class="mtitle"><a href="https://www.gplp.cn/archives/163545">大晓机器人联合南洋理工大学发布 Mundo</a></p>
+      <blockquote>相较于 Atlas，Mundo 可以将物体的质量、摩擦等物理属性纳入场景程序……</blockquote>
+      <p class="mangle">10-30 中文首波核心稿；竞品对比句有用，但后半段 Kairos 植入偏软文，阅读时打折。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 2 Fusion ========== -->
-<article id="fusion">
-  <h2><span class="tag t-hot">开发者编排</span>GitHub 推出 Copilot Fusion：不选模型，让系统帮你路由</h2>
-  <div class="verdict"><strong>结论：</strong>GitHub Universe <strong>2026-10-28</strong> 最硬的产品条。 <strong>Copilot Fusion</strong> 正式 GA——它<strong>不是</strong>新基础模型，而是运行时把 Project HydraFusion 多模型编排 + 自动选模合到一起：你只选 Standard / High / Max 三档「努力程度」，系统按任务决定用哪个模型、走 Single / Cascade / Critique 哪条工作流。Artificial Analysis Coding Agent Index：Fusion Max = <strong>60</strong>（Claude Code×Opus 5.5 Max = 62），平均任务成本约 <strong>$5.59 vs $11.42</strong>（约一半），token 约一半，GitHub 另称耗时约少 40%。付费 Copilot 用户限时模型费用 <strong>30% 折扣</strong>。VS Code / Copilot App / CLI / JetBrains 全计划可用。</div>
+<!-- ========== 2 AGIBOT ========== -->
+<article id="agibot">
+  <h2><span class="tag t-hot">具身大厂</span>智元创新日：GO-3 Preview 三榜第一、WITA-OMNI 四榜第一，并推出 Worken 与灵渠 OS</h2>
+  <div class="verdict"><strong>结论：</strong>这不是单模型新闻，而是「作业智能 + 交互智能 + 原生 OS + 有效工时单位」的整包叙事。GO-3 强调全链路 Scaling（预训练→后训练→部署后 RSI）；WITA-OMNI 打无唤醒词、亚秒响应的面对面交互。对标对象是 Figure / π 系 VLA 与各类语音交互机器人方案。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>GitHub Changelog <a href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/">Route and orchestrate models with GitHub Copilot Fusion</a>（Oct 28, 2026）。Universe 主叙事见 <a href="https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/">Evolving every layer of the stack</a>。VentureBeat 同日深度稿（含对 CPO Mario Rodriguez 采访）；The Next Web / Runtime Wire 等跟进。Nadella 在会上推「完成的工作，不是更多代码」。</p>
+  <p>10 月 29 日智元创新日，稚晖君团队发布：</p>
+  <ul>
+    <li><strong>GO-3 Preview</strong>：具身基座，WRAM（World Reasoning Action Model）架构；官方称登顶 RoboDojo、RoboTwin、RoboColiseum。</li>
+    <li><strong>WITA-OMNI</strong>：全模态交互大模型；官方称 Daily-Omni、TimeLens-Bench、EmbSpatialBench、MMAU 四榜第一；平均响应约 600ms，最快约 400ms；无唤醒词。</li>
+    <li><strong>Worken</strong>：物理 AI 有效智能工时单位 = 活跃机器人数 × 自主工作时长 × 产出效能比。</li>
+    <li><strong>灵渠 OS 1.0</strong>：具身原生 OS；宣称 1000Hz 负载下端到端时延抖动 &lt;4μs；计划年底开源并捐赠开放原子基金会。</li>
+    <li>本体侧：精灵 G2 Max（单臂 20kg / 双臂峰值 50kg）、AHA3 三智合一硬件架构等。</li>
+  </ul>
+  <p class="src">一手报道：<a href="https://www.pingwest.com/w/318950">品玩 · GO-3</a> · <a href="https://www.qbitai.com/2026/10/506819.html">量子位 · 创新日总述（10-30）</a></p>
 
   <h3>2. 产品介绍</h3>
+  <p><strong>GO-3 怎么工作（按品玩 / 官方口径）：</strong>预训练用 CoAE 视觉表征 + SVP 单步未来预测 + KASO 筛选相容未来；后训练用 Genie Evolver（百台真机 + 仿真 + Genie Envisioner 2.0 世界模型）；部署后用 Genie Master + EEP 协议做无人在环持续改进。便利店案例：挂小挂钩任务成功率从首日 28.6% 到 5 天后 85.7%（官方数字，需独立复现验证）。</p>
+  <p><strong>WITA-OMNI：</strong>语音/视觉/文本进，语音/表情/动作出；快慢双系统（前台 Interaction Engine + 后台 Background Agent）；Intelligent FaceUI 可在脸屏动态讲解；支持听 100+ 语言、说 29 种语言与 7 种方言；宣称 2026-12 国内全面部署、2027-Q1 海外。</p>
+
   <figure>
-    <img alt="GitHub Copilot Fusion Changelog 主视觉" src="https://oricter.github.io/product-radar-reports/2026-10-29/media/fusion-gh.png"/>
-    <figcaption>GitHub Changelog 发布页主视觉（2026-10-29 抓取）。</figcaption>
+    <img src="media/agibot-go3-hero.png" alt="智元 GO-3 / 创新日相关配图（量子位）"/>
+    <figcaption>量子位报道配图——看完应搞懂：创新日把作业智能与交互智能并列为「三智」两翼。</figcaption>
   </figure>
   <figure>
-    <img alt="VentureBeat 对 Copilot Fusion 的配图" src="https://oricter.github.io/product-radar-reports/2026-10-29/media/fusion-vb.png"/>
-    <figcaption>VentureBeat 报道配图。</figcaption>
+    <img src="media/agibot-worken.png" alt="Worken 有效工时概念配图"/>
+    <figcaption>Worken 看板配图——看完应搞懂：智元试图用「有效工时」替代纯 Demo 叙事。</figcaption>
   </figure>
-  <ul>
-    <li><strong>怎么用</strong>：模型选择器里选 Copilot Fusion → 再选努力档：Standard（日常）/ High（难任务）/ Max（最难推理）。</li>
-    <li><strong>三种编排</strong>：Single（直接一个模型）· Cascade（便宜模型先写，质量门不过再升级）· Critique（A 起草 → B 审 → A 改）。</li>
-    <li><strong>模型池</strong>：AA 观察到含 Opus 5.5、Sonnet 5.5、GPT-6 Astra、GPT-6 Sol 等；企业可按策略禁用某模型仅对 Fusion 生效。</li>
-    <li><strong>计费</strong>：按实际调用的底层模型标准价计；付费计划限时 Fusion 模型费 7 折。另有 Enterprise「按用量预算」新购法（无每人每月固定额度）。</li>
-    <li><strong>厂方 vs 独立</strong>：AA 测得约 51% 成本优势；Nadella / 厂方 DeepSWE 自测称最高可省约 77%——两套口径，勿混为一谈（VentureBeat 已拆开写）。</li>
-  </ul>
-  <div class="warn">成稿未找到可稳定下载的官方演示 mp4；Changelog 页有短视频嵌入但抓取工具拿不到可播文件。请直接打开 <a href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/">Changelog</a> 看页内演示：选 Fusion → 看它如何分析任务并切换模型。Benchmark 成本 ≠ 你们团队算上人工审查后的真实工程成本。</div>
+  <figure>
+    <img src="media/agibot-lingqu.png" alt="灵渠 OS 介绍配图"/>
+    <figcaption>灵渠 OS 介绍图——看完应搞懂：从硬件抽象到 Skill 封装的原生 OS 定位。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/agibot-wita.webp" alt="WITA-OMNI 交互模型配图"/>
+    <figcaption>WITA-OMNI 配图——看完应搞懂：交互模型与作业模型是分开的产品线。</figcaption>
+  </figure>
+
   <div class="howto">
-    <strong>怎么看</strong>
-    打开 Changelog 滚完三档努力 + 三种编排；再读 <a href="https://venturebeat.com/orchestration/github-copilot-fusion-mixes-models-to-achieve-near-opus-5-5-coding-performance-at-half-the-per-task-cost">VentureBeat</a> 里 AA 分项（Terminal-Bench 领先、FrontierCode 落后）和企业治理段落。想顺带看同日开源的设计系统原型工具，打开 <a href="https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool/">Replica</a>（MIT，绑你们自己的组件库，见文末脚注）。
-  </div>
-  <div class="ours">
-    <strong class="h">对我们意味着什么</strong>
-    信号是「模型战争」之上又叠了一层「编排战争」：谁帮用户省选型焦虑、把任务成本压下去，谁就能占开发者入口。数据生产 / 内部工具链若已在用 Copilot，可直接开 Fusion High 做对照实验（同任务比 token 与返工率）。与世界模型无直接竞品，但 Agent 写代码、改仓库、出 PR 的基础设施会间接影响我们标注与评测流水线的工具选型。
+    <strong>怎么自己看</strong>
+    先读品玩 GO-3 长文搞懂 WRAM / Genie Evolver / Genie Master 三段；再读量子位总述拿 Worken 公式与部署案例（龙旗产线、爱仕达门店、横琴长隆）。榜单第一均为官方自评口径，进 RoboDojo 等榜页核对排名再引用对外材料。
   </div>
 
-  <h3>3. 导致什么影响（竞品对比）</h3>
-  <table>
-    <tr><th>对比谁</th><th>差在哪（有证据）</th></tr>
-    <tr><td>Claude Code × Opus 5.5 Max</td><td>AA Coding Agent Index：62 vs Fusion Max 60；Fusion 平均任务成本约一半、token 约一半。分项上 Fusion Terminal-Bench 4.0=71 领先，FrontierCode 51 落后 Opus 的 56。</td></tr>
-    <tr><td>Devin Fusion（编排竞品）</td><td>AA：Devin Fusion（Opus 5.5 Max + GPT-6 Luna High）=62，均成 $8.00；GitHub Fusion Max=$5.59 / 60 分。同属「编排层」赛道。</td></tr>
-    <tr><td>手动在 Copilot 里换模型</td><td>AT&amp;T 工程师引言（Changelog）：以前选强模型做完忘切回去；Fusion 消掉这笔摩擦。属客户证言，非盲测。</td></tr>
-    <tr><td>Cursor / 其它 IDE Agent</td><td>Fusion 的差异是「官方多模型池 + 企业策略控件 + 与 GitHub 仓库/Projects 同生态」；独立 IDE 仍可能在单模型体验或速度上更激进——成稿未见同 harness 横评。</td></tr>
-  </table>
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>对标 Figure / RT-X / π0 / 国内各家 VLA：</strong>GO-3 的差异化叙事是「全链路 Scaling + 部署后 RSI」，不只拼零样本操作成功率；世界模型（Genie Envisioner 2.0）被放进后训练环，而不是单独卖视频生成。</li>
+    <li><strong>对标纯语音助手机器人：</strong>WITA-OMNI 强调无唤醒词、方位/声纹/唇动联合选人、FaceUI——比「加个 ASR」更重交互原生。</li>
+    <li><strong>Worken：</strong>意图把行业 KPI 从「Demo 酷不酷」拉到「自主工时 × 产出」。若被客户接受，招投标叙事会变；目前仍是智元单方面定义。</li>
+    <li><strong>灵渠 OS 开源：</strong>若真捐赠并可用，会影响中间件选型；需等年底代码与许可证落地再判断。</li>
+  </ul>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">「Copilot Fusion」10-28 当天 X 帖量 ≈573</span>
-    <span class="pill">VentureBeat / TNW / Changelog 同日覆盖</span>
-    <span class="pill">讨论焦点：半价接近 Opus、企业模型治理、限时 7 折</span>
+    <span class="pill">量子位 / 品玩头部曝光</span>
+    <span class="pill">创新日演出现场热度高</span>
+    <span class="pill">榜单第一待第三方复核</span>
   </div>
-  <p>热度低于 Carbon，但在开发者向渠道很实。态度偏「终于不用手切模型了」；谨慎点是：编排省的是推理账单，审查与返工成本仍在；Max 档并不保证每类任务都赢。未见大规模第三方桌面长测。</p>
-  <p class="src">脚注：同日 GitHub Design 开源 <a href="https://github.com/github/replica">Replica</a>（MIT）——用自然语言 + 你们自己的设计系统出可交互原型，可选自建 Replica Hub 收评论。热度与产品硬度低于 Fusion，故不单开。</p>
+  <ul>
+    <li><strong>正面：</strong>便利店无人在环改进、龙旗产线 99.99% 作业成功率、长隆近 500 台部署等案例让「物理 AI 上岗」故事更硬。</li>
+    <li><strong>批评 / 疑问：</strong>多榜第一高度依赖厂商自报；Worken 公式尚未见独立审计；OS「2 亿行代码」等表述需开源后验证。</li>
+    <li><strong>广告提示：</strong>量子位稿件语气活泼、接近品牌传播，技术细节仍可用，但「杀穿榜单」类标题按公关稿阅读。</li>
+  </ul>
 
   <div class="media">
-    <h4>媒体怎么说</h4>
-    <p class="mgroup">官方</p>
+    <h4>媒体摘录</h4>
     <div class="mcard">
-      <p class="mhead">GitHub Changelog · Oct 28, 2026</p>
-      <p class="mtitle"><a href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/">Route and orchestrate models with GitHub Copilot Fusion</a></p>
-      <p class="mangle">GA 范围、三档努力、三种编排、计费与 30% 折扣以这篇为准。</p>
+      <p class="mhead">品玩 <span class="mtag">中文深度</span></p>
+      <p class="mtitle"><a href="https://www.pingwest.com/w/318950">智元发布具身模型 GO-3 Preview，三榜第一</a></p>
+      <blockquote>具身模型不是单纯「训出来的」，更是在真实世界「干出来的」。</blockquote>
+      <p class="mangle">对 WRAM / CoAE / SVP / KASO 与 Genie 三件套写得最清楚的中文稿。</p>
     </div>
-    <p class="mgroup">海外</p>
     <div class="mcard">
-      <p class="mhead">VentureBeat · Carl Franzen · 11:01 am PT Oct 28</p>
-      <p class="mtitle"><a href="https://venturebeat.com/orchestration/github-copilot-fusion-mixes-models-to-achieve-near-opus-5-5-coding-performance-at-half-the-per-task-cost">GitHub Copilot Fusion mixes models… half the per-task cost</a></p>
-      <p class="mangle">独立 AA 数字、与 Devin Fusion 对照、77% vs 51% 口径拆分最清楚。</p>
+      <p class="mhead">量子位 <span class="mtag">传播向</span></p>
+      <p class="mtitle"><a href="https://www.qbitai.com/2026/10/506819.html">榜一，拿来吧你！智元这波双模型杀穿多榜榜单</a></p>
+      <blockquote>万台下线，只是制造业的胜利；万台上岗，才是物理 AI 的胜利。</blockquote>
+      <p class="mangle">Worken、WITA、灵渠、落地案例一站式；标题党，正文案例密度高。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 3 Ling ========== -->
-<article id="ling">
-  <h2><span class="tag t-mid">开源 Agent</span>蚂蚁百灵开源 Ling-3.1-flash-1019：560B MoE，主打长程 Personal Agent</h2>
-  <div class="verdict"><strong>结论：</strong>国内开源 Agent 权重值得记的一条。蚂蚁百灵在北京时间约 <strong>2026-10-28</strong> 放出 <strong>Ling-3.1-flash-1019</strong>（HF / ModelScope，<strong>MIT</strong>）：混合线性 MoE，总参约 <strong>560B</strong>、每 token 激活约 <strong>25B</strong>、标称 <strong>1M</strong> 上下文；AA Index v4.3.2 自报 41→<strong>44</strong>；AA-Briefcase Elo 约 1400→<strong>1524</strong>；AutomationBench-AA 62%→<strong>68%</strong>。同步开源可继续训的 <strong>Ling-3.1-flash-base</strong>（BF16）。产品叙事绑「灵光 2.0 能管事的个人助理」——模型服务真实多步生活 / 工作流，而不是再刷一道题。数字多为厂方 / 量子位转述，成稿<strong>未见</strong>独立第三方 harness 复现。</div>
+<!-- ========== 3 MISTRAL ========== -->
+<article id="mistral">
+  <h2><span class="tag t-mid">开源旗舰</span>Mistral 正式开放 Large 4（Le Chonk）权重：1T MoE，主打 Coding Agent 与防御安全</h2>
+  <div class="verdict"><strong>结论：</strong>10-29 权重落地是比 10-6 预览 API 更实质的节点。官方口径：开源侧 FrontierCode 第一、Coding Agent Index 与 GLM-5.3 打平但 token 更省、Cyber Index 开源前列。许可是改版 MIT（MaaS 商用需另签）。对「要主权部署的欧洲企业 + 安全团队」叙事极强。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>HF 模型卡 <a href="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">inclusionAI/Ling-3.1-flash-1019</a>；量子位专稿 <a href="https://www.qbitai.com/2026/10/505928.html">Personal Agent走向真实任务…</a>（10-28 12:04）；智源社区 / 艾瑞网 / Ailyre 等转载或摘要。SGLang 提供 day-0 镜像 <code>lmsysorg/sglang:dev-ling-3.1-flash</code>。</p>
+  <p>Mistral 于 <strong>2026-10-29</strong> 发布改进版 Large 4 开源权重（预览后约三周持续 RL）。模型约 <strong>1T 总参 / ~49–52B 激活</strong>，原生多模态，1M 上下文；HF 上提供 FP8 与 NVFP4；Transformers / vLLM / SGLang / llama.cpp 日零支持。官方 X 主帖约 6.1k 赞 / 74 万曝光。HF 博文同日上线。</p>
+  <p class="src">一手：<a href="https://mistral.ai/news/mistral-large-4-oss/">Mistral OSS 公告</a> · <a href="https://huggingface.co/blog/mistral-large4">HF 博文</a> · <a href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B">模型卡</a> · X <a href="https://x.com/MistralAI/status/2115811242556137820">@MistralAI</a></p>
 
   <h3>2. 产品介绍</h3>
+  <p><strong>架构要点（HF）：</strong>72 层、MLA + DeepSeek 式稀疏注意力索引、128 专家选 4 + 1 共享专家；Pixtral 1.6B 视觉编码器；三种 reasoning 档位 low/medium/high（默认 high，不能真正关掉）。</p>
+  <p><strong>官方亮点数字（需独立复核）：</strong>FrontierCode 2.0 开源第一 19.7%；Terminal-Bench 4.0 开源领先且较预览 +13pt 至 41%；AA Coding Agent Index 48% 打平 GLM-5.3 但平均少 47% token；Cyber Index 51%；有害网络请求拒绝率 96.6%（开源最高自称）。API 定价 $0.70 / $2.10 per M（in/out）。</p>
+
   <figure>
-    <img alt="Hugging Face Ling-3.1-flash-1019 模型卡社交图" src="https://oricter.github.io/product-radar-reports/2026-10-29/media/ling-hf.png"/>
-    <figcaption>Hugging Face 模型卡社交缩略图（2026-10-29 抓取）。</figcaption>
+    <img src="media/mistral-hf-thumb.png" alt="Hugging Face Mistral Large 4 博文封面"/>
+    <figcaption>HF 博文封面——看完应搞懂：社区入口是博文 + 模型集合，不是只丢一个 GGUF。</figcaption>
   </figure>
-  <ul>
-    <li><strong>规格</strong>：Hybrid-linear MoE；63 KDA + 9 Gated MLA；512 routed experts / 激活 8；词表 157184；HF 显示约 572B params 量级（与「560B」口径同族，以模型卡表为准）。</li>
-    <li><strong>后训练涨分（模型卡 / 量子位）</strong>：AA Index 41→44；AA-Briefcase ~1400→1524 Elo；AutomationBench-AA 62%→68%；CritPt 18%→26%；SciCode 54%→57%；GDPval-AA ~1618→1644 Elo。</li>
-    <li><strong>Base 基座</strong>：量子位称在 8 领域 47 项 benchmark 中 32 项超 DeepSeek-V4-Pro-Base 与 MiMo-V2.5-Pro-Base——属厂方对比，读时连设定一起看。</li>
-    <li><strong>怎么跑</strong>：推荐 SGLang 镜像；H200 示例 TP8+EP8，GB300 用 TP4+EP4；亦有 vLLM 分支说明。注意 cookbook 提醒模型路径用 <code>inclusionAI/Ling-3.1-flash-1019</code>。</li>
-    <li><strong>产品联动</strong>：量子位写明与灵光 2.0（跨会话记忆、长程调度、独立云主机）同一天叙事；另有 Ling-3.1-flash-VL 视觉版「已先用于灵光、后续再放」。</li>
-  </ul>
-  <div class="warn">未见可下载的官方产品演示长视频；以 HF 模型卡 + 量子位图文为准。HF 显示「Downloads last month: 548」——热度尚早。所有涨分数字来自官方模型卡 / 量子位转述，标注「未见独立第三方实测」。</div>
+  <figure>
+    <img src="media/mistral-oss-cover.webp" alt="Mistral Large 4 OSS 公告封面"/>
+    <figcaption>Mistral OSS 公告封面——看完应搞懂：官方把 Coding + Defenders 当成双主叙事。</figcaption>
+  </figure>
+
   <div class="howto">
-    <strong>怎么看</strong>
-    打开 <a href="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">HF 模型卡</a> 读 Introduction 表与 SGLang 段落；中文产品叙事读 <a href="https://www.qbitai.com/2026/10/505928.html">量子位</a>（注意软文气质：大量「据了解」「百灵表示」，当作厂方通稿消化）。部署细节可对照 SGLang cookbook。
-  </div>
-  <div class="ours">
-    <strong class="h">对我们意味着什么</strong>
-    开源侧又多一个「长上下文 + Agent 工具调用」候选，MIT 对二次开发友好。与世界模型无直接对打；若内部要便宜的长程任务基座做工具编排实验，可把 1019 / base 列入候选，先用自有 harness 打 Automation / 多步工具调用再信厂方表。560B 总参对本地推理门槛仍高（多卡 MoE），更现实的是云端 API / 蒸馏小杯。
+    <strong>怎么自己看 / 跑</strong>
+    读 <a href="https://mistral.ai/news/mistral-large-4-oss/">OSS 公告</a> 的三张核心图（FrontierCode / Token 效率 / Cyber）→ 打开 HF 博文复制 vLLM 或 transformers 示例 → 注意 NVFP4 需要 Blackwell；FP8 示例常用 8 卡。许可：可商用微调，但做 Model-as-a-Service 要另获 Mistral 商业许可。
   </div>
 
-  <h3>3. 导致什么影响（竞品对比）</h3>
-  <table>
-    <tr><th>对比谁</th><th>差在哪</th></tr>
-    <tr><td>上一版 Ling-3.1-flash</td><td>同架构后训练加分；Index 41→44，Agent / 知识工作多项上涨——官方自比。</td></tr>
-    <tr><td>DeepSeek V4.1-Flash / MiniMax M3.1 Flash（已报）</td><td>同属开源高性价比 Agent 向；DeepSeek 近周 OpenRouter 用量热；Ling 押「Personal Agent + 灵光产品闭环 + MIT base」。缺同 harness 横评。</td></tr>
-    <tr><td>Kimi K3.1 Pro 等 3T 级开源承诺</td><td>Ling 是 560B/25B 激活的「智效比」路线，不是参数军备；定位 Personal Agent 真实任务，而非综合榜死磕第一。</td></tr>
-    <tr><td>闭源 Carbon / Opus 5.5</td><td>Index 44 vs 闭源 50+ 仍有明显差距；换的是可商用权重、可续训、可私有部署。</td></tr>
-  </table>
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>对标 DeepSeek V4 / GLM-5.3 / Qwen3.8 Max / Kimi K3：</strong>Mistral 不拼「全能榜第一」，而拼 <strong>agentic coding 效率曲线 + 可自托管的防御安全</strong>。闭源 Claude Opus / GPT 系在部分 cyber 复现任务上会拒答，开源权重把策略交给部署方。</li>
+    <li><strong>主权 AI：</strong>欧洲自建机房从零训练 + 开源权重，是对美国闭源 API 依赖的产品化反击；微软 Foundry 已上架。</li>
+    <li><strong>成本现实：</strong>社区吐槽「git clone 1T，这得等一会儿」——推理门槛仍是 8 卡级，个人玩家靠 GGUF 低比特。</li>
+  </ul>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">相关关键词近几日 X 帖量合计约数百级（低于 Carbon / Fusion）</span>
-    <span class="pill">量子位专稿 + 智源社区 / 艾瑞转载</span>
-    <span class="pill">HF 月下载仍低（成稿时约 548）</span>
+    <span class="pill">官方帖 ~6.1k 赞 / ~74万曝光</span>
+    <span class="pill">SGLang Day-0 支持被疯转</span>
+    <span class="pill">中文区「写代码+搞安全」总结帖</span>
   </div>
-  <p>中文渠道以通稿转述为主；开发者态度偏「先收下 MIT 权重，等有人用 SGLang 跑通长程 agent 再评」。未见大规模第三方盲测或知名博主长测翻车 / 封神帖。</p>
+  <ul>
+    <li><strong>正面：</strong>安全厂商（Booz Allen、Cloudflare、Zscaler、Fortinet、Rubrik 等）背书防御向能力；Surge 盲测编码偏好高于多数开源对手。</li>
+    <li><strong>批评：</strong>硬件门槛高；部分用户调侃「开源也是预算问题」；基准数字均为官方或合作方场景，社区独立榜还需观察一两周。</li>
+  </ul>
 
   <div class="media">
-    <h4>媒体怎么说</h4>
-    <p class="mgroup">官方 / 一手</p>
+    <h4>媒体摘录</h4>
     <div class="mcard">
-      <p class="mhead">Hugging Face · inclusionAI</p>
-      <p class="mtitle"><a href="https://huggingface.co/inclusionAI/Ling-3.1-flash-1019">Ling-3.1-flash-1019</a></p>
-      <p class="mangle">规格、基准涨幅、SGLang / vLLM 命令以模型卡为准。</p>
-    </div>
-    <p class="mgroup">中文</p>
-    <div class="mcard">
-      <p class="mhead">量子位 · 2026-10-28 12:04</p>
-      <p class="mtitle"><a href="https://www.qbitai.com/2026/10/505928.html">Personal Agent走向真实任务，蚂蚁百灵开源 Ling-3.1-flash-1019</a></p>
-      <p class="mangle">产品叙事最全；通稿气质重，数字需回对 HF。</p>
+      <p class="mhead">Mistral 官方 <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://mistral.ai/news/mistral-large-4-oss/">Mistral Large 4 (Le Chonk) is now open weight</a></p>
+      <blockquote>We release the weights of Le Chonk, advancing the frontier of open models in agentic coding and cybersecurity.</blockquote>
+      <p class="mangle">所有关键数字与客户引言的源头；引用时写明「官方宣称」。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">智源社区 · 转载摘要</p>
-      <p class="mtitle"><a href="https://hub.baai.ac.cn/view/59107">蚂蚁百灵放出 Ling-3.1-flash-1019 开放权重…</a></p>
-      <p class="mangle">规格速览；注意是否二次转载。</p>
+      <p class="mhead">Hugging Face <span class="mtag">社区一手</span></p>
+      <p class="mtitle"><a href="https://huggingface.co/blog/mistral-large4">Welcome Le Chonk: Mistral Large 4 on Hugging Face</a></p>
+      <blockquote>About 1T total, 49B active parameter, and a context window of 1M tokens.</blockquote>
+      <p class="mangle">架构拆解与推理代码最实用；发布标注 10-29。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">X · 山景城小路 <span class="mtag">中文圈层</span></p>
+      <p class="mtitle"><a href="https://x.com/Zen_with_AI/status/2115844779452064043">Mistral Large 4 Le Chonk 解读帖</a></p>
+      <blockquote>1T 参数的 MoE 多模态模型……专攻两个方向：写代码和搞安全。</blockquote>
+      <p class="mangle">中文区传播用的压缩叙事，适合快速对齐口径。</p>
     </div>
   </div>
 </article>
 
 <footer>
-  产品雷达 · 2026-10-29 · 只覆盖约过去 24 小时 · 去重见 seen.md<br/>
-  上期：<a href="https://oricter.github.io/product-radar-reports/2026-10-28/">2026-10-28</a> · <a href="https://oricter.github.io/product-radar-reports/archive.html">往期目录</a>
+  阿汤 · 产品雷达日报 · 2026-10-31 · 发布于 <a href="https://oricter.github.io/product-radar-reports/">oricter.github.io/product-radar-reports</a>
+  · 本页仅供内部产品决策参考；榜单与案例数字以各官方原文为准，引用请复核。
 </footer>
 </div>
 </body>
