@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AI 产品情报 · 2026-10-31 · Mundo / 智元 GO-3 / Mistral Large 4 开源权重</title>
+<title>AI 产品情报 · 2026-11-01 · DeepSeek Harness 公布 Super-agent 架构并开源原型</title>
 <style>
   :root {
     --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
@@ -102,281 +102,206 @@
 </head>
 <body>
 <div class="wrap">
-<h1>AI 产品情报 · 2026-10-31（周六）</h1>
-<div class="cover"><strong>本版覆盖媒体 / 一手源约 14 家（外文 5 / 中文 5 / 官方 4）</strong>：外文是 Hugging Face Blog、Mistral 官方、Artificial Analysis（经官方转述）、Tech 社区 X；中文是量子位、品玩、GPLP/大晓通稿链、智东西未专稿则跳过；官方是 Mundo 项目页、智元创新日通稿、Mistral OSS 公告、HF 模型卡。10-30 例行失败，本期补齐 10-29 晚报至今日早间。</div>
+<h1>AI 产品情报 · 2026-11-01（周日）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 11 家（官方 3 / 中文 5 / 社区外文 3）</strong>：官方是 GitHub 原型仓 README、DeepSeek Harness 产品页、官方设计长文《Super-agent 设计探索：迈向更自主的 Agent 系统》（微信原文被验证码拦截，事实以量子位/智东西转载与 README 交叉核对）；中文是量子位、智东西、IT之家、虎嗅、极客公园早知道；社区是 X（Mashiro_0619 / AIGCLINK 等）与开发者解读帖。机器之心检索未发现专稿，本版不编造。</div>
 <div class="meta">
-  <p><strong>时间范围</strong>：美东约 2026-10-29 晚 → 2026-10-30 晚（对应北京 10-30 白天到 10-31 早上）；成稿北京时间 2026-10-31 约 09:10。因 10-30 日报未发出，覆盖上期（10-29）之后的空白。</p>
-  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 Mundo 国内传播高峰 / 智元创新日双模型 / Mistral Large 4 开源权重 → 读项目页、官方博客、品玩与量子位一手 → 交叉 X 热度与竞品定位 → 按世界模型邻接 / 具身大厂 / 开源旗舰优先级成稿。</p>
-  <p><strong>去重说明</strong>：10-29 已报 Gemini 4 Carbon、Copilot Fusion、Ling-3.1-flash 不重复；更早 Genie 4、LFM3、Apple Creator Studio、GPT-6.1 Terra、Kimi K3.1 Pro、可灵 4.0、Matrix-Game 4.0 等不重复。启元 PrimeSim 同期有软文但证据薄、非热门，本版不单开。</p>
+  <p><strong>时间范围</strong>：美东约 2026-10-31 01:00 UTC → 2026-11-01 01:00 UTC（对应北京 10-31 白天到 11-01 早上）；成稿北京时间 2026-11-01 约 09:15。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 DeepSeek Harness Super-agent 架构长文 + dsh-superagent-prototype 开源 → 读 GitHub README / 量子位 / 智东西 / IT之家 / 虎嗅 / 极客公园 → 交叉 X 热度与竞品定位 → 窗内无第二条同等热门真新品，今日做 1 条深稿。</p>
+  <p><strong>去重说明</strong>：10-31 已报 Mundo、智元 GO-3、Mistral Large 4 不重复；10-29 已报 Gemini 4 Carbon / Copilot Fusion / Ling-3.1-flash；Factory Droid 1.0（约 10-29）、Gemini Computer Use GA（约 10-30）、Claude Ultra 去 5h 限制、Pika H3 Flex 等超出 24h 或非今日实质新品，本版不单开。</p>
 </div>
 
 <div class="alert">
   <strong>今日要点（先看这三条）</strong>
   <ol>
-    <li><strong>Mundo（大晓×南洋理工）</strong>：用几张照片建「可探索 + 可物理交互」的定制世界模型；10-30 中文媒体集中扩散，对世界模型产品线是强对标样本。</li>
-    <li><strong>智元 GO-3 Preview + WITA-OMNI</strong>：作业智能与交互智能双模型登顶多榜，并抛出 Worken 有效工时单位与灵渠 OS 年底开源承诺。</li>
-    <li><strong>Mistral Large 4（Le Chonk）开源权重</strong>：1T MoE / ~49–52B 激活，官方称开源侧 coding + 防御安全领先；HF / vLLM / SGLang 当日可跑。</li>
+    <li><strong>DeepSeek Harness 公布 Super-agent 架构</strong>：主张单任务瓶颈已从模型转向「人的注意力」（人通常只能跟进 3–5 个活跃 Session）；目标做成连续、高效、主动、持久的跨信道 Agent 实体。</li>
+    <li><strong>同步开源研究原型 dsh-superagent-prototype（MIT）</strong>：README 明文「非正式产品」；挂在 DeepSeek Harness 上，盯一个 GitHub 仓（可选飞书），授权后自开工单并提 PR；成稿时约 <strong>2485★ / 217 forks</strong>。</li>
+    <li><strong>核心工程主张是系统层调度，不是新 frontier 权重</strong>：Router（轻量分派/对外）+ Worker（强模型隔离执行）+ 事件订阅直通；合成负载 p50 12.4 / p95 15.7 分钟，对标单 Session 中性提示 p95 29.5 分钟——测的是调度稳定性，不是写代码能力。</li>
   </ol>
 </div>
 
 <div class="toc">
-  <a href="#mundo"><span class="tag t-hot">世界模型</span>大晓×南洋理工发布 Mundo：照片变可交互物理世界</a>
-  <a href="#agibot"><span class="tag t-hot">具身大厂</span>智元创新日：GO-3 / WITA-OMNI 双模型 + Worken + 灵渠 OS</a>
-  <a href="#mistral"><span class="tag t-mid">开源旗舰</span>Mistral Large 4（Le Chonk）权重正式开放</a>
+  <a href="#dsh"><span class="tag t-hot">Agent 系统 / Harness</span>DeepSeek Harness 公布 Super-agent 架构，并开源 dsh-superagent-prototype</a>
 </div>
 
-<!-- ========== 1 MUNDO ========== -->
-<article id="mundo">
-  <h2><span class="tag t-hot">世界模型</span>大晓机器人 × 南洋理工发布 Mundo：几张照片建成可探索、可编程物理交互的定制世界</h2>
-  <div class="verdict"><strong>结论：</strong>这是「按地点定制」的世界模型，而不是泛化视频生成。它把 3D 代理 + MuJoCo 物理 + 视频扩散渲染串成一条链，直接服务机器人 Real-to-Sim——对阿汤公司的世界模型产品线，比又一个文生视频 Demo 更有对标价值。</div>
+<!-- ========== 1 DEEPSEEK SUPER-AGENT ========== -->
+<article id="dsh">
+  <h2><span class="tag t-hot">Agent 系统</span>DeepSeek Harness 团队公布 Super-agent 架构，并开源研究原型 dsh-superagent-prototype（MIT）</h2>
+  <div class="verdict"><strong>结论：</strong>这不是 DeepSeek 新发一个 frontier 大模型，也不是「dsh dot」成品上线——它是一篇把计算机系统调度思想搬进 Agent 的工程长文，外加一个可自托管的 Harness 插件原型。对产品经理的价值在于：它把「人注意力瓶颈」写进架构目标，并用 Router/Worker + 事件订阅直通给出可讨论的系统层答案；对落地团队，必须把「架构蓝图」和「公开代码能做什么」分开看。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>大晓机器人联合南洋理工大学 S-Lab 公开 <strong>Mundo（Customized World Model）</strong>：输入少量真实场所照片或视频，输出可自由探索、可用代码编辑物理属性、可做机器人导航/操作仿真的三维世界。英文项目页与 HF 技术博文约在 10 月下旬落地；作者 X 帖 10-28 起扩散；<strong>中文产业媒体在 10-30 形成集中报道波</strong>（GPLP 等）。本条按「国内传播 + 产品化叙事高峰」收录，并注明英文首发时间早于中文稿。</p>
-  <p class="src">一手：<a href="https://mundo-world-model.github.io/">项目页</a> · <a href="https://huggingface.co/blog/Luo-Yihang/mundo-world-model">HF 博文（2026-10-23）</a> · 作者 X <a href="https://x.com/onelineluo/status/2115437035091808649">@onelineluo</a>（约 238 赞 / 8.1k 曝光）· 中文：<a href="https://www.gplp.cn/archives/163545">GPLP 10-30</a></p>
+  <p>北京时间 <strong>2026-10-31 晚</strong>，DeepSeek Harness 团队公开设计长文《Super-agent 设计探索：迈向更自主的 Agent 系统》，并在 GitHub 开源 <strong>dsh-superagent-prototype</strong>（仓库创建 UTC 2026-10-31T09:32:46Z，许可证 MIT）。量子位同日 21:49 发出中文首波解读；智东西、IT之家、极客公园早知道、虎嗅在 10-31 夜至 11-01 凌晨跟进。</p>
+  <p>官方定位非常清楚（README 原文大意）：这是<strong>研究原型，仅供参考，不是正式 DeepSeek 产品</strong>；公开版与内部实现、以及设计长文描述<strong>不完全一致</strong>；长文里部分设想属于未来方向，原型未实现。</p>
+  <p class="src">一手：<a href="https://github.com/deepseek-ai/dsh-superagent-prototype">GitHub · dsh-superagent-prototype</a>（成稿核验约 2485★ / 217 forks）· Harness <a href="https://www.deepseek.com/en/harness/">EN</a> / <a href="https://deepseek.com/harness/zh/">中文</a> · 中文媒体：<a href="https://www.qbitai.com/2026/10/506904.html">量子位 10-31 21:49</a> · <a href="https://www.zhidx.com/p/606311.html">智东西 11-01</a> · <a href="https://www.ithome.com/0/1020/615.htm">IT之家 10-31 21:36</a> · <a href="https://www.huxiu.com/article/4902022.html">虎嗅 11-01 03:15</a> · <a href="https://www.geekpark.net/news/373243">极客公园早知道</a></p>
+  <div class="warn">微信原文链接常见为 <code>mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg</code>，本机抓取被验证码拦截；以下事实交叉自量子位、智东西转载叙述与 GitHub README，不假装「已全文核对微信原页」。</div>
 
   <h3>2. 产品介绍</h3>
-  <p><strong>三件套流水线：</strong></p>
+  <p><strong>它想解决什么：</strong>Coding Agent 单任务能力上来之后，人越来越少介入底层执行，但多任务仍要人记住「哪个 Session 走到哪」。团队观察：人通常只能同时跟进约 <strong>3–5 个活跃 Session</strong>。瓶颈从模型能力转向<strong>人的注意力</strong>。</p>
+  <p><strong>Super-agent 四特征（长文主张）：</strong></p>
   <ul>
-    <li><strong>建代理世界</strong>：3D 检测器给初始包围盒 → VLM Agent 做 analysis-by-synthesis 迭代对齐输入视图。</li>
-    <li><strong>代码世界跑物理</strong>：场景程序写物体质量/摩擦/动作；默认 MuJoCo 算重力、接触、碰撞。</li>
-    <li><strong>代理帧 + 视频模型渲染</strong>：扁平类别色代理视频 + 上下文影像注入视频扩散（基于 MiniMax-H3 Ref2VA 微调），按相机路径出片。</li>
+    <li><strong>连续</strong>：在 IM / GitHub 等熟悉界面始终像「同一个 Agent」，不必自己拼跨 Session 上下文。</li>
+    <li><strong>高效</strong>：多复杂任务并行；不必等上一任务结束才能接新指令。</li>
+    <li><strong>主动</strong>：持续观察环境事件；该出手时出手，不该打扰时安静。</li>
+    <li><strong>持久</strong>：长期在线；异常时尝试自动恢复。</li>
   </ul>
-  <p><strong>官方演示里能直接看到：</strong>酒店房间多视角探索；拉开抽屉扔苹果砸显示器（含子弹时间）；Unitree G1 / 机器狗在重建楼层导航；洗衣房开门交互。博文坦承限制：重建约 10–20 分钟；八卡 A800 上渲染约 1.5 FPS；小物体易漂浮；尚无长时记忆。</p>
+  <p><strong>公开原型实际长什么样（README）：</strong>挂在 DeepSeek Harness 上的「单 GitHub 仓库主动编程 Agent」插件；监听 GitHub，可选飞书；授权用户请求后创建工作项，在独立 Agent Session / 目录里干活，并在原对话回复（例如开 PR）；另有 Web 面板标出需要人工介入的事项。理念一句话：<strong>尽量少占人的注意力，尽量多交付价值</strong>。</p>
 
   <figure>
-    <img src="media/mundo-film-frame.jpg" alt="Mundo 官方演示片截帧：定制场景探索"/>
-    <figcaption>官方演示片截帧——看完应搞懂：同一组照片可沿任意相机路径补视角。</figcaption>
-  </figure>
-  <figure>
-    <img src="media/mundo-hotel-frame.jpg" alt="Mundo 酒店楼层导航演示截帧"/>
-    <figcaption>酒店楼层导航演示截帧——看完应搞懂：3D 代理直接给机器人路径规划用。</figcaption>
-  </figure>
-  <figure>
-    <img src="media/mundo-g1-frame.jpg" alt="Mundo Unitree G1 场景截帧"/>
-    <figcaption>G1 机器人场景截帧——看完应搞懂：同一重建环境可换不同机器人本体做仿真。</figcaption>
+    <img src="media/dsh-github-og.jpg" alt="GitHub dsh-superagent-prototype 仓库封面"/>
+    <figcaption>GitHub 仓库社交图——看完应搞懂：这是 MIT 研究原型仓，标语 Towards a More Autonomous Agent System，不是 App Store 式产品页。</figcaption>
   </figure>
 
-  <div class="videos">
-    <h4>页内视频（官方）</h4>
-    <div class="vid">
-      <p class="vlabel"><span class="who">谁发的：Mundo 项目组官方演示剪辑</span>
-      <span class="why">看完应搞懂：从几张图 → 自由探索 → 物理交互 → 机器人任务，整条链路长什么样。</span></p>
-      <video controls playsinline poster="media/mundo-film-frame.jpg" preload="metadata">
-        <source src="media/mundo-film-clip.mp4" type="video/mp4"/>
-      </video>
-    </div>
-    <div class="vid">
-      <p class="vlabel"><span class="who">谁发的：官方酒店导航片段</span>
-      <span class="why">看完应搞懂：重建楼层如何支撑从大厅到客房的导航仿真。</span></p>
-      <video controls playsinline poster="media/mundo-hotel-frame.jpg" preload="metadata">
-        <source src="media/mundo-hotel-nav.mp4" type="video/mp4"/>
-      </video>
-    </div>
-    <div class="vid">
-      <p class="vlabel"><span class="who">谁发的：官方 G1 机器人片段</span>
-      <span class="why">看完应搞懂：人形机器人如何在定制场景里走完一条任务轨迹。</span></p>
-      <video controls playsinline poster="media/mundo-g1-frame.jpg" preload="metadata">
-        <source src="media/mundo-hero-g1.mp4" type="video/mp4"/>
-      </video>
-    </div>
-  </div>
+  <h4>双层架构：Router 分派，Worker 干活</h4>
+  <p>跨信道连续 vs 多任务吞吐是一对矛盾。解法是拆两层：</p>
+  <ul>
+    <li><strong>Router</strong>：常驻、轻量；只做人类交互、全局协调与任务分派，甚至可以不配 Bash；用批处理摊薄突发事件成本。</li>
+    <li><strong>Worker</strong>：强模型、上下文隔离；挂完整工具链执行单任务；不直接对外抢话，状态回报 Router，由 Router 统一回复用户。</li>
+  </ul>
+  <p><strong>订阅 / 直通：</strong>Worker 订阅某个 Thread（例如同一 PR 下的连续评论）后，后续事件由程序直送该 Worker，不再每条都绕 Router。去掉直通后，完成时间差不多，但 Router 决定数约 +30%，读缓存 token 从约 2323 万 → 3177 万（约 +37%）。</p>
+
+  <figure>
+    <img src="media/dsh-arch-1.jpg" alt="Super-agent 整体系统架构图"/>
+    <figcaption>整体系统架构图（媒体转载自设计长文配图）——看完应搞懂：五大模块如何叠在一起：双层、事件驱动、异步多信道、存算分离、外部 Watchdog。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-arch-2.jpg" alt="Router 与 Worker 双层架构示意"/>
+    <figcaption>双层架构示意——看完应搞懂：Session 应是系统实现细节，不是用户要自己管理的认知负担。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-im.jpeg" alt="IM 与 GitHub PR 之间连续推进同一任务"/>
+    <figcaption>用例叙事图——看完应搞懂：同一任务可从飞书/IM 讨论一路跟到 GitHub PR 评审，而不靠人复制粘贴上下文。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-sub.jpeg" alt="订阅与直通：后续事件直送 Worker"/>
+    <figcaption>订阅与直通——看完应搞懂：冷启动走 Router；已归属 Thread 的后续事件走 Fast Path 直通 Worker。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-spec.jpeg" alt="投机执行：群聊讨论时后台已提修复 PR"/>
+    <figcaption>投机执行示例——看完应搞懂：群里还在讨论时，Agent 可在后台复现/试修；有价值才交付，没价值保持安静。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-async.jpeg" alt="经典 ReAct 与异步 ReAct 对比"/>
+    <figcaption>异步 ReAct——看完应搞懂：耗时工具改为 start/stop 异步后，前台可继续接新指令；Harness 已实现但未默认开启。</figcaption>
+  </figure>
+
+  <h4>其余模块（长文，原型未必全开）</h4>
+  <ul>
+    <li><strong>两级事件过滤</strong>：程序 Fast Path 先按来源/白名单筛噪 → 模型 Slow Path 做语义判断。</li>
+    <li><strong>Inline &amp; Spill + 链式召回</strong>：把上下文窗口当 Cache；对象带 ID，按需多跳展开。</li>
+    <li><strong>存算分离</strong>：Agent Loop 计算、持久状态、执行环境解耦；叙事上对齐 Anthropic「脑手分离」，但场景更强调接入间歇在线的个人开发机（BYOM）。</li>
+    <li><strong>外部 Watchdog</strong>：独立 Session 盯基础设施存活 + 任务是否实质进展/偏离目标。</li>
+  </ul>
+
+  <h4>初步实验（官方自报，合成负载）</h4>
+  <p>约 300 条消息 / 20 条工作请求，编码用耗时工具代替，各方案跑 5 次：</p>
+  <ul>
+    <li>Super-agent：<strong>p50=12.4 分钟，p95=15.7 分钟</strong></li>
+    <li>带 Subagent 的单 Session、中性提示：几乎不委派，被新消息打断，<strong>p95=29.5 分钟</strong></li>
+    <li>Router 批处理压测：单决定分摊推理时间约 <strong>6.4s → 1.6s</strong></li>
+  </ul>
+  <figure>
+    <img src="media/dsh-zhidx-exp.jpeg" alt="四种方案任务完成时间对比实验图"/>
+    <figcaption>消融实验图——看完应搞懂：比的是调度完成时间稳定性；官方自己写明「合成负载 + 简化环境，仅初步参考」。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-batch.png" alt="Router 批处理随 Trigger 速率变化"/>
+    <figcaption>Router 批处理曲线——看完应搞懂：事件越堵，合并批越大，单决定摊薄成本越低（在上下文长度上限内）。</figcaption>
+  </figure>
 
   <div class="howto">
-    <strong>怎么自己看（5 分钟）</strong>
-    打开 <a href="https://mundo-world-model.github.io/">项目页</a> → 先点 Spatial exploration 看「1–12 张图换视角」→ 再点 Physical interaction 拖垃圾桶/抽屉 → 最后看 Robotics application 酒店导航三段。HF 博文有完整公式与限制清单。
+    <strong>怎么自己看（8 分钟）</strong>
+    打开 <a href="https://github.com/deepseek-ai/dsh-superagent-prototype">GitHub 原型仓</a> → 先读 README 顶部「Research prototype / not an official product」免责声明 → 再按 docs/000–007 顺序扫 Philosophy 与 Architecture → 想动手就按 SETUP.md 让你的 coding agent 逐步安装。媒体侧：量子位适合 3 分钟抓住「群里没人 @ 也能提 PR」叙事；智东西适合对照架构图；虎嗅适合看「授权 / 状态 / 隔离」边界批评。
   </div>
+  <p><strong>视频：</strong>窗内未见官方可嵌的独立演示片；本版不硬塞无关视频，以架构图 + 用例图为准。</p>
 
   <h3>3. 导致什么影响（含竞品）</h3>
   <ul>
-    <li><strong>对标 Atlas / 快乐生蚝 / Odyssey / Zing：</strong>Mundo 论文叙事明确写「支持与 Atlas 类似的场景重建与时空模拟」，但差异是<strong>把质量、摩擦写进场景程序，用物理引擎算响应</strong>，再交给视频模型渲染——不是纯隐式视频世界模型「猜下一帧」。</li>
-    <li><strong>对标 Genie / 可交互游戏世界：</strong>Genie 系偏通用交互策略；Mundo 偏「这个具体酒店/办公室」的 Real-to-Sim 数据工厂。大晓文稿把它嵌进自家 Kairos 体系，补环境建模与训练数据生成。</li>
-    <li><strong>产业含义：</strong>谁能把「现场几张图 → 可训策略的仿真场」做成产品流水线，谁就卡住具身落地的数据瓶颈。速度（重建分钟级、渲染 1.5 FPS）仍是落地门槛。</li>
+    <li><strong>vs Claude Code / Claude Duet：</strong>Claude Code 强在单会话深度工程与需确认的主动找活；Duet（seen 10-22 已报）是产品预览级个人 Agent App。DeepSeek 这次强调的是<strong>跨信道 Router/Worker + 事件订阅的系统层</strong>，并开源可自托管原型——品类是「Harness / 调度哲学」，不是又一个聊天 App。</li>
+    <li><strong>vs Factory Droid 1.0：</strong>Droid 是闭源企业 harness，默认 programmatic/Script 工具调用、多模型效率叙事（官文 <a href="https://factory.com/news/frontier-harness">frontier harness</a>）。DeepSeek 开的是 <strong>Harness 插件式研究原型 + Super-agent 调度主张</strong>，开放度高、产品完成度明确标低。</li>
+    <li><strong>vs OpenAI Codex / Cursor：</strong>偏 IDE/沙箱单任务或并行 agent 编排；Super-agent 主打 <strong>IM + GitHub 连续实体</strong>，并把「人注意力」写成一等约束。社区也有人拿 Cursor Projects / Claude Projects 的主管-执行结构做类比，但 DeepSeek 文更强调事件驱动与跨信道 Thread 订阅。</li>
+    <li><strong>vs 蚂蚁 Ling-3.1-flash Personal Agent（10-29 已报）：</strong>Ling 是开源<strong>大模型权重</strong>主打 Personal Agent；DeepSeek 这次是 <strong>Agent 系统架构 / Harness 原型</strong>，不是新 frontier 权重。</li>
   </ul>
   <div class="ours">
-    <strong class="h">对我们（世界模型 / WASD+文字控制）</strong>
-    Mundo 的输入是多视角图 + 代码场景程序，不是逐帧 6-DoF 相机轨迹。若要对齐评测，更接近「文字/脚本驱动动作 + 相机路径探索」，与公司键盘控制思路可对话；但物理属性与 MuJoCo 闭环是额外能力层，榜单选型时别把它和纯视频生成榜混为一谈。
+    <strong class="h">对我们（世界模型公司 / 多 bot 协作）</strong>
+    这篇最可借鉴的不是「再堆一个聊天框」，而是：把分派层与执行层拆开、把授权与状态写到会话记忆之外、用事件订阅减少总控反复转发。若内部已有「总编排 bot + 执行 bot」分工，对照点应是：跨信道连续性、误触发成本、以及主动规则的观察模式——而不是照搬合成负载上的分钟数。
   </div>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">作者首帖 ~238 赞 / ~8.1k 曝光</span>
-    <span class="pill">研究圈转发为主</span>
-    <span class="pill">中文 10-30 产业通稿波</span>
+    <span class="pill">GitHub 成稿约 2485★ / 217 forks（半天量级攀升）</span>
+    <span class="pill">X · Mashiro_0619 ≈ 3.5 万曝光 / 486 赞 / 500 书签</span>
+    <span class="pill">X · AIGCLINK ≈ 1.1 万曝光 / 87 赞</span>
+    <span class="pill">中文科技媒体首夜密集跟进</span>
   </div>
   <ul>
-    <li><strong>正面：</strong>「照片 → 可交互世界」叙事清晰；物理可编程被机器人从业者点名；项目页交互 Demo 完成度高。</li>
-    <li><strong>保留：</strong>作者自己列了速度、小物体、长时记忆三大短板；目前公开的是研究页 + 演示，未见可下载权重或面向客户的 SaaS 入口。</li>
-    <li><strong>注意：</strong>部分中文稿带大晓品牌软文色彩（Kairos 体系植入），已在媒体卡标注；技术事实以项目页 / HF 博文为准。</li>
+    <li><strong>正面 / 热读点：</strong>「不是聊天框，是系统调度」「对标 Slack 里 Claude 标签式持续同事」「少占人注意力」被开发者反复复述；开源原型降低了「只听 PPT」的反感。</li>
+    <li><strong>谨慎 / 批评：</strong>合成负载证明调度稳定性，不证明代码质量；用更多 token 换时间与稳定；安全/提示词注入/凭据/进程隔离仍是开放题；长程记忆与 A2A 未解；公开原型覆盖面窄（单仓 + 可选飞书），与长文蓝图有差距。虎嗅一文把「授权、状态、隔离」写成落地前提，口径值得产品侧采纳。</li>
+    <li><strong>媒体可信度：</strong>量子位/智东西/IT之家偏事实转述；极客公园是早报摘要；虎嗅是带判断的二次分析（转自 DARE to B2B 公号），非软广但非一手实验复现。</li>
   </ul>
 
   <div class="media">
     <h4>媒体摘录</h4>
     <div class="mgroup">官方 / 一手</div>
     <div class="mcard">
-      <p class="mhead">Hugging Face Blog <span class="mtag">一手</span></p>
-      <p class="mtitle"><a href="https://huggingface.co/blog/Luo-Yihang/mundo-world-model">Mundo: From seeing a place to simulating what happens there</a></p>
-      <blockquote>Take a few photos of a room, and Mundo turns them into a world you can explore and simulate.</blockquote>
-      <p class="mangle">完整流水线、训练数据规模（约 4 万对）、限制（10–20 分钟重建 / ~1.5 FPS）都在这里，比通稿可信。</p>
+      <p class="mhead">GitHub README <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://github.com/deepseek-ai/dsh-superagent-prototype">dsh-superagent-prototype</a></p>
+      <blockquote>Research prototype for reference only, not an official DeepSeek product. … It may still contain bugs … Review and adapt it before using it in your own environment.</blockquote>
+      <p class="mangle">任何「DeepSeek 又发产品了」的标题，都应被这条免责声明压一下。</p>
     </div>
     <div class="mgroup">中文媒体</div>
     <div class="mcard">
-      <p class="mhead">GPLP <span class="mtag">产业 · 偏软</span></p>
-      <p class="mtitle"><a href="https://www.gplp.cn/archives/163545">大晓机器人联合南洋理工大学发布 Mundo</a></p>
-      <blockquote>相较于 Atlas，Mundo 可以将物体的质量、摩擦等物理属性纳入场景程序……</blockquote>
-      <p class="mangle">10-30 中文首波核心稿；竞品对比句有用，但后半段 Kairos 植入偏软文，阅读时打折。</p>
-    </div>
-  </div>
-</article>
-
-<!-- ========== 2 AGIBOT ========== -->
-<article id="agibot">
-  <h2><span class="tag t-hot">具身大厂</span>智元创新日：GO-3 Preview 三榜第一、WITA-OMNI 四榜第一，并推出 Worken 与灵渠 OS</h2>
-  <div class="verdict"><strong>结论：</strong>这不是单模型新闻，而是「作业智能 + 交互智能 + 原生 OS + 有效工时单位」的整包叙事。GO-3 强调全链路 Scaling（预训练→后训练→部署后 RSI）；WITA-OMNI 打无唤醒词、亚秒响应的面对面交互。对标对象是 Figure / π 系 VLA 与各类语音交互机器人方案。</div>
-
-  <h3>1. 发生了什么</h3>
-  <p>10 月 29 日智元创新日，稚晖君团队发布：</p>
-  <ul>
-    <li><strong>GO-3 Preview</strong>：具身基座，WRAM（World Reasoning Action Model）架构；官方称登顶 RoboDojo、RoboTwin、RoboColiseum。</li>
-    <li><strong>WITA-OMNI</strong>：全模态交互大模型；官方称 Daily-Omni、TimeLens-Bench、EmbSpatialBench、MMAU 四榜第一；平均响应约 600ms，最快约 400ms；无唤醒词。</li>
-    <li><strong>Worken</strong>：物理 AI 有效智能工时单位 = 活跃机器人数 × 自主工作时长 × 产出效能比。</li>
-    <li><strong>灵渠 OS 1.0</strong>：具身原生 OS；宣称 1000Hz 负载下端到端时延抖动 &lt;4μs；计划年底开源并捐赠开放原子基金会。</li>
-    <li>本体侧：精灵 G2 Max（单臂 20kg / 双臂峰值 50kg）、AHA3 三智合一硬件架构等。</li>
-  </ul>
-  <p class="src">一手报道：<a href="https://www.pingwest.com/w/318950">品玩 · GO-3</a> · <a href="https://www.qbitai.com/2026/10/506819.html">量子位 · 创新日总述（10-30）</a></p>
-
-  <h3>2. 产品介绍</h3>
-  <p><strong>GO-3 怎么工作（按品玩 / 官方口径）：</strong>预训练用 CoAE 视觉表征 + SVP 单步未来预测 + KASO 筛选相容未来；后训练用 Genie Evolver（百台真机 + 仿真 + Genie Envisioner 2.0 世界模型）；部署后用 Genie Master + EEP 协议做无人在环持续改进。便利店案例：挂小挂钩任务成功率从首日 28.6% 到 5 天后 85.7%（官方数字，需独立复现验证）。</p>
-  <p><strong>WITA-OMNI：</strong>语音/视觉/文本进，语音/表情/动作出；快慢双系统（前台 Interaction Engine + 后台 Background Agent）；Intelligent FaceUI 可在脸屏动态讲解；支持听 100+ 语言、说 29 种语言与 7 种方言；宣称 2026-12 国内全面部署、2027-Q1 海外。</p>
-
-  <figure>
-    <img src="media/agibot-go3-hero.png" alt="智元 GO-3 / 创新日相关配图（量子位）"/>
-    <figcaption>量子位报道配图——看完应搞懂：创新日把作业智能与交互智能并列为「三智」两翼。</figcaption>
-  </figure>
-  <figure>
-    <img src="media/agibot-worken.png" alt="Worken 有效工时概念配图"/>
-    <figcaption>Worken 看板配图——看完应搞懂：智元试图用「有效工时」替代纯 Demo 叙事。</figcaption>
-  </figure>
-  <figure>
-    <img src="media/agibot-lingqu.png" alt="灵渠 OS 介绍配图"/>
-    <figcaption>灵渠 OS 介绍图——看完应搞懂：从硬件抽象到 Skill 封装的原生 OS 定位。</figcaption>
-  </figure>
-  <figure>
-    <img src="media/agibot-wita.webp" alt="WITA-OMNI 交互模型配图"/>
-    <figcaption>WITA-OMNI 配图——看完应搞懂：交互模型与作业模型是分开的产品线。</figcaption>
-  </figure>
-
-  <div class="howto">
-    <strong>怎么自己看</strong>
-    先读品玩 GO-3 长文搞懂 WRAM / Genie Evolver / Genie Master 三段；再读量子位总述拿 Worken 公式与部署案例（龙旗产线、爱仕达门店、横琴长隆）。榜单第一均为官方自评口径，进 RoboDojo 等榜页核对排名再引用对外材料。
-  </div>
-
-  <h3>3. 导致什么影响（含竞品）</h3>
-  <ul>
-    <li><strong>对标 Figure / RT-X / π0 / 国内各家 VLA：</strong>GO-3 的差异化叙事是「全链路 Scaling + 部署后 RSI」，不只拼零样本操作成功率；世界模型（Genie Envisioner 2.0）被放进后训练环，而不是单独卖视频生成。</li>
-    <li><strong>对标纯语音助手机器人：</strong>WITA-OMNI 强调无唤醒词、方位/声纹/唇动联合选人、FaceUI——比「加个 ASR」更重交互原生。</li>
-    <li><strong>Worken：</strong>意图把行业 KPI 从「Demo 酷不酷」拉到「自主工时 × 产出」。若被客户接受，招投标叙事会变；目前仍是智元单方面定义。</li>
-    <li><strong>灵渠 OS 开源：</strong>若真捐赠并可用，会影响中间件选型；需等年底代码与许可证落地再判断。</li>
-  </ul>
-
-  <h3>4. 用户如何评价</h3>
-  <div class="heat">
-    <span class="pill">量子位 / 品玩头部曝光</span>
-    <span class="pill">创新日演出现场热度高</span>
-    <span class="pill">榜单第一待第三方复核</span>
-  </div>
-  <ul>
-    <li><strong>正面：</strong>便利店无人在环改进、龙旗产线 99.99% 作业成功率、长隆近 500 台部署等案例让「物理 AI 上岗」故事更硬。</li>
-    <li><strong>批评 / 疑问：</strong>多榜第一高度依赖厂商自报；Worken 公式尚未见独立审计；OS「2 亿行代码」等表述需开源后验证。</li>
-    <li><strong>广告提示：</strong>量子位稿件语气活泼、接近品牌传播，技术细节仍可用，但「杀穿榜单」类标题按公关稿阅读。</li>
-  </ul>
-
-  <div class="media">
-    <h4>媒体摘录</h4>
-    <div class="mcard">
-      <p class="mhead">品玩 <span class="mtag">中文深度</span></p>
-      <p class="mtitle"><a href="https://www.pingwest.com/w/318950">智元发布具身模型 GO-3 Preview，三榜第一</a></p>
-      <blockquote>具身模型不是单纯「训出来的」，更是在真实世界「干出来的」。</blockquote>
-      <p class="mangle">对 WRAM / CoAE / SVP / KASO 与 Genie 三件套写得最清楚的中文稿。</p>
+      <p class="mhead">量子位 <span class="mtag">首发解读 · 10-31 21:49</span></p>
+      <p class="mtitle"><a href="https://www.qbitai.com/2026/10/506904.html">刚刚，DeepSeek重磅开源：Agent底座架构！</a></p>
+      <blockquote>一个人通常只能同时跟进3到5个活跃Session……Super-agent要解决的，正是这一问题。</blockquote>
+      <p class="mangle">中文传播主叙事来源；标题偏「重磅」，正文有实验数字与四特征，仍建议回看 README 免责声明。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">量子位 <span class="mtag">传播向</span></p>
-      <p class="mtitle"><a href="https://www.qbitai.com/2026/10/506819.html">榜一，拿来吧你！智元这波双模型杀穿多榜榜单</a></p>
-      <blockquote>万台下线，只是制造业的胜利；万台上岗，才是物理 AI 的胜利。</blockquote>
-      <p class="mangle">Worken、WITA、灵渠、落地案例一站式；标题党，正文案例密度高。</p>
-    </div>
-  </div>
-</article>
-
-<!-- ========== 3 MISTRAL ========== -->
-<article id="mistral">
-  <h2><span class="tag t-mid">开源旗舰</span>Mistral 正式开放 Large 4（Le Chonk）权重：1T MoE，主打 Coding Agent 与防御安全</h2>
-  <div class="verdict"><strong>结论：</strong>10-29 权重落地是比 10-6 预览 API 更实质的节点。官方口径：开源侧 FrontierCode 第一、Coding Agent Index 与 GLM-5.3 打平但 token 更省、Cyber Index 开源前列。许可是改版 MIT（MaaS 商用需另签）。对「要主权部署的欧洲企业 + 安全团队」叙事极强。</div>
-
-  <h3>1. 发生了什么</h3>
-  <p>Mistral 于 <strong>2026-10-29</strong> 发布改进版 Large 4 开源权重（预览后约三周持续 RL）。模型约 <strong>1T 总参 / ~49–52B 激活</strong>，原生多模态，1M 上下文；HF 上提供 FP8 与 NVFP4；Transformers / vLLM / SGLang / llama.cpp 日零支持。官方 X 主帖约 6.1k 赞 / 74 万曝光。HF 博文同日上线。</p>
-  <p class="src">一手：<a href="https://mistral.ai/news/mistral-large-4-oss/">Mistral OSS 公告</a> · <a href="https://huggingface.co/blog/mistral-large4">HF 博文</a> · <a href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B">模型卡</a> · X <a href="https://x.com/MistralAI/status/2115811242556137820">@MistralAI</a></p>
-
-  <h3>2. 产品介绍</h3>
-  <p><strong>架构要点（HF）：</strong>72 层、MLA + DeepSeek 式稀疏注意力索引、128 专家选 4 + 1 共享专家；Pixtral 1.6B 视觉编码器；三种 reasoning 档位 low/medium/high（默认 high，不能真正关掉）。</p>
-  <p><strong>官方亮点数字（需独立复核）：</strong>FrontierCode 2.0 开源第一 19.7%；Terminal-Bench 4.0 开源领先且较预览 +13pt 至 41%；AA Coding Agent Index 48% 打平 GLM-5.3 但平均少 47% token；Cyber Index 51%；有害网络请求拒绝率 96.6%（开源最高自称）。API 定价 $0.70 / $2.10 per M（in/out）。</p>
-
-  <figure>
-    <img src="media/mistral-hf-thumb.png" alt="Hugging Face Mistral Large 4 博文封面"/>
-    <figcaption>HF 博文封面——看完应搞懂：社区入口是博文 + 模型集合，不是只丢一个 GGUF。</figcaption>
-  </figure>
-  <figure>
-    <img src="media/mistral-oss-cover.webp" alt="Mistral Large 4 OSS 公告封面"/>
-    <figcaption>Mistral OSS 公告封面——看完应搞懂：官方把 Coding + Defenders 当成双主叙事。</figcaption>
-  </figure>
-
-  <div class="howto">
-    <strong>怎么自己看 / 跑</strong>
-    读 <a href="https://mistral.ai/news/mistral-large-4-oss/">OSS 公告</a> 的三张核心图（FrontierCode / Token 效率 / Cyber）→ 打开 HF 博文复制 vLLM 或 transformers 示例 → 注意 NVFP4 需要 Blackwell；FP8 示例常用 8 卡。许可：可商用微调，但做 Model-as-a-Service 要另获 Mistral 商业许可。
-  </div>
-
-  <h3>3. 导致什么影响（含竞品）</h3>
-  <ul>
-    <li><strong>对标 DeepSeek V4 / GLM-5.3 / Qwen3.8 Max / Kimi K3：</strong>Mistral 不拼「全能榜第一」，而拼 <strong>agentic coding 效率曲线 + 可自托管的防御安全</strong>。闭源 Claude Opus / GPT 系在部分 cyber 复现任务上会拒答，开源权重把策略交给部署方。</li>
-    <li><strong>主权 AI：</strong>欧洲自建机房从零训练 + 开源权重，是对美国闭源 API 依赖的产品化反击；微软 Foundry 已上架。</li>
-    <li><strong>成本现实：</strong>社区吐槽「git clone 1T，这得等一会儿」——推理门槛仍是 8 卡级，个人玩家靠 GGUF 低比特。</li>
-  </ul>
-
-  <h3>4. 用户如何评价</h3>
-  <div class="heat">
-    <span class="pill">官方帖 ~6.1k 赞 / ~74万曝光</span>
-    <span class="pill">SGLang Day-0 支持被疯转</span>
-    <span class="pill">中文区「写代码+搞安全」总结帖</span>
-  </div>
-  <ul>
-    <li><strong>正面：</strong>安全厂商（Booz Allen、Cloudflare、Zscaler、Fortinet、Rubrik 等）背书防御向能力；Surge 盲测编码偏好高于多数开源对手。</li>
-    <li><strong>批评：</strong>硬件门槛高；部分用户调侃「开源也是预算问题」；基准数字均为官方或合作方场景，社区独立榜还需观察一两周。</li>
-  </ul>
-
-  <div class="media">
-    <h4>媒体摘录</h4>
-    <div class="mcard">
-      <p class="mhead">Mistral 官方 <span class="mtag">一手</span></p>
-      <p class="mtitle"><a href="https://mistral.ai/news/mistral-large-4-oss/">Mistral Large 4 (Le Chonk) is now open weight</a></p>
-      <blockquote>We release the weights of Le Chonk, advancing the frontier of open models in agentic coding and cybersecurity.</blockquote>
-      <p class="mangle">所有关键数字与客户引言的源头；引用时写明「官方宣称」。</p>
+      <p class="mhead">智东西 <span class="mtag">架构详解 · 11-01</span></p>
+      <p class="mtitle"><a href="https://www.zhidx.com/p/606311.html">DeepSeek又开源了！公布Super agent架构</a></p>
+      <blockquote>把计算机系统里的调度、缓存、存算分离、看门狗（Watchdog）等经典思想搬进Agent架构。</blockquote>
+      <p class="mangle">配图最全，适合对照 Router/Worker、订阅直通、投机执行与实验曲线；本版架构图主要来自此稿转载链。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">Hugging Face <span class="mtag">社区一手</span></p>
-      <p class="mtitle"><a href="https://huggingface.co/blog/mistral-large4">Welcome Le Chonk: Mistral Large 4 on Hugging Face</a></p>
-      <blockquote>About 1T total, 49B active parameter, and a context window of 1M tokens.</blockquote>
-      <p class="mangle">架构拆解与推理代码最实用；发布标注 10-29。</p>
+      <p class="mhead">IT之家 <span class="mtag">快讯级</span></p>
+      <p class="mtitle"><a href="https://www.ithome.com/0/1020/615.htm">DeepSeek 提出 Super-agent 架构设计：Router 与 Worker 双层架构</a></p>
+      <blockquote>探索更自主的 Agent 系统</blockquote>
+      <p class="mangle">10-31 21:36 左右上线，适合做时间戳与标题核对，深度不如量子位/智东西。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">X · 山景城小路 <span class="mtag">中文圈层</span></p>
-      <p class="mtitle"><a href="https://x.com/Zen_with_AI/status/2115844779452064043">Mistral Large 4 Le Chonk 解读帖</a></p>
-      <blockquote>1T 参数的 MoE 多模态模型……专攻两个方向：写代码和搞安全。</blockquote>
-      <p class="mangle">中文区传播用的压缩叙事，适合快速对齐口径。</p>
+      <p class="mhead">虎嗅 <span class="mtag">二次分析</span></p>
+      <p class="mtitle"><a href="https://www.huxiu.com/article/4902022.html">当Agent 能同时干活，谁来守住人的注意力</a></p>
+      <blockquote>主动性释放注意力取决于授权、状态和隔离边界，原型仍有限。</blockquote>
+      <p class="mangle">把「少打断」写成可运营指标（打断次数、返工、误触发），比通稿更接近 PM 落地清单。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">极客公园 <span class="mtag">早报摘要</span></p>
+      <p class="mtitle"><a href="https://www.geekpark.net/news/373243">DeepSeek 公布 Super Agent 架构；苹果超越英伟达…</a></p>
+      <blockquote>多任务上限取决于人的注意力。</blockquote>
+      <p class="mangle">11-01 早知道条目，信息密度低，作覆盖源记一笔即可。</p>
+    </div>
+    <div class="mgroup">社区</div>
+    <div class="mcard">
+      <p class="mhead">X · Mashiro_0619 <span class="mtag">热帖</span></p>
+      <p class="mtitle"><a href="https://x.com/Mashiro_0619/status/2116532996258066516">DeepSeek 开源主动式编程智能体原型</a></p>
+      <blockquote>基于「少占用人类精力，提供最大价值」的理念，它能监听 GitHub/飞书，自主创建任务并提交 PR…</blockquote>
+      <p class="mangle">成稿核验约 3.5 万曝光 / 486 赞 / 500 书签，是中文 X 扩散主帖之一。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">X · AIGCLINK <span class="mtag">解读</span></p>
+      <p class="mtitle"><a href="https://x.com/aigclink/status/2116539453002899880">Super-agent：从单会话工具到持续在线协作者</a></p>
+      <blockquote>当单个Coding Agent越来越能独立做事后，如何把Agent从「一个会话一个任务」的工具，变成持续在线、跨会话、能并行推进多任务的数字协作者</blockquote>
+      <p class="mangle">约 1.1 万曝光；与 Mashiro 帖共同构成开发者圈第一波 framing。</p>
+    </div>
+    <div class="mgroup">未覆盖</div>
+    <div class="mcard">
+      <p class="mhead">机器之心 <span class="mtag">未检索到专稿</span></p>
+      <p class="mtitle">本窗检索未见 DeepSeek Super-agent / dsh-superagent 专稿</p>
+      <p class="mangle">不编造；若后续补发，下期以「后续」标注。</p>
     </div>
   </div>
 </article>
 
 <footer>
-  阿汤 · 产品雷达日报 · 2026-10-31 · 发布于 <a href="https://oricter.github.io/product-radar-reports/">oricter.github.io/product-radar-reports</a>
+  阿汤 · 产品雷达日报 · 2026-11-01 · 发布于 <a href="https://oricter.github.io/product-radar-reports/">oricter.github.io/product-radar-reports</a>
   · 本页仅供内部产品决策参考；榜单与案例数字以各官方原文为准，引用请复核。
 </footer>
 </div>

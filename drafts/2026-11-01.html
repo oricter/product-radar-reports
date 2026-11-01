@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI 产品情报 · 2026-11-01 · DeepSeek Harness 公布 Super-agent 架构并开源原型</title>
+<style>
+  :root {
+    --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
+    --bg:#faf9f6; --card:#fff; --accent:#0b57d0; --hot:#b3261e; --ok:#0f6b3c;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font:17px/1.7 "PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+  }
+  .wrap { max-width:740px; margin:0 auto; padding:40px 22px 90px; }
+  h1 { font-size:1.7rem; line-height:1.3; margin:0 0 10px; letter-spacing:-.02em; }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 28px; }
+  .meta p { margin:0 0 6px; }
+  .alert {
+    background:#fff8e8; border:1px solid #f0d9a0; border-radius:14px;
+    padding:18px 20px; margin:0 0 36px;
+  }
+  .alert strong { display:block; margin-bottom:10px; font-size:1.02rem; }
+  .alert li strong, .alert p strong { display:inline; margin:0; }
+  .alert ol { margin:0; padding-left:1.25em; }
+  .alert li { margin:10px 0; }
+  .toc { display:grid; gap:10px; margin:0 0 44px; }
+  .toc a {
+    display:block; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:14px 16px; text-decoration:none; color:var(--ink);
+  }
+  .toc a:hover { border-color:#c8c4ba; }
+  .tag {
+    display:inline-block; font-size:.72rem; font-weight:600;
+    padding:2px 8px; border-radius:999px; margin-right:8px; vertical-align:middle;
+  }
+  .t-hot { background:#fce8e6; color:var(--hot); }
+  .t-mid { background:#e8f0fe; color:var(--accent); }
+  .t-low { background:#e6f4ea; color:var(--ok); }
+  article {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:28px 24px 32px; margin:0 0 36px;
+  }
+  article h2 {
+    font-size:1.22rem; line-height:1.4; margin:0 0 18px; letter-spacing:-.01em;
+  }
+  h3 { font-size:1rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h4 { font-size:.95rem; color:var(--ink); margin:20px 0 10px; font-weight:700; }
+  p { margin:0 0 14px; }
+  ul, ol { margin:0 0 14px; padding-left:1.25em; }
+  li { margin:8px 0; }
+  blockquote {
+    margin:12px 0 16px; padding:12px 16px; background:#f4f3ef;
+    border-left:3px solid var(--accent); color:#333; font-size:.95rem;
+  }
+  .src { font-size:.88rem; color:var(--muted); margin-bottom:8px; }
+  .src a, a { color:var(--accent); }
+  .howto {
+    background:#f0f4ff; border:1px solid #d0dcf5; border-radius:12px;
+    padding:14px 16px; margin:14px 0 18px;
+  }
+  .howto strong { display:block; margin-bottom:8px; }
+  figure { margin:16px 0 8px; }
+  figure img {
+    width:100%; height:auto; border-radius:10px; border:1px solid var(--line);
+    display:block;
+  }
+  figcaption { font-size:.8rem; color:var(--muted); margin-top:6px; }
+  .heat { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
+  .pill {
+    background:#f4f3ef; border-radius:8px; padding:6px 10px; font-size:.82rem;
+  }
+  .videos { margin:18px 0 8px; display:grid; gap:16px; }
+  .videos > h4 { margin:0 0 2px; color:var(--accent); font-size:1rem; }
+  .vid {
+    background:#f7f7f5; border:1px solid var(--line);
+    border-radius:12px; padding:12px 12px 10px;
+  }
+  .vid .vlabel { font-size:.88rem; margin:0 0 10px; color:var(--ink); line-height:1.55; }
+  .vid .vlabel .who { display:block; font-weight:700; margin-bottom:4px; }
+  .vid .vlabel .why { color:var(--muted); font-size:.84rem; }
+  .vid video { width:100%; display:block; border-radius:8px; background:#111; }
+  .cover { background:#eef6ee; border:1px solid #cfe5cf; border-radius:12px; padding:12px 16px; margin:0 0 22px; font-size:.9rem; }
+  .media { margin:22px 0 10px; }
+  .media > h4 { color:var(--accent); font-size:1rem; margin:0 0 8px; }
+  .mgroup { font-size:.8rem; font-weight:700; color:var(--muted); margin:14px 0 6px; letter-spacing:.04em; }
+  .mcard { background:#fbfaf7; border:1px solid var(--line); border-radius:12px; padding:12px 14px 4px; margin:0 0 12px; }
+  .mhead { margin:0 0 4px; font-size:.95rem; }
+  .mtag { display:inline-block; font-size:.72rem; background:#eef1f6; color:#3b4a63; border-radius:999px; padding:1px 8px; margin-left:4px; }
+  .mtitle { margin:0 0 6px; font-size:.9rem; }
+  .mcard blockquote { margin:6px 0 8px; }
+  .mangle { font-size:.88rem; margin:0 0 10px; }
+  .verdict { background:#eef3fe; border:1px solid #d0dcf5; border-radius:12px; padding:14px 16px; margin:0 0 18px; font-size:1rem; }
+  .verdict strong { color:var(--accent); }
+  .ours { background:#e6f4ea; border:1px solid #c4e3cf; border-radius:12px; padding:14px 16px; margin:16px 0; }
+  .ours strong.h { display:block; margin-bottom:6px; color:var(--ok); }
+  .warn { background:#fff8e8; border:1px solid #f0d9a0; border-radius:10px; padding:10px 14px; font-size:.9rem; margin:12px 0 16px; }
+  footer { color:var(--muted); font-size:.82rem; margin-top:40px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AI 产品情报 · 2026-11-01（周日）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 11 家（官方 3 / 中文 5 / 社区外文 3）</strong>：官方是 GitHub 原型仓 README、DeepSeek Harness 产品页、官方设计长文《Super-agent 设计探索：迈向更自主的 Agent 系统》（微信原文被验证码拦截，事实以量子位/智东西转载与 README 交叉核对）；中文是量子位、智东西、IT之家、虎嗅、极客公园早知道；社区是 X（Mashiro_0619 / AIGCLINK 等）与开发者解读帖。机器之心检索未发现专稿，本版不编造。</div>
+<div class="meta">
+  <p><strong>时间范围</strong>：美东约 2026-10-31 01:00 UTC → 2026-11-01 01:00 UTC（对应北京 10-31 白天到 11-01 早上）；成稿北京时间 2026-11-01 约 09:15。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 DeepSeek Harness Super-agent 架构长文 + dsh-superagent-prototype 开源 → 读 GitHub README / 量子位 / 智东西 / IT之家 / 虎嗅 / 极客公园 → 交叉 X 热度与竞品定位 → 窗内无第二条同等热门真新品，今日做 1 条深稿。</p>
+  <p><strong>去重说明</strong>：10-31 已报 Mundo、智元 GO-3、Mistral Large 4 不重复；10-29 已报 Gemini 4 Carbon / Copilot Fusion / Ling-3.1-flash；Factory Droid 1.0（约 10-29）、Gemini Computer Use GA（约 10-30）、Claude Ultra 去 5h 限制、Pika H3 Flex 等超出 24h 或非今日实质新品，本版不单开。</p>
+</div>
+
+<div class="alert">
+  <strong>今日要点（先看这三条）</strong>
+  <ol>
+    <li><strong>DeepSeek Harness 公布 Super-agent 架构</strong>：主张单任务瓶颈已从模型转向「人的注意力」（人通常只能跟进 3–5 个活跃 Session）；目标做成连续、高效、主动、持久的跨信道 Agent 实体。</li>
+    <li><strong>同步开源研究原型 dsh-superagent-prototype（MIT）</strong>：README 明文「非正式产品」；挂在 DeepSeek Harness 上，盯一个 GitHub 仓（可选飞书），授权后自开工单并提 PR；成稿时约 <strong>2485★ / 217 forks</strong>。</li>
+    <li><strong>核心工程主张是系统层调度，不是新 frontier 权重</strong>：Router（轻量分派/对外）+ Worker（强模型隔离执行）+ 事件订阅直通；合成负载 p50 12.4 / p95 15.7 分钟，对标单 Session 中性提示 p95 29.5 分钟——测的是调度稳定性，不是写代码能力。</li>
+  </ol>
+</div>
+
+<div class="toc">
+  <a href="#dsh"><span class="tag t-hot">Agent 系统 / Harness</span>DeepSeek Harness 公布 Super-agent 架构，并开源 dsh-superagent-prototype</a>
+</div>
+
+<!-- ========== 1 DEEPSEEK SUPER-AGENT ========== -->
+<article id="dsh">
+  <h2><span class="tag t-hot">Agent 系统</span>DeepSeek Harness 团队公布 Super-agent 架构，并开源研究原型 dsh-superagent-prototype（MIT）</h2>
+  <div class="verdict"><strong>结论：</strong>这不是 DeepSeek 新发一个 frontier 大模型，也不是「dsh dot」成品上线——它是一篇把计算机系统调度思想搬进 Agent 的工程长文，外加一个可自托管的 Harness 插件原型。对产品经理的价值在于：它把「人注意力瓶颈」写进架构目标，并用 Router/Worker + 事件订阅直通给出可讨论的系统层答案；对落地团队，必须把「架构蓝图」和「公开代码能做什么」分开看。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-10-31 晚</strong>，DeepSeek Harness 团队公开设计长文《Super-agent 设计探索：迈向更自主的 Agent 系统》，并在 GitHub 开源 <strong>dsh-superagent-prototype</strong>（仓库创建 UTC 2026-10-31T09:32:46Z，许可证 MIT）。量子位同日 21:49 发出中文首波解读；智东西、IT之家、极客公园早知道、虎嗅在 10-31 夜至 11-01 凌晨跟进。</p>
+  <p>官方定位非常清楚（README 原文大意）：这是<strong>研究原型，仅供参考，不是正式 DeepSeek 产品</strong>；公开版与内部实现、以及设计长文描述<strong>不完全一致</strong>；长文里部分设想属于未来方向，原型未实现。</p>
+  <p class="src">一手：<a href="https://github.com/deepseek-ai/dsh-superagent-prototype">GitHub · dsh-superagent-prototype</a>（成稿核验约 2485★ / 217 forks）· Harness <a href="https://www.deepseek.com/en/harness/">EN</a> / <a href="https://deepseek.com/harness/zh/">中文</a> · 中文媒体：<a href="https://www.qbitai.com/2026/10/506904.html">量子位 10-31 21:49</a> · <a href="https://www.zhidx.com/p/606311.html">智东西 11-01</a> · <a href="https://www.ithome.com/0/1020/615.htm">IT之家 10-31 21:36</a> · <a href="https://www.huxiu.com/article/4902022.html">虎嗅 11-01 03:15</a> · <a href="https://www.geekpark.net/news/373243">极客公园早知道</a></p>
+  <div class="warn">微信原文链接常见为 <code>mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg</code>，本机抓取被验证码拦截；以下事实交叉自量子位、智东西转载叙述与 GitHub README，不假装「已全文核对微信原页」。</div>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它想解决什么：</strong>Coding Agent 单任务能力上来之后，人越来越少介入底层执行，但多任务仍要人记住「哪个 Session 走到哪」。团队观察：人通常只能同时跟进约 <strong>3–5 个活跃 Session</strong>。瓶颈从模型能力转向<strong>人的注意力</strong>。</p>
+  <p><strong>Super-agent 四特征（长文主张）：</strong></p>
+  <ul>
+    <li><strong>连续</strong>：在 IM / GitHub 等熟悉界面始终像「同一个 Agent」，不必自己拼跨 Session 上下文。</li>
+    <li><strong>高效</strong>：多复杂任务并行；不必等上一任务结束才能接新指令。</li>
+    <li><strong>主动</strong>：持续观察环境事件；该出手时出手，不该打扰时安静。</li>
+    <li><strong>持久</strong>：长期在线；异常时尝试自动恢复。</li>
+  </ul>
+  <p><strong>公开原型实际长什么样（README）：</strong>挂在 DeepSeek Harness 上的「单 GitHub 仓库主动编程 Agent」插件；监听 GitHub，可选飞书；授权用户请求后创建工作项，在独立 Agent Session / 目录里干活，并在原对话回复（例如开 PR）；另有 Web 面板标出需要人工介入的事项。理念一句话：<strong>尽量少占人的注意力，尽量多交付价值</strong>。</p>
+
+  <figure>
+    <img src="media/dsh-github-og.jpg" alt="GitHub dsh-superagent-prototype 仓库封面"/>
+    <figcaption>GitHub 仓库社交图——看完应搞懂：这是 MIT 研究原型仓，标语 Towards a More Autonomous Agent System，不是 App Store 式产品页。</figcaption>
+  </figure>
+
+  <h4>双层架构：Router 分派，Worker 干活</h4>
+  <p>跨信道连续 vs 多任务吞吐是一对矛盾。解法是拆两层：</p>
+  <ul>
+    <li><strong>Router</strong>：常驻、轻量；只做人类交互、全局协调与任务分派，甚至可以不配 Bash；用批处理摊薄突发事件成本。</li>
+    <li><strong>Worker</strong>：强模型、上下文隔离；挂完整工具链执行单任务；不直接对外抢话，状态回报 Router，由 Router 统一回复用户。</li>
+  </ul>
+  <p><strong>订阅 / 直通：</strong>Worker 订阅某个 Thread（例如同一 PR 下的连续评论）后，后续事件由程序直送该 Worker，不再每条都绕 Router。去掉直通后，完成时间差不多，但 Router 决定数约 +30%，读缓存 token 从约 2323 万 → 3177 万（约 +37%）。</p>
+
+  <figure>
+    <img src="media/dsh-arch-1.jpg" alt="Super-agent 整体系统架构图"/>
+    <figcaption>整体系统架构图（媒体转载自设计长文配图）——看完应搞懂：五大模块如何叠在一起：双层、事件驱动、异步多信道、存算分离、外部 Watchdog。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-arch-2.jpg" alt="Router 与 Worker 双层架构示意"/>
+    <figcaption>双层架构示意——看完应搞懂：Session 应是系统实现细节，不是用户要自己管理的认知负担。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-im.jpeg" alt="IM 与 GitHub PR 之间连续推进同一任务"/>
+    <figcaption>用例叙事图——看完应搞懂：同一任务可从飞书/IM 讨论一路跟到 GitHub PR 评审，而不靠人复制粘贴上下文。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-sub.jpeg" alt="订阅与直通：后续事件直送 Worker"/>
+    <figcaption>订阅与直通——看完应搞懂：冷启动走 Router；已归属 Thread 的后续事件走 Fast Path 直通 Worker。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-spec.jpeg" alt="投机执行：群聊讨论时后台已提修复 PR"/>
+    <figcaption>投机执行示例——看完应搞懂：群里还在讨论时，Agent 可在后台复现/试修；有价值才交付，没价值保持安静。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-async.jpeg" alt="经典 ReAct 与异步 ReAct 对比"/>
+    <figcaption>异步 ReAct——看完应搞懂：耗时工具改为 start/stop 异步后，前台可继续接新指令；Harness 已实现但未默认开启。</figcaption>
+  </figure>
+
+  <h4>其余模块（长文，原型未必全开）</h4>
+  <ul>
+    <li><strong>两级事件过滤</strong>：程序 Fast Path 先按来源/白名单筛噪 → 模型 Slow Path 做语义判断。</li>
+    <li><strong>Inline &amp; Spill + 链式召回</strong>：把上下文窗口当 Cache；对象带 ID，按需多跳展开。</li>
+    <li><strong>存算分离</strong>：Agent Loop 计算、持久状态、执行环境解耦；叙事上对齐 Anthropic「脑手分离」，但场景更强调接入间歇在线的个人开发机（BYOM）。</li>
+    <li><strong>外部 Watchdog</strong>：独立 Session 盯基础设施存活 + 任务是否实质进展/偏离目标。</li>
+  </ul>
+
+  <h4>初步实验（官方自报，合成负载）</h4>
+  <p>约 300 条消息 / 20 条工作请求，编码用耗时工具代替，各方案跑 5 次：</p>
+  <ul>
+    <li>Super-agent：<strong>p50=12.4 分钟，p95=15.7 分钟</strong></li>
+    <li>带 Subagent 的单 Session、中性提示：几乎不委派，被新消息打断，<strong>p95=29.5 分钟</strong></li>
+    <li>Router 批处理压测：单决定分摊推理时间约 <strong>6.4s → 1.6s</strong></li>
+  </ul>
+  <figure>
+    <img src="media/dsh-zhidx-exp.jpeg" alt="四种方案任务完成时间对比实验图"/>
+    <figcaption>消融实验图——看完应搞懂：比的是调度完成时间稳定性；官方自己写明「合成负载 + 简化环境，仅初步参考」。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/dsh-zhidx-batch.png" alt="Router 批处理随 Trigger 速率变化"/>
+    <figcaption>Router 批处理曲线——看完应搞懂：事件越堵，合并批越大，单决定摊薄成本越低（在上下文长度上限内）。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（8 分钟）</strong>
+    打开 <a href="https://github.com/deepseek-ai/dsh-superagent-prototype">GitHub 原型仓</a> → 先读 README 顶部「Research prototype / not an official product」免责声明 → 再按 docs/000–007 顺序扫 Philosophy 与 Architecture → 想动手就按 SETUP.md 让你的 coding agent 逐步安装。媒体侧：量子位适合 3 分钟抓住「群里没人 @ 也能提 PR」叙事；智东西适合对照架构图；虎嗅适合看「授权 / 状态 / 隔离」边界批评。
+  </div>
+  <p><strong>视频：</strong>窗内未见官方可嵌的独立演示片；本版不硬塞无关视频，以架构图 + 用例图为准。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Claude Code / Claude Duet：</strong>Claude Code 强在单会话深度工程与需确认的主动找活；Duet（seen 10-22 已报）是产品预览级个人 Agent App。DeepSeek 这次强调的是<strong>跨信道 Router/Worker + 事件订阅的系统层</strong>，并开源可自托管原型——品类是「Harness / 调度哲学」，不是又一个聊天 App。</li>
+    <li><strong>vs Factory Droid 1.0：</strong>Droid 是闭源企业 harness，默认 programmatic/Script 工具调用、多模型效率叙事（官文 <a href="https://factory.com/news/frontier-harness">frontier harness</a>）。DeepSeek 开的是 <strong>Harness 插件式研究原型 + Super-agent 调度主张</strong>，开放度高、产品完成度明确标低。</li>
+    <li><strong>vs OpenAI Codex / Cursor：</strong>偏 IDE/沙箱单任务或并行 agent 编排；Super-agent 主打 <strong>IM + GitHub 连续实体</strong>，并把「人注意力」写成一等约束。社区也有人拿 Cursor Projects / Claude Projects 的主管-执行结构做类比，但 DeepSeek 文更强调事件驱动与跨信道 Thread 订阅。</li>
+    <li><strong>vs 蚂蚁 Ling-3.1-flash Personal Agent（10-29 已报）：</strong>Ling 是开源<strong>大模型权重</strong>主打 Personal Agent；DeepSeek 这次是 <strong>Agent 系统架构 / Harness 原型</strong>，不是新 frontier 权重。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们（世界模型公司 / 多 bot 协作）</strong>
+    这篇最可借鉴的不是「再堆一个聊天框」，而是：把分派层与执行层拆开、把授权与状态写到会话记忆之外、用事件订阅减少总控反复转发。若内部已有「总编排 bot + 执行 bot」分工，对照点应是：跨信道连续性、误触发成本、以及主动规则的观察模式——而不是照搬合成负载上的分钟数。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">GitHub 成稿约 2485★ / 217 forks（半天量级攀升）</span>
+    <span class="pill">X · Mashiro_0619 ≈ 3.5 万曝光 / 486 赞 / 500 书签</span>
+    <span class="pill">X · AIGCLINK ≈ 1.1 万曝光 / 87 赞</span>
+    <span class="pill">中文科技媒体首夜密集跟进</span>
+  </div>
+  <ul>
+    <li><strong>正面 / 热读点：</strong>「不是聊天框，是系统调度」「对标 Slack 里 Claude 标签式持续同事」「少占人注意力」被开发者反复复述；开源原型降低了「只听 PPT」的反感。</li>
+    <li><strong>谨慎 / 批评：</strong>合成负载证明调度稳定性，不证明代码质量；用更多 token 换时间与稳定；安全/提示词注入/凭据/进程隔离仍是开放题；长程记忆与 A2A 未解；公开原型覆盖面窄（单仓 + 可选飞书），与长文蓝图有差距。虎嗅一文把「授权、状态、隔离」写成落地前提，口径值得产品侧采纳。</li>
+    <li><strong>媒体可信度：</strong>量子位/智东西/IT之家偏事实转述；极客公园是早报摘要；虎嗅是带判断的二次分析（转自 DARE to B2B 公号），非软广但非一手实验复现。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mgroup">官方 / 一手</div>
+    <div class="mcard">
+      <p class="mhead">GitHub README <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://github.com/deepseek-ai/dsh-superagent-prototype">dsh-superagent-prototype</a></p>
+      <blockquote>Research prototype for reference only, not an official DeepSeek product. … It may still contain bugs … Review and adapt it before using it in your own environment.</blockquote>
+      <p class="mangle">任何「DeepSeek 又发产品了」的标题，都应被这条免责声明压一下。</p>
+    </div>
+    <div class="mgroup">中文媒体</div>
+    <div class="mcard">
+      <p class="mhead">量子位 <span class="mtag">首发解读 · 10-31 21:49</span></p>
+      <p class="mtitle"><a href="https://www.qbitai.com/2026/10/506904.html">刚刚，DeepSeek重磅开源：Agent底座架构！</a></p>
+      <blockquote>一个人通常只能同时跟进3到5个活跃Session……Super-agent要解决的，正是这一问题。</blockquote>
+      <p class="mangle">中文传播主叙事来源；标题偏「重磅」，正文有实验数字与四特征，仍建议回看 README 免责声明。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">智东西 <span class="mtag">架构详解 · 11-01</span></p>
+      <p class="mtitle"><a href="https://www.zhidx.com/p/606311.html">DeepSeek又开源了！公布Super agent架构</a></p>
+      <blockquote>把计算机系统里的调度、缓存、存算分离、看门狗（Watchdog）等经典思想搬进Agent架构。</blockquote>
+      <p class="mangle">配图最全，适合对照 Router/Worker、订阅直通、投机执行与实验曲线；本版架构图主要来自此稿转载链。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">IT之家 <span class="mtag">快讯级</span></p>
+      <p class="mtitle"><a href="https://www.ithome.com/0/1020/615.htm">DeepSeek 提出 Super-agent 架构设计：Router 与 Worker 双层架构</a></p>
+      <blockquote>探索更自主的 Agent 系统</blockquote>
+      <p class="mangle">10-31 21:36 左右上线，适合做时间戳与标题核对，深度不如量子位/智东西。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">虎嗅 <span class="mtag">二次分析</span></p>
+      <p class="mtitle"><a href="https://www.huxiu.com/article/4902022.html">当Agent 能同时干活，谁来守住人的注意力</a></p>
+      <blockquote>主动性释放注意力取决于授权、状态和隔离边界，原型仍有限。</blockquote>
+      <p class="mangle">把「少打断」写成可运营指标（打断次数、返工、误触发），比通稿更接近 PM 落地清单。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">极客公园 <span class="mtag">早报摘要</span></p>
+      <p class="mtitle"><a href="https://www.geekpark.net/news/373243">DeepSeek 公布 Super Agent 架构；苹果超越英伟达…</a></p>
+      <blockquote>多任务上限取决于人的注意力。</blockquote>
+      <p class="mangle">11-01 早知道条目，信息密度低，作覆盖源记一笔即可。</p>
+    </div>
+    <div class="mgroup">社区</div>
+    <div class="mcard">
+      <p class="mhead">X · Mashiro_0619 <span class="mtag">热帖</span></p>
+      <p class="mtitle"><a href="https://x.com/Mashiro_0619/status/2116532996258066516">DeepSeek 开源主动式编程智能体原型</a></p>
+      <blockquote>基于「少占用人类精力，提供最大价值」的理念，它能监听 GitHub/飞书，自主创建任务并提交 PR…</blockquote>
+      <p class="mangle">成稿核验约 3.5 万曝光 / 486 赞 / 500 书签，是中文 X 扩散主帖之一。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">X · AIGCLINK <span class="mtag">解读</span></p>
+      <p class="mtitle"><a href="https://x.com/aigclink/status/2116539453002899880">Super-agent：从单会话工具到持续在线协作者</a></p>
+      <blockquote>当单个Coding Agent越来越能独立做事后，如何把Agent从「一个会话一个任务」的工具，变成持续在线、跨会话、能并行推进多任务的数字协作者</blockquote>
+      <p class="mangle">约 1.1 万曝光；与 Mashiro 帖共同构成开发者圈第一波 framing。</p>
+    </div>
+    <div class="mgroup">未覆盖</div>
+    <div class="mcard">
+      <p class="mhead">机器之心 <span class="mtag">未检索到专稿</span></p>
+      <p class="mtitle">本窗检索未见 DeepSeek Super-agent / dsh-superagent 专稿</p>
+      <p class="mangle">不编造；若后续补发，下期以「后续」标注。</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  阿汤 · 产品雷达日报 · 2026-11-01 · 发布于 <a href="https://oricter.github.io/product-radar-reports/">oricter.github.io/product-radar-reports</a>
+  · 本页仅供内部产品决策参考；榜单与案例数字以各官方原文为准，引用请复核。
+</footer>
+</div>
+</body>
+</html>
