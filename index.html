@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AI 产品情报 · 2026-11-02 · 清华 AWM · Meta×傅利叶 Max · Claude 禁克隆游戏</title>
+<title>AI 产品情报 · 2026-11-03 · 美团 LongCat-2.5 · 商汤 SenseNova 6.8 Flash · MOSS-Live · OpenAI LifeVal</title>
 <style>
   :root {
     --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
@@ -102,301 +102,346 @@
 </head>
 <body>
 <div class="wrap">
-<h1>AI 产品情报 · 2026-11-02（周一）</h1>
-<div class="cover"><strong>本版覆盖媒体 / 一手源约 18 家（官方/一手 5 · 中文 7 · 外文 6）</strong>：AWM 一手是项目页、arXiv 2610.40503、智源社区转载袁洋组稿；中文是量子位、智源社区；对照基线写进论文表。Meta Max 一手是 The Information 爆料链，外文 Engadget / Reuters·Investing / The Next Web，中文智东西、IT之家；虎嗅当日 AI 快讯对「联合中国初创」持谨慎未证实口径，已标注。Claude 禁克隆：一手是 X @chasmmmmmmmmmmm 截图 + Anthropic 技术员工 Addy Osmani 回复确认；外文 Engadget、PC Gamer、Tom's Hardware；中文量子位；日本电ファミニコゲーマー跟进。机器之心 / 新智元窗内未见 AWM 专稿，不编造。</div>
+<h1>AI 产品情报 · 2026-11-03（周二）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 16 家（官方/一手 6 · 中文 6 · 外文 4）</strong>：LongCat 一手是 longcat.ai 技术博客、美团新闻稿、官方 X @Meituan_LongCat（约 9.3 万曝光）；中文智东西实测、财新、虎嗅 AI 快讯；外文 TechNode。SenseNova 一手是商汤官微/同花顺转载 + Token Plan；中文量子位实测（标软文倾向）。MOSS-Live 一手是 moss.cn + @MOSS_Global 官帖（约 3.2 万曝光）+ 机器之心 Pro；邱锡鹏转发。LifeVal 一手是 OpenAI 研究页；外文独立评论（Nagesh Polu / Kingy 等）点名「高分≠办完事」。窗内未见极客公园/晚点专稿，不编造。</div>
 <div class="meta">
-  <p><strong>时间范围</strong>：周一版——上周五（2026-10-31）日报之后至北京时间 2026-11-02 早（含周末）。对应美东约 10-30 晚 → 11-01 晚。成稿北京时间 2026-11-02 约 09:30。</p>
-  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定清华 AWM、Meta×傅利叶 Max、Claude Code 禁复刻特定游戏三条深稿 → 读项目页/论文/量子位/智东西/Engadget/PC Gamer/Addy 确认帖 → 交叉 X 热度与竞品。</p>
-  <p><strong>去重与跳过</strong>：已报不重复——DeepSeek Harness（11-01）、Mundo / 智元 / Mistral Large 4（10-31）、Genie 4、Gemini Carbon、GPT-6.1 Terra、Hy-Nomas、高德 λ0 等。过期回收稿不当今日新品：腾讯 HY-World 1.5（约 2025-12 开源）、高德 ABot-World Studio（IT之家 2026-07-14）、SenseNova Loop-9B（2026-10-30，已过窗）。</p>
+  <p><strong>时间范围</strong>：周二版——昨天（2026-11-02）日报之后至北京时间 2026-11-03 早。对应美东约 11-01 晚 → 11-02 晚。成稿北京时间 2026-11-03 约 09:20。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定美团 LongCat-2.5、商汤 SenseNova 6.8 Flash、模思 MOSS-Live、OpenAI LifeVal 四条 → 读官方博客/产品页/智东西/量子位/机器之心/TechNode/OpenAI → 交叉 X 热度与竞品。</p>
+  <p><strong>去重与跳过</strong>：已报不重复——AWM / Meta×傅利叶 Max / Claude 禁克隆游戏（11-02）、DeepSeek Harness（11-01）、Mundo / 智元 / Mistral Large 4（10-31）、Genie 4、Gemini Carbon、GPT-6.1 Terra、Hy-Nomas、Viggle JST-2、EdenLive、Matrix-Game 4.0、Helix World 等。SenseNova Loop-9B 已在 11-02 跳过清单里提过，本条写的是新的 6.8 Flash 正式版。Code2Video 相关 X 热帖与 Flash 正式版不是同一产品叙事，文中只作旁注。</p>
 </div>
 
 <div class="alert">
-  <strong>今日要点（先看这三条）</strong>
+  <strong>今日要点（先看这四条）</strong>
   <ol>
-    <li><strong>清华姚期智团队发布 Algebraic World Model（AWM）</strong>：探索→凝炼→Lean 4 证明；密封「少 1 步」关卡上 6/6 给出核验无解证明，Opus 5.5 / Astra 12 次全无；Opus 5 + AWM 在 ARC-AGI-3 公开 25 款游戏达 99.9%，认证通关动作约人类基线 43%。这是<strong>代数/符号世界模型</strong>，不是像素视频世界模型。</li>
-    <li><strong>Meta 与傅利叶合作做出人形原型 Max（爆料）</strong>：约 3 个月、约 48kg / 1.5m、Jetson Thor；对内叙事是 Muse 的实体化；Max 2 已于 9 月开工。证据链是 The Information 知情人士——<strong>非官宣产品发布、无量产时间表</strong>。</li>
-    <li><strong>Anthropic 给 Claude Code / Opus 5.5 加规则：禁止复刻「已存在的特定游戏」</strong>：约 10-27 服务端下发 <code>tengu_heron_brook</code>；Addy Osmani 确认两句提示词；原创/类型/自有素材仍允许。周末至 11-01 发酵——独立工作室怕 Demo 被克隆，社区吐槽误伤与可绕过。</li>
+    <li><strong>美团发布 LongCat-2.5</strong>：1.6T / ~48B 激活原生多模态，国芯训推；官方自报多项 Agent 基准卡在 Opus-4.8 与 Opus-5 之间，AutomationBench / BrowseComp 等处压过 Opus-5。智东西实测：动画与财报 PPT「能用但细节/排版仍糙」。API 已开，权重承诺后续上 GitHub/HF。</li>
+    <li><strong>商汤发布 SenseNova 6.8 Flash 正式版</strong>：主打「委派智能」——给目标、走完流程、人验收；小浣熊限免至 12-01，Token Plan 同步上。量子位实测书店官网 / 动态 PPT / 主动改旧数据，完成度高但稿件偏安利。</li>
+    <li><strong>模思智能发布 MOSS-Live</strong>：全双工实时语音 + 前后台协同；官帖约 3.2 万曝光 / 512 赞。机器之心：停顿抢话 1.44%、无关误接 2%，但工具调用成功率仅 51%。可在线试、API 限时免费。</li>
+    <li><strong>OpenAI 发 LifeVal</strong>：日常任务评测（托儿、政务、预算等），不是新产品。第三方提醒：选中任务 90%+ ≠ 真办完；deed 进购物车 ≠ 买房成交。</li>
   </ol>
 </div>
 
 <div class="toc">
-  <a href="#awm"><span class="tag t-hot">代数世界模型</span>清华姚期智团队发布 AWM：从探索走到 Lean 证明</a>
-  <a href="#max"><span class="tag t-hot">具身 / 爆料</span>Meta × 傅利叶做出人形原型 Max，对内视为 Muse 身体</a>
-  <a href="#claude-games"><span class="tag t-mid">产品策略</span>Claude Code 禁止复刻特定已有游戏（周末热议）</a>
+  <a href="#longcat"><span class="tag t-hot">大厂模型</span>美团发布 LongCat-2.5：国芯训出的长程多模态 Agent</a>
+  <a href="#sensenova"><span class="tag t-hot">国产 Agent</span>商汤 SenseNova 6.8 Flash：免费委派智能，主打可交付设计</a>
+  <a href="#moss"><span class="tag t-mid">实时语音</span>模思 MOSS-Live：全双工边聊边办事</a>
+  <a href="#lifeval"><span class="tag t-mid">评测</span>OpenAI LifeVal：用日常杂事衡量 Agent，别被百分数骗了</a>
 </div>
 
-<!-- ========== 1 AWM ========== -->
-<article id="awm">
-  <h2><span class="tag t-hot">世界模型 · 符号/形式化</span>清华姚期智团队发布 Algebraic World Model（AWM）：让 AI 从探索走向 Lean 证明</h2>
-  <div class="verdict"><strong>结论：</strong>AWM 不是又一个「生成可漫游视频」的像素世界模型，而是把陌生交互环境学成<strong>可执行、可凝炼、可在 Lean 4 里核验</strong>的代数模型。对产品与算法团队最有杀伤力的一点：它能在「预算少 1 步」的密封关卡上<strong>证明无解</strong>——同样装备 coding tools 的 Claude Opus 5.5 / GPT-6 Astra 在 12 次基线里<strong>一份正式证明都交不出</strong>。通关分数可以打平，但「知道何时不可能」是另一条能力轴。</div>
+<!-- ========== 1 LongCat ========== -->
+<article id="longcat">
+  <h2><span class="tag t-hot">大厂 · 多模态 Agent</span>美团发布 LongCat-2.5：1.6T 国芯训推，官方称多项 Agent 基准咬住 Opus-5</h2>
+  <div class="verdict"><strong>结论：</strong>这是美团 LongCat 系列从「国芯训得动万亿」进到「视觉原生 + 长程工程 Agent」的正式版。产品上可聊、可调 API；叙事上对标 Claude Opus / GPT-5.x 的 agentic coding 与 visual coding。智东西第三方实测证明「能做完动画和财报 PPT」，也诚实写出排版与空间细节仍糙——适合当国产 Agent 备胎试验，不要当「已全面碾压 Opus-5」的通稿信。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>清华大学交叉信息研究院<strong>姚期智、袁洋</strong>团队公开论文与项目页 <strong>Algebraic World Model: From Exploration to Proofs</strong>（arXiv <a href="http://arxiv.org/abs/2610.40503">2610.40503</a>）。共同一作是浙大本科生<strong>潘冠成</strong>与清华姚班本科生<strong>谭淇心</strong>。北京时间 <strong>2026-11-01</strong> 前后中文热度抬升：智源社区 15:50 转载袁洋组稿，量子位 16:02 发解读。</p>
-  <p>官方一句话：AWM 把未知游戏/环境学成显式数学模型，并在 Lean 里证明「能赢」与「不能赢」。</p>
-  <p class="src">一手：<a href="https://ephemeral6.github.io/awm-site/">项目页 awm-site</a> · <a href="http://arxiv.org/abs/2610.40503">arXiv 2610.40503</a> · 中文：<a href="https://hub.baai.ac.cn/view/59255">智源社区（袁洋组供稿）</a> · <a href="https://www.qbitai.com/2026/11/507031.html">量子位 11-01 16:02</a></p>
+  <p>北京时间 <strong>2026-11-02</strong>，美团 LongCat 团队发布 <strong>LongCat-2.5</strong>：面向长程智能体任务的原生多模态模型，总参 <strong>1.6 万亿</strong>，每 token 激活约 <strong>480 亿</strong>。延续 2.0「全程国产算力训练」路线，强化原生视觉理解与智能体编程；官网 longcat.ai / longcat.chat 可体验，API 同步上线；官方称后续将上 GitHub 与 Hugging Face。</p>
+  <p>官方 X @Meituan_LongCat 发帖约 <strong>9.3 万曝光 / 1650 赞</strong>（统计取自 X API，北京时间成稿前）。</p>
+  <p class="src">一手：<a href="https://longcat.ai/blog/longcat-2.5/">Introducing LongCat-2.5</a> · <a href="https://www.meituan.com/news/NN261102280001343">美团新闻（经济观察报转）</a> · <a href="https://x.com/Meituan_LongCat/status/2117264311714537633">官方 X</a> · 中文：<a href="https://www.zhidx.com/p/606379.html">智东西 11-02 实测</a> · <a href="https://www.caixin.com/2026-11-03/102500141.html">财新 11-03</a> · 外文：<a href="https://technode.com/2026/11/02/meituan-launches-longcat-2-5-multimodal-ai-model-for-extended-coding-tasks/">TechNode</a></p>
 
   <h3>2. 产品介绍</h3>
-  <p><strong>它想解决什么：</strong>Frontier agent 在 ARC-AGI-3 这类「不告诉你规则也不告诉你目标」的游戏里，已经能整理出密密麻麻的符号化规则（量子位比喻：像第谷的观测本）。但这些规则往往<strong>只记现象</strong>——一旦关卡被改成「少 1 步就不可能通关」，模型会幻觉出错误下界（例如 Astra 找到 22 步路线就以为最优，而真实最优是 19）。</p>
-  <p><strong>三步流水线（官方）：</strong></p>
+  <p><strong>它想解决什么：</strong>长程 Agent 要在复杂代码库、完整项目构建、视觉编程（交互网页 / 3D / 设计）里连续干完，而不是只答一轮。官方把失败轨迹转成可复现训练题，并用大规模长程 RL + 多 harness 混合训练（Claude Code / Codex / Hermes 等）。</p>
+  <p><strong>关键能力（官方博客）：</strong></p>
   <ul>
-    <li><strong>Explore &amp; Prototype</strong>：边玩边写可执行 Python 假设，用观察到的转移不断检验、修订。</li>
-    <li><strong>Structure &amp; Simplify</strong>：整理成类型化对象与共享规则；用范畴论启发的投射/归纳极限变换做简化（Lean 检查通用性质）。</li>
-    <li><strong>Formalize &amp; Prove</strong>：编成 Lean 4，核验可达性与不可能性（不含 <code>sorry</code> / <code>native_decide</code> 捷径）。</li>
+    <li><strong>原生视觉离散 token：</strong>不同分辨率图像 → 多层级离散 token，与文本统一进主干；支持离线预 tokenize。</li>
+    <li><strong>长程 Agentic RL：</strong>从 GitHub PR/issue 合成环境与 F2P/P2P 测试；异步 partial rollout；防 reward hacking。</li>
+    <li><strong>国芯训推：</strong>单卡 &lt;80GB 场景下超节点感知并行；官方称长序列 SFT 单卡吞吐较 DDP 基线 <strong>+86%</strong>；W4A4 推理相对 W8A8 预填/解码吞吐约 <strong>+43% / +43%</strong>。</li>
   </ul>
 
   <figure>
-    <img src="media/awm-og.png" alt="AWM 项目页社交图"/>
-    <figcaption>项目页 OG——看完应搞懂：标语是 From Exploration to Proofs，路线是代数世界模型，不是视频生成。</figcaption>
+    <img src="media/meituan-news.png" alt="美团 LongCat-2.5 正式发布宣传图"/>
+    <figcaption>美团新闻稿配图——看完应搞懂：标语是「原生多模态 · 为智能体任务而生」，不是又一个纯聊天模型。</figcaption>
   </figure>
   <figure>
-    <img src="media/awm-figure1.jpg" alt="AWM 三阶段流水线：探索、结构简化、Lean 形式化证明"/>
-    <figcaption>论文 Figure 1（项目页同图）——看完应搞懂：探索写 Python 假说 → 代数变换凝炼结构 → Lean 4 给出可达/不可达证明。</figcaption>
+    <img src="media/longcat-2.jpg" alt="LongCat-2.5 与 Claude Opus / GPT 在 Agent 基准上的对比柱状图"/>
+    <figcaption>官方博客评测图——看完应搞懂：绿条是 2.5，深色段是相对 2.0 的跃升；General Agent 多项贴/超 Opus-5，Code Agent 仍明显落后 Opus-5（如 Program Bench 25.5 vs 37）。</figcaption>
   </figure>
   <figure>
-    <img src="media/baai-awm.jpg" alt="智源社区转载：如何让 AI 像牛顿一样思考"/>
-    <figcaption>智源社区封面（袁洋组供稿转载）——看完应搞懂：中文传播主叙事是「像牛顿一样从现象提炼可检验理论」，不是又一篇榜单刷分通稿。</figcaption>
+    <img src="media/longcat-3.jpg" alt="LongCat 原生分辨率视觉 tokenization 示意图"/>
+    <figcaption>官方 Figure 1——看完应搞懂：多图不同分辨率打包成变长视觉 token，再统一进主干。</figcaption>
   </figure>
 
-  <h4>关键数字（论文/项目页自报，可复现声明在站上）</h4>
+  <h4>官方自报数字（博客表，* 为他方公开分）</h4>
   <ul>
-    <li><strong>密封无解关：</strong>sc25 两关预算压到最优解少 1 步；AWM 6/6 跑出闭式、内核核验的 Lean 无解证明；Opus 5.5 + Astra 共 12 次基线 <strong>0</strong> 份同类证明。初始下界正确率 4/6→反馈后 6/6；基线侧多数未判定或下界错。</li>
-    <li><strong>公开 25 款 ARC-AGI-3：</strong>183/183 关 Lean 回放认证通关轨迹；Opus 5 + AWM 官方分 <strong>99.9</strong>（无 AWM 的 Opus 5 标准 harness 仅 40.7）；认证动作数 7,448 ≈ 人类基线 43%，论文表中在报该指标的系统里最少。</li>
-    <li><strong>泛化抽检：</strong>冻结规则后，未见过布局上 4,160/4,160 转移预测对；机制改动后 4,031/4,031 拒绝。</li>
+    <li><strong>AutomationBench v1.0.6：</strong>51.8（Opus-5 50.3*；2.0 仅 15.8）</li>
+    <li><strong>BrowseComp：</strong>91.9（Opus-5 90.8*）</li>
+    <li><strong>Terminal Bench v4.0：</strong>38.5（GPT-5.6-Sol 37.3*；Opus-5 53.9*）</li>
+    <li><strong>3DCodeBench Text→3D：</strong>55.4（Opus-5 54.3）</li>
   </ul>
-  <div class="warn">证明成立的范围是「在学到的模型前提下」。作者明确写：屏幕→状态的解析在 Python、Lean 外；模型可能比真游戏更严。证据要靠交互检验与「充分覆盖」迁移条件，不是「Lean 过了=世界真理」。</div>
+  <div class="warn">分数大量带 * 或自跑标注；不同 harness / thinking 开关会改结果。以博客脚注为准，不要口头改成「全面第一」。</div>
 
   <div class="howto">
-    <strong>怎么自己看（12 分钟）</strong>
-    打开 <a href="https://ephemeral6.github.io/awm-site/">项目页</a> → 先看首页四条关键数字与「It knows when a task is impossible」演示（预算 18 vs 19）→ 再点进任一游戏页看 Lean 回放说明 → 需要细节读 <a href="http://arxiv.org/abs/2610.40503">arXiv 摘要 + §4 密封实验</a>。中文先读智源社区组稿（比量子位更贴近作者口径），量子位适合 3 分钟抓住「第谷 vs 开普勒」比喻。
+    <strong>怎么自己看（15 分钟）</strong>
+    打开 <a href="https://longcat.ai/blog/longcat-2.5/">技术博客</a> → 先看顶部 Metrics Dashboard 柱状图与评测大表 → 再点 Showcases 里流体模拟 / 3D 展馆案例（官方写「Demo footage coming soon」的条目先跳过）→ 中文先读 <a href="https://www.zhidx.com/p/606379.html">智东西实测</a>（鹈鹕骑车 HTML + 亚马逊财报 PPT）→ 需要商业口径读 <a href="https://www.caixin.com/2026-11-03/102500141.html">财新</a>。自己试：<a href="https://longcat.chat">longcat.chat</a> / API <a href="https://longcat.chat/platform/product">platform</a>。
   </div>
-  <p><strong>视频：</strong>官方站以内嵌 webp 动画展示各游戏认证轨迹，无单独 YouTube 片；本版以 Figure 1 + OG + 智源封面为准，不硬嵌无关口播。</p>
+  <p><strong>视频：</strong>官方博客多处仍写 Demo footage coming soon；本版以内嵌宣传图 + 基准图 + 智东西文字实测为准，不硬嵌无关口播。X 官帖有配图无独立长演示片。</p>
 
   <h3>3. 导致什么影响（含竞品）</h3>
   <ul>
-    <li><strong>vs 只记规则的 frontier agent（GPT-6 Astra + Provider Adapter、Claude Opus 5.5）：</strong>通关分上 Astra adapter / Memento 3 也能冲到满分附近；差距在<strong>不可能任务</strong>——基线会幻觉步数、交不出核验证明。产品含义：Agent 说「做不到」时，你要的是证明还是感觉？</li>
-    <li><strong>vs Memento 3 / 可执行代码世界模型（WorldCoder、Twin 等）：</strong>同属「交互里学规则再规划」家族；AWM 额外把规则压成代数结构并<strong>形式化证明</strong>。论文相关工作也点名：代码世界模型 100% 过采样检验仍可能因漏关键规则而输。</li>
-    <li><strong>vs 公司常见像素/视频世界模型（Genie、Hy-Nomas、EdenLive 等）：</strong>那些优化的是画面一致性与可控生成；AWM 优化的是<strong>可检验的世界定律</strong>。两条路线互补，不要拿视频观感去打 AWM 的分。</li>
+    <li><strong>vs Claude Opus-5 / Opus-4.8：</strong>美团自称多项落在 4.8–5 之间；通用 Agent / 视觉部分可贴甚至超 5，重编程（Program Bench、NL2Repo、Terminal v4）仍明显落后 Opus-5。产品含义：当「国产可 API 的 Agent 底座」试，别当 Claude 替换件。</li>
+    <li><strong>vs GPT-5.5 / 5.6-Sol、DeepSeek-V4.1-Flash、Kimi K3、GLM-5.3：</strong>同表混战；DeepSeek 在 Terminal v2.1 / DeepSWE 等仍更强。LongCat 差异化叙事是 <strong>国芯训推 + 原生视觉 coding</strong>。</li>
+    <li><strong>vs 美团自己的「妙手」经营工作台：</strong>新闻稿明确模型服务主业（古茗/徐升记/益禾堂等），不是纯 Token 工厂——和王兴财报口径一致。</li>
   </ul>
   <div class="ours">
     <strong class="h">对我们（世界模型公司）</strong>
-    若产品控制是 WASD+IJKL+文字，AWM 不能直接当渲染器；可借鉴的是<strong>「探索留下可执行结构 → 结构能证明」</strong>的评测叙事：除了通关率，增加「密封无解 / 下界是否紧」类题目，逼模型少幻觉。对标 Memento 3 时，别只比动作数，要比证明交付物。
+    LongCat-2.5 不是视频世界模型，但「视觉 token 化 + 长程 RL + 失败轨迹回灌」和可控生成/Agent 评测叙事相邻。可借鉴：把真实失败轨迹做成可复现任务，而不是只刷通关分。国芯训推段落对「卡能不能训长上下文」有工程参考价值。
   </div>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">量子位 11-01 16:02 中文主传播</span>
-    <span class="pill">智源社区转载作者组稿</span>
-    <span class="pill">机器之心/新智元窗内未见专稿</span>
-    <span class="pill">学术向：项目页可下载各游戏 Lean 包自检</span>
+    <span class="pill">官方 X ~9.3 万曝光 / 1650 赞</span>
+    <span class="pill">@testingcatalog 转发解读 ~1.1 万曝光</span>
+    <span class="pill">@aitrackerbot 早鸟帖 ~6k 曝光（限时 $0.30/$1.20）</span>
+    <span class="pill">智东西同日实测（非纯通稿）</span>
   </div>
   <ul>
-    <li><strong>正面：</strong>「像牛顿一样思考」叙事清晰；本科生共一 + 姚期智挂名抬热度；可复现声明（1–10 分钟、约 12GB 内存跑 Lean）降低「只发 PPT」怀疑。</li>
-    <li><strong>谨慎：</strong>主战场仍是 ARC 类离散、即时反馈环境；随机/延迟/富隐状态未测。媒体侧量子位标题偏煽，事实以论文表为准。</li>
-    <li><strong>可信度：</strong>智源稿=组内供稿（近一手）；量子位=解读转述；外文科技媒体尚未形成同级跟进潮。</li>
+    <li><strong>正面：</strong>智东西——鹈鹕骑车动画「完成度较高、风格一致」；财报 PPT 框架完整、初步比对未见数据错误；生成速度快。</li>
+    <li><strong>批评 / 谨慎：</strong>智东西——围巾歪、空间图层关系弱；PPT 信息密度偏高、字号偏小、个别结论过绝对。虎嗅 AI 快讯口径偏短讯，完整权重/技术报告当时仍未放全。</li>
+    <li><strong>可信度：</strong>博客+官 X=一手；智东西=第三方轻实测；TechNode 转 IT 之家/官方摘要；财新偏产业「服务主业」视角。</li>
   </ul>
 
   <div class="media">
     <h4>媒体摘录</h4>
     <div class="mgroup">官方 / 一手</div>
     <div class="mcard">
-      <p class="mhead">项目页 <span class="mtag">一手</span></p>
-      <p class="mtitle"><a href="https://ephemeral6.github.io/awm-site/">Algebraic World Model: From Exploration to Proofs</a></p>
-      <blockquote>6 / 6 AWM runs on the two sealed levels end with a closed Lean proof… The 12 runs of Claude Opus 5.5 and GPT-6 Astra end with none.</blockquote>
-      <p class="mangle">首页四条数字是对外口径源头；演示区把「预算 18 无解 / 19 可解」做成人话。</p>
+      <p class="mhead">longcat.ai 博客 <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://longcat.ai/blog/longcat-2.5/">Introducing LongCat-2.5</a></p>
+      <blockquote>Native multimodal model for long-horizon agentic tasks. 1.6T total / ~48B activated.</blockquote>
+      <p class="mangle">角度：完整技术与评测表，是写稿主源。</p>
+    </div>
+    <div class="mgroup">中文</div>
+    <div class="mcard">
+      <p class="mhead">智东西 <span class="mtag">实测</span></p>
+      <p class="mtitle"><a href="https://www.zhidx.com/p/606379.html">美团发 1.6 万亿参数新模型，通用 Agent 测试超 Opus-5，国产芯特别优化</a></p>
+      <blockquote>前端视觉效果较好，PPT 图表丰富，但画面细节、空间与图层关系仍有提升空间，PPT 排版也可以进一步优化。</blockquote>
+      <p class="mangle">角度：同日动手测，比通稿有用；标题「超 Opus-5」只覆盖部分基准，正文有 Terminal 落后说明。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">arXiv <span class="mtag">论文</span></p>
-      <p class="mtitle"><a href="http://arxiv.org/abs/2610.40503">2610.40503 · Algebraic World Model</a></p>
-      <blockquote>With Claude Opus 5, AWM clears all levels with a score of 99.9, while its certified winning trajectories use only 43% of the human baseline’s actions.</blockquote>
-      <p class="mangle">分数与动作数以摘要/Table 为准；密封实验细节在 §4。</p>
+      <p class="mhead">财新 <span class="mtag">产业</span></p>
+      <p class="mtitle"><a href="https://www.caixin.com/2026-11-03/102500141.html">美团迭代国产芯片训练模型 模型主要服务公司主业</a></p>
+      <p class="mangle">角度：强调服务主业，不是 Token 工厂；付费墙后文未全读，事实以导语与公开段为准。</p>
     </div>
-    <div class="mgroup">中文媒体</div>
+    <div class="mgroup">外文</div>
     <div class="mcard">
-      <p class="mhead">智源社区 <span class="mtag">组稿转载</span></p>
-      <p class="mtitle"><a href="https://hub.baai.ac.cn/view/59255">如何让AI像牛顿一样思考？代数世界模型</a></p>
-      <blockquote>真正重要的工作，是从这些现象中找到少数能够解释更多事实的概念…</blockquote>
-      <p class="mangle">比通稿更贴近作者意图；含范畴论四个变换的白话解释。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">量子位 <span class="mtag">热读</span></p>
-      <p class="mtitle"><a href="https://www.qbitai.com/2026/11/507031.html">清华姚期智团队新作：代数世界模型</a></p>
-      <blockquote>Astra生成的这些规则，就是第谷的笔记本，不是开普勒的定律。</blockquote>
-      <p class="mangle">传播力最强；比喻好记，数字需回对论文。</p>
+      <p class="mhead">TechNode <span class="mtag">摘要</span></p>
+      <p class="mtitle"><a href="https://technode.com/2026/11/02/meituan-launches-longcat-2-5-multimodal-ai-model-for-extended-coding-tasks/">Meituan launches LongCat-2.5…</a></p>
+      <p class="mangle">角度：英文短讯，指向 IT Home / 官方；无独立实测。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 2 META MAX ========== -->
-<article id="max">
-  <h2><span class="tag t-hot">具身 · 爆料</span>Meta 与傅利叶合作做出人形原型「Max」：对内视为 Muse 的实体化</h2>
-  <div class="verdict"><strong>结论：</strong>这是 <strong>The Information 知情人士爆料</strong>，不是 Meta/傅利叶联合产品发布会。故事线很清楚：约 3 个月做出约 48kg、1.5m 的家庭向人形原型 Max，Jetson Thor + 表情屏 + 扬声器 + 五指手；CTO Bosworth 对内把人形说成 <strong>Muse Agent 的身体</strong>；Max 2 已于 9 月开工。对行业的意义是「大厂 Agent × 中国本体厂」的组合拳被坐实到原型机——但<strong>无量产时间表、未官方确认全部细节</strong>，写作时必须把「报道」和「开卖」分开。</div>
+<!-- ========== 2 SenseNova ========== -->
+<article id="sensenova">
+  <h2><span class="tag t-hot">国产 Agent · 设计交付</span>商汤发布 SenseNova 6.8 Flash：委派智能 + 限免，量子位实测能出可交互官网</h2>
+  <div class="verdict"><strong>结论：</strong>这是「能交付」路线的国产 Flash：官方押注跨会话记忆、主动提醒、动态 Web/PPT/3D，而不是又一张知识榜。量子位同日实测 Folio 书店官网、仿生手品牌页、动态海报与 PPT，观感接近可上评审；但量子位文风偏安利，且小浣熊限免到 12-01——先当高完成度设计 Agent 试用，别把官分当独立复现。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>据 The Information（周末刊出），Meta 与上海傅利叶合作打造内部代号 <strong>Max</strong> 的人形原型；Reuters 经 Investing.com 转发时写明「未能立即核实」。外媒 Engadget、The Next Web 与中文智东西、IT之家在 <strong>10-31 夜至 11-01</strong> 跟进。智东西称 Meta 机器人产品副总裁 Li-Chen Miller 曾在傅利叶上海工厂驻场近两个月；8 月底内部机器人峰会已向部分员工展示。</p>
-  <p class="src">外文：<a href="https://www.engadget.com/2303434/meta-reportedly-built-a-humanoid-robot-prototype-that-can-do-household-chores/">Engadget 11-01</a> · <a href="https://www.investing.com/news/stock-market-news/meta-builds-humanoid-robot-with-chinese-startup-fourier-the-information-says-4989297">Reuters via Investing 10-31</a> · <a href="https://thenextweb.com/news/meta-humanoid-robot-fourier-max">TNW</a> · 中文：<a href="https://www.zhidx.com/p/606349.html">智东西</a> · <a href="https://www.ithome.com/0/1020/636.htm">IT之家 11-01 07:12</a> · 谨慎：<a href="https://www.huxiu.com/ainews/15995.html">虎嗅 AI 快讯</a>（对「联合中国初创」口径更留余地）</p>
-  <div class="warn">全文事实来自二手转述 The Information，本机无法打开 TI 付费原文。虎嗅同日条目强调收购 Assured Robot Intelligence 更硬、联合造机「尚未获证实」——与智东西/IT之家「据 TI 报道」写法并存，阅读时保留不确定性。</div>
+  <p>北京时间 <strong>2026-11-02</strong>，商汤日日新发布 <strong>SenseNova 6.8 Flash 正式版</strong>，主打「委派智能」：用户给目标，模型走流程，人验收。同步上线 SenseNova Token Plan；商汤小浣熊客户端称模型<strong>限免至 2026-12-01</strong>。同日量子位发长文实测（21:36）。</p>
+  <p class="src">一手：<a href="https://stock.10jqka.com.cn/20261102/c681370989.shtml">商汤官微（同花顺转载）</a> · <a href="https://platform.sensenova.cn/docs">Token Plan / Docs</a> · <a href="https://xiaohuanxiong.com/">小浣熊</a> · 中文：<a href="https://www.qbitai.com/2026/11/507277.html">量子位 11-02 21:36</a> · <a href="https://mozhenzhen.com/news/sensenova-68-flash-token-plan-free-202611">模真真（开发者向）</a></p>
 
-  <h3>2. 产品介绍（报道口径）</h3>
-  <ul>
-    <li><strong>规格：</strong>约 1.5m、约 106 lb（≈48kg）；NVIDIA <strong>Jetson Thor</strong>；面部表情显示屏；胸部扬声器；五指手可抓小瓶/玩具。</li>
-    <li><strong>交互指标（智东西转述 Meta 要求）：</strong>5m 外识声、3m 外懂挥手/手势、保持眼神交流，并用信号表达倾听/思考/说话/不确定。</li>
-    <li><strong>Max 2（9 月开工）：</strong>重设计躯干与手；加投影仪；加楼梯相关传感器。</li>
-    <li><strong>组织信号：</strong>上海招供应商开发、深圳招产品设计/TPM，文案指向「从原型走向大规模生产」；同时 Ning Li 任 Robotics Studio 临时负责人，Bosworth 更深介入。</li>
-  </ul>
+  <h3>2. 产品介绍</h3>
+  <p><strong>它想解决什么：</strong>办公里「跨天、跨会话」的活——旧材料引用了过期数据、客户因缺功能拒过单、交接时经验散落——以及设计侧要直接交出可编辑 Web / SVG / Three.js / Blender / 动态 PPT。</p>
+  <p><strong>官方能力点：</strong>长期记忆 + 主动交互；动态 PPT / Poster / Agentic3D；可接 Figma；Studio 设计实验版入口 <a href="https://unify.light-ai.top/">unify.light-ai.top</a>；skills 仓库 <a href="https://github.com/OpenSenseNova/SenseNova-Skills">SenseNova-Skills</a>。</p>
 
   <figure>
-    <img src="media/engadget-meta.jpg" alt="Engadget：Meta 据报做出可作家务的人形原型"/>
-    <figcaption>Engadget 配图——看完应搞懂：标题带 reportedly；正文确认 Max 2 已开做，无量产日。</figcaption>
+    <img src="media/sensenova-folio.png" alt="SenseNova 生成的 Folio 书店官网演示截帧"/>
+    <figcaption>量子位实测配图（Folio 书店）——看完应搞懂：黑底大字 + 斜向书籍阵列，鼠标悬停书会弹出；这是「可交互官网」叙事的核心证据截帧。</figcaption>
   </figure>
   <figure>
-    <img src="media/reuters-meta.jpg" alt="Reuters 转发配图"/>
-    <figcaption>Reuters/Investing 转述配图——看完应搞懂：通讯社口径是「TI 称 / Reuters 未能核实」，不是官方新闻稿。</figcaption>
+    <img src="media/sensenova-luma-web.png" alt="SenseNova 生成的相机品牌官网演示截帧"/>
+    <figcaption>量子位实测配图（相机品牌站）——看完应搞懂：完成度到「能混进真实品牌站」的宣传口径；注意这是演示产物，不是商汤自有硬件。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/sensenova-hand-web.png" alt="SenseNova 生成的仿生手品牌官网演示截帧"/>
+    <figcaption>量子位实测配图（具身灵巧手品牌风官网）——看完应搞懂：留白 + 单句英文 slogan + 预约按钮，偏真实品牌审美。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/sensenova-moz.webp" alt="SenseNova Token Plan 可用模型列表截图"/>
+    <figcaption>模真真整理的 Token Plan 模型表——看完应搞懂：控制台里能看到 6.8 Flash / Flash Lite，以及同平台可调的第三方模型条目；以官方 docs 为准。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（12 分钟）</strong>
+    装 <a href="https://xiaohuanxiong.com/">小浣熊</a> → 设置里装本地运行环境 / 浏览器 / 文档预览 / 视频生成 → 能力中心装 raccoon-poster-media 与 raccoon-dynamic-ppt（量子位步骤）→ 让它做一页带动效的品牌首屏。开发者走 <a href="https://platform.sensenova.cn/docs">Token Plan</a>。看别人做过什么：读量子位文内嵌演示（微信视频，本页不外链假嵌）。
+  </div>
+  <p><strong>视频：</strong>官方与量子位演示主要在微信公众号视频号链路，本环境无法稳定抽取可页内播放的 MP4；以上截帧来自量子位文内配图，标明出处。不伪造「可播官方片」。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Gemini 4 Carbon：</strong>量子位叙事是「Carbon 3D 强但网页/UI 翻车，Flash 接住了」——这是媒体对比，不是同题盲测。产品含义：若你要的是可交互营销站 / 动态 PPT，Flash 的「现在就能免费用」比等邀请码现实。</li>
+    <li><strong>vs Claude / GPT 办公 Agent、美团 LongCat-2.5：</strong>Flash 更偏设计交付与主动办公提醒；LongCat 更偏长程工程与国芯叙事。两者今天同日撞车，选型看你要「出页面」还是「啃代码库」。</li>
+    <li><strong>旁注 Code2Video：</strong>同日 X 上 SenseNova 6.8 Code2Video（可编辑代码驱动视频）另有热帖（单帖约 8.9 万曝光），与 Flash「委派办公/设计」不是同一卖点，勿混成一条产品。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    「主动把旧材料与新数据对上并提示修订」值得抄到内部 Agent 验收清单：交付物是否包含版本 diff 与待审稿，而不只是新生成一份。设计侧可观察它对接 Blender/Figma 的工作流是否真能进专业链路。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">量子位 11-02 晚主传播</span>
+    <span class="pill">商汤官微通稿（同花顺等转）</span>
+    <span class="pill">窗内机器之心/新智元未见同级专稿</span>
+    <span class="pill">X 上 Flash 本体热度弱于 Code2Video 旁支</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>量子位——Folio 书店悬停弹书、柑橘海报可循环、望远镜动态 PPT「内审够用」；主动发现行业调查更正并改培训页。</li>
+    <li><strong>谨慎：</strong>量子位标题与行文偏软广（「顶级 AI 翻车被国产接住」）；主动交互案例标明「小浣熊内部研发版」。独立开发者复盘仍少。</li>
+    <li><strong>可信度：</strong>官微=一手能力声明；量子位=媒体实测但广告气场强；模真真=API/积分实用向。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mgroup">官方 / 一手</div>
+    <div class="mcard">
+      <p class="mhead">商汤官微 <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://stock.10jqka.com.cn/20261102/c681370989.shtml">SenseNova 6.8 Flash 正式版发布：办公更稳，设计更美</a></p>
+      <blockquote>我们希望验证的不只是模型能做什么，更是它能否把一件事持续推进，并交付可用的结果。</blockquote>
+    </div>
+    <div class="mgroup">中文</div>
+    <div class="mcard">
+      <p class="mhead">量子位 <span class="mtag">实测 · 偏软</span></p>
+      <p class="mtitle"><a href="https://www.qbitai.com/2026/11/507277.html">顶级 AI 翻车的活儿，被这个新出的免费国产 AI 接住了！</a></p>
+      <p class="mangle">角度：演示最全，但标题对抗性营销明显；事实描述可用，情绪词要打折。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 3 MOSS-Live ========== -->
+<article id="moss">
+  <h2><span class="tag t-mid">实时语音 Agent</span>模思智能发布 MOSS-Live：全双工边说边听，工具调用仍只有约五成成功</h2>
+  <div class="verdict"><strong>结论：</strong>MOSS-Live 把竞争从「声色像不像人」拉到「会不会在该闭嘴时闭嘴、能不能边聊边办」。官方与机器之心 Pro 给出的全双工指标（停顿抢话、无关误接、附和抗干扰）明显好于 GPT Realtime / 豆包 SeedDuplex 等对照；但 <strong>工具调用成功率约 51%</strong>——聊天自然 ≠ 事办成。适合马上试通话手感，别当成可上生产的万能语音员工。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-11-02</strong>，模思智能（OpenMOSS 团队孵化）发布全双工实时交互系统 <strong>MOSS-Live</strong>：说话同时持续倾听，按语义判断附和 / 打断 / 旁人闲聊；支持视频与屏幕共享、流式翻译、前后台异步任务。在线体验与 API：<a href="https://platform.moss.cn">platform.moss.cn</a>；产品页 <a href="https://www.moss.cn/products/moss-live">moss.cn/products/moss-live</a>。</p>
+  <p>官方 X @MOSS_Global 发帖约 <strong>3.2 万曝光 / 512 赞 / 51 转发 / 455 书签</strong>；复旦 Qiu 锡鹏账号转发。</p>
+  <p class="src">一手：<a href="https://www.moss.cn/products/moss-live">产品页</a> · <a href="https://x.com/MOSS_Global/status/2117244034066632755">@MOSS_Global</a> · 中文：<a href="https://t.cj.sina.com.cn/articles/view/3996876140/ee3b7d6c001017zlo?finpagefr=p_103">机器之心 Pro（新浪转）</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>架构一句话：</strong>前台交互模型负责实时听/说/看；后台模型异步做复杂推理与工具；共享记忆与任务状态，结果择机插回对话。</p>
+  <p><strong>官方强调的体验：</strong>语义判停（不是数静音毫秒）；打断后只承认已说出口的内容；可设规则主动纠正/计数/提醒。</p>
+
+  <figure>
+    <img src="media/moss-sina.jpg" alt="MOSS Live 宣传视觉：居家场景叠加黄色标题"/>
+    <figcaption>机器之心 Pro 文配图——看完应搞懂：品牌把「Live」放进日常生活场景，而不是会议室科幻片。</figcaption>
+  </figure>
+
+  <div class="videos">
+    <h4>页内视频</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">谁发的：模思智能官方 X @MOSS_Global（约 99 秒演示）</span>
+      <span class="why">看完应搞懂：全双工听说并行、背景任务不卡对话、可结合画面上下文——这是官方产品叙事片，不是第三方压力测试。</span></p>
+      <video controls playsinline preload="metadata" poster="media/moss-thumb.jpg" src="media/moss-live-demo.mp4"></video>
+    </div>
+  </div>
+
+  <h4>官方 / 机器之心转述关键数字（FDB / τ-Voice，自报）</h4>
+  <ul>
+    <li><strong>停顿抢话率（不含附和）：</strong>1.44%（GPT Realtime 2.1 3.83%；GPT-Live-1 10.37%；Doubao SeedDuplex 14.29%）</li>
+    <li><strong>无关语音误接话：</strong>2.00%（对照系统 68%–88%）</li>
+    <li><strong>附和抗干扰：</strong>98.17%</li>
+    <li><strong>工具调用成功率（FDB v3）：</strong>51%（与 SeedDuplex 并列最高）；τ-Voice 多轮任务 57.93%（次于 GPT-Live-1）</li>
+  </ul>
+  <div class="warn">以上为厂商评测口径；独立复现未见。工具调用一半失败是写进通稿的，不要只截「六项第一」海报。</div>
+
+  <div class="howto">
+    <strong>怎么自己看（10 分钟）</strong>
+    先播本页上方官方片 → 打开 <a href="https://www.moss.cn/products/moss-live">产品页</a> 读「语义判停 / 前后台」四块 → 有账号就去 <a href="https://platform.moss.cn">platform.moss.cn</a> 打一通，专门试：说话中停顿思考、说「嗯」附和、旁人插话、中途改需求。中文细节读机器之心 Pro。
+  </div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs OpenAI Realtime / GPT-Live、豆包 SeedDuplex、Qwen Audio：</strong>MOSS 把「别抢话、别接旁人」做成主指标，对照系在无关误接上差距巨大（若评测可信）。Realtime 生态与工具成熟度仍是短板对照项——MOSS 自己的工具成功率也只有一半。</li>
+    <li><strong>vs 传统 ASR+LLM+TTS 流水线：</strong>机器之心指出下一阶段要处理打断、并发任务、多模态上下文——对开发者是平台能力，不只是调三个 API。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    若产品有语音指挥世界模型 / 游戏 Agent，优先抄「语义判停 + 只承认已说出口上下文」；评测不要只报 ASR-WER，要报抢话率、无关拒识、打断后衔接。工具成功率 51% 提醒：实时嘴炮和可靠执行要拆开验收。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">官帖 ~3.2 万曝光 / 512 赞 / 455 书签</span>
+    <span class="pill">机器之心 Pro 主中文稿</span>
+    <span class="pill">社区独立长测仍少（发布当日）</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>产品叙事清晰（Her / 全双工）；指标海报冲击力强；API 限时免费降低试用门槛。</li>
+    <li><strong>谨慎：</strong>工具调用与长程任务成功率未过及格线舒适区；复杂噪声 / 长时间 / 多人同时发言稳定性官方也承认待验。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">机器之心 Pro <span class="mtag">深度转述</span></p>
+      <p class="mtitle"><a href="https://t.cj.sina.com.cn/articles/view/3996876140/ee3b7d6c001017zlo?finpagefr=p_103">多项指标排名第一，全双工实时交互系统 MOSS-Live 发布</a></p>
+      <blockquote>AI 已经越来越像人在「说话」，却还不太擅长与人真正实时且自然地「对话」。</blockquote>
+      <p class="mangle">角度：带完整指标与场景 Demo 文字；近一手口径，非独立实验室复现。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 4 LifeVal ========== -->
+<article id="lifeval">
+  <h2><span class="tag t-mid">评测 · 日常 Agent</span>OpenAI 发布 LifeVal：用托儿、政务、预算等日常任务衡量 AI，高分不等于办完</h2>
+  <div class="verdict"><strong>结论：</strong>LifeVal 是研究型评测发布（2026-11-02），不是新 ChatGPT 功能上线。它把「人愿意交给助理的日常事」拉进榜单叙事，方向对；但公开页给的是选中任务高分示例，独立评论已指出——短名单 / 购物车里的 deed / 护理计划草稿 ≠ 报名成功、成交、医嘱生效。采购或对标时，要问清终点定义，别拿 80%+ 当完工率。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>OpenAI 于 <strong>2026-11-02</strong> 发布研究页 <strong>LifeVal</strong>：基于美国时间使用调查、跨国时间使用研究，再加 <strong>3,995</strong> 人抽样，找出人们最想要 AI 帮忙的日常任务（照护、健康、教育、家务行政、个人财务、购物、政务等），用来追踪过去一年模型在「办实事」上的进步。</p>
+  <p class="src">一手：<a href="https://openai.com/index/lifeval/">OpenAI · LifeVal</a> · 评论：<a href="https://www.nageshpolu.com/2026/11/openai-lifeval-tests-everyday-ai-agents.html">Nagesh Polu：高分不是办完</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它不是产品，是尺子。</strong>公开示例包括：搬家后筛选幼儿园（展示分 93.1%）、洪灾前组织志愿者（98.0%）、按预算找带独立居住单元的房子并把 deed 加进购物车（100%）、糖尿病家长的一周饮食与护理计划（90.4%）。官方强调过去一年在 browser / computer use / connectors 上的训练，让 ChatGPT 从聊天走向可行动助理。</p>
+
+  <figure>
+    <img src="media/lifeval-og.png" alt="OpenAI LifeVal 官方社交图"/>
+    <figcaption>OpenAI 官方 OG——看完应搞懂：标题就是 LifeVal，角落图标暗示教育、购物、指标、地图定位——日常杂事，不是编码竞赛。</figcaption>
   </figure>
 
   <div class="howto">
     <strong>怎么自己看（8 分钟）</strong>
-    先读 <a href="https://www.zhidx.com/p/606349.html">智东西长文</a>（细节最全：驻厂、交互指标、Max 2、招聘）→ 再用 <a href="https://www.engadget.com/2303434/meta-reportedly-built-a-humanoid-robot-prototype-that-can-do-household-chores/">Engadget</a> 核对英文要点 → 看 <a href="https://www.investing.com/news/stock-market-news/meta-builds-humanoid-robot-with-chinese-startup-fourier-the-information-says-4989297">Reuters 短讯</a>里的「could not verify」。不要把招聘 JD 当成量产承诺。
+    打开 <a href="https://openai.com/index/lifeval/">LifeVal 页</a> → 读 Background 里两份时间使用研究 + 3995 人调查 → 点开 2–3 个 Individual task examples 看模型回复停在哪一步 → 再读一篇独立评论（推荐 Nagesh Polu）问自己：终点是「草稿」还是「外部回执」？
   </div>
-  <p><strong>视频：</strong>窗内无官方 Max 演示片（未官宣）；不嵌第三方脑补 CGI。</p>
+  <p><strong>视频：</strong>官方页以对话截图/文本示例为主，无单独发布演示片；本版不嵌无关口播。</p>
 
   <h3>3. 导致什么影响（含竞品）</h3>
   <ul>
-    <li><strong>vs Figure / 1X NEO / Tesla Optimus：</strong>Figure 已在家庭场景测试，1X 接受预订，Optimus 走车厂产能叙事。Max 仍是<strong>内部原型</strong>，但差异化故事是「先有消费级 Agent Muse，再长身体」。</li>
-    <li><strong>vs 傅利叶自有 GR-1/2/3：</strong>报道称基于傅利叶多代硬件经验定制身高/头显/手/鞋；这是<strong>代工+共创</strong>，不是 Meta 从零铸本体，也不是傅利叶自有消费品牌换皮官宣。</li>
-    <li><strong>vs 智元等国内消费/商用人形叙事（10-31 已报创新日）：</strong>智元走榜单+OS+工时单位；Meta 走「社交/家用 Agent 具身化」。短线都在抢「家里能用」的心智，长线拼的是数据闭环与成本。</li>
+    <li><strong>vs GDPval / SemiAnalysis GDPx 等专业 Agent 榜：</strong>LifeVal 测个人生活责任，GDPx 测难专业任务；百分比不能横比。Nagesh 文强调三者任务群、工具环境、难度分布不同。</li>
+    <li><strong>vs 学术知识榜 / 编码榜：</strong>把优化目标从「会答」扭向「帮人把事推进」——对 Agent 产品经理是叙事胜利，对实验室是新刷分场。</li>
+    <li><strong>对企业落地：</strong>独立评论给出的验收清单值得直接抄——外部回执、可重复试验、授权日志、异常处理、含人工复核的净耗时。</li>
   </ul>
   <div class="ours">
     <strong class="h">对我们</strong>
-    关注点不是跟风做人形外壳，而是：大厂把 <strong>Agent 产品（Muse）与本体供应链（傅利叶）</strong>绑在同一路线图时，世界模型/操作数据会往哪边沉。若对方要「5m 识声、3m 懂势」，仿真与实机数据采集标准会变。</div>
-
-  <h3>4. 用户如何评价</h3>
-  <div class="heat">
-    <span class="pill">X 财经帖 faststocknewss ≈ 1.2 万曝光</span>
-    <span class="pill">中文科技媒体 11-01 早间跟进</span>
-    <span class="pill">未上市 · 未官方细节确认</span>
-  </div>
-  <ul>
-    <li><strong>行业读法：</strong>「Muse 要身体了」是最容易传播的一句；招聘与 Max 2 被当作认真度信号。</li>
-    <li><strong>质疑：</strong>中美机器人供应链敏感、TI 单源、无公开视频；虎嗅式「收购大脑更实、造机未证实」值得并列呈现。</li>
-    <li><strong>媒体可信度：</strong>智东西/IT之家=TI 转述；Engadget=消费科技二传；Reuters=有核实免责声明；虎嗅=审慎摘要（非软广）。</li>
-  </ul>
-
-  <div class="media">
-    <h4>媒体摘录</h4>
-    <div class="mgroup">外文</div>
-    <div class="mcard">
-      <p class="mhead">Engadget <span class="mtag">11-01</span></p>
-      <p class="mtitle"><a href="https://www.engadget.com/2303434/meta-reportedly-built-a-humanoid-robot-prototype-that-can-do-household-chores/">Meta reportedly built a humanoid… household chores</a></p>
-      <blockquote>…built with the help of a Chinese robotics company called Fourier in roughly three months.</blockquote>
-      <p class="mangle">适合英文读者快速抓规格；标题已带 reportedly。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">Reuters via Investing <span class="mtag">10-31</span></p>
-      <p class="mtitle"><a href="https://www.investing.com/news/stock-market-news/meta-builds-humanoid-robot-with-chinese-startup-fourier-the-information-says-4989297">Meta builds humanoid… Fourier, TI says</a></p>
-      <blockquote>Reuters could not immediately verify the report.</blockquote>
-      <p class="mangle">一句核实免责声明，写进任何对内 brief 都该留着。</p>
-    </div>
-    <div class="mgroup">中文</div>
-    <div class="mcard">
-      <p class="mhead">智东西 <span class="mtag">详稿</span></p>
-      <p class="mtitle"><a href="https://www.zhidx.com/p/606349.html">Muse人形机器人来了！小扎带队，中国造</a></p>
-      <blockquote>知情人士称，Meta首席技术官Andrew Bosworth曾在Meta内部将人形机器人描述为Muse的实体化形态。</blockquote>
-      <p class="mangle">标题党味重，正文信息密度最高；「实体化」一句是传播核。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">IT之家 <span class="mtag">早间快讯</span></p>
-      <p class="mtitle"><a href="https://www.ithome.com/0/1020/636.htm">消息称 Meta 与傅利叶打造人形原型</a></p>
-      <blockquote>暂未确定该产品推出时间，也无计划销售原型机。</blockquote>
-      <p class="mangle">把「无销售计划」写进快讯，有助于降噪。</p>
-    </div>
-  </div>
-</article>
-
-<!-- ========== 3 CLAUDE GAMES ========== -->
-<article id="claude-games">
-  <h2><span class="tag t-mid">安全/产品策略</span>Anthropic 给 Claude Code / Opus 5.5 加规则：禁止复刻「已存在的特定游戏」</h2>
-  <div class="verdict"><strong>结论：</strong>这不是新模型发布，而是一次<strong>系统提示/服务端规则</strong>变更。约 <strong>2026-10-27</strong> 起，Claude Code 在 Opus 5.5 上通过旗标 <code>tengu_heron_brook</code> 下发规则：可做原创、类型、用户自有素材；<strong>不可复刻某个已存在的特定游戏</strong>（改名也不行）。Anthropic 技术员工 <strong>Addy Osmani</strong> 在 X 确认动机是防 IP 侵权。周末到 11-01 中文量子位跟进时，社区争论已从「该不该管」扩到「误伤原创 / 拆任务可绕过 / 独立工作室取消 Demo」。</div>
-
-  <h3>1. 发生了什么</h3>
-  <p>X 用户 <strong>@chasmmmmmmmmmmm</strong> 于美东 10-30 左右曝出规则全文截图（帖子成稿核验约 <strong>227 万曝光 / 8928 赞</strong>）。Addy Osmani 回复确认：「We added two sentences to Claude Code's prompt on Opus 5.5…」（约 <strong>15.5 万曝光 / 445 赞</strong>）。Engadget、PC Gamer、Tom's Hardware 在 10-31～11-01 报道；量子位北京时间 <strong>11-01 21:09</strong> 发中文长文。日本电ファミニコゲーマー等也跟进。</p>
-  <p class="src">一手确认：<a href="https://x.com/chasmmmmmmmmmmm/status/2116062991686721968">Chasm 发现帖</a> · <a href="https://x.com/addyosmani/status/2116213240363729013">Addy Osmani 确认</a> · 外文：<a href="https://www.engadget.com/2303469/anthropic-updates-claude-to-stop-it-from-recreating-existing-video-games/">Engadget</a> · <a href="https://www.pcgamer.com/gaming-industry/anthropic-updates-claude-to-steer-it-away-from-letting-users-clone-games-following-weeks-of-steam-being-inundated-with-ai-slop/">PC Gamer 10-31</a> · <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked">Tom's Hardware</a> · 中文：<a href="https://www.qbitai.com/2026/11/507038.html">量子位 11-01 21:09</a></p>
-
-  <h3>2. 产品介绍（策略长什么样）</h3>
-  <p><strong>规则大意（用户截图 / 媒体引述）：</strong>Do build original games, games in a genre, and games from the user's own designs and assets. Do not build a recreation of a specific existing game, even if it is renamed or called original.</p>
-  <p><strong>官方定性（Addy）：</strong>加两句提示词以「steer away」；因用 Claude 侵权违反 usage policy；原创/类型/自有设计应继续可用；会继续迭代平衡；若误伤「你自己的东西」可找他。</p>
-  <p><strong>背景压力：</strong>Opus 5.5 后出现大量 AI 辅助反编译/浏览器复刻（媒体点名过 Halo、CoD、GTA 等 fan project）；Steam 上 AI slop 与「Demo 被克隆抢发」焦虑；有工作室取消公开试玩（量子位举 Alliance Arts《醉酒女神反流》；PC Gamer / Aakash Gupta 等亦报道独立开发者受威胁）。</p>
-
-  <figure>
-    <img src="media/chasm-claude-rule.jpg" alt="Chasm 曝光的 Claude Code 游戏规则截图"/>
-    <figcaption>Chasm 原帖配图——看完应搞懂：这是用户抓到的规则文本截图，不是 Anthropic 官网政策页；随后被员工确认「加了两句」。 </figcaption>
-  </figure>
-  <figure>
-    <img src="media/engadget-claude.jpg" alt="Engadget：Anthropic 更新 Claude 停止复刻已有游戏"/>
-    <figcaption>Engadget 报道图——看完应搞懂：外媒把 Addy 确认写进正文，并强调原创/类型仍可用。</figcaption>
-  </figure>
-  <figure>
-    <img src="media/pcgamer-claude.png" alt="PC Gamer：Claude 被引导远离克隆游戏"/>
-    <figcaption>PC Gamer——看完应搞懂：报道把此次改规则放进 Steam AI slop 与独立开发者取消 Demo 的产业上下文；并引 Valve 不愿一刀切禁止 AI 工具。</figcaption>
-  </figure>
-
-  <div class="howto">
-    <strong>怎么自己看（10 分钟）</strong>
-    先打开 <a href="https://x.com/addyosmani/status/2116213240363729013">Addy 确认帖</a>读官方动机 → 再看 <a href="https://x.com/chasmmmmmmmmmmm/status/2116062991686721968">Chasm 原帖</a>里的规则原文截图 → 产业背景读 <a href="https://www.pcgamer.com/gaming-industry/anthropic-updates-claude-to-steer-it-away-from-letting-users-clone-games-following-weeks-of-steam-being-inundated-with-ai-slop/">PC Gamer</a> → 中文情绪与「Napster 时刻」叙事看 <a href="https://www.qbitai.com/2026/11/507038.html">量子位</a>。Tom's Hardware 论坛有人指标题把「逆向工程全面封杀」写过了，阅读时分开「游戏复刻规则」与「网络安全能力收紧」两条线。
-  </div>
-  <p><strong>视频：</strong>无官方政策讲解片；不嵌二创口播。</p>
-
-  <h3>3. 导致什么影响（含竞品）</h3>
-  <ul>
-    <li><strong>vs Codex / 开源 coding agent / 本地模型：</strong>提示词级拦截管得了 Claude，管不了「别的模型搭骨架 + Claude 只写无上下文子任务」。迁移与拆任务是社区默认绕法。</li>
-    <li><strong>vs 游戏工作室 Demo 策略：</strong>短期或加速「少放可执行 Demo、多放预告片」；长期压力在平台（Steam）治理，不单在某一家模型公司。</li>
-    <li><strong>vs Anthropic 自身产品叙事：</strong>与「安全公司」品牌一致，但叠加训练数据版权和解的舆论，会被嘲「双标」。对 PM：这是<strong>合规/声誉功能</strong>，不是能力升级。</li>
-  </ul>
-  <div class="ours">
-    <strong class="h">对我们（偶尔做游戏 / 用 coding agent）</strong>
-    内部工具链不要假设「一个模型永远肯写某类脚手架」。教学向「复刻经典练手」要改成「类型约束 + 自有美术」模板；真遇到误伤，保留会话日志按 Addy 说的反馈通道走。若评估竞品 agent，把「IP 策略松紧」写成采购维度。
+    世界模型 / 游戏 Agent 评测也可以学：除了通关率，增加「用户授权点」「不可逆动作是否停住」「最终状态能否在环境外核验」。别只报平均 reward。
   </div>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">Chasm 帖 ≈ 227 万曝光 / 8928 赞</span>
-    <span class="pill">Addy 确认帖 ≈ 15.5 万曝光 / 445 赞 / 244 回复</span>
-    <span class="pill">量子位 11-01 夜中文二次爆发</span>
-    <span class="pill">GitHub issue：原创开发中途被拒（媒体转述）</span>
+    <span class="pill">官方研究页发布</span>
+    <span class="pill">X 多为多语言摘要转发，单帖热度不高</span>
+    <span class="pill">独立博客聚焦「高分≠完工」</span>
   </div>
   <ul>
-    <li><strong>支持：</strong>独立开发者需要防护；Steam AI slop 触目惊心；「类型可以、点名复刻不行」听起来合理。</li>
-    <li><strong>反对/吐槽：</strong>误伤原创与常见机制实现；可被拆任务绕过故「姿态大于实效」；训练数据版权争议下的伪善感（量子位/Tom's 评论区同构）。</li>
-    <li><strong>媒体可信度：</strong>Addy 帖=一手确认；Chasm=发现源；PC Gamer/Engadget=产业报道；量子位=情绪+案例综述（非软广）；Tom's 标题偏猛，正文与论坛有纠偏。</li>
+    <li><strong>正面：</strong>任务选取连到真实时间使用数据；把「个人助理」从口号变成可追踪曲线。</li>
+    <li><strong>批评：</strong>方法细节、全量任务、重试策略、他实验室结果未公开；选中示例分易被误读成总体完工率；「deed 进车」类终点偏准备态。</li>
   </ul>
 
   <div class="media">
     <h4>媒体摘录</h4>
-    <div class="mgroup">一手</div>
     <div class="mcard">
-      <p class="mhead">Addy Osmani <span class="mtag">Anthropic 技术员工</span></p>
-      <p class="mtitle"><a href="https://x.com/addyosmani/status/2116213240363729013">确认加了两句 prompt</a></p>
-      <blockquote>…steer it away from recreating someone else's specific game because using Claude to infringe IP is against our usage policy.</blockquote>
-      <p class="mangle">任何「暗改封杀一切游戏开发」的标题，都应被这条回复按回「特定已有游戏」。</p>
-    </div>
-    <div class="mgroup">外文 / 中文</div>
-    <div class="mcard">
-      <p class="mhead">PC Gamer <span class="mtag">产业</span></p>
-      <p class="mtitle"><a href="https://www.pcgamer.com/gaming-industry/anthropic-updates-claude-to-steer-it-away-from-letting-users-clone-games-following-weeks-of-steam-being-inundated-with-ai-slop/">Steer it away… Steam AI slop</a></p>
-      <blockquote>We'll continue to iterate to ensure that we're striking the right balance. In the meantime, if Claude turns down something that's yours, send it my way.</blockquote>
-      <p class="mangle">把 Valve 不愿 ban AI 工具的表态写进来，避免把锅只甩给 Anthropic。</p>
+      <p class="mhead">OpenAI <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://openai.com/index/lifeval/">LifeVal</a></p>
+      <blockquote>Measuring AI progress on the tasks that matter in everyday life.</blockquote>
     </div>
     <div class="mcard">
-      <p class="mhead">量子位 <span class="mtag">中文热文</span></p>
-      <p class="mtitle"><a href="https://www.qbitai.com/2026/11/507038.html">Claude紧急叫停！暗改Harness禁止逆向游戏</a></p>
-      <blockquote>想防的防不住，不想伤的伤了一大片。</blockquote>
-      <p class="mangle">标题「逆向游戏」偏宽；正文对绕过与误伤的批评有信息量，案例需当报道而非法庭事实。</p>
+      <p class="mhead">Nagesh Polu <span class="mtag">独立评论</span></p>
+      <p class="mtitle"><a href="https://www.nageshpolu.com/2026/11/openai-lifeval-tests-everyday-ai-agents.html">Why High Scores Are Not Finished Tasks</a></p>
+      <blockquote>A home-search response that adds a deed to a cart is not a completed home purchase.</blockquote>
+      <p class="mangle">角度：把评测读成验收工程问题；非实验室复现，但是清晰的 PM 提醒。</p>
     </div>
   </div>
 </article>
 
 <footer>
-  阿汤 · 产品雷达日报 · 2026-11-02 · 发布于 <a href="https://oricter.github.io/product-radar-reports/">oricter.github.io/product-radar-reports</a>
-  · 本页仅供内部产品决策参考；爆料与榜单数字以各官方/原报道为准，引用请复核。
+  产品雷达 · 2026-11-03 · 仅供阿汤内部决策参考 · 事实以一手链接为准
 </footer>
 </div>
 </body>

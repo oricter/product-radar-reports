@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI 产品情报 · 2026-11-03 · 美团 LongCat-2.5 · 商汤 SenseNova 6.8 Flash · MOSS-Live · OpenAI LifeVal</title>
+<style>
+  :root {
+    --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
+    --bg:#faf9f6; --card:#fff; --accent:#0b57d0; --hot:#b3261e; --ok:#0f6b3c;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font:17px/1.7 "PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+  }
+  .wrap { max-width:740px; margin:0 auto; padding:40px 22px 90px; }
+  h1 { font-size:1.7rem; line-height:1.3; margin:0 0 10px; letter-spacing:-.02em; }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 28px; }
+  .meta p { margin:0 0 6px; }
+  .alert {
+    background:#fff8e8; border:1px solid #f0d9a0; border-radius:14px;
+    padding:18px 20px; margin:0 0 36px;
+  }
+  .alert strong { display:block; margin-bottom:10px; font-size:1.02rem; }
+  .alert li strong, .alert p strong { display:inline; margin:0; }
+  .alert ol { margin:0; padding-left:1.25em; }
+  .alert li { margin:10px 0; }
+  .toc { display:grid; gap:10px; margin:0 0 44px; }
+  .toc a {
+    display:block; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:14px 16px; text-decoration:none; color:var(--ink);
+  }
+  .toc a:hover { border-color:#c8c4ba; }
+  .tag {
+    display:inline-block; font-size:.72rem; font-weight:600;
+    padding:2px 8px; border-radius:999px; margin-right:8px; vertical-align:middle;
+  }
+  .t-hot { background:#fce8e6; color:var(--hot); }
+  .t-mid { background:#e8f0fe; color:var(--accent); }
+  .t-low { background:#e6f4ea; color:var(--ok); }
+  article {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:28px 24px 32px; margin:0 0 36px;
+  }
+  article h2 {
+    font-size:1.22rem; line-height:1.4; margin:0 0 18px; letter-spacing:-.01em;
+  }
+  h3 { font-size:1rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h4 { font-size:.95rem; color:var(--ink); margin:20px 0 10px; font-weight:700; }
+  p { margin:0 0 14px; }
+  ul, ol { margin:0 0 14px; padding-left:1.25em; }
+  li { margin:8px 0; }
+  blockquote {
+    margin:12px 0 16px; padding:12px 16px; background:#f4f3ef;
+    border-left:3px solid var(--accent); color:#333; font-size:.95rem;
+  }
+  .src { font-size:.88rem; color:var(--muted); margin-bottom:8px; }
+  .src a, a { color:var(--accent); }
+  .howto {
+    background:#f0f4ff; border:1px solid #d0dcf5; border-radius:12px;
+    padding:14px 16px; margin:14px 0 18px;
+  }
+  .howto strong { display:block; margin-bottom:8px; }
+  figure { margin:16px 0 8px; }
+  figure img {
+    width:100%; height:auto; border-radius:10px; border:1px solid var(--line);
+    display:block;
+  }
+  figcaption { font-size:.8rem; color:var(--muted); margin-top:6px; }
+  .heat { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
+  .pill {
+    background:#f4f3ef; border-radius:8px; padding:6px 10px; font-size:.82rem;
+  }
+  .videos { margin:18px 0 8px; display:grid; gap:16px; }
+  .videos > h4 { margin:0 0 2px; color:var(--accent); font-size:1rem; }
+  .vid {
+    background:#f7f7f5; border:1px solid var(--line);
+    border-radius:12px; padding:12px 12px 10px;
+  }
+  .vid .vlabel { font-size:.88rem; margin:0 0 10px; color:var(--ink); line-height:1.55; }
+  .vid .vlabel .who { display:block; font-weight:700; margin-bottom:4px; }
+  .vid .vlabel .why { color:var(--muted); font-size:.84rem; }
+  .vid video { width:100%; display:block; border-radius:8px; background:#111; }
+  .cover { background:#eef6ee; border:1px solid #cfe5cf; border-radius:12px; padding:12px 16px; margin:0 0 22px; font-size:.9rem; }
+  .media { margin:22px 0 10px; }
+  .media > h4 { color:var(--accent); font-size:1rem; margin:0 0 8px; }
+  .mgroup { font-size:.8rem; font-weight:700; color:var(--muted); margin:14px 0 6px; letter-spacing:.04em; }
+  .mcard { background:#fbfaf7; border:1px solid var(--line); border-radius:12px; padding:12px 14px 4px; margin:0 0 12px; }
+  .mhead { margin:0 0 4px; font-size:.95rem; }
+  .mtag { display:inline-block; font-size:.72rem; background:#eef1f6; color:#3b4a63; border-radius:999px; padding:1px 8px; margin-left:4px; }
+  .mtitle { margin:0 0 6px; font-size:.9rem; }
+  .mcard blockquote { margin:6px 0 8px; }
+  .mangle { font-size:.88rem; margin:0 0 10px; }
+  .verdict { background:#eef3fe; border:1px solid #d0dcf5; border-radius:12px; padding:14px 16px; margin:0 0 18px; font-size:1rem; }
+  .verdict strong { color:var(--accent); }
+  .ours { background:#e6f4ea; border:1px solid #c4e3cf; border-radius:12px; padding:14px 16px; margin:16px 0; }
+  .ours strong.h { display:block; margin-bottom:6px; color:var(--ok); }
+  .warn { background:#fff8e8; border:1px solid #f0d9a0; border-radius:10px; padding:10px 14px; font-size:.9rem; margin:12px 0 16px; }
+  footer { color:var(--muted); font-size:.82rem; margin-top:40px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AI 产品情报 · 2026-11-03（周二）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 16 家（官方/一手 6 · 中文 6 · 外文 4）</strong>：LongCat 一手是 longcat.ai 技术博客、美团新闻稿、官方 X @Meituan_LongCat（约 9.3 万曝光）；中文智东西实测、财新、虎嗅 AI 快讯；外文 TechNode。SenseNova 一手是商汤官微/同花顺转载 + Token Plan；中文量子位实测（标软文倾向）。MOSS-Live 一手是 moss.cn + @MOSS_Global 官帖（约 3.2 万曝光）+ 机器之心 Pro；邱锡鹏转发。LifeVal 一手是 OpenAI 研究页；外文独立评论（Nagesh Polu / Kingy 等）点名「高分≠办完事」。窗内未见极客公园/晚点专稿，不编造。</div>
+<div class="meta">
+  <p><strong>时间范围</strong>：周二版——昨天（2026-11-02）日报之后至北京时间 2026-11-03 早。对应美东约 11-01 晚 → 11-02 晚。成稿北京时间 2026-11-03 约 09:20。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定美团 LongCat-2.5、商汤 SenseNova 6.8 Flash、模思 MOSS-Live、OpenAI LifeVal 四条 → 读官方博客/产品页/智东西/量子位/机器之心/TechNode/OpenAI → 交叉 X 热度与竞品。</p>
+  <p><strong>去重与跳过</strong>：已报不重复——AWM / Meta×傅利叶 Max / Claude 禁克隆游戏（11-02）、DeepSeek Harness（11-01）、Mundo / 智元 / Mistral Large 4（10-31）、Genie 4、Gemini Carbon、GPT-6.1 Terra、Hy-Nomas、Viggle JST-2、EdenLive、Matrix-Game 4.0、Helix World 等。SenseNova Loop-9B 已在 11-02 跳过清单里提过，本条写的是新的 6.8 Flash 正式版。Code2Video 相关 X 热帖与 Flash 正式版不是同一产品叙事，文中只作旁注。</p>
+</div>
+
+<div class="alert">
+  <strong>今日要点（先看这四条）</strong>
+  <ol>
+    <li><strong>美团发布 LongCat-2.5</strong>：1.6T / ~48B 激活原生多模态，国芯训推；官方自报多项 Agent 基准卡在 Opus-4.8 与 Opus-5 之间，AutomationBench / BrowseComp 等处压过 Opus-5。智东西实测：动画与财报 PPT「能用但细节/排版仍糙」。API 已开，权重承诺后续上 GitHub/HF。</li>
+    <li><strong>商汤发布 SenseNova 6.8 Flash 正式版</strong>：主打「委派智能」——给目标、走完流程、人验收；小浣熊限免至 12-01，Token Plan 同步上。量子位实测书店官网 / 动态 PPT / 主动改旧数据，完成度高但稿件偏安利。</li>
+    <li><strong>模思智能发布 MOSS-Live</strong>：全双工实时语音 + 前后台协同；官帖约 3.2 万曝光 / 512 赞。机器之心：停顿抢话 1.44%、无关误接 2%，但工具调用成功率仅 51%。可在线试、API 限时免费。</li>
+    <li><strong>OpenAI 发 LifeVal</strong>：日常任务评测（托儿、政务、预算等），不是新产品。第三方提醒：选中任务 90%+ ≠ 真办完；deed 进购物车 ≠ 买房成交。</li>
+  </ol>
+</div>
+
+<div class="toc">
+  <a href="#longcat"><span class="tag t-hot">大厂模型</span>美团发布 LongCat-2.5：国芯训出的长程多模态 Agent</a>
+  <a href="#sensenova"><span class="tag t-hot">国产 Agent</span>商汤 SenseNova 6.8 Flash：免费委派智能，主打可交付设计</a>
+  <a href="#moss"><span class="tag t-mid">实时语音</span>模思 MOSS-Live：全双工边聊边办事</a>
+  <a href="#lifeval"><span class="tag t-mid">评测</span>OpenAI LifeVal：用日常杂事衡量 Agent，别被百分数骗了</a>
+</div>
+
+<!-- ========== 1 LongCat ========== -->
+<article id="longcat">
+  <h2><span class="tag t-hot">大厂 · 多模态 Agent</span>美团发布 LongCat-2.5：1.6T 国芯训推，官方称多项 Agent 基准咬住 Opus-5</h2>
+  <div class="verdict"><strong>结论：</strong>这是美团 LongCat 系列从「国芯训得动万亿」进到「视觉原生 + 长程工程 Agent」的正式版。产品上可聊、可调 API；叙事上对标 Claude Opus / GPT-5.x 的 agentic coding 与 visual coding。智东西第三方实测证明「能做完动画和财报 PPT」，也诚实写出排版与空间细节仍糙——适合当国产 Agent 备胎试验，不要当「已全面碾压 Opus-5」的通稿信。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-11-02</strong>，美团 LongCat 团队发布 <strong>LongCat-2.5</strong>：面向长程智能体任务的原生多模态模型，总参 <strong>1.6 万亿</strong>，每 token 激活约 <strong>480 亿</strong>。延续 2.0「全程国产算力训练」路线，强化原生视觉理解与智能体编程；官网 longcat.ai / longcat.chat 可体验，API 同步上线；官方称后续将上 GitHub 与 Hugging Face。</p>
+  <p>官方 X @Meituan_LongCat 发帖约 <strong>9.3 万曝光 / 1650 赞</strong>（统计取自 X API，北京时间成稿前）。</p>
+  <p class="src">一手：<a href="https://longcat.ai/blog/longcat-2.5/">Introducing LongCat-2.5</a> · <a href="https://www.meituan.com/news/NN261102280001343">美团新闻（经济观察报转）</a> · <a href="https://x.com/Meituan_LongCat/status/2117264311714537633">官方 X</a> · 中文：<a href="https://www.zhidx.com/p/606379.html">智东西 11-02 实测</a> · <a href="https://www.caixin.com/2026-11-03/102500141.html">财新 11-03</a> · 外文：<a href="https://technode.com/2026/11/02/meituan-launches-longcat-2-5-multimodal-ai-model-for-extended-coding-tasks/">TechNode</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它想解决什么：</strong>长程 Agent 要在复杂代码库、完整项目构建、视觉编程（交互网页 / 3D / 设计）里连续干完，而不是只答一轮。官方把失败轨迹转成可复现训练题，并用大规模长程 RL + 多 harness 混合训练（Claude Code / Codex / Hermes 等）。</p>
+  <p><strong>关键能力（官方博客）：</strong></p>
+  <ul>
+    <li><strong>原生视觉离散 token：</strong>不同分辨率图像 → 多层级离散 token，与文本统一进主干；支持离线预 tokenize。</li>
+    <li><strong>长程 Agentic RL：</strong>从 GitHub PR/issue 合成环境与 F2P/P2P 测试；异步 partial rollout；防 reward hacking。</li>
+    <li><strong>国芯训推：</strong>单卡 &lt;80GB 场景下超节点感知并行；官方称长序列 SFT 单卡吞吐较 DDP 基线 <strong>+86%</strong>；W4A4 推理相对 W8A8 预填/解码吞吐约 <strong>+43% / +43%</strong>。</li>
+  </ul>
+
+  <figure>
+    <img src="media/meituan-news.png" alt="美团 LongCat-2.5 正式发布宣传图"/>
+    <figcaption>美团新闻稿配图——看完应搞懂：标语是「原生多模态 · 为智能体任务而生」，不是又一个纯聊天模型。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/longcat-2.jpg" alt="LongCat-2.5 与 Claude Opus / GPT 在 Agent 基准上的对比柱状图"/>
+    <figcaption>官方博客评测图——看完应搞懂：绿条是 2.5，深色段是相对 2.0 的跃升；General Agent 多项贴/超 Opus-5，Code Agent 仍明显落后 Opus-5（如 Program Bench 25.5 vs 37）。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/longcat-3.jpg" alt="LongCat 原生分辨率视觉 tokenization 示意图"/>
+    <figcaption>官方 Figure 1——看完应搞懂：多图不同分辨率打包成变长视觉 token，再统一进主干。</figcaption>
+  </figure>
+
+  <h4>官方自报数字（博客表，* 为他方公开分）</h4>
+  <ul>
+    <li><strong>AutomationBench v1.0.6：</strong>51.8（Opus-5 50.3*；2.0 仅 15.8）</li>
+    <li><strong>BrowseComp：</strong>91.9（Opus-5 90.8*）</li>
+    <li><strong>Terminal Bench v4.0：</strong>38.5（GPT-5.6-Sol 37.3*；Opus-5 53.9*）</li>
+    <li><strong>3DCodeBench Text→3D：</strong>55.4（Opus-5 54.3）</li>
+  </ul>
+  <div class="warn">分数大量带 * 或自跑标注；不同 harness / thinking 开关会改结果。以博客脚注为准，不要口头改成「全面第一」。</div>
+
+  <div class="howto">
+    <strong>怎么自己看（15 分钟）</strong>
+    打开 <a href="https://longcat.ai/blog/longcat-2.5/">技术博客</a> → 先看顶部 Metrics Dashboard 柱状图与评测大表 → 再点 Showcases 里流体模拟 / 3D 展馆案例（官方写「Demo footage coming soon」的条目先跳过）→ 中文先读 <a href="https://www.zhidx.com/p/606379.html">智东西实测</a>（鹈鹕骑车 HTML + 亚马逊财报 PPT）→ 需要商业口径读 <a href="https://www.caixin.com/2026-11-03/102500141.html">财新</a>。自己试：<a href="https://longcat.chat">longcat.chat</a> / API <a href="https://longcat.chat/platform/product">platform</a>。
+  </div>
+  <p><strong>视频：</strong>官方博客多处仍写 Demo footage coming soon；本版以内嵌宣传图 + 基准图 + 智东西文字实测为准，不硬嵌无关口播。X 官帖有配图无独立长演示片。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Claude Opus-5 / Opus-4.8：</strong>美团自称多项落在 4.8–5 之间；通用 Agent / 视觉部分可贴甚至超 5，重编程（Program Bench、NL2Repo、Terminal v4）仍明显落后 Opus-5。产品含义：当「国产可 API 的 Agent 底座」试，别当 Claude 替换件。</li>
+    <li><strong>vs GPT-5.5 / 5.6-Sol、DeepSeek-V4.1-Flash、Kimi K3、GLM-5.3：</strong>同表混战；DeepSeek 在 Terminal v2.1 / DeepSWE 等仍更强。LongCat 差异化叙事是 <strong>国芯训推 + 原生视觉 coding</strong>。</li>
+    <li><strong>vs 美团自己的「妙手」经营工作台：</strong>新闻稿明确模型服务主业（古茗/徐升记/益禾堂等），不是纯 Token 工厂——和王兴财报口径一致。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们（世界模型公司）</strong>
+    LongCat-2.5 不是视频世界模型，但「视觉 token 化 + 长程 RL + 失败轨迹回灌」和可控生成/Agent 评测叙事相邻。可借鉴：把真实失败轨迹做成可复现任务，而不是只刷通关分。国芯训推段落对「卡能不能训长上下文」有工程参考价值。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">官方 X ~9.3 万曝光 / 1650 赞</span>
+    <span class="pill">@testingcatalog 转发解读 ~1.1 万曝光</span>
+    <span class="pill">@aitrackerbot 早鸟帖 ~6k 曝光（限时 $0.30/$1.20）</span>
+    <span class="pill">智东西同日实测（非纯通稿）</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>智东西——鹈鹕骑车动画「完成度较高、风格一致」；财报 PPT 框架完整、初步比对未见数据错误；生成速度快。</li>
+    <li><strong>批评 / 谨慎：</strong>智东西——围巾歪、空间图层关系弱；PPT 信息密度偏高、字号偏小、个别结论过绝对。虎嗅 AI 快讯口径偏短讯，完整权重/技术报告当时仍未放全。</li>
+    <li><strong>可信度：</strong>博客+官 X=一手；智东西=第三方轻实测；TechNode 转 IT 之家/官方摘要；财新偏产业「服务主业」视角。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mgroup">官方 / 一手</div>
+    <div class="mcard">
+      <p class="mhead">longcat.ai 博客 <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://longcat.ai/blog/longcat-2.5/">Introducing LongCat-2.5</a></p>
+      <blockquote>Native multimodal model for long-horizon agentic tasks. 1.6T total / ~48B activated.</blockquote>
+      <p class="mangle">角度：完整技术与评测表，是写稿主源。</p>
+    </div>
+    <div class="mgroup">中文</div>
+    <div class="mcard">
+      <p class="mhead">智东西 <span class="mtag">实测</span></p>
+      <p class="mtitle"><a href="https://www.zhidx.com/p/606379.html">美团发 1.6 万亿参数新模型，通用 Agent 测试超 Opus-5，国产芯特别优化</a></p>
+      <blockquote>前端视觉效果较好，PPT 图表丰富，但画面细节、空间与图层关系仍有提升空间，PPT 排版也可以进一步优化。</blockquote>
+      <p class="mangle">角度：同日动手测，比通稿有用；标题「超 Opus-5」只覆盖部分基准，正文有 Terminal 落后说明。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">财新 <span class="mtag">产业</span></p>
+      <p class="mtitle"><a href="https://www.caixin.com/2026-11-03/102500141.html">美团迭代国产芯片训练模型 模型主要服务公司主业</a></p>
+      <p class="mangle">角度：强调服务主业，不是 Token 工厂；付费墙后文未全读，事实以导语与公开段为准。</p>
+    </div>
+    <div class="mgroup">外文</div>
+    <div class="mcard">
+      <p class="mhead">TechNode <span class="mtag">摘要</span></p>
+      <p class="mtitle"><a href="https://technode.com/2026/11/02/meituan-launches-longcat-2-5-multimodal-ai-model-for-extended-coding-tasks/">Meituan launches LongCat-2.5…</a></p>
+      <p class="mangle">角度：英文短讯，指向 IT Home / 官方；无独立实测。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 2 SenseNova ========== -->
+<article id="sensenova">
+  <h2><span class="tag t-hot">国产 Agent · 设计交付</span>商汤发布 SenseNova 6.8 Flash：委派智能 + 限免，量子位实测能出可交互官网</h2>
+  <div class="verdict"><strong>结论：</strong>这是「能交付」路线的国产 Flash：官方押注跨会话记忆、主动提醒、动态 Web/PPT/3D，而不是又一张知识榜。量子位同日实测 Folio 书店官网、仿生手品牌页、动态海报与 PPT，观感接近可上评审；但量子位文风偏安利，且小浣熊限免到 12-01——先当高完成度设计 Agent 试用，别把官分当独立复现。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-11-02</strong>，商汤日日新发布 <strong>SenseNova 6.8 Flash 正式版</strong>，主打「委派智能」：用户给目标，模型走流程，人验收。同步上线 SenseNova Token Plan；商汤小浣熊客户端称模型<strong>限免至 2026-12-01</strong>。同日量子位发长文实测（21:36）。</p>
+  <p class="src">一手：<a href="https://stock.10jqka.com.cn/20261102/c681370989.shtml">商汤官微（同花顺转载）</a> · <a href="https://platform.sensenova.cn/docs">Token Plan / Docs</a> · <a href="https://xiaohuanxiong.com/">小浣熊</a> · 中文：<a href="https://www.qbitai.com/2026/11/507277.html">量子位 11-02 21:36</a> · <a href="https://mozhenzhen.com/news/sensenova-68-flash-token-plan-free-202611">模真真（开发者向）</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它想解决什么：</strong>办公里「跨天、跨会话」的活——旧材料引用了过期数据、客户因缺功能拒过单、交接时经验散落——以及设计侧要直接交出可编辑 Web / SVG / Three.js / Blender / 动态 PPT。</p>
+  <p><strong>官方能力点：</strong>长期记忆 + 主动交互；动态 PPT / Poster / Agentic3D；可接 Figma；Studio 设计实验版入口 <a href="https://unify.light-ai.top/">unify.light-ai.top</a>；skills 仓库 <a href="https://github.com/OpenSenseNova/SenseNova-Skills">SenseNova-Skills</a>。</p>
+
+  <figure>
+    <img src="media/sensenova-folio.png" alt="SenseNova 生成的 Folio 书店官网演示截帧"/>
+    <figcaption>量子位实测配图（Folio 书店）——看完应搞懂：黑底大字 + 斜向书籍阵列，鼠标悬停书会弹出；这是「可交互官网」叙事的核心证据截帧。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/sensenova-luma-web.png" alt="SenseNova 生成的相机品牌官网演示截帧"/>
+    <figcaption>量子位实测配图（相机品牌站）——看完应搞懂：完成度到「能混进真实品牌站」的宣传口径；注意这是演示产物，不是商汤自有硬件。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/sensenova-hand-web.png" alt="SenseNova 生成的仿生手品牌官网演示截帧"/>
+    <figcaption>量子位实测配图（具身灵巧手品牌风官网）——看完应搞懂：留白 + 单句英文 slogan + 预约按钮，偏真实品牌审美。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/sensenova-moz.webp" alt="SenseNova Token Plan 可用模型列表截图"/>
+    <figcaption>模真真整理的 Token Plan 模型表——看完应搞懂：控制台里能看到 6.8 Flash / Flash Lite，以及同平台可调的第三方模型条目；以官方 docs 为准。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（12 分钟）</strong>
+    装 <a href="https://xiaohuanxiong.com/">小浣熊</a> → 设置里装本地运行环境 / 浏览器 / 文档预览 / 视频生成 → 能力中心装 raccoon-poster-media 与 raccoon-dynamic-ppt（量子位步骤）→ 让它做一页带动效的品牌首屏。开发者走 <a href="https://platform.sensenova.cn/docs">Token Plan</a>。看别人做过什么：读量子位文内嵌演示（微信视频，本页不外链假嵌）。
+  </div>
+  <p><strong>视频：</strong>官方与量子位演示主要在微信公众号视频号链路，本环境无法稳定抽取可页内播放的 MP4；以上截帧来自量子位文内配图，标明出处。不伪造「可播官方片」。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Gemini 4 Carbon：</strong>量子位叙事是「Carbon 3D 强但网页/UI 翻车，Flash 接住了」——这是媒体对比，不是同题盲测。产品含义：若你要的是可交互营销站 / 动态 PPT，Flash 的「现在就能免费用」比等邀请码现实。</li>
+    <li><strong>vs Claude / GPT 办公 Agent、美团 LongCat-2.5：</strong>Flash 更偏设计交付与主动办公提醒；LongCat 更偏长程工程与国芯叙事。两者今天同日撞车，选型看你要「出页面」还是「啃代码库」。</li>
+    <li><strong>旁注 Code2Video：</strong>同日 X 上 SenseNova 6.8 Code2Video（可编辑代码驱动视频）另有热帖（单帖约 8.9 万曝光），与 Flash「委派办公/设计」不是同一卖点，勿混成一条产品。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    「主动把旧材料与新数据对上并提示修订」值得抄到内部 Agent 验收清单：交付物是否包含版本 diff 与待审稿，而不只是新生成一份。设计侧可观察它对接 Blender/Figma 的工作流是否真能进专业链路。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">量子位 11-02 晚主传播</span>
+    <span class="pill">商汤官微通稿（同花顺等转）</span>
+    <span class="pill">窗内机器之心/新智元未见同级专稿</span>
+    <span class="pill">X 上 Flash 本体热度弱于 Code2Video 旁支</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>量子位——Folio 书店悬停弹书、柑橘海报可循环、望远镜动态 PPT「内审够用」；主动发现行业调查更正并改培训页。</li>
+    <li><strong>谨慎：</strong>量子位标题与行文偏软广（「顶级 AI 翻车被国产接住」）；主动交互案例标明「小浣熊内部研发版」。独立开发者复盘仍少。</li>
+    <li><strong>可信度：</strong>官微=一手能力声明；量子位=媒体实测但广告气场强；模真真=API/积分实用向。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mgroup">官方 / 一手</div>
+    <div class="mcard">
+      <p class="mhead">商汤官微 <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://stock.10jqka.com.cn/20261102/c681370989.shtml">SenseNova 6.8 Flash 正式版发布：办公更稳，设计更美</a></p>
+      <blockquote>我们希望验证的不只是模型能做什么，更是它能否把一件事持续推进，并交付可用的结果。</blockquote>
+    </div>
+    <div class="mgroup">中文</div>
+    <div class="mcard">
+      <p class="mhead">量子位 <span class="mtag">实测 · 偏软</span></p>
+      <p class="mtitle"><a href="https://www.qbitai.com/2026/11/507277.html">顶级 AI 翻车的活儿，被这个新出的免费国产 AI 接住了！</a></p>
+      <p class="mangle">角度：演示最全，但标题对抗性营销明显；事实描述可用，情绪词要打折。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 3 MOSS-Live ========== -->
+<article id="moss">
+  <h2><span class="tag t-mid">实时语音 Agent</span>模思智能发布 MOSS-Live：全双工边说边听，工具调用仍只有约五成成功</h2>
+  <div class="verdict"><strong>结论：</strong>MOSS-Live 把竞争从「声色像不像人」拉到「会不会在该闭嘴时闭嘴、能不能边聊边办」。官方与机器之心 Pro 给出的全双工指标（停顿抢话、无关误接、附和抗干扰）明显好于 GPT Realtime / 豆包 SeedDuplex 等对照；但 <strong>工具调用成功率约 51%</strong>——聊天自然 ≠ 事办成。适合马上试通话手感，别当成可上生产的万能语音员工。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-11-02</strong>，模思智能（OpenMOSS 团队孵化）发布全双工实时交互系统 <strong>MOSS-Live</strong>：说话同时持续倾听，按语义判断附和 / 打断 / 旁人闲聊；支持视频与屏幕共享、流式翻译、前后台异步任务。在线体验与 API：<a href="https://platform.moss.cn">platform.moss.cn</a>；产品页 <a href="https://www.moss.cn/products/moss-live">moss.cn/products/moss-live</a>。</p>
+  <p>官方 X @MOSS_Global 发帖约 <strong>3.2 万曝光 / 512 赞 / 51 转发 / 455 书签</strong>；复旦 Qiu 锡鹏账号转发。</p>
+  <p class="src">一手：<a href="https://www.moss.cn/products/moss-live">产品页</a> · <a href="https://x.com/MOSS_Global/status/2117244034066632755">@MOSS_Global</a> · 中文：<a href="https://t.cj.sina.com.cn/articles/view/3996876140/ee3b7d6c001017zlo?finpagefr=p_103">机器之心 Pro（新浪转）</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>架构一句话：</strong>前台交互模型负责实时听/说/看；后台模型异步做复杂推理与工具；共享记忆与任务状态，结果择机插回对话。</p>
+  <p><strong>官方强调的体验：</strong>语义判停（不是数静音毫秒）；打断后只承认已说出口的内容；可设规则主动纠正/计数/提醒。</p>
+
+  <figure>
+    <img src="media/moss-sina.jpg" alt="MOSS Live 宣传视觉：居家场景叠加黄色标题"/>
+    <figcaption>机器之心 Pro 文配图——看完应搞懂：品牌把「Live」放进日常生活场景，而不是会议室科幻片。</figcaption>
+  </figure>
+
+  <div class="videos">
+    <h4>页内视频</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">谁发的：模思智能官方 X @MOSS_Global（约 99 秒演示）</span>
+      <span class="why">看完应搞懂：全双工听说并行、背景任务不卡对话、可结合画面上下文——这是官方产品叙事片，不是第三方压力测试。</span></p>
+      <video controls playsinline preload="metadata" poster="media/moss-thumb.jpg" src="media/moss-live-demo.mp4"></video>
+    </div>
+  </div>
+
+  <h4>官方 / 机器之心转述关键数字（FDB / τ-Voice，自报）</h4>
+  <ul>
+    <li><strong>停顿抢话率（不含附和）：</strong>1.44%（GPT Realtime 2.1 3.83%；GPT-Live-1 10.37%；Doubao SeedDuplex 14.29%）</li>
+    <li><strong>无关语音误接话：</strong>2.00%（对照系统 68%–88%）</li>
+    <li><strong>附和抗干扰：</strong>98.17%</li>
+    <li><strong>工具调用成功率（FDB v3）：</strong>51%（与 SeedDuplex 并列最高）；τ-Voice 多轮任务 57.93%（次于 GPT-Live-1）</li>
+  </ul>
+  <div class="warn">以上为厂商评测口径；独立复现未见。工具调用一半失败是写进通稿的，不要只截「六项第一」海报。</div>
+
+  <div class="howto">
+    <strong>怎么自己看（10 分钟）</strong>
+    先播本页上方官方片 → 打开 <a href="https://www.moss.cn/products/moss-live">产品页</a> 读「语义判停 / 前后台」四块 → 有账号就去 <a href="https://platform.moss.cn">platform.moss.cn</a> 打一通，专门试：说话中停顿思考、说「嗯」附和、旁人插话、中途改需求。中文细节读机器之心 Pro。
+  </div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs OpenAI Realtime / GPT-Live、豆包 SeedDuplex、Qwen Audio：</strong>MOSS 把「别抢话、别接旁人」做成主指标，对照系在无关误接上差距巨大（若评测可信）。Realtime 生态与工具成熟度仍是短板对照项——MOSS 自己的工具成功率也只有一半。</li>
+    <li><strong>vs 传统 ASR+LLM+TTS 流水线：</strong>机器之心指出下一阶段要处理打断、并发任务、多模态上下文——对开发者是平台能力，不只是调三个 API。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    若产品有语音指挥世界模型 / 游戏 Agent，优先抄「语义判停 + 只承认已说出口上下文」；评测不要只报 ASR-WER，要报抢话率、无关拒识、打断后衔接。工具成功率 51% 提醒：实时嘴炮和可靠执行要拆开验收。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">官帖 ~3.2 万曝光 / 512 赞 / 455 书签</span>
+    <span class="pill">机器之心 Pro 主中文稿</span>
+    <span class="pill">社区独立长测仍少（发布当日）</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>产品叙事清晰（Her / 全双工）；指标海报冲击力强；API 限时免费降低试用门槛。</li>
+    <li><strong>谨慎：</strong>工具调用与长程任务成功率未过及格线舒适区；复杂噪声 / 长时间 / 多人同时发言稳定性官方也承认待验。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">机器之心 Pro <span class="mtag">深度转述</span></p>
+      <p class="mtitle"><a href="https://t.cj.sina.com.cn/articles/view/3996876140/ee3b7d6c001017zlo?finpagefr=p_103">多项指标排名第一，全双工实时交互系统 MOSS-Live 发布</a></p>
+      <blockquote>AI 已经越来越像人在「说话」，却还不太擅长与人真正实时且自然地「对话」。</blockquote>
+      <p class="mangle">角度：带完整指标与场景 Demo 文字；近一手口径，非独立实验室复现。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 4 LifeVal ========== -->
+<article id="lifeval">
+  <h2><span class="tag t-mid">评测 · 日常 Agent</span>OpenAI 发布 LifeVal：用托儿、政务、预算等日常任务衡量 AI，高分不等于办完</h2>
+  <div class="verdict"><strong>结论：</strong>LifeVal 是研究型评测发布（2026-11-02），不是新 ChatGPT 功能上线。它把「人愿意交给助理的日常事」拉进榜单叙事，方向对；但公开页给的是选中任务高分示例，独立评论已指出——短名单 / 购物车里的 deed / 护理计划草稿 ≠ 报名成功、成交、医嘱生效。采购或对标时，要问清终点定义，别拿 80%+ 当完工率。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>OpenAI 于 <strong>2026-11-02</strong> 发布研究页 <strong>LifeVal</strong>：基于美国时间使用调查、跨国时间使用研究，再加 <strong>3,995</strong> 人抽样，找出人们最想要 AI 帮忙的日常任务（照护、健康、教育、家务行政、个人财务、购物、政务等），用来追踪过去一年模型在「办实事」上的进步。</p>
+  <p class="src">一手：<a href="https://openai.com/index/lifeval/">OpenAI · LifeVal</a> · 评论：<a href="https://www.nageshpolu.com/2026/11/openai-lifeval-tests-everyday-ai-agents.html">Nagesh Polu：高分不是办完</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它不是产品，是尺子。</strong>公开示例包括：搬家后筛选幼儿园（展示分 93.1%）、洪灾前组织志愿者（98.0%）、按预算找带独立居住单元的房子并把 deed 加进购物车（100%）、糖尿病家长的一周饮食与护理计划（90.4%）。官方强调过去一年在 browser / computer use / connectors 上的训练，让 ChatGPT 从聊天走向可行动助理。</p>
+
+  <figure>
+    <img src="media/lifeval-og.png" alt="OpenAI LifeVal 官方社交图"/>
+    <figcaption>OpenAI 官方 OG——看完应搞懂：标题就是 LifeVal，角落图标暗示教育、购物、指标、地图定位——日常杂事，不是编码竞赛。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（8 分钟）</strong>
+    打开 <a href="https://openai.com/index/lifeval/">LifeVal 页</a> → 读 Background 里两份时间使用研究 + 3995 人调查 → 点开 2–3 个 Individual task examples 看模型回复停在哪一步 → 再读一篇独立评论（推荐 Nagesh Polu）问自己：终点是「草稿」还是「外部回执」？
+  </div>
+  <p><strong>视频：</strong>官方页以对话截图/文本示例为主，无单独发布演示片；本版不嵌无关口播。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs GDPval / SemiAnalysis GDPx 等专业 Agent 榜：</strong>LifeVal 测个人生活责任，GDPx 测难专业任务；百分比不能横比。Nagesh 文强调三者任务群、工具环境、难度分布不同。</li>
+    <li><strong>vs 学术知识榜 / 编码榜：</strong>把优化目标从「会答」扭向「帮人把事推进」——对 Agent 产品经理是叙事胜利，对实验室是新刷分场。</li>
+    <li><strong>对企业落地：</strong>独立评论给出的验收清单值得直接抄——外部回执、可重复试验、授权日志、异常处理、含人工复核的净耗时。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    世界模型 / 游戏 Agent 评测也可以学：除了通关率，增加「用户授权点」「不可逆动作是否停住」「最终状态能否在环境外核验」。别只报平均 reward。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">官方研究页发布</span>
+    <span class="pill">X 多为多语言摘要转发，单帖热度不高</span>
+    <span class="pill">独立博客聚焦「高分≠完工」</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>任务选取连到真实时间使用数据；把「个人助理」从口号变成可追踪曲线。</li>
+    <li><strong>批评：</strong>方法细节、全量任务、重试策略、他实验室结果未公开；选中示例分易被误读成总体完工率；「deed 进车」类终点偏准备态。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">OpenAI <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://openai.com/index/lifeval/">LifeVal</a></p>
+      <blockquote>Measuring AI progress on the tasks that matter in everyday life.</blockquote>
+    </div>
+    <div class="mcard">
+      <p class="mhead">Nagesh Polu <span class="mtag">独立评论</span></p>
+      <p class="mtitle"><a href="https://www.nageshpolu.com/2026/11/openai-lifeval-tests-everyday-ai-agents.html">Why High Scores Are Not Finished Tasks</a></p>
+      <blockquote>A home-search response that adds a deed to a cart is not a completed home purchase.</blockquote>
+      <p class="mangle">角度：把评测读成验收工程问题；非实验室复现，但是清晰的 PM 提醒。</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  产品雷达 · 2026-11-03 · 仅供阿汤内部决策参考 · 事实以一手链接为准
+</footer>
+</div>
+</body>
+</html>
