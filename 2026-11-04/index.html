@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI 产品情报 · 2026-11-04 · 百度 Apollo World · Anthropic FlashProve · Hydrogen-1.0 · 优必选 Thinker-Sim</title>
+<style>
+  :root {
+    --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
+    --bg:#faf9f6; --card:#fff; --accent:#0b57d0; --hot:#b3261e; --ok:#0f6b3c;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font:17px/1.7 "PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+  }
+  .wrap { max-width:740px; margin:0 auto; padding:40px 22px 90px; }
+  h1 { font-size:1.7rem; line-height:1.3; margin:0 0 10px; letter-spacing:-.02em; }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 28px; }
+  .meta p { margin:0 0 6px; }
+  .alert {
+    background:#fff8e8; border:1px solid #f0d9a0; border-radius:14px;
+    padding:18px 20px; margin:0 0 36px;
+  }
+  .alert strong { display:block; margin-bottom:10px; font-size:1.02rem; }
+  .alert li strong, .alert p strong { display:inline; margin:0; }
+  .alert ol { margin:0; padding-left:1.25em; }
+  .alert li { margin:10px 0; }
+  .toc { display:grid; gap:10px; margin:0 0 44px; }
+  .toc a {
+    display:block; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:14px 16px; text-decoration:none; color:var(--ink);
+  }
+  .toc a:hover { border-color:#c8c4ba; }
+  .tag {
+    display:inline-block; font-size:.72rem; font-weight:600;
+    padding:2px 8px; border-radius:999px; margin-right:8px; vertical-align:middle;
+  }
+  .t-hot { background:#fce8e6; color:var(--hot); }
+  .t-mid { background:#e8f0fe; color:var(--accent); }
+  .t-low { background:#e6f4ea; color:var(--ok); }
+  article {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:28px 24px 32px; margin:0 0 36px;
+  }
+  article h2 {
+    font-size:1.22rem; line-height:1.4; margin:0 0 18px; letter-spacing:-.01em;
+  }
+  h3 { font-size:1rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h4 { font-size:.95rem; color:var(--ink); margin:20px 0 10px; font-weight:700; }
+  p { margin:0 0 14px; }
+  ul, ol { margin:0 0 14px; padding-left:1.25em; }
+  li { margin:8px 0; }
+  blockquote {
+    margin:12px 0 16px; padding:12px 16px; background:#f4f3ef;
+    border-left:3px solid var(--accent); color:#333; font-size:.95rem;
+  }
+  .src { font-size:.88rem; color:var(--muted); margin-bottom:8px; }
+  .src a, a { color:var(--accent); }
+  .howto {
+    background:#f0f4ff; border:1px solid #d0dcf5; border-radius:12px;
+    padding:14px 16px; margin:14px 0 18px;
+  }
+  .howto strong { display:block; margin-bottom:8px; }
+  figure { margin:16px 0 8px; }
+  figure img {
+    width:100%; height:auto; border-radius:10px; border:1px solid var(--line);
+    display:block;
+  }
+  figcaption { font-size:.8rem; color:var(--muted); margin-top:6px; }
+  .heat { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
+  .pill {
+    background:#f4f3ef; border-radius:8px; padding:6px 10px; font-size:.82rem;
+  }
+  .videos { margin:18px 0 8px; display:grid; gap:16px; }
+  .videos > h4 { margin:0 0 2px; color:var(--accent); font-size:1rem; }
+  .vid {
+    background:#f7f7f5; border:1px solid var(--line);
+    border-radius:12px; padding:12px 12px 10px;
+  }
+  .vid .vlabel { font-size:.88rem; margin:0 0 10px; color:var(--ink); line-height:1.55; }
+  .vid .vlabel .who { display:block; font-weight:700; margin-bottom:4px; }
+  .vid .vlabel .why { color:var(--muted); font-size:.84rem; }
+  .vid video { width:100%; display:block; border-radius:8px; background:#111; }
+  .vid iframe { width:100%; aspect-ratio:16/9; border:0; border-radius:8px; background:#111; }
+  .cover { background:#eef6ee; border:1px solid #cfe5cf; border-radius:12px; padding:12px 16px; margin:0 0 22px; font-size:.9rem; }
+  .media { margin:22px 0 10px; }
+  .media > h4 { color:var(--accent); font-size:1rem; margin:0 0 8px; }
+  .mgroup { font-size:.8rem; font-weight:700; color:var(--muted); margin:14px 0 6px; letter-spacing:.04em; }
+  .mcard { background:#fbfaf7; border:1px solid var(--line); border-radius:12px; padding:12px 14px 4px; margin:0 0 12px; }
+  .mhead { margin:0 0 4px; font-size:.95rem; }
+  .mtag { display:inline-block; font-size:.72rem; background:#eef1f6; color:#3b4a63; border-radius:999px; padding:1px 8px; margin-left:4px; }
+  .mtitle { margin:0 0 6px; font-size:.9rem; }
+  .mcard blockquote { margin:6px 0 8px; }
+  .mangle { font-size:.88rem; margin:0 0 10px; }
+  .verdict { background:#eef3fe; border:1px solid #d0dcf5; border-radius:12px; padding:14px 16px; margin:0 0 18px; font-size:1rem; }
+  .verdict strong { color:var(--accent); }
+  .ours { background:#e6f4ea; border:1px solid #c4e3cf; border-radius:12px; padding:14px 16px; margin:16px 0; }
+  .ours strong.h { display:block; margin-bottom:6px; color:var(--ok); }
+  .warn { background:#fff8e8; border:1px solid #f0d9a0; border-radius:10px; padding:10px 14px; font-size:.9rem; margin:12px 0 16px; }
+  footer { color:var(--muted); font-size:.82rem; margin-top:40px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AI 产品情报 · 2026-11-04（周三）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 15 家（官方/一手 5 · 中文 7 · 外文 3）</strong>：Apollo World 一手是百度 AI Day 现场口径，中文 InfoQ、雷峰网、IT之家、每日经济新闻、第一财经；FlashProve 一手是 Anthropic 研究页 + GitHub，外文 TechCrunch，X 官帖约 23.5 万曝光；Hydrogen-1.0 一手是 Deep Principle 博客 + Hugging Face（MIT），MarkTechPost/二级科技站跟进；Thinker-Sim 一手是优必选发布口径，中文新浪科技、盖世汽车、观点网、新京报。窗内未见量子位/晚点专稿，不编造。</div>
+<div class="meta">
+  <p><strong>时间范围</strong>：周三版——昨天（2026-11-03）日报之后至北京时间 2026-11-04 早。对应美东约 11-02 晚 → 11-03 晚。成稿北京时间 2026-11-04 约 09:30。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定百度 Apollo World、Anthropic FlashProve、Deep Principle Hydrogen-1.0、优必选 Thinker-Sim 四条 → 读官方页/InfoQ/雷峰网/IT之家/TechCrunch/Anthropic/HF → 交叉 X 热度与竞品。</p>
+  <p><strong>去重与跳过</strong>：已报不重复——LongCat-2.5 / SenseNova 6.8 Flash / MOSS-Live / LifeVal（11-03）、AWM / Meta×傅利叶 Max / Claude 禁克隆游戏（11-02）、DeepSeek Harness（11-01）、Mundo / 智元 / Mistral Large 4（10-31）、Genie 4、Gemini Carbon、GPT-6.1 Terra 等。Hydrogen-1.0 发于 11-02，昨日日报未收录，本版补报。落选简述见文末。</p>
+</div>
+
+<div class="alert">
+  <strong>今日要点（先看这四条）</strong>
+  <ol>
+    <li><strong>百度披露 Apollo World</strong>：面向物理 AI 的智能体驱动全模态世界模型；抛出「2+3」标尺；已进萝卜快跑全球化测试。叙事是「考官」不是「画师」——对世界模型公司极相关。</li>
+    <li><strong>Anthropic 开源 FlashProve</strong>：zkSNARK 可证明推理原型；Llama 4 Maverick 单卡 H100 ≈110 tok/s、约 19MB/1k tokens；Apache 2.0，明确研究原型非生产。官帖约 23.5 万曝光。</li>
+    <li><strong>Deep Principle 发 Hydrogen-1.0</strong>：753B MoE（基于 GLM-5.3）科学后训练开源权重，MIT；自报 FSR 38.3% vs GPT-6-Astra 33.3%。11-02 发布，昨日漏报补上。</li>
+    <li><strong>优必选发 Thinker-Sim</strong>：Real2Sim2Real 具身仿真平台；官方称渲染 +67.3%、8GPU 节点日均 390 小时仿真数据。媒体偏通稿，独立实测未见。</li>
+  </ol>
+</div>
+
+<div class="toc">
+  <a href="#apollo"><span class="tag t-hot">世界模型</span>百度披露 Apollo World：智能体驱动全模态，已进萝卜快跑</a>
+  <a href="#flashprove"><span class="tag t-hot">安全 / 密码学</span>Anthropic 开源 FlashProve：证明「这话真是这台模型说的」</a>
+  <a href="#hydrogen"><span class="tag t-mid">开源科学模型</span>Deep Principle 发 Hydrogen-1.0：753B 科学后训练，MIT 开源</a>
+  <a href="#thinker"><span class="tag t-mid">具身仿真</span>优必选 Thinker-Sim：Real2Sim2Real 一站式仿真与评测</a>
+</div>
+
+<!-- ========== 1 Apollo World ========== -->
+<article id="apollo">
+  <h2><span class="tag t-hot">世界模型 · 自动驾驶</span>百度披露 Apollo World：智能体驱动全模态世界模型，抛出「2+3」标尺</h2>
+  <div class="verdict"><strong>结论：</strong>这是国产大厂里少见的「物理 AI 世界模型」正式叙事：明确不做「生成炫酷视频的画师」，要当无人驾驶安全性的「考官」。交通参与者全是可决策智能体、多模态观测、完整行程闭环——且已用于萝卜快跑全球化测试。对世界模型公司：标尺（因果/交互 + 物理准确/持久/实时）和「任务闭环 vs 单场景短片」可直接对照自家产品；「日行十万公里」等产能口号仍是厂商口径，暂无独立审计。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-11-03</strong>，深圳百度 AI Day·Apollo 专场，百度 Apollo 首次披露面向物理 AI 的智能体驱动全模态世界模型 <strong>Apollo World</strong>，并提出世界模型「2+3」判断标准。百度称该模型已用于萝卜快跑全球化测试与验证。世界模型负责人杨泽、IDG 首席架构师王亮现场阐述。</p>
+  <p class="src">一手/现场：百度 AI Day 口径（经媒体转述） · 中文：<a href="https://www.infoq.cn/news/tIt75FRqU2hwy4eWrOIu">InfoQ 11-03</a> · <a href="https://www.leiphone.com/category/industrynews/NVxn28w1vAG2qbFy.html">雷峰网 11-03 21:59</a> · <a href="https://www.ithome.com/1/021/808.htm">IT之家 11-03 20:55</a> · <a href="https://www.nbd.com.cn/articles/2026-11-03/4636772.html">每日经济新闻</a> · <a href="https://www.yicai.com/news/103424078.html">第一财经</a> · 外文短讯：<a href="https://www.livemint.com/technology/chinas-baidu-launches-ai-model-simulating-road-environment-for-robotaxis-11793709678345.html">Mint / China Tech News 系</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它想解决什么：</strong>无人驾驶的安全 / 智能 / 规模「不可能三角」——长尾难靠实车覆盖、新区域试错贵、跨路段连续任务要规模化验证。Apollo World 把复杂交互与风险场景变成可重复、可控、可规模跑的虚拟测试，再反哺车端。</p>
+  <p><strong>「2+3」标尺（官方）：</strong></p>
+  <ul>
+    <li><strong>基础门槛「2」：</strong>因果性（时间单向、由过去推未来，而非拼画面反推）；交互性（外部动作能改未来状态）。</li>
+    <li><strong>进阶「3」：</strong>物理准确性（学到的能力回真车还能不能用）；持久性（长跑不漂移）；实时性（世界变复杂也不拖垮推理时延）。</li>
+  </ul>
+  <p><strong>三大能力叙事：</strong>① 交通参与者全是可决策 AI 智能体（不是脚本道具）；② 实时相机 / 激光雷达等多模态观测；③ 任意起终点完整行程闭环（接单→载客→送达），而非单路口短片。</p>
+
+  <figure>
+    <img src="media/apollo-infoq-og.png" alt="InfoQ 报道 Apollo World 配图：百度世界模型现场视觉"/>
+    <figcaption>InfoQ 报道配图——看完应搞懂：这是百度 Apollo 专场披露的「物理 AI 世界模型」叙事图，不是消费级视频生成 demo。</figcaption>
+  </figure>
+
+  <h4>官方 / 媒体转述关键运营数字（厂商口径）</h4>
+  <ul>
+    <li>萝卜快跑：全球 <strong>28</strong> 城；累计出行超 <strong>2300 万</strong> 次；自动驾驶总里程超 <strong>3.5 亿</strong> 公里，其中全无人超 <strong>2.4 亿</strong> 公里。</li>
+    <li>媒体转述：Apollo World 可「日行十万公里」——约等于一辆有安全员的实车连测约三年（行业分析口径，非第三方审计）。</li>
+  </ul>
+  <div class="warn">以上里程与产能数字均来自百度/媒体通稿，未见独立复现。标尺本身可当产品验收语言；产能口号先打「待验」标签。</div>
+
+  <div class="howto">
+    <strong>怎么自己看（12 分钟）</strong>
+    先读 <a href="https://www.infoq.cn/news/tIt75FRqU2hwy4eWrOIu">InfoQ</a> 或 <a href="https://www.leiphone.com/category/industrynews/NVxn28w1vAG2qbFy.html">雷峰网</a> 里「2+3」与三大能力三段 → 再看 <a href="https://www.ithome.com/1/021/808.htm">IT之家</a> 的图文闭环说明（天气变、相机/雷达同步变；动作回传后环境更新）→ 问自己：自家世界模型有没有「任务闭环」还是只有「单场景短片」？公开可玩 demo / 权重本版未见。
+  </div>
+  <p><strong>视频：</strong>现场演示以发布会流媒体为主，稳定可嵌的公开 MP4 未抽出；本版以内嵌报道配图 + 文字实测描述为准，不硬嵌无关口播。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Genie 4 / 混元 Hy-Nomas / Matrix-Game / EdenLive 等「可玩视频世界」：</strong>Apollo 明确押「物理因果 + 安全验证」，不是键鼠漫游或美术渲染。竞品若主打消费/游戏交互，标尺不同，不宜横比画质。</li>
+    <li><strong>vs NVIDIA Cosmos Sim-*、传统交通仿真（Carla 等脚本 NPC）：</strong>Apollo 强调 NPC 全智能体化 + 真实运营数据飞轮；Cosmos 偏通用机器人/操作仿真。选型看你要的是 Robotaxi 闭环还是通用机器人策略。</li>
+    <li><strong>vs Mundo / 智元等具身世界模型线：</strong>Apollo 先落在车上（已有规模运营数据），并称技术栈可延展到机器人——叙事相邻，交付物不同。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们（世界模型公司）</strong>
+    直接可抄：① 用「2+3」当对外/对内验收语言；② 评测从「像不像」改成「动作注入后下一状态是否因果正确、长跑是否漂移、时延是否稳住」；③ 优先做完整任务闭环（起终点订单），而不是只刷单场景短视频。萝卜快跑的数据飞轮提醒：没有真实运营闭环，虚拟「日行十万」难自证。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">InfoQ / 雷峰网 / IT之家 同日长文</span>
+    <span class="pill">每经 / 一财短讯</span>
+    <span class="pill">窗内未见量子位/机器之心同级专稿</span>
+    <span class="pill">独立开发者实测未见（未开放权重/公开 demo）</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>「考官不是画师」定位清晰；「2+3」给行业一个可争论的尺子；已绑萝卜快跑真实运营，不是纯论文。</li>
+    <li><strong>谨慎：</strong>公开可复现材料少；「日行十万」「AGI 时刻」营销词重；外文多为短讯转述，无深度评测。</li>
+    <li><strong>可信度：</strong>现场口径经多家中文科技媒体交叉一致；产能与里程=厂商声明；产品可用性待开放。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mgroup">中文</div>
+    <div class="mcard">
+      <p class="mhead">InfoQ <span class="mtag">深度</span></p>
+      <p class="mtitle"><a href="https://www.infoq.cn/news/tIt75FRqU2hwy4eWrOIu">AI 教 AI 开车！百度首次披露 Apollo World…</a></p>
+      <blockquote>世界模型，重点不是渲染的画质是否好看，而是模拟器是否能忠实还原现实物理规律和行为的因果。</blockquote>
+      <p class="mangle">角度：最完整的「2+3」与三大能力转述；偏产业叙事，非独立实验室评测。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">雷峰网 <span class="mtag">同题</span></p>
+      <p class="mtitle"><a href="https://www.leiphone.com/category/industrynews/NVxn28w1vAG2qbFy.html">百度 Apollo World 世界模型叩开无人驾驶产业「AGI 时刻」</a></p>
+      <p class="mangle">角度：与 InfoQ 同源通稿扩写；「AGI 时刻」标题偏热，正文事实可用。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">IT之家 <span class="mtag">图文</span></p>
+      <p class="mtitle"><a href="https://www.ithome.com/1/021/808.htm">用 AI 教 AI 开车，百度 Apollo World 世界模型亮相</a></p>
+      <p class="mangle">角度：闭环示意更直观（天气/传感器同步、起终点行程）。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 2 FlashProve ========== -->
+<article id="flashprove">
+  <h2><span class="tag t-hot">安全 · 可证明推理</span>Anthropic 开源 FlashProve：zkSNARK 证明「这话真是这台模型吐的」</h2>
+  <div class="verdict"><strong>结论：</strong>这是 Anthropic Frontier Red Team 把「可证明推理」从论文推到可跑原型：提供商对权重做承诺，再对每次回复出零知识证明；用户/审计员不用权重、不用 GPU 就能验。单卡 H100 上 Llama 4 Maverick（400B MoE、4-bit）约 <strong>110 tok/s</strong> 出证，约 <strong>19 MB / 1024-token 请求</strong>——仍是原生推理的约 70–95× GPU 时间，且官方写明研究原型、不部署生产。对监管 pacing / 防偷换模型 / 防篡改有长期意义；别当成明天就能塞进 Chat API 的功能。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>Anthropic 研究页标注发布 <strong>2026-11-02</strong>；官方 X @AnthropicAI 主帖时间约 <strong>2026-11-03 20:10 UTC</strong>（北京时间 11-04 04:10），成稿前约 <strong>23.5 万曝光 / 3084 赞 / 1103 书签 / 276 转发</strong>。同步放出：博客、技术报告、协议说明、C++/Lean 验证器、Lean 形式化证明；代码 <strong>Apache 2.0</strong>。</p>
+  <p class="src">一手：<a href="https://www.anthropic.com/research/provable-inference">Anthropic · Progress on provable inference</a> · <a href="https://github.com/anthropics/FlashProve">GitHub anthropics/FlashProve</a> · <a href="https://x.com/AnthropicAI/status/2117710942826123294">官帖</a> · 外文：<a href="https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/">TechCrunch 11-03</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它想解决什么：</strong>今天你无法从输出 alone 确认「这是不是你付钱买的那台模型」——路由可能偷换成便宜模型，攻击者可能篡改 token 流，评测方也难绑死权重。FlashProve 用 zkSNARK：离线对权重做短指纹承诺；在线对（prompt, output）出证明——验过即说明<strong>被承诺的那组权重</strong>在该输入上产出了这些 token；证明本身不泄露权重。</p>
+  <p><strong>官方关键数字（Llama 4 Maverick 4-bit，单 H100）：</strong></p>
+  <ul>
+    <li>出证吞吐约 <strong>110 tokens/s</strong>（24 请求一批约 223 秒）</li>
+    <li>证明大小约 <strong>18.78 MB</strong> / 1024-token 窗口请求</li>
+    <li>验证：24 核 CPU 约 <strong>17 秒</strong>/证明（单线程约 21 秒）；承诺文件约 6.5 MB</li>
+    <li>相对 vLLM 同批：证明侧约 <strong>70–95×</strong> 单卡 GPU 时间</li>
+  </ul>
+  <div class="warn">限制写进官方 Limitations：整数贪婪解码版本；上下文目前到 1024；不隐藏架构只隐藏权重；快路径 C++ 验证器无形式化保证（Lean 慢验证器有）；明确「中间进度，非完成议程」，无上线 Anthropic 生产计划（TechCrunch 同述）。</div>
+
+  <figure>
+    <img src="media/flashprove-anthropic.jpg" alt="Anthropic FlashProve 研究页官方社交图"/>
+    <figcaption>Anthropic 研究页 OG——看完应搞懂：这是「可证明推理」研究发布视觉，不是新 Claude 聊天功能上线。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/flashprove-tc.jpg" alt="TechCrunch 报道配图"/>
+    <figcaption>TechCrunch 配图——看完应搞懂：外文主流科技媒体把故事读成「证明模型身份」，并强调无部署计划。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（15 分钟）</strong>
+    打开 <a href="https://www.anthropic.com/research/provable-inference">研究页</a> → 先读 Executive summary 四条与 Limitations → 再扫 Challenge 1–4（pacing / 篡改 /  provenance / 审批）→ 有兴趣下 <a href="https://github.com/anthropics/FlashProve">GitHub</a> 看 README 与 guide/what-is-proved.md。中文深度稿窗内稀缺，以英文一手为准。
+  </div>
+  <p><strong>视频：</strong>官方以文+代码+Lean 可视化为主，无单独产品演示片；本版不嵌无关口播。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs 早期 zkML（zkLLM / EZKL / VerInf / DeepProve / Attestable 等）：</strong>官方自比：此前同模型 VerInf 约 0.02 tok/s、证明近百 GB；FlashProve 同模型 110 tok/s、19 MB。Attestable 报密模 31B 约 53–77 tok/s 但未开源库。差异化是开源 + Lean 顶层陈述 + 前沿 MoE 规模。</li>
+    <li><strong>vs TEE / 可信硬件证明：</strong>Anthropic 强调软件密码学与硬件互补；本原型不依赖厂商 TEE。</li>
+    <li><strong>对产品/监管：</strong>TechCrunch 点名防「偷偷换便宜模型 / 虚报成绩」；RSP 里「inference verification」目标相关——但今天仍是研究工件。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    短期不必接入推理路径；中期若要对外提供「评测绑死权重」或合规审计，关注证明开销能否压到 &lt;10×、上下文能否拉到真实会话长度。世界模型若对外 API 出视频/动作，同类「输出归因」问题会再出现——先盯协议与验收语言。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">官帖 ~23.5 万曝光 / 3084 赞 / 1103 书签</span>
+    <span class="pill">@scaling01 解读帖 ~3.3 万曝光</span>
+    <span class="pill">@sweis 早鸟帖 ~9.5 万曝光</span>
+    <span class="pill">Succinct 等密码学圈转发</span>
+    <span class="pill">TechCrunch 同日英文稿</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>密码学/安全圈认为是可证明推理的实质跃迁；开源 + Lean 降低「黑盒宣称」；用例（防偷换、评测归因）说得清。</li>
+    <li><strong>谨慎：</strong>70–95× 开销、1024 上下文、贪婪整数模型、非生产——评论区与 Limitations 一致；中文科技媒体窗内几乎无专稿。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mgroup">官方 / 一手</div>
+    <div class="mcard">
+      <p class="mhead">Anthropic Research <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://www.anthropic.com/research/provable-inference">Progress on provable inference for large language models</a></p>
+      <blockquote>This research post is meant to share intermediate progress, and not a completed research agenda.</blockquote>
+    </div>
+    <div class="mgroup">外文</div>
+    <div class="mcard">
+      <p class="mhead">TechCrunch <span class="mtag">产业解读</span></p>
+      <p class="mtitle"><a href="https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/">Anthropic is working on a system to prove AI models' identity</a></p>
+      <p class="mangle">角度：用「模型身份证明」讲清消费者直觉；明确无部署计划。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 3 Hydrogen ========== -->
+<article id="hydrogen">
+  <h2><span class="tag t-mid">开源 · 科学模型</span>Deep Principle 发布 Hydrogen-1.0：753B 科学后训练，MIT 开权重</h2>
+  <div class="verdict"><strong>结论：</strong>这是「通用开源底座 + 实验室轨迹后训练」路线的科学模型：基于智谱 <strong>GLM-5.3</strong>，总参约 <strong>753B</strong> MoE，MIT 权重；自报 FrontierScience-Research（FSR）通过率 <strong>38.3%</strong> vs GPT-6-Astra <strong>33.3%</strong>，并在材料发现多轮推荐上领先 Astra/Kimi-K3。价值在可复现权重 + ELN/发现轨迹叙事；分数与内部任务均为厂商评测，独立复现未见。适合科学 Agent / 实验室工具链的人马上下载试，别当「已超越闭源科学超智能」通稿信。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间约 <strong>2026-11-02</strong>，Deep Principle 发布 <strong>Hydrogen-1.0</strong> 技术博客与 Hugging Face / ModelScope 权重（MIT）。昨日（11-03）日报未收录，本版补报。另提供 NeuroSpark API 与 Mira「AI Scientist」入口。</p>
+  <p class="src">一手：<a href="https://blog.deepprinciple.com/introducing-hydrogen-1.0/">Introducing Hydrogen-1.0</a> · <a href="https://huggingface.co/deep-principle/Hydrogen-1.0">Hugging Face</a> · 二级：<a href="https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/">MarkTechPost</a> · <a href="https://www.deai.org/news/deep-principle-hydrogen-1-0-open-weight-science-model">deAI</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它想解决什么：</strong>闭源实验室已有用 AI 助发现的案例，但权重不可复现；Hydrogen 想把「领域知识 + 实验记录 + 发现轨迹」灌进开源底座，让科研人员可检查、可改、可接工具。</p>
+  <p><strong>模型卡要点（HF）：</strong>基座 GLM-5.3；上下文最长约 <strong>1M</strong>、最大输出约 <strong>128K</strong>；BF16 全量 + NVFP4 / MXFP4 量化分仓；建议 SGLang 多卡部署。</p>
+  <p><strong>训练叙事：</strong>SFT + RL；数据四块——领域知识、科研场景反馈、全周期 ELN 实验记录、开放式发现轨迹。博客展示：高分子 MD 工作流自修拓扑、Ireland–Claisen 反应网络扩展、NMR 结构辨识、实验室编译（虚环境先抓错再实跑）。</p>
+
+  <figure>
+    <img src="media/hydrogen-hf-og.png" alt="Hydrogen-1.0 Hugging Face 社交预览图"/>
+    <figcaption>Hugging Face 模型卡 OG——看完应搞懂：这是可下载的开源科学模型条目，不是仅 API 的闭源助手。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/hydrogen-marktech.png" alt="Hydrogen-1.0 相关报道配图"/>
+    <figcaption>科技站报道配图——看完应搞懂：传播侧强调「753B 开源科学发现」；细节以官方博客图 1–5 为准。</figcaption>
+  </figure>
+
+  <h4>官方自报评测（博客，待独立复现）</h4>
+  <ul>
+    <li><strong>FSR（FrontierScience-Research）：</strong>Hydrogen 38.3% vs GPT-6-Astra 33.3%（厂商/二级媒体转述）</li>
+    <li><strong>内部科研任务：</strong>科学计算 / 一步正向反应预测上，相对 Astra 最大思考分别高约 5.13 / 4.76 个百分点；NMR 结构解析 Astra 仍高约 3.33 点</li>
+    <li><strong>TMC 材料多轮：</strong>第 5 轮 mean best-so-far HOMO–LUMO gap：Hydrogen 4.318 eV vs Astra 3.689 vs Kimi-K3 3.353</li>
+  </ul>
+  <div class="warn">完整训练数据与配方未随权重公开；Astra/Opus 在部分实验设计题上因拒答过多被省略对比。把自报分当方向信号，不当排行榜终局。</div>
+
+  <div class="howto">
+    <strong>怎么自己看（15 分钟）</strong>
+    读 <a href="https://blog.deepprinciple.com/introducing-hydrogen-1.0/">官方博客</a> Figure 1–3 与三个实践案例标题 → 打开 <a href="https://huggingface.co/deep-principle/Hydrogen-1.0">HF 卡</a> 确认许可/量化分仓/SGLang 启动命令 → 有卡再拉权重；没卡至少看博客里「lab compilation 抓错 tip」例子，理解它想卖的工作流。
+  </div>
+  <p><strong>视频：</strong>官方博客页内嵌介绍视频（需官网播放）；本环境未稳定镜像 MP4，请直接打开博客页观看。看完应搞懂：定位是科学发现助手，不是通用聊天榜刷分模型。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs GPT-6-Astra / Claude Opus 科学能力：</strong>Hydrogen 主打开权重可复现 + 实验室轨迹；闭源在部分任务仍强（如 NMR）。产品含义：要可审计、可私有化部署时 Hydrogen 有位置。</li>
+    <li><strong>vs Kimi K3 / GLM-5.3 本家：</strong>同表显示后训练相对基座与开源前沿有增益；差异化是化学/材料/生命科学 ELN 与发现轨迹，不是又一个通用对话模型。</li>
+    <li><strong>vs 垂直科学小模型 / 工具链（分子、蛋白专用）：</strong>Hydrogen 走「大 MoE 通用科学推理 + 工具」；专用模型仍可能在窄任务更稳。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    「失败尝试也进轨迹」与世界模型/Agent 训练同构——可参考把仿真失败 rollout 当一等公民数据。若做科学或具身数据飞轮，ELN 式「意图-步骤-观察-修订」日志格式值得抄。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">HF 模型卡已上线（MIT）</span>
+    <span class="pill">英文科技站摘要跟进</span>
+    <span class="pill">中文主流 AI 媒体窗内几乎无专稿</span>
+    <span class="pill">社区长测 / 独立榜复现未见</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>真开权重 + MIT；科学工作流 demo 具体（MD / 反应网 / NMR / 实验编译）；对开源科学社区是可下载的新底座。</li>
+    <li><strong>谨慎：</strong>753B 部署门槛高；自报分未独立复核；中文传播弱于同窗大厂发布。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">Deep Principle 博客 <span class="mtag">一手</span></p>
+      <p class="mtitle"><a href="https://blog.deepprinciple.com/introducing-hydrogen-1.0/">Introducing Hydrogen-1.0</a></p>
+      <blockquote>A start towards superintelligence for scientific discovery.</blockquote>
+      <p class="mangle">角度：完整方法与案例；口号偏大，数字以文内图注为准。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 4 Thinker-Sim ========== -->
+<article id="thinker">
+  <h2><span class="tag t-mid">具身 · 仿真平台</span>优必选发布 Thinker-Sim：Real2Sim2Real 一站式场景重建、数据合成与评测</h2>
+  <div class="verdict"><strong>结论：</strong>Thinker-Sim 是优必选把「真机场景 → 仿真资产 → 规模合成数据 → 标准化评测 → 回真机」做成产品化平台的一步。官方数字醒目（渲染效率 +67.3%、8GPU 节点日均 390 小时仿真数据、通信效率 +400%），并带 Thinker-GS、SimReady、Ulab-Agent 自然语言编排。但窗内报道几乎全是通稿转载，<strong>未见独立实测或可公开试用入口</strong>——先当「具身数据基础设施」动向记一笔，别当已验证的 SOTA 仿真引擎。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-11-02</strong>，优必选宣布具身智能仿真平台 <strong>Thinker-Sim</strong> 正式发布。新浪科技、盖世汽车、观点网、新京报等跟进；内容高度同源。</p>
+  <p class="src">中文：<a href="https://finance.sina.com.cn/tech/shenji/2026-11-02/doc-inixicic0524615.shtml">新浪科技 11-02 10:19</a> · <a href="https://auto.gasgoo.com/news/202611/2I70476583C601.shtml">盖世汽车</a> · <a href="https://www.guandian.cn/article/20261102/621660.html">观点网</a> · <a href="https://www.bjnews.com.cn/detail/1793586526129195.html">新京报</a> · <a href="https://ai.42how.com/article/2bd2966d-b3b9-4857-ae7f-bee173324c92">42号电波</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <p><strong>它想解决什么：</strong>真机采集贵、仿真搭场景难、算法验证周期长。Thinker-Sim 宣称覆盖：场景重建与资产生成 → 规模仿真数据合成 → 感知/导航/操作统一评测。</p>
+  <p><strong>三大块（通稿）：</strong></p>
+  <ul>
+    <li><strong>场景重建与资产：</strong>自研 Thinker-GS 高保真重建 + SimReady 资产自动生成；工业工厂、商业展厅等。</li>
+    <li><strong>数据合成：</strong>自研渲染与大规模并行；官方称渲染效率 <strong>+67.3%</strong>，单节点（8 GPU）日均约 <strong>390 小时</strong>仿真数据；通信模块效率 <strong>+400%</strong> 以上。</li>
+    <li><strong>能力评测：</strong>感知/导航/操作统一体系；场景、光照、纹理、材质随机化。</li>
+  </ul>
+  <p><strong>体验向：</strong>标准化任务模板一键启动并推流；可视化零代码编排（称适配 90%+ 目标场景）；Ulab-Agent 支持自然语言完成场景创建、配置、编排与调度。</p>
+
+  <figure>
+    <img src="media/thinker-gasgoo.png" alt="盖世汽车报道 Thinker-Sim 配图"/>
+    <figcaption>盖世汽车文内配图——看完应搞懂：传播视觉强调人形/具身在仿真环境中的作业，不是消费级 3D 聊天世界。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/thinker-thumb.jpg" alt="Thinker-Sim 新闻缩略图"/>
+    <figcaption>盖世汽车新闻缩略图——看完应搞懂：这是产业资讯级曝光，不是开源 repo 演示截图。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（8 分钟）</strong>
+    读 <a href="https://finance.sina.com.cn/tech/shenji/2026-11-02/doc-inixicic0524615.shtml">新浪科技短讯</a> 对齐三块能力 → 再扫 <a href="https://auto.gasgoo.com/news/202611/2I70476583C601.shtml">盖世</a> 是否有额外图 → 去优必选官网人形/平台页找是否出现 Thinker-Sim 产品入口（成稿时公开自助试用链接未见）。有渠道再要 demo 账号做「重建→合成→评测」一条龙。
+  </div>
+  <p><strong>视频：</strong>通稿未附可稳定外链的官方长演示；本版不嵌无关口播。</p>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Isaac Sim / MuJoCo / ManiSkill / RoboCasa 等：</strong>Thinker-Sim 强调 Real2Sim 资产流水线 + 中文产业场景（工厂/展厅）+ 自然语言编排；生态与开源社区深度尚不清。</li>
+    <li><strong>vs Mundo / 智元仿真与数据飞轮、NVIDIA Cosmos：</strong>同属「仿真产数据」赛道；优必选绑自家人形落地叙事。选型看你要开放可复现还是厂商交钥匙。</li>
+    <li><strong>vs Apollo World：</strong>Apollo 偏 Robotaxi 虚拟城市与安全考官；Thinker-Sim 偏人形具身操作数据与评测——相邻但场景不同。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    可关注两点产品化动作：① SimReady 资产自动生成是否真能降低搭景人天；② 「自然语言编排仿真任务」会不会变成具身数据生产的默认 UX。数字先记着，等可对比的公开基准或第三方工时数据再更新。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">新浪 / 盖世 / 观点 / 新京报 通稿级</span>
+    <span class="pill">X / 开发者社区热度低</span>
+    <span class="pill">独立评测未见</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>Real2Sim2Real 产品叙事完整；给出可引用的产能数字；自然语言编排降低仿真门槛的方向对。</li>
+    <li><strong>批评 / 空缺：</strong>报道同质化严重；无开源、无公开基准、无第三方工时对比；「90%+ 场景」缺少定义。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">新浪科技 <span class="mtag">通稿</span></p>
+      <p class="mtitle"><a href="https://finance.sina.com.cn/tech/shenji/2026-11-02/doc-inixicic0524615.shtml">优必选 Thinker-Sim 具身智能仿真平台正式发布…</a></p>
+      <blockquote>让真实世界快速进入仿真，让海量数据高效生成，让机器人能力充分验证。</blockquote>
+      <p class="mangle">角度：最完整的三块能力与官方数字；无独立验证。</p>
+    </div>
+  </div>
+</article>
+
+<div class="alert" style="background:#f4f3ef;border-color:var(--line);">
+  <strong>今日落选（简述）</strong>
+  <ul>
+    <li>Kimi / 其他国产权重传闻——窗内未确认正式发布。</li>
+    <li>Apple Siri 第三方 / Netflix Discover 等——偏生态合作传闻，深度与世界模型相关度不足。</li>
+    <li>SenseNova / LongCat / MOSS / LifeVal——已在 11-03 报，无实质新版本。</li>
+    <li>PixVerse×OpenAI、小米奖项、极智嘉规划等——热度或产品完整度不够，不硬凑。</li>
+  </ul>
+</div>
+
+<footer>
+  产品雷达 · 2026-11-04 · 仅供阿汤内部决策参考 · 事实以一手链接为准
+</footer>
+</div>
+</body>
+</html>
