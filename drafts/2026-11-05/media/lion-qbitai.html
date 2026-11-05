@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="shortcut icon" href="/wp-content/themes/liangziwei/imgnew/favicon.ico">
+        <link rel="pingback" href="https://www.qbitai.com/xmlrpc.php">
+        <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>不靠堆砌数据，让机器人看懂真实物理世界 | 招商局狮子山实验室发布「驭物™ Lion-ER-35B-A3B」具身推理模型 &#8211; 量子位</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" type="application/rss+xml" title="量子位 &raquo; Feed" href="https://www.qbitai.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="量子位 &raquo; 评论 Feed" href="https://www.qbitai.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="量子位 &raquo; 不靠堆砌数据，让机器人看懂真实物理世界 | 招商局狮子山实验室发布「驭物™ Lion-ER-35B-A3B」具身推理模型 评论 Feed" href="https://www.qbitai.com/2026/11/507586.html/feed" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.qbitai.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.qbitai.com%2F2026%2F11%2F507586.html" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.qbitai.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.qbitai.com%2F2026%2F11%2F507586.html&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='liangziwei-style-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/style.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='liangziwei-style1-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/css/bootstrap.min.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='liangziwei-style2-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/css/swiper.min.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='liangziwei-style3-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/css/font-awesome.min.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='liangziwei-style4-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/css/base.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='liangziwei-style5-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/css/style.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='liangziwei-style6-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/css/wbshare.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='liangziwei-style7-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/css/zk_style.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='liangziwei-style8-css' href='https://www.qbitai.com/wp-content/themes/liangziwei/css/ai_style.css?ver=7.1' media='all' />
+<script id="jquery-core-js" src="https://www.qbitai.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://www.qbitai.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="liangziwei-min-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/jquery.min.js?ver=7.1"></script>
+<script id="liangziwei-popper-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/popper.min.js?ver=7.1"></script>
+<script id="liangziwei-bootstrap-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/bootstrap.min.js?ver=7.1"></script>
+<script id="liangziwei-offcanvas-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/bootstrap.offcanvas.js?ver=7.1"></script>
+<script id="liangziwei-css-debug-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/flexible_css.debug.js?ver=7.1"></script>
+<script id="liangziwei-debug-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/flexible.debug.js?ver=7.1"></script>
+<script id="liangziwei-swiper-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/swiper.min.js?ver=7.1"></script>
+<script id="liangziwei-qrcode-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/qrcode.js?ver=7.1"></script>
+<script id="liangziwei-yao-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/yao.js?ver=7.1"></script>
+<script id="liangziwei-ScrollPic-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/ScrollPic.js?ver=7.1"></script>
+<script id="liangziwei-zktag-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/zktag.js?ver=7.1"></script>
+<script id="liangziwei-zkai2-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/jquery-1.7.1.min.js?ver=7.1"></script>
+<script id="liangziwei-zkai1-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/ai_playBox.js?ver=7.1"></script>
+<link rel="https://api.w.org/" href="https://www.qbitai.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.qbitai.com/wp-json/wp/v2/posts/507586" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.qbitai.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1" />
+<link rel="canonical" href="https://www.qbitai.com/2026/11/507586.html" />
+<link rel='shortlink' href='https://www.qbitai.com/?p=507586' />
+<meta property="og:category" content="news" /><meta property="og:site_name" content="量子位" /><meta property="og:locale" content="zh_CN" /><meta property="og:url" content="https://www.qbitai.com/2026/11/507586.html" /><meta property="og:title" content="不靠堆砌数据，让机器人看懂真实物理世界 | 招商局狮子山实验室发布「驭物™ Lion-ER-35B-A3B」具身推理模型" /><meta property="og:description" content="仅激活3B参数，十项基准全线提升！" /><meta property="og:image" content="https://www.qbitai.com/wp-content/uploads/imgs/qbitai-logo-1.png" /><meta property="og:image:width" content="300" /><meta property="og:image:height" content="300" /><meta property="og:image:secure_url" content="https://www.qbitai.com/wp-content/uploads/imgs/qbitai_icon.png" /><meta property="og:site_name" content="量子位" /><meta property="og:author" content="量子位" /><meta property="og:type" content="article" /><meta name="apple-mobile-web-app-title" content="量子位"><link rel="apple-touch-icon-precomposed" sizes="171x171" href="https://www.qbitai.com/wp-content/uploads/imgs/logo171.png" /><link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.qbitai.com/wp-content/uploads/imgs/logo114.png" /><link rel="apple-touch-icon-precomposed" sizes="400x400" href="https://www.qbitai.com/wp-content/uploads/imgs/logo400.png" /><link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.qbitai.com/wp-content/uploads/imgs/logo57.png" /><style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>    <!--[if IE 8]>
+        <link id="liangziwei-ie7-css" rel="stylesheet" type="text/css" href="https://www.qbitai.com/wp-content/themes/liangziwei/css/ie8_style.css?ver=5.0.13"  media="all"/>
+    <![endif]-->
+    <!--[if IE 9]>
+            <link id="liangziwei-ie8-css" rel="stylesheet" type="text/css" href="https://www.qbitai.com/wp-content/themes/liangziwei/css/ie9_style.css?ver=5.0.13"  media="all"/>
+    <![endif]-->
+    <script type="text/javascript">
+        $("#top_search").click(function(){
+            $("#search").toggle()
+        });
+        $(document).click(function(){
+            $(".weixin_pop").hide();
+        });
+    </script>
+    <style type="text/css">
+        blockquote {
+            margin: 1.4em 0;
+            padding-left: 1em;
+            color: #646464;
+            border-left: 3px solid #D3D3D3;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 40px;
+            margin-inline-end: 40px;
+        }
+    </style>
+
+
+
+    
+</head>
+<body class="body-offcanvas">
+<header class="top">
+    <div class="top_logo">
+        <div class="nav_box">
+                        <button type="button" class="navbar-toggle offcanvas-toggle" data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left;"></button>
+            <nav class="navbar navbar-default navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-fade" role="navigation" id="js-bootstrap-offcanvas">
+                                    <div class="container-fluid"><ul id="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95" class="nav navbar-nav"><li id="menu-item-110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-110"><a href="http://www.qbitai.com/">首页</a></li>
+<li id="menu-item-107" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-107"><a href="https://www.qbitai.com/category/%e8%b5%84%e8%ae%af">资讯</a></li>
+<li id="menu-item-26804" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26804"><a href="https://www.qbitai.com/category/auto">智能车</a></li>
+<li id="menu-item-110561" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-110561"><a href="https://www.qbitai.com/category/zhiku">智库</a></li>
+<li id="menu-item-17709" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17709"><a href="https://www.qbitai.com/category/huodong">活动</a></li>
+<li id="menu-item-10902" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10902"><a href="https://www.qbitai.com/meet/meet2026/">MEET大会</a></li>
+<li id="menu-item-53733" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53733"><a href="https://www.qbitai.com/meet/aigc2026/">AIGC</a></li>
+</ul></div>                            </nav>
+                    </div>
+        <div class="logo"><a href="https://www.qbitai.com/"></a></div>
+        <div class="top_r_icons">
+                        <div class="top_weixin"><a href="javascript:void(0)"class="biaojiwei"><i class="fa fa-weixin"></i></a>
+                                <div class="weixin_pop"style="display:none"id="pophead">
+               <p>扫码关注量子位</p>
+               <img src="/wp-content/uploads/2019/01/qrcode_QbitAI_1.jpg">
+        </div>
+         </div>
+            <div class="top_weibo"><a href="https://weibo.com/qbitai?is_all=1" target="_blank"><i></i></a></div>
+            
+<!--             <div class="top_search">
+                <form role="search" method="get" class="search-form" action="https://www.qbitai.com/" id="search">
+                <label>
+                    <input type="search" class="search-field" placeholder="搜索…" value="" name="s">
+                </label>
+                <button type="submit" class="search-submit"></button>
+                </form>
+            </div> -->
+        </div>
+        <script type="text/javascript">
+        // $('.biaojiwei').click(function(){
+            $('.biaojiwei').click(function(event){
+                event.stopPropagation();
+                $('#pophead').show();
+            })
+            $('.weixin_pop').click(function(){
+                $('.weixin_pop').hide();
+            })
+        // })
+        </script>
+        <div class="share_box">
+        </div>
+    </div>
+    <div class="line"></div>
+</header>
+
+
+		
+
+<div class="main">
+	<div class="content">
+
+
+    <div class="wx_img" style="width: 0; height: 0; overflow: hidden; font-size: 0; line-height: 0px;">
+        < img id="wx_img" src="https://www.qbitai.com/wp-content/uploads/imgs/qbitai-logo-1.png" width="400" height="400">
+    </div>
+
+
+      <!-- articlead begin-->
+                    <!-- articlead end-->
+        	<div class="article">
+				     <h1>不靠堆砌数据，让机器人看懂真实物理世界 | 招商局狮子山实验室发布「驭物™ Lion-ER-35B-A3B」具身推理模型</h1>
+    			   <div class="article_info">
+             <span class="author"><img src="http://www.qbitai.com/wp-content/themes/liangziwei/imagesnew/head.jpg" class="avatar avatar-200" height="200" width="200"><em><a href="https://www.qbitai.com/author/simiao" rel="author">思邈</a></em></span>
+                          <span class="date">2026-11-04</span>
+             <span class="time">18:08:38</span>
+          <span class="from">
+          来源：<a href='https://www.qbitai.com' target='blank' rel='nofllow'>量子位</a>            </span></div>
+                          <!--摘要样式-->
+            <div class="zhaiyao"><p>仅激活3B参数，十项基准全线提升！</p>
+</div>                			<div class="title"></div>
+<div class="article-content">
+<article class="syl-article-base syl-page-article syl-device-pc">
+<blockquote>
+<p data-track="117">允中 发自 凹非寺</p>
+<p data-track="118">量子位 | 公众号QbitAI</p>
+</blockquote>
+<p data-track="6">日常生活里人类的直觉判断，放到机器人身上，往往会变成棘手难题。</p>
+<p data-track="7">视频画面中物体位置看上去更高，并不等同于它在真实三维空间里处于更高位置；更换拍摄角度，家具外观发生改变，但它仍是同一个物体；画面内物体发生位移，有可能是物体本身发生移动，也可能仅仅是相机镜头产生转动&#8230;&#8230;</p>
+<p data-track="8">这些细微的空间、状态变化，人类一眼就能分辨，但对机器人的“具身大脑”来说，却是难以攻克的难题。</p>
+<p data-track="9">视角变化混淆物体身份、误判相机运动、错估任务进度，都会直接造成机器人执行失败。</p>
+<p data-track="10">想要机器人可靠完成现实任务，模型不能仅仅做到“看见物体”，更要<strong>读懂三维空间关系</strong>、<strong>捕捉物体状态变化</strong>、<strong>研判任务所处阶段</strong>。</p>
+<p data-track="11">近日，招商局先进技术研究院下属狮子山人工智能实验室发布具身推理视觉语言模型<strong>「驭物™ Lion-ER-35B-A3B」</strong>。该模型采用MoE混合专家模型架构，<strong>总参数约35B，每个Token仅激活约3B参数。</strong></p>
+<p data-track="12">在不显著增加推理开销的前提下，<strong>模型在十项主流具身相关基准上实现全部指标上涨，多项核心能力超越更大参数量的主流模型，走出了一条区别于大规模堆砌训练数据的技术路线，有助于机器人真正理解三维物理世界。</strong></p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/8260f893c11ef2f7091cf94c37e9073d.jpeg" /></div>
+<h1 class="pgc-h-forward-slash" data-track="13">这套模型是怎么炼成的？</h1>
+<p data-track="14">过去几年，Open X-Embodiment、DROID等工作不断拓展真实世界机器人数据的边界。但随着数据规模扩大，一个问题也越来越清楚：</p>
+<p data-track="15"><strong>更多数据，并不等于更多能力</strong>。</p>
+<p data-track="16">已有研究表明，在既有机器人数据集内，<strong>仅调整不同数据域的训练权重，就能明显影响下游任务表现。</strong></p>
+<p data-track="17">「驭物™ Lion-ER-35B-A3B」的核心亮点，并非单纯提升模型参数量，而是搭建了一套能力牵引的具身数据引擎，摒弃盲目收集海量数据的传统做法，转而<strong>围绕模型需要掌握的能力做正向设计，再依靠评测发现短板，闭环迭代优化数据</strong>。</p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/aa6923c60c74f3e07fbfee866387ccbc.png" /></p>
+<p class="pgc-img-caption">能力牵引的具身数据引擎</p>
+</div>
+<h1 class="pgc-h-forward-slash" data-track="19">第1步：明确模型该学会什么</h1>
+<p data-track="20">招商局狮子山团队梳理出了一张细粒度的“能力蓝图”：</p>
+<p data-track="21">他们将具身推理拆解为“<strong>实体、空间、时序、物理、可供性、任务、社会、证据”</strong>等8个一级领域，细化出39项二级能力。并把<strong>推理方式、输入形式</strong>和<strong>回答形式</strong>作为独立维度分开标注，避免不同分类维度混用造成的重叠。</p>
+<p data-track="22">蓝图不仅定义了模型需要学习哪些能力，还明确了这些能力应在何种条件下被调用。</p>
+<p data-track="23">真实任务往往涉及复合能力，例如判断物品是否放置到位，既需要任务进度判断，也需要空间关系推理。</p>
+<p data-track="24">因此，团队在蓝图阶段就分别记录主能力与辅助能力，把不可拆分的联合任务单独列出。</p>
+<p data-track="25">在训练采样时，团队还会考虑不同因素的组合与留出，避免某类能力始终绑定在少数固定场景、物体或提问方式上。</p>
+<h1 class="pgc-h-forward-slash" data-track="26">第2步：把抽象要求变成一道道训练题目</h1>
+<p data-track="27">有了能力蓝图，该如何落地生成训练题目？</p>
+<p data-track="28">团队将这套流程命名为<strong>“能力编译”</strong>：</p>
+<p data-track="29">把抽象的能力目标，逐项拆解、落地为“需要什么场景、怎样组织观察、提出什么问题、依据什么确定答案”。</p>
+<p data-track="30">以跨视角推理为例。首先明确提供给模型的视角数量、需要在多张画面之间建立关联的目标物体，以及判定方位时所采用的观测者位置与朝向。</p>
+<p data-track="31">同时还要核验素材本身：模型拿到的视觉信息，是否足以支撑模型推导出可靠答案。如果关键视角缺失、证据不足，这道题就只能依靠猜测，不能纳入合格训练样本。</p>
+<p data-track="32">这类构题规范，由目标能力本身驱动，不需要等到评测暴露错题之后，再被动补充数据。</p>
+<p data-track="33">能力蓝图预先规划好需要覆盖的能力范围，评测则承担查漏补缺的角色，后续定位模型依旧薄弱的环节。</p>
+<h1 class="pgc-h-forward-slash" data-track="34">第3步：保证每道训练题目有据可依</h1>
+<p data-track="35">构题方式层面，团队设计了三条可互相组合的路径，从已有QA与视觉标注中转换、从观察素材中发现证据、从结构化条件与关系中推导。这三条路径共同把抽象的能力要求，转化为一道道具体、可作答的训练题。</p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/ab10f8f6b437e0b88a285a1625c2775a.png" /></p>
+<p class="pgc-img-caption">三种构题方式示意图</p>
+</div>
+<p data-track="37">监督核验层面，采用数据提纯、几何构题、定向合成三条互补路线：</p>
+<ul>
+<li data-track="38"><strong>数据提纯：</strong>对已有数据进行清洗与修订，排查图像顺序、问题指代、选项与答案映射，修复有据可查的错误，并控制重复曝光。</li>
+<li data-track="39"><strong>几何构题：</strong>针对具备可靠位姿、深度和物体对应关系的素材，先算出固定答案和推理所需的中间关系，再让模型在这些事实约束下生成问题与解释。</li>
+<li data-track="40"><strong>定向合成：</strong>当现有监督不足时，基于真实图像或视频素材定向构造问答。合成的是问题与标注，但生成模型给出的答案绝不直接当作真值，必须经过独立作答或额外审核。</li>
+</ul>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/b37f96dc3c683853260782dd0299de9b.png" /></p>
+<p class="pgc-img-caption">三条监督路线</p>
+</div>
+<p data-track="42">整套流程始终坚持一项原则：保留有证据的难题，排除缺证据的伪难题。</p>
+<p data-track="43">模型答错，不是删掉样本的理由，多个模型给出相同答案，也不能单独证明答案正确。</p>
+<p data-track="44">对于模型持续失误的高难样本，团队进一步引入Human in the loop人工复核，搭建面向复杂具身任务的可视化核验平台，通过多视角对照、时序回放与证据标记等能力强化人工审查，帮助审核人员还原关键视觉线索与推理依据，避免将模型能力边界误判为数据问题。</p>
+<h1 class="pgc-h-forward-slash" data-track="45">第4步：评测结果直接反哺数据迭代</h1>
+<p data-track="46">有了合格的训练题目，还要做好训练资源分配。</p>
+<p data-track="47">「驭物™ Lion-ER-35B-A3B」的监督训练集共包含<strong>312380条样本</strong>，训练时按能力需求分配训练预算，而不是由数据源的题量决定权重。</p>
+<p data-track="48">样本重点覆盖空间几何、多视角对应、动作轨迹、任务规划等核心具身能力。团队会减少同质化重复题目，将训练资源投向薄弱的推理类型。样本从候选、审核到入训全程留痕，训练配方可追溯、可调整。</p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/ebe2443d41f83bccb32857f3b5cdde6b.png" /></p>
+<p class="pgc-img-caption">31.2万监督样本的能力构成图</p>
+</div>
+<p data-track="50">正向设计建立了能力覆盖，但模型究竟学会了没有、哪里还有盲区？</p>
+<p data-track="51"><strong>这一步交给Eval-Driven Data Harness。</strong></p>
+<p data-track="52">这是一套数据迭代机制，从模型错题中找出需要补强的能力，再将其转化为下一轮可执行的数据需求。</p>
+<p data-track="53">在Harness里，评测不再是训练结束后的成绩单，而是下一轮数据生产的起点。</p>
+<p data-track="54">发现错题后，先核查标注、画面证据、评分是否存在问题，再区分偶发失误与系统性能力短板。确认存在能力缺口后，再从<strong>覆盖31个数据源、约430万条记录</strong>的素材池中，检索推理逻辑相同、场景不同的新素材，经构题核验后加入训练，再通过新一轮评测验证效果。</p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/bbed1cea4517a7424b9e28bac202402c.png" /></p>
+<p class="pgc-img-caption">一次评测失败，如何变成一批新的训练数据</p>
+</div>
+<p data-track="56">例如模型容易将画面二维上下位置等同于三维高度，团队就优先选择具有上下多层可放置支撑面的场景，让模型需要结合空间结构判断高低。再给左右、前后关系增加遮挡和透视变化，覆盖更容易混淆的情况。</p>
+<p data-track="57">团队还会结合分割、深度和几何约束，核验放置区域是否合理。</p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/81ba203e515db7828fa43378a541f962.png" /></p>
+<p class="pgc-img-caption">“画面里更靠上”≠“空间里更高”，失败模式直接改写下一轮的数据条件</p>
+</div>
+<p data-track="60">简而言之，<strong>能力蓝图提供覆盖方向，Eval-Driven Data Harness持续校准盲区。</strong></p>
+<p data-track="61"><strong>数据不再是一次性的静态供给，而是随模型能力持续演化。</strong></p>
+<h1 class="pgc-h-forward-slash" data-track="62">仅激活约3B参数，十项基准全部提升</h1>
+<p data-track="63">在这套能力牵引的数据引擎加持下，「驭物™ Lion-ER-35B-A3B」以仅约3B的推理激活参数，在十项公开基准上实现全部指标正向提升，部分指标超过参数量更大的模型。</p>
+<p data-track="64">评测采用avg@4评测口径，即每道题让模型独立作答4次，取平均分<strong>。</strong></p>
+<p data-track="65">在评测覆盖的十项公开基准上，<strong>「驭物™ Lion-ER-35B-A3B」的等权综合均分达到65.29。</strong></p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/c4cc6fea9c4d8fb3616475d18414511c.jpeg" /></p>
+<p class="pgc-img-caption">十项基准逐项对比柱状图，蓝色为「驭物™ Lion‑ER‑35B‑A3B」</p>
+</div>
+<p data-track="120">从单项成绩看：</p>
+<ul>
+<li data-track="68">Where2Place空间放置评测得分为<strong>64.28</strong>，较基座提升9.30分；</li>
+<li data-track="69">ERQA具身推理基准得分<strong>64.38</strong>，较基座提升6.19分；</li>
+<li data-track="70">空间推理基准SAT达到<strong>89.33；</strong></li>
+<li data-track="71">ERQA的轨迹理解子类达到<strong>68.18</strong>，相较基座提升12.12分。</li>
+</ul>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/1d23e7ae0e090651c0245a4e81d61e80.jpeg" /></p>
+<p class="pgc-img-caption">十项基准完整成绩（avg@4），蓝色列为「驭物™ Lion‑ER‑35B‑A3B」</p>
+</div>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/f0d985de9da0a003ac7851b6954ce2d5.png" /></p>
+<p class="pgc-img-caption">ERQA各能力类别成绩对比（avg@4），蓝色列为「驭物™ Lion‑ER‑35B‑A3B」</p>
+</div>
+<p data-track="74"><strong>整体结果显示，「驭物™ Lion-ER-35B-A3B」在十项基准上得分均高于所用基座。</strong></p>
+<h1 class="pgc-h-forward-slash" data-track="75">四道公开基准题目，直观看到能力差距</h1>
+<p data-track="76">下面四道案例全部来自公开评测基准，同一道题目，「驭物™ Lion-ER-35B-A3B」、基座Qwen3.6-35B-A3B、Qwen3.6-27B分别独立作答4次。</p>
+<h1 class="pgc-h-forward-slash" data-track="77">题目1：辨方向，相机到底向哪边转动？</h1>
+<p data-track="78">两张图片来自机械臂第一人称相机的连续拍摄：瓶子在画面中整体向上偏移，问题是相机正在朝哪个方向转动。</p>
+<p data-track="79">基座仅答对一次，Qwen3.6-27B全部答错，「驭物™ Lion-ER-35B-A3B」通过两帧画面的变化规律，正确判断相机向下转动，4次作答全部答对。</p>
+<p data-track="80"><strong>对机器人来说，画面里物体位置发生变化，首先要分清变化来源，是物体本身在移动，还是相机自身发生了转动。</strong></p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/2b4005c66b397969e98c4f43b61e990b.png" /></p>
+<p class="pgc-img-caption">虚线为同一高度参考线：t₂中，瓶子在画面里整体上移</p>
+</div>
+<h1 class="pgc-h-forward-slash" data-track="82">题目2：选轨迹，哪条路径可以完成任务？</h1>
+<p data-track="83">画面里标注了四条彩色轨迹。机械臂的目标是把充电器从插线板拔下，放到画面右侧，该选择哪一条轨迹？</p>
+<p data-track="84">两个对比模型都被向右延伸的紫色长弧线误导，选择了这条轨迹。它看似朝着目标放置区域延伸，但轨迹根本接触不到充电器。连目标都碰不到，拔取、放置的后续动作自然无从谈起。</p>
+<p data-track="85">「驭物™ Lion-ER-35B-A3B」会逐一排查无效路线，红色偏向插线板左侧，紫色无法接触充电器，黄色伸向后方软管，只有橙色轨迹能够先抵达充电器，完成拔取，再移动到右侧目标位置，4次作答全部正确。</p>
+<p data-track="86"><strong>这道题考验的核心，是把目标、路线与具体操作联系起来，不仅要看它通向哪里，还要判断它能否接触目标、完成任务。</strong></p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/bb7bd4db62d2081d4492f1ac994fe703.png" /></p>
+<p class="pgc-img-caption">四条候选轨迹中，只有橙色能完成“拔下并放到右侧”</p>
+</div>
+<h1 class="pgc-h-forward-slash" data-track="88">题目3：跨视角，挂画在拍摄者哪一侧？</h1>
+<p data-track="89">题目给出的是在同一住宅内拍摄的三张照片，蝴蝶挂画只出现在第三张。题目要求模型判断拍摄第一张照片时，挂画位于拍摄者的什么方向。</p>
+<p data-track="90">解这道题，需要模型串联多张画面、重建空间布局。挂画出现在第三张图的客厅墙面上，结合另外两张图可以还原空间方位。拍摄第一张照片时，拍摄者站在楼梯底部、面朝台阶，客厅在他身后，因此挂画位于拍摄者后方。</p>
+<p data-track="91">两个对比模型都答成了“左侧”，4次作答无一答对。「驭物™ Lion-ER-35B-A3B」4次判断全部准确。</p>
+<p data-track="92"><strong>识别出挂画只是基础能力，难点在于切换到题目指定的拍摄位置与朝向，完成跨视角的空间推理。</strong></p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/167d25b34470809531907827baaab906.png" /></p>
+<p class="pgc-img-caption">需要把三张照片拼成一张“心理地图”，再换回照片1的视角作答</p>
+</div>
+<h1 class="pgc-h-forward-slash" data-track="94">题目4：看进度，这一步任务做完了吗？</h1>
+<p data-track="95">这是一段机器人操作视频，任务指令为把桌上的寿司卷放进锅里。问题是，视频当前时刻，第一步“移动到寿司卷”是否已经完成？</p>
+<p data-track="96">基座4次作答中有3次误判该步骤“已完成”，Qwen3.6-27B也有半数回答做出同样误判。「驭物™ Lion-ER-35B-A3B」4次最终答案均判断为“尚未完成”。</p>
+<p data-track="97">这道题的关键，在于区分机械臂“正在靠近寿司卷”与“已经移动到位”这两个状态。</p>
+<p data-track="98"><strong>画面里出现动作，不等于对应任务步骤已经达成。模型需要观察动作带来的状态变化，核对目标状态是否达成。一旦误判进度，机器人就会提前执行后续动作，整套时序流程都会出错。</strong></p>
+<div class="pgc-img"><img decoding="async" src="https://i.qbitai.com/wp-content/uploads/2026/11/d74773d3b5d20da2ba20dbb1a1243518.png" /></p>
+<p class="pgc-img-caption">“靠近了”与“到位了”，在画面上只差一小段位移</p>
+</div>
+<p data-track="100">四道案例分别对应相机运动判断、动作轨迹交互推理、跨视角空间映射、任务状态进度识别，<strong>都是机器人将语言指令转化为物理动作的核心能力。</strong></p>
+<h1 class="pgc-h-forward-slash" data-track="101">具身大模型不仅要看懂画面，更要理解物理现实</h1>
+<p data-track="102">当下，能够对话、看懂图片的多模态大模型已经十分常见，但真正面向真实物理世界，提升机器人能力的“具身大脑”依旧稀缺。</p>
+<p data-track="103">机器人要完成现实世界作业，<strong>不能只做到识别画面内容，还需要区分视觉表象与三维真实空间。</strong></p>
+<p data-track="104">「驭物™ Lion-ER-35B-A3B」带来的，不只是一组亮眼的分数，更是一套可复用的方法论：</p>
+<p data-track="105"><strong>让能力成为数据的设计单元，让评测成为数据生产的起点。</strong>从能力蓝图到数据配方，从一次评测失败到一批新的训练数据，每一步都有明确的目标、可核查的证据和可追溯的记录。</p>
+<p data-track="106">目前「驭物™ Lion-ER-35B-A3B」已在Hugging Face开源权重，采用BF16 Safetensors格式，原生兼容Transformers、vLLM、SGLang等主流推理框架。</p>
+<p data-track="107">开发者可以围绕空间关系理解、场景状态分析、任务进度判断和空间约束理解等方向开展评测与适配，结合自己的图像、视频和任务，探索具身问答、场景决策分析与机器人系统集成。</p>
+<p data-track="108">招商局狮子山人工智能实验室表示，后续团队将面向具身Agent，拓展工具调用、多轮交互与执行反馈等方面的训练数据，探索长程任务中的连续决策与失败恢复，持续迭代这套能力牵引的数据引擎，为机器人在真实环境中完成任务提供支撑。</p>
+<p data-track="109">Hugging Face模型地址：<br />
+https://huggingface.co/cmriat/lion-ER-35B-A3B</p>
+<p data-track="110">*本文系量子位获授权刊载，观点仅为原作者所有。</p>
+</article>
+</div>
+                
+                <!--版权声明-->
+                <div class="line_font"><span></span><em>版权所有，未经授权不得以任何形式转载及使用，违者必究。</em><span></span></div>
+            </div>
+     		<div class="tags"><a href="https://www.qbitai.com/tag/%e5%85%b7%e8%ba%ab%e6%8e%a8%e7%90%86%e6%a8%a1%e5%9e%8b" rel="tag">具身推理模型</a> <a href="https://www.qbitai.com/tag/%e7%8b%ae%e5%ad%90%e5%b1%b1%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e5%ae%9e%e9%aa%8c%e5%ae%a4" rel="tag">狮子山人工智能实验室</a></div>
+            <!--作者文章列表-->
+    		<div class="person_box">
+            	<a href="#" target="_blank"><div class="person_head"><img src="http://www.qbitai.com/wp-content/themes/liangziwei/imagesnew/head.jpg" class="avatar avatar-1024" height="1024" width="1024"><span><a href="https://www.qbitai.com/author/simiao" rel="author">思邈</a></span></div></a>
+                <div class="person_con">
+                	<ul>
+                                          <li><a href="https://www.qbitai.com/2026/11/507533.html" rel="bookmark" title="让Agent首次拥有“视听双流记忆”：openJiuwen Agent-Memory看懂长视频，关键事件一个不落"target="_blank">让Agent首次拥有“视听双流记忆”：openJiuwen Agent-Memory看懂长视频，关键事件一个不落</a><i>2026-11-04</i></li>
+                                          <li><a href="https://www.qbitai.com/2026/11/507107.html" rel="bookmark" title="小米开源了个150元的AI小玩意，火到配件都涨价了"target="_blank">小米开源了个150元的AI小玩意，火到配件都涨价了</a><i>2026-11-02</i></li>
+                                          <li><a href="https://www.qbitai.com/2026/10/506055.html" rel="bookmark" title="19个项目18个成功，6个GPCR靶点全获命中！国产AI制药再破技术天花板"target="_blank">19个项目18个成功，6个GPCR靶点全获命中！国产AI制药再破技术天花板</a><i>2026-10-28</i></li>
+                                          <li><a href="https://www.qbitai.com/2026/10/505956.html" rel="bookmark" title="中国AI刷爆英伟达GPU性能榜，这家公司拿下88项第一"target="_blank">中国AI刷爆英伟达GPU性能榜，这家公司拿下88项第一</a><i>2026-10-28</i></li>
+                                      
+                    </ul>
+                </div>
+    		</div>
+            <!--左侧分享-->
+                        <div class="share_pc">
+            	<div class=" share_icon"></div>
+                <div class="share_weixin"><span id="weixin_qrcode"></span>
+        <div id="qrcode" style="display:none;">扫码分享至朋友圈</div>
+        <div></div></div>
+
+                <a href="https://service.weibo.com/share/share.php?url=https://www.qbitai.com/2026/11/507586.html&title=不靠堆砌数据，让机器人看懂真实物理世界 | 招商局狮子山实验室发布「驭物™ Lion-ER-35B-A3B」具身推理模型&appkey=4017757111&searchPic=true&ralateUid=6105753431" class="share_sina" data-cmd="tsina" title="分享到新浪微博"target="_blank"><div class="share_weibo"></div></a>
+                <a href=""><div class="share_qzone"></div></a>
+            </div>
+                        <script>
+                // 设置参数方式
+                var qrcode = new QRCode('qrcode', {
+                  text: 'https://www.qbitai.com/2026/11/507586.html',
+                  width: 256,
+                  height: 256,
+                  colorDark : '#000000',
+                  colorLight : '#ffffff',
+                  correctLevel : QRCode.CorrectLevel.H
+                });
+                </script>
+                <script>
+                var weixin_qrcode  = document.getElementById('weixin_qrcode');
+                var qrcode = document.getElementById('qrcode');
+                $(document).click(function(){
+                    $("#qrcode").hide();
+                });
+                weixin_qrcode.onclick = function(event){
+                    event.stopPropagation();
+                    var val = qrcode.style.display;
+                    if(val == 'none'){
+                        qrcode.style.display = 'block'; //显示
+                    }else{
+                        qrcode.style.display = 'none'; //隐藏
+                    }
+                }
+                qrcode.onclick = function(event){
+                        event.stopPropagation();
+                        qrcode.style.display = 'none'; //隐藏
+                }
+
+               
+
+                function shareToQq(title,url,picurl){
+                var shareqqzonestring='https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?summary='+title+'&url='+url+'&title='+title+'&pics='+picurl;
+                window.open(shareqqzonestring,'newwindow','height=400,width=400,top=100,left=100');
+                }
+                $('.share_qzone').click(function(e){
+                shareToQq("不靠堆砌数据，让机器人看懂真实物理世界 | 招商局狮子山实验室发布「驭物™ Lion-ER-35B-A3B」具身推理模型","https://www.qbitai.com/2026/11/507586.html","https://www.qbitai.com/wp-content/uploads/2026/11/8260f893c11ef2f7091cf94c37e9073d.jpeg");
+                })
+    
+                </script>
+<!--相关阅读 start-->
+          
+                                          <div class="xiangguan">
+                          <h3>相关阅读</h3>
+                            <ul id="tags_related">
+                                         <div class="picture_text">
+                          <div class="picture"><a href="https://www.qbitai.com/2026/08/476129.html" target="_blank">
+                            <img src="https://i.qbitai.com/wp-content/uploads/2026/08/c59dfc46d4eedfda0da355d385224f6b.webp" alt="" title="">                          </div>
+                          <div class="text_box">
+                              <h4><a href="https://www.qbitai.com/2026/08/476129.html" target="_blank">攻克行业级柔性操作难题！招商局狮子山人工智能实验室首次亮相WRC 2026</a></h4>
+                              <p>全栈自研，真机叠衣ICRA夺冠</p>
+                              <div class="info"><span class="author"><a href="/?author=50" target="_blank">邓思邈</a></span><span class="author"><span class="time">2026-08-20</span><div class="tags_s">
+                                                                        <i></i>
+                                    <a href="https://www.qbitai.com/tag/%e5%85%b7%e8%ba%ab%e6%99%ba%e8%83%bd" rel="tag">具身智能</a> <a href="https://www.qbitai.com/tag/%e6%8b%9b%e5%95%86%e5%b1%80" rel="tag">招商局</a> <a href="https://www.qbitai.com/tag/%e7%8b%ae%e5%ad%90%e5%b1%b1%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e5%ae%9e%e9%aa%8c%e5%ae%a4" rel="tag">狮子山人工智能实验室</a>                                                                    </div></div>
+                          </div>
+                      </div>
+                
+                                              </ul>
+                      </div> 
+              
+            <!--相关阅读 end-->
+		</div>
+        <div class="content_right">
+           			<!--热门文章 start-->
+      <div class="yaowen">
+        <h3>热门文章</h3>
+                                <div class="picture_text">
+<a href="https://www.qbitai.com/2026/10/506904.html" target="_blank">
+<div class="picture"><img width="128" height="56" src="https://i.qbitai.com/wp-content/uploads/2026/10/c34205e157d3908ed8009d855435bdbb.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" 0="" decoding="async" loading="lazy" /></div>
+<div class="text_box"><h4>刚刚，DeepSeek重磅开源：Agent底座架构！</h4></div>
+<div class="info">2026-10-31</div>
+</a>
+</div><div class="picture_text">
+<a href="https://www.qbitai.com/2026/11/507107.html" target="_blank">
+<div class="picture"><img width="128" height="72" src="https://i.qbitai.com/wp-content/uploads/2026/11/53cb82819b4687433d06415442b662ab.webp" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" 0="" decoding="async" loading="lazy" /></div>
+<div class="text_box"><h4>小米开源了个150元的AI小玩意，火到配件都涨价了</h4></div>
+<div class="info">2026-11-02</div>
+</a>
+</div><div class="picture_text">
+<a href="https://www.qbitai.com/2026/10/506227.html" target="_blank">
+<div class="picture"><img width="128" height="72" src="https://i.qbitai.com/wp-content/uploads/2026/10/article-image-6-1.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" 0="" decoding="async" loading="lazy" srcset="https://i.qbitai.com/wp-content/uploads/2026/10/article-image-6-1.png 1080w, https://i.qbitai.com/wp-content/uploads/2026/10/article-image-6-1-768x432.png 768w" sizes="auto, (max-width: 128px) 85vw, 128px" /></div>
+<div class="text_box"><h4>刚刚，Gemini 4 Carbon全面超越Opus 5.5！首发Token半价</h4></div>
+<div class="info">2026-10-29</div>
+</a>
+</div><div class="picture_text">
+<a href="https://www.qbitai.com/2026/10/506819.html" target="_blank">
+<div class="picture"></div>
+<div class="text_box"><h4>榜一，拿来吧你！智元这波双模型杀穿多榜榜单</h4></div>
+<div class="info">2026-10-30</div>
+</a>
+</div><div class="picture_text">
+<a href="https://www.qbitai.com/2026/11/507038.html" target="_blank">
+<div class="picture"><img width="99" height="96" src="https://i.qbitai.com/wp-content/uploads/2026/11/123b45bfbfd4396348456d031a78ae2c.webp" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" 0="" decoding="async" loading="lazy" /></div>
+<div class="text_box"><h4>Claude紧急叫停！暗改Harness禁止逆向游戏</h4></div>
+<div class="info">2026-11-01</div>
+</a>
+</div>                      </div>
+      <!-- 
+<form role="search" method="get" class="search-form" action="https://www.qbitai.com/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+ -->
+			<!--热门文章 end-->
+        </div>
+</div>
+
+
+<!--底部版权-->
+<div class="footer">
+	<div class="footer_con">
+        <div class="footer_r">
+        	<ul class="links"><li><a href="/?page_id=99" target="_blank">关于量子位</a></li><li><a href="/?page_id=101" target="_blank">加入我们</a></li><li><a href="/?page_id=103" target="_blank">寻求报道</a></li><li><a href="/?page_id=105" target="_blank">商务合作</a></li></ul>
+            
+            <div class="icon_btns">
+            <!-- <a href="/?page_id=183"target="_blank"><i class="weixin_icon"></i></a> -->
+            <a href="javascript:void(0)" class="footer_weixin"><div class="fa fa-weixin"id="biaojiwei2"><i class="weixin_icon"></i></div>
+    <div class="weixin_pop" id="popfoot" style="display:none">
+       <p>扫码关注量子位</p>
+       <img src="https://www.qbitai.com/wp-content/uploads/2019/01/qrcode_QbitAI_1.jpg">
+    </div>
+</a>
+            <a href="https://weibo.com/qbitai?is_all=1"target="_blank"><i class="weibo_icon"></i></a>
+            <a href="https://www.zhihu.com/org/liang-zi-wei-48/activities"target="_blank"><div class="share_zhihu"></div></a>
+            <a href="https://www.toutiao.com/c/user/53624121633/#mid=1556041376883713"target="_blank"><div class="share_toutiao"></div></a>
+            </div>
+            <script type="text/javascript">
+         $('#biaojiwei2').click(function(event){
+                event.stopPropagation();
+               $('#popfoot').show();
+                })
+             $('#popfoot').click(function(){
+               $('#popfoot').hide();
+                })
+        </script>
+        </div>
+        <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/liangziwei/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="wp-postviews-cache-js-extra">
+var viewsCacheL10n = {"admin_ajax_url":"https://www.qbitai.com/wp-admin/admin-ajax.php","post_id":"507586"};
+//# sourceURL=wp-postviews-cache-js-extra
+</script>
+<script id="wp-postviews-cache-js" src="https://www.qbitai.com/wp-content/plugins/wp-postviews/postviews-cache.js?ver=1.68"></script>
+<script id="liangziwei-script-js-extra">
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+//# sourceURL=liangziwei-script-js-extra
+</script>
+<script id="liangziwei-script-js" src="https://www.qbitai.com/wp-content/themes/liangziwei/js/functions.js?ver=20160816"></script>
+<script id="wxcs-js" src="//qzonestyle.gtimg.cn/qzone/qzact/common/share/share.js?ver=7.1"></script>
+	<script id="wxcs-script">
+	WX_Custom_Share = function(){
+		
+		var xhr = null;
+		var url = 'https://www.qbitai.com/wp-admin/admin-ajax.php';
+		var signature_url = window.location.href.split('#')[0];
+		var formData = {
+			action: 'wxcs_get_share_info',
+			type: 'post',
+			id: '507586',
+			signature_url: signature_url
+		};
+		
+		this.init = function(){
+			if( window.XMLHttpRequest ){
+				xhr = new XMLHttpRequest();
+			}
+			else if( window.ActiveXObject ){
+				xhr = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			
+			get_share_info();
+		}
+		
+		function formatPostData( obj ){
+			
+			var arr = new Array();
+			for (var attr in obj ){
+				arr.push( encodeURIComponent( attr ) + '=' + encodeURIComponent( obj[attr] ) );
+			}
+			
+			return arr.join( '&' );
+		}
+		
+		function get_share_info(){
+			
+			if( xhr == null ) return;
+			
+			xhr.onreadystatechange = function(){
+				if( xhr.readyState == 4 && xhr.status == 200 ){
+					
+					var data = eval('(' + xhr.responseText + ')');
+					
+					if( data == null ){
+						return;
+					}
+					
+					var info = {
+						title: data.title,
+						summary: data.desc,
+						pic: data.img,
+						url: data.url
+					};
+					
+					if( formData.type == 'other' ){
+						info.title = document.title;
+						info.summary = location.href;
+						info.url = location.href;
+					}
+					
+					if( data.use_actual_url == true ){
+						info.url = location.href;
+					}
+
+					if( data.error ){
+						console.error( '自定义微信分享: ', data.error );
+					}
+					else if( data.appid ){
+						info.WXconfig = {
+							swapTitleInWX: data.swapTitleInWX,
+							appId: data.appid,
+							timestamp: data.timestamp,
+							nonceStr: data.nonceStr,
+							signature: data.signature
+						};
+					}
+					
+					setShareInfo( info );
+				}
+			};
+			
+			xhr.open( 'POST', url, true);
+			xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+			xhr.send( formatPostData( formData ) );
+		}
+	}
+	
+	new WX_Custom_Share().init();
+	</script>
+	<script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>        <div class="footer_l">
+        	<div class="footer_logo"><a href="#" target="_blank"></a><span>追踪人工智能新趋势，报道科技行业新突破</span></div>
+            <div class="line3"></div>
+            <!--<p>量子位 QbitAI 版权所有&copy;北京极客伙伴科技有限公司 京ICP备17005886号-1</p>-->
+            <p>量子位 QbitAI 版权所有&copy;北京极客伙伴科技有限公司 <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备17005886号-1</a ></p >
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.268 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2026-11-05 08:30:31 -->
+
+<!-- super cache -->
