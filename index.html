@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AI 产品情报 · 2026-11-05 · 腾讯 Hy4 · OpenAI Images 2.6 · 国行苹果智能 · 驭物 Lion-ER</title>
+<title>AI 产品情报 · 2026-11-06 · World Labs Frameboy · GPT-6 Cyber · Gemini Omni 1.2 Flash · 百灵 Ling-3.2-flash</title>
 <style>
   :root {
     --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
@@ -103,344 +103,378 @@
 </head>
 <body>
 <div class="wrap">
-<h1>AI 产品情报 · 2026-11-05（周四）</h1>
-<div class="cover"><strong>本版覆盖媒体 / 一手源约 18 家（官方/一手 6 · 中文 8 · 外文 4）</strong>：Hy4 一手是腾讯英文新闻稿 + 科创板日报/财新/IT之家；Images 2.6 一手是 OpenAI 博客 + The Verge / TNW，官帖约 37.8 万曝光；国行苹果智能是动点科技/新华网/界面/新浪科技交叉；驭物 Lion-ER 一手是量子位长文 + Hugging Face 模型卡（Apache 2.0）。窗内未见机器之心/晚点专稿，不编造。</div>
+<h1>AI 产品情报 · 2026-11-06（周五）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 20 家（官方/一手 8 · 中文 7 · 外文 5）</strong>：Frameboy 一手是 World Labs 博客 + 可玩 demo frameboy.worldlabs.ai，中文见凤凰网科技，英文见 Unite.AI / RuntimeWire；GPT-6 Cyber 一手是 OpenAI 博客 + System Card，外文 The Verge / TechCrunch / CSO Online，中文第一财经/TechFlow；Omni 1.2 Flash 一手是 Google DeepMind 开发者博客 + Google Cloud / Workspace 更新，中文界面/新浪财经快讯；Ling-3.2-flash 一手是蚂蚁百灵 changelog + 模型文档，中文 IT之家，日文 ORIENS。窗内量子位/机器之心未见这四条专稿，不编造。</div>
 <div class="meta">
-  <p><strong>时间范围</strong>：周四版——昨天（2026-11-04）日报之后至北京时间 2026-11-05 早。对应美东约 11-03 晚 → 11-04 晚。成稿北京时间 2026-11-05 约 09:30。</p>
-  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定腾讯 Hy4、OpenAI Images 2.6、国行苹果智能 Beta、招商局驭物 Lion-ER 四条 → 读官方页/科创板日报/财新/IT之家/OpenAI/The Verge/动点/量子位/HF → 交叉 X 热度与竞品。</p>
-  <p><strong>去重与跳过</strong>：已报不重复——Apollo World / FlashProve / Hydrogen-1.0 / Thinker-Sim（11-04）、LongCat-2.5 / SenseNova 6.8 Flash / MOSS-Live / LifeVal（11-03）、AWM / Meta×傅利叶 Max / Claude 禁克隆游戏（11-02）等。落选简述见文末（含 MoWorld 2.0、OpenAI 收购 Pierre）。</p>
+  <p><strong>时间范围</strong>：周五版——昨天（2026-11-05）日报之后至北京时间 2026-11-06 早。对应美东约 11-04 晚 → 11-05 晚。成稿北京时间 2026-11-06 约 09:40。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 Frameboy（Atlas 实时）、GPT-6 Cyber、Gemini Omni 1.2 Flash、百灵 Ling-3.2-flash 四条 → 读官方页/可玩 demo/The Verge/TechCrunch/凤凰/IT之家/Cloud 博客 → 交叉竞品与热度。</p>
+  <p><strong>去重与跳过</strong>：已报不重复——Hy4 / Images 2.6 / 国行苹果智能 / Lion-ER（11-05）、Apollo World / FlashProve / Hydrogen / Thinker-Sim（11-04）、Ling-3.1-flash-1019（10-29，本版是<strong>3.2</strong> 新版本而非复读）。Genie 4 已在 10-28 报，本版只作 Frameboy 竞品对照。</p>
 </div>
 
 <div class="alert">
   <strong>今日要点（先看这四条）</strong>
   <ol>
-    <li><strong>腾讯发混元 Hy4 正式版</strong>：首次视觉理解 + Computer Use；系列约 770B；宣称跻身开源第一梯队，但承认距顶尖闭源仍有差距；权重「未来几天」开源，当天还下不到；API 价不变并打五折促销。</li>
-    <li><strong>OpenAI 上线 Images 2.6</strong>：ChatGPT 原生出 GIF（可调速、逐帧改）；官方称生图快约 50%；API 分 Flare（快）/ Sunburst（精）；官帖约 37.8 万曝光。Sora 关停后的短动画补位。</li>
-    <li><strong>国行苹果智能开发者 Beta 开测</strong>：随 iOS 27.3 Dev Beta；Siri/写作/视觉接阿里千问；12 月正式版；不含 WWDC 下一代 Siri AI。实测槽点：发热、续航、权限弹窗打断。</li>
-    <li><strong>招商局狮子山开源驭物 Lion-ER</strong>：35B MoE / 激活约 3B 具身推理 VLM；能力牵引数据引擎；自报十项基准均分 65.29；HF Apache 2.0。对世界模型/具身数据产线极相关。</li>
+    <li><strong>World Labs 发 Frameboy</strong>：把 Atlas 世界模型做成浏览器里最高约 15 fps 的实时漫游 demo；云端 GPU 推流；Viewfinder 闭测可「先搭场景再实时逛」。世界模型公司必看。</li>
+    <li><strong>OpenAI 发 GPT-6 Cyber</strong>：面向授权安全研究的漏洞发现/利用模型；ExploitGym 48.5%（相对 5.6 Cyber +51%）；Preparedness 升至 Critical；仅 Daybreak Red 审核客户，无消费端 demo。</li>
+    <li><strong>Google 发 Gemini Omni 1.2 Flash 并 GA</strong>：原生最长 15 秒视频（原 10 秒）、多轮对话改片、参考一致性增强；720p 约 $0.07/秒，价降约 30%；API / Cloud / Vids 可用。</li>
+    <li><strong>蚂蚁百灵上线 Ling-3.2-flash</strong>：相对已报的 3.1，这是<strong>原生多模态</strong>新版本（同档 560B/25B/1M，但原生吃图/视频）；强化视觉、长程 Agent、3D、医疗；前两周限时免费。勿写成 3.1 复读。</li>
   </ol>
 </div>
 
 <div class="toc">
-  <a href="#hy4"><span class="tag t-hot">大厂开源旗舰</span>腾讯发布混元 Hy4：首次能看图、能操作电脑</a>
-  <a href="#images26"><span class="tag t-hot">生图 / GIF</span>OpenAI 发布 Images 2.6：ChatGPT 原生出可编辑 GIF</a>
-  <a href="#apple"><span class="tag t-mid">消费端 AI</span>国行苹果智能 Beta 开测：Siri 搭档千问</a>
-  <a href="#lion"><span class="tag t-hot">具身 / 世界理解</span>招商局开源驭物 Lion-ER：3B 激活打十项具身基准</a>
+  <a href="#frameboy"><span class="tag t-hot">世界模型 · 实时</span>World Labs 发布 Frameboy：Atlas 最高约 15 fps 浏览器实时漫游</a>
+  <a href="#cyber"><span class="tag t-hot">安全 Agent</span>OpenAI 发布 GPT-6 Cyber：漏洞发现升 Critical，仅 Daybreak Red</a>
+  <a href="#omni"><span class="tag t-hot">视频生成 · GA</span>Google 发布 Gemini Omni 1.2 Flash：15 秒视频 + 价降 30%</a>
+  <a href="#ling32"><span class="tag t-mid">开源系 · 多模态</span>蚂蚁百灵上线 Ling-3.2-flash：原生多模态，不是 3.1 复读</a>
 </div>
 
-<!-- ========== 1 Hy4 ========== -->
-<article id="hy4">
-  <h2><span class="tag t-hot">大厂开源 · Agent</span>腾讯发布混元 Hy4 正式版：首次视觉理解 + 电脑操作，权重还没放出</h2>
-  <div class="verdict"><strong>结论：</strong>这是腾讯混元旗舰从「答题」切到「能看、能点界面干活」的正式版。产品侧已进 TokenHub / WorkBuddy / CodeBuddy / 元宝等；开源叙事强，但正式版权重当天不可下载——只有 8 月的 preview 可下。对世界模型公司：关注它在 Blender/CAD/游戏引擎上的 Computer Use 与 GameDev 专项训练，以及「模型—产品共设计」节奏；别被 770B 数字带跑，关键是可交付的办公/开发闭环与独立评测何时出现。</div>
+<!-- ========== 1 Frameboy ========== -->
+<article id="frameboy">
+  <h2><span class="tag t-hot">世界模型 · 实时交互</span>World Labs 发布 Frameboy：Atlas 世界模型进浏览器，最高约 15 fps 实时转相机</h2>
+  <div class="verdict"><strong>结论：</strong>这是李飞飞 World Labs 把 9 月的 Atlas 从「等几秒/几分钟出一条视频」推进到「边转相机边出画」的研究预览。产品形态是云端 GPU 推流到浏览器的 Frameboy demo，并嵌进闭测 Viewfinder。对我们：控制方式接近 WASD/相机漫游，比逐帧精确 6-DoF 轨迹更贴合自家接口；必开 <a href="https://frameboy.worldlabs.ai/">frameboy.worldlabs.ai</a> 亲测，别只看 GIF。注意：15 fps 是上限、要烧云端 GPU、官方承认比本地渲染贵。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>北京时间 <strong>2026-11-04</strong>，腾讯宣布混元最新一代大模型 <strong>Hy4</strong> 正式版发布。相对 8 月底的 Hy4 preview：首次引入视觉理解、首次支持 Computer Use（命令行 + GUI），并扩大预训练/后训练。官方称「Hy 首次跻身最强开源模型之列」，同时承认与顶尖闭源仍有较大差距。正式版权重与系统卡计划「未来几天」放出；当天 HF/GitHub 未见正式版仓库。</p>
-  <p class="src">一手：<a href="https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/">腾讯英文新闻稿 11-04</a> · 中文：<a href="https://www.cls.cn/detail/2525324">科创板日报</a> · <a href="https://www.caixin.com/2026-11-04/102500988.html">财新</a> · <a href="https://www.ithome.com/1/022/035.htm">IT之家</a> · 对照：<a href="https://omniakey.com/zh/blog/tencent-hy4">OmniaKey 对比表</a> · preview 权重：<a href="https://github.com/Tencent-Hunyuan/Hy4-preview">GitHub Hy4-preview</a></p>
+  <p>美东 <strong>2026-11-05</strong>（北京时间约 11-06 凌晨），World Labs 发博文 <strong>Frameboy: Atlas in Real-time</strong>，并开放研究预览 demo。Atlas 是两个月前发布的自回归世界模型：一帧一帧生成、像素级相机控制。Frameboy 跑的是高度优化的 Atlas 变体，把画面从云端 GPU 流式推到浏览器，官方写「最高可达 <strong>15 fps</strong>」。同一天把实时能力叠进网页应用 <strong>Viewfinder</strong>（闭测，需候补名单）：先逐帧搭场景，再切 Frameboy 覆盖层实时逛。</p>
+  <p class="src">一手：<a href="https://www.worldlabs.ai/blog/atlas-realtime">World Labs 博客 11-05</a> · 可玩：<a href="https://frameboy.worldlabs.ai/">frameboy.worldlabs.ai</a> · 中文：<a href="https://original.ifeng.com/c/8xozKLkfue9">凤凰网科技</a> · 外文：<a href="https://www.unite.ai/world-labs-releases-frameboy-for-real-time-atlas-exploration/">Unite.AI</a> · <a href="https://runtimewire.com/article/world-labs-frameboy-atlas-real-time-15-fps">RuntimeWire</a> · <a href="https://spatialinsiders.com/stories/world-labs-atlas-real-time-worlds">Spatial Insider</a></p>
 
   <h3>2. 产品介绍</h3>
-  <p><strong>规格（媒体/preview 卡交叉）：</strong>Hy4 系列约 <strong>770B</strong> 总参、preview 卡写激活 <strong>49B</strong>、上下文 <strong>1M</strong>。正式版模型卡未公开，参数以报道为准。</p>
-  <p><strong>新能力：</strong></p>
   <ul>
-    <li><strong>视觉理解：</strong>细粒度图像、复杂图表、数学视觉推理；结合工具调用。</li>
-    <li><strong>Computer Use：</strong>CLI + GUI；对 Blender、CAD 与跨应用长程任务做专项训练。</li>
-    <li><strong>产品落地：</strong>腾讯云 TokenHub、WorkBuddy/CodeBuddy、元宝、企微智能助理大圆、ima；API 经 OpenRouter / Hermes / OpenCode；QQ、王者、和平精英等持续接入。</li>
+    <li><strong>交互：</strong>不是一次性出固定视频；用户像游戏里转相机，模型按位姿持续出新画面。可从单图长出可逛空间，也可用多视角照片做真实地标的新视角合成。</li>
+    <li><strong>相对 RTFM：</strong>去年有轻量实时 demo RTFM；Atlas 更大、数据更多——RTFM 偏已有视点插值，Atlas 可从单图/文本长出场景。</li>
+    <li><strong>Viewfinder：</strong>逐帧生成含颜色+深度；再开 Frameboy 流式覆盖。闭测，需 waitlist。</li>
+    <li><strong>成本边界：</strong>官方明说必须跑在强 GPU 云上，「相对本地渲染不便宜」；15 fps 是峰值，不保证全场景稳帧。</li>
   </ul>
-  <p><strong>官方自报数字（厂商口径）：</strong>WorkBuddy 均分 83.18、通过率 96.15%，12 场景中 9 个「国内第一」；金融盲测 Hy4 3.04 vs DeepSeek-V4.1-Flash 2.97 / Kimi K3.1 Pro 2.68 / GLM-5.3 2.68；幻觉率从 preview 12.95% → 7.2%；GameDev +19.1%、GameLogic +9.8%（相对 preview）。</p>
-  <p><strong>定价：</strong>输入 6 元 / 输出 18 元 / 缓存 0.3 元（每百万 tokens），与 preview 同价；TokenHub 刊例五折至 2026-12-31；WorkBuddy/CodeBuddy 11-04～11-15 有免费额度。Hy4 Flash「近期」发布。</p>
 
   <figure>
-    <img src="media/hy4-official.jpg" alt="腾讯 Hy4 官方发布配图"/>
-    <figcaption>腾讯新闻稿配图——看完应搞懂：这是 Hy4 正式版对外主视觉，不是可下载权重的下载页。</figcaption>
+    <img src="media/frameboy-og.jpg" alt="World Labs Frameboy 官方博文 OG 图"/>
+    <figcaption>World Labs 官方 OG——看完应搞懂：这是 Atlas 实时研究预览的主视觉，不是本地可下载权重。</figcaption>
   </figure>
   <figure>
-    <img src="media/hy4-cls-hero.jpg" alt="科创板日报 Hy4 报道配图"/>
-    <figcaption>科创板日报配图——正式版叙事核心：能看 + 能操作电脑，开源权重尚未落地。</figcaption>
+    <img src="media/frameboy-demo-og.jpg" alt="Frameboy 可玩站 opengraph"/>
+    <figcaption>frameboy.worldlabs.ai 的 OG——蓝色「卡带机」隐喻：换场景卡带、实时出画。</figcaption>
   </figure>
   <figure>
-    <img src="media/hy4-cls-demo.jpg" alt="Hy4 / WorkBuddy 演示配图"/>
-    <figcaption>科创板日报演示向配图——官方强调 WorkBuddy 人机双写与办公闭环。</figcaption>
+    <img src="media/frameboy-ifeng.png" alt="凤凰网科技 Frameboy 报道配图"/>
+    <figcaption>凤凰网科技配图——中文侧把卖点说成「不用预设镜头也能实时探索」。</figcaption>
   </figure>
 
-  <div class="warn">「最强开源」是腾讯自评；正式版权重未放时，开源排行榜无法计入正式版。独立第三方全量评测本版未见。以上金融/WorkBuddy/GameDev 数字均为厂商或合作方口径。</div>
+  <div class="videos">
+    <h4>页内视频（官方 CDN 已落本地）</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">World Labs 官方 · frameboy-hero</span>
+      <span class="why">看完应搞懂：慢速「点关键帧→等生成」vs 实时「转相机连续出画」的体验差。</span></p>
+      <video controls playsinline preload="metadata" poster="media/frameboy-og.jpg" src="media/frameboy-hero.mp4"></video>
+    </div>
+    <div class="vid">
+      <p class="vlabel"><span class="who">World Labs 官方 · real-world-landmarks</span>
+      <span class="why">看完应搞懂：多视角真实地标输入后，可在浏览器里转新视角，不只是幻想场景。</span></p>
+      <video controls playsinline preload="metadata" poster="media/frameboy-demo-og.jpg" src="media/frameboy-landmarks.mp4"></video>
+    </div>
+  </div>
 
   <div class="howto">
-    <strong>怎么自己看（15 分钟）</strong>
-    先读 <a href="https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/">腾讯英文稿</a> 里视觉 + Computer Use + 定价三段 → 再用 <a href="https://omniakey.com/zh/blog/tencent-hy4">OmniaKey</a> 对照 preview vs 正式版「什么能下、什么不能」→ 若要试用：OpenRouter / TokenHub 调 <code>hy4</code>，或 WorkBuddy 免费窗；不要以为 HF 上已有正式版。
+    <strong>怎么自己看（15 分钟，优先亲测）</strong>
+    ① 打开 <a href="https://frameboy.worldlabs.ai/">frameboy.worldlabs.ai</a>，选一个 curated 场景，用鼠标/触控转相机，感受延迟与一致性 → ② 回读 <a href="https://www.worldlabs.ai/blog/atlas-realtime">官方博文</a>「Why speed matters」段，对照慢速迭代 vs 实时探索的两段动画 → ③ 若有 Viewfinder 资格，试「先搭后逛」。看完应搞懂：实时不是更高画质，而是把「生成」变成「导航」。
   </div>
+
+  <div class="warn">本版作者打开了官方 demo 页并核验可访问；具体场景帧率/排队/账号墙以你当场为准。15 fps、云成本、研究预览边界均为厂商口径。</div>
 
   <h3>3. 导致什么影响（含竞品）</h3>
   <ul>
-    <li><strong>vs DeepSeek-V4.1-Flash / Kimi K3.1 Pro / GLM-5.3：</strong>腾讯自报在部分 Agent/金融任务压过；编程与顶尖闭源仍承认落后 GPT-6.1 Sol、Claude Opus 5.5。选型看你要「开源可自部署」还是「当下最强闭环」——正式版权重未到前，Hy4 更像云上产品模型。</li>
-    <li><strong>vs Claude Computer Use / GPT computer use / 美团 LongCat-2.5：</strong>Hy4 把「能看 + 点界面」绑进腾讯办公/游戏生态（WorkBuddy、UE/Unity/Godot），差异在分发与共设计，不单是基准分。</li>
-    <li><strong>vs Hy4 preview（已开源）：</strong>正式版能力升级但权重未放；需要本地跑仍只能用 preview。</li>
+    <li><strong>vs Google Genie 4（已报 10-28）：</strong>Genie 4 主打原生音视频 + 键盘/文本导演，仍是研究预览分发；Frameboy 更强调「像素级相机控制 + 浏览器实时推流」可玩入口。Genie 偏「导演世界」，Frameboy 偏「摄影机漫游世界」。</li>
+    <li><strong>vs Odyssey / 快乐生蚝 / Zing 等可玩世界：</strong>Odyssey 系常见动作条件与固定分辨率实时；Frameboy 挂在 Atlas 新视角合成能力上，单图/多视图进、相机出，更像空间智能 demo，而非完整游戏引擎。</li>
+    <li><strong>vs World Labs Marble / 离线 Atlas 视频导出：</strong>Marble 走可编辑持久 3D 资产；Frameboy 是流式帧生成。同一公司两条产品线：资产化 vs 即时漫游。</li>
+    <li><strong>vs 可灵 / Runway 长视频：</strong>那些是「生成一条片」；Frameboy 是「持续响应用户相机」。评测口径完全不同——应对齐 WBench/交互世界，而不是单镜 VBench。</li>
   </ul>
   <div class="ours">
-    <strong class="h">对我们（世界模型公司）</strong>
-    可抄三点：① 旗舰迭代用「preview → 正式版 → Flash」节奏，先产品后权重；② Computer Use 专项训 Blender/CAD/游戏引擎——和 3D/世界模型工具链相邻；③ 对外话术诚实写「开源第一梯队但仍落后闭源」。权重放出后再做一次独立对比更新。
+    <strong class="h">对我们（世界模型 / 数据生产）</strong>
+    三条可执行：① 把「交互帧率 + 相机一致性」写进验收，而不是只看离线视频美学；② 自家 WASD+IJKL 控制可对标 Frameboy 的实时相机回路做主观对比；③ Viewfinder「先搭场景再实时」接近数据产线里的 preview→explore。别被 15 fps 营销带跑——记云端成本与稳帧条件。
   </div>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">@TencentHunyuan 官帖约 4.3 万曝光 / 1k+ 赞</span>
-    <span class="pill">OpenCode Go 已接入（官帖约 1.5 万曝光）</span>
-    <span class="pill">科创板日报 / 财新 / IT之家同日</span>
+    <span class="pill">官方博文 + 可玩站同日上线</span>
+    <span class="pill">凤凰网科技中文快讯</span>
+    <span class="pill">Unite.AI / RuntimeWire / Spatial Insider 英文跟进</span>
     <span class="pill">窗内量子位未见专稿</span>
   </div>
   <ul>
-    <li><strong>正面：</strong>X 上开发者强调「能看图表 + 操作 GUI」比 770B 数字更重要；WorkBuddy 灯具 demo、OpenCode 接入速度快；有人拿成本对比称适合 swarm 杂活。</li>
-    <li><strong>批评 / 谨慎：</strong>「权重承诺未兑现」被反复提到；有日文用户称 OpenCode Go 配额远低于 DeepSeek；俄罗斯语帖提醒「营销基准需独立验证」。</li>
-    <li><strong>可信度：</strong>发布事实多家交叉一致；排行与金融分=厂商口径；本地可复现性暂无正式版权重。</li>
+    <li><strong>正面：</strong>中英文报道都抓住「不用预设完整镜头轨迹」；空间/影视/机器人仿真用例被反复点名；可玩链接降低「又是论文 GIF」怀疑。</li>
+    <li><strong>批评 / 谨慎：</strong>云端贵、15 fps 峰值、研究预览；X 账号 worldlabsai 当前检索异常（平台显示 suspended），热度信号改看博文与第三方稿。独立第三方帧率压测本版未见。</li>
+    <li><strong>可信度：</strong>产品上线与 demo URL 可核验；性能数字=官方；画质/长期一致性需自测。</li>
   </ul>
 
   <div class="media">
     <h4>媒体摘录</h4>
     <div class="mgroup">中文</div>
     <div class="mcard">
-      <p class="mhead">科创板日报 <span class="mtag">记者稿</span></p>
-      <p class="mtitle"><a href="https://www.cls.cn/detail/2525324">腾讯史上最强开源模型来了：混元Hy4正式版…</a></p>
-      <blockquote>尽管 Hy4 已经是目前最强的开源模型之一，但与顶尖闭源模型仍然存在较大差距。</blockquote>
-      <p class="mangle">角度：参数爬坡 + 视觉/电脑操作 + 定价促销最完整；含腾讯自我克制表述。</p>
-    </div>
-    <div class="mcard">
-      <p class="mhead">财新 <span class="mtag">产业</span></p>
-      <p class="mtitle"><a href="https://www.caixin.com/2026-11-04/102500988.html">腾讯发布新模型混元Hy4 首次引入视觉理解能力</a></p>
-      <blockquote>WorkBuddy 在办公 AI 智能体赛道取得先发优势后，腾讯在模型侧不断强化与 AI 产品的协同设计。</blockquote>
-      <p class="mangle">角度：强调 Co-Design 与发布节奏（Preview→正式版），非评测文。</p>
+      <p class="mhead">凤凰网科技 <span class="mtag">快讯</span></p>
+      <p class="mtitle"><a href="https://original.ifeng.com/c/8xozKLkfue9">李飞飞 World Labs 团队发布 Frameboy…最高每秒 15 帧</a></p>
+      <blockquote>用户不再需要预先设定完整的镜头运动轨迹，而是可以像操作电子游戏中的摄像机一样，实时探索…</blockquote>
+      <p class="mangle">角度：中文读者最快建立心智模型的一篇；含成本与峰值帧率提醒。</p>
     </div>
     <div class="mgroup">外文 / 一手</div>
     <div class="mcard">
-      <p class="mhead">Tencent Newsroom <span class="mtag">官方</span></p>
-      <p class="mtitle"><a href="https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/">Tencent Launches Hy4…</a></p>
-      <blockquote>Tencent Hy plans to release model weights and system cards in the coming days…</blockquote>
-      <p class="mangle">角度：能力清单、金融盲测分、定价与促销的权威口径。</p>
+      <p class="mhead">World Labs <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://www.worldlabs.ai/blog/atlas-realtime">Frameboy: Atlas in Real-time</a></p>
+      <blockquote>When the cost of a “bad idea” is near zero, there are no bad ideas…</blockquote>
+      <p class="mangle">角度：把「速度改变交互范式」讲透；附 Viewfinder 整合说明。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">Unite.AI <span class="mtag">行业</span></p>
+      <p class="mtitle"><a href="https://www.unite.ai/world-labs-releases-frameboy-for-real-time-atlas-exploration/">World Labs Releases Frameboy…</a></p>
+      <blockquote>streams optimized Atlas-generated scenes from cloud GPUs to a browser at up to 15 fps</blockquote>
+      <p class="mangle">角度：英文侧产品摘要清楚；非深度实测。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 2 Images 2.6 ========== -->
-<article id="images26">
-  <h2><span class="tag t-hot">生图 · 短动画</span>OpenAI 发布 Images 2.6：ChatGPT 原生生成可编辑 GIF，官方称快 50%</h2>
-  <div class="verdict"><strong>结论：</strong>这是 Sora 关停后，OpenAI 把「短动画」塞回图像工作流的产品动作——不是新视频模型，而是 GIF 成为和静图并列的标准输出。ChatGPT/Codex 全订阅档位可用；API 拆 Flare（快，低质最快约 6 秒）与 Sunburst（精、编辑一致性更好）。对世界模型/游戏向：可当分镜/表情/循环素材的廉价预演层，替代不了可控长视频或交互世界。</div>
+<!-- ========== 2 Cyber ========== -->
+<article id="cyber">
+  <h2><span class="tag t-hot">安全 Agent · Critical</span>OpenAI 发布 GPT-6 Cyber：授权漏洞发现更强，越界率大降，仅 Daybreak Red</h2>
+  <div class="verdict"><strong>结论：</strong>这是 OpenAI 把网络安全专用模型从 High 拉到 Preparedness Framework 的 <strong>Critical</strong> 档，并强调「会找洞、更听授权范围」。ExploitGym 48.5% vs GPT-5.6 Cyber 32.1%（相对约 +51%）；自报在 Firefox 挖出 81 个新高危、Linux 上做出 948 个提权利用。无 ChatGPT 消费 demo——只对审核通过的 Daybreak Red 客户开 API/Codex。对我们：跟世界模型无直接产品对标，但「高能力 + 强对齐 + 窄分发」是 Critical 能力的标准打法；TechCrunch 提醒防御方资源跟不上攻击面。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>美东 <strong>2026-11-04</strong>（北京时间约 11-05 早），OpenAI 发布 <strong>Images 2.6</strong>：ChatGPT、Codex 与 API 同步升级。核心卖点：① 原生 GIF（文案或照片→动画，可调播放速度、逐帧编辑）；② 官方称生图速度提升约 <strong>50%</strong>；③ API 新模型 <strong>GPT-Image-2.6 Flare</strong> 与 <strong>Sunburst</strong>；④ 参考图可保存复用、markup 编辑进 API、支持 SVG 导出与 complexity 参数。</p>
-  <p class="src">一手：<a href="https://openai.com/index/introducing-images-2-6/">OpenAI 博客 11-04</a> · <a href="https://developers.openai.com/api/docs/guides/image-generation">API 图像文档</a> · 外文：<a href="https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6">The Verge</a> · <a href="https://thenextweb.com/news/chatgpt-animated-gifs-images-2-6-openai">TNW</a> · 中文跟进：<a href="https://techflowpost.com/newsletter/143010">TechFlow</a> · <a href="https://www.panewslab.com/zh/articles/01a1a8b7-bdc3-770f-8256-69697e66ca3d">PANews</a></p>
+  <p>美东 <strong>2026-11-05</strong>，OpenAI 发布 <strong>GPT-6 Cyber</strong>：训练目标是在研究者划定的范围内发现并验证可利用漏洞。配套加长 System Card，并升级误用监测、IP allowlist、关键基础设施相关拦截。访问：先给部分 Daybreak Red，随后扩到全部 Red；同时向全部 Red 放 GPT-5.6 Cyber；Daybreak Blue（偏防御验证）继续扩 GPT-6 Astra。</p>
+  <p class="src">一手：<a href="https://openai.com/index/introducing-gpt-6-cyber/">OpenAI 博客</a> · <a href="https://deploymentsafety.openai.com/gpt-6-cyber/introduction">System Card</a> · 外文：<a href="https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch">The Verge</a> · <a href="https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/">TechCrunch</a> · <a href="https://www.csoonline.com/article/4244911/openais-gpt-6-cyber-ups-the-ante-on-vulnerability-discovery.html">CSO Online</a> · 中文：<a href="https://www.yicai.com/news/103428396.html">第一财经</a> · <a href="https://www.techflowpost.com/newsletter/143227">TechFlow</a></p>
 
   <h3>2. 产品介绍</h3>
   <ul>
-    <li><strong>谁能用：</strong>全球 ChatGPT / Codex 全档位（桌面、手机、网页）；开发者走 Image API。</li>
-    <li><strong>GIF：</strong>API 设 <code>output_format: "gif"</code>；<code>frame_count</code> 2–64（默认 9）、<code>frame_duration_ms</code> 20–2000。编辑端点暂不支持 GIF 输出。</li>
-    <li><strong>Flare vs Sunburst：</strong>Flare 偏快迭代与海报/商品布局；Sunburst 偏中高质与跨轮编辑一致性。</li>
-    <li><strong>规模叙事：</strong>官方称 ChatGPT+Codex+API 每周约 <strong>40 亿</strong> 张图（日均超 5 亿）——厂商口径。</li>
+    <li><strong>基准（厂商）：</strong>ExploitGym 48.5%（5.6 Cyber 32.1%，Astra 约 42.4%）；网页黑盒渗透新评测 recall 40.3% vs Astra 32.0%；RemoteExploitBench 上 Cyber 完成 95%，Astra+Blue 拒答 100%。</li>
+    <li><strong>对齐：</strong>ExploitGym Honeypot（仿 Hugging Face 事件）——无部署提示时 99.93% 不打范围外服务（5.6 Cyber 94.49%），有提示时 100%。</li>
+    <li><strong>真实影响（厂商/客户引言）：</strong>Firefox 81 新高危 + 帮助出补丁；Linux 复现 1724、利用 948；Cisco / Calif / CodeRabbit / Palo Alto / Dragos 等用例。</li>
+    <li><strong>谁能用：</strong>审核 Daybreak Red；API 默认 IP 白名单；另设 Critical Infrastructure 分组与 $10 亿 Frontline Defenders 补贴叙事。</li>
   </ul>
 
   <figure>
-    <img src="media/images26-official.jpg" alt="OpenAI Images 2.6 官方社交图"/>
-    <figcaption>OpenAI 官方社交图——看完应搞懂：Images 2.6 = 更快静图 + 原生 GIF，不是 Sora 回归。</figcaption>
+    <img src="media/cyber-og.png" alt="OpenAI GPT-6 Cyber 官方社交图"/>
+    <figcaption>OpenAI 官方社交图——看完应搞懂：这是安全研究专用模型发布，不是消费级 ChatGPT 新皮肤。</figcaption>
   </figure>
   <figure>
-    <img src="media/images26-verge.jpg" alt="The Verge 报道中的 ChatGPT GIF 界面示意"/>
-    <figcaption>The Verge 配图（源标 OpenAI）——界面可调 GIF 速度并逐帧查看。</figcaption>
+    <img src="media/cyber-tc.jpg" alt="TechCrunch Daybreak 相关配图"/>
+    <figcaption>TechCrunch 配图（Daybreak 叙事）——讨论焦点是「给防御方的窗口够不够大」。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/cyber-verge.jpg" alt="The Verge OpenAI 报道配图"/>
+    <figcaption>The Verge 报道视觉——强调「更会找洞，也更少越界」。</figcaption>
   </figure>
 
-  <div class="howto">
-    <strong>怎么自己看（8 分钟）</strong>
-    打开 ChatGPT → 直接说「make a gif of …」或上传照片要求做成循环动画 → 试调速度与逐帧 → 开发者读 <a href="https://developers.openai.com/api/docs/guides/image-generation">图像生成指南</a> 里 GIF 字段表。看完应搞懂：短循环动画已进图像产品，长镜头/物理可控仍不在这层。
-  </div>
+  <div class="warn">无公开消费端 demo / playground。基准、漏洞计数、客户引言均为 OpenAI 或具名客户口径；TechCrunch 指出 Linux 漏洞狩猎花费约 $120 万，相对其他研究投入并不夸张，引发「资源是否够」争论。</div>
 
-  <div class="videos">
-    <h4>相关动态（X 官帖，非页内视频文件）</h4>
-    <p class="src">OpenAI 官帖「Images, upgraded—introducing ChatGPT Images 2.6」约 <strong>37.8 万</strong> 曝光 / 7.1k 赞 / 638 RT（统计抓取于北京时间 11-05 早）：<a href="https://x.com/OpenAI/status/2118124944928432327">x.com/OpenAI/status/2118124944928432327</a>。OpenAIDevs API 帖约 7.7 万曝光。稳定可嵌的独立演示 MP4 本版未抽出；以官方页 GIF 示例与 The Verge 截图为准。</p>
+  <div class="howto">
+    <strong>怎么自己看（10 分钟）</strong>
+    读 <a href="https://openai.com/index/introducing-gpt-6-cyber/">官方博文</a> 里 ExploitGym / Honeypot / Firefox·Linux 三段 → 扫 <a href="https://deploymentsafety.openai.com/gpt-6-cyber/introduction">System Card 目录</a> → 再读 <a href="https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch">The Verge</a> 与 <a href="https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/">TechCrunch</a> 的「越界率」和「防御资源」两面。看完应搞懂：能力↑ + 对齐↑ + 分发极窄；不是人人能调的 API。
   </div>
 
   <h3>3. 导致什么影响（含竞品）</h3>
   <ul>
-    <li><strong>vs 可灵 / Runway / Luma 视频模型：</strong>Images 2.6 的 GIF 是秒级短循环，不是镜头语言长视频；成本与交互路径完全不同。</li>
-    <li><strong>vs Midjourney / Ideogram / 混元生图：</strong>差异在「聊天里直接出可编辑动画 + API markup/SVG」；画质排行本版无独立盲测。</li>
-    <li><strong>vs Sora（已关停）：</strong>媒体明确写成「关停数月后的 GIF 补位」——满足社交短动态，不承诺电影级视频。</li>
+    <li><strong>vs GPT-6 Astra / Daybreak Blue：</strong>Astra 是通用前沿；在多数网络攻防任务上 Cyber 更强，且 Blue 对进攻任务大量拒答。选型看你要「通用工程」还是「授权进攻研究」。</li>
+    <li><strong>vs GPT-5.6 Cyber：</strong>分数与对齐双升，安全等级 High→Critical；旧模型反而向更广 Red 客户开放做过渡。</li>
+    <li><strong>vs 开源「去对齐」黑客模型叙事：</strong>OpenAI 用身份核验 + IP 白名单 + PSP 监测对打；TechCrunch 采访对象仍担心坏演员用开源无护栏模型。</li>
+    <li><strong>vs 传统扫描器 / 人工红队：</strong>客户引言强调长程利用链与复杂逻辑洞；不替代人工确认与补丁工程。</li>
   </ul>
   <div class="ours">
     <strong class="h">对我们</strong>
-    可当「角色表情 / UI 动效 / 分镜预演」的廉价层；世界模型评测仍要 WASD 交互与物理一致性，别把 GIF 热度误读成视频世界模型进展。
+    世界模型训练/仿真基础设施本身是高价值攻击面——关注 OpenAI 用同类模型加固自有训练基础设施的公开叙述。产品侧无直接对标需求；安全合规若接外部模型，记「Critical 能力必须配窄分发与审计」。
   </div>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">OpenAI 官帖 ~37.8 万曝光</span>
-    <span class="pill">The Verge / TNW 同日</span>
-    <span class="pill">用户已贴 pelican bike 等测试 GIF</span>
-    <span class="pill">中文科技大号多为转述，深度实测少</span>
+    <span class="pill">The Verge / TechCrunch / CSO 同日</span>
+    <span class="pill">第一财经 / TechFlow 中文跟进</span>
+    <span class="pill">无消费试用 → 民间实测少</span>
+    <span class="pill">安全圈焦点在 Daybreak 门槛与 Blue「被削弱」抱怨</span>
   </div>
   <ul>
-    <li><strong>正面：</strong>「终于不用跳到别的工具做 GIF」；创作者与 OpenArt/Figma Weave 等伙伴引用速度快、品牌一致性。</li>
-    <li><strong>批评 / 空缺：</strong>发布数小时内独立画质盲测未见；GIF 上限帧数/分辨率约束需自己踩；中文侧量子位等未见深度稿。</li>
-    <li><strong>可信度：</strong>产品上线事实扎实；「50% 更快」「40 亿/周」= OpenAI 自评。</li>
+    <li><strong>正面：</strong>Firefox / Linux 具体数字让「不是纸面榜」更好信；客户引言密集（Cisco、Calif、CodeRabbit 等）。</li>
+    <li><strong>批评：</strong>TechCrunch 标题即质疑「够不够」；有防御者称 Daybreak Blue 近期变「钝」；评估意识（eval awareness）仍被 OpenAI 自己点名为风险。</li>
+    <li><strong>可信度：</strong>发布事实扎实；能力边界依赖厂商评测与少数具名客户，缺少广泛第三方复现。</li>
   </ul>
 
   <div class="media">
     <h4>媒体摘录</h4>
     <div class="mcard">
       <p class="mhead">The Verge <span class="mtag">产品</span></p>
-      <p class="mtitle"><a href="https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6">ChatGPT will now make you animated GIFs</a></p>
-      <blockquote>Before this change, ChatGPT couldn’t natively generate GIFs in a single step.</blockquote>
-      <p class="mangle">角度：把 GIF 能力讲清楚，并点出 Sora 关停背景。</p>
+      <p class="mtitle"><a href="https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch">OpenAI says GPT-6 Cyber is better at finding vulnerabilities without going out of bounds</a></p>
+      <blockquote>…went out of bounds less than 1 percent of the time, down from around 5 percent with GPT-5.6 Cyber.</blockquote>
+      <p class="mangle">角度：把 Honeypot 对齐进步翻译成读者语言；点出 eval awareness。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">OpenAI <span class="mtag">官方</span></p>
-      <p class="mtitle"><a href="https://openai.com/index/introducing-images-2-6/">Introducing Images 2.6</a></p>
-      <blockquote>Images 2.6 generates images 50% faster than before.</blockquote>
-      <p class="mangle">角度：Flare/Sunburst 分工、GIF 用例、合作方引言的一手来源。</p>
+      <p class="mhead">TechCrunch <span class="mtag">调查评论</span></p>
+      <p class="mtitle"><a href="https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/">OpenAI released a new cybersecurity model. Is that enough?</a></p>
+      <blockquote>If there is a narrow window of time to patch the digital infrastructure… more urgency may be required.</blockquote>
+      <p class="mangle">角度：不否认能力，追问防御资源与 Daybreak 覆盖面；非软文。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 3 Apple ========== -->
-<article id="apple">
-  <h2><span class="tag t-mid">消费端 · 中国</span>国行苹果智能开发者 Beta 开测：Siri / 写作 / 视觉接入阿里千问</h2>
-  <div class="verdict"><strong>结论：</strong>这是 Apple Intelligence 在中国大陆的首次实质性落地测试——不是 WWDC 那套下一代对话式 Siri AI，而是「端侧基础能力 + 复杂任务可选跳转千问」的合规方案。12 月随 iOS 27.3 正式推送。对产品经理：重点看「权限弹窗 + 账号登录」如何牺牲连贯性换合规；实测已出现发热、续航、闪退槽点，不宜当主力机日常系统。</div>
+<!-- ========== 3 Omni ========== -->
+<article id="omni">
+  <h2><span class="tag t-hot">视频生成 · 正式 GA</span>Google 发布 Gemini Omni 1.2 Flash：原生 15 秒视频，价降约 30%，多轮改片</h2>
+  <div class="verdict"><strong>结论：</strong>这是 Google 把 Omni Flash 视频模型推到 <strong>正式 GA</strong> 的版本跃迁：时长 10s→15s、参考一致性增强、支持多轮对话改同一条片，720p 降到约 <strong>$0.07/秒</strong>（官方称相对 1.1 降约 30%）。入口：Gemini API、Google Cloud、Vids、Flow，以及 AI Ultra 侧 Gemini App 滚动放量。对我们：这是「短广告/商品视频产线」工具，不是交互世界模型；可当廉价分镜/营销层，别跟 Frameboy 的实时相机回路混为一谈。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>北京时间 <strong>2026-11-04</strong> 凌晨起，苹果随 <strong>iOS 27.3 Developer Beta 1</strong> 向中国大陆开发者开放国行 <strong>Apple 智能</strong>。首批：Siri、写作工具、视觉智能可调用<strong>阿里千问</strong>的文本/图像理解与生成；另有实时翻译、照片消除、智绘表情、通知/邮件摘要等。用户可自主开关千问集成；可 Apple 登录或千问账号。计划 <strong>12 月</strong> 正式版；本轮测试<strong>不含</strong> WWDC 2026 下一代 Siri AI；本轮仅 iPhone，国行 iPad/Mac 暂无。</p>
-  <p class="src">中文：<a href="https://cn.technode.com/post/2026-11-04/apple-intelligence-china-ios-27-3-beta-qwen/">动点科技</a> · <a href="https://www.news.cn/tech/20261104/3076cf04ae0d487d8a8c3b844a73b25f/c.html">新华网</a> · <a href="https://www.jiemian.com/article/15290920.html">界面新闻 · 首批实测</a> · <a href="https://finance.sina.com.cn/tech/roll/2026-11-04/doc-inixpmfe6217381.shtml">新浪科技 / 快科技</a> · <a href="https://finance.ifeng.com/c/8xmUnC0WuH4">凤凰网转述</a></p>
+  <p>美东 <strong>2026-11-05</strong>，Google DeepMind 产品博客与 Google Cloud 博客同步宣布 <strong>Gemini Omni 1.2 Flash</strong> 在 Gemini API 与 Gemini for business / Cloud 上 <strong>GA</strong>。Workspace 更新写明 Vids 支持 15 秒生成与画质改进。输出带 SynthID；Provisioned Throughput 对企业可用；音频参考仍 allowlist。</p>
+  <p class="src">一手：<a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/">Google 开发者博客</a> · <a href="https://cloud.google.com/blog/products/ai-machine-learning/gemini-omni-1-2-flash-generally-available">Google Cloud 博客</a> · <a href="https://deepmind.google/models/model-cards/gemini-omni-1-2-flash/">DeepMind 模型卡</a> · <a href="https://workspaceupdates.googleblog.com/2026/11/gemini-omni-12-flash-now-in-vids-with-15second-generations-and-improved-quality.html">Workspace / Vids 更新</a> · 中文：<a href="https://www.jiemian.com/article/15300746.html">界面新闻快讯</a> · <a href="https://finance.sina.com.cn/7x24/2026-11-06/doc-inixthps5897332.shtml">新浪财经</a> · 外文综述：<a href="https://www.unite.ai/zh-cn/googles-gemini-omni-1-2-flash-reaches-general-availability/">Unite.AI</a></p>
 
   <h3>2. 产品介绍</h3>
   <ul>
-    <li><strong>机型门槛：</strong>A17 Pro 及以上——iPhone 15 Pro/Pro Max、16 全系等；Apple ID 与设备地区均需中国大陆。</li>
-    <li><strong>千问怎么接：</strong>简单问答可走本地/系统能力；复杂任务弹窗询问是否调用千问并可能要求登录；上传图/文档前再次确认；官方称提交内容不用于千问训练。</li>
-    <li><strong>跳转体验：</strong>可点千问 Logo 进千问 App，对话上下文同步（新华网举例：睡眠建议→千问结合运动睡眠记录；视觉识别穿搭→跳转淘宝找同款）。</li>
-    <li><strong>空间：</strong>媒体提醒预留约 ≥15GB（系统包 + 本地模型）。</li>
+    <li><strong>时长：</strong>原生生成/编辑最长 <strong>15 秒</strong>（1.1 为 10 秒）；可按 1 秒步进选 3–15 秒。</li>
+    <li><strong>一致性：</strong>人物/商品/包装字体/品牌色跨镜头更稳；支持图像、≤3 秒动作片段、音频线索作参考。</li>
+    <li><strong>多轮编辑：</strong>同一条片上改背景、天气、产品、画幅，而不必整段重生成——官方示范从帐篷→森林→马厩等连续换景。</li>
+    <li><strong>成本工作流：</strong>360p/720p 快草稿 → 多轮改 → 升 1080p/4K；720p 约 $0.07/秒。</li>
+    <li><strong>已知不足（官方自述）：</strong>快速体育动作、剧烈剧本跳切、复杂物理仍在改进。</li>
   </ul>
 
   <figure>
-    <img src="media/apple-hero.jpg" alt="界面新闻等报道相关的苹果智能示意大图"/>
-    <figcaption>媒体报道配图——国行 Apple 智能首次开发者预览，正式版排期 12 月。</figcaption>
+    <img src="media/omni-og.png" alt="Gemini Omni 1.2 Flash 官方博文头图"/>
+    <figcaption>Google 官方头图——看完应搞懂：卖点是更长、更稳、更便宜的 Flash 视频，不是新的世界模型。</figcaption>
   </figure>
   <figure>
-    <img src="media/apple-jm.jpg" alt="国行苹果智能相关配图"/>
-    <figcaption>界面新闻页面相关配图——实测焦点在可用性与发热续航，而非「全面对标海外 Siri AI」。</figcaption>
+    <img src="media/omni-cloud.jpg" alt="Google Cloud Omni GA 配图"/>
+    <figcaption>Google Cloud 博客配图——强调企业 GA、SLA / Provisioned Throughput。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/omni-tryon-still.webp" alt="Omni 虚拟试穿演示静帧"/>
+    <figcaption>官方试穿演示静帧——多件服装参考下做 15 秒虚拟试穿，身份与衣服细节保持。</figcaption>
   </figure>
 
-  <div class="warn">本版作者未亲自刷 Beta；「发热、续航、闪退、弱网超时、长对话丢上下文」来自界面新闻汇总的多名测试者反馈，属早期 Beta 常见现象，正式版可能改善。</div>
+  <div class="videos">
+    <h4>页内视频（Google 官方 demo，已落本地）</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">Google 官方 · ECom Try-On Demo</span>
+      <span class="why">看完应搞懂：一张模特图 + 多件商品图 → 15 秒试穿转体，参考一致性是 1.2 的核心卖点。</span></p>
+      <video controls playsinline preload="metadata" poster="media/omni-tryon-still.webp" src="media/omni-tryon.mp4"></video>
+    </div>
+    <div class="vid">
+      <p class="vlabel"><span class="who">Google 官方 · Video Background Editing Demo</span>
+      <span class="why">看完应搞懂：多轮对话改背景/场景，人物表演与构图尽量不动——这是「改片」不是「重抽卡」。</span></p>
+      <video controls playsinline preload="metadata" poster="media/omni-og.png" src="media/omni-edit.mp4"></video>
+    </div>
+  </div>
 
   <div class="howto">
-    <strong>怎么自己看（若有备用机）</strong>
-    免费注册 Apple Developer → 设置里开 iOS 27.3 开发者 Beta → 「Apple 智能与 Siri」开启 → 先试端侧写作/消除，再故意问复杂题触发千问弹窗。看完应搞懂：国行路径是「可选云端扩展」，不是无感海外全功能一键复制。无备用机则读界面新闻实测即可，勿刷主力机。
+    <strong>怎么自己看（12 分钟）</strong>
+    打开 <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/">官方博文</a> 先把页内 demo 滑完（试穿 / 换景 / 万神殿 FPV）→ 再看本页已嵌的两条 → 开发者去 AI Studio / Cloud Console 建 15 秒任务；有 Workspace 就在 Vids 试。看完应搞懂：15 秒 + 多轮编辑改变的是广告/电商产线节奏。
   </div>
 
   <h3>3. 导致什么影响（含竞品）</h3>
   <ul>
-    <li><strong>vs 海外 Apple Intelligence（含 OpenAI）：</strong>国行用千问补齐生成式能力，隐私/合规弹窗更重；下一代 Siri AI 仍未进本轮。</li>
-    <li><strong>vs 华为 / 小米 / OPPO 端侧+云端助手：</strong>苹果晚两年补课，但分发在存量高端 iPhone；竞争点是「系统级入口 + 电商/生活闭环（千问→淘宝）」。</li>
-    <li><strong>vs 直接用千问 / 豆包 App：</strong>系统级唤起与上下文跳转是增量；深度长任务仍可能回到原生 App。</li>
+    <li><strong>vs 可灵 4.0 / Runway / Luma：</strong>Omni 1.2 Flash 主打 Google 分发（Vids/Ads/Cloud）与「便宜快迭代」；可灵等在长镜、中国内容生态与某些画质风格仍有阵地。选生态与价，不单选榜分。</li>
+    <li><strong>vs OpenAI Images 2.6 GIF（昨报）：</strong>GIF 是秒级循环图；Omni 是有声可剪的 15 秒视频。互补：Images 做表情/动效预演，Omni 做投放素材。</li>
+    <li><strong>vs Frameboy / Genie 4：</strong>后两者是可交互世界；Omni 是离线生成片。评测与产品叙事不要混用。</li>
+    <li><strong>vs Omni 1.1 Flash：</strong>同系列升级——更长、更稳、更便宜、正式 GA；音频参考仍受限。</li>
   </ul>
   <div class="ours">
     <strong class="h">对我们</strong>
-    消费端「本地小模型 + 云端大模型授权弹窗」会成为中国合规标配。世界模型若做 C 端，提前提设计：哪些推理必须端侧、哪些可云、如何不打断连续操控（WASD/指令流）。
+    可作「世界模型预告片 / 数据标注说明视频 / 对内演示」的廉价层；物理一致性与可交互性仍要靠自家世界模型。官方承认复杂物理是短板——别用它做物理保真评测素材源。
   </div>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">动点 / 新华 / 界面 / 新浪同日</span>
-    <span class="pill">界面汇总：基础功能可用，续航发热槽点集中</span>
-    <span class="pill">开发者预览，非大众热度峰值</span>
+    <span class="pill">Cloud 客户引言：Artlist / FLORA / invideo / Krea / Picsart / Photoroom</span>
+    <span class="pill">中文多为快讯（界面/新浪），深度稿少</span>
+    <span class="pill">窗内量子位/机器之心未见专稿</span>
   </div>
   <ul>
-    <li><strong>正面：</strong>「终于在国行 iPhone 上能用上苹果 AI」；照片消除、写作、翻译等端侧完成度相对更高。</li>
-    <li><strong>批评：</strong>后台索引发热耗电；第三方闪退/输入法卡顿；千问权限链路打断连贯；弱网易超时；图表/手写识别仍弱；长对话丢上下文。</li>
-    <li><strong>可信度：</strong>上线日程多源一致；体验评价依赖媒体实测汇总，未见大规模样本统计。</li>
+    <li><strong>正面：</strong>invideo 称「prompt 跟随与物理/声音在同档很快」；Photoroom 点名 15 秒是高频用户需求；FLORA/Krea 强调「只改你要求的部分」。</li>
+    <li><strong>批评 / 空缺：</strong>独立盲测排行本版未见；中文深度实测少；快速运动/复杂物理官方自黑。部分评测站（如 OrcaRouter）有泄露向文章，可信度低于官方 GA 公告，阅读时当传闻。</li>
+    <li><strong>可信度：</strong>GA 与定价事实扎实；画质断言混有客户引言与厂商 demo。</li>
   </ul>
 
   <div class="media">
     <h4>媒体摘录</h4>
     <div class="mcard">
-      <p class="mhead">动点科技 <span class="mtag">新闻</span></p>
-      <p class="mtitle"><a href="https://cn.technode.com/post/2026-11-04/apple-intelligence-china-ios-27-3-beta-qwen/">国行苹果智能正式开测，Siri、写作工具和视觉智能接入千问</a></p>
-      <blockquote>本次测试不包含 Siri AI 及苹果在 WWDC 2026 公布的其他下一代苹果智能功能。</blockquote>
-      <p class="mangle">角度：功能边界与 12 月正式版排期说得最清楚。</p>
+      <p class="mhead">Google DeepMind / Developers <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/">Gemini Omni 1.2 Flash: 15-second video and lower pricing</a></p>
+      <blockquote>We reduced the price by 30%… available at $0.07 per second for 720p video.</blockquote>
+      <p class="mangle">角度：能力清单 + 定价 + 官方 demo 的权威来源。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">界面新闻 <span class="mtag">实测汇总</span></p>
-      <p class="mtitle"><a href="https://www.jiemian.com/article/15290920.html">苹果智能Beta版首批实测反馈：基础功能可用度高，续航、稳定性成槽点</a></p>
-      <blockquote>完成模型包下载后，后台常驻的 AI 索引任务会带来持续发热现象…</blockquote>
-      <p class="mangle">角度：目前最有用的「别刷主力机」证据来源。</p>
+      <p class="mhead">界面新闻 <span class="mtag">快讯</span></p>
+      <p class="mtitle"><a href="https://www.jiemian.com/article/15300746.html">谷歌推出 Gemini Omni 1.2 Flash，价格下调 30%</a></p>
+      <blockquote>价格下调 30%</blockquote>
+      <p class="mangle">角度：中文传播主标题抓「降价」；深度不足，需回官方。</p>
     </div>
   </div>
 </article>
 
-<!-- ========== 4 Lion-ER ========== -->
-<article id="lion">
-  <h2><span class="tag t-hot">具身推理 · 开源</span>招商局狮子山开源驭物 Lion-ER：35B/激活 3B，能力牵引数据引擎打十项基准</h2>
-  <div class="verdict"><strong>结论：</strong>这不是又一个「堆数据」的多模态聊天模型，而是把具身推理拆成 8 域 39 项能力、用评测驱动补数据的 VLM。基座是 Qwen3.6-35B-A3B，HF 上 Apache 2.0 可下；官方自报十项基准等权均分 <strong>65.29</strong>（avg@4）。对世界模型/数据生产：方法论（能力蓝图 → 能力编译 → Eval-Driven Harness）比分数更值得抄；独立第三方复现本版未见，HF 下载量尚低。</div>
+<!-- ========== 4 Ling-3.2 ========== -->
+<article id="ling32">
+  <h2><span class="tag t-mid">原生多模态 · API</span>蚂蚁百灵上线 Ling-3.2-flash：560B/25B 原生吃图吃视频，别当成 3.1 复读</h2>
+  <div class="verdict"><strong>结论：</strong>相对 seen 里已报的 <strong>Ling-3.1-flash</strong>（偏文本/Agent 个人助手），<strong>Ling-3.2-flash</strong> 是同日径上的<strong>原生多模态新版本</strong>：仍是约 560B 总参 / 25B 激活 / 1M 上下文，但架构级融合视觉，官方强调四大能力——复杂视觉理解、多模态长程 Agent、3D 理解与交互、医疗多模态。API 兼容 OpenAI/Anthropic；对话页可玩；上线前两周限时免费。IT之家转述自报三项基准超 Claude Opus 5（max）——厂商口径，待独立复现。权重开源节奏本版未承诺（3.1 曾走 MIT 开源叙事，3.2 目前是平台上线）。</div>
 
   <h3>1. 发生了什么</h3>
-  <p>北京时间约 <strong>2026-11-04</strong>，招商局先进技术研究院下属<strong>狮子山人工智能实验室</strong>发布具身推理视觉语言模型 <strong>驭物™ Lion-ER-35B-A3B</strong>，并由量子位发长文解读；权重上线 Hugging Face（<code>cmriat/lion-ER-35B-A3B</code>），Apache 2.0，BF16 Safetensors，兼容 Transformers / vLLM / SGLang。</p>
-  <p class="src">一手/深度：<a href="https://www.qbitai.com/2026/11/507586.html">量子位 11-04 18:08</a> · 模型卡：<a href="https://huggingface.co/cmriat/lion-ER-35B-A3B">Hugging Face</a> · 快讯：<a href="https://www.techub.news/flash/6e4bc6af-017a-457d-992e-e623cdb8acc8">Techub</a></p>
+  <p>北京时间 <strong>2026-11-05</strong>，蚂蚁百灵开发者 changelog 写入：上线原生多模态模型 <strong>Ling-3.2-flash</strong>。IT之家等 11-06 早间跟进，并列出官方对比 Claude Opus 5 的三项分数与定价。模型文档选型表把 3.2 与 3.1 分行——3.1 仍定位日常办公/长周期研发 Agent；3.2 专门吃多模态。</p>
+  <p class="src">一手：<a href="https://developer.ant-ling.com/zh-CN/docs/getting-started/changelog/">百灵 changelog</a> · <a href="https://developer.ant-ling.com/zh-CN/docs/models/ling">Ling 模型文档</a> · <a href="https://www.ant-ling.com/zh/">ant-ling.com</a> · 中文：<a href="https://www.ithome.com/1/023/043.htm">IT之家</a> · 日文：<a href="https://ai-oriens.com/news/ant-ling-3-2-flash/">ORIENS</a> · 英文转述：<a href="https://www.orcarouter.ai/blog/ling-3-2-flash-native-multimodal-release">OrcaRouter</a>（第三方博客，非官方）</p>
 
   <h3>2. 产品介绍</h3>
   <ul>
-    <li><strong>架构：</strong>MoE，总参约 35B，每 token 激活约 3B；基于 Qwen3.6-35B-A3B 独立微调（非官方 Qwen 发行版）。</li>
-    <li><strong>数据引擎：</strong>能力蓝图（实体/空间/时序/物理/可供性/任务/社会/证据等 8 一级、39 二级）→「能力编译」出题 → 提纯/几何构题/定向合成三条监督 → Eval-Driven Data Harness 用错题反哺下一轮数据。监督样本 <strong>312,380</strong> 条。</li>
-    <li><strong>自报成绩（avg@4）：</strong>十项均分 65.29；Where2Place 64.28（+9.30 vs 基座）；ERQA 64.38（+6.19）；SAT 89.33；ERQA 轨迹理解 68.18（+12.12）。</li>
-    <li><strong>公开案例题型：</strong>相机转动方向、拔充电器轨迹选择、跨视角挂画方位、寿司卷入锅任务进度——量子位文内有逐步对比基座与 Qwen3.6-27B。</li>
+    <li><strong>规格：</strong>560B / 激活约 25B / 上下文 1M；原生图像 + 文本 + 视频输入。</li>
+    <li><strong>四大强化：</strong>复杂视觉理解；多模态长程 Agent；3D 理解与交互；医疗多模态（影像与报告）。</li>
+    <li><strong>官方自报（IT之家转述）：</strong>OmniDocBench1.5 92.21 vs Opus 5 90.56；ZEROBench(Sub) 43.71 vs 39.52；Vision2Web 85.86 vs 80.20；DesignArena 图像转前端 Elo 1238 进前十。</li>
+    <li><strong>定价（媒体转述）：</strong>输入约 $0.30 / 输出约 $0.90 每百万 tokens；前两周限时免费。以控制台为准。</li>
+    <li><strong>接入：</strong>对话页；OpenAI / Anthropic 兼容 API（蚂蚁百炼等）。</li>
   </ul>
 
   <figure>
-    <img src="media/lion-hf.jpg" alt="Hugging Face 上 Lion-ER 模型社交缩略图"/>
-    <figcaption>HF 模型社交图——看完应搞懂：可下载的是具身推理 VLM 权重，不是完整机器人策略控制器。</figcaption>
+    <img src="media/ling-ithome-1.png" alt="IT之家报道中的 Ling-3.2 相关配图"/>
+    <figcaption>IT之家配图——中文侧把 3.2 概括为「原生多模态 + 限时免费」。</figcaption>
   </figure>
   <figure>
-    <img src="media/lion-engine.jpg" alt="能力牵引具身数据引擎示意"/>
-    <figcaption>量子位文内「能力牵引数据引擎」示意——方法论核心：能力定义数据，而非数据堆出能力。</figcaption>
+    <img src="media/ling-ithome-2.jpg" alt="Ling-3.2 能力/基准相关配图"/>
+    <figcaption>IT之家第二张配图——看分数时记住：这是厂商自报，不是第三方盲测。</figcaption>
   </figure>
   <figure>
-    <img src="media/lion-bench.jpg" alt="Lion-ER 十项基准对比示意"/>
-    <figcaption>量子位文内基准对比图——分数为官方 avg@4 口径，待独立复现。</figcaption>
+    <img src="media/ling-ithome-3.jpg" alt="Ling 产品相关配图"/>
+    <figcaption>IT之家第三张配图——产品落地在对话页与兼容 API，而非本版可见的新权重包。</figcaption>
   </figure>
 
-  <div class="warn">模型卡写明：未验证用于安全关键或自主机器人控制；基准表现不保证迁移到新环境；训练-测试污染未独立证明。HF「Downloads last month」抓取时显示很低（个位数量级），社区热度仍早期。</div>
+  <div class="warn">标题与正文一律写 <strong>Ling-3.2-flash</strong>。3.1 是 10-29 已报的 Personal Agent 开源线；3.2 新增的是原生多模态能力。本版未见 Hugging Face 正式权重页；「开源」一词不要从 3.1 惯性抄过来。</div>
 
   <div class="howto">
-    <strong>怎么自己看（20 分钟）</strong>
-    打开 <a href="https://www.qbitai.com/2026/11/507586.html">量子位长文</a> 先读「四道公开基准题目」——看相机转动/轨迹/跨视角/任务进度四例 → 再打开 <a href="https://huggingface.co/cmriat/lion-ER-35B-A3B">HF 模型卡</a> 核对均分 65.29 与限制声明 → 有卡再按模型卡 vLLM/Transformers 示例跑 ERQA_155。看完应搞懂：强项是空间-时序-物理问答，不是端到端操控。
+    <strong>怎么自己看（10 分钟）</strong>
+    打开 <a href="https://developer.ant-ling.com/zh-CN/docs/getting-started/changelog/">changelog</a> 确认 11-05 条目 → 读 <a href="https://developer.ant-ling.com/zh-CN/docs/models/ling">选型表</a> 对比 3.2 vs 3.1 一行 → 上对话页随手传图/短视频问空间关系或文档题 → 需要 API 就走兼容协议把 model 设为 <code>Ling-3.2-flash</code>。看完应搞懂：这是多模态升级，不是 3.1 换皮降价。
   </div>
 
   <h3>3. 导致什么影响（含竞品）</h3>
   <ul>
-    <li><strong>vs 通用 VLM（Qwen-VL / GPT-4o 类）：</strong>Lion-ER 明确优化具身题型（相机运动、可供性轨迹、任务进度），不是通用聊天视觉。</li>
-    <li><strong>vs Apollo World / Thinker-Sim / Cosmos Sim-*：</strong>前三者偏仿真世界或车/机器人闭环；Lion-ER 是「看懂再决策」的感知-推理层，可嵌进仿真或真机栈，但不替代物理仿真器。</li>
-    <li><strong>vs 盲目堆 Open-X / DROID：</strong>量子位叙事的差异点正是「能力牵引 vs 堆数据」——对数据生产团队是可执行的流程模板。</li>
+    <li><strong>vs Ling-3.1-flash（已报）：</strong>同档参数，任务面从「文本 Agent」扩到「视觉/视频/3D/医疗」；选型按模态，不按版本号大小盲目替换。</li>
+    <li><strong>vs Claude Opus 5 / GPT-4o 类闭源多模态：</strong>官方挑三项基准宣称超越 Opus 5——需独立复现；优势叙事在价格与限时免费，不在全面碾压。</li>
+    <li><strong>vs Qwen-VL / Hy4 视觉 / Gemini：</strong>百灵强调 3D 与医疗垂直 + Agent 长程；腾讯 Hy4 更绑 Computer Use 与腾讯全家桶。生态与合规（蚂蚁金融场景）是差异点。</li>
+    <li><strong>vs 开源多模态权重（如部分 VL 开源）：</strong>3.2 本版是 API 产品优先；若你要自托管，先确认权重是否释放，别假设继承 3.1 的 MIT 包。</li>
   </ul>
   <div class="ours">
-    <strong class="h">对我们（世界模型 / 数据生产）</strong>
-    强烈建议内部分享量子位文中的四步引擎：① 写细能力蓝图（别只写「空间好」）；② 能力编译出题规范；③ 评测失败→区分标注问题 vs 能力缺口；④ 用缺口驱动下一批评测同构新题。可把 ERQA/Where2Place 类题嵌进自家世界模型「文字指令」中间轮验收。
+    <strong class="h">对我们</strong>
+    3D 理解与多模态长程 Agent 两句值得跟进——可作世界模型「看图/看视频理解」基线候选。先用免费窗跑一批空间关系 / 轨迹 / 界面 Agent 题，再决定是否进正式评测集。医疗向与我们主业无关，可忽略。
   </div>
 
   <h3>4. 用户如何评价</h3>
   <div class="heat">
-    <span class="pill">量子位长文（一手深度）</span>
-    <span class="pill">HF 已挂牌，下载量仍低</span>
-    <span class="pill">独立第三方复现未见</span>
-    <span class="pill">X 英文热度远低于 Hy4 / Images 2.6</span>
+    <span class="pill">IT之家 11-06 早间稿</span>
+    <span class="pill">changelog / 模型文档已更新</span>
+    <span class="pill">日文 ORIENS 跟进</span>
+    <span class="pill">社区实测与 HF 热度仍早期</span>
   </div>
   <ul>
-    <li><strong>正面：</strong>方法论清晰、开源可验证、激活参数小适合边缘；案例题能让非论文读者看懂差距。</li>
-    <li><strong>谨慎：</strong>分数相对基座上涨，跨模型绝对排名需自己跑；真机闭环、工具调用、长程失败恢复仍是「后续计划」。</li>
-    <li><strong>可信度：</strong>发布与开源事实扎实；基准数字=官方自报；社区口碑尚未形成。</li>
+    <li><strong>正面：</strong>「终于原生多模态」相对 3.1 的补齐感；限时免费降低试用门槛；兼容双协议省接入。</li>
+    <li><strong>批评 / 谨慎：</strong>超 Opus 5 的三项是挑基准；独立评测少；权重是否开源不清晰；OrcaRouter 等二手英文稿需降权。</li>
+    <li><strong>可信度：</strong>上线事实有 changelog + IT之家交叉；能力排名=厂商口径。</li>
   </ul>
 
   <div class="media">
     <h4>媒体摘录</h4>
     <div class="mcard">
-      <p class="mhead">量子位 <span class="mtag">深度</span></p>
-      <p class="mtitle"><a href="https://www.qbitai.com/2026/11/507586.html">不靠堆砌数据，让机器人看懂真实物理世界 | 驭物 Lion-ER…</a></p>
-      <blockquote>让能力成为数据的设计单元，让评测成为数据生产的起点。</blockquote>
-      <p class="mangle">角度：本版最完整的技术叙事与四道例题；偏实验室视角，非第三方测分。</p>
+      <p class="mhead">IT之家 <span class="mtag">新闻</span></p>
+      <p class="mtitle"><a href="https://www.ithome.com/1/023/043.htm">蚂蚁百灵大模型 Ling 3.2 Flash 发布：三项基准超越 Claude Opus 5，前两周限时免费</a></p>
+      <blockquote>在蚂蚁官方公布的评测结果中，Ling-3.2-flash 在三项基准上超过 Anthropic Claude Opus 5（max）…</blockquote>
+      <p class="mangle">角度：中文最完整的规格+定价+三项分数转述；记住「官方公布」四字。</p>
     </div>
     <div class="mcard">
-      <p class="mhead">Hugging Face <span class="mtag">模型卡</span></p>
-      <p class="mtitle"><a href="https://huggingface.co/cmriat/lion-ER-35B-A3B">cmriat/lion-ER-35B-A3B</a></p>
-      <blockquote>The model has not been validated for safety-critical decisions or autonomous robot control.</blockquote>
-      <p class="mangle">角度：限制声明与复现代码的权威来源；记得读 Intended use。</p>
+      <p class="mhead">蚂蚁百灵文档 <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://developer.ant-ling.com/zh-CN/docs/models/ling">Ling 模型文档 · 3.2 选型</a></p>
+      <blockquote>Ling-3.2-flash：最新一代原生多模态模型…重点强化复杂视觉理解、多模态长程 Agent、3D 理解与交互、医疗多模态</blockquote>
+      <p class="mangle">角度：和 3.1 分行表述的权威出处，避免复读旧版。</p>
     </div>
   </div>
 </article>
@@ -448,15 +482,16 @@
 <div class="alert" style="background:#f4f3ef;border-color:var(--line);">
   <strong>今日落选（简述）</strong>
   <ul>
-    <li><strong>魔芯 MoWorld 2.0</strong>（乌镇，昇腾原生 4D 世界模型）——与我们赛道极近，但报道偏通稿/官方自测帧率与成本，缺独立评测与可玩 demo；热度与可验证性不如 Lion-ER，故落选。跟进条件：公开权重/可复现基准或第三方实测。</li>
-    <li><strong>OpenAI 宣布收购 Pierre</strong>（Code Storage → Codex）——开发者工具并购，The Verge/官网有稿，非消费级产品发布，深度留给工程雷达。</li>
-    <li><strong>微信 WeVisOne-VL / 阿里云 Qovest / 鲸锐 AI / 曙光 OneBox</strong>——垂类或政企向，窗口内热度与世界模型相关度不足。</li>
-    <li>Apollo World / FlashProve / Hydrogen / Thinker-Sim——已在 11-04 报，无实质新版本。</li>
+    <li><strong>Genie 4 相关二轮讨论</strong>——10-28 已报；今日只作 Frameboy 对照，不重开专条。</li>
+    <li><strong>Omni 1.2 泄露向自媒体</strong>——官方 GA 已出，以官方与 Cloud 博客为准，不单开「泄露」条。</li>
+    <li><strong>Hy4 权重是否已放</strong>——11-05 已报「未来几天」；窗内无确认正式版权重落地，不重报。</li>
+    <li>Images 2.6 / 国行苹果智能 / Lion-ER——昨日已报，无实质新版本。</li>
   </ul>
 </div>
 
 <footer>
-  产品雷达 · 2026-11-05 · 仅供阿汤内部决策参考 · 事实以一手链接为准
+  产品雷达 · 2026-11-06 · 仅供阿汤内部决策参考 · 事实以一手链接为准
+  · <a href="../archive.html">往期</a>
 </footer>
 </div>
 </body>

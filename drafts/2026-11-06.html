@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI 产品情报 · 2026-11-06 · World Labs Frameboy · GPT-6 Cyber · Gemini Omni 1.2 Flash · 百灵 Ling-3.2-flash</title>
+<style>
+  :root {
+    --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
+    --bg:#faf9f6; --card:#fff; --accent:#0b57d0; --hot:#b3261e; --ok:#0f6b3c;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font:17px/1.7 "PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+  }
+  .wrap { max-width:740px; margin:0 auto; padding:40px 22px 90px; }
+  h1 { font-size:1.7rem; line-height:1.3; margin:0 0 10px; letter-spacing:-.02em; }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 28px; }
+  .meta p { margin:0 0 6px; }
+  .alert {
+    background:#fff8e8; border:1px solid #f0d9a0; border-radius:14px;
+    padding:18px 20px; margin:0 0 36px;
+  }
+  .alert strong { display:block; margin-bottom:10px; font-size:1.02rem; }
+  .alert li strong, .alert p strong { display:inline; margin:0; }
+  .alert ol { margin:0; padding-left:1.25em; }
+  .alert li { margin:10px 0; }
+  .toc { display:grid; gap:10px; margin:0 0 44px; }
+  .toc a {
+    display:block; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:14px 16px; text-decoration:none; color:var(--ink);
+  }
+  .toc a:hover { border-color:#c8c4ba; }
+  .tag {
+    display:inline-block; font-size:.72rem; font-weight:600;
+    padding:2px 8px; border-radius:999px; margin-right:8px; vertical-align:middle;
+  }
+  .t-hot { background:#fce8e6; color:var(--hot); }
+  .t-mid { background:#e8f0fe; color:var(--accent); }
+  .t-low { background:#e6f4ea; color:var(--ok); }
+  article {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:28px 24px 32px; margin:0 0 36px;
+  }
+  article h2 {
+    font-size:1.22rem; line-height:1.4; margin:0 0 18px; letter-spacing:-.01em;
+  }
+  h3 { font-size:1rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h4 { font-size:.95rem; color:var(--ink); margin:20px 0 10px; font-weight:700; }
+  p { margin:0 0 14px; }
+  ul, ol { margin:0 0 14px; padding-left:1.25em; }
+  li { margin:8px 0; }
+  blockquote {
+    margin:12px 0 16px; padding:12px 16px; background:#f4f3ef;
+    border-left:3px solid var(--accent); color:#333; font-size:.95rem;
+  }
+  .src { font-size:.88rem; color:var(--muted); margin-bottom:8px; }
+  .src a, a { color:var(--accent); }
+  .howto {
+    background:#f0f4ff; border:1px solid #d0dcf5; border-radius:12px;
+    padding:14px 16px; margin:14px 0 18px;
+  }
+  .howto strong { display:block; margin-bottom:8px; }
+  figure { margin:16px 0 8px; }
+  figure img {
+    width:100%; height:auto; border-radius:10px; border:1px solid var(--line);
+    display:block;
+  }
+  figcaption { font-size:.8rem; color:var(--muted); margin-top:6px; }
+  .heat { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
+  .pill {
+    background:#f4f3ef; border-radius:8px; padding:6px 10px; font-size:.82rem;
+  }
+  .videos { margin:18px 0 8px; display:grid; gap:16px; }
+  .videos > h4 { margin:0 0 2px; color:var(--accent); font-size:1rem; }
+  .vid {
+    background:#f7f7f5; border:1px solid var(--line);
+    border-radius:12px; padding:12px 12px 10px;
+  }
+  .vid .vlabel { font-size:.88rem; margin:0 0 10px; color:var(--ink); line-height:1.55; }
+  .vid .vlabel .who { display:block; font-weight:700; margin-bottom:4px; }
+  .vid .vlabel .why { color:var(--muted); font-size:.84rem; }
+  .vid video { width:100%; display:block; border-radius:8px; background:#111; }
+  .vid iframe { width:100%; aspect-ratio:16/9; border:0; border-radius:8px; background:#111; }
+  .cover { background:#eef6ee; border:1px solid #cfe5cf; border-radius:12px; padding:12px 16px; margin:0 0 22px; font-size:.9rem; }
+  .media { margin:22px 0 10px; }
+  .media > h4 { color:var(--accent); font-size:1rem; margin:0 0 8px; }
+  .mgroup { font-size:.8rem; font-weight:700; color:var(--muted); margin:14px 0 6px; letter-spacing:.04em; }
+  .mcard { background:#fbfaf7; border:1px solid var(--line); border-radius:12px; padding:12px 14px 4px; margin:0 0 12px; }
+  .mhead { margin:0 0 4px; font-size:.95rem; }
+  .mtag { display:inline-block; font-size:.72rem; background:#eef1f6; color:#3b4a63; border-radius:999px; padding:1px 8px; margin-left:4px; }
+  .mtitle { margin:0 0 6px; font-size:.9rem; }
+  .mcard blockquote { margin:6px 0 8px; }
+  .mangle { font-size:.88rem; margin:0 0 10px; }
+  .verdict { background:#eef3fe; border:1px solid #d0dcf5; border-radius:12px; padding:14px 16px; margin:0 0 18px; font-size:1rem; }
+  .verdict strong { color:var(--accent); }
+  .ours { background:#e6f4ea; border:1px solid #c4e3cf; border-radius:12px; padding:14px 16px; margin:16px 0; }
+  .ours strong.h { display:block; margin-bottom:6px; color:var(--ok); }
+  .warn { background:#fff8e8; border:1px solid #f0d9a0; border-radius:10px; padding:10px 14px; font-size:.9rem; margin:12px 0 16px; }
+  footer { color:var(--muted); font-size:.82rem; margin-top:40px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AI 产品情报 · 2026-11-06（周五）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 20 家（官方/一手 8 · 中文 7 · 外文 5）</strong>：Frameboy 一手是 World Labs 博客 + 可玩 demo frameboy.worldlabs.ai，中文见凤凰网科技，英文见 Unite.AI / RuntimeWire；GPT-6 Cyber 一手是 OpenAI 博客 + System Card，外文 The Verge / TechCrunch / CSO Online，中文第一财经/TechFlow；Omni 1.2 Flash 一手是 Google DeepMind 开发者博客 + Google Cloud / Workspace 更新，中文界面/新浪财经快讯；Ling-3.2-flash 一手是蚂蚁百灵 changelog + 模型文档，中文 IT之家，日文 ORIENS。窗内量子位/机器之心未见这四条专稿，不编造。</div>
+<div class="meta">
+  <p><strong>时间范围</strong>：周五版——昨天（2026-11-05）日报之后至北京时间 2026-11-06 早。对应美东约 11-04 晚 → 11-05 晚。成稿北京时间 2026-11-06 约 09:40。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 Frameboy（Atlas 实时）、GPT-6 Cyber、Gemini Omni 1.2 Flash、百灵 Ling-3.2-flash 四条 → 读官方页/可玩 demo/The Verge/TechCrunch/凤凰/IT之家/Cloud 博客 → 交叉竞品与热度。</p>
+  <p><strong>去重与跳过</strong>：已报不重复——Hy4 / Images 2.6 / 国行苹果智能 / Lion-ER（11-05）、Apollo World / FlashProve / Hydrogen / Thinker-Sim（11-04）、Ling-3.1-flash-1019（10-29，本版是<strong>3.2</strong> 新版本而非复读）。Genie 4 已在 10-28 报，本版只作 Frameboy 竞品对照。</p>
+</div>
+
+<div class="alert">
+  <strong>今日要点（先看这四条）</strong>
+  <ol>
+    <li><strong>World Labs 发 Frameboy</strong>：把 Atlas 世界模型做成浏览器里最高约 15 fps 的实时漫游 demo；云端 GPU 推流；Viewfinder 闭测可「先搭场景再实时逛」。世界模型公司必看。</li>
+    <li><strong>OpenAI 发 GPT-6 Cyber</strong>：面向授权安全研究的漏洞发现/利用模型；ExploitGym 48.5%（相对 5.6 Cyber +51%）；Preparedness 升至 Critical；仅 Daybreak Red 审核客户，无消费端 demo。</li>
+    <li><strong>Google 发 Gemini Omni 1.2 Flash 并 GA</strong>：原生最长 15 秒视频（原 10 秒）、多轮对话改片、参考一致性增强；720p 约 $0.07/秒，价降约 30%；API / Cloud / Vids 可用。</li>
+    <li><strong>蚂蚁百灵上线 Ling-3.2-flash</strong>：相对已报的 3.1，这是<strong>原生多模态</strong>新版本（同档 560B/25B/1M，但原生吃图/视频）；强化视觉、长程 Agent、3D、医疗；前两周限时免费。勿写成 3.1 复读。</li>
+  </ol>
+</div>
+
+<div class="toc">
+  <a href="#frameboy"><span class="tag t-hot">世界模型 · 实时</span>World Labs 发布 Frameboy：Atlas 最高约 15 fps 浏览器实时漫游</a>
+  <a href="#cyber"><span class="tag t-hot">安全 Agent</span>OpenAI 发布 GPT-6 Cyber：漏洞发现升 Critical，仅 Daybreak Red</a>
+  <a href="#omni"><span class="tag t-hot">视频生成 · GA</span>Google 发布 Gemini Omni 1.2 Flash：15 秒视频 + 价降 30%</a>
+  <a href="#ling32"><span class="tag t-mid">开源系 · 多模态</span>蚂蚁百灵上线 Ling-3.2-flash：原生多模态，不是 3.1 复读</a>
+</div>
+
+<!-- ========== 1 Frameboy ========== -->
+<article id="frameboy">
+  <h2><span class="tag t-hot">世界模型 · 实时交互</span>World Labs 发布 Frameboy：Atlas 世界模型进浏览器，最高约 15 fps 实时转相机</h2>
+  <div class="verdict"><strong>结论：</strong>这是李飞飞 World Labs 把 9 月的 Atlas 从「等几秒/几分钟出一条视频」推进到「边转相机边出画」的研究预览。产品形态是云端 GPU 推流到浏览器的 Frameboy demo，并嵌进闭测 Viewfinder。对我们：控制方式接近 WASD/相机漫游，比逐帧精确 6-DoF 轨迹更贴合自家接口；必开 <a href="https://frameboy.worldlabs.ai/">frameboy.worldlabs.ai</a> 亲测，别只看 GIF。注意：15 fps 是上限、要烧云端 GPU、官方承认比本地渲染贵。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>美东 <strong>2026-11-05</strong>（北京时间约 11-06 凌晨），World Labs 发博文 <strong>Frameboy: Atlas in Real-time</strong>，并开放研究预览 demo。Atlas 是两个月前发布的自回归世界模型：一帧一帧生成、像素级相机控制。Frameboy 跑的是高度优化的 Atlas 变体，把画面从云端 GPU 流式推到浏览器，官方写「最高可达 <strong>15 fps</strong>」。同一天把实时能力叠进网页应用 <strong>Viewfinder</strong>（闭测，需候补名单）：先逐帧搭场景，再切 Frameboy 覆盖层实时逛。</p>
+  <p class="src">一手：<a href="https://www.worldlabs.ai/blog/atlas-realtime">World Labs 博客 11-05</a> · 可玩：<a href="https://frameboy.worldlabs.ai/">frameboy.worldlabs.ai</a> · 中文：<a href="https://original.ifeng.com/c/8xozKLkfue9">凤凰网科技</a> · 外文：<a href="https://www.unite.ai/world-labs-releases-frameboy-for-real-time-atlas-exploration/">Unite.AI</a> · <a href="https://runtimewire.com/article/world-labs-frameboy-atlas-real-time-15-fps">RuntimeWire</a> · <a href="https://spatialinsiders.com/stories/world-labs-atlas-real-time-worlds">Spatial Insider</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <ul>
+    <li><strong>交互：</strong>不是一次性出固定视频；用户像游戏里转相机，模型按位姿持续出新画面。可从单图长出可逛空间，也可用多视角照片做真实地标的新视角合成。</li>
+    <li><strong>相对 RTFM：</strong>去年有轻量实时 demo RTFM；Atlas 更大、数据更多——RTFM 偏已有视点插值，Atlas 可从单图/文本长出场景。</li>
+    <li><strong>Viewfinder：</strong>逐帧生成含颜色+深度；再开 Frameboy 流式覆盖。闭测，需 waitlist。</li>
+    <li><strong>成本边界：</strong>官方明说必须跑在强 GPU 云上，「相对本地渲染不便宜」；15 fps 是峰值，不保证全场景稳帧。</li>
+  </ul>
+
+  <figure>
+    <img src="media/frameboy-og.jpg" alt="World Labs Frameboy 官方博文 OG 图"/>
+    <figcaption>World Labs 官方 OG——看完应搞懂：这是 Atlas 实时研究预览的主视觉，不是本地可下载权重。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/frameboy-demo-og.jpg" alt="Frameboy 可玩站 opengraph"/>
+    <figcaption>frameboy.worldlabs.ai 的 OG——蓝色「卡带机」隐喻：换场景卡带、实时出画。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/frameboy-ifeng.png" alt="凤凰网科技 Frameboy 报道配图"/>
+    <figcaption>凤凰网科技配图——中文侧把卖点说成「不用预设镜头也能实时探索」。</figcaption>
+  </figure>
+
+  <div class="videos">
+    <h4>页内视频（官方 CDN 已落本地）</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">World Labs 官方 · frameboy-hero</span>
+      <span class="why">看完应搞懂：慢速「点关键帧→等生成」vs 实时「转相机连续出画」的体验差。</span></p>
+      <video controls playsinline preload="metadata" poster="media/frameboy-og.jpg" src="media/frameboy-hero.mp4"></video>
+    </div>
+    <div class="vid">
+      <p class="vlabel"><span class="who">World Labs 官方 · real-world-landmarks</span>
+      <span class="why">看完应搞懂：多视角真实地标输入后，可在浏览器里转新视角，不只是幻想场景。</span></p>
+      <video controls playsinline preload="metadata" poster="media/frameboy-demo-og.jpg" src="media/frameboy-landmarks.mp4"></video>
+    </div>
+  </div>
+
+  <div class="howto">
+    <strong>怎么自己看（15 分钟，优先亲测）</strong>
+    ① 打开 <a href="https://frameboy.worldlabs.ai/">frameboy.worldlabs.ai</a>，选一个 curated 场景，用鼠标/触控转相机，感受延迟与一致性 → ② 回读 <a href="https://www.worldlabs.ai/blog/atlas-realtime">官方博文</a>「Why speed matters」段，对照慢速迭代 vs 实时探索的两段动画 → ③ 若有 Viewfinder 资格，试「先搭后逛」。看完应搞懂：实时不是更高画质，而是把「生成」变成「导航」。
+  </div>
+
+  <div class="warn">本版作者打开了官方 demo 页并核验可访问；具体场景帧率/排队/账号墙以你当场为准。15 fps、云成本、研究预览边界均为厂商口径。</div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Google Genie 4（已报 10-28）：</strong>Genie 4 主打原生音视频 + 键盘/文本导演，仍是研究预览分发；Frameboy 更强调「像素级相机控制 + 浏览器实时推流」可玩入口。Genie 偏「导演世界」，Frameboy 偏「摄影机漫游世界」。</li>
+    <li><strong>vs Odyssey / 快乐生蚝 / Zing 等可玩世界：</strong>Odyssey 系常见动作条件与固定分辨率实时；Frameboy 挂在 Atlas 新视角合成能力上，单图/多视图进、相机出，更像空间智能 demo，而非完整游戏引擎。</li>
+    <li><strong>vs World Labs Marble / 离线 Atlas 视频导出：</strong>Marble 走可编辑持久 3D 资产；Frameboy 是流式帧生成。同一公司两条产品线：资产化 vs 即时漫游。</li>
+    <li><strong>vs 可灵 / Runway 长视频：</strong>那些是「生成一条片」；Frameboy 是「持续响应用户相机」。评测口径完全不同——应对齐 WBench/交互世界，而不是单镜 VBench。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们（世界模型 / 数据生产）</strong>
+    三条可执行：① 把「交互帧率 + 相机一致性」写进验收，而不是只看离线视频美学；② 自家 WASD+IJKL 控制可对标 Frameboy 的实时相机回路做主观对比；③ Viewfinder「先搭场景再实时」接近数据产线里的 preview→explore。别被 15 fps 营销带跑——记云端成本与稳帧条件。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">官方博文 + 可玩站同日上线</span>
+    <span class="pill">凤凰网科技中文快讯</span>
+    <span class="pill">Unite.AI / RuntimeWire / Spatial Insider 英文跟进</span>
+    <span class="pill">窗内量子位未见专稿</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>中英文报道都抓住「不用预设完整镜头轨迹」；空间/影视/机器人仿真用例被反复点名；可玩链接降低「又是论文 GIF」怀疑。</li>
+    <li><strong>批评 / 谨慎：</strong>云端贵、15 fps 峰值、研究预览；X 账号 worldlabsai 当前检索异常（平台显示 suspended），热度信号改看博文与第三方稿。独立第三方帧率压测本版未见。</li>
+    <li><strong>可信度：</strong>产品上线与 demo URL 可核验；性能数字=官方；画质/长期一致性需自测。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mgroup">中文</div>
+    <div class="mcard">
+      <p class="mhead">凤凰网科技 <span class="mtag">快讯</span></p>
+      <p class="mtitle"><a href="https://original.ifeng.com/c/8xozKLkfue9">李飞飞 World Labs 团队发布 Frameboy…最高每秒 15 帧</a></p>
+      <blockquote>用户不再需要预先设定完整的镜头运动轨迹，而是可以像操作电子游戏中的摄像机一样，实时探索…</blockquote>
+      <p class="mangle">角度：中文读者最快建立心智模型的一篇；含成本与峰值帧率提醒。</p>
+    </div>
+    <div class="mgroup">外文 / 一手</div>
+    <div class="mcard">
+      <p class="mhead">World Labs <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://www.worldlabs.ai/blog/atlas-realtime">Frameboy: Atlas in Real-time</a></p>
+      <blockquote>When the cost of a “bad idea” is near zero, there are no bad ideas…</blockquote>
+      <p class="mangle">角度：把「速度改变交互范式」讲透；附 Viewfinder 整合说明。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">Unite.AI <span class="mtag">行业</span></p>
+      <p class="mtitle"><a href="https://www.unite.ai/world-labs-releases-frameboy-for-real-time-atlas-exploration/">World Labs Releases Frameboy…</a></p>
+      <blockquote>streams optimized Atlas-generated scenes from cloud GPUs to a browser at up to 15 fps</blockquote>
+      <p class="mangle">角度：英文侧产品摘要清楚；非深度实测。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 2 Cyber ========== -->
+<article id="cyber">
+  <h2><span class="tag t-hot">安全 Agent · Critical</span>OpenAI 发布 GPT-6 Cyber：授权漏洞发现更强，越界率大降，仅 Daybreak Red</h2>
+  <div class="verdict"><strong>结论：</strong>这是 OpenAI 把网络安全专用模型从 High 拉到 Preparedness Framework 的 <strong>Critical</strong> 档，并强调「会找洞、更听授权范围」。ExploitGym 48.5% vs GPT-5.6 Cyber 32.1%（相对约 +51%）；自报在 Firefox 挖出 81 个新高危、Linux 上做出 948 个提权利用。无 ChatGPT 消费 demo——只对审核通过的 Daybreak Red 客户开 API/Codex。对我们：跟世界模型无直接产品对标，但「高能力 + 强对齐 + 窄分发」是 Critical 能力的标准打法；TechCrunch 提醒防御方资源跟不上攻击面。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>美东 <strong>2026-11-05</strong>，OpenAI 发布 <strong>GPT-6 Cyber</strong>：训练目标是在研究者划定的范围内发现并验证可利用漏洞。配套加长 System Card，并升级误用监测、IP allowlist、关键基础设施相关拦截。访问：先给部分 Daybreak Red，随后扩到全部 Red；同时向全部 Red 放 GPT-5.6 Cyber；Daybreak Blue（偏防御验证）继续扩 GPT-6 Astra。</p>
+  <p class="src">一手：<a href="https://openai.com/index/introducing-gpt-6-cyber/">OpenAI 博客</a> · <a href="https://deploymentsafety.openai.com/gpt-6-cyber/introduction">System Card</a> · 外文：<a href="https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch">The Verge</a> · <a href="https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/">TechCrunch</a> · <a href="https://www.csoonline.com/article/4244911/openais-gpt-6-cyber-ups-the-ante-on-vulnerability-discovery.html">CSO Online</a> · 中文：<a href="https://www.yicai.com/news/103428396.html">第一财经</a> · <a href="https://www.techflowpost.com/newsletter/143227">TechFlow</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <ul>
+    <li><strong>基准（厂商）：</strong>ExploitGym 48.5%（5.6 Cyber 32.1%，Astra 约 42.4%）；网页黑盒渗透新评测 recall 40.3% vs Astra 32.0%；RemoteExploitBench 上 Cyber 完成 95%，Astra+Blue 拒答 100%。</li>
+    <li><strong>对齐：</strong>ExploitGym Honeypot（仿 Hugging Face 事件）——无部署提示时 99.93% 不打范围外服务（5.6 Cyber 94.49%），有提示时 100%。</li>
+    <li><strong>真实影响（厂商/客户引言）：</strong>Firefox 81 新高危 + 帮助出补丁；Linux 复现 1724、利用 948；Cisco / Calif / CodeRabbit / Palo Alto / Dragos 等用例。</li>
+    <li><strong>谁能用：</strong>审核 Daybreak Red；API 默认 IP 白名单；另设 Critical Infrastructure 分组与 $10 亿 Frontline Defenders 补贴叙事。</li>
+  </ul>
+
+  <figure>
+    <img src="media/cyber-og.png" alt="OpenAI GPT-6 Cyber 官方社交图"/>
+    <figcaption>OpenAI 官方社交图——看完应搞懂：这是安全研究专用模型发布，不是消费级 ChatGPT 新皮肤。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/cyber-tc.jpg" alt="TechCrunch Daybreak 相关配图"/>
+    <figcaption>TechCrunch 配图（Daybreak 叙事）——讨论焦点是「给防御方的窗口够不够大」。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/cyber-verge.jpg" alt="The Verge OpenAI 报道配图"/>
+    <figcaption>The Verge 报道视觉——强调「更会找洞，也更少越界」。</figcaption>
+  </figure>
+
+  <div class="warn">无公开消费端 demo / playground。基准、漏洞计数、客户引言均为 OpenAI 或具名客户口径；TechCrunch 指出 Linux 漏洞狩猎花费约 $120 万，相对其他研究投入并不夸张，引发「资源是否够」争论。</div>
+
+  <div class="howto">
+    <strong>怎么自己看（10 分钟）</strong>
+    读 <a href="https://openai.com/index/introducing-gpt-6-cyber/">官方博文</a> 里 ExploitGym / Honeypot / Firefox·Linux 三段 → 扫 <a href="https://deploymentsafety.openai.com/gpt-6-cyber/introduction">System Card 目录</a> → 再读 <a href="https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch">The Verge</a> 与 <a href="https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/">TechCrunch</a> 的「越界率」和「防御资源」两面。看完应搞懂：能力↑ + 对齐↑ + 分发极窄；不是人人能调的 API。
+  </div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs GPT-6 Astra / Daybreak Blue：</strong>Astra 是通用前沿；在多数网络攻防任务上 Cyber 更强，且 Blue 对进攻任务大量拒答。选型看你要「通用工程」还是「授权进攻研究」。</li>
+    <li><strong>vs GPT-5.6 Cyber：</strong>分数与对齐双升，安全等级 High→Critical；旧模型反而向更广 Red 客户开放做过渡。</li>
+    <li><strong>vs 开源「去对齐」黑客模型叙事：</strong>OpenAI 用身份核验 + IP 白名单 + PSP 监测对打；TechCrunch 采访对象仍担心坏演员用开源无护栏模型。</li>
+    <li><strong>vs 传统扫描器 / 人工红队：</strong>客户引言强调长程利用链与复杂逻辑洞；不替代人工确认与补丁工程。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    世界模型训练/仿真基础设施本身是高价值攻击面——关注 OpenAI 用同类模型加固自有训练基础设施的公开叙述。产品侧无直接对标需求；安全合规若接外部模型，记「Critical 能力必须配窄分发与审计」。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">The Verge / TechCrunch / CSO 同日</span>
+    <span class="pill">第一财经 / TechFlow 中文跟进</span>
+    <span class="pill">无消费试用 → 民间实测少</span>
+    <span class="pill">安全圈焦点在 Daybreak 门槛与 Blue「被削弱」抱怨</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>Firefox / Linux 具体数字让「不是纸面榜」更好信；客户引言密集（Cisco、Calif、CodeRabbit 等）。</li>
+    <li><strong>批评：</strong>TechCrunch 标题即质疑「够不够」；有防御者称 Daybreak Blue 近期变「钝」；评估意识（eval awareness）仍被 OpenAI 自己点名为风险。</li>
+    <li><strong>可信度：</strong>发布事实扎实；能力边界依赖厂商评测与少数具名客户，缺少广泛第三方复现。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">The Verge <span class="mtag">产品</span></p>
+      <p class="mtitle"><a href="https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch">OpenAI says GPT-6 Cyber is better at finding vulnerabilities without going out of bounds</a></p>
+      <blockquote>…went out of bounds less than 1 percent of the time, down from around 5 percent with GPT-5.6 Cyber.</blockquote>
+      <p class="mangle">角度：把 Honeypot 对齐进步翻译成读者语言；点出 eval awareness。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">TechCrunch <span class="mtag">调查评论</span></p>
+      <p class="mtitle"><a href="https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/">OpenAI released a new cybersecurity model. Is that enough?</a></p>
+      <blockquote>If there is a narrow window of time to patch the digital infrastructure… more urgency may be required.</blockquote>
+      <p class="mangle">角度：不否认能力，追问防御资源与 Daybreak 覆盖面；非软文。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 3 Omni ========== -->
+<article id="omni">
+  <h2><span class="tag t-hot">视频生成 · 正式 GA</span>Google 发布 Gemini Omni 1.2 Flash：原生 15 秒视频，价降约 30%，多轮改片</h2>
+  <div class="verdict"><strong>结论：</strong>这是 Google 把 Omni Flash 视频模型推到 <strong>正式 GA</strong> 的版本跃迁：时长 10s→15s、参考一致性增强、支持多轮对话改同一条片，720p 降到约 <strong>$0.07/秒</strong>（官方称相对 1.1 降约 30%）。入口：Gemini API、Google Cloud、Vids、Flow，以及 AI Ultra 侧 Gemini App 滚动放量。对我们：这是「短广告/商品视频产线」工具，不是交互世界模型；可当廉价分镜/营销层，别跟 Frameboy 的实时相机回路混为一谈。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>美东 <strong>2026-11-05</strong>，Google DeepMind 产品博客与 Google Cloud 博客同步宣布 <strong>Gemini Omni 1.2 Flash</strong> 在 Gemini API 与 Gemini for business / Cloud 上 <strong>GA</strong>。Workspace 更新写明 Vids 支持 15 秒生成与画质改进。输出带 SynthID；Provisioned Throughput 对企业可用；音频参考仍 allowlist。</p>
+  <p class="src">一手：<a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/">Google 开发者博客</a> · <a href="https://cloud.google.com/blog/products/ai-machine-learning/gemini-omni-1-2-flash-generally-available">Google Cloud 博客</a> · <a href="https://deepmind.google/models/model-cards/gemini-omni-1-2-flash/">DeepMind 模型卡</a> · <a href="https://workspaceupdates.googleblog.com/2026/11/gemini-omni-12-flash-now-in-vids-with-15second-generations-and-improved-quality.html">Workspace / Vids 更新</a> · 中文：<a href="https://www.jiemian.com/article/15300746.html">界面新闻快讯</a> · <a href="https://finance.sina.com.cn/7x24/2026-11-06/doc-inixthps5897332.shtml">新浪财经</a> · 外文综述：<a href="https://www.unite.ai/zh-cn/googles-gemini-omni-1-2-flash-reaches-general-availability/">Unite.AI</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <ul>
+    <li><strong>时长：</strong>原生生成/编辑最长 <strong>15 秒</strong>（1.1 为 10 秒）；可按 1 秒步进选 3–15 秒。</li>
+    <li><strong>一致性：</strong>人物/商品/包装字体/品牌色跨镜头更稳；支持图像、≤3 秒动作片段、音频线索作参考。</li>
+    <li><strong>多轮编辑：</strong>同一条片上改背景、天气、产品、画幅，而不必整段重生成——官方示范从帐篷→森林→马厩等连续换景。</li>
+    <li><strong>成本工作流：</strong>360p/720p 快草稿 → 多轮改 → 升 1080p/4K；720p 约 $0.07/秒。</li>
+    <li><strong>已知不足（官方自述）：</strong>快速体育动作、剧烈剧本跳切、复杂物理仍在改进。</li>
+  </ul>
+
+  <figure>
+    <img src="media/omni-og.png" alt="Gemini Omni 1.2 Flash 官方博文头图"/>
+    <figcaption>Google 官方头图——看完应搞懂：卖点是更长、更稳、更便宜的 Flash 视频，不是新的世界模型。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/omni-cloud.jpg" alt="Google Cloud Omni GA 配图"/>
+    <figcaption>Google Cloud 博客配图——强调企业 GA、SLA / Provisioned Throughput。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/omni-tryon-still.webp" alt="Omni 虚拟试穿演示静帧"/>
+    <figcaption>官方试穿演示静帧——多件服装参考下做 15 秒虚拟试穿，身份与衣服细节保持。</figcaption>
+  </figure>
+
+  <div class="videos">
+    <h4>页内视频（Google 官方 demo，已落本地）</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">Google 官方 · ECom Try-On Demo</span>
+      <span class="why">看完应搞懂：一张模特图 + 多件商品图 → 15 秒试穿转体，参考一致性是 1.2 的核心卖点。</span></p>
+      <video controls playsinline preload="metadata" poster="media/omni-tryon-still.webp" src="media/omni-tryon.mp4"></video>
+    </div>
+    <div class="vid">
+      <p class="vlabel"><span class="who">Google 官方 · Video Background Editing Demo</span>
+      <span class="why">看完应搞懂：多轮对话改背景/场景，人物表演与构图尽量不动——这是「改片」不是「重抽卡」。</span></p>
+      <video controls playsinline preload="metadata" poster="media/omni-og.png" src="media/omni-edit.mp4"></video>
+    </div>
+  </div>
+
+  <div class="howto">
+    <strong>怎么自己看（12 分钟）</strong>
+    打开 <a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/">官方博文</a> 先把页内 demo 滑完（试穿 / 换景 / 万神殿 FPV）→ 再看本页已嵌的两条 → 开发者去 AI Studio / Cloud Console 建 15 秒任务；有 Workspace 就在 Vids 试。看完应搞懂：15 秒 + 多轮编辑改变的是广告/电商产线节奏。
+  </div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs 可灵 4.0 / Runway / Luma：</strong>Omni 1.2 Flash 主打 Google 分发（Vids/Ads/Cloud）与「便宜快迭代」；可灵等在长镜、中国内容生态与某些画质风格仍有阵地。选生态与价，不单选榜分。</li>
+    <li><strong>vs OpenAI Images 2.6 GIF（昨报）：</strong>GIF 是秒级循环图；Omni 是有声可剪的 15 秒视频。互补：Images 做表情/动效预演，Omni 做投放素材。</li>
+    <li><strong>vs Frameboy / Genie 4：</strong>后两者是可交互世界；Omni 是离线生成片。评测与产品叙事不要混用。</li>
+    <li><strong>vs Omni 1.1 Flash：</strong>同系列升级——更长、更稳、更便宜、正式 GA；音频参考仍受限。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    可作「世界模型预告片 / 数据标注说明视频 / 对内演示」的廉价层；物理一致性与可交互性仍要靠自家世界模型。官方承认复杂物理是短板——别用它做物理保真评测素材源。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">Cloud 客户引言：Artlist / FLORA / invideo / Krea / Picsart / Photoroom</span>
+    <span class="pill">中文多为快讯（界面/新浪），深度稿少</span>
+    <span class="pill">窗内量子位/机器之心未见专稿</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>invideo 称「prompt 跟随与物理/声音在同档很快」；Photoroom 点名 15 秒是高频用户需求；FLORA/Krea 强调「只改你要求的部分」。</li>
+    <li><strong>批评 / 空缺：</strong>独立盲测排行本版未见；中文深度实测少；快速运动/复杂物理官方自黑。部分评测站（如 OrcaRouter）有泄露向文章，可信度低于官方 GA 公告，阅读时当传闻。</li>
+    <li><strong>可信度：</strong>GA 与定价事实扎实；画质断言混有客户引言与厂商 demo。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">Google DeepMind / Developers <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/">Gemini Omni 1.2 Flash: 15-second video and lower pricing</a></p>
+      <blockquote>We reduced the price by 30%… available at $0.07 per second for 720p video.</blockquote>
+      <p class="mangle">角度：能力清单 + 定价 + 官方 demo 的权威来源。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">界面新闻 <span class="mtag">快讯</span></p>
+      <p class="mtitle"><a href="https://www.jiemian.com/article/15300746.html">谷歌推出 Gemini Omni 1.2 Flash，价格下调 30%</a></p>
+      <blockquote>价格下调 30%</blockquote>
+      <p class="mangle">角度：中文传播主标题抓「降价」；深度不足，需回官方。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 4 Ling-3.2 ========== -->
+<article id="ling32">
+  <h2><span class="tag t-mid">原生多模态 · API</span>蚂蚁百灵上线 Ling-3.2-flash：560B/25B 原生吃图吃视频，别当成 3.1 复读</h2>
+  <div class="verdict"><strong>结论：</strong>相对 seen 里已报的 <strong>Ling-3.1-flash</strong>（偏文本/Agent 个人助手），<strong>Ling-3.2-flash</strong> 是同日径上的<strong>原生多模态新版本</strong>：仍是约 560B 总参 / 25B 激活 / 1M 上下文，但架构级融合视觉，官方强调四大能力——复杂视觉理解、多模态长程 Agent、3D 理解与交互、医疗多模态。API 兼容 OpenAI/Anthropic；对话页可玩；上线前两周限时免费。IT之家转述自报三项基准超 Claude Opus 5（max）——厂商口径，待独立复现。权重开源节奏本版未承诺（3.1 曾走 MIT 开源叙事，3.2 目前是平台上线）。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-11-05</strong>，蚂蚁百灵开发者 changelog 写入：上线原生多模态模型 <strong>Ling-3.2-flash</strong>。IT之家等 11-06 早间跟进，并列出官方对比 Claude Opus 5 的三项分数与定价。模型文档选型表把 3.2 与 3.1 分行——3.1 仍定位日常办公/长周期研发 Agent；3.2 专门吃多模态。</p>
+  <p class="src">一手：<a href="https://developer.ant-ling.com/zh-CN/docs/getting-started/changelog/">百灵 changelog</a> · <a href="https://developer.ant-ling.com/zh-CN/docs/models/ling">Ling 模型文档</a> · <a href="https://www.ant-ling.com/zh/">ant-ling.com</a> · 中文：<a href="https://www.ithome.com/1/023/043.htm">IT之家</a> · 日文：<a href="https://ai-oriens.com/news/ant-ling-3-2-flash/">ORIENS</a> · 英文转述：<a href="https://www.orcarouter.ai/blog/ling-3-2-flash-native-multimodal-release">OrcaRouter</a>（第三方博客，非官方）</p>
+
+  <h3>2. 产品介绍</h3>
+  <ul>
+    <li><strong>规格：</strong>560B / 激活约 25B / 上下文 1M；原生图像 + 文本 + 视频输入。</li>
+    <li><strong>四大强化：</strong>复杂视觉理解；多模态长程 Agent；3D 理解与交互；医疗多模态（影像与报告）。</li>
+    <li><strong>官方自报（IT之家转述）：</strong>OmniDocBench1.5 92.21 vs Opus 5 90.56；ZEROBench(Sub) 43.71 vs 39.52；Vision2Web 85.86 vs 80.20；DesignArena 图像转前端 Elo 1238 进前十。</li>
+    <li><strong>定价（媒体转述）：</strong>输入约 $0.30 / 输出约 $0.90 每百万 tokens；前两周限时免费。以控制台为准。</li>
+    <li><strong>接入：</strong>对话页；OpenAI / Anthropic 兼容 API（蚂蚁百炼等）。</li>
+  </ul>
+
+  <figure>
+    <img src="media/ling-ithome-1.png" alt="IT之家报道中的 Ling-3.2 相关配图"/>
+    <figcaption>IT之家配图——中文侧把 3.2 概括为「原生多模态 + 限时免费」。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/ling-ithome-2.jpg" alt="Ling-3.2 能力/基准相关配图"/>
+    <figcaption>IT之家第二张配图——看分数时记住：这是厂商自报，不是第三方盲测。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/ling-ithome-3.jpg" alt="Ling 产品相关配图"/>
+    <figcaption>IT之家第三张配图——产品落地在对话页与兼容 API，而非本版可见的新权重包。</figcaption>
+  </figure>
+
+  <div class="warn">标题与正文一律写 <strong>Ling-3.2-flash</strong>。3.1 是 10-29 已报的 Personal Agent 开源线；3.2 新增的是原生多模态能力。本版未见 Hugging Face 正式权重页；「开源」一词不要从 3.1 惯性抄过来。</div>
+
+  <div class="howto">
+    <strong>怎么自己看（10 分钟）</strong>
+    打开 <a href="https://developer.ant-ling.com/zh-CN/docs/getting-started/changelog/">changelog</a> 确认 11-05 条目 → 读 <a href="https://developer.ant-ling.com/zh-CN/docs/models/ling">选型表</a> 对比 3.2 vs 3.1 一行 → 上对话页随手传图/短视频问空间关系或文档题 → 需要 API 就走兼容协议把 model 设为 <code>Ling-3.2-flash</code>。看完应搞懂：这是多模态升级，不是 3.1 换皮降价。
+  </div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Ling-3.1-flash（已报）：</strong>同档参数，任务面从「文本 Agent」扩到「视觉/视频/3D/医疗」；选型按模态，不按版本号大小盲目替换。</li>
+    <li><strong>vs Claude Opus 5 / GPT-4o 类闭源多模态：</strong>官方挑三项基准宣称超越 Opus 5——需独立复现；优势叙事在价格与限时免费，不在全面碾压。</li>
+    <li><strong>vs Qwen-VL / Hy4 视觉 / Gemini：</strong>百灵强调 3D 与医疗垂直 + Agent 长程；腾讯 Hy4 更绑 Computer Use 与腾讯全家桶。生态与合规（蚂蚁金融场景）是差异点。</li>
+    <li><strong>vs 开源多模态权重（如部分 VL 开源）：</strong>3.2 本版是 API 产品优先；若你要自托管，先确认权重是否释放，别假设继承 3.1 的 MIT 包。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    3D 理解与多模态长程 Agent 两句值得跟进——可作世界模型「看图/看视频理解」基线候选。先用免费窗跑一批空间关系 / 轨迹 / 界面 Agent 题，再决定是否进正式评测集。医疗向与我们主业无关，可忽略。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">IT之家 11-06 早间稿</span>
+    <span class="pill">changelog / 模型文档已更新</span>
+    <span class="pill">日文 ORIENS 跟进</span>
+    <span class="pill">社区实测与 HF 热度仍早期</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>「终于原生多模态」相对 3.1 的补齐感；限时免费降低试用门槛；兼容双协议省接入。</li>
+    <li><strong>批评 / 谨慎：</strong>超 Opus 5 的三项是挑基准；独立评测少；权重是否开源不清晰；OrcaRouter 等二手英文稿需降权。</li>
+    <li><strong>可信度：</strong>上线事实有 changelog + IT之家交叉；能力排名=厂商口径。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">IT之家 <span class="mtag">新闻</span></p>
+      <p class="mtitle"><a href="https://www.ithome.com/1/023/043.htm">蚂蚁百灵大模型 Ling 3.2 Flash 发布：三项基准超越 Claude Opus 5，前两周限时免费</a></p>
+      <blockquote>在蚂蚁官方公布的评测结果中，Ling-3.2-flash 在三项基准上超过 Anthropic Claude Opus 5（max）…</blockquote>
+      <p class="mangle">角度：中文最完整的规格+定价+三项分数转述；记住「官方公布」四字。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">蚂蚁百灵文档 <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://developer.ant-ling.com/zh-CN/docs/models/ling">Ling 模型文档 · 3.2 选型</a></p>
+      <blockquote>Ling-3.2-flash：最新一代原生多模态模型…重点强化复杂视觉理解、多模态长程 Agent、3D 理解与交互、医疗多模态</blockquote>
+      <p class="mangle">角度：和 3.1 分行表述的权威出处，避免复读旧版。</p>
+    </div>
+  </div>
+</article>
+
+<div class="alert" style="background:#f4f3ef;border-color:var(--line);">
+  <strong>今日落选（简述）</strong>
+  <ul>
+    <li><strong>Genie 4 相关二轮讨论</strong>——10-28 已报；今日只作 Frameboy 对照，不重开专条。</li>
+    <li><strong>Omni 1.2 泄露向自媒体</strong>——官方 GA 已出，以官方与 Cloud 博客为准，不单开「泄露」条。</li>
+    <li><strong>Hy4 权重是否已放</strong>——11-05 已报「未来几天」；窗内无确认正式版权重落地，不重报。</li>
+    <li>Images 2.6 / 国行苹果智能 / Lion-ER——昨日已报，无实质新版本。</li>
+  </ul>
+</div>
+
+<footer>
+  产品雷达 · 2026-11-06 · 仅供阿汤内部决策参考 · 事实以一手链接为准
+  · <a href="../archive.html">往期</a>
+</footer>
+</div>
+</body>
+</html>
