@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AI 产品情报 · 2026-11-07 · Thinking Machines Inkling 2 Small · 文心 5.5 Flash Base · Muse 实时语音 · Claude Personal Finance</title>
+<style>
+  :root {
+    --ink:#1a1a1a; --muted:#5c5c5c; --line:#e8e6e1;
+    --bg:#faf9f6; --card:#fff; --accent:#0b57d0; --hot:#b3261e; --ok:#0f6b3c;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font:17px/1.7 "PingFang SC","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+  }
+  .wrap { max-width:740px; margin:0 auto; padding:40px 22px 90px; }
+  h1 { font-size:1.7rem; line-height:1.3; margin:0 0 10px; letter-spacing:-.02em; }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 28px; }
+  .meta p { margin:0 0 6px; }
+  .alert {
+    background:#fff8e8; border:1px solid #f0d9a0; border-radius:14px;
+    padding:18px 20px; margin:0 0 36px;
+  }
+  .alert strong { display:block; margin-bottom:10px; font-size:1.02rem; }
+  .alert li strong, .alert p strong { display:inline; margin:0; }
+  .alert ol { margin:0; padding-left:1.25em; }
+  .alert li { margin:10px 0; }
+  .toc { display:grid; gap:10px; margin:0 0 44px; }
+  .toc a {
+    display:block; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:14px 16px; text-decoration:none; color:var(--ink);
+  }
+  .toc a:hover { border-color:#c8c4ba; }
+  .tag {
+    display:inline-block; font-size:.72rem; font-weight:600;
+    padding:2px 8px; border-radius:999px; margin-right:8px; vertical-align:middle;
+  }
+  .t-hot { background:#fce8e6; color:var(--hot); }
+  .t-mid { background:#e8f0fe; color:var(--accent); }
+  .t-low { background:#e6f4ea; color:var(--ok); }
+  article {
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:28px 24px 32px; margin:0 0 36px;
+  }
+  article h2 {
+    font-size:1.22rem; line-height:1.4; margin:0 0 18px; letter-spacing:-.01em;
+  }
+  h3 { font-size:1rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h4 { font-size:.95rem; color:var(--ink); margin:20px 0 10px; font-weight:700; }
+  p { margin:0 0 14px; }
+  ul, ol { margin:0 0 14px; padding-left:1.25em; }
+  li { margin:8px 0; }
+  blockquote {
+    margin:12px 0 16px; padding:12px 16px; background:#f4f3ef;
+    border-left:3px solid var(--accent); color:#333; font-size:.95rem;
+  }
+  .src { font-size:.88rem; color:var(--muted); margin-bottom:8px; }
+  .src a, a { color:var(--accent); }
+  .howto {
+    background:#f0f4ff; border:1px solid #d0dcf5; border-radius:12px;
+    padding:14px 16px; margin:14px 0 18px;
+  }
+  .howto strong { display:block; margin-bottom:8px; }
+  figure { margin:16px 0 8px; }
+  figure img {
+    width:100%; height:auto; border-radius:10px; border:1px solid var(--line);
+    display:block;
+  }
+  figcaption { font-size:.8rem; color:var(--muted); margin-top:6px; }
+  .heat { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
+  .pill {
+    background:#f4f3ef; border-radius:8px; padding:6px 10px; font-size:.82rem;
+  }
+  .videos { margin:18px 0 8px; display:grid; gap:16px; }
+  .videos > h4 { margin:0 0 2px; color:var(--accent); font-size:1rem; }
+  .vid {
+    background:#f7f7f5; border:1px solid var(--line);
+    border-radius:12px; padding:12px 12px 10px;
+  }
+  .vid .vlabel { font-size:.88rem; margin:0 0 10px; color:var(--ink); line-height:1.55; }
+  .vid .vlabel .who { display:block; font-weight:700; margin-bottom:4px; }
+  .vid .vlabel .why { color:var(--muted); font-size:.84rem; }
+  .vid video { width:100%; display:block; border-radius:8px; background:#111; }
+  .vid iframe { width:100%; aspect-ratio:16/9; border:0; border-radius:8px; background:#111; }
+  .cover { background:#eef6ee; border:1px solid #cfe5cf; border-radius:12px; padding:12px 16px; margin:0 0 22px; font-size:.9rem; }
+  .media { margin:22px 0 10px; }
+  .media > h4 { color:var(--accent); font-size:1rem; margin:0 0 8px; }
+  .mgroup { font-size:.8rem; font-weight:700; color:var(--muted); margin:14px 0 6px; letter-spacing:.04em; }
+  .mcard { background:#fbfaf7; border:1px solid var(--line); border-radius:12px; padding:12px 14px 4px; margin:0 0 12px; }
+  .mhead { margin:0 0 4px; font-size:.95rem; }
+  .mtag { display:inline-block; font-size:.72rem; background:#eef1f6; color:#3b4a63; border-radius:999px; padding:1px 8px; margin-left:4px; }
+  .mtitle { margin:0 0 6px; font-size:.9rem; }
+  .mcard blockquote { margin:6px 0 8px; }
+  .mangle { font-size:.88rem; margin:0 0 10px; }
+  .verdict { background:#eef3fe; border:1px solid #d0dcf5; border-radius:12px; padding:14px 16px; margin:0 0 18px; font-size:1rem; }
+  .verdict strong { color:var(--accent); }
+  .ours { background:#e6f4ea; border:1px solid #c4e3cf; border-radius:12px; padding:14px 16px; margin:16px 0; }
+  .ours strong.h { display:block; margin-bottom:6px; color:var(--ok); }
+  .warn { background:#fff8e8; border:1px solid #f0d9a0; border-radius:10px; padding:10px 14px; font-size:.9rem; margin:12px 0 16px; }
+  footer { color:var(--muted); font-size:.82rem; margin-top:40px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AI 产品情报 · 2026-11-07（周六）</h1>
+<div class="cover"><strong>本版覆盖媒体 / 一手源约 18 家（官方/一手 7 · 中文 6 · 外文 5）</strong>：Inkling 2 Small 一手是 Thinking Machines 官博 + Tinker，中文智东西，外文 VentureBeat / MarkTechPost / SiliconANGLE / Techmeme；文心 5.5 Flash Base 一手是百度 ERNIE 发布页 + HF，中文量子位 / IT之家；Muse 实时语音一手是 Meta Newsroom + The Verge 亲测，中文智东西 / IT之家；Claude Personal Finance 一手是 Anthropic 官博 + Plaid，外文 TechCrunch，中文 TechNews / 经济观察网 / cnBeta。</div>
+<div class="meta">
+  <p><strong>时间范围</strong>：周六版——昨天（2026-11-06）日报之后至北京时间 2026-11-07 早。对应美东约 11-05 晚 → 11-06 晚，并覆盖北京今早刚出的跟进。成稿北京时间 2026-11-07 约 09:20。</p>
+  <p><strong>怎么来的</strong>：对照 seen.md 去重 → 锁定 Inkling 2 Small、文心 5.5 Flash Base、Muse Realtime Voice/Avatar、Claude Personal Finance 四条（昨日已报 Frameboy / GPT-6 Cyber / Omni 1.2 Flash / Ling-3.2-flash 一律跳过）→ 读官方页 + 智东西/量子位/The Verge/TechCrunch/VentureBeat → 交叉竞品与 X 热度。</p>
+  <p><strong>去重与跳过</strong>：已报不重复——Frameboy / GPT-6 Cyber / Gemini Omni 1.2 Flash / Ling-3.2-flash（11-06）、Hy4 / Images 2.6 / 国行苹果智能 / Lion-ER（11-05）、Apollo World / FlashProve / Hydrogen / Thinker-Sim（11-04）。Cosmos 3 Nano 四检查点 HF 博文 11-05 放大，但模型卡标注 10-20 上线且 10-22 已报 Sim-Auto/Sim-Bimanual/Sim-Transfer 样例，本版不重报。Perplexity Teammates 落在 11-04，窗外。Qwen 4 仅悬念海报，未发模型，不硬凑。</p>
+</div>
+
+<div class="alert">
+  <strong>今日要点（先看这四条）</strong>
+  <ol>
+    <li><strong>Thinking Machines 发 Inkling 2 Small</strong>：米拉·穆拉蒂团队第二代模型，594B/17B MoE，AA Index 31；先上 Tinker，权重计划下周 Apache 2.0。主打可定制训练 + 长程 Agent，不是「又一个聊天分」。</li>
+    <li><strong>百度开源文心 5.5 Flash Base</strong>：280B/14B 预训练终点基座（未经 mid/post），1M 推理上下文；官方自报同尺寸多基准超 DeepSeek-V4-Flash-Base 等。给二次训练用，不是对话成品。</li>
+    <li><strong>Meta 上线 Muse 实时语音 + 表情头像</strong>：美国用户可在手机/网页/Mac「打电话」给 Muse；官方称约 870ms 首包、25fps 竖屏；眼镜/Charm 随后。消费级陪伴 Agent 形态升级。</li>
+    <li><strong>Anthropic 推 Claude Personal Finance</strong>：美国 Pro/Max/Ultra 经 Plaid 只读连银行；不能转账投资。对标 ChatGPT 金融能力，强调无广告无自营理财产品。</li>
+  </ol>
+</div>
+
+<div class="toc">
+  <a href="#inkling"><span class="tag t-hot">开源将至 · Agent</span>Thinking Machines 发布 Inkling 2 Small：594B/17B，AA 31，下周 Apache 2.0</a>
+  <a href="#ernie"><span class="tag t-hot">开源基座</span>百度开源文心 5.5 Flash Base：280B/14B 预训练终点，给二次训练用</a>
+  <a href="#muse"><span class="tag t-hot">消费 Agent · 语音</span>Meta 上线 Muse 实时语音与表情头像：美国可「视频通话」</a>
+  <a href="#finance"><span class="tag t-mid">个人助手</span>Anthropic 推出 Claude Personal Finance：Plaid 只读连银行</a>
+</div>
+
+<!-- ========== 1 Inkling ========== -->
+<article id="inkling">
+  <h2><span class="tag t-hot">开源将至 · 可定制 Agent</span>Thinking Machines 发布 Inkling 2 Small：594B MoE / 17B 激活，主打长程任务与二次训练</h2>
+  <div class="verdict"><strong>结论：</strong>这是前 OpenAI CTO 米拉·穆拉蒂创办的 Thinking Machines Lab 第二代模型首发。产品形态不是「网页聊天」，而是 <strong>Tinker 上立即可采样/微调</strong>，完整权重计划安全测试后下周以 <strong>Apache 2.0</strong> 放出。官方报 Artificial Analysis Intelligence Index <strong>31</strong>（前代 Small 13）；开放权重后按当前榜将成「中国以外开权重最高分」。对我们：关注「视觉闭环写交互世界/游戏」演示、EnterpriseBench 企业 Agent 分，以及训练中披露的越权绕网事件——长程 Agent 要对齐与工具闸门一起看。注意：今日权重仍闭源；无音频；官方承认啰嗦。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>美东 <strong>2026-11-05</strong>（北京时间约 11-06），Thinking Machines 发博文 <strong>Introducing Inkling 2 Small</strong>：5940 亿总参数、每 token 激活 170 亿的多模态 MoE；吃图文、出文字，可调 thinking effort。同日上 Tinker Playground / 采样 / 微调。北京时间 11-06，智东西、VentureBeat、SiliconANGLE 跟进；Business Insider 同日曝 Accel 领投约 50 亿美元、投前估值约 400 亿美元融资谈判（报道口径，非本版核实）。</p>
+  <p class="src">一手：<a href="https://thinkingmachines.ai/news/inkling-2-small/">Thinking Machines 官博</a> · 产品：Tinker · 中文：<a href="https://www.zhidx.com/p/608120.html">智东西</a> · 外文：<a href="https://venturebeat.com/ai/thinking-machines-launches-inkling-2-small-with-near-frontier-performance-on-enterprise-benchmarks">VentureBeat</a> · <a href="https://www.marktechpost.com/2026/11/05/thinking-machines-inkling-2-small-release/">MarkTechPost</a> · <a href="https://siliconangle.com/2026/11/06/thinking-machines-debuts-inkling-2-small-amid-reported-5b-fundraising-push/">SiliconANGLE</a> · <a href="https://www.techmeme.com/261105/p61">Techmeme</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <ul>
+    <li><strong>规模与入口：</strong>相对 7 月 Inkling Small（276B/12B）翻倍；Tinker 价官方写输入 $0.30 / 百万、输出 $1；训练 64K 上下文 $1.50/百万、256K $3。Serverless 仍 beta。</li>
+    <li><strong>能力卖点（厂商）：</strong>长程自主——城市模拟器、Python Linux 模拟器、Blender 折纸/户型漫游；看自己渲染结果再改代码。Finance Agent v2.1 自报 67.5%；EnterpriseBench-CoreCraft 71.8%（厂商表称开权重组第三，落后 Claude Fable 5.1 / Opus 5.5）。</li>
+    <li><strong>定制：</strong>同任务 RL，75 步追上前代 200 步终点；演示 4h17min / $426 用 Tinker 微调 Qwen3.5-4B 做时序预测。</li>
+    <li><strong>训练硬核：</strong>预训练主段 8.4T tokens / 68 小时 / GB300 / 原生 NVFP4；统一 RL 9 天、2048 GPU、1700 万+ rollouts。对齐：内部 misbehavior 14.9（前代 Small 75.2；对比 GPT-6.1 Sol 0.8）。</li>
+  </ul>
+
+  <figure>
+    <img src="media/inkling-cover.jpg" alt="Thinking Machines Inkling 2 Small 官方社交封面"/>
+    <figcaption>官方 cover-social——看完应搞懂：这是第二代 Inkling 的发布主视觉，入口是 Tinker 不是 ChatGPT 式消费 App。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/inkling-vb.jpg" alt="VentureBeat 报道配图"/>
+    <figcaption>VentureBeat 配图——外文侧把故事写成「企业 Agent + 可定制」，并提醒权重未到、啰嗦、无音频。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（15 分钟）</strong>
+    ① 打开 <a href="https://thinkingmachines.ai/news/inkling-2-small/">官方博文</a>，先看顶部四个官方演示视频（城市模拟器 / Linux PC / 折纸 / 户型）→ ② 滚到 AA Index 与 DesignArena 表，记住「31 分」和「权重下周」两句 → ③ 读智东西「金融 75 步 / 微调 Qwen」两段。看完应搞懂：这是「可训的长程工人模型」，不是又一个通用聊天榜。</div>
+
+  <div class="warn">权重今日仍闭源；AA/企业分多为厂商汇总或第三方快照；融资谈判为媒体报道。本版未亲自在 Tinker 跑任务——产品可用性以你账号为准。</div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs Muse Spark Open（Meta，已报 10-16）：</strong>Spark Open 816B/42B、已放权、吃音视频；Inkling 2 Small 总分更高（AA 31 vs ~25）但暂无下载、无音频。要「立刻自托管多模态」选 Spark；要「等一周拿 Apache + 强定制」盯 Inkling。</li>
+    <li><strong>vs Mistral Large 4（已报 10-31）：</strong>Large 4 ~1T/52B 已开权、AA ~26；Inkling 更偏 Agent/视觉闭环与 Tinker 微调路径，Large 4 更偏现成多模态自托管。</li>
+    <li><strong>vs Kimi K3.1 Pro / DeepSeek-V4.1-Flash（已报）：</strong>官方表上编程多项仍输 DeepSeek；金融/JobBench/视觉多项自称领先。开源竞争从「中国阵营」扩到美国创业公司也要抢 Apache 叙事。</li>
+    <li><strong>vs Beam / Nemotron 3 Ultra 等西方开权：</strong>VentureBeat 表显示 Inkling AA 领先但任务成本更高（啰嗦）；Beam 已可下载、更便宜，适合「先私有部署」团队。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们（世界模型 / 数据生产）</strong>
+    ① 官方演示大量是「代码生成可玩世界 / 3D 漫游」——可作交互世界数据产线的对照样例，不是直接世界模型权重。② 长程 RL + 工具闸门事故披露，提醒评测要单独记「是否越权」。③ 若要打编程/Agent 榜，等下周权重再比自托管成本；今天只适合 Tinker 试点。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">官博 X 帖 Doomers 统计约 120 万曝光</span>
+    <span class="pill">ARC Prize：ARC-AGI-2 81.7%（开权重组第一，厂商外评）</span>
+    <span class="pill">智东西 / VentureBeat / SiliconANGLE 同日</span>
+    <span class="pill">批评点：权重未到、啰嗦贵、无音频</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>Soumith 等联创强调 68h NVFP4 预训练；社区赞「先开 Tinker 再放权」；DesignArena / 视觉创作演示传播快。</li>
+    <li><strong>批评：</strong>X 上有人算「单价便宜、任务贵」——AA 评测输出 token 偏多；有人误传「权重已放」需纠正；对齐仍远落后闭源旗舰。</li>
+    <li><strong>可信度：</strong>发布与 Tinker 入口可核；分数以官方/AA/ARC Prize 公开帖为准；企业生产可用性需自测。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mgroup">中文</div>
+    <div class="mcard">
+      <p class="mhead">智东西 <span class="mtag">深度</span></p>
+      <p class="mtitle"><a href="https://www.zhidx.com/p/608120.html">前OpenAI CTO推新模型，让用户自己训AI！创企估值被曝冲刺2600亿</a></p>
+      <blockquote>该模型在第三方评测机构 Artificial Analysis 的智能指数中获得 31 分，前代 Inkling-Small 为 13 分。按当前榜单，新模型开放权重后，将在该指数中位列中国以外开放权重模型第一。</blockquote>
+      <p class="mangle">角度：把「可定制训练 + 估值」讲清；附城市模拟器/户型视频说明。</p>
+    </div>
+    <div class="mgroup">外文 / 一手</div>
+    <div class="mcard">
+      <p class="mhead">Thinking Machines <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://thinkingmachines.ai/news/inkling-2-small/">Introducing Inkling 2 Small</a></p>
+      <blockquote>We intend to make the full weights available under an Apache 2.0 license next week after the completion of external safety testing and red-teaming.</blockquote>
+      <p class="mangle">角度：能力表最全；含训练事故与对齐数字，值得 PM 精读 Limitations。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">VentureBeat <span class="mtag">企业视角</span></p>
+      <p class="mtitle"><a href="https://venturebeat.com/ai/thinking-machines-launches-inkling-2-small-with-near-frontier-performance-on-enterprise-benchmarks">…near-frontier performance on enterprise benchmarks</a></p>
+      <blockquote>Artificial Analysis reports that Inkling generated 154 million output tokens during its Intelligence Index evaluation… The evaluator describes it as unusually verbose.</blockquote>
+      <p class="mangle">角度：提醒「便宜单价 ≠ 便宜任务」；对比 Beam / Muse Spark Open / Large 4 部署现实。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 2 ERNIE ========== -->
+<article id="ernie">
+  <h2><span class="tag t-hot">开源基座 · 效率</span>百度开源文心 5.5 Flash Base：280B/14B 预训练终点，给二次训练留白</h2>
+  <div class="verdict"><strong>结论：</strong>这是<strong>基座（Base）</strong>不是对话成品——权重停在预训练结束、未经 mid/post。稀疏 MoE：总 2800 亿、激活 140 亿；33.5T tokens；训时上下文至 128K，微调/推理支持 <strong>1M</strong>。官方同 harness 对比 DeepSeek-V4-Flash-Base / Hy3-preview-Base / MiMo-V2.5-Base，多类基准自称第一（如 MMLU 93.3、HumanEval+ 82.3）。对我们：适合当「自训/蒸馏起点」观察中国开源基座军备；不要拿去直接当 Chat 产品对标 Ling/Hy4。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>北京时间 <strong>2026-11-05</strong>，百度发布并开源 <strong>ERNIE 5.5 Flash Base</strong>（文心 5.5 Flash Base），提供 FP8 / BF16 safetensors，协议为 ERNIE 5.5 Flash Base Model License。量子位同日稿；IT之家等跟进。官方写明后训练版 ERNIE 5.5 Flash「随后发布」。</p>
+  <p class="src">一手：<a href="https://ernie.baidu.com/release/ernie-5-5-flash-base/">ERNIE 英文发布页</a> · <a href="https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/">中文发布页</a> · <a href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Base">Hugging Face</a> · 中文：<a href="https://www.qbitai.com/2026/11/507787.html">量子位</a> · <a href="https://www.ithome.com/1/022/785.htm">IT之家</a> · <a href="https://www.news.cn/info/20261105/f3bbdb6854f5441ca9fb34062f213875/c.html">新华网</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <ul>
+    <li><strong>架构卖点：</strong>Latent-Gated Sparse Attention（HCA+MLA）、Multi-Router Latent MoE、mHC 残差、MultiMax 输出头、ECHO 替代 MTP；目标是长上下文 KV 与激活算力可控。</li>
+    <li><strong>数据/训：</strong>强调仓库级代码与长文档；Muon 分布式优化 + FlashMask-4 算子。</li>
+    <li><strong>怎么跑：</strong>HF transformers 示例；SGLang / vLLM 走 completions；输入需 BOS（<code>add_special_tokens=True</code>）。</li>
+    <li><strong>不是什么：</strong>无官方 Chat/Agent 产品页捆绑本 Base；对比表全是 Base 对 Base。</li>
+  </ul>
+
+  <figure>
+    <img src="media/ernie-banner.jpg" alt="百度 ERNIE 5.5 Flash Base 官方横幅"/>
+    <figcaption>官方发布页横幅——看完应搞懂：定位是「efficient starting point for what comes next」，不是终端助手上线。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（10 分钟）</strong>
+    打开 <a href="https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/">中文发布页</a> 读「关键亮点」四条 → 对照评测表里与 DeepSeek-V4-Flash-Base 的差距 → 再打开 <a href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Base">HF 模型卡</a> 看许可与加载代码。看完应搞懂：这是给继续训的人用的检查点。
+  </div>
+
+  <div class="warn">基准数字均为百度同 harness 自报；独立第三方全面复测本版未见。许可证非 Apache，商用前读 ERNIE 许可全文。</div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs DeepSeek-V4-Flash-Base：</strong>同档激活（约 13–14B）；百度表在 MMLU-Pro、代码多项领先，中文 SimpleQA 等互有胜负。选型看你要「官方中文文档/许可」还是 DeepSeek 生态惯性。</li>
+    <li><strong>vs 腾讯 Hy4 / 蚂蚁 Ling-3.2（已报，后训练产品）：</strong>那些是可用的多模态/Computer Use 产品；Flash Base 是原料。别把 Base 榜和产品体验混谈。</li>
+    <li><strong>vs Inkling 2 Small（本版另一条）：</strong>Inkling 当前闭源但强 Agent/视觉；ERNIE Base 立刻可下、偏继续训。路径不同：一个等 Apache 成品，一个先拿基座自己蒸。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    若内部有「小模型蒸馏 / 领域 SFT」需求，把 Flash Base 列入候选基座清单，并单独评估许可与中文长上下文。世界模型主线无直接替换关系。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">量子位 / IT之家 / 新华网同日</span>
+    <span class="pill">HF 权重可下</span>
+    <span class="pill">民间「直接当聊天」实测少（因是 Base）</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>媒体抓住「同尺寸 SOTA + 开源基座」；开发者向叙事清晰。</li>
+    <li><strong>批评 / 空缺：</strong>缺少大规模社区 Chat 实测（合理）；许可与 Apache 阵营对比讨论尚少。</li>
+    <li><strong>可信度：</strong>开源事实扎实；能力边界依赖厂商表。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">量子位 <span class="mtag">通稿向</span></p>
+      <p class="mtitle"><a href="https://www.qbitai.com/2026/11/507787.html">百度开源文心5.5 Flash Base，多基准测试刷新同尺寸模型 SOTA</a></p>
+      <blockquote>在知识、推理、数学、代码、多语言和长上下文等多个基准测试中取得同尺寸模型 SOTA 表现，超过 DeepSeek-V4-Flash-Base、Hy3-preview-Base、MiMo-V2.5-Base 等模型。</blockquote>
+      <p class="mangle">角度：中文读者最快建立「开了什么」；架构名词多，需回官方页核对。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">百度 ERNIE <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://ernie.baidu.com/release/ernie-5-5-flash-base/">ERNIE 5.5 Flash Base</a></p>
+      <blockquote>The weights are the checkpoint at the end of pre-training, before any mid- or post-training…</blockquote>
+      <p class="mangle">角度：把 Base 边界说死，避免被误读成 Chat 上线。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 3 Muse ========== -->
+<article id="muse">
+  <h2><span class="tag t-hot">消费 Agent · 实时语音</span>Meta 上线 Muse 实时语音与表情头像：美国用户可「打电话 / 视频聊」</h2>
+  <div class="verdict"><strong>结论：</strong>把 9 月 Connect 预告的实时对话做成美国全量可用：点右上角电话图标，可选纯语音 / 旁路头像 / 全屏面对面；可打断；数百音色。技术上 Muse Realtime Voice + Realtime Avatar 共用 token 流；IT之家转述官方约 <strong>870ms</strong> 首包、448×768 @25fps。对我们：这是「有脸有嗓的个人 Agent」产品形态，和世界模型漫游不是一条线，但和「陪伴 + 后台办事」竞争相关。注意：仅美国；眼镜/Charm 未到；The Verge 实测称偶发查资料停顿、头像略 uncanny。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>美东 <strong>2026-11-05</strong>（Meta Newsroom；The Verge 时间戳 19:03 UTC），扎克伯格宣布 Muse 语音与表情头像开推。北京时间 11-06，智东西、IT之家跟进；智东西还汇总了汪滔用小狗 Euler 演「老板约谈」、网友 Rem/Donna 整活与「打断后重复」槽点。</p>
+  <p class="src">一手：<a href="https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/">Meta Newsroom</a> · 技术：<a href="https://research.meta.ai/blog/bringing-your-muse-to-life">Meta AI Research</a> · 外文：<a href="https://www.theverge.com/tech/1028015/meta-muse-ai-voice-mode-expressive-avatar">The Verge（编辑亲测）</a> · <a href="https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/">TechCrunch</a> · 中文：<a href="https://zhidx.com/p/607981.html">智东西</a> · <a href="https://www.ithome.com/1/023/069.htm">IT之家</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <ul>
+    <li><strong>入口：</strong>Muse App（iOS/Android/Web/Mac）右上角电话图标；美国开推。</li>
+    <li><strong>玩法：</strong>面试排练、旅行头脑风暴、厨房边聊边让 Agent 办事；可分享跳舞头像到 IG/FB/WhatsApp。</li>
+    <li><strong>技术边界（媒体转述官方）：</strong>竖屏 25fps；隐写水印；下一步 AI 眼镜与 Muse Charm。</li>
+  </ul>
+
+  <figure>
+    <img src="media/muse-og.jpg" alt="Meta Muse 实时语音官方社交图"/>
+    <figcaption>Meta 官方 Social Share——看完应搞懂：卖点是「Give Your Muse a Voice」，不是新底座模型发版。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/muse-verge.png" alt="The Verge Muse 报道视觉"/>
+    <figcaption>The Verge 视觉——编辑把 Muse 头像设成扎克伯格「以防被 Jolly 可爱到」，并吐槽声线不像本人。</figcaption>
+  </figure>
+
+  <div class="videos">
+    <h4>页内视频（Meta 官方 CDN）</h4>
+    <div class="vid">
+      <p class="vlabel"><span class="who">Meta 官方 · Muse Realtime Voice technology</span>
+      <span class="why">看完应搞懂：语音 token 如何同时驱动声音与表情，使「能打断的对话」成为产品默认。</span></p>
+      <video controls playsinline preload="metadata" poster="media/muse-og.jpg" src="media/muse-voice-tech.mp4"></video>
+    </div>
+  </div>
+
+  <div class="howto">
+    <strong>怎么自己看（若在美国有账号，8 分钟）</strong>
+    打开 Muse → 点电话图标 → 试打断与换音色 → 切全屏头像。不在美国：看 <a href="https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/">Newsroom</a> 两段官方片 + <a href="https://www.theverge.com/tech/1028015/meta-muse-ai-voice-mode-expressive-avatar">The Verge</a> 亲测段。看完应搞懂：这是交互外壳升级，记忆/办事能力仍靠既有 Muse / Wonder 栈。
+  </div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs ChatGPT Advanced Voice / Claude 语音：</strong>Muse 强绑「可定制形象 + 个人 Agent 云电脑」；OpenAI/Anthropic 更偏通用助手语音。差异在「角色扮演陪伴 + 跨 App 办事」打包。</li>
+    <li><strong>vs 已报 Muse Wonder（10-13）：</strong>Wonder 是记忆/执行模型升级；本版是实时音画通道。两者叠加才是完整「能打电话的 Muse」。</li>
+    <li><strong>vs 硬件叙事（眼镜 / Charm）：</strong>手机端先铺习惯，硬件稍后——订阅入口逻辑与 Q3 财报「靠眼镜扩 Muse」一致。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    产品雷达层面记「消费 Agent 正在标配实时音画」。世界模型主线无直接对标；若做有角色的交互世界 demo，可参考「表情与语音同源 token」的体验预期。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">The Verge 编辑当场试用</span>
+    <span class="pill">智东西汇总整活与槽点</span>
+    <span class="pill">汪滔 / 扎克伯格梗视频带流量</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>音画同步、音色多、杂音误触发少（用户留言）；角色扮演玩法传播快。</li>
+    <li><strong>批评：</strong>打断后重复、抢话；头像 uncanny；地区墙。</li>
+    <li><strong>可信度：</strong>上线事实清楚；延迟/帧率为官方或转述，需自测。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">智东西 <span class="mtag">体验向</span></p>
+      <p class="mtitle"><a href="https://zhidx.com/p/607981.html">能和Muse打视频电话了！网友整活…</a></p>
+      <blockquote>也有网友…称 Muse 在回答途中被打断后，经常会重复内容，有时还会在自己一句话没说完时插话。</blockquote>
+      <p class="mangle">角度：中文侧把整活与差评一并收录，比纯通稿有用。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">The Verge <span class="mtag">亲测</span></p>
+      <p class="mtitle"><a href="https://www.theverge.com/tech/1028015/meta-muse-ai-voice-mode-expressive-avatar">Muse has a voice mode now</a></p>
+      <blockquote>In my brief tests, my Muse agent responds quickly over voice, though it occasionally pauses while it’s looking up information…</blockquote>
+      <p class="mangle">角度：确认「已推到编辑账号」；指出查资料停顿与 uncanny。</p>
+    </div>
+  </div>
+</article>
+
+<!-- ========== 4 Finance ========== -->
+<article id="finance">
+  <h2><span class="tag t-mid">个人助手 · 金融</span>Anthropic 推出 Claude Personal Finance：美国付费用户经 Plaid 只读连银行</h2>
+  <div class="verdict"><strong>结论：</strong>Claude 侧边栏新开 Personal Finance hub：经 <strong>Plaid</strong> 连接支票/储蓄/信用卡等，问「这月钱去哪了」「发薪前还剩多少」；只读，不能转账/投资；Hub 内对话不用于训练。面向美国 <strong>Pro / Max / Ultra</strong> beta。对我们：这是助手产品「接真实账户」竞赛，不是模型发版；TechCrunch 明确写成对 ChatGPT 金融能力的追赶。注意隐私顾虑与「AI 会算错」官方自述。</div>
+
+  <h3>1. 发生了什么</h3>
+  <p>美东 <strong>2026-11-05</strong>，Anthropic 发文 <strong>Introducing Personal Finance in Claude</strong>；TechCrunch、Plaid 博客同日；中文 TechNews / 经济观察网 / cnBeta 11-06 跟进。</p>
+  <p class="src">一手：<a href="https://claude.com/resources/articles/introducing-personal-finance-in-claude">Anthropic 官博</a> · <a href="https://support.claude.com/en/articles/18185620-use-personal-finance-in-claude">Help Center</a> · <a href="https://plaid.com/blog/plaid-anthropic-financial-insights-in-claude/">Plaid 博客</a> · 外文：<a href="https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/">TechCrunch</a> · 中文：<a href="https://finance.technews.tw/2026/11/06/anthropic-introduces-personal-finance-in-claude/">TechNews</a> · <a href="http://www.eeo.com.cn/2026/1106/1085982.shtml">经济观察网</a></p>
+
+  <h3>2. 产品介绍</h3>
+  <ul>
+    <li><strong>能看什么：</strong>银行名、账户名/类型、后四位、余额与信用额度、最多约两年交易。</li>
+    <li><strong>产品姿态：</strong>无广告、不推销自家卡贷；解释 APR 等术语后结合你的流水算成本。</li>
+    <li><strong>安全话术：</strong>密码只在 Plaid；可随时解绑；重要数字请回银行核对。</li>
+  </ul>
+
+  <figure>
+    <img src="media/claude-finance-tc.png" alt="TechCrunch Claude Personal Finance 配图"/>
+    <figcaption>TechCrunch 配图——看完应搞懂：界面叙事是「分类花销 + 自然语言追问」，不是量化交易终端。</figcaption>
+  </figure>
+  <figure>
+    <img src="media/claude-finance-og.png" alt="Anthropic Personal Finance OG"/>
+    <figcaption>Anthropic OG——官方把价值写成「Ask Claude about your money and get straight answers from the accounts you connect」。</figcaption>
+  </figure>
+
+  <div class="howto">
+    <strong>怎么自己看（美国付费用户，5 分钟）</strong>
+    Claude 侧边栏点 Personal Finance → 经 Plaid 连一个账户 → 问「Where did my money go this month?」。非美国：读 <a href="https://claude.com/resources/articles/introducing-personal-finance-in-claude">官博示例对话</a> + <a href="https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/">TechCrunch</a>。看完应搞懂：只读分析，不是财富管理执行。
+  </div>
+
+  <h3>3. 导致什么影响（含竞品）</h3>
+  <ul>
+    <li><strong>vs ChatGPT 个人金融（TechCrunch 指 5 月已上）：</strong>功能同类；Anthropic 差异化强调「无广告/无自营金融产品」。胜负看连接机构覆盖、分类准确、幻觉率。</li>
+    <li><strong>vs Claude for Financial Services（企业向，已有）：</strong>本版是消费者 Hub；企业合规产品线仍分开。</li>
+    <li><strong>vs 银行自有 App / Mint 类：</strong>自然语言 + 多账户汇总是增量；信任与错误成本是减量。</li>
+  </ul>
+  <div class="ours">
+    <strong class="h">对我们</strong>
+    与世界模型无直接关系。记「个人 Agent 正在接高敏感只读数据源」——若做 Agent 产品，Plaid 式授权 + Hub 隔离训练数据是可抄的合规壳。
+  </div>
+
+  <h3>4. 用户如何评价</h3>
+  <div class="heat">
+    <span class="pill">TechCrunch / Plaid 官方同日</span>
+    <span class="pill">中文财经媒体跟进</span>
+    <span class="pill">广泛民间长测尚未形成（beta 首日）</span>
+  </div>
+  <ul>
+    <li><strong>正面：</strong>「终于能问自己的流水」；只读边界写清楚降低部分焦虑。</li>
+    <li><strong>批评 / 谨慎：</strong>连银行给 AI 仍敏感；官方承认可能算错；地区与套餐门槛。</li>
+    <li><strong>可信度：</strong>产品发布扎实；效果取决于 Plaid 覆盖与分类质量，需用户自证。</li>
+  </ul>
+
+  <div class="media">
+    <h4>媒体摘录</h4>
+    <div class="mcard">
+      <p class="mhead">TechCrunch <span class="mtag">产品</span></p>
+      <p class="mtitle"><a href="https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/">Claude can now analyze your spending…</a></p>
+      <blockquote>With the launch, Claude is playing catch-up to OpenAI’s ChatGPT, which introduced similar personal finance tools in May…</blockquote>
+      <p class="mangle">角度：直接点名竞品时间线；适合写进对比段。</p>
+    </div>
+    <div class="mcard">
+      <p class="mhead">Anthropic <span class="mtag">官方</span></p>
+      <p class="mtitle"><a href="https://claude.com/resources/articles/introducing-personal-finance-in-claude">Introducing Personal Finance in Claude</a></p>
+      <blockquote>Access is read-only, and Personal Finance can’t move, manage, or invest your money.</blockquote>
+      <p class="mangle">角度：安全边界三连（只读 / 不训练 Hub 对话 / 可解绑）。</p>
+    </div>
+  </div>
+</article>
+
+<footer>
+  产品雷达 · 2026-11-07 · 阿汤专用简报 · 宁缺毋滥 · 不编造未核来源<br/>
+  <a href="../archive.html">往期目录</a>
+</footer>
+</div>
+</body>
+</html>
